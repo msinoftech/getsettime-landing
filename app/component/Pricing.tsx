@@ -139,7 +139,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="relative py-20 overflow-hidden">
+    <section id="pricing" className="relative pt-20 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div className="text-center space-y-2 mb-16">
