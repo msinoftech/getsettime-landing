@@ -1,7 +1,7 @@
 export const APP_NAME = "GetSetTime";
-export const BASE_URL = "http://getsettime.com/";
+//export const BASE_URL = "http://getsettime.com/";
 //export const BASE_URL = "https://getsettime-landingpage.vercel.app/";
-//export const BASE_URL = "http://localhost:3000/";
+export const BASE_URL = "http://localhost:3000/";
 
 export const contactInfo = {
   email: "office.getsettime@gmail.com",
