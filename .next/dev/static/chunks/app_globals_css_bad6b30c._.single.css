@@ -1170,6 +1170,10 @@
     scroll-margin-top: calc(var(--spacing) * 20);
   }
 
+  .scroll-pt-20 {
+    scroll-padding-top: calc(var(--spacing) * 20);
+  }
+
   .list-inside {
     list-style-position: inside;
   }
