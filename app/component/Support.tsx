@@ -2,7 +2,7 @@
 
 export default function Support() {
    return (
-     <section id="support" className="relative py-20">
+     <section id="support" className="relative py-20 scroll-mt-20">
        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
            {/* Left: Content */}

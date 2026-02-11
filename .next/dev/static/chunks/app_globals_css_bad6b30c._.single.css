@@ -1166,6 +1166,10 @@
     cursor: pointer;
   }
 
+  .scroll-mt-20 {
+    scroll-margin-top: calc(var(--spacing) * 20);
+  }
+
   .list-inside {
     list-style-position: inside;
   }

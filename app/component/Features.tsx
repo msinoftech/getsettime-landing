@@ -217,7 +217,7 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" className="relative py-24">
+    <section id="features" className="relative py-24 scroll-mt-20">
 
       {/* Animated background shapes */}
       <div className="absolute top-10 left-4 sm:top-16 sm:left-6 md:top-20 md:left-10 w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 bg-indigo-400/30 rounded-full blur-3xl animate-float" />

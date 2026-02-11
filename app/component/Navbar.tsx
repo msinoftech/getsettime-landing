@@ -5,11 +5,21 @@ import { BASE_URL, socialLinks } from "@/lib/config";
 import Logo from "./Logo";
 
 const primaryItems = [
-  { label: "Features", href: `${BASE_URL}#features` },
-  { label: "Support", href: `${BASE_URL}#support` },
-  { label: "Pricing", href: `${BASE_URL}#pricing` },
-  { label: "Blog", href: `${BASE_URL}blog` },
+  { label: "Features", href: `${BASE_URL}#features`, isAnchor: true },
+  { label: "Support", href: `${BASE_URL}#support`, isAnchor: true },
+  { label: "Pricing", href: `${BASE_URL}#pricing`, isAnchor: true },
+  { label: "Blog", href: `${BASE_URL}blog`, isAnchor: false },
 ];
+
+function handleAnchorClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  const hash = href.split("#")[1];
+  if (!hash) return;
+  const el = document.getElementById(hash);
+  if (el) {
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
@@ -22,7 +32,7 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-8">
             {primaryItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm font-medium text-neutral-700 hover:text-indigo-600 transition-all duration-200 relative group">{item.label}
+              <Link key={item.href} href={item.href} className="text-sm font-medium text-neutral-700 hover:text-indigo-600 transition-all duration-200 relative group" onClick={item.isAnchor ? (e) => handleAnchorClick(e, item.href) : undefined}>{item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
@@ -67,7 +77,7 @@ export default function Navbar() {
               {/* Navigation items */}
               <nav className="px-6 py-6 space-y-2">
                 {primaryItems.map((item, index) => (
-                  <Link key={item.href} href={item.href} className="group flex items-center gap-3 py-3.5 rounded-xl text-base font-medium text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 relative overflow-hidden" onClick={() => setOpen(false)} style={{ animationDelay: `${index * 50}ms` }}>
+                  <Link key={item.href} href={item.href} className="group flex items-center gap-3 py-3.5 rounded-xl text-base font-medium text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 relative overflow-hidden" onClick={(e) => { if (item.isAnchor) handleAnchorClick(e, item.href); setOpen(false); }} style={{ animationDelay: `${index * 50}ms` }}>
                     <span className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center"></span>
                     <span className="relative z-10 group-hover:translate-x-2 transition-all duration-300">{item.label}</span>
                     <svg className="ml-auto w-5 h-5 text-neutral-400 group-hover:text-indigo-600 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
