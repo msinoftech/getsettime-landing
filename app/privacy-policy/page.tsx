@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: `Privacy Policy | ${APP_NAME}`,
   description: `Learn how ${APP_NAME} collects, uses, and protects your personal information. Our privacy policy explains your rights and our data practices.`,
   alternates: {
-    canonical: `${BASE_URL}privacy-policy`,
+    canonical: `${BASE_URL}/privacy-policy`,
   },
   openGraph: {
     title: `Privacy Policy | ${APP_NAME}`,
     description: `Learn how ${APP_NAME} collects, uses, and protects your personal information.`,
-    url: `${BASE_URL}privacy-policy`,
+    url: `${BASE_URL}/privacy-policy`,
     type: "website",
     siteName: APP_NAME,
   },

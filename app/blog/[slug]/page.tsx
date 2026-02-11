@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     keywords: post.keywords,
     authors: [{ name: post.author.name }],
     alternates: {
-      canonical: `${BASE_URL}blog/${post.slug}/`,
+      canonical: `${BASE_URL}/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `${BASE_URL}blog/${post.slug}/`,
+      url: `${BASE_URL}/blog/${post.slug}`,
       type: "article",
       siteName: APP_NAME,
       locale: "en_US",
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       section: post.category,
       images: [
         {
-          url: `${BASE_URL}${post.coverImage}`,
+          url: `${BASE_URL}/${post.coverImage}`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       creator: BASE_URL,
       title: post.title,
       description: post.excerpt,
-      images: `${BASE_URL}${post.coverImage}`,
+      images: `${BASE_URL}/${post.coverImage}`,
     },
   };
 }
@@ -84,16 +84,16 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     "@graph": [
       {
         "@type": "BlogPosting",
-        "@id": `${BASE_URL}blog/${post.slug}/#article`,
+        "@id": `${BASE_URL}/blog/${post.slug}/#article`,
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `${BASE_URL}blog/${post.slug}/#articlepage`
+          "@id": `${BASE_URL}/blog/${post.slug}/#articlepage`
         },
         "headline": post.title,
         "description": post.excerpt,
         "image": {
           "@type": "ImageObject",
-          "url": `${BASE_URL}${post.coverImage}`,
+          "url": `${BASE_URL}/${post.coverImage}`,
           "width": 1200,
           "height": 630
         },
@@ -103,14 +103,14 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           "@type": "Person",
           "name": post.author.name,
           "jobTitle": post.author.role,
-          "image": `${BASE_URL}${post.author.avatar}`
+          "image": `${BASE_URL}/${post.author.avatar}`
         },
         "publisher": {
           "@type": "Organization",
           "name": APP_NAME,
           "logo": {
             "@type": "ImageObject",
-            "url": `${BASE_URL}getsettime-logo.svg`
+            "url": `${BASE_URL}/getsettime-logo.svg`
           }
         },
         "articleSection": post.category,
@@ -131,27 +131,27 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             "@type": "ListItem",
             "position": 2,
             "name": "Blog",
-            "item": `${BASE_URL}blog/`
+            "item": `${BASE_URL}/blog`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": post.title,
-            "item": `${BASE_URL}blog/${post.slug}/`
+            "item": `${BASE_URL}/blog/${post.slug}`
           }
         ]
       },
       {
         "@type": "WebPage",
-        "@id": `${BASE_URL}blog/${post.slug}/#articlepage`,
-        "url": `${BASE_URL}blog/${post.slug}/`,
+        "@id": `${BASE_URL}/blog/${post.slug}/#articlepage`,
+        "url": `${BASE_URL}/blog/${post.slug}`,
         "name": post.title,
         "isPartOf": {
-          "@id": `${BASE_URL}blog/#article`  
+          "@id": `${BASE_URL}/blog/#article`  
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": `${BASE_URL}${post.coverImage}`
+          "url": `${BASE_URL}/${post.coverImage}`
         },
         "datePublished": post.publishedAt,
         "dateModified": post.publishedAt,
@@ -242,7 +242,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 {/* Previous Post */}
                 {prevPost ? (
                   <Link
-                    href={`/blog/${prevPost.slug}/`}
+                    href={`/blog/${prevPost.slug}`}
                     className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neutral-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors duration-200">
@@ -259,7 +259,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                   </Link>
                 ) : (
                   <Link
-                    href="/blog/"
+                    href="/blog"
                     className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neutral-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors duration-200">
@@ -279,7 +279,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 {/* Next Post */}
                 {nextPost ? (
                   <Link
-                    href={`/blog/${nextPost.slug}/`}
+                    href={`/blog/${nextPost.slug}`}
                     className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white"
                   >
                     <div className="flex-1 min-w-0 text-right">
@@ -296,7 +296,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                   </Link>
                 ) : (
                   <Link
-                    href="/blog/"
+                    href="/blog"
                     className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white"
                   >
                     <div className="flex-1 min-w-0 text-right">

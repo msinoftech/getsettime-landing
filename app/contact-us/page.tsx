@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "get in touch",
   ],
   alternates: {
-    canonical: `${BASE_URL}contact-us/`,
+    canonical: `${BASE_URL}/contact-us`,
   },
   openGraph: {
     title: `Contact Us | ${APP_NAME}`,
     description: `Book a quick discussion or send a message. Speak with a product specialist about scheduling, bookings, and next steps. We reply within 24 hours.`,
-    url: `${BASE_URL}contact-us/`,
+    url: `${BASE_URL}/contact-us`,
     type: "website",
     siteName: APP_NAME,
     locale: "en_US",
@@ -56,15 +56,15 @@ export default function ContactUs() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": `${BASE_URL}contact-us/#contactpage`,
-        "url": `${BASE_URL}contact-us/`,
+        "@id": `${BASE_URL}/contact-us/#contactpage`,
+        "url": `${BASE_URL}/contact-us`,
         "name": `Contact Us | ${APP_NAME}`,
         "description": `Book a quick discussion with ${APP_NAME}. Speak with a product specialist about scheduling, bookings, setup, and integrations. We usually reply within 24 hours.`,
         "inLanguage": "en-US",
         "mainEntity": {
           "@type": "Organization",
           "name": APP_NAME,
-          "url": `${BASE_URL}contact-us/`,
+          "url": `${BASE_URL}/contact-us`,
           "email": contactInfo.email,
           "address": {
             "@type": "PostalAddress",
@@ -87,11 +87,11 @@ export default function ContactUs() {
       },
       {
         "@type": "WebPage",
-        "@id": `${BASE_URL}contact-us/#contactpage`,
-        "url": `${BASE_URL}contact-us/`,
+        "@id": `${BASE_URL}/contact-us/#contactpage`,
+        "url": `${BASE_URL}/contact-us`,
         "name": `Contact Us | ${APP_NAME}`,
         "isPartOf": {
-          "@id": `${BASE_URL}contact-us/#contactpage`
+          "@id": `${BASE_URL}/contact-us/#contactpage`
         },
         "description": `Book a quick discussion with ${APP_NAME}. Speak with a product specialist about scheduling, bookings, setup, and integrations. We usually reply within 24 hours.`,
         "inLanguage": "en-US"
@@ -100,7 +100,7 @@ export default function ContactUs() {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}` },
-          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": `${BASE_URL}contact-us/` },
+          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": `${BASE_URL}/contact-us` },
         ],
       },
     ],

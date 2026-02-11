@@ -11,16 +11,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${BASE_URL}blog/`,
+      url: `${BASE_URL}/blog`,
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}contact-us/`,
+      url: `${BASE_URL}/contact-us`,
       priority: 0.7,
     },
     // Dynamic blog detail routes
     ...blogPosts.map((post) => ({
-      url: `${BASE_URL}blog/${post.slug}/`,
+      url: `${BASE_URL}/blog/${post.slug}`,
       priority: 0.7,
     })),
   ];

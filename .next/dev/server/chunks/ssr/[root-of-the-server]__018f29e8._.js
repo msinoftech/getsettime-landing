@@ -27,7 +27,7 @@ __turbopack_context__.s([
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "https://getsettime.com/";
+const BASE_URL = "https://getsettime.com";
 const contactInfo = {
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
@@ -530,18 +530,18 @@ const metadata = {
         "healthcare scheduling"
     ],
     alternates: {
-        canonical: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`
+        canonical: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`
     },
     openGraph: {
         title: `Blog | ${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} - Scheduling Tips & Best Practices`,
         description: `Explore the ${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} blog for expert scheduling tips, industry best practices, and insights to help you manage appointments more efficiently.`,
-        url: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`,
+        url: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`,
         type: "website",
         siteName: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"],
         locale: "en_US",
         images: [
             {
-                url: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}social-hero.jpg`,
+                url: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/social-hero.jpg`,
                 width: 1200,
                 height: 630,
                 alt: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} Blog - Scheduling Tips & Best Practices`
@@ -550,11 +550,11 @@ const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        site: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`,
+        site: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`,
         creator: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"],
         title: `Blog | ${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} - Scheduling Tips & Best Practices`,
         description: `Explore the ${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} blog for expert scheduling tips, industry best practices, and insights.`,
-        images: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}twitter-card.jpg`
+        images: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/twitter-card.jpg`
     }
 };
 function BlogPage() {
@@ -563,31 +563,31 @@ function BlogPage() {
         "@graph": [
             {
                 "@type": "Blog",
-                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog#blog`,
-                "mainEntityOfPage": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`,
+                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog#blog`,
+                "mainEntityOfPage": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`,
                 "name": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} Blog`,
                 "description": `Expert scheduling tips, industry best practices, and insights from ${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]}`,
                 "publisher": {
                     "@type": "Organization",
                     "name": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"],
-                    "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`,
+                    "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`,
                     "logo": {
                         "@type": "ImageObject",
-                        "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}getsettime-logo.svg`
+                        "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/getsettime-logo.svg`
                     }
                 }
             },
             {
                 "@type": "WebPage",
-                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/#webpage`,
-                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`,
+                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog/#webpage`,
+                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`,
                 "name": `Blog | ${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]}`,
                 "isPartOf": {
-                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/#website`
+                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog/#website`
                 },
                 "primaryImageOfPage": {
                     "@type": "ImageObject",
-                    "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/social-hero.jpg`
+                    "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog/social-hero.jpg`
                 },
                 "datePublished": "2026-02-10",
                 "dateModified": new Date().toISOString().split('T')[0],
@@ -605,17 +605,17 @@ function BlogPage() {
                             "@type": "ListItem",
                             "position": 2,
                             "name": "Blog",
-                            "item": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`
+                            "item": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`
                         }
                     ]
                 }
             },
             {
                 "@type": "CollectionPage",
-                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/#collectionpage`,
+                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog/#collectionpage`,
                 "name": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} Blog Articles`,
                 "description": "Collection of articles about appointment scheduling and business management",
-                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}blog/`,
+                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/blog`,
                 "numberOfItems": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$blog$2d$data$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["blogPosts"].length
             }
         ]

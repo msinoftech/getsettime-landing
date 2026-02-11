@@ -1,18 +1,62 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useState, useCallback, useEffect } from "react";
 import { BASE_URL, socialLinks } from "@/lib/config";
 import Logo from "./Logo";
 
 const primaryItems = [
-  { label: "Features", href: `${BASE_URL}#features` },
-  { label: "Support", href: `${BASE_URL}#support` },
-  { label: "Pricing", href: `${BASE_URL}#pricing` },
-  { label: "Blog", href: `${BASE_URL}blog` },
+  { label: "Features", href: "/#features", hash: "features" },
+  { label: "Support", href: "/#support", hash: "support" },
+  { label: "Pricing", href: "/#pricing", hash: "pricing" },
+  { label: "Blog", href: `${BASE_URL}/blog`, hash: null },
 ];
+
+function scrollToHashSection(hash: string) {
+  if (typeof window === "undefined" || !hash) return;
+  window.scrollTo({ top: 0, behavior: "instant" });
+  requestAnimationFrame(() => {
+    const el = document.getElementById(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState<boolean>(false);
+  const pathname = usePathname();
+
+  const isHome = pathname === "/" || pathname === "";
+
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, hash: string | null) => {
+      if (!hash || !isHome) return;
+      e.preventDefault();
+      setOpen(false);
+      scrollToHashSection(hash);
+      window.history.pushState(null, "", `/#${hash}`);
+    },
+    [isHome]
+  );
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !isHome) return;
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const id = ["features", "support", "pricing"].includes(hash) ? hash : null;
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) {
+      const t = setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+        requestAnimationFrame(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }, 100);
+      return () => clearTimeout(t);
+    }
+  }, [isHome, pathname]);
 
   return (
     <header className="w-full sticky top-0 z-50 bg-white border-b border-gray-200">
@@ -22,7 +66,13 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-8">
             {primaryItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm font-medium text-neutral-700 hover:text-indigo-600 transition-all duration-200 relative group">{item.label}
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={(e) => handleAnchorClick(e, item.hash)}
+                className="text-sm font-medium text-neutral-700 hover:text-indigo-600 transition-all duration-200 relative group"
+              >
+                {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
@@ -30,7 +80,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-4">
             <Link href={`${BASE_URL}`} className="flex-1 text-sm text-indigo-600 cursor-pointer transition-colors px-6 py-2.5 rounded-xl bg-indigo-500/10">Sign In</Link>
-            <Link href={`${BASE_URL}contact-us`} className="inline-flex items-center rounded-xl bg-indigo-600 text-white text-sm px-6 py-2.5 shadow-md hover:scale-105 transition-all duration-300">Get Started Free</Link>
+            <Link href={`${BASE_URL}/contact-us`} className="inline-flex items-center rounded-xl bg-indigo-600 text-white text-sm px-6 py-2.5 shadow-md hover:scale-105 transition-all duration-300">Get Started Free</Link>
           </div>
 
           <button aria-label="Toggle menu" className="lg:hidden inline-flex items-center justify-center rounded-xl p-2 text-indigo-600 cursor-pointer bg-indigo-500/10 hover:bg-indigo-600 hover:text-white transition-colors" onClick={() => setOpen((v) => !v)} type="button">
@@ -67,7 +117,13 @@ export default function Navbar() {
               {/* Navigation items */}
               <nav className="px-6 py-6 space-y-2">
                 {primaryItems.map((item, index) => (
-                  <Link key={item.href} href={item.href} className="group flex items-center gap-3 py-3.5 rounded-xl text-base font-medium text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 relative overflow-hidden" onClick={() => setOpen(false)} style={{ animationDelay: `${index * 50}ms` }}>
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleAnchorClick(e, item.hash)}
+                    className="group flex items-center gap-3 py-3.5 rounded-xl text-base font-medium text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 transition-all duration-300 relative overflow-hidden"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
                     <span className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center"></span>
                     <span className="relative z-10 group-hover:translate-x-2 transition-all duration-300">{item.label}</span>
                     <svg className="ml-auto w-5 h-5 text-neutral-400 group-hover:text-indigo-600 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

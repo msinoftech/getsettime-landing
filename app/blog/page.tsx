@@ -47,18 +47,18 @@ export const metadata: Metadata = {
     "healthcare scheduling",
   ],
   alternates: {
-    canonical: `${BASE_URL}blog/`,
+    canonical: `${BASE_URL}/blog`,
   },
   openGraph: {
     title: `Blog | ${APP_NAME} - Scheduling Tips & Best Practices`,
     description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, and insights to help you manage appointments more efficiently.`,
-    url: `${BASE_URL}blog/`,
+    url: `${BASE_URL}/blog`,
     type: "website",
     siteName: APP_NAME,
     locale: "en_US",
     images: [
       {
-        url: `${BASE_URL}social-hero.jpg`,
+        url: `${BASE_URL}/social-hero.jpg`,
         width: 1200,
         height: 630,
         alt: `${APP_NAME} Blog - Scheduling Tips & Best Practices`,
@@ -67,11 +67,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: `${BASE_URL}blog/`,
+    site: `${BASE_URL}/blog`,
     creator: BASE_URL,
     title: `Blog | ${APP_NAME} - Scheduling Tips & Best Practices`,
     description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, and insights.`,
-    images: `${BASE_URL}twitter-card.jpg`,
+    images: `${BASE_URL}/twitter-card.jpg`,
   },
 };
 
@@ -81,31 +81,31 @@ export default function BlogPage() {
     "@graph": [
       {
         "@type": "Blog",
-        "@id": `${BASE_URL}blog#blog`,
-        "mainEntityOfPage": `${BASE_URL}blog/`,
+        "@id": `${BASE_URL}/blog#blog`,
+        "mainEntityOfPage": `${BASE_URL}/blog`,
         "name": `${APP_NAME} Blog`,
         "description": `Expert scheduling tips, industry best practices, and insights from ${APP_NAME}`,
         "publisher": {
           "@type": "Organization",
           "name": APP_NAME,
-          "url": `${BASE_URL}blog/`,
+          "url": `${BASE_URL}/blog`,
           "logo": {
             "@type": "ImageObject",
-            "url": `${BASE_URL}getsettime-logo.svg`
+            "url": `${BASE_URL}/getsettime-logo.svg`
           }
         },
       },
       {
         "@type": "WebPage",
-        "@id": `${BASE_URL}blog/#webpage`,
-        "url": `${BASE_URL}blog/`,
+        "@id": `${BASE_URL}/blog/#webpage`,
+        "url": `${BASE_URL}/blog`,
         "name": `Blog | ${APP_NAME}`,
         "isPartOf": {
-          "@id": `${BASE_URL}blog/#website`
+          "@id": `${BASE_URL}/blog/#website`
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": `${BASE_URL}blog/social-hero.jpg`
+          "url": `${BASE_URL}/blog/social-hero.jpg`
         },
         "datePublished": "2026-02-10",
         "dateModified": new Date().toISOString().split('T')[0],
@@ -123,17 +123,17 @@ export default function BlogPage() {
               "@type": "ListItem",
               "position": 2,
               "name": "Blog",
-              "item": `${BASE_URL}blog/`
+              "item": `${BASE_URL}/blog`
             }
           ]
         }
       },
       {
         "@type": "CollectionPage",
-        "@id": `${BASE_URL}blog/#collectionpage`,
+        "@id": `${BASE_URL}/blog/#collectionpage`,
         "name": `${APP_NAME} Blog Articles`,
         "description": "Collection of articles about appointment scheduling and business management",
-        "url": `${BASE_URL}blog/`,
+        "url": `${BASE_URL}/blog`,
         "numberOfItems": blogPosts.length
       }
     ]

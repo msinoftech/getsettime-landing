@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: `Terms & Conditions | ${APP_NAME}`,
   description: `Read the terms and conditions for using ${APP_NAME}. Understand our policies on billing, refunds, and service usage.`,
   alternates: {
-    canonical: `${BASE_URL}terms-of-conditions`,
+    canonical: `${BASE_URL}/terms-of-conditions`,
   },
   openGraph: {
     title: `Terms & Conditions | ${APP_NAME}`,
     description: `Read the terms and conditions for using ${APP_NAME}.`,
-    url: `${BASE_URL}terms-of-conditions`,
+    url: `${BASE_URL}/terms-of-conditions`,
     type: "website",
     siteName: APP_NAME,
   },

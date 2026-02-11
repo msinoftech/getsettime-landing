@@ -27,7 +27,7 @@ __turbopack_context__.s([
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "https://getsettime.com/";
+const BASE_URL = "https://getsettime.com";
 const contactInfo = {
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
@@ -394,18 +394,18 @@ const metadata = {
         "appointment management app"
     ],
     alternates: {
-        canonical: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]
+        canonical: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}`
     },
     openGraph: {
         title: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} – Smart Scheduling App for Appointment Automation`,
         description: `Manage appointments, automate scheduling, and organize your calendar effortlessly with ${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]}. Perfect for businesses and professionals.`,
-        url: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"],
+        url: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}`,
         type: "website",
         siteName: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"],
         locale: "en_US",
         images: [
             {
-                url: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}social-hero.jpg`,
+                url: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/social-hero.jpg`,
                 width: 1200,
                 height: 630,
                 alt: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} – Appointment & Scheduling Management Software`
@@ -417,7 +417,7 @@ const metadata = {
         title: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} – Smart Scheduling App for Appointment Automation`,
         description: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
         images: [
-            `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}twitter-card.jpg`
+            `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/twitter-card.jpg`
         ]
     }
 };
@@ -427,12 +427,12 @@ function Home() {
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#organization`,
+                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#organization`,
                 "name": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"],
-                "url": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"],
+                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}`,
                 "logo": {
                     "@type": "ImageObject",
-                    "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}getsettime-logo.svg`,
+                    "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/getsettime-logo.svg`,
                     "width": 512,
                     "height": 512
                 },
@@ -448,43 +448,43 @@ function Home() {
             },
             {
                 "@type": "WebSite",
-                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#website`,
-                "url": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"],
+                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#website`,
+                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}`,
                 "name": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"],
                 "publisher": {
-                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#organization`
+                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#organization`
                 },
                 "description": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
                 "inLanguage": "en-US",
                 "potentialAction": {
                     "@type": "SearchAction",
-                    "target": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}search?q={search_term_string}`,
+                    "target": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/search?q={search_term_string}`,
                     "query-input": "required name=search_term_string"
                 }
             },
             {
                 "@type": "WebPage",
-                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#homepage`,
-                "url": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"],
+                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#homepage`,
+                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}`,
                 "name": `Home`,
                 "isPartOf": {
-                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#website`
+                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#website`
                 },
                 "about": {
-                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#software`
+                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#software`
                 },
                 "description": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
                 "inLanguage": "en-US"
             },
             {
                 "@type": "SoftwareApplication",
-                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#software`,
+                "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#software`,
                 "name": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"],
                 "alternateName": "Get Set Time",
                 "applicationCategory": "BusinessApplication",
                 "applicationSubCategory": "SchedulingSoftware",
                 "operatingSystem": "Web",
-                "url": __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"],
+                "url": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}`,
                 "description": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["APP_NAME"]} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
                 "offers": {
                     "@type": "Offer",
@@ -501,7 +501,7 @@ function Home() {
                     "Two-way Calendar Sync"
                 ],
                 "publisher": {
-                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}#organization`
+                    "@id": `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["BASE_URL"]}/#organization`
                 }
             }
         ]

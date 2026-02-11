@@ -40,7 +40,7 @@ export default function HeroSection() {
                 </svg>
                 Sign up with Google
               </Link>
-              <Link href={`${BASE_URL}contact-us`} className="bg-gray-900 text-white text-md px-6 py-3 rounded-2xl">Start Free Trial</Link>
+              <Link href={`${BASE_URL}/contact-us`} className="bg-gray-900 text-white text-md px-6 py-3 rounded-2xl">Start Free Trial</Link>
             </div>
 
             {/* Hero stats */}

@@ -14,19 +14,19 @@ export const metadata: Metadata = {
   keywords: [ "appointment scheduling app", "scheduling management software", "online appointment booking", "calendar management system", " scheduling tool", "appointment management app"],
   
   alternates: {
-    canonical: BASE_URL,
+    canonical: `${BASE_URL}`,
   },
 
   openGraph: {
     title: `${APP_NAME} – Smart Scheduling App for Appointment Automation`,
     description: `Manage appointments, automate scheduling, and organize your calendar effortlessly with ${APP_NAME}. Perfect for businesses and professionals.`,
-    url: BASE_URL,
+    url: `${BASE_URL}`,
     type: "website",
     siteName: APP_NAME,
     locale: "en_US",
     images: [
       {
-        url: `${BASE_URL}social-hero.jpg`,
+        url: `${BASE_URL}/social-hero.jpg`,
         width: 1200,
         height: 630,
         alt: `${APP_NAME} – Appointment & Scheduling Management Software`,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${APP_NAME} – Smart Scheduling App for Appointment Automation`,
     description: `${APP_NAME} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
-    images: [`${BASE_URL}twitter-card.jpg`],
+    images: [`${BASE_URL}/twitter-card.jpg`],
   },
 };
 
@@ -51,12 +51,12 @@ export default function Home() {
 
       {
         "@type": "Organization",
-        "@id": `${BASE_URL}#organization`,
+        "@id": `${BASE_URL}/#organization`,
         "name": APP_NAME,
-        "url": BASE_URL,
+        "url": `${BASE_URL}`,
         "logo": {
           "@type": "ImageObject",
-          "url": `${BASE_URL}getsettime-logo.svg`,
+          "url": `${BASE_URL}/getsettime-logo.svg`,
           "width": 512,
           "height": 512
         },
@@ -71,31 +71,31 @@ export default function Home() {
   
       {
         "@type": "WebSite",
-        "@id": `${BASE_URL}#website`,
-        "url": BASE_URL,
+        "@id": `${BASE_URL}/#website`,
+        "url": `${BASE_URL}`,
         "name": APP_NAME,
         "publisher": {
-          "@id": `${BASE_URL}#organization`
+          "@id": `${BASE_URL}/#organization`
         },
         "description": `${APP_NAME} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
         "inLanguage": "en-US",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": `${BASE_URL}search?q={search_term_string}`,
+          "target": `${BASE_URL}/search?q={search_term_string}`,
           "query-input": "required name=search_term_string"
         }
       },
 
       {
         "@type": "WebPage",
-        "@id": `${BASE_URL}#homepage`,
-        "url": BASE_URL,
+        "@id": `${BASE_URL}/#homepage`,
+        "url": `${BASE_URL}`,
         "name": `Home`,
         "isPartOf": {
-          "@id": `${BASE_URL}#website`
+          "@id": `${BASE_URL}/#website`
         },
         "about": {
-          "@id": `${BASE_URL}#software`
+          "@id": `${BASE_URL}/#software`
         },
         "description": `${APP_NAME} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
         "inLanguage": "en-US"
@@ -103,13 +103,13 @@ export default function Home() {
   
       {
         "@type": "SoftwareApplication",
-        "@id": `${BASE_URL}#software`,
+        "@id": `${BASE_URL}/#software`,
         "name": APP_NAME,
         "alternateName": "Get Set Time",
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "SchedulingSoftware",
         "operatingSystem": "Web",
-        "url": BASE_URL,
+        "url": `${BASE_URL}`,
         "description": `${APP_NAME} Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.`,
         "offers": {
           "@type": "Offer",
@@ -126,7 +126,7 @@ export default function Home() {
           "Two-way Calendar Sync"
         ],
         "publisher": {
-          "@id": `${BASE_URL}#organization`
+          "@id": `${BASE_URL}/#organization`
         }
       }
     ]

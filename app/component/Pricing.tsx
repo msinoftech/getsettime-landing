@@ -95,7 +95,7 @@ export default function Pricing() {
         "Community support"
       ],
       buttonText: "Get Started Free",
-      buttonLink: `${BASE_URL}contact-us`
+      buttonLink: `${BASE_URL}/contact-us`
     },
     {
       name: "Professional",
@@ -134,7 +134,7 @@ export default function Pricing() {
         "SLA guarantee"
       ],
       buttonText: "Contact Sales",
-      buttonLink: `${BASE_URL}contact-us`
+      buttonLink: `${BASE_URL}/contact-us`
     }
   ];
 
@@ -164,8 +164,8 @@ export default function Pricing() {
             <h3 className="text-2xl font-bold text-neutral-900 mb-4">Get a Customized Scheduling App</h3>
             <p className="text-neutral-600 mb-6">Contact our support team to personalize the appointment booking system to fit your needs. Whether you operate a small business, a salon, or you are a professional doctor, wellness instructor, gym trainer, or similar.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={`${BASE_URL}contact-us`} className="bg-indigo-600 text-white px-8 py-3 rounded-2xl">Schedule a Demo</Link>
-              <Link href={`${BASE_URL}contact-us`} className="bg-indigo-600 text-white px-8 py-3 rounded-2xl">Contact Sales</Link>
+              <Link href={`${BASE_URL}/contact-us`} className="bg-indigo-600 text-white px-8 py-3 rounded-2xl">Schedule a Demo</Link>
+              <Link href={`${BASE_URL}/contact-us`} className="bg-indigo-600 text-white px-8 py-3 rounded-2xl">Contact Sales</Link>
             </div>
           </div>
         </div>
