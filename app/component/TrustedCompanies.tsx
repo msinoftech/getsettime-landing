@@ -70,7 +70,7 @@ export default function TrustedCompanies() {
     <section className="py-12 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">Trusted by industry leaders worldwide</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">Integrated with leading apps worldwide</h2>
           <p className="mt-2 text-neutral-600 max-w-2xl mx-auto">Join thousands of companies that rely on our scheduling platform to power their business</p>
         </div>
 

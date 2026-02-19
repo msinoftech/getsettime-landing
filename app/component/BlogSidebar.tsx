@@ -138,7 +138,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
         <div className="relative z-10">
           <h3 className="text-lg font-bold mb-2">Ready to Get Started?</h3>
           <p className="text-white text-sm mb-4">Transform your scheduling with GetSetTime. Start your free trial today.</p>
-          <Link href={`${BASE_URL}contact-us`} className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200">
+          <Link href={`${BASE_URL}/contact-us`} className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200">
             Start Free Trial
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

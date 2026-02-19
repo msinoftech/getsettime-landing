@@ -23,7 +23,7 @@ export const CheckIcon: FC = () => (
 
 export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier, isAnnual }) => {
   const annualDiscount = tier.name !== "Starter" ? 0.8 : 1; // 20% discount for annual billing
-  const displayPrice = isAnnual && tier.price !== "Free" ? `$${Math.round(parseInt(tier.price.replace('$', '')) * annualDiscount)}` : tier.price;
+  const displayPrice = isAnnual && tier.price !== "Free" ? `${Math.round(parseInt(tier.price.replace('₹', '')) * annualDiscount)}` : tier.price;
 
   return (
     <div className={`relative h-full rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
@@ -99,7 +99,7 @@ export default function Pricing() {
     },
     {
       name: "Professional",
-      price: "$29",
+      price: "₹999",
       period: "month",
       description: "Ideal for growing businesses that need advanced features and customization.",
       features: [
@@ -119,9 +119,9 @@ export default function Pricing() {
     },
     {
       name: "Enterprise",
-      price: "$99",
+      price: "₹1999",
       period: "month",
-      description: "For large organizations requiring advanced security, compliance, and support.",
+      description: "Per User for large organizations requiring advanced security, compliance, and support.",
       features: [
         "Everything in Professional",
         "Multi-location support",
@@ -139,7 +139,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="relative pt-20 overflow-hidden">
+    <section id="pricing" className="relative pt-20 overflow-hidden scroll-mt-20">
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div className="text-center space-y-2 mb-16">

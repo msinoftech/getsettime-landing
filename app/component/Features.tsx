@@ -250,15 +250,6 @@ export default function Features() {
                 <FeatureGrid
                   items={[
                     {
-                      title: "Real Time Reporting",
-                      desc: "Track live booking analytics, appointment trends, and team performance metrics with intelligent dashboards",
-                      icon: (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      )
-                    },
-                    {
                       title: "Smart Appointments Management(multiple booking)",
                       desc: "Effortlessly manage multiple client bookings simultaneously with smart tracking, dynamic availability rules, and automated team confirmations.",
                       icon: (
@@ -273,6 +264,15 @@ export default function Features() {
                       icon: (
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                      )
+                    },
+                    {
+                      title: "Personalized Booking Forms",
+                      desc: "Create customized booking forms based on service selection, staff preference, and appointment categories.",
+                      icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                       )
                     },
@@ -295,11 +295,11 @@ export default function Features() {
                       )
                     },
                     {
-                      title: "Personalized Booking Forms",
-                      desc: "Create customized booking forms based on service selection, staff preference, and appointment categories.",
+                      title: "Real Time Reporting",
+                      desc: "Track live booking analytics, appointment trends, and team performance metrics with intelligent dashboards",
                       icon: (
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       )
                     },

@@ -1,2 +1,429 @@
-[00:00:01.727] Server  LOG     ✓ Ready in 1293ms
-[00:00:03.451] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.900] Server  LOG     ✓ Ready in 2.3s
+[00:00:04.398] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:11.681] Server  ERROR   ⨯ ReferenceError: FaqSection is not defined
+[00:11:12.604] Browser ERROR   uncaughtError: ReferenceError: FaqSection is not defined
+[00:11:16.201] Server  ERROR   ⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+[00:11:16.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:17.362] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `Home`.
+[00:11:21.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:38.992] Browser WARN    Image with src "/man.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:17:32.703] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:38.525] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:32.243] Browser ERROR   ./app/page.tsx:222:11
+Parsing ecmascript source code failed
+  220 |           <div className="flex flex-col gap-4">
+  221 |             <h2
+> 222 |           </div>
+      |           ^
+  223 |         </div>
+  224 |         <FaqSection
+  225 |           title="What is GetSetTime?"
+
+Expression expected
+[00:18:32.243] Browser ERROR   ./app/page.tsx:222:12
+Parsing ecmascript source code failed
+  220 |           <div className="flex flex-col gap-4">
+  221 |             <h2
+> 222 |           </div>
+      |            ^^^^^
+  223 |         </div>
+  224 |         <FaqSection
+  225 |           title="What is GetSetTime?"
+
+Unterminated regexp literal
+[00:22:10.878] Server  LOG     ✓ Compiled in 84ms
+[00:22:13.871] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:15.341] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:16.707] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:23:34.242] Browser ERROR   uncaughtError: Error: Cannot prefetch 'http://localhost:3000contact-us' because it cannot be converted to a URL.
+[00:23:34.242] Browser ERROR   uncaughtError: Error: Cannot prefetch 'http://localhost:3000contact-us' because it cannot be converted to a URL.
+[00:23:34.242] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:24:53.547] Server  LOG     ✓ Compiled in 108ms
+[00:24:58.127] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:58.273] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:24:58.273] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:28:34.799] Server  LOG     ✓ Compiled in 97ms
+[00:28:35.672] Browser ERROR   ./lib/blog-data.ts:110:7
+Parsing ecmascript source code failed
+  108 |         answer: "Double bookings, missed appointments, Last-minute confusion, and manual entry errors are the everyday headaches. An Automated appointment software addresses these simply with your calendar integration, displays real-time availability to clients, and prevents overlapping bookings. Automated confirmations and reminders further reduce no-shows and revenue loss."
+  109 |       }
+> 110 |       {
+      |       ^
+  111 |         question: "How does automation overcome daily scheduling challenges effortlessly?",
+  112 |         answer: "Double bookings, missed appointments, Last-minute confusion, and manual entry errors are the everyday headaches. An Automated appointment software addresses these simply with your calendar integration, displays real-time availability to clients, and prevents overlapping bookings. Automated confirmations and reminders further reduce no-shows and revenue loss."
+  113 |       }
+
+Expected ',', got '{'
+
+Import traces:
+  Server Component:
+    ./lib/blog-data.ts
+    ./app/blog/page.tsx
+
+  Client Component Browser:
+    ./lib/blog-data.ts [Client Component Browser]
+    ./app/component/BlogList.tsx [Client Component Browser]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/blog-data.ts [Client Component SSR]
+    ./app/component/BlogList.tsx [Client Component SSR]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+[00:28:37.935] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. How does automation overcome daily scheduling challenges effortlessly?
+[00:28:57.207] Server  LOG     ✓ Compiled in 97ms
+[00:28:58.077] Browser ERROR   ./lib/blog-data.ts:112:17
+Parsing ecmascript source code failed
+  110 |       {
+  111 |         question: "Can automated scheduling reduce administrative workload?",
+> 112 |         answer: "Yes. Scheduling software significantly reduces time spent on phone calls, rescheduling requests, and appointment confirmations, almost to an end. An automated app allows Clients to book independently, with instant confirmations and automated reminders via text message, WhatsApp, or both.
+      |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  113 | This streamlined process improves operational efficiency and minimizes disruptions, especially for healthcare professionals and service-based businesses with high appointment volumes.
+  114 | "
+  115 |       }
+
+Unterminated string constant
+
+Import traces:
+  Server Component:
+    ./lib/blog-data.ts
+    ./app/blog/page.tsx
+
+  Client Component Browser:
+    ./lib/blog-data.ts [Client Component Browser]
+    ./app/component/BlogList.tsx [Client Component Browser]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/blog-data.ts [Client Component SSR]
+    ./app/component/BlogList.tsx [Client Component SSR]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+[00:29:02.032] Browser ERROR   ./lib/blog-data.ts:113:1
+Parsing ecmascript source code failed
+  111 |         question: "Can automated scheduling reduce administrative workload?",
+  112 |         answer: "Yes. Scheduling software significantly reduces time spent on phone calls, rescheduling requests, and appointment confirmations, almost to an end. An automated app allows Clients to book independently, with instant confirmations and automated reminders via text message, WhatsApp, or both. This streamlined process improves operational efficiency and minimizes disruptions, especially for healthcare professionals and service-based businesses with high appointment volumes.
+> 113 | "
+      | ^
+  114 |       }
+  115 |     ],
+  116 |   },
+
+Unterminated string constant
+
+Import traces:
+  Server Component:
+    ./lib/blog-data.ts
+    ./app/blog/page.tsx
+
+  Client Component Browser:
+    ./lib/blog-data.ts [Client Component Browser]
+    ./app/component/BlogList.tsx [Client Component Browser]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/blog-data.ts [Client Component SSR]
+    ./app/component/BlogList.tsx [Client Component SSR]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+[00:29:16.152] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:16.312] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:29:16.312] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[03:31:29.803] Server  LOG     ✓ Compiled in 159ms
+[03:31:30.577] Browser ERROR   ./app/component/Footer.tsx:2:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+> 2 | import { APP_NAME, BASE_URL, socialLinks } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import Link from "next/link";
+  4 | import Logo from "./Logo";
+  5 | import Newsletter from "./Newsletter";
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/Footer.tsx
+    ./app/layout.tsx
+[03:31:30.577] Browser ERROR   ./app/component/Footer.tsx:2:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+> 2 | import { APP_NAME, BASE_URL, socialLinks } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import Link from "next/link";
+  4 | import Logo from "./Logo";
+  5 | import Newsletter from "./Newsletter";
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/Footer.tsx
+    ./app/layout.tsx
+[03:31:30.577] Browser ERROR   ./app/component/HeroSection.tsx:3:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+  2 | import Image from "next/image";
+> 3 | import { BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import Logo from "./Logo";
+  5 | import Link from "next/link";
+  6 |
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/HeroSection.tsx
+    ./app/page.tsx
+[03:31:30.577] Browser ERROR   ./app/component/HeroSection.tsx:3:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+  2 | import Image from "next/image";
+> 3 | import { BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import Logo from "./Logo";
+  5 | import Link from "next/link";
+  6 |
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/HeroSection.tsx
+    ./app/page.tsx
+[03:31:30.577] Browser ERROR   ./app/component/Logo.tsx:3:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+  2 | import Link from "next/link";
+> 3 | import { BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Logo() {
+  6 |
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./app/component/Logo.tsx [Client Component Browser]
+    ./app/component/Footer.tsx [Client Component Browser]
+    ./app/component/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  #2 [Client Component Browser]:
+    ./app/component/Logo.tsx [Client Component Browser]
+    ./app/component/HeroSection.tsx [Client Component Browser]
+    ./app/component/HeroSection.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./app/component/Logo.tsx [Client Component SSR]
+    ./app/component/Footer.tsx [Client Component SSR]
+    ./app/component/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./app/component/Logo.tsx [Client Component SSR]
+    ./app/component/HeroSection.tsx [Client Component SSR]
+    ./app/component/HeroSection.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:31:30.577] Browser ERROR   ./app/component/Logo.tsx:3:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+  2 | import Link from "next/link";
+> 3 | import { BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Logo() {
+  6 |
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  #1 [Client Component Browser]:
+    ./app/component/Logo.tsx [Client Component Browser]
+    ./app/component/Footer.tsx [Client Component Browser]
+    ./app/component/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  #2 [Client Component Browser]:
+    ./app/component/Logo.tsx [Client Component Browser]
+    ./app/component/HeroSection.tsx [Client Component Browser]
+    ./app/component/HeroSection.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  #3 [Client Component SSR]:
+    ./app/component/Logo.tsx [Client Component SSR]
+    ./app/component/Footer.tsx [Client Component SSR]
+    ./app/component/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./app/component/Logo.tsx [Client Component SSR]
+    ./app/component/HeroSection.tsx [Client Component SSR]
+    ./app/component/HeroSection.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:31:30.577] Browser ERROR   ./app/component/Navbar.tsx:5:1
+Export BASE_URL doesn't exist in target module
+  3 | import { usePathname } from "next/navigation";
+  4 | import { useState, useCallback, useEffect } from "react";
+> 5 | import { BASE_URL, socialLinks } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import Logo from "./Logo";
+  7 |
+  8 | const primaryItems = [
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/Navbar.tsx
+    ./app/layout.tsx
+[03:31:30.577] Browser ERROR   ./app/component/Navbar.tsx:5:1
+Export BASE_URL doesn't exist in target module
+  3 | import { usePathname } from "next/navigation";
+  4 | import { useState, useCallback, useEffect } from "react";
+> 5 | import { BASE_URL, socialLinks } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import Logo from "./Logo";
+  7 |
+  8 | const primaryItems = [
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/Navbar.tsx
+    ./app/layout.tsx
+[03:31:30.577] Browser ERROR   ./app/component/Pricing.tsx:2:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+> 2 | import { BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import Link from "next/link";
+  4 | import type { FC } from "react";
+  5 | import { useState } from "react";
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/Pricing.tsx
+    ./app/page.tsx
+[03:31:30.577] Browser ERROR   ./app/component/Pricing.tsx:2:1
+Export BASE_URL doesn't exist in target module
+  1 | "use client";
+> 2 | import { BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 | import Link from "next/link";
+  4 | import type { FC } from "react";
+  5 | import { useState } from "react";
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/Pricing.tsx
+    ./app/page.tsx
+[03:31:30.577] Browser ERROR   ./app/page.tsx:4:1
+Export BASE_URL doesn't exist in target module
+  2 | import Script from "next/script";
+  3 | import Image from "next/image";
+> 4 | import { APP_NAME, BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import Hero from "./component/HeroSection";
+  6 | import Features from "./component/Features";
+  7 | import Support from "./component/Support";
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-rsc] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[03:31:30.577] Browser ERROR   ./app/blog/page.tsx:4:1
+Export BASE_URL doesn't exist in target module
+  2 | import Script from "next/script";
+  3 | import { Suspense } from "react";
+> 4 | import { APP_NAME, BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { blogPosts } from "@/lib/blog-data";
+  6 | import { BlogList } from "../component/BlogList";
+  7 | import { FaqSection } from "../component/FaqSection";
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-rsc] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[03:31:30.577] Browser ERROR   ./app/blog/[slug]/page.tsx:6:1
+Export BASE_URL doesn't exist in target module
+  4 | import Link from "next/link";
+  5 | import { notFound } from "next/navigation";
+> 6 | import { APP_NAME, BASE_URL } from "@/lib/config";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { blogPosts, getBlogBySlug, getRelatedPosts, getPrevNextPosts, getPostCategories } from "@/lib/blog-data";
+  8 | import { BlogSidebar } from "@/app/component/BlogSidebar";
+  9 | import { FaqSection } from "@/app/component/FaqSection";
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-rsc] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[03:31:30.577] Browser ERROR   ./app/component/BlogSidebar.tsx:7:1
+Export BASE_URL doesn't exist in target module
+   5 | import { blogCategories, getRecentPosts } from "@/lib/blog-data";
+   6 | import Newsletter from "./Newsletter";
+>  7 | import { BASE_URL } from "@/lib/config";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | interface BlogSidebarProps {
+  10 |   currentPostSlug?: string;
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/BlogSidebar.tsx
+    ./app/blog/[slug]/page.tsx
+[03:31:30.577] Browser ERROR   ./app/component/BlogSidebar.tsx:7:1
+Export BASE_URL doesn't exist in target module
+   5 | import { blogCategories, getRecentPosts } from "@/lib/blog-data";
+   6 | import Newsletter from "./Newsletter";
+>  7 | import { BASE_URL } from "@/lib/config";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | interface BlogSidebarProps {
+  10 |   currentPostSlug?: string;
+
+The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
+Did you mean to import APP_NAME?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./app/component/BlogSidebar.tsx
+    ./app/blog/[slug]/page.tsx

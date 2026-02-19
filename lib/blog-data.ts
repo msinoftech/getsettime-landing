@@ -12,7 +12,6 @@ export interface BlogPost {
   };
   category: string;
   publishedAt: string;
-  featured: boolean;
   keywords: string;
   faq: {
     question: string;
@@ -90,7 +89,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion:</h2>
       <p>To pull away from traditional practices, choose a reliable <b>app to manage appointments more effectively.</b> AI-powered tools like GetSetTime help professionals save time, and clients love the convenience.</p>
     `,
-    coverImage: "online-calendar.jpg",
+    coverImage: "schedule-appointments.jpg",
     author: {
       name: "GetSetTime",
       avatar: "man.png",
@@ -98,16 +97,19 @@ export const blogPosts: BlogPost[] = [
     },
     category: "General",
     publishedAt: "2026-01-29",
-    featured: true,
     keywords: "",
     faq: [
       {
-        question: "Does GetSetTime offer online appointment booking for doctors",
-        answer: "Yes, GetSetTime offers online appointment booking for doctors, wellness instructors, gym trainers, and other healthcare professionals."
+        question: "How does automated scheduling support professionals?",
+        answer: "Doctors, wellness consultants, and other service providers can rely on a smart scheduling system that operates 24/7 without any human intervention. An automated scheduling system like GetSetTime not only eliminates manual booking processes and administrative workload but also allows clients to book appointments instantly based on real-time availability."
       },
       {
-        question: "What is the cost of GetSetTime?",
-        answer: "GetSetTime offers a free trial for 14 days. After that, you can choose from different plans based on your needs. The cost starts from ₹500/month."
+        question: "How does automation overcome daily scheduling challenges effortlessly?",
+        answer: "Double bookings, missed appointments, Last-minute confusion, and manual entry errors are the everyday headaches. An Automated appointment software addresses these simply with your calendar integration, displays real-time availability to clients, and prevents overlapping bookings. Automated confirmations and reminders further reduce no-shows and revenue loss."
+      },
+      {
+        question: "Can automated scheduling reduce administrative workload?",
+        answer: "Yes. Scheduling software significantly reduces time spent on phone calls, rescheduling requests, and appointment confirmations, almost to an end. An automated app allows Clients to book independently, with instant confirmations and automated reminders via text message, WhatsApp, or both. This streamlined process improves operational efficiency and minimizes disruptions, especially for healthcare professionals and service-based businesses with high appointment volumes."
       }
     ],
   },
@@ -227,7 +229,6 @@ export const blogPosts: BlogPost[] = [
     },
     category: "health",
     publishedAt: "2026-01-29",
-    featured: false,
     keywords: "",
     faq: [
       {

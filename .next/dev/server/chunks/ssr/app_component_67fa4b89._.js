@@ -1959,31 +1959,6 @@ function Features() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureGrid, {
                                         items: [
                                             {
-                                                title: "Real Time Reporting",
-                                                desc: "Track live booking analytics, appointment trends, and team performance metrics with intelligent dashboards",
-                                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                    xmlns: "http://www.w3.org/2000/svg",
-                                                    className: "h-6 w-6",
-                                                    fill: "none",
-                                                    viewBox: "0 0 24 24",
-                                                    stroke: "currentColor",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                        strokeLinecap: "round",
-                                                        strokeLinejoin: "round",
-                                                        strokeWidth: 2,
-                                                        d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/component/Features.tsx",
-                                                        lineNumber: 257,
-                                                        columnNumber: 27
-                                                    }, void 0)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/component/Features.tsx",
-                                                    lineNumber: 256,
-                                                    columnNumber: 25
-                                                }, void 0)
-                                            },
-                                            {
                                                 title: "Smart Appointments Management(multiple booking)",
                                                 desc: "Effortlessly manage multiple client bookings simultaneously with smart tracking, dynamic availability rules, and automated team confirmations.",
                                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1999,12 +1974,12 @@ function Features() {
                                                         d: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/component/Features.tsx",
-                                                        lineNumber: 266,
+                                                        lineNumber: 257,
                                                         columnNumber: 27
                                                     }, void 0)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/component/Features.tsx",
-                                                    lineNumber: 265,
+                                                    lineNumber: 256,
                                                     columnNumber: 25
                                                 }, void 0)
                                             },
@@ -2022,6 +1997,31 @@ function Features() {
                                                         strokeLinejoin: "round",
                                                         strokeWidth: 2,
                                                         d: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/component/Features.tsx",
+                                                        lineNumber: 266,
+                                                        columnNumber: 27
+                                                    }, void 0)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/component/Features.tsx",
+                                                    lineNumber: 265,
+                                                    columnNumber: 25
+                                                }, void 0)
+                                            },
+                                            {
+                                                title: "Personalized Booking Forms",
+                                                desc: "Create customized booking forms based on service selection, staff preference, and appointment categories.",
+                                                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                    xmlns: "http://www.w3.org/2000/svg",
+                                                    className: "h-6 w-6",
+                                                    fill: "none",
+                                                    viewBox: "0 0 24 24",
+                                                    stroke: "currentColor",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                        strokeLinecap: "round",
+                                                        strokeLinejoin: "round",
+                                                        strokeWidth: 2,
+                                                        d: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/component/Features.tsx",
                                                         lineNumber: 275,
@@ -2084,8 +2084,8 @@ function Features() {
                                                 }, void 0)
                                             },
                                             {
-                                                title: "Personalized Booking Forms",
-                                                desc: "Create customized booking forms based on service selection, staff preference, and appointment categories.",
+                                                title: "Real Time Reporting",
+                                                desc: "Track live booking analytics, appointment trends, and team performance metrics with intelligent dashboards",
                                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     xmlns: "http://www.w3.org/2000/svg",
                                                     className: "h-6 w-6",
@@ -2096,7 +2096,7 @@ function Features() {
                                                         strokeLinecap: "round",
                                                         strokeLinejoin: "round",
                                                         strokeWidth: 2,
-                                                        d: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                                        d: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/component/Features.tsx",
                                                         lineNumber: 302,
@@ -2177,7 +2177,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 function Support() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "support",
-        className: "relative py-20",
+        className: "relative py-20 scroll-mt-20",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2699,7 +2699,7 @@ const CheckIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
     }, ("TURBOPACK compile-time value", void 0));
 const PricingCard = ({ tier, isAnnual })=>{
     const annualDiscount = tier.name !== "Starter" ? 0.8 : 1; // 20% discount for annual billing
-    const displayPrice = isAnnual && tier.price !== "Free" ? `$${Math.round(parseInt(tier.price.replace('$', '')) * annualDiscount)}` : tier.price;
+    const displayPrice = isAnnual && tier.price !== "Free" ? `${Math.round(parseInt(tier.price.replace('₹', '')) * annualDiscount)}` : tier.price;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: `relative h-full rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${tier.popular ? 'bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl shadow-2xl ring-1 ring-indigo-500/20 scale-105' : 'bg-white/60 backdrop-blur-md shadow-md ring-1 ring-gray-400/20'}`,
         children: [
@@ -2901,7 +2901,7 @@ function Pricing() {
         },
         {
             name: "Professional",
-            price: "$29",
+            price: "₹999",
             period: "month",
             description: "Ideal for growing businesses that need advanced features and customization.",
             features: [
@@ -2921,9 +2921,9 @@ function Pricing() {
         },
         {
             name: "Enterprise",
-            price: "$99",
+            price: "₹1999",
             period: "month",
-            description: "For large organizations requiring advanced security, compliance, and support.",
+            description: "Per User for large organizations requiring advanced security, compliance, and support.",
             features: [
                 "Everything in Professional",
                 "Multi-location support",
@@ -2941,7 +2941,7 @@ function Pricing() {
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "pricing",
-        className: "relative pt-20 overflow-hidden",
+        className: "relative pt-20 overflow-hidden scroll-mt-20",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
             children: [
@@ -3284,7 +3284,7 @@ function TrustedCompanies() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900",
-                            children: "Trusted by industry leaders worldwide"
+                            children: "Integrated with leading apps worldwide"
                         }, void 0, false, {
                             fileName: "[project]/app/component/TrustedCompanies.tsx",
                             lineNumber: 73,

@@ -37,7 +37,7 @@ __turbopack_context__.s([
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "https://getsettime.com";
+const BASE_URL = "https://www.getsettime.com";
 const contactInfo = {
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
@@ -986,7 +986,7 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-sm text-neutral-600 mb-6 leading-relaxed",
-                                            children: "An advanced tool trusted by 500+ clients globally to run daily complex scheduling tasks effortlessly."
+                                            children: "An advanced tool trusted by 5000+ clients globally to run daily complex scheduling tasks effortlessly."
                                         }, void 0, false, {
                                             fileName: "[project]/app/component/Footer.tsx",
                                             lineNumber: 59,

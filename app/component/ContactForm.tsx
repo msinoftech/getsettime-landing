@@ -1,5 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+async function fetchDepartments(): Promise<{ list: string[]; error?: string }> {
+  try {
+    const res = await fetch("/api/departments");
+    const data = await res.json();
+    if (!res.ok) return { list: [], error: data.error || "Failed to load departments" };
+    const list = Array.isArray(data.departments) ? data.departments : [];
+    return { list };
+  } catch (e) {
+    return { list: [], error: "Network error loading departments" };
+  }
+}
 
 type FormData = {
   name: string;
@@ -21,6 +33,30 @@ const ContactForm = () => {
 
   const [status, setStatus] = useState<"" | "sending" | "success" | "error">("");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [departments, setDepartments] = useState<string[]>([]);
+  const [departmentsLoading, setDepartmentsLoading] = useState(true);
+  const [departmentsError, setDepartmentsError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchDepartments()
+      .then(({ list, error }) => {
+        if (!cancelled) {
+          setDepartments(list);
+          setDepartmentsError(error ?? null);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setDepartments([]);
+          setDepartmentsError("Failed to load departments");
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setDepartmentsLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -99,14 +135,25 @@ const ContactForm = () => {
         <input id="email" name="email" type="email" required placeholder="Email" value={formData.email} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3">
-        <select id="department" aria-label="Select Department" name="department" required value={formData.department} onChange={handleChange} className="block w-full text-gray-600 rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <option value="">Select Department</option>
-          <option value="healthcare">Healthcare</option>
-          <option value="beauty & wellness">Beauty & Wellness</option>
-          <option value="education">Education</option>
-          <option value="artist">Artist</option>
-          <option value="other">Other</option>
+        <select id="department" aria-label="Select Department" name="department" required value={formData.department} onChange={handleChange} disabled={departmentsLoading} className="block w-full text-gray-600 rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-70">
+          <option value="">{departmentsLoading ? "Loading departments…" : "Select Department"}</option>
+          {departments.map((dept) => (
+            <option key={dept} value={dept}>{dept}</option>
+          ))}
         </select>
+        <div className="mt-1.5 min-h-[1.25rem]">
+          {departmentsLoading && (
+            <p className="text-sm text-slate-500">Loading departments…</p>
+          )}
+          {!departmentsLoading && departmentsError && (
+            <p className="text-sm text-amber-600">{departmentsError}</p>
+          )}
+          {!departmentsLoading && !departmentsError && departments.length > 0 && (
+            <p className="text-sm text-slate-500">
+              Departments: {departments.join(", ")}
+            </p>
+          )}
+        </div>
       </div>
       <textarea id="message" name="message" rows={4} required placeholder="How can we help?" value={formData.message} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
       <div className="block sm:flex items-center justify-between items-center justify-between gap-3">

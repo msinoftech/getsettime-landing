@@ -56,7 +56,7 @@ export default function Footer() {
               <div className="flex items-center gap-3 mb-6">
                 <Logo />
               </div>
-              <p className="text-sm text-neutral-600 mb-6 leading-relaxed">An advanced tool trusted by 500+ clients globally to run daily complex scheduling tasks effortlessly.</p>
+              <p className="text-sm text-neutral-600 mb-6 leading-relaxed">An advanced tool trusted by 5000+ clients globally to run daily complex scheduling tasks effortlessly.</p>
 
               {/* Social Links */}
               <div className="flex gap-3">

@@ -27,7 +27,7 @@ __turbopack_context__.s([
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "https://getsettime.com";
+const BASE_URL = "http://localhost:3000";
 const contactInfo = {
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
@@ -144,7 +144,7 @@ const blogPosts = [
       <h2>Conclusion:</h2>
       <p>To pull away from traditional practices, choose a reliable <b>app to manage appointments more effectively.</b> AI-powered tools like GetSetTime help professionals save time, and clients love the convenience.</p>
     `,
-        coverImage: "online-calendar.jpg",
+        coverImage: "schedule-appointments.jpg",
         author: {
             name: "GetSetTime",
             avatar: "man.png",
@@ -152,7 +152,6 @@ const blogPosts = [
         },
         category: "General",
         publishedAt: "2026-01-29",
-        featured: true,
         keywords: "",
         faq: [
             {
@@ -281,7 +280,6 @@ const blogPosts = [
         },
         category: "health",
         publishedAt: "2026-01-29",
-        featured: false,
         keywords: "",
         faq: [
             {

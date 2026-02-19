@@ -7,6 +7,7 @@ import Features from "./component/Features";
 import Support from "./component/Support";
 import Pricing from "./component/Pricing";
 import TrustedCompanies from "./component/TrustedCompanies";
+import { FaqSection } from "./component/FaqSection";
 
 export const metadata: Metadata = {
   title: `${APP_NAME} – Smart Scheduling App for Appointment Automation`,
@@ -132,14 +133,15 @@ export default function Home() {
     ]
   };
   
-
   return (
     <>
       {/* Add Structured Data for Home Page */}
       <Script id="homepage-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData, null, 2),}}/>
 
       <Hero />
+
       <TrustedCompanies />
+
       <Features />
 
       <section id="resources" className="relative py-20">
@@ -210,7 +212,38 @@ export default function Home() {
       </section>
 
       <Pricing />
+
       <Support />
+
+      <section className="relative pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+          <h2 className="text-2xl text-center sm:text-3xl lg:text-4xl font-bold text-neutral-900">Frequently Asked Questions</h2>
+        </div>
+        <FaqSection
+          title="What is GetSetTime?"
+          content={`GetSetTime is a simple-to-use scheduling software for the service-based professionals, including doctors, clinics, salons, and others whose day revolves around booking appointments. Instead of playing phone tag or manually managing a chaotic calendar, it lets clients book themselves online while the system handles the rest. It syncs seamlessly with Calendar and operational tools, keeping everything in one place, and automatically sends booking confirmations and reminders via WhatsApp and SMS — keeping both businesses and clients in the loop and reducing no-shows. In short, it takes the admin headache out of scheduling so you can focus on actually serving your clients.`}
+        />
+        <FaqSection
+          title="Can GetSetTime integrate with Google Calendar and Apple Calendar?"
+          content={`GetSetTime supports real-time integration with Google Calendar and Apple Calendar, ensuring centralized scheduling and accurate availability updates. This prevents scheduling conflicts and keeps all appointments synchronized across devices and platforms.`}
+        />
+        <FaqSection
+          title="How does GetSetTime reduce no-shows and manual scheduling work?"
+          content={`GetSetTime automates the entire booking process—from client appointment selection to confirmation and reminders—eliminating manual follow-ups and reducing scheduling errors. Automated notifications, real-time calendar sync, and centralized management help professionals maintain organized, reliable appointment workflows.`}
+        />
+        <FaqSection
+          title="Can GetSetTime be customized for different types of practices?"
+          content={`Yes. GetSetTime allows customization of booking settings, availability slots, services, buffer times, notifications, and reminder preferences. This makes it suitable for healthcare clinics, diagnostic centers, salons, consultants, and other similar professions.`}
+        />
+        <FaqSection
+          title="Is GetSetTime affordable for small clinics and independent professionals?"
+          content={`GetSetTime is designed to be a cost-effective appointment booking solution for small clinics, individual doctors, salons, and growing service providers. The system reduces administrative overhead, saving time and operational costs.`}
+        />
+        <FaqSection
+          title="Does GetSetTime offer a demo or trial?"
+          content={`Yes, A free demo and trials are available for professionals to experience the full implementation and understand how the scheduling system works. This allows clients to evaluate and adopt the system with full features, including calendar integration, automated reminders, and centralized scheduling.`}
+        />
+      </section>
     </>
   );
 }

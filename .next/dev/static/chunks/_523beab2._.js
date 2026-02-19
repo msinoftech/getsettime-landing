@@ -57,39 +57,6 @@ function BlogCard({ post }) {
                                 fileName: "[project]/app/component/BlogCard.tsx",
                                 lineNumber: 18,
                                 columnNumber: 13
-                            }, this),
-                            post.featured && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute top-4 right-4 z-10",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "px-3 py-1.5 text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-full shadow-md flex items-center gap-1",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                            className: "w-3 h-3",
-                                            fill: "currentColor",
-                                            viewBox: "0 0 20 20",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/component/BlogCard.tsx",
-                                                lineNumber: 25,
-                                                columnNumber: 21
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/component/BlogCard.tsx",
-                                            lineNumber: 24,
-                                            columnNumber: 19
-                                        }, this),
-                                        "Featured"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/component/BlogCard.tsx",
-                                    lineNumber: 23,
-                                    columnNumber: 17
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/component/BlogCard.tsx",
-                                lineNumber: 22,
-                                columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
@@ -105,7 +72,7 @@ function BlogCard({ post }) {
                                 children: post.title
                             }, void 0, false, {
                                 fileName: "[project]/app/component/BlogCard.tsx",
-                                lineNumber: 33,
+                                lineNumber: 23,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -113,7 +80,7 @@ function BlogCard({ post }) {
                                 children: post.excerpt
                             }, void 0, false, {
                                 fileName: "[project]/app/component/BlogCard.tsx",
-                                lineNumber: 34,
+                                lineNumber: 24,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -131,12 +98,12 @@ function BlogCard({ post }) {
                                                     className: "object-cover"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/component/BlogCard.tsx",
-                                                    lineNumber: 38,
+                                                    lineNumber: 28,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/component/BlogCard.tsx",
-                                                lineNumber: 37,
+                                                lineNumber: 27,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -146,7 +113,7 @@ function BlogCard({ post }) {
                                                         children: post.author.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/component/BlogCard.tsx",
-                                                        lineNumber: 41,
+                                                        lineNumber: 31,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -154,19 +121,19 @@ function BlogCard({ post }) {
                                                         children: post.author.role
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/component/BlogCard.tsx",
-                                                        lineNumber: 42,
+                                                        lineNumber: 32,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/component/BlogCard.tsx",
-                                                lineNumber: 40,
+                                                lineNumber: 30,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/component/BlogCard.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 26,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("time", {
@@ -179,33 +146,33 @@ function BlogCard({ post }) {
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/app/component/BlogCard.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 35,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/component/BlogCard.tsx",
-                                lineNumber: 35,
+                                lineNumber: 25,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/component/BlogCard.tsx",
-                        lineNumber: 32,
+                        lineNumber: 22,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-indigo-500/30 transition-all duration-500 pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/app/component/BlogCard.tsx",
-                        lineNumber: 50,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute -bottom-1 -right-1 w-20 h-20 bg-gradient-to-tl from-indigo-500/10 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     }, void 0, false, {
                         fileName: "[project]/app/component/BlogCard.tsx",
-                        lineNumber: 51,
+                        lineNumber: 41,
                         columnNumber: 11
                     }, this)
                 ]
@@ -321,7 +288,7 @@ const blogPosts = [
       <h2>Conclusion:</h2>
       <p>To pull away from traditional practices, choose a reliable <b>app to manage appointments more effectively.</b> AI-powered tools like GetSetTime help professionals save time, and clients love the convenience.</p>
     `,
-        coverImage: "online-calendar.jpg",
+        coverImage: "schedule-appointments.jpg",
         author: {
             name: "GetSetTime",
             avatar: "man.png",
@@ -329,7 +296,6 @@ const blogPosts = [
         },
         category: "General",
         publishedAt: "2026-01-29",
-        featured: true,
         keywords: "",
         faq: [
             {
@@ -458,7 +424,6 @@ const blogPosts = [
         },
         category: "health",
         publishedAt: "2026-01-29",
-        featured: false,
         keywords: "",
         faq: [
             {
