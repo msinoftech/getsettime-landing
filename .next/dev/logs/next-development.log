@@ -92,3 +92,6 @@ Import trace:
 [00:21:25.136] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
 [00:23:06.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:23:44.458] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:10.088] Server  LOG     ✓ Compiled in 108ms
+[00:25:20.951] Server  LOG     ✓ Compiled in 100ms
+[00:25:37.939] Server  LOG     ✓ Compiled in 92ms

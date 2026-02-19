@@ -141,19 +141,6 @@ const ContactForm = () => {
             <option key={dept} value={dept}>{dept}</option>
           ))}
         </select>
-        <div className="mt-1.5 min-h-[1.25rem]">
-          {departmentsLoading && (
-            <p className="text-sm text-slate-500">Loading departments…</p>
-          )}
-          {!departmentsLoading && departmentsError && (
-            <p className="text-sm text-amber-600">{departmentsError}</p>
-          )}
-          {!departmentsLoading && !departmentsError && departments.length > 0 && (
-            <p className="text-sm text-slate-500">
-              Departments: {departments.join(", ")}
-            </p>
-          )}
-        </div>
       </div>
       <textarea id="message" name="message" rows={4} required placeholder="How can we help?" value={formData.message} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
       <div className="block sm:flex items-center justify-between items-center justify-between gap-3">
