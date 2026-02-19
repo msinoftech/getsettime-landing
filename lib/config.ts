@@ -1,6 +1,6 @@
 export const APP_NAME = "GetSetTime";
-//export const BASE_URL = "https://www.getsettime.com";
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "https://www.getsettime.com";
+//export const BASE_URL = "http://localhost:3000";
 
 export const contactInfo = {
   email: "office.getsettime@gmail.com",
