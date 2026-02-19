@@ -78,6 +78,10 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   const relatedPosts = getRelatedPosts(slug, 3);
   const { prev: prevPost, next: nextPost } = getPrevNextPosts(slug);
+  const faqItems = (post.faq ?? []).map((faq) => ({
+    title: faq.question,
+    content: faq.answer,
+  }));
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -306,13 +310,13 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 )}
               </div>
               
-              {/* FAQ Section */}
-              <div className="mt-10">
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">Frequently Asked Questions</h2>
-                {post.faq.map((faq) => (
-                  <FaqSection key={faq.question} title={faq.question} content={faq.answer}/>
-                ))}
-              </div>
+              {/* FAQ Section - only show when post has FAQ items */}
+              {faqItems.length > 0 && (
+                <div className="mt-10">
+                  <h2 className="text-2xl font-bold text-neutral-900 mb-4">Frequently Asked Questions</h2>
+                  <FaqSection items={faqItems} sectionId="post-faq" />
+                </div>
+              )}
               
             </article>
 

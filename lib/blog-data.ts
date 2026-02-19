@@ -13,7 +13,7 @@ export interface BlogPost {
   category: string;
   publishedAt: string;
   keywords: string;
-  faq: {
+  faq?: {
     question: string;
     answer: string;
   }[];

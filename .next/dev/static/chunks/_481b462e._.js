@@ -13,7 +13,7 @@ __turbopack_context__.s([
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "https://www.getsettime.com";
+const BASE_URL = "http://localhost:3000";
 const contactInfo = {
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
