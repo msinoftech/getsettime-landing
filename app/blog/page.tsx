@@ -181,8 +181,12 @@ export default function BlogPage() {
 
       <section className="relative pb-12">
         <FaqSection
-          title="Does GetSetTime offer online appointment booking for doctors"
-          content={`Yes, GetSetTime offers online appointment booking for doctors, wellness instructors, gym trainers, and other healthcare professionals.`}
+          items={[
+            {
+              title: "Does GetSetTime offer online appointment booking for doctors",
+              content: "Yes, GetSetTime offers online appointment booking for doctors, wellness instructors, gym trainers, and other healthcare professionals.",
+            },
+          ]}
         />
       </section>
     </>
