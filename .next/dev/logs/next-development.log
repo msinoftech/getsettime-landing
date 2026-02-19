@@ -77,3 +77,18 @@ Import trace:
 [00:10:16.721] Server  LOG     ✓ Compiled in 108ms
 [00:10:47.088] Server  LOG     ✓ Compiled in 113ms
 [00:11:43.681] Server  LOG     ✓ Compiled in 87ms
+[00:16:26.309] Server  LOG     ✓ Compiled in 83ms
+[00:16:32.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:34.417] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
+[00:16:34.582] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
+[00:17:13.810] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:14.036] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
+[00:17:57.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:58.121] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
+[00:19:25.917] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:26.086] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
+[00:20:37.904] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:24.888] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:25.136] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
+[00:23:06.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:44.458] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

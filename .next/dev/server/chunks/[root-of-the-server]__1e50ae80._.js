@@ -50,10 +50,10 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 ;
-const DEPARTMENTS_API = "https://getsettime-app-superadmin.vercel.app/api/departments";
+const DEPARTMENTS_API_URL = "https://getsettime-app-superadmin.vercel.app/api/departments";
 async function GET() {
     try {
-        const res = await fetch(DEPARTMENTS_API, {
+        const res = await fetch(DEPARTMENTS_API_URL, {
             headers: {
                 "Accept": "application/json"
             },

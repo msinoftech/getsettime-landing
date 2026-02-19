@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const DEPARTMENTS_API_URL = process.env.DEPARTMENTS_API_URL || "";
+const DEPARTMENTS_API_URL = "https://getsettime-app-superadmin.vercel.app/api/departments";
 
 export async function GET() {
   try {
