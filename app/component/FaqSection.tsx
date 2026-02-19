@@ -33,19 +33,29 @@ export const FaqSection = ({ items = [], sectionId = "faq" }: FaqSectionProps) =
             return (
               <div
                 key={index}
-                className="rounded-2xl shadow-md bg-white transition-all duration-200 overflow-hidden border border-gray-100"
+                className="rounded-2xl shadow-md bg-white transition-all duration-200 overflow-hidden border border-indigo-50"
               >
                 <button
                   type="button"
                   onClick={() => toggle(index)}
-                  className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 hover:bg-gray-50/80 transition-colors"
+                  className={`w-full text-left px-5 py-4 flex items-center justify-between gap-4 transition-colors rounded-t-2xl ${
+                    isOpen
+                      ? "bg-indigo-50 text-indigo-900 ring-1 ring-indigo-200/60"
+                      : "hover:bg-indigo-50/80"
+                  }`}
                   aria-expanded={isOpen}
                   aria-controls={`faq-content-${index}`}
                   id={`faq-trigger-${index}`}
                 >
-                  <span className="text-gray-900 font-semibold pr-2">{item.title}</span>
+                  <span className={`font-semibold pr-2 ${isOpen ? "text-indigo-900" : "text-gray-900"}`}>
+                    {item.title}
+                  </span>
                   <span
-                    className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-bold text-lg transition-transform duration-200"
+                    className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors ${
+                      isOpen
+                        ? "bg-indigo-600 text-white"
+                        : "bg-gray-100 text-gray-600"
+                    }`}
                     aria-hidden
                   >
                     {isOpen ? "−" : "+"}
@@ -59,7 +69,7 @@ export const FaqSection = ({ items = [], sectionId = "faq" }: FaqSectionProps) =
                   style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <div className="px-5 pb-5 pt-0 text-gray-600 text-md prose border-t border-gray-100">
+                    <div className="px-5 pb-5 pt-4 text-gray-600 text-md prose border-t border-indigo-50">
                       {item.content && (
                         <div
                           className="text-gray-600"

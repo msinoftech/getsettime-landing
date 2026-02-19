@@ -763,31 +763,31 @@ const FaqSection = ({ items = [], sectionId = "faq" })=>{
                 children: safeItems.map((item, index)=>{
                     const isOpen = openIndex === index;
                     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "rounded-2xl shadow-md bg-white transition-all duration-200 overflow-hidden border border-gray-100",
+                        className: "rounded-2xl shadow-md bg-white transition-all duration-200 overflow-hidden border border-indigo-50",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
                                 onClick: ()=>toggle(index),
-                                className: "w-full text-left px-5 py-4 flex items-center justify-between gap-4 hover:bg-gray-50/80 transition-colors",
+                                className: `w-full text-left px-5 py-4 flex items-center justify-between gap-4 transition-colors rounded-t-2xl ${isOpen ? "bg-indigo-50 text-indigo-900 ring-1 ring-indigo-200/60" : "hover:bg-indigo-50/80"}`,
                                 "aria-expanded": isOpen,
                                 "aria-controls": `faq-content-${index}`,
                                 id: `faq-trigger-${index}`,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-gray-900 font-semibold pr-2",
+                                        className: `font-semibold pr-2 ${isOpen ? "text-indigo-900" : "text-gray-900"}`,
                                         children: item.title
                                     }, void 0, false, {
                                         fileName: "[project]/app/component/FaqSection.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 50,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-bold text-lg transition-transform duration-200",
+                                        className: `flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg transition-colors ${isOpen ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-600"}`,
                                         "aria-hidden": true,
                                         children: isOpen ? "−" : "+"
                                     }, void 0, false, {
                                         fileName: "[project]/app/component/FaqSection.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 53,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
@@ -807,7 +807,7 @@ const FaqSection = ({ items = [], sectionId = "faq" })=>{
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "min-h-0 overflow-hidden",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "px-5 pb-5 pt-0 text-gray-600 text-md prose border-t border-gray-100",
+                                        className: "px-5 pb-5 pt-4 text-gray-600 text-md prose border-t border-indigo-50",
                                         children: item.content && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "text-gray-600",
                                             dangerouslySetInnerHTML: {
@@ -815,22 +815,22 @@ const FaqSection = ({ items = [], sectionId = "faq" })=>{
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/app/component/FaqSection.tsx",
-                                            lineNumber: 64,
+                                            lineNumber: 74,
                                             columnNumber: 25
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/app/component/FaqSection.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 72,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/app/component/FaqSection.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 71,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/app/component/FaqSection.tsx",
-                                lineNumber: 54,
+                                lineNumber: 64,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]

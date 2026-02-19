@@ -21,3 +21,56 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
 [00:03:35.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:03:35.884] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
 [00:03:35.884] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:04:45.142] Server  LOG     ✓ Compiled in 97ms
+[00:04:48.447] Server  LOG     ✓ Compiled in 97ms
+[00:04:49.645] Server  LOG     ✓ Compiled in 99ms
+[00:04:53.969] Server  LOG     ✓ Compiled in 88ms
+[00:05:06.809] Server  LOG     ✓ Compiled in 136ms
+[00:05:25.818] Server  LOG     ✓ Compiled in 142ms
+[00:05:27.719] Server  LOG     ✓ Compiled in 143ms
+[00:05:37.146] Server  LOG     ✓ Compiled in 122ms
+[00:05:38.452] Server  LOG     ✓ Compiled in 86ms
+[00:05:40.917] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:41.072] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:41.072] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:06:07.266] Server  LOG     ✓ Compiled in 102ms
+[00:06:11.035] Server  LOG     ✓ Compiled in 99ms
+[00:06:12.449] Server  LOG     ✓ Compiled in 91ms
+[00:06:20.442] Server  LOG     ✓ Compiled in 90ms
+[00:06:21.897] Server  LOG     ✓ Compiled in 102ms
+[00:06:23.718] Server  LOG     ✓ Compiled in 135ms
+[00:06:23.924] Browser ERROR   ./app/component/FaqSection.tsx:46:68
+Parsing ecmascript source code failed
+  44 |                   id={`faq-trigger-${index}`}
+  45 |                 >
+> 46 |                   <span className="text-gray-900 font-semibold pr-2">{item.title}</span>
+     |                                                                    ^^^^^^^^^^^^^^^^^^^^^
+  47 |                   <span
+  48 |                     className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-bold text-lg transition-transform duration-200"
+  49 |                     aria-hidden
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./app/component/FaqSection.tsx
+    ./app/page.tsx
+[00:06:24.551] Browser ERROR   ./app/component/FaqSection.tsx:46:68
+Parsing ecmascript source code failed
+  44 |                   id={`faq-trigger-${index}`}
+  45 |                 >
+> 46 |                   <span className="text-gray-900 font-semibold pr-2">{item.title}</span>
+     |                                                                    ^^^^^^^^^^^^^^^^^^^^^
+  47 |                   <span
+  48 |                     className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-bold text-lg transition-transform duration-200"
+  49 |                     aria-hidden
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./app/component/FaqSection.tsx
+    ./app/page.tsx
+[00:06:32.609] Server  LOG     ✓ Compiled in 115ms
+[00:06:34.043] Server  LOG     ✓ Compiled in 100ms
+[00:07:22.012] Server  LOG     ✓ Compiled in 143ms
