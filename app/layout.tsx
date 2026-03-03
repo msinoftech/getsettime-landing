@@ -16,21 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Free Online Appointment Scheduling Software | getmeetingtime",
-  description: "getmeetingtime is the modern scheduling platform that makes “finding time” a breeze. When connecting is easy, your teams can get more done.",
+  title: "Smart Scheduling App for Appointment Automation",
+  description: "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.",
 };
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
-
-const GTM_SCRIPT = [
-  "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':",
-  "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],",
-  "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=",
-  "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);",
-  "})(window,document,'script','dataLayer','",
-  GTM_ID,
-  "');",
-].join("");
 
 export default function RootLayout({
   children,
@@ -42,20 +31,22 @@ export default function RootLayout({
       
       <head>
         {/* Google Tag Manager — injects gtm.js (runs from head) */}
-          <Script id="gtm" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: GTM_SCRIPT }} />
+        <Script id="gtm-script" strategy="beforeInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WBQPQS8H');
+          `}
+        </Script>
       </head>
 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         
         {/* Google Tag Manager (noscript) fallback — first thing under body */}
           <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height={0}
-              width={0}
-              style={{ display: "none" as const, visibility: "hidden" as const }}
-              title="Google Tag Manager"
-            />
+            <iframe src={`https://www.googletagmanager.com/ns.html?id=GTM-WBQPQS8H`} height={0} width={0} style={{ display: "none", visibility: "hidden" }} title="Google Tag Manager"/>
           </noscript>
 
         <Navbar />
