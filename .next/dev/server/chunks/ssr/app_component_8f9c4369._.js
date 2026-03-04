@@ -76,7 +76,7 @@ function HeroSection() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-neutral-600",
-                                            children: "GetSetTime is the smart app for scheduling appointments trusted by 5,000+ doctors, salon owners, and wellness professionals. Simple to set up in minutes. Smart enough to run itself."
+                                            children: "GetSetTime is the smart app for scheduling appointments trusted by 5,000+ Doctors, Salon Owners, and Wellness Professionals. Simple to set up in minutes. Smart enough to run itself."
                                         }, void 0, false, {
                                             fileName: "[project]/app/component/HeroSection.tsx",
                                             lineNumber: 27,
@@ -1149,7 +1149,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 ;
 const SectionTitle = ({ eyebrow, title, desc })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mx-auto max-w-4xl space-y-2 text-center",
+        className: "mx-auto space-y-2 text-center",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "text-xs font-semibold tracking-widest text-indigo-600 uppercase",
@@ -1921,8 +1921,8 @@ function Features() {
                                 className: "flex flex-col items-start",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SectionTitle, {
                                     eyebrow: "Online Appointment and Scheduling",
-                                    title: "Intelligent scheduling software built for real results",
-                                    desc: "ExReplace manual scheduling havoc and operational complexity with world-class appointment management technology."
+                                    title: "Intelligent Scheduling Software Built for Real Results",
+                                    desc: "Replace manual scheduling havoc and operational complexity with world-class appointment management technology."
                                 }, void 0, false, {
                                     fileName: "[project]/app/component/Features.tsx",
                                     lineNumber: 232,
@@ -2206,7 +2206,7 @@ function Support() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "mt-2 text-neutral-600",
-                                        children: "Our support team is always available to ensure the scheduling system runs smoothly so that no appointment is missed. (Our support team is available around the clock to keep the scheduling system running smoothly, ensuring that every appointment is securely booked and never lost.)"
+                                        children: "Our support team is always available to ensure the scheduling system runs smoothly so that no appointment is missed."
                                     }, void 0, false, {
                                         fileName: "[project]/app/component/Support.tsx",
                                         lineNumber: 13,
@@ -2221,7 +2221,7 @@ function Support() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                 className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
                                 children: [
-                                    "Instant AI assistant",
+                                    "Instant response from our support team",
                                     "Live specialist guidance available",
                                     "Priority support for urgent issues",
                                     "Multiple contact channels— Chat, email, phone"
@@ -3284,7 +3284,7 @@ function TrustedCompanies() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900",
-                            children: "Integrated with leading apps worldwide"
+                            children: "Integrated with Leading Apps Worldwide"
                         }, void 0, false, {
                             fileName: "[project]/app/component/TrustedCompanies.tsx",
                             lineNumber: 73,
@@ -3292,7 +3292,7 @@ function TrustedCompanies() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2 text-neutral-600 max-w-2xl mx-auto",
-                            children: "Join thousands of companies that rely on our scheduling platform to power their business"
+                            children: "Join thousands of Companies that rely on our scheduling platform to power their business"
                         }, void 0, false, {
                             fileName: "[project]/app/component/TrustedCompanies.tsx",
                             lineNumber: 74,

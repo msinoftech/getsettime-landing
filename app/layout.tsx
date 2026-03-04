@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="smooth-scroll select-none">
+    <html lang="en" className="smooth-scroll">
       
       <head>
         {/* Google Tag Manager — injects gtm.js (runs from head) */}

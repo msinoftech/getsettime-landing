@@ -10,12 +10,12 @@ export default function Support() {
              <div>
                <div className="text-xs font-semibold tracking-widest uppercase">ALWAYS HERE FOR YOU</div>
                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">Expertly 24/7 Dedicated Support When You Need</h2>
-               <p className="mt-2 text-neutral-600">Our support team is always available to ensure the scheduling system runs smoothly so that no appointment is missed. (Our support team is available around the clock to keep the scheduling system running smoothly, ensuring that every appointment is securely booked and never lost.)</p>
+               <p className="mt-2 text-neutral-600">Our support team is always available to ensure the scheduling system runs smoothly so that no appointment is missed.</p>
              </div>
 
              {/* Feature bullets */}
              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-               {["Instant AI assistant", "Live specialist guidance available", "Priority support for urgent issues", "Multiple contact channels— Chat, email, phone"].map((item) => (
+               {["Instant response from our support team","Live specialist guidance available", "Priority support for urgent issues", "Multiple contact channels— Chat, email, phone"].map((item) => (
                  <li key={item} className="flex items-start gap-3 text-sm text-neutral-700">
                    <span className="mt-1 inline-flex w-5 h-5 items-center justify-center rounded-full bg-indigo-600 text-white" aria-hidden="true">✓</span>
                    <span>{item}</span>

@@ -34,7 +34,7 @@ export default function Footer() {
             <div className="bg-indigo-600 rounded-3xl p-8 lg:p-12 text-center shadow-2xl">
               <div className="mx-auto max-w-3xl">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Ready for GetSetTime To Manage Your Appointments</h2>
-                <p className="text-lg text-white/90 mb-8">Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders, payments, and more.</p>
+                <p className="text-lg text-white/90 mb-8">Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href={`${BASE_URL}/contact-us`} className="bg-white text-indigo-600 hover:bg-white/90 font-semibold px-8 py-4 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                     Start a Free Trial

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
 
 export const SectionTitle: FC<{ eyebrow: string; title: string; desc?: string }> = ({ eyebrow, title, desc }) => (
-  <div className="mx-auto max-w-4xl space-y-2 text-center">
+  <div className="mx-auto space-y-2 text-center">
     <div className="text-xs font-semibold tracking-widest text-indigo-600 uppercase">{eyebrow}</div>
     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">{title}</h2>
     {desc ? ( <p className="text-lg text-neutral-600">{desc}</p> ) : null}
@@ -231,8 +231,8 @@ export default function Features() {
               {/* Features title */}
               <SectionTitle
                 eyebrow="Online Appointment and Scheduling"
-                title="Intelligent scheduling software built for real results"
-                desc="ExReplace manual scheduling havoc and operational complexity with world-class appointment management technology."
+                title="Intelligent Scheduling Software Built for Real Results"
+                desc="Replace manual scheduling havoc and operational complexity with world-class appointment management technology."
               />
             </div>
 

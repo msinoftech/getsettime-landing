@@ -27,7 +27,7 @@ __turbopack_context__.s([
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://www.getsettime.com";
 const contactInfo = {
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
@@ -287,8 +287,12 @@ const blogPosts = [
         keywords: "",
         faq: [
             {
-                question: "Does GetSetTime offer online appointment booking for doctors",
-                answer: "Yes, GetSetTime offers online appointment booking for doctors, wellness instructors, gym trainers, and other healthcare professionals."
+                question: "Meaning of an appointment scheduling system for doctors?",
+                answer: "A designed platform to manage the routine tasks such as booking, rescheduling, and confirmation of patient visits in automation mode. Enabling 24/7 access for patients to schedule appointments, typically through a website or app. "
+            },
+            {
+                question: "What are the key benefits for the healthcare specialist of using booking software?",
+                answer: "With automation, this system not only eliminates the booking errors by manual entry but also optimizes staff availability, minimizes waiting room crowding, and improves efficiency. Its user-friendliness and self-service booking enhance the patient experience."
             }
         ]
     }
@@ -747,8 +751,12 @@ function BlogPage() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "relative pb-12",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$component$2f$FaqSection$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FaqSection"], {
-                    title: "Does GetSetTime offer online appointment booking for doctors",
-                    content: `Yes, GetSetTime offers online appointment booking for doctors, wellness instructors, gym trainers, and other healthcare professionals.`
+                    items: [
+                        {
+                            title: "Does GetSetTime offer online appointment booking for doctors",
+                            content: "Yes, GetSetTime offers online appointment booking for doctors, wellness instructors, gym trainers, and other healthcare professionals."
+                        }
+                    ]
                 }, void 0, false, {
                     fileName: "[project]/app/blog/page.tsx",
                     lineNumber: 183,

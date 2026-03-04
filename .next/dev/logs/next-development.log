@@ -1,97 +1,87 @@
-[00:00:01.439] Server  LOG     ✓ Ready in 1050ms
-[00:00:03.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:04.160] Browser WARN    Image with src "/man.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:05.877] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.275] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:17.188] Browser ERROR   uncaughtError: TypeError: can't access property "map", items is undefined
-[00:02:16.842] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:02:16.856] Server  LOG     ✓ Compiled in 695ms
-[00:02:17.003] Server  ERROR   ⨯ TypeError: Cannot read properties of undefined (reading 'map')
-[00:02:17.220] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:18.199] Browser ERROR   uncaughtError: TypeError: can't access property "map", items is undefined
-[00:02:27.375] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:02:27.566] Server  LOG     ✓ Compiled in 133ms
-[00:02:27.809] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:31.426] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:02:31.426] Browser WARN    Image with src "/schedule-appointments.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:02:36.727] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:02.538] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:35.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:35.884] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:03:35.884] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:04:45.142] Server  LOG     ✓ Compiled in 97ms
-[00:04:48.447] Server  LOG     ✓ Compiled in 97ms
-[00:04:49.645] Server  LOG     ✓ Compiled in 99ms
-[00:04:53.969] Server  LOG     ✓ Compiled in 88ms
-[00:05:06.809] Server  LOG     ✓ Compiled in 136ms
-[00:05:25.818] Server  LOG     ✓ Compiled in 142ms
-[00:05:27.719] Server  LOG     ✓ Compiled in 143ms
-[00:05:37.146] Server  LOG     ✓ Compiled in 122ms
-[00:05:38.452] Server  LOG     ✓ Compiled in 86ms
-[00:05:40.917] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:41.072] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:05:41.072] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:06:07.266] Server  LOG     ✓ Compiled in 102ms
-[00:06:11.035] Server  LOG     ✓ Compiled in 99ms
-[00:06:12.449] Server  LOG     ✓ Compiled in 91ms
-[00:06:20.442] Server  LOG     ✓ Compiled in 90ms
-[00:06:21.897] Server  LOG     ✓ Compiled in 102ms
-[00:06:23.718] Server  LOG     ✓ Compiled in 135ms
-[00:06:23.924] Browser ERROR   ./app/component/FaqSection.tsx:46:68
+[00:00:03.825] Server  LOG     ✓ Ready in 2.9s
+[00:00:07.107] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:59.089] Server  LOG     ✓ Compiled in 120ms
+[00:06:02.008] Server  LOG     ✓ Compiled in 130ms
+[00:06:06.748] Server  LOG     ✓ Compiled in 95ms
+[00:06:08.311] Server  LOG     ✓ Compiled in 108ms
+[00:07:11.902] Server  LOG     ✓ Compiled in 120ms
+[00:07:13.347] Server  LOG     ✓ Compiled in 125ms
+[00:07:15.507] Server  LOG     ✓ Compiled in 93ms
+[00:11:53.579] Server  LOG     ✓ Compiled in 132ms
+[00:11:55.072] Server  LOG     ✓ Compiled in 157ms
+[00:11:56.233] Server  LOG     ✓ Compiled in 92ms
+[00:12:02.873] Server  LOG     ✓ Compiled in 93ms
+[00:12:15.788] Server  LOG     ✓ Compiled in 96ms
+[00:13:31.355] Server  LOG     ✓ Compiled in 103ms
+[00:19:58.137] Server  LOG     ✓ Compiled in 116ms
+[00:20:26.745] Server  LOG     ✓ Compiled in 116ms
+[00:20:28.164] Server  LOG     ✓ Compiled in 90ms
+[00:20:31.500] Server  LOG     ✓ Compiled in 93ms
+[00:20:37.040] Server  LOG     ✓ Compiled in 107ms
+[01:10:08.615] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:12:30.593] Server  LOG     ✓ Compiled in 102ms
+[01:12:30.702] Browser ERROR   ./app/component/Support.tsx:18:20
 Parsing ecmascript source code failed
-  44 |                   id={`faq-trigger-${index}`}
-  45 |                 >
-> 46 |                   <span className="text-gray-900 font-semibold pr-2">{item.title}</span>
-     |                                                                    ^^^^^^^^^^^^^^^^^^^^^
-  47 |                   <span
-  48 |                     className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-bold text-lg transition-transform duration-200"
-  49 |                     aria-hidden
+  16 |              {/* Feature bullets */}
+  17 |              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+> 18 |                {["""Live specialist guidance available", "Priority support for urgent issues", "Multiple contact channels— Chat, email, phone"].map((item) => (
+     |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 |                  <li key={item} className="flex items-start gap-3 text-sm text-neutral-700">
+  20 |                    <span className="mt-1 inline-flex w-5 h-5 items-center justify-center rounded-full bg-indigo-600 text-white" aria-hidden="true">✓</span>
+  21 |                    <span>{item}</span>
 
-Unterminated string constant
+Expected '</', got 'string literal ("Live specialist guidance available", "Live specialist guidance available")'
 
 Import trace:
   Server Component:
-    ./app/component/FaqSection.tsx
+    ./app/component/Support.tsx
     ./app/page.tsx
-[00:06:24.551] Browser ERROR   ./app/component/FaqSection.tsx:46:68
+[01:12:33.743] Server  LOG     ✓ Compiled in 133ms
+[01:14:04.972] Server  LOG     ✓ Compiled in 139ms
+[01:14:07.031] Server  LOG     ✓ Compiled in 94ms
+[01:35:15.576] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:35:44.130] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:36:00.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:36:02.668] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[01:43:07.815] Browser ERROR   uncaughtError: Error: Cannot prefetch 'http://localhost:3001contact-us' because it cannot be converted to a URL.
+[01:43:07.815] Browser ERROR   uncaughtError: Error: Cannot prefetch 'http://localhost:3001contact-us' because it cannot be converted to a URL.
+[01:43:44.859] Server  LOG     ✓ Compiled in 125ms
+[02:03:04.263] Server  LOG     ✓ Compiled in 113ms
+[02:03:11.844] Server  LOG     ✓ Compiled in 84ms
+[02:03:16.383] Server  LOG     ✓ Compiled in 84ms
+[02:03:17.264] Browser ERROR   ./lib/blog-data.ts:238:7
 Parsing ecmascript source code failed
-  44 |                   id={`faq-trigger-${index}`}
-  45 |                 >
-> 46 |                   <span className="text-gray-900 font-semibold pr-2">{item.title}</span>
-     |                                                                    ^^^^^^^^^^^^^^^^^^^^^
-  47 |                   <span
-  48 |                     className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-bold text-lg transition-transform duration-200"
-  49 |                     aria-hidden
+  236 |         answer: "A designed platform to manage the routine tasks such as booking, rescheduling, and confirmation of patient visits in automation mode. Enabling 24/7 access for patients to schedule appointments, typically through a website or app. "
+  237 |       }
+> 238 |       {
+      |       ^
+  239 |         question: "Meaning of an appointment scheduling system for doctors?",
+  240 |         answer: "A designed platform to manage the routine tasks such as booking, rescheduling, and confirmation of patient visits in automation mode. Enabling 24/7 access for patients to schedule appointments, typically through a website or app. "
+  241 |       }
 
-Unterminated string constant
+Expected ',', got '{'
 
-Import trace:
+Import traces:
   Server Component:
-    ./app/component/FaqSection.tsx
-    ./app/page.tsx
-[00:06:32.609] Server  LOG     ✓ Compiled in 115ms
-[00:06:34.043] Server  LOG     ✓ Compiled in 100ms
-[00:07:22.012] Server  LOG     ✓ Compiled in 143ms
-[00:10:16.721] Server  LOG     ✓ Compiled in 108ms
-[00:10:47.088] Server  LOG     ✓ Compiled in 113ms
-[00:11:43.681] Server  LOG     ✓ Compiled in 87ms
-[00:16:26.309] Server  LOG     ✓ Compiled in 83ms
-[00:16:32.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:34.417] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
-[00:16:34.582] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
-[00:17:13.810] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:14.036] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
-[00:17:57.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:58.121] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
-[00:19:25.917] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:26.086] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
-[00:20:37.904] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:24.888] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:25.136] Server  ERROR   Departments API error: TypeError: Failed to parse URL from 
-[00:23:06.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:44.458] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:25:10.088] Server  LOG     ✓ Compiled in 108ms
-[00:25:20.951] Server  LOG     ✓ Compiled in 100ms
-[00:25:37.939] Server  LOG     ✓ Compiled in 92ms
+    ./lib/blog-data.ts
+    ./app/blog/page.tsx
+
+  Client Component Browser:
+    ./lib/blog-data.ts [Client Component Browser]
+    ./app/component/BlogList.tsx [Client Component Browser]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./lib/blog-data.ts [Client Component SSR]
+    ./app/component/BlogList.tsx [Client Component SSR]
+    ./app/component/BlogList.tsx [Server Component]
+    ./app/blog/page.tsx [Server Component]
+[02:03:18.114] Server  LOG     ✓ Compiled in 102ms
+[02:03:25.055] Server  LOG     ✓ Compiled in 90ms
+[02:03:38.152] Server  LOG     ✓ Compiled in 93ms
+[02:03:47.719] Browser WARN    Image with src "/schedule-appointments.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[03:30:08.721] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:30:08.888] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[03:30:08.888] Browser WARN    Image with src "/schedule-appointments.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[03:30:11.581] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

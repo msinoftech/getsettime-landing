@@ -231,8 +231,12 @@ const blogPosts = [
         keywords: "",
         faq: [
             {
-                question: "Does GetSetTime offer online appointment booking for doctors",
-                answer: "Yes, GetSetTime offers online appointment booking for doctors, wellness instructors, gym trainers, and other healthcare professionals."
+                question: "Meaning of an appointment scheduling system for doctors?",
+                answer: "A designed platform to manage the routine tasks such as booking, rescheduling, and confirmation of patient visits in automation mode. Enabling 24/7 access for patients to schedule appointments, typically through a website or app. "
+            },
+            {
+                question: "What are the key benefits for the healthcare specialist of using booking software?",
+                answer: "With automation, this system not only eliminates the booking errors by manual entry but also optimizes staff availability, minimizes waiting room crowding, and improves efficiency. Its user-friendliness and self-service booking enhance the patient experience."
             }
         ]
     }

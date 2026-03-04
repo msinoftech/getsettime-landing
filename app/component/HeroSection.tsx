@@ -24,7 +24,7 @@ export default function HeroSection() {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">Your Next-Gen</span>{" "}Appointment Booking System
               </h1>
 
-              <p className="text-neutral-600">GetSetTime is the smart app for scheduling appointments trusted by 5,000+ doctors, salon owners, and wellness professionals. Simple to set up in minutes. Smart enough to run itself.</p>
+              <p className="text-neutral-600">GetSetTime is the smart app for scheduling appointments trusted by 5,000+ Doctors, Salon Owners, and Wellness Professionals. Simple to set up in minutes. Smart enough to run itself.</p>
             </div>
 
             {/* Hero buttons */}

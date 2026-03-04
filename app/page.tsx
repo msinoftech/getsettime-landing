@@ -181,7 +181,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* left: Content */}
             <div className="lg:col-span-6 order-1 lg:order-none space-y-6">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">Get every booking on your terms (Your Business, your rules)</h3>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">Get Every Booking on Your Terms</h3>
               <p className="text-neutral-600">GetSetTime lets you manage your brand, appointments, staff, and resources on an easy-to-use dashboard with a few clicks, automating the details so every appointment feels professional.</p>
               <div className="relative">
                 <ul className="space-y-4 w-full">
@@ -226,8 +226,8 @@ export default function Home() {
               content: `GetSetTime is a simple-to-use scheduling software for the service-based professionals, including doctors, clinics, salons, and others whose day revolves around booking appointments. Instead of playing phone tag or manually managing a chaotic calendar, it lets clients book themselves online while the system handles the rest. It syncs seamlessly with Calendar and operational tools, keeping everything in one place, and automatically sends booking confirmations and reminders via WhatsApp and SMS — keeping both businesses and clients in the loop and reducing no-shows. In short, it takes the admin headache out of scheduling so you can focus on actually serving your clients.`,
             },
             {
-              title: "Can GetSetTime integrate with Google Calendar and Apple Calendar?",
-              content: `GetSetTime supports real-time integration with Google Calendar and Apple Calendar, ensuring centralized scheduling and accurate availability updates. This prevents scheduling conflicts and keeps all appointments synchronized across devices and platforms.`,
+              title: "Can GetSetTime integrate with Google Calendar?",
+              content: `GetSetTime supports real-time integration with Google Calendar, ensuring centralized scheduling and accurate availability updates. This prevents scheduling conflicts and keeps all appointments synchronized across devices and platforms.`,
             },
             {
               title: "How does GetSetTime reduce no-shows and manual scheduling work?",
