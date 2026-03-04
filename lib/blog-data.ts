@@ -125,7 +125,7 @@ export const blogPosts: BlogPost[] = [
      
      <h2>What Is an Online Doctor's Appointment Booking System?</h2>
      <p>A booking system is a digital tool for doctors that, on one hand, schedules appointments automatically, and on the other, allows patients to book their visits at available times online. As a result, neither phone calls nor long queues.</p>
-     <p>Patients visit the booking link via the Facebook page, GBP (Google Business Page), or the website. Then pick a doctor, see available slots, and confirm instantly. Otherwise, the doctors or receptionists juggled attending calls and managing queues during peak hours. The system updates its calendar, whether Google or Microsoft, automatically, as GetSetTime allows. It works like an always-on receptionist.</p>
+     <p>Patients visit the booking link via the Facebook page, GBP (Google Business Page), or the website. Then pick a doctor, see available slots, and confirm instantly. Otherwise, the doctors or receptionists juggled attending calls and managing queues during peak hours. The system updates Google calendar automatically as GetSetTime allows. It works like an always-on receptionist.</p>
      <p>These systems come as web apps, mobile apps, or embedded pages. Popular ones integrated with online payments, via Card, online banking, or UPI(Only in India), and also support the regional languages apart from English.</p>
      <p>Beginners start with free trials—no tech skills needed.</p>
      <p>Key parts include:</p>
