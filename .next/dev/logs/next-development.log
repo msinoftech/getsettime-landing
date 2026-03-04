@@ -85,3 +85,6 @@ Import traces:
 [03:30:08.888] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
 [03:30:08.888] Browser WARN    Image with src "/schedule-appointments.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
 [03:30:11.581] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:35:50.157] Server  LOG     ✓ Compiled in 108ms
+[03:35:51.173] Server  LOG     ✓ Compiled in 91ms
+[03:35:55.328] Server  LOG     ✓ Compiled in 81ms
