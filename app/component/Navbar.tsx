@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useCallback, useEffect } from "react";
-import { BASE_URL, socialLinks } from "@/lib/config";
+import { BASE_URL, socialLinks, LOGIN_URL } from "@/lib/config";
 import Logo from "./Logo";
 
 const primaryItems = [
@@ -79,7 +79,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <Link href={`${BASE_URL}`} className="flex-1 text-sm text-indigo-600 cursor-pointer transition-colors px-6 py-2.5 rounded-xl bg-indigo-500/10">Sign In</Link>
+            <Link href={`${LOGIN_URL}`} target="_blank" className="flex-1 text-sm text-indigo-600 cursor-pointer transition-colors px-6 py-2.5 rounded-xl bg-indigo-500/10">Sign In</Link>
             <Link href={`${BASE_URL}/contact-us`} className="inline-flex items-center rounded-xl bg-indigo-600 text-white text-sm px-6 py-2.5 shadow-md hover:scale-105 transition-all duration-300">Get Started Free</Link>
           </div>
 
@@ -155,7 +155,7 @@ export default function Navbar() {
 
               {/* Action buttons */}
               <div className="px-6 py-6 space-y-3 mt-auto">
-                <Link href={`${BASE_URL}`} className="flex items-center justify-center w-full px-6 py-3.5 rounded-xl text-sm font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]" onClick={() => setOpen(false)}>Sign In</Link>
+                <Link href={`${LOGIN_URL}`} target="_blank" className="flex items-center justify-center w-full px-6 py-3.5 rounded-xl text-sm font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]" onClick={() => setOpen(false)}>Sign In</Link>
                 <Link href={`${BASE_URL}/contact-us`} className="flex items-center justify-center w-full px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]" onClick={() => setOpen(false)}>Get Started Free
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
