@@ -92,7 +92,8 @@ function HeroSection() {
                                     className: "mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-in-up animation-delay-200",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BASE_URL"]}`,
+                                            href: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LOGIN_URL"]}`,
+                                            target: "_blank",
                                             className: "bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-md px-6 py-3 rounded-2xl flex items-center justify-center gap-3",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -2741,10 +2742,10 @@ const CheckIcon = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$proje
     }, ("TURBOPACK compile-time value", void 0));
 _c = CheckIcon;
 const PricingCard = ({ tier, isAnnual })=>{
-    const annualDiscount = tier.name !== "Starter" ? 0.8 : 1; // 20% discount for annual billing
+    const annualDiscount = tier.name !== "Starter" ? 0.9 : 1; // 10% discount for annual billing
     const displayPrice = isAnnual && tier.price !== "Free" ? `${Math.round(parseInt(tier.price.replace('₹', '')) * annualDiscount)}` : tier.price;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `relative h-full rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${tier.popular ? 'bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl shadow-2xl ring-1 ring-indigo-500/20 scale-105' : 'bg-white/60 backdrop-blur-md shadow-md ring-1 ring-gray-400/20'}`,
+        className: `pricing-card relative h-full rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${tier.popular ? 'bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl shadow-2xl ring-1 ring-indigo-500/20 scale-105' : 'bg-white/60 backdrop-blur-md shadow-md ring-1 ring-gray-400/20'}`,
         children: [
             tier.popular && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -top-4 left-1/2 -translate-x-1/2",
@@ -2777,8 +2778,18 @@ const PricingCard = ({ tier, isAnnual })=>{
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: "text-4xl font-bold text-neutral-900",
-                                children: displayPrice
-                            }, void 0, false, {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "rate-sign",
+                                        children: "₹"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/component/Pricing.tsx",
+                                        lineNumber: 40,
+                                        columnNumber: 65
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    displayPrice
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/app/component/Pricing.tsx",
                                 lineNumber: 40,
                                 columnNumber: 11
@@ -2787,7 +2798,7 @@ const PricingCard = ({ tier, isAnnual })=>{
                                 className: "text-neutral-600 ml-1",
                                 children: [
                                     "/",
-                                    isAnnual ? 'year' : tier.period
+                                    isAnnual ? 'year + GST' : tier.period
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/component/Pricing.tsx",
@@ -2796,7 +2807,7 @@ const PricingCard = ({ tier, isAnnual })=>{
                             }, ("TURBOPACK compile-time value", void 0)),
                             isAnnual && tier.price !== "Free" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-sm text-emerald-600 font-medium mt-1",
-                                children: "Save 20% annually"
+                                children: "Save 10% annually"
                             }, void 0, false, {
                                 fileName: "[project]/app/component/Pricing.tsx",
                                 lineNumber: 47,
@@ -2912,7 +2923,7 @@ const BillingToggle = ({ isAnnual, onChange })=>/*#__PURE__*/ (0, __TURBOPACK__i
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-full font-medium",
-                children: "Save 20%"
+                children: "Save 10%"
             }, void 0, false, {
                 fileName: "[project]/app/component/Pricing.tsx",
                 lineNumber: 76,
@@ -2942,13 +2953,13 @@ function Pricing() {
                 "Basic reporting",
                 "Community support"
             ],
-            buttonText: "Get Started Free",
-            buttonLink: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BASE_URL"]}/contact-us`
+            buttonText: "Start Free Trial",
+            buttonLink: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LOGIN_URL"]}`
         },
         {
             name: "Professional",
-            price: "₹999",
-            period: "month",
+            price: "1499",
+            period: "month + GST",
             description: "Ideal for growing businesses that need advanced features and customization.",
             features: [
                 "Unlimited appointments",
@@ -2962,13 +2973,13 @@ function Pricing() {
                 "Priority support"
             ],
             popular: true,
-            buttonText: "Start Free Trial",
-            buttonLink: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BASE_URL"]}`
+            buttonText: "Get Started",
+            buttonLink: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BASE_URL"]}/contact-us`
         },
         {
             name: "Enterprise",
-            price: "₹1999",
-            period: "month",
+            price: "2999",
+            period: "month + GST",
             description: "Per User for large organizations requiring advanced security, compliance, and support.",
             features: [
                 "Everything in Professional",
@@ -2981,7 +2992,7 @@ function Pricing() {
                 "24/7 phone support",
                 "SLA guarantee"
             ],
-            buttonText: "Contact Sales",
+            buttonText: "Get Started",
             buttonLink: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BASE_URL"]}/contact-us`
         }
     ];
@@ -3072,7 +3083,7 @@ function Pricing() {
                                 className: "flex flex-col sm:flex-row gap-4 justify-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        href: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BASE_URL"]}/contact-us`,
+                                        href: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LOGIN_URL"]}`,
                                         className: "bg-indigo-600 text-white px-8 py-3 rounded-2xl",
                                         children: "Schedule a Demo"
                                     }, void 0, false, {

@@ -21,6 +21,8 @@ __turbopack_context__.s([
     ()=>APP_NAME,
     "BASE_URL",
     ()=>BASE_URL,
+    "LOGIN_URL",
+    ()=>LOGIN_URL,
     "contactInfo",
     ()=>contactInfo,
     "socialLinks",
@@ -28,6 +30,7 @@ __turbopack_context__.s([
 ]);
 const APP_NAME = "GetSetTime";
 const BASE_URL = "https://www.getsettime.com";
+const LOGIN_URL = "https://app.getsettime.com";
 const contactInfo = {
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
@@ -109,7 +112,7 @@ const blogPosts = [
       <p><b>Smart reminders</b> can cut no-shows up to one-third. Send alerts at the time you set. Allow customization of messages for branding with your business name, tagline, and other elements.</p>
       
       <h2>Calendar Sync and Customization</h2>
-      <p>Link Google, Apple, or Outlook calendars simultaneously while avoiding overlaps. Set a buffer time between appointments.</p>
+      <p>Link Google or Outlook calendars simultaneously while avoiding overlaps. Set a buffer time between appointments.</p>
       <ul>
       <li>Custom forms capture client details.</li>
       <li>Payment integration secures deposits.</li>
@@ -180,7 +183,7 @@ const blogPosts = [
      
      <h2>What Is an Online Doctor's Appointment Booking System?</h2>
      <p>A booking system is a digital tool for doctors that, on one hand, schedules appointments automatically, and on the other, allows patients to book their visits at available times online. As a result, neither phone calls nor long queues.</p>
-     <p>Patients visit the booking link via the Facebook page, GBP (Google Business Page), or the website. Then pick a doctor, see available slots, and confirm instantly. Otherwise, the doctors or receptionists juggled attending calls and managing queues during peak hours. The system updates its calendar, whether Google, Apple, or Microsoft, automatically, as GetSetTime allows. It works like an always-on receptionist.</p>
+     <p>Patients visit the booking link via the Facebook page, GBP (Google Business Page), or the website. Then pick a doctor, see available slots, and confirm instantly. Otherwise, the doctors or receptionists juggled attending calls and managing queues during peak hours. The system updates Google calendar automatically as GetSetTime allows. It works like an always-on receptionist.</p>
      <p>These systems come as web apps, mobile apps, or embedded pages. Popular ones integrated with online payments, via Card, online banking, or UPI(Only in India), and also support the regional languages apart from English.</p>
      <p>Beginners start with free trials—no tech skills needed.</p>
      <p>Key parts include:</p>

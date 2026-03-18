@@ -4241,6 +4241,10 @@ body {
   }
 }
 
+.pricing-card:first-child .rate-sign {
+  display: none;
+}
+
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

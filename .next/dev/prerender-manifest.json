@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "bbce54d701a5f2462b36c1c72feb33dd",
-    "previewModeSigningKey": "4f8313ac93e15995f3259d3ef34b7b908e273e60aa22a2435204d79699d54240",
-    "previewModeEncryptionKey": "bf4661b7bd69eeaca7603fd8b87a3fce3e43b83c425a8d0e12aa9edab3556aff"
-  }
-}
+{"version":4,"routes":{"/blog/smart-way-to-schedule-appointments-with-clients":{},"/blog/concept-of-an-online-doctors-appointment-booking-system-for-beginners":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"bbce54d701a5f2462b36c1c72feb33dd","previewModeSigningKey":"4f8313ac93e15995f3259d3ef34b7b908e273e60aa22a2435204d79699d54240","previewModeEncryptionKey":"bf4661b7bd69eeaca7603fd8b87a3fce3e43b83c425a8d0e12aa9edab3556aff"}}

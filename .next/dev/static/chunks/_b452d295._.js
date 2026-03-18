@@ -53,7 +53,7 @@ const blogPosts = [
       <p><b>Smart reminders</b> can cut no-shows up to one-third. Send alerts at the time you set. Allow customization of messages for branding with your business name, tagline, and other elements.</p>
       
       <h2>Calendar Sync and Customization</h2>
-      <p>Link Google, Apple, or Outlook calendars simultaneously while avoiding overlaps. Set a buffer time between appointments.</p>
+      <p>Link Google or Outlook calendars simultaneously while avoiding overlaps. Set a buffer time between appointments.</p>
       <ul>
       <li>Custom forms capture client details.</li>
       <li>Payment integration secures deposits.</li>
@@ -124,7 +124,7 @@ const blogPosts = [
      
      <h2>What Is an Online Doctor's Appointment Booking System?</h2>
      <p>A booking system is a digital tool for doctors that, on one hand, schedules appointments automatically, and on the other, allows patients to book their visits at available times online. As a result, neither phone calls nor long queues.</p>
-     <p>Patients visit the booking link via the Facebook page, GBP (Google Business Page), or the website. Then pick a doctor, see available slots, and confirm instantly. Otherwise, the doctors or receptionists juggled attending calls and managing queues during peak hours. The system updates its calendar, whether Google, Apple, or Microsoft, automatically, as GetSetTime allows. It works like an always-on receptionist.</p>
+     <p>Patients visit the booking link via the Facebook page, GBP (Google Business Page), or the website. Then pick a doctor, see available slots, and confirm instantly. Otherwise, the doctors or receptionists juggled attending calls and managing queues during peak hours. The system updates Google calendar automatically as GetSetTime allows. It works like an always-on receptionist.</p>
      <p>These systems come as web apps, mobile apps, or embedded pages. Popular ones integrated with online payments, via Card, online banking, or UPI(Only in India), and also support the regional languages apart from English.</p>
      <p>Beginners start with free trials—no tech skills needed.</p>
      <p>Key parts include:</p>
@@ -684,17 +684,17 @@ function BlogSidebar({ currentPostSlug, relatedPosts = [] }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-white text-sm mb-4",
-                                children: "Transform your scheduling with GetSetTime. Start your free trial today."
+                                children: "Transform your scheduling with GetSetTime. Get started today."
                             }, void 0, false, {
                                 fileName: "[project]/app/component/BlogSidebar.tsx",
                                 lineNumber: 140,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BASE_URL"]}/contact-us`,
+                                href: `${__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LOGIN_URL"]}`,
                                 className: "inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200",
                                 children: [
-                                    "Start Free Trial",
+                                    "Get Started",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                         className: "w-4 h-4",
                                         fill: "none",

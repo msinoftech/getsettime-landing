@@ -1,5 +1,5 @@
 "use client";
-import { BASE_URL } from "@/lib/config";
+import { BASE_URL, LOGIN_URL } from "@/lib/config";
 import Link from "next/link";
 import type { FC } from "react";
 import { useState } from "react";
@@ -22,11 +22,11 @@ export const CheckIcon: FC = () => (
 );
 
 export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier, isAnnual }) => {
-  const annualDiscount = tier.name !== "Starter" ? 0.8 : 1; // 20% discount for annual billing
+  const annualDiscount = tier.name !== "Starter" ? 0.9 : 1; // 10% discount for annual billing
   const displayPrice = isAnnual && tier.price !== "Free" ? `${Math.round(parseInt(tier.price.replace('₹', '')) * annualDiscount)}` : tier.price;
 
   return (
-    <div className={`relative h-full rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
+    <div className={`pricing-card relative h-full rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
       tier.popular ? 'bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl shadow-2xl ring-1 ring-indigo-500/20 scale-105' : 'bg-white/60 backdrop-blur-md shadow-md ring-1 ring-gray-400/20' }`}>
       {tier.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -37,14 +37,14 @@ export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier
       <div className="text-center">
         <h3 className="text-xl font-bold text-neutral-900 mb-2">{tier.name}</h3>
         <div className="mb-4">
-          <span className="text-4xl font-bold text-neutral-900">{displayPrice}</span>
+          <span className="text-4xl font-bold text-neutral-900"><span className="rate-sign">₹</span>{displayPrice}</span>
           {tier.price !== "Free" && (
             <span className="text-neutral-600 ml-1">
-              /{isAnnual ? 'year' : tier.period}
+              /{isAnnual ? 'year + GST' : tier.period}
             </span>
           )}
           {isAnnual && tier.price !== "Free" && (
-            <div className="text-sm text-emerald-600 font-medium mt-1">Save 20% annually</div>
+            <div className="text-sm text-emerald-600 font-medium mt-1">Save 10% annually</div>
           )}
         </div>
         <p className="text-neutral-600 text-sm mb-6">{tier.description}</p>
@@ -73,7 +73,7 @@ export const BillingToggle: FC<{ isAnnual: boolean; onChange: (annual: boolean) 
       <span className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${ isAnnual ? 'translate-x-5' : 'translate-x-1' }`}/>
     </button>
     <span className={`text-sm font-medium transition-colors ${isAnnual ? 'text-indigo-600' : 'text-neutral-500'}`}>Annual</span>
-    <div className="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-full font-medium">Save 20%</div>
+    <div className="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-full font-medium">Save 10%</div>
   </div>
 );
 
@@ -94,13 +94,13 @@ export default function Pricing() {
         "Basic reporting",
         "Community support"
       ],
-      buttonText: "Get Started Free",
-      buttonLink: `${BASE_URL}/contact-us`
+      buttonText: "Start Free Trial",
+      buttonLink: `${LOGIN_URL}`
     },
     {
       name: "Professional",
-      price: "₹999",
-      period: "month",
+      price: "1499",
+      period: "month + GST",
       description: "Ideal for growing businesses that need advanced features and customization.",
       features: [
         "Unlimited appointments",
@@ -114,13 +114,13 @@ export default function Pricing() {
         "Priority support"
       ],
       popular: true,
-      buttonText: "Start Free Trial",
-      buttonLink: `${BASE_URL}`
+      buttonText: "Get Started",
+      buttonLink: `${BASE_URL}/contact-us`
     },
     {
       name: "Enterprise",
-      price: "₹1999",
-      period: "month",
+      price: "2999",
+      period: "month + GST",
       description: "Per User for large organizations requiring advanced security, compliance, and support.",
       features: [
         "Everything in Professional",
@@ -133,7 +133,7 @@ export default function Pricing() {
         "24/7 phone support",
         "SLA guarantee"
       ],
-      buttonText: "Contact Sales",
+      buttonText: "Get Started",
       buttonLink: `${BASE_URL}/contact-us`
     }
   ];
@@ -164,7 +164,7 @@ export default function Pricing() {
             <h3 className="text-2xl font-bold text-neutral-900 mb-4">Get a Customized Scheduling App</h3>
             <p className="text-neutral-600 mb-6">Contact our support team to personalize the appointment booking system to fit your needs. Whether you operate a small business, a salon, or you are a professional doctor, wellness instructor, gym trainer, or similar.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={`${BASE_URL}/contact-us`} className="bg-indigo-600 text-white px-8 py-3 rounded-2xl">Schedule a Demo</Link>
+              <Link href={`${LOGIN_URL}`} className="bg-indigo-600 text-white px-8 py-3 rounded-2xl">Schedule a Demo</Link>
               <Link href={`${BASE_URL}/contact-us`} className="bg-indigo-600 text-white px-8 py-3 rounded-2xl">Contact Sales</Link>
             </div>
           </div>
