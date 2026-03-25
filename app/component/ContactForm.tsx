@@ -1,63 +1,35 @@
 "use client";
-import { useState, useEffect } from "react";
-
-async function fetchDepartments(): Promise<{ list: string[]; error?: string }> {
-  try {
-    const res = await fetch("/api/departments");
-    const data = await res.json();
-    if (!res.ok) return { list: [], error: data.error || "Failed to load departments" };
-    const list = Array.isArray(data.departments) ? data.departments : [];
-    return { list };
-  } catch (e) {
-    return { list: [], error: "Network error loading departments" };
-  }
-}
+import { useState } from "react";
 
 type FormData = {
   name: string;
   email: string;
   phone: string;
-  department: string;
+  professions: string;
   message: string;
 };
 
 const ContactForm = () => {
+  const professions = [
+    "Healthcare",
+    "Beauty & Wellness",
+    "Education",
+    "Artist",
+    "Salon",
+    "Financial Services",
+    "Professional Services",
+  ];
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
-    department: "",
+    professions: "",
     message: "",
   });
 
   const [status, setStatus] = useState<"" | "sending" | "success" | "error">("");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [departments, setDepartments] = useState<string[]>([]);
-  const [departmentsLoading, setDepartmentsLoading] = useState(true);
-  const [departmentsError, setDepartmentsError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetchDepartments()
-      .then(({ list, error }) => {
-        if (!cancelled) {
-          setDepartments(list);
-          setDepartmentsError(error ?? null);
-        }
-      })
-      .catch(() => {
-        if (!cancelled) {
-          setDepartments([]);
-          setDepartmentsError("Failed to load departments");
-        }
-      })
-      .finally(() => {
-        if (!cancelled) setDepartmentsLoading(false);
-      });
-    return () => { cancelled = true; };
-  }, []);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -66,7 +38,7 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.department || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.professions || !formData.message) {
       setStatus("error");
       setErrorMessage("Please fill all required fields.");
       return;
@@ -110,7 +82,7 @@ const ContactForm = () => {
           name: "",
           email: "",
           phone: "",
-          department: "",
+          professions: "",
           message: "",
         });
       } else {
@@ -135,10 +107,10 @@ const ContactForm = () => {
         <input id="email" name="email" type="email" required placeholder="Email" value={formData.email} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3">
-        <select id="department" aria-label="Select Department" name="department" required value={formData.department} onChange={handleChange} disabled={departmentsLoading} className="block w-full text-gray-600 rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-70">
-          <option value="">{departmentsLoading ? "Loading departments…" : "Select Department"}</option>
-          {departments.map((dept) => (
-            <option key={dept} value={dept}>{dept}</option>
+        <select id="professions" aria-label="Select Professions" name="professions" value={formData.professions} onChange={handleChange} className="block w-full text-gray-600 rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="">Select Profession</option>
+          {professions.map((profession) => (
+            <option key={profession} value={profession}>{profession}</option>
           ))}
         </select>
       </div>

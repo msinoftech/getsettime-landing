@@ -5,8 +5,11 @@ import type { ReactNode } from "react";
 
 export const SectionTitle: FC<{ eyebrow: string; title: string; desc?: string }> = ({ eyebrow, title, desc }) => (
   <div className="mx-auto space-y-2 text-center">
-    <div className="text-xs font-semibold tracking-widest text-indigo-600 uppercase">{eyebrow}</div>
-    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">{title}</h2>
+    <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
+      <span className="h-2 w-2 rounded-full bg-indigo-500" />
+      {eyebrow}
+    </div>
+    <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight text-slate-950">{title}</h2>
     {desc ? ( <p className="text-lg text-neutral-600">{desc}</p> ) : null}
   </div>
 );
@@ -91,7 +94,7 @@ export const BookingTimeline: FC = () => (
       <TimelineItem step={1} title="Service & provider" desc="Users choose service, location, staff, or auto-assign." />
       <TimelineItem step={2} title="Smart availability" desc="Time zone aware, conflict-free slot validation with buffers." />
       <TimelineItem step={3} title="Forms & policies" desc="Conditional fields, consent, cancellation windows and deposits." />
-      <TimelineItem step={4} title="Payment & reminders" desc="Collect deposit, send email/SMS, add ICS to calendar." />
+      <TimelineItem step={4} title="Payment & reminders" desc="Collect deposit, send email/SMS and WhatsApp messages, add ICS to calendar." />
     </div>
   </div>
 );
@@ -190,7 +193,7 @@ export const CustomerPanel: FC = () => (
       <p className="text-sm text-neutral-600 mb-6">Reminders, confirmations, and follow-ups that reduce no-shows.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
         {[
-          "Email/SMS reminders",
+          "Email/SMS and WhatsApp reminders",
           "ICS calendar invites",
           "Reschedule links",
           "Feedback prompts",

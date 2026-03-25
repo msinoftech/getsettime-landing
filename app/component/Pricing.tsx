@@ -27,7 +27,7 @@ export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier
 
   return (
     <div className={`pricing-card relative h-full rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
-      tier.popular ? 'bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-xl shadow-2xl ring-1 ring-indigo-500/20 scale-105' : 'bg-white/60 backdrop-blur-md shadow-md ring-1 ring-gray-400/20' }`}>
+      tier.popular ? 'bg-gradient-to-br from-transparent via-indigo-200/20 to-transparent shadow-2xl ring-1 ring-indigo-500/20 scale-105' : 'bg-white/60 backdrop-blur-md shadow-md ring-1 ring-gray-400/20' }`}>
       {tier.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
           <div className="bg-indigo-600 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg">Most Popular</div>
@@ -40,7 +40,7 @@ export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier
           <span className="text-4xl font-bold text-neutral-900"><span className="rate-sign">₹</span>{displayPrice}</span>
           {tier.price !== "Free" && (
             <span className="text-neutral-600 ml-1">
-              /{isAnnual ? 'year + GST' : tier.period}
+              /{isAnnual ? 'year + 18% GST' : tier.period}
             </span>
           )}
           {isAnnual && tier.price !== "Free" && (
@@ -100,12 +100,12 @@ export default function Pricing() {
     {
       name: "Professional",
       price: "1499",
-      period: "month + GST",
+      period: "month + 18% GST",
       description: "Ideal for growing businesses that need advanced features and customization.",
       features: [
         "Unlimited appointments",
         "Advanced calendar sync",
-        "SMS & email reminders",
+        "Whatsapp & email reminders",
         "Custom branding",
         "Payment processing",
         "Staff management",
@@ -120,7 +120,7 @@ export default function Pricing() {
     {
       name: "Enterprise",
       price: "2999",
-      period: "month + GST",
+      period: "month + 18% GST",
       description: "Per User for large organizations requiring advanced security, compliance, and support.",
       features: [
         "Everything in Professional",
@@ -143,8 +143,11 @@ export default function Pricing() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         <div className="text-center space-y-2 mb-16">
-          <div className="text-xs font-semibold tracking-widest text-indigo-600 uppercase">Pricing Plans</div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900">GetSetTime: Free for First Month</h2>
+          <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-indigo-500" />
+            Pricing Plans
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight text-slate-950">GetSetTime: Free for First Month</h2>
           <p className="text-neutral-600">Try advanced scheduling features risk-free —no credit card required. Pay later only when you need it.</p>
         </div>
 

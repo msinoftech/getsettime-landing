@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, department, message } = await req.json();
+    const { name, email, phone, professions, message } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -12,7 +12,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const isNewsletter = department === "Newsletter" || name === "Newsletter Subscriber";
+    const isNewsletter = professions === "Newsletter" || name === "Newsletter Subscriber";
 
     const subject = isNewsletter
       ? "New Newsletter Subscription"
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
                 <tr><td style="padding: 8px 0; color: #6b7280; width: 100px;">Name</td><td style="padding: 8px 0; font-weight: bold; color: #1d1b30;">${name}</td></tr>
                 <tr><td style="padding: 8px 0; color: #6b7280;">Email</td><td style="padding: 8px 0; font-weight: bold; color: #1d1b30;">${email}</td></tr>
                 <tr><td style="padding: 8px 0; color: #6b7280;">Phone</td><td style="padding: 8px 0; font-weight: bold; color: #1d1b30;">${phone || "—"}</td></tr>
-                <tr><td style="padding: 8px 0; color: #6b7280;">Department</td><td style="padding: 8px 0; font-weight: bold; color: #1d1b30;">${department}</td></tr>
+                <tr><td style="padding: 8px 0; color: #6b7280;">Professions</td><td style="padding: 8px 0; font-weight: bold; color: #1d1b30;">${professions}</td></tr>
                 <tr><td style="padding: 8px 0; color: #6b7280;">Date</td><td style="padding: 8px 0; font-weight: bold; color: #1d1b30;">${inquiryDate}</td></tr>
               </table>
               <div style="margin-top: 24px; padding: 16px; background-color: #f8f8f8; border-radius: 8px; font-size: 14px; color: #333; line-height: 1.5;">${message.replace(/\n/g, "<br>")}</div>

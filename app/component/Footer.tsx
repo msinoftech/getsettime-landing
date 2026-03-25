@@ -10,6 +10,7 @@ export default function Footer() {
     { label: "Features", href: `/#features` },
     { label: "Solutions", href: `/#support` },
     { label: "Pricing", href: `/#pricing` },
+    { label: "Blog", href: `${BASE_URL}/blog` },
   ];
 
   const solutionsLinks = [
@@ -19,9 +20,9 @@ export default function Footer() {
   ];
 
   const resourcesLinks = [
-    { label: "Blog", href: `${BASE_URL}/blog` },
     { label: "Privacy Policy", href: `${BASE_URL}/privacy-policy` },
     { label: "Terms of Conditions", href: `${BASE_URL}/terms-of-conditions` },
+    // { label: "Help Center", href: `${BASE_URL}/help-center` },
   ];
 
   return (
