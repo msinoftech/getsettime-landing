@@ -30,7 +30,7 @@ function BlogCard({ post }) {
                                 alt: post.title,
                                 width: 500,
                                 height: 400,
-                                className: "transition-transform duration-700 group-hover:scale-110"
+                                className: "object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                             }, void 0, false, {
                                 fileName: "[project]/app/component/BlogCard.tsx",
                                 lineNumber: 16,

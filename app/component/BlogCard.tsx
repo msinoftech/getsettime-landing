@@ -13,7 +13,7 @@ export function BlogCard({ post }: BlogCardProps) {
       <Link href={`/blog/${post.slug}`} className="block h-full">
         <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
           <div className="relative overflow-hidden">
-            <Image src={`/${post.coverImage}`} alt={post.title} width={500} height={400} className="transition-transform duration-700 group-hover:scale-110"/>
+            <Image src={`/${post.coverImage}`} alt={post.title} width={500} height={400} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"/>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute top-4 left-4 z-10">
               <span className="px-3 py-1.5 text-xs font-semibold bg-white/90 backdrop-blur-sm text-indigo-600 rounded-full shadow-sm transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">{post.category}</span>

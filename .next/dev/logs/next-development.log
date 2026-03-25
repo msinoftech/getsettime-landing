@@ -3,3 +3,62 @@
 [00:00:58.324] Server  LOG     ✓ Compiled in 125ms
 [00:00:58.327] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
 [00:00:59.067] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:32.677] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:41.056] Server  LOG     ✓ Compiled in 111ms
+[00:08:41.175] Browser ERROR   ./lib/config.ts:3:14
+Ecmascript file had an error
+  1 | export const APP_NAME = "GetSetTime";
+  2 | export const BASE_URL = "https://getsettime.com";
+> 3 | export const BASE_URL = "https://getsettime.com";
+    |              ^^^^^^^^
+  4 |
+  5 | export const LOGIN_URL = "https://app.getsettime.com";
+  6 | export const REGISTER_URL = "https://app.getsettime.com/register?g_signup=1";
+
+the name `BASE_URL` is defined multiple times
+
+Import traces:
+  #1 [Server Component]:
+    ./lib/config.ts
+    ./app/page.tsx
+
+  #2 [Client Component Browser]:
+    ./lib/config.ts [Client Component Browser]
+    ./app/component/Footer.tsx [Client Component Browser]
+    ./app/component/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  #3 [Client Component Browser]:
+    ./lib/config.ts [Client Component Browser]
+    ./app/component/Pricing.tsx [Client Component Browser]
+    ./app/component/Pricing.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  #4 [Client Component SSR]:
+    ./lib/config.ts [Client Component SSR]
+    ./app/component/Footer.tsx [Client Component SSR]
+    ./app/component/Footer.tsx [Server Component]
+    ./app/layout.tsx [Server Component]
+
+  #5 [Client Component SSR]:
+    ./lib/config.ts [Client Component SSR]
+    ./app/component/Pricing.tsx [Client Component SSR]
+    ./app/component/Pricing.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:08:51.536] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:56.167] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:11:16.691] Server  LOG     ✓ Compiled in 143ms
+[00:11:33.035] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:40.592] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:49.936] Browser WARN    Image with src "/online-calendar.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:11:49.936] Browser WARN    Image with src "/schedule-appointments.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:11:49.936] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:12:21.463] Server  LOG     ✓ Compiled in 102ms
+[00:12:23.573] Server  LOG     ✓ Compiled in 103ms
+[00:12:25.974] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:26.129] Browser WARN    Image with src "/schedule-appointments.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:26.129] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:12:26.129] Browser WARN    Image with src "/online-calendar.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:12:29.440] Server  LOG     ✓ Compiled in 95ms
+[00:12:33.123] Server  LOG     ✓ Compiled in 136ms
+[00:12:34.634] Server  LOG     ✓ Compiled in 91ms

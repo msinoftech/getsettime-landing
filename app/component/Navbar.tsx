@@ -31,9 +31,15 @@ export default function Navbar() {
 
   const handleAnchorClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, hash: string | null) => {
-      if (!hash || !isHome) return;
-      e.preventDefault();
+      // Always close the mobile menu when a user selects a nav item.
+      // (For desktop it has no visible effect because `open` is false.)
       setOpen(false);
+
+      // For in-page section navigation on the home page, we intercept
+      // to do smooth scrolling and keep the url/hash in sync.
+      if (!hash || !isHome) return;
+
+      e.preventDefault();
       scrollToHashSection(hash);
       window.history.pushState(null, "", `/#${hash}`);
     },

@@ -23,15 +23,19 @@ __turbopack_context__.s([
     ()=>BASE_URL,
     "LOGIN_URL",
     ()=>LOGIN_URL,
+    "REGISTER_URL",
+    ()=>REGISTER_URL,
     "contactInfo",
     ()=>contactInfo,
     "socialLinks",
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "https://www.getsettime.com";
+const BASE_URL = "http://localhost:3000";
 const LOGIN_URL = "https://app.getsettime.com";
+const REGISTER_URL = "https://app.getsettime.com/register?g_signup=1";
 const contactInfo = {
+    logo: "/getsettime-logo.svg",
     email: "office.getsettime@gmail.com",
     address: "Chandigarh, India"
 };
