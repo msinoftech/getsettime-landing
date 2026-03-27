@@ -4,27 +4,27 @@ import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
 
 export const SectionTitle: FC<{ eyebrow: string; title: string; desc?: string }> = ({ eyebrow, title, desc }) => (
-  <div className="mx-auto space-y-2 text-center">
+  <div className="space-y-2 text-center">
     <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
       <span className="h-2 w-2 rounded-full bg-indigo-500" />
       {eyebrow}
     </div>
-    <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight text-slate-950">{title}</h2>
-    {desc ? ( <p className="text-lg text-neutral-600">{desc}</p> ) : null}
+    <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">{title}</h2>
+    {desc ? ( <p>{desc}</p> ) : null}
   </div>
 );
 
 export const FeatureCard: FC<{ title: string; desc: string; icon?: ReactNode;}> = ({ title, desc, icon }) => (
-  <div className="group relative h-full rounded-2xl p-6 bg-white backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale">
-    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-4">
+  <div className="group relative h-full rounded-xl p-6 bg-white backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
+    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md">
       {icon || (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       )}
     </div>
-    <h3 className="text-base font-semibold text-neutral-900 mb-2">{title}</h3>
-    <p className="text-sm leading-relaxed text-neutral-600">{desc}</p>
+    <h3 className="font-semibold text-neutral-900">{title}</h3>
+    <p>{desc}</p>
   </div>
 );
 
@@ -37,49 +37,53 @@ export const FeatureGrid: FC<{ items: Array<{ title: string; desc: string; icon?
 );
 
 export const TimelineItem: FC<{ step: number; title: string; desc: string }> = ({ step, title, desc }) => (
-  <div className="relative pl-8 pb-2 last:pb-0 animate-slide-in-up" style={{ animationDelay: `${step * 100}ms` }}>
+  <div className="relative pl-8 pb-2 last:pb-0" style={{ animationDelay: `${step * 100}ms` }}>
     <div className="absolute left-2 top-0 h-full w-px bg-gradient-to-b from-indigo-500 to-transparent" />
     <div className="absolute left-[-4px] top-1 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold text-white shadow-lg">
       {step}
     </div>
     <div className="text-base font-semibold text-neutral-900">{title}</div>
-    <div className="text-sm text-neutral-600 mt-2">{desc}</div>
+    <p>{desc}</p>
   </div>
 );
 
 export const BookingTimeline: FC = () => (
   <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-    <div className="lg:col-span-2 rounded-2xl animate-fade-in-scale">
+    <div className="lg:col-span-2 rounded-xl animate-fade-in-scale">
       <h3 className="text-lg font-semibold text-neutral-900 mb-3">Booking Process</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="group relative h-full rounded-2xl p-6 bg-white backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale">
-          <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-3">
+        
+        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
             </svg>
           </div>
           <div className="font-semibold text-neutral-900">Select service</div>
-          <div className="mt-2 text-sm text-neutral-600">Durations, add-ons, pricing, buffers.</div>
+          <p>Durations, add-ons, pricing, buffers.</p>
         </div>
-        <div className="group relative h-full rounded-2xl p-6 bg-white backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale">
+
+        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
           <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
           <div className="font-semibold text-neutral-900">Pick time</div>
-          <div className="mt-2 text-sm text-neutral-600">Real-time availability across providers.</div>
+          <p>Real-time availability across providers.</p>
         </div>
-        <div className="group relative h-full rounded-2xl p-6 bg-white backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale">
+
+        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
           <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
           <div className="font-semibold text-neutral-900">Details</div>
-          <div className="mt-2 text-sm text-neutral-600">Custom intake, policies, preferences.</div>
+          <p>Custom intake, policies, preferences.</p>
         </div>
-        <div className="group relative h-full rounded-2xl p-6 bg-white backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale">
+
+        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
           <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -88,6 +92,7 @@ export const BookingTimeline: FC = () => (
           <div className="font-semibold text-neutral-900">Confirm & pay</div>
           <div className="mt-2 text-sm text-neutral-600">Deposit, taxes, receipts, calendar invite.</div>
         </div>
+        
       </div>
     </div>
     <div className="space-y-4">
@@ -100,22 +105,22 @@ export const BookingTimeline: FC = () => (
 );
 
 export const TrustBar: FC = () => (
-  <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl animate-fade-in-scale">
-    <div className="text-sm text-neutral-600">Trusted by teams scheduling over <span className="font-semibold text-indigo-600">2M+</span> appointments</div>
-    <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 text-xs text-neutral-500">
-      <span className="px-3 py-1 rounded-full bg-white shadow-sm">DKIM/DMARC</span>
-      <span className="px-3 py-1 rounded-full bg-white shadow-sm">PCI-DSS</span>
-      <span className="px-3 py-1 rounded-full bg-white shadow-sm">GDPR</span>
-      <span className="px-3 py-1 rounded-full bg-white shadow-sm">99.9% Uptime</span>
+  <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 animate-fade-in-scale">
+    <div>Trusted by teams scheduling over <span className="font-semibold text-indigo-600">2M+</span> appointments</div>
+    <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4">
+      <span className="px-3 py-1 rounded-md bg-white shadow-sm">DKIM/DMARC</span>
+      <span className="px-3 py-1 rounded-md bg-white shadow-sm">PCI-DSS</span>
+      <span className="px-3 py-1 rounded-md bg-white shadow-sm">GDPR</span>
+      <span className="px-3 py-1 rounded-md bg-white shadow-sm">99.9% Uptime</span>
     </div>
   </div>
 );
 
 export const Tabs: FC<{ tabs: string[]; active: string; onChange: (v: string) => void }> = ({ tabs, active, onChange }) => (
   <div className="flex items-center justify-center overflow-x-auto pb-2 hide-scrollbar">
-    <div className="flex items-center justify-center flex-wrap rounded-2xl p-1.5 shadow-sm">
+    <div className="flex items-center justify-center flex-wrap gap-1 rounded-xl p-1.5 shadow-sm">
       {tabs.map((t) => (
-        <button key={t} type="button" onClick={() => onChange(t)} className={`px-4 sm:px-6 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${ active === t ? "bg-indigo-600 text-white shadow-md" : "text-neutral-700 hover:bg-white/70"}`}>{t}</button>
+        <button key={t} type="button" onClick={() => onChange(t)} className={`px-4 sm:px-6 py-2.5 rounded-xl text-sm cursor-pointer ${ active === t ? "bg-indigo-600 text-white shadow-md" : "hover:bg-indigo-500/10 hover:text-indigo-600"}`}>{t}</button>
       ))}
     </div>
   </div>
@@ -123,10 +128,11 @@ export const Tabs: FC<{ tabs: string[]; active: string; onChange: (v: string) =>
 
 export const AdminPanel: FC = () => (
   <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-scale">
-    <div className="bg-white rounded-2xl p-8 shadow-xl">
-      <div className="text-lg font-semibold text-neutral-900 mb-4">Admin tools</div>
-      <p className="text-sm text-neutral-600 mb-6">Quick-book, overrides, and bulk actions with role-based access.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+    
+    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
+      <h3 className="font-semibold text-neutral-900">Admin tools</h3>
+      <p>Quick-book, overrides, and bulk actions with role-based access.</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {[
           "Round-robin assign",
           "Blackout dates",
@@ -143,10 +149,11 @@ export const AdminPanel: FC = () => (
         ))}
       </div>
     </div>
-    <div className="bg-white rounded-2xl p-8 shadow-xl">
-      <div className="text-lg font-semibold text-neutral-900 mb-4">Reports & insights</div>
-      <p className="text-sm text-neutral-600 mb-6">Capacity, no-shows, revenue, and utilization KPIs.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+
+    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
+      <h3 className="font-semibold text-neutral-900">Reports & insights</h3>
+      <p>Capacity, no-shows, revenue, and utilization KPIs.</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {[
           "Utilization",
           "Revenue",
@@ -168,10 +175,11 @@ export const AdminPanel: FC = () => (
 
 export const CustomerPanel: FC = () => (
   <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-scale">
-    <div className="bg-white rounded-2xl p-8 shadow-xl">
-      <div className="text-lg font-semibold text-neutral-900 mb-4">Customer experience</div>
-      <p className="text-sm text-neutral-600 mb-6">Mobile-first, accessible flows with instant confirmations and reminders.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+    
+    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
+      <h3 className="font-semibold text-neutral-900">Customer experience</h3>
+      <p>Mobile-first, accessible flows with instant confirmations and reminders.</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {[
           "One-tap reschedule",
           "Two-way SMS",
@@ -188,10 +196,11 @@ export const CustomerPanel: FC = () => (
         ))}
       </div>
     </div>
-    <div className="bg-white rounded-2xl p-8 shadow-xl">
-      <div className="text-lg font-semibold text-neutral-900 mb-4">Engagement</div>
-      <p className="text-sm text-neutral-600 mb-6">Reminders, confirmations, and follow-ups that reduce no-shows.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+
+    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
+      <h3 className="font-semibold text-neutral-900">Engagement</h3>
+      <p>Reminders, confirmations, and follow-ups that reduce no-shows.</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {[
           "Email/SMS and WhatsApp reminders",
           "ICS calendar invites",
@@ -220,24 +229,18 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" className="relative py-24 scroll-mt-20">
-
-      {/* Animated background shapes */}
+    <section id="features" className="relative py-14 sm:py-20 scroll-mt-20">
       <div className="absolute top-10 left-4 sm:top-16 sm:left-6 md:top-20 md:left-10 w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 bg-indigo-400/30 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-10 right-4 sm:bottom-16 sm:right-6 md:bottom-20 md:right-10 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-emerald-300/20 rounded-full blur-3xl animate-float animation-delay-2000" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left column */}
-          <div className="lg:col-span-12 xl:col-span-12">
-            <div className="flex flex-col items-start">
-              {/* Features title */}
-              <SectionTitle
-                eyebrow="Online Appointment and Scheduling"
-                title="Intelligent Scheduling Software Built for Real Results"
-                desc="Replace manual scheduling havoc and operational complexity with world-class appointment management technology."
-              />
-            </div>
+        <div className="relative">
+          <div className="relative">
+            <SectionTitle
+              eyebrow="Online Appointment and Scheduling"
+              title="Intelligent Scheduling Software Built for Real Results"
+              desc="Replace manual scheduling havoc and operational complexity with world-class appointment management technology."
+            />
 
             <div className="mt-8">
               <Tabs
@@ -329,5 +332,3 @@ export default function Features() {
     </section>
   );
 };
-
-

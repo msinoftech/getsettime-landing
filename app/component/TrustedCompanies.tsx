@@ -5,12 +5,13 @@ import Image from 'next/image';
 // Define company logos
 const companies = [
   { name: 'Microsoft', logo: '/microsoft.svg' },
-  // { name: 'Google', logo: '/google.svg' },
   { name: 'Slack', logo: '/slack.svg' },
   { name: 'gmail', logo: '/gmail-icon.svg' },
+  { name: 'Whatsapp', logo: '/whatsapp.svg' },
   { name: 'google-calendar', logo: '/google-calendar.svg' },
   { name: 'teams', logo: '/teams.svg' },
   { name: 'Zoom', logo: '/Zoom.svg' },
+  
 ];
 
 export default function TrustedCompanies() {
@@ -69,20 +70,20 @@ export default function TrustedCompanies() {
   return (
     <section className="py-12 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight text-slate-950">Integrated with Leading Apps Worldwide</h2>
-          <p className="mt-2 text-neutral-600 max-w-2xl mx-auto">Join thousands of Companies that rely on our scheduling platform to power their business</p>
+        <div className="text-center space-y-2">
+          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Integrated with Leading Apps Worldwide</h2>
+          <p>Join thousands of Companies that rely on our scheduling platform to power their business</p>
         </div>
 
-        <div className="relative overflow-hidden mx-auto max-w-7xl">          
+        <div className="relative overflow-hidden">          
           {/* Logo slider */}
           <div className="overflow-hidden py-6 w-full">
-            <div ref={sliderRef} className="flex items-center slider-track overflow-hidden">
+            <div ref={sliderRef} className="inline-flex items-center slider-track overflow-hidden">
               <div className="flex items-center gap-8 sm:gap-12 md:gap-16 slider-content overflow-hidden">
                 {companies.map((company, index) => (
-                  <div key={index} className="flex items-center justify-center glass-effect rounded-xl">
+                  <div key={index} className="flex items-center justify-center">
                     <div className="relative h-12 w-24">
-                      <Image src={company.logo} alt={`${company.name} logo`} fill className="object-contain filter brightness grayscale hover:grayscale-0 transition-all duration-300 hover:opacity-100"/>
+                      <Image src={company.logo} alt={`${company.name} logo`} fill className="object-contain filter brightness grayscale hover:grayscale-0 hover:opacity-100"/>
                     </div>
                   </div>
                 ))}

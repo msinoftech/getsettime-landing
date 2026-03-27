@@ -57,7 +57,7 @@ export default function Newsletter({ className }: NewsletterProps) {
     <>
         <form onSubmit={handleSubscribe} className={`w-full ${className ?? ""}`.trim()}>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="w-full px-4 py-3 rounded-xl bg-white/60 backdrop-blur-sm border border-neutral-200/50 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200" aria-label="Email address for newsletter subscription" required />
-            <button type="submit" disabled={status === "loading"} className="bg-indigo-600 hover:bg-indigo-600/90 disabled:bg-indigo-400 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">{status === "loading" ? "Subscribing..." : "Subscribe"}</button>
+            <button type="submit" disabled={status === "loading"} className="bg-indigo-600 disabled:bg-indigo-400 disabled:cursor-not-allowed text-white text-sm px-5 py-3 rounded-xl transition-all duration-300 cursor-pointer">{status === "loading" ? "Subscribing..." : "Subscribe"}</button>
         </form>
         {feedback && (
             <p className={`text-sm ${ status === "success" ? "" : "text-red-500" }`}>{feedback}</p>

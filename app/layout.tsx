@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -20,15 +16,9 @@ export const metadata: Metadata = {
   description: "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.",
 };
 
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en" className="smooth-scroll">
-      
+    <html lang="en" className="select-none">
       <head>
         {/* Google Tag Manager — injects gtm.js (runs from head) */}
         <Script id="gtm-script" strategy="beforeInteractive">
@@ -42,12 +32,11 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        
+      <body className={`${roboto.variable} antialiased`}>
         {/* Google Tag Manager (noscript) fallback — first thing under body */}
-          <noscript>
-            <iframe src={`https://www.googletagmanager.com/ns.html?id=GTM-WBQPQS8H`} height={0} width={0} style={{ display: "none", visibility: "hidden" }} title="Google Tag Manager"/>
-          </noscript>
+        <noscript>
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=GTM-WBQPQS8H`} height={0} width={0} style={{ display: "none", visibility: "hidden" }} title="Google Tag Manager"/>
+        </noscript>
 
         <Navbar />
           {children}

@@ -267,30 +267,27 @@ export default function InteractiveCalendar() {
         </div>
 
         {/* Right: Content */}
-        <div className="relative space-y-2">
+        <div className="relative space-y-3">
           <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-indigo-500" />
             Smart scheduling, designed to feel live
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold leading-tight text-slate-950">
+          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">
             Smart Scheduling,
             <span className="block bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">
               Maximum Efficiency
             </span>
           </h2>
 
-          <p className="text-sm text-neutral-600 sm:text-base">
-            Turn this section into a premium live experience instead of a flat illustration. Show a real calendar,
-            active time slots, automation status, and booking flow so visitors instantly understand how powerful your platform feels.
-          </p>
+          <p>Turn this section into a premium live experience instead of a flat illustration. Show a real calendar, active time slots, automation status, and booking flow so visitors instantly understand how powerful your platform feels.</p>
 
-          <div className="mt-8 space-y-4">
+          <div className="space-y-4">
             {FEATURES.map((feature) => (
-              <div key={feature} className="group rounded-2xl border border-slate-200/80 bg-white/90 p-3 shadow-[0_10px_35px_rgba(20,25,50,0.08)] transition-all duration-300 hover:-translate-y-1">
+              <div key={feature} className="group rounded-xl border border-slate-200/80 bg-white/90 p-3 shadow-[0_10px_35px_rgba(20,25,50,0.08)] transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 text-md font-semibold text-white shadow-lg shadow-indigo-500/25">✓</div>
-                <p className="text-sm text-slate-700">{feature}</p>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/25">✓</div>
+                <p>{feature}</p>
               </div>
             </div>
             ))}

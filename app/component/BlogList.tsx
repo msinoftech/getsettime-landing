@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { BlogCard } from "./BlogCard";
 import type { BlogPost } from "@/lib/blog-data";
@@ -20,12 +20,30 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
   const [visibleCount, setVisibleCount] = useState(postsPerPage);
   const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
   const [isLoading, setIsLoading] = useState(false);
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
+  const categoryDropdownRef = useRef<HTMLDivElement>(null);
 
   // Sync category state with URL when it changes
   useEffect(() => {
     setSelectedCategory(categoryFromUrl);
     setVisibleCount(postsPerPage); // Reset visible count when URL changes
   }, [categoryFromUrl, postsPerPage]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        categoryDropdownRef.current &&
+        !categoryDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsCategoryDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Filter posts by category or tag (excluding featured if shown separately)
   const filteredPosts = useMemo(() => {
@@ -57,6 +75,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     setVisibleCount(postsPerPage); // Reset visible count when changing category
+    setIsCategoryDropdownOpen(false);
     
     // Update URL with the selected category
     if (category === "All") {
@@ -71,20 +90,58 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
       
       <div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-between gap-4">
           {/* Category Filter */}
-            <>
-              <div className="flex items-center justify-start w-full">
-                <select value={selectedCategory} onChange={(e) => handleCategoryChange(e.target.value)} className="w-full sm:max-w-xs px-4 py-3 rounded-xl text-sm font-medium bg-white text-neutral-700 border border-neutral-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 appearance-none cursor-pointer">
-                  {blogCategories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
-                </select>
-              </div>
-            </>
+          <div className="flex items-center justify-start w-full">
+            <div ref={categoryDropdownRef} className="relative w-full sm:max-w-xs">
+              <button
+                type="button"
+                onClick={() => setIsCategoryDropdownOpen((prev) => !prev)}
+                className="w-full px-4 py-3 pr-10 rounded-xl bg-white text-neutral-700 border border-neutral-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 cursor-pointer text-left"
+                aria-haspopup="listbox"
+                aria-expanded={isCategoryDropdownOpen}
+              >
+                {selectedCategory}
+              </button>
+
+              <svg className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={isCategoryDropdownOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
+                />
+              </svg>
+
+              {isCategoryDropdownOpen && (
+                <ul
+                  role="listbox"
+                  className="absolute z-20 mt-2 w-full rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden"
+                >
+                  {blogCategories.map((category) => {
+                    const isActive = category === selectedCategory;
+                    return (
+                      <li key={category}>
+                        <button
+                          type="button"
+                          onClick={() => handleCategoryChange(category)}
+                          className={`w-full px-4 py-3 text-left text-sm transition-colors duration-200 ${
+                            isActive
+                              ? "bg-indigo-50 text-indigo-700 font-medium"
+                              : "text-neutral-700 hover:bg-neutral-50"
+                          }`}
+                        >
+                          {category}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+          </div>
 
           {/* Results Count */}
           <div className="flex items-center justify-end w-full">
-            <p className="text-sm text-neutral-600">
-              Showing <span className="font-semibold text-neutral-900">{visiblePosts.length}</span> of{" "}
+            <p> Showing <span className="font-semibold text-neutral-900">{visiblePosts.length}</span> of{" "}
               <span className="font-semibold text-neutral-900">{filteredPosts.length}</span> articles
               {selectedCategory !== "All" && (
                 <span> in <span className="text-indigo-600 font-medium">{selectedCategory}</span></span>
@@ -96,29 +153,29 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
 
       {/* Blog Grid */}
       {filteredPosts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {visiblePosts.map((post, index) => (
-            <div key={post.id} className="animate-slide-in-up" style={{ animationDelay: `${(index % postsPerPage) * 100}ms` }}>
+            <div key={post.id} style={{ animationDelay: `${(index % postsPerPage) * 100}ms` }}>
               <BlogCard post={post} />
             </div>
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 bg-white rounded-2xl shadow-sm">
+        <div className="text-center py-16 bg-white rounded-xl shadow-sm">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-neutral-100 flex items-center justify-center">
             <svg className="w-8 h-8 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 className="text-lg font-semibold text-neutral-900 mb-2">No articles found</h3>
-          <p className="text-neutral-600">Try selecting a different category</p>
+          <h3 className="font-semibold text-neutral-900 mb-2">No articles found</h3>
+          <p>Try selecting a different category</p>
         </div>
       )}
 
       {/* Load More Button */}
       {hasMorePosts && (
-        <div className="flex justify-center pt-8">
-          <button onClick={handleLoadMore} disabled={isLoading} className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+        <div className="flex justify-center">
+          <button onClick={handleLoadMore} disabled={isLoading} className="group relative inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0">
             {isLoading ? (
               <>
                 <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
@@ -143,8 +200,8 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
 
       {/* End of List Message */}
       {!hasMorePosts && filteredPosts.length > 0 && (
-        <div className="text-center pt-8">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full shadow-sm text-neutral-600">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 px-5 py-3 text-neutral-600">
             <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
