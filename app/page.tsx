@@ -257,9 +257,9 @@ export default function Home() {
               </div>
 
               <div className="absolute right-8 -top-20 z-2 hidden lg:block rounded-xl border border-slate-200/80 bg-white/95 px-7 py-6 shadow-[0_20px_50px_rgba(70,80,130,0.15)] backdrop-blur animate-float ">
-                <p className="text-xs uppercase tracking-widest">No-show reduction</p>
-                <p className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-950">32%</p>
-                <p className="mt-2 text-sm tracking-[-0.03em] text-indigo-500">with reminder automation</p>
+                <div className="text-sm uppercase">No-show reduction</div>
+                <p className="text-2xl font-bold text-neutral-900">32%</p>
+                <p className="font-medium text-indigo-600">with reminder automation</p>
               </div>
 
               <div className="absolute -bottom-8 right-6 z-2 rounded-xl border border-slate-200/80 bg-white/95 px-7 py-6 shadow-[0_20px_50px_rgba(70,80,130,0.15)] backdrop-blur animate-float">

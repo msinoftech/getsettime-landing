@@ -1,7 +1,7 @@
-[00:00:03.092] Server  LOG     ✓ Ready in 2.4s
-[00:00:05.610] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:26.116] Server  LOG     ✓ Compiled in 120ms
-[00:00:26.944] Browser ERROR   ./app/component/Footer.tsx:2:1
+[00:00:01.073] Server  LOG     ✓ Ready in 771ms
+[00:01:27.922] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:37.040] Server  LOG     ✓ Compiled in 65ms
+[00:01:37.143] Browser ERROR   ./app/component/Footer.tsx:2:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
 > 2 | import { APP_NAME, BASE_URL, socialLinks, LOGIN_URL } from "@/lib/config";
@@ -18,7 +18,7 @@ Import trace:
   Server Component:
     ./app/component/Footer.tsx
     ./app/layout.tsx
-[00:00:26.944] Browser ERROR   ./app/component/Footer.tsx:2:1
+[00:01:37.143] Browser ERROR   ./app/component/Footer.tsx:2:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
 > 2 | import { APP_NAME, BASE_URL, socialLinks, LOGIN_URL } from "@/lib/config";
@@ -35,7 +35,7 @@ Import trace:
   Server Component:
     ./app/component/Footer.tsx
     ./app/layout.tsx
-[00:00:26.944] Browser ERROR   ./app/component/HeroSection.tsx:3:1
+[00:01:37.143] Browser ERROR   ./app/component/HeroSection.tsx:3:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
   2 | import Image from "next/image";
@@ -53,7 +53,7 @@ Import trace:
   Server Component:
     ./app/component/HeroSection.tsx
     ./app/page.tsx
-[00:00:26.944] Browser ERROR   ./app/component/HeroSection.tsx:3:1
+[00:01:37.143] Browser ERROR   ./app/component/HeroSection.tsx:3:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
   2 | import Image from "next/image";
@@ -71,7 +71,7 @@ Import trace:
   Server Component:
     ./app/component/HeroSection.tsx
     ./app/page.tsx
-[00:00:26.944] Browser ERROR   ./app/component/Logo.tsx:3:1
+[00:01:37.143] Browser ERROR   ./app/component/Logo.tsx:3:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
   2 | import Link from "next/link";
@@ -109,7 +109,7 @@ Import traces:
     ./app/component/HeroSection.tsx [Client Component SSR]
     ./app/component/HeroSection.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:00:26.944] Browser ERROR   ./app/component/Logo.tsx:3:1
+[00:01:37.143] Browser ERROR   ./app/component/Logo.tsx:3:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
   2 | import Link from "next/link";
@@ -147,7 +147,7 @@ Import traces:
     ./app/component/HeroSection.tsx [Client Component SSR]
     ./app/component/HeroSection.tsx [Server Component]
     ./app/page.tsx [Server Component]
-[00:00:26.944] Browser ERROR   ./app/component/Navbar.tsx:5:1
+[00:01:37.143] Browser ERROR   ./app/component/Navbar.tsx:5:1
 Export BASE_URL doesn't exist in target module
   3 | import { usePathname } from "next/navigation";
   4 | import { useState, useCallback, useEffect } from "react";
@@ -165,7 +165,7 @@ Import trace:
   Server Component:
     ./app/component/Navbar.tsx
     ./app/layout.tsx
-[00:00:26.944] Browser ERROR   ./app/component/Navbar.tsx:5:1
+[00:01:37.143] Browser ERROR   ./app/component/Navbar.tsx:5:1
 Export BASE_URL doesn't exist in target module
   3 | import { usePathname } from "next/navigation";
   4 | import { useState, useCallback, useEffect } from "react";
@@ -183,7 +183,7 @@ Import trace:
   Server Component:
     ./app/component/Navbar.tsx
     ./app/layout.tsx
-[00:00:26.944] Browser ERROR   ./app/component/Pricing.tsx:2:1
+[00:01:37.143] Browser ERROR   ./app/component/Pricing.tsx:2:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
 > 2 | import { BASE_URL, LOGIN_URL } from "@/lib/config";
@@ -200,7 +200,7 @@ Import trace:
   Server Component:
     ./app/component/Pricing.tsx
     ./app/page.tsx
-[00:00:26.944] Browser ERROR   ./app/component/Pricing.tsx:2:1
+[00:01:37.143] Browser ERROR   ./app/component/Pricing.tsx:2:1
 Export BASE_URL doesn't exist in target module
   1 | "use client";
 > 2 | import { BASE_URL, LOGIN_URL } from "@/lib/config";
@@ -217,7 +217,7 @@ Import trace:
   Server Component:
     ./app/component/Pricing.tsx
     ./app/page.tsx
-[00:00:26.944] Browser ERROR   ./app/page.tsx:4:1
+[00:01:37.143] Browser ERROR   ./app/page.tsx:4:1
 Export BASE_URL doesn't exist in target module
   2 | import Image from "next/image";
   3 | import Script from "next/script";
@@ -230,233 +230,8 @@ Export BASE_URL doesn't exist in target module
 The export BASE_URL was not found in module [project]/lib/config.ts [app-rsc] (ecmascript).
 Did you mean to import LOGIN_URL?
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-[00:00:29.398] Browser ERROR   ./app/component/Footer.tsx:2:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-> 2 | import { APP_NAME, BASE_URL, socialLinks, LOGIN_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 | import Link from "next/link";
-  4 | import Logo from "./Logo";
-  5 | import Newsletter from "./Newsletter";
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/Footer.tsx
-    ./app/layout.tsx
-[00:00:29.398] Browser ERROR   ./app/component/Footer.tsx:2:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-> 2 | import { APP_NAME, BASE_URL, socialLinks, LOGIN_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 | import Link from "next/link";
-  4 | import Logo from "./Logo";
-  5 | import Newsletter from "./Newsletter";
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/Footer.tsx
-    ./app/layout.tsx
-[00:00:29.398] Browser ERROR   ./app/component/HeroSection.tsx:3:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-  2 | import Image from "next/image";
-> 3 | import { BASE_URL, LOGIN_URL, REGISTER_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import Logo from "./Logo";
-  5 | import Link from "next/link";
-  6 |
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/HeroSection.tsx
-    ./app/page.tsx
-[00:00:29.398] Browser ERROR   ./app/component/HeroSection.tsx:3:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-  2 | import Image from "next/image";
-> 3 | import { BASE_URL, LOGIN_URL, REGISTER_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 | import Logo from "./Logo";
-  5 | import Link from "next/link";
-  6 |
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/HeroSection.tsx
-    ./app/page.tsx
-[00:00:29.398] Browser ERROR   ./app/component/Logo.tsx:3:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-  2 | import Link from "next/link";
-> 3 | import { BASE_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function Logo() {
-  6 |
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  #1 [Client Component Browser]:
-    ./app/component/Logo.tsx [Client Component Browser]
-    ./app/component/Footer.tsx [Client Component Browser]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  #2 [Client Component Browser]:
-    ./app/component/Logo.tsx [Client Component Browser]
-    ./app/component/HeroSection.tsx [Client Component Browser]
-    ./app/component/HeroSection.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  #3 [Client Component SSR]:
-    ./app/component/Logo.tsx [Client Component SSR]
-    ./app/component/Footer.tsx [Client Component SSR]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  #4 [Client Component SSR]:
-    ./app/component/Logo.tsx [Client Component SSR]
-    ./app/component/HeroSection.tsx [Client Component SSR]
-    ./app/component/HeroSection.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:00:29.398] Browser ERROR   ./app/component/Logo.tsx:3:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-  2 | import Link from "next/link";
-> 3 | import { BASE_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  4 |
-  5 | export default function Logo() {
-  6 |
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  #1 [Client Component Browser]:
-    ./app/component/Logo.tsx [Client Component Browser]
-    ./app/component/Footer.tsx [Client Component Browser]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  #2 [Client Component Browser]:
-    ./app/component/Logo.tsx [Client Component Browser]
-    ./app/component/HeroSection.tsx [Client Component Browser]
-    ./app/component/HeroSection.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  #3 [Client Component SSR]:
-    ./app/component/Logo.tsx [Client Component SSR]
-    ./app/component/Footer.tsx [Client Component SSR]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  #4 [Client Component SSR]:
-    ./app/component/Logo.tsx [Client Component SSR]
-    ./app/component/HeroSection.tsx [Client Component SSR]
-    ./app/component/HeroSection.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:00:29.398] Browser ERROR   ./app/component/Navbar.tsx:5:1
-Export BASE_URL doesn't exist in target module
-  3 | import { usePathname } from "next/navigation";
-  4 | import { useState, useCallback, useEffect } from "react";
-> 5 | import { BASE_URL, socialLinks, LOGIN_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Logo from "./Logo";
-  7 |
-  8 | const primaryItems = [
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/Navbar.tsx
-    ./app/layout.tsx
-[00:00:29.398] Browser ERROR   ./app/component/Navbar.tsx:5:1
-Export BASE_URL doesn't exist in target module
-  3 | import { usePathname } from "next/navigation";
-  4 | import { useState, useCallback, useEffect } from "react";
-> 5 | import { BASE_URL, socialLinks, LOGIN_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  6 | import Logo from "./Logo";
-  7 |
-  8 | const primaryItems = [
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/Navbar.tsx
-    ./app/layout.tsx
-[00:00:29.398] Browser ERROR   ./app/component/Pricing.tsx:2:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-> 2 | import { BASE_URL, LOGIN_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 | import Link from "next/link";
-  4 | import type { FC } from "react";
-  5 | import { useState } from "react";
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-client] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/Pricing.tsx
-    ./app/page.tsx
-[00:00:29.398] Browser ERROR   ./app/component/Pricing.tsx:2:1
-Export BASE_URL doesn't exist in target module
-  1 | "use client";
-> 2 | import { BASE_URL, LOGIN_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  3 | import Link from "next/link";
-  4 | import type { FC } from "react";
-  5 | import { useState } from "react";
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-ssr] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import trace:
-  Server Component:
-    ./app/component/Pricing.tsx
-    ./app/page.tsx
-[00:00:29.398] Browser ERROR   ./app/page.tsx:4:1
-Export BASE_URL doesn't exist in target module
-  2 | import Image from "next/image";
-  3 | import Script from "next/script";
-> 4 | import { APP_NAME, BASE_URL } from "@/lib/config";
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 | import Hero from "./component/HeroSection";
-  6 | import Features from "./component/Features";
-  7 | import Support from "./component/Support";
-
-The export BASE_URL was not found in module [project]/lib/config.ts [app-rsc] (ecmascript).
-Did you mean to import LOGIN_URL?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-[00:00:55.755] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:53.509] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:53.637] Browser WARN    Image with src "/man.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:03:52.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:44.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

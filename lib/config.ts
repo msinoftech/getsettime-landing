@@ -1,5 +1,7 @@
 export const APP_NAME = "GetSetTime";
 export const BASE_URL = "https://getsettime.com";
+//export const BASE_URL = "http://localhost:3001";
+
 export const LOGIN_URL = "https://app.getsettime.com";
 export const REGISTER_URL = "https://app.getsettime.com/register?g_signup=1";
 
