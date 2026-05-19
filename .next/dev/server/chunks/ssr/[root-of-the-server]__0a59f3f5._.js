@@ -43,7 +43,7 @@ __turbopack_context__.s([
     ()=>socialLinks
 ]);
 const APP_NAME = "GetSetTime";
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://www.getsettime.com";
 const LOGIN_URL = "https://app.getsettime.com";
 const REGISTER_URL = "https://app.getsettime.com/register";
 const REGISTER_GOOGLE_URL = "https://app.getsettime.com/register?g_signup=1";

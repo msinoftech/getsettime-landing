@@ -2,3 +2,83 @@
 [00:00:07.974] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:00:56.479] Server  LOG     ✓ Compiled in 124ms
 [00:01:26.392] Server  LOG     ✓ Compiled in 103ms
+[00:09:51.617] Server  LOG     ✓ Compiled in 122ms
+[00:09:58.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:09.246] Server  LOG     ✓ Compiled in 269ms
+[00:10:16.058] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:45.706] Server  LOG     ✓ Compiled in 184ms
+[00:10:45.809] Browser ERROR   ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: C:\wamp64\www\getsettime-landing-live\getsettime-landing\app\globals.css:14:1: Unclosed block
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:575:22)]
+    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:335:35)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:476:10)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+[00:11:52.480] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:02.961] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:12:37.189] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:12:37.189] Browser WARN    Image with src "/schedule-appointments.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:21:38.594] Server  LOG     ✓ Compiled in 221ms
+[00:21:40.940] Server  LOG     ✓ Compiled in 199ms
+[00:22:18.203] Server  LOG     ✓ Compiled in 135ms
+[00:22:27.096] Server  LOG     ✓ Compiled in 120ms
+[00:22:31.620] Server  LOG     ✓ Compiled in 120ms
+[00:22:36.342] Server  LOG     ✓ Compiled in 105ms
+[00:22:46.821] Server  LOG     ✓ Compiled in 108ms
+[00:22:54.980] Server  LOG     ✓ Compiled in 106ms
+[00:22:59.404] Server  LOG     ✓ Compiled in 124ms
+[00:23:10.744] Server  LOG     ✓ Compiled in 107ms
+[00:23:37.174] Server  LOG     ✓ Compiled in 107ms
+[00:23:45.669] Server  LOG     ✓ Compiled in 111ms
+[00:23:53.712] Server  LOG     ✓ Compiled in 101ms
+[00:24:07.460] Server  LOG     ✓ Compiled in 105ms
+[00:24:28.237] Server  LOG     ✓ Compiled in 97ms
+[00:24:45.132] Server  LOG     ✓ Compiled in 118ms
+[00:25:00.752] Server  LOG     ✓ Compiled in 99ms
+[00:25:27.315] Server  LOG     ✓ Compiled in 110ms
+[00:25:38.393] Server  LOG     ✓ Compiled in 94ms
+[00:25:54.693] Server  LOG     ✓ Compiled in 107ms
+[00:26:05.254] Server  LOG     ✓ Compiled in 108ms
+[00:27:01.251] Server  LOG     ✓ Compiled in 93ms
+[00:27:41.758] Server  LOG     ✓ Compiled in 102ms
+[00:27:57.798] Server  LOG     ✓ Compiled in 107ms
+[00:28:22.306] Server  LOG     ✓ Compiled in 122ms
+[00:28:26.896] Server  LOG     ✓ Compiled in 95ms
+[00:28:31.668] Server  LOG     ✓ Compiled in 104ms
+[00:28:46.380] Server  LOG     ✓ Compiled in 93ms
+[00:28:48.028] Server  LOG     ✓ Compiled in 138ms
+[00:30:58.171] Server  LOG     ✓ Compiled in 26ms
+[00:30:58.274] Browser ERROR   ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: C:\wamp64\www\getsettime-landing-live\getsettime-landing\app\globals.css:47:3: Unknown word colo
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unknownWord (turbopack:///[project]/node_modules/postcss/lib/parser.js:595:22)]
+    [at Parser.other (turbopack:///[project]/node_modules/postcss/lib/parser.js:437:12)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:472:16)]
+    [at parse (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:29)]
+    [at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:115:11)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+[00:31:25.505] Server  LOG     ✓ Compiled in 216ms
+[00:31:27.618] Server  LOG     ✓ Compiled in 188ms
+[00:31:48.052] Server  LOG     ✓ Compiled in 315ms
+[00:32:19.889] Browser WARN    Image with src "/appointment-scheduling-softwaret.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:33:20.884] Server  LOG     ✓ Compiled in 185ms

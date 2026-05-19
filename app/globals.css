@@ -6,7 +6,14 @@ body {
   font-size: 15px;
 }
 p{
+  letter-spacing: .4px;
+  word-spacing: 1px;
   font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: .4px;
+  word-spacing: 1px;
 }
 /* Animations */
 @keyframes float {
@@ -37,6 +44,7 @@ p{
 /* Blog post content – styles child elements from dangerouslySetInnerHTML */
 .blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4 {
   font-weight: 500;
+  color: var(--color-neutral-900);
 }
 .blog-content h2 {
   font-size: 1.5rem;
@@ -51,8 +59,9 @@ p{
 .blog-content li {
   margin-bottom: 0.2rem;
 }
-.blog-content strong {
+.blog-content strong, .blog-content b {
   font-weight: 600;
+  color: var(--color-neutral-900);
 }
 .blog-content a {
   color: var(--color-indigo-600);
