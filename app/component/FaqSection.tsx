@@ -44,7 +44,7 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
               </div>
 
               <div className="min-w-0 flex-1">
-                <div className="font-semibold text-neutral-900">{item.title}</div>
+                <div className="text-base font-semibold text-neutral-900">{item.title}</div>
               </div>
 
               <div

@@ -82,3 +82,19 @@ Import trace:
 [00:31:48.052] Server  LOG     ✓ Compiled in 315ms
 [00:32:19.889] Browser WARN    Image with src "/appointment-scheduling-softwaret.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
 [00:33:20.884] Server  LOG     ✓ Compiled in 185ms
+[01:24:37.050] Server  LOG     ✓ Compiled in 201ms
+[01:24:41.531] Server  LOG     ✓ Compiled in 216ms
+[01:24:45.847] Server  LOG     ✓ Compiled in 172ms
+[01:24:56.925] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:26:10.817] Server  LOG     ✓ Compiled in 203ms
+[01:26:12.831] Server  LOG     ✓ Compiled in 202ms
+[01:26:20.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:26:20.791] Browser WARN    Image with src "/salon.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:26:34.622] Server  LOG     ✓ Compiled in 284ms
+[01:26:36.649] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:27:32.226] Browser WARN    Image with src "/man.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[01:27:34.751] Browser WARN    Image with src "/online-calendar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[01:27:34.751] Browser WARN    Image with src "/schedule-appointments.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[01:29:06.368] Server  LOG     ✓ Compiled in 108ms
+[01:29:08.809] Server  LOG     ✓ Compiled in 114ms

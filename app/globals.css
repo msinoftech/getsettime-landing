@@ -3,18 +3,15 @@
 body {
   color: var(--color-neutral-600);
   font-family: var(--font-roboto);
-  font-size: 15px;
-}
-p{
   letter-spacing: .4px;
   word-spacing: 1px;
+  font-size: 15px;
+}
+
+p{
   font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: .4px;
-  word-spacing: 1px;
-}
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
