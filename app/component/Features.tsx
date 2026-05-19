@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
 
 export const SectionTitle: FC<{ eyebrow: string; title: string; desc?: string }> = ({ eyebrow, title, desc }) => (
-  <div className="space-y-2 text-center">
+  <div className="space-y-3 text-center">
     <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
       <span className="h-2 w-2 rounded-full bg-indigo-500" />
       {eyebrow}
@@ -15,7 +15,7 @@ export const SectionTitle: FC<{ eyebrow: string; title: string; desc?: string }>
 );
 
 export const FeatureCard: FC<{ title: string; desc: string; icon?: ReactNode;}> = ({ title, desc, icon }) => (
-  <div className="group relative h-full rounded-xl p-6 bg-white backdrop-blur-md shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
+  <div className="group relative h-full rounded-xl p-4 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
     <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md">
       {icon || (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -23,7 +23,7 @@ export const FeatureCard: FC<{ title: string; desc: string; icon?: ReactNode;}> 
         </svg>
       )}
     </div>
-    <h3 className="font-semibold text-neutral-900">{title}</h3>
+    <div className="font-semibold text-neutral-900">{title}</div>
     <p>{desc}</p>
   </div>
 );
@@ -42,18 +42,18 @@ export const TimelineItem: FC<{ step: number; title: string; desc: string }> = (
     <div className="absolute left-[-4px] top-1 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold text-white shadow-lg">
       {step}
     </div>
-    <div className="text-base font-semibold text-neutral-900">{title}</div>
+    <div className="font-semibold text-neutral-900">{title}</div>
     <p>{desc}</p>
   </div>
 );
 
 export const BookingTimeline: FC = () => (
-  <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+  <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
     <div className="lg:col-span-2 rounded-xl animate-fade-in-scale">
-      <h3 className="text-lg font-semibold text-neutral-900 mb-3">Booking Process</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="text-lg font-semibold text-neutral-900 mb-3">Booking Process</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         
-        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
+        <div className="group relative h-full rounded-xl p-4 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
           <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
@@ -63,7 +63,7 @@ export const BookingTimeline: FC = () => (
           <p>Durations, add-ons, pricing, buffers.</p>
         </div>
 
-        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
+        <div className="group relative h-full rounded-xl p-4 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
           <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -73,7 +73,7 @@ export const BookingTimeline: FC = () => (
           <p>Real-time availability across providers.</p>
         </div>
 
-        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
+        <div className="group relative h-full rounded-xl p-4 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
           <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -83,7 +83,7 @@ export const BookingTimeline: FC = () => (
           <p>Custom intake, policies, preferences.</p>
         </div>
 
-        <div className="group relative h-full rounded-xl p-6 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
+        <div className="group relative h-full rounded-xl p-4 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl animate-fade-in-scale space-y-3">
           <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md mb-3">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -106,7 +106,7 @@ export const BookingTimeline: FC = () => (
 
 export const TrustBar: FC = () => (
   <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 animate-fade-in-scale">
-    <div>Trusted by teams scheduling over <span className="font-semibold text-indigo-600">2M+</span> appointments</div>
+    <p>Trusted by teams scheduling over <span className="font-semibold text-indigo-600">2M+</span> appointments</p>
     <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4">
       <span className="px-3 py-1 rounded-md bg-white shadow-sm">DKIM/DMARC</span>
       <span className="px-3 py-1 rounded-md bg-white shadow-sm">PCI-DSS</span>
@@ -118,55 +118,43 @@ export const TrustBar: FC = () => (
 
 export const Tabs: FC<{ tabs: string[]; active: string; onChange: (v: string) => void }> = ({ tabs, active, onChange }) => (
   <div className="flex items-center justify-center overflow-x-auto pb-2 hide-scrollbar">
-    <div className="flex items-center justify-center flex-wrap gap-1 rounded-xl p-1.5 shadow-sm">
+    <div className="flex items-center justify-center flex-wrap gap-1 bg-white rounded-xl p-1.5 shadow-sm">
       {tabs.map((t) => (
-        <button key={t} type="button" onClick={() => onChange(t)} className={`px-4 sm:px-6 py-2.5 rounded-xl text-sm cursor-pointer ${ active === t ? "bg-indigo-600 text-white shadow-md" : "hover:bg-indigo-500/10 hover:text-indigo-600"}`}>{t}</button>
+        <button key={t} type="button" onClick={() => onChange(t)} className={`px-4 py-2.5 rounded-xl text-sm cursor-pointer ${ active === t ? "bg-indigo-600 text-white shadow-md" : "hover:bg-indigo-500/10 hover:text-indigo-600"}`}>{t}</button>
       ))}
     </div>
   </div>
 );
 
 export const AdminPanel: FC = () => (
-  <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-scale">
+  <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in-scale">
     
-    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
-      <h3 className="font-semibold text-neutral-900">Admin tools</h3>
+    <div className="bg-white rounded-xl p-4 shadow-xl space-y-3">
+      <div className="font-semibold text-neutral-900">Admin tools</div>
       <p>Quick-book, overrides, and bulk actions with role-based access.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {[
           "Round-robin assign",
           "Blackout dates",
           "Overbooking controls",
           "Multi-location",
         ].map((i, index) => (
-          <div
-            key={i}
-            className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md"
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            {i}
-          </div>
+          <div key={i} className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md" style={{ animationDelay: `${index * 100}ms` }}>{i}</div>
         ))}
       </div>
     </div>
 
-    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
-      <h3 className="font-semibold text-neutral-900">Reports & insights</h3>
+    <div className="bg-white rounded-xl p-4 shadow-xl space-y-3">
+      <div className="font-semibold text-neutral-900">Reports & insights</div>
       <p>Capacity, no-shows, revenue, and utilization KPIs.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {[
           "Utilization",
           "Revenue",
           "No-show rate",
           "Lead time",
         ].map((i, index) => (
-          <div
-            key={i}
-            className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md"
-            style={{ animationDelay: `${index * 100 + 400}ms` }}
-          >
-            {i}
-          </div>
+          <div key={i} className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md" style={{ animationDelay: `${index * 100 + 400}ms` }}>{i}</div>
         ))}
       </div>
     </div>
@@ -174,46 +162,33 @@ export const AdminPanel: FC = () => (
 );
 
 export const CustomerPanel: FC = () => (
-  <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in-scale">
-    
-    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
-      <h3 className="font-semibold text-neutral-900">Customer experience</h3>
+  <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in-scale">
+    <div className="bg-white rounded-xl p-4 shadow-xl space-y-3">
+      <div className="font-semibold text-neutral-900">Customer experience</div>
       <p>Mobile-first, accessible flows with instant confirmations and reminders.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {[
           "One-tap reschedule",
           "Two-way SMS",
           "Calendar sync",
           "Localized UI",
         ].map((i, index) => (
-          <div
-            key={i}
-            className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md"
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            {i}
-          </div>
+          <div key={i} className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md" style={{ animationDelay: `${index * 100}ms` }}>{i}</div>
         ))}
       </div>
     </div>
 
-    <div className="bg-white rounded-xl p-8 shadow-xl space-y-3">
-      <h3 className="font-semibold text-neutral-900">Engagement</h3>
+    <div className="bg-white rounded-xl p-4 shadow-xl space-y-3">
+      <div className="font-semibold text-neutral-900">Engagement</div>
       <p>Reminders, confirmations, and follow-ups that reduce no-shows.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {[
           "Email/SMS and WhatsApp reminders",
           "ICS calendar invites",
           "Reschedule links",
           "Feedback prompts",
         ].map((i, index) => (
-          <div
-            key={i}
-            className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md"
-            style={{ animationDelay: `${index * 100 + 400}ms` }}
-          >
-            {i}
-          </div>
+          <div key={i} className="px-4 py-3 rounded-xl bg-neutral-100 transition-all duration-300 hover:shadow-md" style={{ animationDelay: `${index * 100 + 400}ms` }}>{i}</div>
         ))}
       </div>
     </div>
@@ -230,8 +205,8 @@ export default function Features() {
 
   return (
     <section id="features" className="relative py-14 sm:py-20 scroll-mt-20">
-      <div className="absolute top-10 left-4 sm:top-16 sm:left-6 md:top-20 md:left-10 w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 bg-indigo-400/30 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-10 right-4 sm:bottom-16 sm:right-6 md:bottom-20 md:right-10 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-emerald-300/20 rounded-full blur-3xl animate-float animation-delay-2000" />
+      <div className="absolute top-10 left-4 sm:top-16 sm:left-6 md:top-20 md:left-10 w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 bg-indigo-600/30 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-10 right-4 sm:bottom-16 sm:right-6 md:bottom-20 md:right-10 w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 bg-emerald-500/20 rounded-full blur-3xl animate-float" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative">
@@ -252,7 +227,6 @@ export default function Features() {
 
             {active === "Overview" && mounted && (
               <div>
-                {/* Features grid */}
                 <FeatureGrid
                   items={[
                     {

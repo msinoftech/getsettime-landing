@@ -11,7 +11,6 @@ const companies = [
   { name: 'google-calendar', logo: '/google-calendar.svg' },
   { name: 'teams', logo: '/teams.svg' },
   { name: 'Zoom', logo: '/Zoom.svg' },
-  
 ];
 
 export default function TrustedCompanies() {
@@ -68,15 +67,13 @@ export default function TrustedCompanies() {
   }, []);
 
   return (
-    <section className="py-12 bg-neutral-50">
+    <section className="py-14 sm:py-20 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center space-y-2">
           <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Integrated with Leading Apps Worldwide</h2>
           <p>Join thousands of Companies that rely on our scheduling platform to power their business</p>
         </div>
-
         <div className="relative overflow-hidden">          
-          {/* Logo slider */}
           <div className="overflow-hidden py-6 w-full">
             <div ref={sliderRef} className="inline-flex items-center slider-track overflow-hidden">
               <div className="flex items-center gap-8 sm:gap-12 md:gap-16 slider-content overflow-hidden">

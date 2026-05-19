@@ -1,32 +1,33 @@
 "use client";
 import Image from "next/image";
-import { BASE_URL, LOGIN_URL, REGISTER_URL } from "@/lib/config";
+import { BASE_URL, REGISTER_GOOGLE_URL } from "@/lib/config";
 import Logo from "./Logo";
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden py-14 sm:py-20">
       <div className="absolute inset-0">
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300/20 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400/30 rounded-full blur-3xl animate-pulse [animation-delay:4s]" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/3 -translate-y-1/2 w-80 h-80 bg-indigo-600/30 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
           {/* Left column - Content */}
           <div className="text-center lg:text-left space-y-6">
-
             <div className="space-y-6">
-              <h1 className="text-3xl md:text-4xl lg:text-[50px] font-extrabold text-neutral-900">
+              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-700 shadow-sm">
+                  <span>⚡</span>
+                  Precision Scheduling for Modern Care
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">
                 <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">Your Next-Gen</span>{" "}Appointment Booking System
               </h1>
               <p>GetSetTime is the smart app for scheduling appointments trusted by 5,000+ Doctors, Salon Owners, and Wellness Professionals. Simple to set up in minutes. Smart enough to run itself.</p>
             </div>
-
-            {/* Hero buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href={`${REGISTER_URL}`} target="_blank" className="bg-indigo-600 text-white text-sm px-5 py-3 rounded-xl flex items-center justify-center gap-3">
+              <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
                 <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
                   <g>
                     <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
@@ -37,32 +38,31 @@ export default function HeroSection() {
                 </svg>
                 Sign up with Google
               </Link>
-              <Link href={`${BASE_URL}/contact-us`} className="bg-gray-900 text-white text-sm px-5 py-3 rounded-xl flex items-center justify-center">Start Free Trial</Link>
+              <Link href={`${BASE_URL}/contact-us`} className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Contact Us</Link>
             </div>
 
             {/* Hero stats */}
             <div className="grid grid-cols-3 gap-8">
-              <div>
+              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
                 <div className="text-2xl sm:text-3xl font-bold text-neutral-900">50K+</div>
                 <div className="text-sm">Active Users</div>
               </div>
-              <div>
+              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
                 <div className="text-2xl sm:text-3xl font-bold text-neutral-900">2M+</div>
                 <div className="text-sm">Appointments</div>
               </div>
-              <div>
+              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
                 <div className="text-2xl sm:text-3xl font-bold text-neutral-900">98%</div>
                 <div className="text-sm">Satisfaction</div>
               </div>
             </div>
           </div>
-
           {/* Right column - Interactive Demo */}
           <div className="relative w-full">
             <div className="relative mx-auto w-full max-w-full animate-fade-in-scale">
-              <div className="relative w-full min-h-auto bg-white/40 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
+              <div className="relative w-full min-h-auto bg-white backdrop-blur-2xl rounded-2xl shadow-2xl overflow-hidden">
                 {/* Booking Admin Dashboard Header */}
-                <div className="relative z-10 flex items-center justify-between px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 shadow-sm">
+                <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div className="relative">
                       <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 animate-pulse"></div>
@@ -80,30 +80,30 @@ export default function HeroSection() {
                 {/* Booking Admin Dashboard Grid */}
                 <div className="relative z-10 grid grid-cols-12 gap-2 sm:gap-3">
                   {/* Stats Header */}
-                  <div className="col-span-12 bg-white/15 backdrop-blur-md rounded-xl sm:rounded-2xl p-2 sm:p-3 flex flex-wrap justify-between gap-2 sm:gap-0 animate-glass-slide-in mb-2 sm:mb-0">
+                  <div className="col-span-12 p-2 sm:p-3 flex flex-wrap justify-between gap-2 sm:gap-0 animate-glass-slide-in">
                     <div className="relative">
                       <Logo />
                     </div>
                     <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                       <div className="text-center">
-                        <div className="text-sm sm:text-base md:text-lg font-bold text-cyan-600">24</div>
-                        <p>Today</p>
+                        <div className="text-sm sm:text-base md:text-lg font-black text-violet-600">24</div>
+                        <div className="text-neutral-700">Today</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-sm sm:text-base md:text-lg font-bold text-indigo-600">7</div>
-                        <p>Pending</p>
-                      </div>
+                        <div className="text-sm sm:text-base md:text-lg font-black text-indigo-600">7</div>
+                        <div className="text-neutral-700">Pending</div>
+                      </div>  
                       <div className="text-center">
-                        <div className="text-sm sm:text-base md:text-lg font-bold text-emerald-600">92%</div>
-                        <p>Filled</p>
+                        <div className="text-sm sm:text-base md:text-lg font-black text-emerald-600">92%</div>
+                        <div className="text-neutral-700">Filled</div>
                       </div>
                     </div>
                   </div>
 
                   {/* Today's Bookings - left column */}
-                  <div className="col-span-12 sm:col-span-6 bg-white/10 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4">
+                  <div className="col-span-12 sm:col-span-6 p-2.5 sm:p-3 md:p-4">
                     <div className="flex items-center justify-between mb-2 sm:mb-3">
-                      <h4 className="font-semibold text-neutral-800">Today&apos;s Bookings</h4>
+                      <div className="font-semibold text-neutral-800">Today&apos;s Bookings</div>
                       <div className="flex items-center gap-1">
                         <div className="w-1 h-1 rounded-full bg-neutral-400 animate-bounce [animation-delay:0ms]"></div>
                         <div className="w-1 h-1 rounded-full bg-neutral-400 animate-bounce [animation-delay:150ms]"></div>
@@ -128,7 +128,7 @@ export default function HeroSection() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="font-semibold text-neutral-800">{booking.client}</div>
-                            <p>{booking.service}</p>
+                            <div className="text-neutral-700 text-sm">{booking.service}</div>
                           </div>
                           <div className={`w-2 h-2 rounded-full flex-shrink-0 ${booking.status === 'confirmed' ? 'bg-green-600 animate-pulse' : 'bg-yellow-400'}`}></div>
                         </div>
@@ -140,11 +140,11 @@ export default function HeroSection() {
                   </div>
 
                   {/* Upcoming Meetings - right column */}
-                  <div className="col-span-12 sm:col-span-6 bg-white/10 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4">
+                  <div className="col-span-12 sm:col-span-6 p-2.5 sm:p-3 md:p-4">
                     <div className="flex items-center justify-between mb-2 sm:mb-0">
-                      <h4 className="font-semibold text-neutral-800">Upcoming Meetings</h4>
+                      <div className="font-semibold text-neutral-800">Upcoming Meetings</div>
                     </div>
-                    <div className="mb-2">Tue 30 Apr</div>
+                    <div className="text-neutral-700 text-sm">Tue 30 Apr</div>
                     <div className="space-y-2">
                       {[
                         { name: "Rahul Verma", role: "Engineer", meeting: "Sprint Planning", time: "01:00 PM", date: "30 Apr", avatar: "/man.png" },
@@ -159,8 +159,8 @@ export default function HeroSection() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="font-semibold text-neutral-800 truncate">{meeting.meeting}</div>
-                            <p className="text-sm">{meeting.name} • {meeting.role}</p>
-                            <p className="text-sm">{meeting.time} • {meeting.date}</p>
+                            <div className="text-neutral-700 text-sm">{meeting.name} • {meeting.role}</div>
+                            <div className="text-neutral-700 text-sm">{meeting.time} • {meeting.date}</div>
                           </div>
                         </div>
                       ))}
@@ -168,8 +168,8 @@ export default function HeroSection() {
                   </div>
 
                   {/* Revenue Chart - line graph, left column */}
-                  <div className="col-span-12 sm:col-span-6 bg-white/10 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 md:p-4">
-                    <h4 className="text-xs sm:text-sm font-semibold text-neutral-800 mb-1.5 sm:mb-2">This Week&apos;s Revenue</h4>
+                  <div className="col-span-12 sm:col-span-6 p-2.5 sm:p-3 md:p-4">
+                    <div className="text-xs sm:text-sm font-semibold text-neutral-800">This Week&apos;s Revenue</div>
                     <div className="relative">
                       <svg className="w-full h-full" viewBox="0 0 280 80" preserveAspectRatio="none">
                         {/* Shaded area under the line */}
@@ -223,19 +223,19 @@ export default function HeroSection() {
 
                   {/* Quick Actions - right column */}
                   <div className="col-span-12 sm:col-span-6 space-y-1.5 sm:space-y-2 p-2.5 sm:p-3 md:p-4">
-                    <button className="w-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-sm py-3 px-5 rounded-xl transition-all duration-200 hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                    <button className="w-full bg-indigo-600 text-white text-sm py-2.5 px-4 rounded-xl transition-all duration-200 hover:scale-102 shadow-lg flex items-center justify-center gap-2">
                       <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                       </svg>
                       <span className="truncate">New Booking</span>
                     </button>
-                    <button className="w-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-sm py-3 px-5 rounded-xl transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2">
+                    <button className="w-full bg-indigo-600 text-white text-sm py-2.5 px-4 rounded-xl transition-all duration-200 hover:scale-102 flex items-center justify-center gap-2">
                       <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                       </svg>
                       <span className="truncate">Send Reminders</span>
                     </button>
-                    <button className="w-full bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-sm py-3 px-5 rounded-xl transition-all duration-200 hover:scale-105 flex items-center justify-center gap-2">
+                    <button className="w-full bg-indigo-600 text-white text-sm py-2.5 px-4 rounded-xl transition-all duration-200 hover:scale-102 flex items-center justify-center gap-2">
                       <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
@@ -243,7 +243,6 @@ export default function HeroSection() {
                     </button>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

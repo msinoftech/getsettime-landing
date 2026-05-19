@@ -9,7 +9,7 @@ export default function Logo() {
         <div className="logo-container" style={{ overflow: 'visible', padding: '15px', margin: '-15px', display: 'inline-block' }}>
             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3448.58 799.54" className="h-10 w-auto" width="200" height="48" preserveAspectRatio="xMidYMid meet" style={{ overflow: 'visible', display: 'block' }}>
             <g aria-hidden={true}>
-              <circle fill="#4b39f4" cx="399.77" cy="399.77" r="360" className="animate-pulse"/>
+              <circle fill="#4b39f4" cx="399.77" cy="399.77" r="360" className="" style={{ transformOrigin: '399.77px 399.77px' }}/>
               <circle fill="#4b39f4" cx="399.77" cy="399.77" r="250" className="animate-ping" style={{ transformOrigin: '399.77px 399.77px' }}/>
               <path fill="#1de4a9" d="M430.5,242.26l87.1,84.83a12.4,12.4,0,0,0,15.95,2.28l28.21-29.43c13.16-5.6,28.12-3.14,37.89,6.19,11.81,11.28,10.24,27.08,10,28.94-13,16.21-22.6,28.44-26.9,33.73-1.07,1.32-3.63,4.44-3.42,8.44a10.4,10.4,0,0,0,1.86,5.19c3.12,4.77,14,16.62,29.37,31.73a28,28,0,0,1-32.14,43.76L553,435.48a10.3,10.3,0,0,0-8.3-3.31c-.83.08-3.42.43-6.38,3.34-5.05,5-50.05,55.84-111.11,125.54-1.69,1.69-10.47,10.13-23.93,9.92a33,33,0,0,1-18.47-6.16L264.15,452.13A36.07,36.07,0,0,1,306,397.8l92.43,78a7.59,7.59,0,0,0,4.88,2.82,8,8,0,0,0,6.79-2.82q38.87-45.29,77.72-90.56a5.86,5.86,0,0,0-.44-9.29l-90.79-96.11a27.76,27.76,0,0,1,33.92-37.62Z" transform="translate(-27.39 -32.54)"/>
             </g>

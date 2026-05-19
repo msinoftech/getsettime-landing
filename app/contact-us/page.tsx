@@ -3,17 +3,10 @@ import Script from "next/script";
 import ContactForm from "../component/ContactForm";
 import { APP_NAME, BASE_URL, contactInfo } from "@/lib/config";
 
-
 export const metadata: Metadata = {
   title: `Contact Us | ${APP_NAME}`,
   description: `Book a quick discussion with ${APP_NAME}. Speak with a product specialist about scheduling, bookings, setup, and integrations. We usually reply within 24 hours.`,
-  keywords: [
-    "contact GetSetTime",
-    "schedule a demo",
-    "appointment scheduling support",
-    "booking software contact",
-    "get in touch",
-  ],
+  keywords: [ "contact GetSetTime", "schedule a demo", "appointment scheduling support", "booking software contact", "get in touch"],
   alternates: {
     canonical: `${BASE_URL}/contact-us`,
   },
@@ -22,8 +15,8 @@ export const metadata: Metadata = {
     description: `Book a quick discussion or send a message. Speak with a product specialist about scheduling, bookings, and next steps. We reply within 24 hours.`,
     url: `${BASE_URL}/contact-us`,
     type: "website",
-    siteName: APP_NAME,
-    locale: "en_US",
+    siteName: `${APP_NAME}`,
+    locale: "en",
   },
   twitter: {
     card: "summary_large_image",
@@ -38,13 +31,11 @@ function InfoItem({ title, desc, icon, }: {
   icon: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition-shadow hover:shadow-md">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600">
-        {icon}
-      </span>
+    <div className="flex gap-4 rounded-xl bg-white/80 p-3 shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/25">{icon}</span>
       <div>
-        <h3 className="font-semibold text-slate-900">{title}</h3>
-        <p className="mt-0.5 text-sm text-slate-600">{desc}</p>
+        <div className="text-base font-semibold text-neutral-900">{title}</div>
+        <p>{desc}</p>
       </div>
     </div>
   );
@@ -60,20 +51,20 @@ export default function ContactUs() {
         "url": `${BASE_URL}/contact-us`,
         "name": `Contact Us | ${APP_NAME}`,
         "description": `Book a quick discussion with ${APP_NAME}. Speak with a product specialist about scheduling, bookings, setup, and integrations. We usually reply within 24 hours.`,
-        "inLanguage": "en-US",
+        "inLanguage": "en",
         "mainEntity": {
           "@type": "Organization",
-          "name": APP_NAME,
+          "name": `${APP_NAME}`,
           "url": `${BASE_URL}/contact-us`,
-          "email": contactInfo.email,
+          "email": `${contactInfo.email}`,
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": contactInfo.address,
+            "addressLocality": `${contactInfo.address}`,
           },
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer support",
-            "email": contactInfo.email,
+            "email": `${contactInfo.email}`,
             "areaServed": "Worldwide",
             "availableLanguage": ["English", "Hindi", "Punjabi"],
             "hoursAvailable": {
@@ -94,7 +85,7 @@ export default function ContactUs() {
           "@id": `${BASE_URL}/contact-us/#contactpage`
         },
         "description": `Book a quick discussion with ${APP_NAME}. Speak with a product specialist about scheduling, bookings, setup, and integrations. We usually reply within 24 hours.`,
-        "inLanguage": "en-US"
+        "inLanguage": "en"
       },
       {
         "@type": "BreadcrumbList",
@@ -114,24 +105,32 @@ export default function ContactUs() {
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <section className="relative pt-16 pb-12">
+      <section className="relative py-14 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+            {/* left: Content */}
             <div className="h-full min-h-0">
-              <div className="h-full rounded-3xl border border-slate-200/80 bg-gradient-to-br from-slate-50 to-blue-50/40 p-6 sm:p-8 lg:p-10">
+              <div className="h-full rounded-2xl bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.15),_transparent_30%),linear-gradient(180deg,#f8faff_0%,#eef2ff_100%)] shadow-md p-4 sm:p-6 lg:p-8 shadow-md">
                 <div className="space-y-6">
-                  <h2 className="text-3xl font-bold text-slate-900">Book a Quick Discussion</h2>
-                  <p className="text-slate-600 text-base sm:text-lg">Speak with a product specialist to explore your requirements and next steps.</p>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-700 shadow-sm">
+                    <span>⚡</span>
+                    quick discussion
+                  </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Book a quick discussion with a product specialist</h1>
+                  <p>Speak with a product specialist to explore your requirements and next steps.</p>
                   <ContactForm />
                 </div>
               </div>
             </div>
-
-            <div className="h-full min-h-0 rounded-3xl border border-slate-200/80 bg-gradient-to-br from-slate-50 to-blue-50/40 p-6 sm:p-8 lg:p-10 flex flex-col">
-              <span className="w-fit mb-4 rounded-full bg-blue-100 text-blue-700 px-4 py-1.5 text-sm font-medium">Contact us</span>
-              <h2 className="text-3xl font-bold text-slate-900 leading-snug sm:text-4xl">Have a question about scheduling or bookings?</h2>
-              <p className="mt-4 text-slate-600 text-base sm:text-lg">Send us a quick message and our team will get back to you shortly. We’re happy to help you with setup, integrations, or general queries.</p>
-              <div className="mt-10 space-y-4">
+            {/* right: Image */}
+            <div className="space-y-6">
+              <div className="w-fit inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-700 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-indigo-500" />
+                Contact us
+              </div>
+              <div className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Have a question about scheduling or bookings?</div>
+              <p>Send us a quick message and our team will get back to you shortly. We’re happy to help you with setup, integrations, or general queries.</p>
+              <div className="space-y-4">
                 <InfoItem
                   title="Fast response"
                   desc="We usually reply within 24 hours."

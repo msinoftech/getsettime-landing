@@ -16,7 +16,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/contact-us`,
-      priority: 0.7,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/solutions/doctor-appointment-scheduling-app`,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/solutions/dentist-appointment-scheduling-app`,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/solutions/hair-salon-appointment-scheduling-app`,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/solutions/physiotherapist-appointment-booking-app`,
+      priority: 0.8,
     },
     // Dynamic blog detail routes
     ...blogPosts.map((post) => ({

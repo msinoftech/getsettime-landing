@@ -3,7 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { APP_NAME, BASE_URL } from "@/lib/config";
+import { APP_NAME, BASE_URL, contactInfo } from "@/lib/config";
 import { blogPosts, getBlogBySlug, getRelatedPosts, getPrevNextPosts, getPostCategories } from "@/lib/blog-data";
 import { BlogSidebar } from "@/app/component/BlogSidebar";
 import { FaqSection } from "@/app/component/FaqSection";
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
   }
 
   return {
-    title: `${post.title} | ${APP_NAME} Blog`,
+    title: `${post.title} | Blog | ${APP_NAME}`,
     description: post.excerpt,
     keywords: post.keywords,
     authors: [{ name: post.author.name }],
@@ -39,15 +39,15 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       canonical: `${BASE_URL}/blog/${post.slug}`,
     },
     openGraph: {
-      title: post.title,
+      title: `${post.title} | Blog | ${APP_NAME}`,
       description: post.excerpt,
       url: `${BASE_URL}/blog/${post.slug}`,
       type: "article",
-      siteName: APP_NAME,
-      locale: "en_US",
-      publishedTime: post.publishedAt,
-      authors: [post.author.name],
-      section: post.category,
+      siteName: `${APP_NAME}`,
+      locale: "en",
+      publishedTime: `${post.publishedAt}`,
+      authors: [`${post.author.name}`],
+      section: `${post.category}`,
       images: [
         {
           url: `${BASE_URL}/${post.coverImage}`,
@@ -59,9 +59,9 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     },
     twitter: {
       card: "summary_large_image",
-      site: BASE_URL,
-      creator: BASE_URL,
-      title: post.title,
+      site: `${BASE_URL}`,
+      creator: `${APP_NAME}`,
+      title: `${post.title} | Blog | ${APP_NAME}`,
       description: post.excerpt,
       images: `${BASE_URL}/${post.coverImage}`,
     },
@@ -78,7 +78,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
   const relatedPosts = getRelatedPosts(slug, 3);
   const { prev: prevPost, next: nextPost } = getPrevNextPosts(slug);
-  const faqItems = (post.faq ?? []).map((faq) => ({
+  const faqItems = (post.faq ?? []).map((faq, i) => ({
     title: faq.question,
     content: faq.answer,
   }));
@@ -88,39 +88,54 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     "@graph": [
       {
         "@type": "BlogPosting",
-        "@id": `${BASE_URL}/blog/${post.slug}/#article`,
+        "@id": `${BASE_URL}/blog/${post.slug}/#BlogPosting`,
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": `${BASE_URL}/blog/${post.slug}/#articlepage`
+          "@id": `${BASE_URL}/blog/${post.slug}/#BlogPage`
         },
-        "headline": post.title,
-        "description": post.excerpt,
+        "headline": `${post.title} | Blog | ${APP_NAME}`,
+        "description": `${post.excerpt}`,
         "image": {
           "@type": "ImageObject",
           "url": `${BASE_URL}/${post.coverImage}`,
           "width": 1200,
           "height": 630
         },
-        "datePublished": post.publishedAt,
-        "dateModified": post.publishedAt,
+        "datePublished": `${post.publishedAt}`,
         "author": {
           "@type": "Person",
-          "name": post.author.name,
-          "jobTitle": post.author.role,
+          "name": `${post.author.name}`,
+          "jobTitle": `${post.author.role}`,
           "image": `${BASE_URL}/${post.author.avatar}`
         },
         "publisher": {
           "@type": "Organization",
-          "name": APP_NAME,
+          "name": `${APP_NAME}`,
           "logo": {
             "@type": "ImageObject",
-            "url": `${BASE_URL}/getsettime-logo.svg`
+            "url": `${BASE_URL}${contactInfo.logo}`
           }
         },
-        "articleSection": post.category,
-        "keywords": post.keywords,
-        "wordCount": post.content.split(/\s+/).length,
-        "inLanguage": "en-US"
+        "articleSection": `${post.category}`,
+        "keywords": `${post.keywords}`,
+        "wordCount": `${post.content.split(/\s+/).length}`,
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${BASE_URL}/blog/${post.slug}/#BlogPage`,
+        "url": `${BASE_URL}/blog/${post.slug}`,
+        "name": `${post.title} | Blog | ${APP_NAME}`,
+        "isPartOf": {
+          "@id": `${BASE_URL}/blog/#WebPage`  
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": `${BASE_URL}/${post.coverImage}`
+        },
+        "datePublished": `${post.publishedAt}`,
+        "dateModified": `${post.publishedAt}`,
+        "description": `${post.excerpt}`
       },
       {
         "@type": "BreadcrumbList",
@@ -146,20 +161,18 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         ]
       },
       {
-        "@type": "WebPage",
-        "@id": `${BASE_URL}/blog/${post.slug}/#articlepage`,
-        "url": `${BASE_URL}/blog/${post.slug}`,
-        "name": post.title,
-        "isPartOf": {
-          "@id": `${BASE_URL}/blog/#article`  
-        },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": `${BASE_URL}/${post.coverImage}`
-        },
-        "datePublished": post.publishedAt,
-        "dateModified": post.publishedAt,
-        "description": post.excerpt
+        "@type": "FAQPage",
+        "@id": `${BASE_URL}/blog/${post.slug}/#FAQPage`,
+        "mainEntity": [
+          ...faqItems.map((faq, i) => ({
+            "@type": "Question",
+            "name": `${faq.title}`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": `${faq.content}`
+            }
+          })),
+        ]
       }
     ]
   };
@@ -174,7 +187,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           <div className="absolute top-10 left-10 w-72 h-72 bg-indigo-400/15 rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
         </div>
-
         <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-wrap items-center justify-center gap-3">
             {getPostCategories(post).map((category) => (
@@ -184,20 +196,17 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 text-center">{post.title}</h1>
           <div className="relative w-full rounded-xl overflow-hidden">
-            <Image src={`/${post.coverImage}`} alt={post.title} width={1000} height={500} className="object-contain" priority />
+            <Image src={`/${post.coverImage}`} alt={post.title} width={1000} height={500} className="object-cover" priority />
           </div>
         </div>
-
       </section>
 
       {/* Main Content */}
       <section className="relative py-12 lg:py-16">
-        
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-10 w-72 h-72 bg-indigo-400/10 rounded-full blur-3xl" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
         </div>
-
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <article className="lg:col-span-8">
@@ -212,14 +221,13 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     <Image src={`/${post.author.avatar}`} alt={post.author.name} fill className="object-cover" />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Written by</p>
-                    <h3 className="font-semibold text-neutral-900">{post.author.name}</h3>
-                    <p>{post.author.role} at {APP_NAME}</p>
+                    <div className="text-xs font-semibold text-indigo-600 uppercase tracking-widest">Written by</div>
+                    <div className="font-semibold text-neutral-900">{post.author.name}</div>
+                    <div className="text-neutral-500 text-sm">{post.author.role} at {APP_NAME}</div>
                   </div>
                 </div>
               </div>
 
-              {/* Prev/Next Navigation */}
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {prevPost ? (
                   <Link href={`/blog/${prevPost.slug}`} className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -229,7 +237,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-1">Previous</p>
+                      <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-1">Previous</div>
                       <p className="font-semibold text-neutral-900 group-hover:text-indigo-600">{prevPost.title}</p>
                     </div>
                   </Link>
@@ -241,7 +249,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Back to</p>
+                      <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Back to</div>
                       <p className="font-semibold text-neutral-900 group-hover:text-indigo-600">All Articles</p>
                     </div>
                   </Link>
@@ -250,7 +258,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 {nextPost ? (
                   <Link href={`/blog/${nextPost.slug}`} className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
                     <div className="flex-1 text-right">
-                      <p className="text-xs font-medium text-white/70 uppercase tracking-wider">Next</p>
+                      <div className="text-xs font-medium text-white/70 uppercase tracking-wider">Next</div>
                       <p className="font-semibold text-white">{nextPost.title}</p>
                     </div>
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
@@ -262,7 +270,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 ) : (
                   <Link href="/blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
                     <div className="flex-1 text-right">
-                      <p className="text-xs font-medium text-white/70 uppercase tracking-wider">Explore</p>
+                      <div className="text-xs font-medium text-white/70 uppercase tracking-wider">Explore</div>
                       <p className="font-semibold text-white">More Articles</p>
                     </div>
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
@@ -274,7 +282,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 )}
               </div>
               
-              {/* FAQ Section - only show when post has FAQ items */}
               {faqItems.length > 0 && (
                 <div className="mt-10">
                   <h2 className="text-2xl font-bold text-neutral-900 mb-4">Frequently Asked Questions</h2>
@@ -283,8 +290,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
               )}
               
             </article>
-
-            {/* Sidebar */}
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-8">
                 <BlogSidebar currentPostSlug={post.slug} relatedPosts={relatedPosts} />

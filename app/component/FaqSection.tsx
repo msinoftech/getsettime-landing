@@ -44,8 +44,7 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
               </div>
 
               <div className="min-w-0 flex-1">
-                <h3 className="font-semibold text-neutral-900">{item.title}</h3>
-                <p>Quick answer about scheduling, setup, and automation.</p>
+                <div className="font-semibold text-neutral-900">{item.title}</div>
               </div>
 
               <div
@@ -63,9 +62,9 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
             <div id={`faq-content-${index}`} role="region" aria-labelledby={`faq-trigger-${index}`} className="grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" style={{ gridTemplateRows: isOpen ? "1fr" : "0fr", opacity: isOpen ? 1 : 0 }}>
               <div className="min-h-0 overflow-hidden">
                 <div className="px-5 pb-5">
-                  <div className="ml-0 border-l border-indigo-100 pl-0 sm:ml-[3.55rem] sm:pl-5">
+                  <div>
                   {item.content && (
-                      <div className="max-w-3xl prose" dangerouslySetInnerHTML={{ __html: item.content }}/>
+                      <p className="max-w-3xl prose" dangerouslySetInnerHTML={{ __html: item.content }}/>
                   )}
                   </div>
                 </div>

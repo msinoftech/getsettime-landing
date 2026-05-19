@@ -1,5 +1,4 @@
 "use client";
-
 import { useMemo, useState } from "react";
 
 type CalendarCell = {
@@ -106,30 +105,30 @@ function CalendarMonthPanel() {
   };
 
   return (
-    <div className="rounded-2xl border border-white/15 bg-white p-2.5 backdrop-blur-md sm:p-4">
-      <div className="mb-4 flex items-center justify-between text-slate-950">
-        <button type="button" onClick={goToPrevMonth} className="cursor-pointer rounded-md bg-indigo-600 px-1 py-1 text-xs transition-colors hover:brightness-110" aria-label="Show previous month">
+    <div className="rounded-xl bg-white p-4 shadow-xl">
+      <div className="mb-4 flex items-center justify-between text-neutral-900">
+        <button type="button" onClick={goToPrevMonth} className="cursor-pointer rounded-md bg-indigo-600 px-1 py-1 text-xs text-white transition-colors hover:brightness-110" aria-label="Show previous month">
           <svg className="h-4 w-4 text-white transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <h3 className="px-2 text-center text-xs font-semibold uppercase tracking-[0.08em] sm:text-sm sm:tracking-[0.12em]">{monthLabel}</h3>
-        <button type="button" onClick={goToNextMonth} className="cursor-pointer rounded-md bg-indigo-600 px-1 py-1 text-xs transition-colors hover:brightness-110" aria-label="Show next month">
+        <div className="px-2 text-center text-sm font-medium">{monthLabel}</div>
+        <button type="button" onClick={goToNextMonth} className="cursor-pointer rounded-md bg-indigo-600 px-1 py-1 text-xs text-white transition-colors hover:brightness-110" aria-label="Show next month">
           <svg className="h-4 w-4 text-white transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
           </svg>
         </button>
       </div>
 
-      <div className="mb-2 grid grid-cols-7 gap-1 text-center text-[10px] font-medium uppercase tracking-wider text-slate-500 sm:gap-2 sm:text-[11px]">
+      <div className="mb-2 grid grid-cols-7 gap-1 text-center text-sm font-medium text-neutral-600">
         {WEEK_DAYS.map((day) => (
           <div key={day}>{day}</div>
         ))}
       </div>
 
-      <div className="space-y-1.5 sm:space-y-4">
+      <div className="space-y-2 sm:space-y-4">
         {weeks.map((row, rowIndex) => (
-          <div key={`${monthLabel}-${rowIndex}`} className="grid grid-cols-7 gap-1 sm:gap-2">
+          <div key={`${monthLabel}-${rowIndex}`} className="grid grid-cols-7 gap-2">
             {row.map((cell) => {
               const isSelected = isSameDay(cell.date, selectedDate);
               const isMuted = !cell.isCurrentMonth;
@@ -171,17 +170,14 @@ export default function InteractiveCalendar() {
   return (
     <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.15),_transparent_30%),linear-gradient(180deg,#f8faff_0%,#eef2ff_100%)] py-14 sm:py-20">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-10 top-16 h-72 w-72 rounded-full bg-violet-300/20 blur-3xl" />
-        <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-sky-300/20 blur-3xl" />
+        <div className="absolute left-10 top-16 h-72 w-72 rounded-full bg-indigo-600/20 blur-3xl" />
+        <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-emerald-600/20 blur-3xl" />
         <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent" />
       </div>
-
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-10">
         {/* Left: Interactive Calendar */}
         <div className="relative xl:pb-12">
-          <div className="absolute -left-6 top-16 hidden h-28 w-28 rounded-full bg-gradient-to-br from-emerald-200/50 to-pink-200/50 blur-2xl md:block lg:-left-10 lg:top-20 lg:h-40 lg:w-40" />
-
-          <div className="relative rounded-2xl border border-white/60 bg-white/70 p-2.5 shadow-[0_25px_80px_rgba(79,70,229,0.15)] backdrop-blur-xl sm:p-5">
+          <div className="relative rounded-xl bg-white/80 shadow-xl p-4">
             <div className="relative z-10 mb-4 flex items-center justify-between">
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="relative">
@@ -193,38 +189,35 @@ export default function InteractiveCalendar() {
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-600 sm:h-2 sm:w-2" />
-                <span className="text-[10px] font-medium text-neutral-700 sm:text-xs">LIVE</span>
+                <span className="text-[10px] font-medium text-neutral-600 sm:text-xs">LIVE</span>
               </div>
             </div>
-
-            <div className="rounded-2xl bg-gradient-to-br from-[#4f5bdb] via-[#5a67f2] to-[#2536a8] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] sm:p-4">
-              <div className="mb-3 flex items-center justify-between text-white/80">
-                <div className="py-1 text-[10px] font-semibold tracking-[0.2em] text-white/90 sm:text-xs sm:tracking-[0.3em]">
-                  LIVE SCHEDULE
-                </div>
+            <div className="rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4">
+              <div className="mb-3 flex items-center justify-between text-white">
+                <div className="text-sm font-medium tracking-widest text-white">LIVE SCHEDULE</div>
               </div>
 
-              <div className="grid gap-3 sm:gap-4 md:grid-cols-[1.3fr_0.9fr]">
+              <div className="grid gap-3 sm:gap-4 grid-cols-1  sm:grid-cols-2">
                 <CalendarMonthPanel />
 
                 <div className="space-y-3 sm:space-y-4">
-                  <div className="rounded-[20px] border border-white/15 bg-white/10 p-3 text-white backdrop-blur-md sm:rounded-[24px] sm:p-4">
+                  <div className="rounded-xl bg-white/10 p-4 text-white shadow-xl">
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-medium text-white/70">Automation</p>
-                      <span className="rounded-full bg-white/15 px-3 py-1 text-xs">Active</span>
+                      <p className="text-sm font-medium text-white">Automation</p>
+                      <span className="rounded-full bg-emerald-600 text-white px-3 py-1 text-xs">Active</span>
                     </div>
-                    <div className="space-y-2.5 text-xs sm:space-y-3 sm:text-sm">
+                    <div className="space-y-2 text-base sm:text-sm">
                       <div className="flex items-center justify-between rounded-2xl bg-white/10 px-3 py-2">
-                        <span className="text-xs">Instant confirmation</span>
-                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                        <span className="text-sm sm:text-xs">Instant confirmation</span>
+                        <span className="h-2 w-2 rounded-full bg-emerald-400" />
                       </div>
                       <div className="flex items-center justify-between rounded-2xl bg-white/10 px-3 py-2">
-                        <span className="text-xs">Reminder sequence</span>
-                        <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+                        <span className="text-sm sm:text-xs">Reminder sequence</span>
+                        <span className="h-2 w-2 rounded-full bg-amber-300" />
                       </div>
                       <div className="flex items-center justify-between rounded-2xl bg-white/10 px-3 py-2">
-                        <span className="text-xs">Meeting routing</span>
-                        <span className="h-2.5 w-2.5 rounded-full bg-sky-300" />
+                        <span className="text-sm sm:text-xs">Meeting routing</span>
+                        <span className="h-2 w-2 rounded-full bg-sky-300" />
                       </div>
                     </div>
                   </div>
@@ -232,59 +225,50 @@ export default function InteractiveCalendar() {
               </div>
             </div>
           </div>
-
-          <div className="animate-float mt-4 w-full rounded-2xl border border-slate-200/70 bg-white/95 p-4 shadow-2xl md:absolute md:-bottom-0 md:right-10 md:w-64 lg:-bottom-0 lg:-right-5">
-              <p className="mb-3 text-sm font-semibold text-slate-900">Upcoming booking</p>
+          <div className="animate-float mt-4 w-full rounded-xl bg-white shadow-xl p-4 md:absolute md:-bottom-0 md:right-10 md:w-64 lg:-bottom-0 lg:-right-5">
+              <p className="mb-3 text-sm font-medium text-neutral-900">Upcoming booking</p>
               <div className="space-y-2">
                 <div className="rounded-xl pb-1">
-                  <p className="text-xs font-semibold text-slate-900">Consultation Call</p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">with Neha Gupta</p>
+                  <div className="text-xs font-medium text-neutral-900">Consultation Call</div>
+                  <div className="text-xs text-neutral-600">with Neha Gupta</div>
                 </div>
 
-                <div className="space-y-2 text-[11px] text-slate-600">
+                <div className="space-y-2 text-sm text-neutral-600">
                   <div className="flex items-center justify-between">
-                    <span className="font-medium text-slate-500">Date</span>
-                      <span className="font-semibold text-slate-800">{futureDateLabel}</span>
+                    <span className="font-medium text-neutral-600">Date</span>
+                      <span className="font-semibold text-neutral-900">{futureDateLabel}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-medium text-slate-500">Time</span>
-                    <span className="font-semibold text-slate-800">10:00 AM</span>
+                    <span className="font-medium text-neutral-600">Time</span>
+                    <span className="font-semibold text-neutral-900">10:00 AM</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-medium text-slate-500">Status</span>
-                    <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">Confirmed</span>
+                    <span className="font-medium text-neutral-600">Status</span>
+                    <span className="rounded-full bg-emerald-600 text-white px-2 py-0.5 text-xs font-medium">Confirmed</span>
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  className="w-full rounded-lg bg-gradient-to-r from-indigo-600 to-blue-600 px-3 py-2 text-xs font-semibold text-white transition-all duration-200 hover:brightness-105"
-                >
-                  View Details
-                </button>
+                <button type="button" className="w-full rounded-xl bg-indigo-600 px-3 py-2 text-xs font-medium text-white shadow-sm">View Details</button>
               </div>
-            </div>
+          </div>
         </div>
-
         {/* Right: Content */}
         <div className="relative space-y-3">
           <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-indigo-500" />
             Smart scheduling, designed to feel live
           </div>
-
           <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">
             Smart Scheduling,
             <span className="block bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">
               Maximum Efficiency
             </span>
           </h2>
-
           <p>Turn this section into a premium live experience instead of a flat illustration. Show a real calendar, active time slots, automation status, and booking flow so visitors instantly understand how powerful your platform feels.</p>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {FEATURES.map((feature) => (
-              <div key={feature} className="group rounded-xl border border-slate-200/80 bg-white/90 p-3 shadow-[0_10px_35px_rgba(20,25,50,0.08)] transition-all duration-300 hover:-translate-y-1">
+              <div key={feature} className="group rounded-xl bg-white/80 p-3 shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/25">✓</div>
                 <p>{feature}</p>

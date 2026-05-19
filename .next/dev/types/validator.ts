@@ -101,6 +101,42 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/solutions/dentist-appointment-scheduling-app/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/solutions/dentist-appointment-scheduling-app">> = Specific
+  const handler = {} as typeof import("../../../app/solutions/dentist-appointment-scheduling-app/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/solutions/doctor-appointment-scheduling-app/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/solutions/doctor-appointment-scheduling-app">> = Specific
+  const handler = {} as typeof import("../../../app/solutions/doctor-appointment-scheduling-app/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/solutions/hair-salon-appointment-scheduling-app/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/solutions/hair-salon-appointment-scheduling-app">> = Specific
+  const handler = {} as typeof import("../../../app/solutions/hair-salon-appointment-scheduling-app/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/solutions/physiotherapist-appointment-booking-app/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/solutions/physiotherapist-appointment-booking-app">> = Specific
+  const handler = {} as typeof import("../../../app/solutions/physiotherapist-appointment-booking-app/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/terms-of-conditions/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/terms-of-conditions">> = Specific
