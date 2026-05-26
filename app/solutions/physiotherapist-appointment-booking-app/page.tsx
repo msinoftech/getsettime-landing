@@ -241,7 +241,7 @@ const growthRoadmap = [
             {/* Left column - Content */}
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-700 shadow-sm">
-                  <span>🏥</span>
+                  <span className="h-2 w-2 rounded-full bg-indigo-500" />
                   Built for Physiotherapists
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">

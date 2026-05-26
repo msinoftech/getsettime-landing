@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Roboto } from "next/font/google";
+import { BASE_URL, APP_NAME, contactInfo } from "@/lib/config";
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
@@ -15,6 +16,42 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "GetSetTime – Smart Scheduling App for Booking Automation",
   description: "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: `${BASE_URL}`,
+  },
+  openGraph: {
+    title: "GetSetTime – Smart Scheduling App for Booking Automation",
+    description: "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.",
+    url: `${BASE_URL}`,
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "GetSetTime – Smart Scheduling App for Booking Automation",
+    description: "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.",
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {

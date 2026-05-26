@@ -163,7 +163,7 @@ export default function BlogPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
-              <span>📰</span>
+              <span className="h-2 w-2 rounded-full bg-indigo-500" />
               Articles
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">
