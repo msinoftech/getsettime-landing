@@ -42,26 +42,52 @@ function InfoItem({ title, desc, icon, }: {
 }
 
 export default function ContactUs() {
+  
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ContactPage",
-        "@id": `${BASE_URL}/contact-us/#contactpage`,
+        "@type": "WebPage",
+        "@id": `${BASE_URL}/contact-us/#webpage`,
         "url": `${BASE_URL}/contact-us`,
         "name": `Contact Us | ${APP_NAME}`,
+        "headline": `Contact ${APP_NAME}`,
         "description": `Book a quick discussion with ${APP_NAME}. Speak with a product specialist about scheduling, bookings, setup, and integrations. We usually reply within 24 hours.`,
         "inLanguage": "en",
-        "mainEntity": {
-          "@type": "Organization",
-          "name": `${APP_NAME}`,
-          "url": `${BASE_URL}/contact-us`,
-          "email": `${contactInfo.email}`,
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": `${contactInfo.address}`,
-          },
-          "contactPoint": {
+        "isPartOf": {
+          "@id": `${BASE_URL}/#website`
+        },
+        "about": {
+          "@id": `${BASE_URL}/#organization`
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": `${BASE_URL}${contactInfo.logo}`
+        },
+        "breadcrumb": {
+          "@id": `${BASE_URL}/contact-us/#breadcrumb`
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        "name": `${APP_NAME}`,
+        "url": `${BASE_URL}`,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${BASE_URL}${contactInfo.logo}`
+        },
+        "email": `${contactInfo.email}`,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": `${contactInfo.address}`,
+          "addressLocality": `${contactInfo.address}`,
+          "addressRegion": `${"IN"}`,
+          "postalCode": `${"IN"}`,
+          "addressCountry": `${"IN"}`
+        },
+        "contactPoint": [
+          {
             "@type": "ContactPoint",
             "contactType": "customer support",
             "email": `${contactInfo.email}`,
@@ -69,42 +95,67 @@ export default function ContactUs() {
             "availableLanguage": ["English", "Hindi", "Punjabi"],
             "hoursAvailable": {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
               "opens": "09:00",
-              "closes": "18:00",
-            },
+              "closes": "18:00"
+            }
           },
-        },
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": `${contactInfo.email}`,
+            "areaServed": "Worldwide",
+            "availableLanguage": ["English"]
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/getsettime",
+          "https://x.com/getsettime",
+          "https://www.instagram.com/getsettime",
+          "https://www.youtube.com/@GetSetTime"
+        ]
       },
       {
-        "@type": "WebPage",
-        "@id": `${BASE_URL}/contact-us/#contactpage`,
-        "url": `${BASE_URL}/contact-us`,
-        "name": `Contact Us | ${APP_NAME}`,
-        "isPartOf": {
-          "@id": `${BASE_URL}/contact-us/#contactpage`
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        "url": `${BASE_URL}`,
+        "name": `${APP_NAME}`,
+        "publisher": {
+          "@id": `${BASE_URL}/#organization`
         },
-        "description": `Book a quick discussion with ${APP_NAME}. Speak with a product specialist about scheduling, bookings, setup, and integrations. We usually reply within 24 hours.`,
         "inLanguage": "en"
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${BASE_URL}/contact-us/#breadcrumb`,
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}` },
-          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": `${BASE_URL}/contact-us` },
-        ],
-      },
-    ],
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${BASE_URL}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact Us",
+            "item": `${BASE_URL}/contact-us`
+          }
+        ]
+      }
+    ]
   };
 
   return (
     <>
-      <Script
-        id="contact-page-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <Script id="contact-page-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+      
       <section className="relative py-14 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
@@ -113,7 +164,7 @@ export default function ContactUs() {
               <div className="h-full rounded-2xl bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.15),_transparent_30%),linear-gradient(180deg,#f8faff_0%,#eef2ff_100%)] shadow-md p-4 sm:p-6 lg:p-8 shadow-md">
                 <div className="space-y-6">
                   <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-700 shadow-sm">
-                    <span>💬</span>
+                    <span className="h-2 w-2 rounded-full bg-indigo-500" />
                     quick discussion
                   </div>
                   <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Book a quick discussion with a product specialist</h1>

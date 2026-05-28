@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: "en",
     images: [
       {
-        url: `${BASE_URL}${contactInfo.logo}`,
+        url: `${BASE_URL}/physiotherapy-appointment.jpg`,
         width: 1200,
         height: 630,
         alt: `Physiotherapy Appointment Booking App | ${APP_NAME}`,
@@ -77,9 +77,9 @@ const schemaData = {
   "@graph": [
       {
       "@type": "Organization",
-      "@id": `${pageUrl}/#Organization`,
+      "@id": `${BASE_URL}/#Organization`,
       "name": `${APP_NAME}`,
-      "url": `${pageUrl}`,
+      "url": `${BASE_URL}`,
       "logo": {
         "@type": "ImageObject",
         "url": `${BASE_URL}${contactInfo.logo}`,

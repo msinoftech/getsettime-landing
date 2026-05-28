@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       locale: "en",
       images: [
         {
-          url: `${BASE_URL}${contactInfo.logo}`,
+          url: `${BASE_URL}/salon-appointment.jpg`,
           width: 1200,
           height: 630,
           alt: `Hair Salon Booking Software | ${APP_NAME} – Smart Appointment Scheduling`,
@@ -64,9 +64,9 @@ const schemaData = {
     "@graph": [
         {
         "@type": "Organization",
-        "@id": `${pageUrl}/#Organization`,
+        "@id": `${BASE_URL}/#Organization`,
         "name": `${APP_NAME}`,
-        "url": `${pageUrl}`,
+        "url": `${BASE_URL}`,
         "logo": {
           "@type": "ImageObject",
           "url": `${BASE_URL}${contactInfo.logo}`,

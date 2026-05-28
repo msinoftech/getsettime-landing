@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: `Read the terms and conditions for using ${APP_NAME}.`,
     url: `${BASE_URL}/terms-of-conditions`,
     type: "website",
-    siteName: APP_NAME,
+    siteName: `${APP_NAME}`,
   },
 };
 

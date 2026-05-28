@@ -116,9 +116,9 @@ export default function DoctorAppointmentSchedulingApp() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": `${pageUrl}/#Organization`,
+        "@id": `${BASE_URL}/#Organization`,
         "name": `${APP_NAME}`,
-        "url": `${pageUrl}`,
+        "url": `${BASE_URL}`,
         "logo": {
           "@type": "ImageObject",
           "url": `${BASE_URL}${contactInfo.logo}`,

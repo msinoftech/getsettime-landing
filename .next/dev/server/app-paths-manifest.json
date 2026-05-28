@@ -1,7 +1,8 @@
 {
-  "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/blog/page": "app/blog/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/contact-us/page": "app/contact-us/page.js",
   "/page": "app/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js",
   "/solutions/dentist-appointment-scheduling-app/page": "app/solutions/dentist-appointment-scheduling-app/page.js",
   "/solutions/doctor-appointment-scheduling-app/page": "app/solutions/doctor-appointment-scheduling-app/page.js",
   "/solutions/hair-salon-appointment-scheduling-app/page": "app/solutions/hair-salon-appointment-scheduling-app/page.js",

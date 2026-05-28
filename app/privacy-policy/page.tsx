@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: `Learn how ${APP_NAME} collects, uses, and protects your personal information.`,
     url: `${BASE_URL}/privacy-policy`,
     type: "website",
-    siteName: APP_NAME,
+    siteName: `${APP_NAME}`,
   },
 };
 

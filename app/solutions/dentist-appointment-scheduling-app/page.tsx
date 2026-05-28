@@ -72,22 +72,22 @@ const schemaData = {
     "@graph": [
         {
         "@type": "Organization",
-        "@id": `${pageUrl}/#Organization`,
+        "@id": `${BASE_URL}/#Organization`,
         "name": `${APP_NAME}`,
-        "url": `${pageUrl}`,
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${BASE_URL}${contactInfo.logo}`,
-          "width": 512,
-          "height": 512,
-        },
+        "url": `${BASE_URL}`,
+            "logo": {
+            "@type": "ImageObject",
+            "url": `${BASE_URL}${contactInfo.logo}`,
+            "width": 512,
+            "height": 512,
+            },
         "description": `The easiest dentist scheduling software - Book clients online 24/7, send auto WhatsApp reminders & reduce no-shows — no tech skills needed. Try free today.`,
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Support",
-          "availableLanguage": ["English", "Hindi", "Punjabi"],
-          "areaServed": "Worldwide"
-        }
+            "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "availableLanguage": ["English", "Hindi", "Punjabi"],
+            "areaServed": "Worldwide"
+            }
         },
         {
         "@type": "WebPage",
@@ -96,11 +96,11 @@ const schemaData = {
         "name": `Dentist Appointment Booking Software | ${APP_NAME} – Smart Appointment Scheduling`,
         "description": "The easiest dentist scheduling software - Book clients online 24/7, send auto WhatsApp reminders & reduce no-shows — no tech skills needed. Try free today.",
         "inLanguage": "en",
-        "isPartOf": {
-          "@type": "WebSite",
-          "name": `${APP_NAME}`,
-          "url": `${BASE_URL}`,
-        },
+            "isPartOf": {
+            "@type": "WebSite",
+            "name": `${APP_NAME}`,
+            "url": `${BASE_URL}`,
+            },
         },
         {
         "@type": "SoftwareApplication",
