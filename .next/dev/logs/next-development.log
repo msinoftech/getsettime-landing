@@ -1,179 +1,479 @@
-[00:00:02.983] Server  LOG     ✓ Ready in 2.4s
-[00:09:21.785] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:50.327] Server  LOG     ✓ Compiled in 210ms
-[00:09:51.089] Browser ERROR   ./lib/config.ts:3:14
-Ecmascript file had an error
-  1 | export const APP_NAME = "GetSetTime";
-  2 | export const BASE_URL = "https://www.getsettime.com";
-> 3 | export const BASE_URL = "http://localhost:3000";
-    |              ^^^^^^^^
-  4 | export const LOGIN_URL = "https://app.getsettime.com";
-  5 | export const REGISTER_URL = "https://app.getsettime.com/register";
-  6 | export const REGISTER_GOOGLE_URL = "https://app.getsettime.com/register?g_signup=1";
+[00:00:03.202] Server  LOG     ✓ Ready in 2.5s
+[00:05:37.075] Server  LOG     ✓ Compiled in 1043ms
+[00:05:42.564] Server  LOG     ✓ Compiled in 206ms
+[00:08:00.748] Server  LOG     ✓ Compiled in 277ms
+[00:08:01.320] Server  LOG     ✓ Compiled in 546ms
+[00:09:29.373] Server  LOG     ✓ Compiled in 112ms
+[00:09:32.746] Server  LOG     ✓ Compiled in 105ms
+[00:10:36.415] Server  ERROR   ⨯ ReferenceError: schemaData is not defined
+[00:10:36.641] Browser ERROR   uncaughtError: ReferenceError: schemaData is not defined
+[00:10:39.431] Server  ERROR   ⨯ ReferenceError: schemaData is not defined
+[00:10:40.635] Browser ERROR   uncaughtError: ReferenceError: schemaData is not defined
+[00:10:41.467] Server  ERROR   ⨯ ReferenceError: schemaData is not defined
+[00:10:42.642] Browser ERROR   uncaughtError: ReferenceError: schemaData is not defined
+[00:10:44.486] Server  ERROR   ⨯ ReferenceError: schemaData is not defined
+[00:10:45.646] Browser ERROR   uncaughtError: ReferenceError: schemaData is not defined
+[00:10:48.043] Server  ERROR   ⨯ ReferenceError: Script is not defined
+[00:10:48.646] Browser ERROR   uncaughtError: ReferenceError: Script is not defined
+[00:11:17.979] Server  LOG     ✓ Compiled in 117ms
+[00:11:29.253] Server  LOG     ✓ Compiled in 114ms
+[00:11:30.509] Server  LOG     ✓ Compiled in 145ms
+[00:15:39.751] Server  WARN    ⚠ Cross origin request detected from 192.168.29.65 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:15:39.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:37.246] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:38.333] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-the name `BASE_URL` is defined multiple times
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
 
-Import traces:
-  #1 [Server Component]:
-    ./lib/config.ts
-    ./app/layout.tsx
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-  #2 [Server Component]:
-    ./lib/config.ts
-    ./app/not-found.tsx
+%s%s https://react.dev/link/hydration-mismatch 
 
-  #3 [Server Component]:
-    ./lib/config.ts
-    ./app/page.tsx
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                          <head>
+                          <body
+                            className="roboto_98740b32-module__d_LB9a__variable"
+-                           data-new-gr-c-s-check-loaded="14.1297.0"
+-                           data-gr-ext-installed=""
+                          >
+                  ...
 
-  #4 [Client Component Browser]:
-    ./lib/config.ts [Client Component Browser]
-    ./app/component/Footer.tsx [Client Component Browser]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
+[00:18:02.689] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:02.689] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-  #5 [Client Component Browser]:
-    ./lib/config.ts [Client Component Browser]
-    ./app/component/Pricing.tsx [Client Component Browser]
-    ./app/component/Pricing.tsx [Server Component]
-    ./app/page.tsx [Server Component]
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
 
-  #6 [Client Component SSR]:
-    ./lib/config.ts [Client Component SSR]
-    ./app/component/Footer.tsx [Client Component SSR]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-  #7 [Client Component SSR]:
-    ./lib/config.ts [Client Component SSR]
-    ./app/component/Pricing.tsx [Client Component SSR]
-    ./app/component/Pricing.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:09:52.201] Server  LOG     ✓ Compiled in 195ms
-[00:09:53.216] Browser ERROR   ./lib/config.ts:3:14
-Ecmascript file had an error
-  1 | export const APP_NAME = "GetSetTime";
-  2 | export const BASE_URL = "https://www.getsettime.com";
-> 3 | export const BASE_URL = "http://localhost:3001";
-    |              ^^^^^^^^
-  4 | export const LOGIN_URL = "https://app.getsettime.com";
-  5 | export const REGISTER_URL = "https://app.getsettime.com/register";
-  6 | export const REGISTER_GOOGLE_URL = "https://app.getsettime.com/register?g_signup=1";
+%s%s https://react.dev/link/hydration-mismatch 
 
-the name `BASE_URL` is defined multiple times
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                          <head>
+                          <body
+                            className="roboto_98740b32-module__d_LB9a__variable"
+-                           data-new-gr-c-s-check-loaded="14.1297.0"
+-                           data-gr-ext-installed=""
+                          >
+                  ...
 
-Import traces:
-  #1 [Server Component]:
-    ./lib/config.ts
-    ./app/layout.tsx
-
-  #2 [Server Component]:
-    ./lib/config.ts
-    ./app/not-found.tsx
-
-  #3 [Server Component]:
-    ./lib/config.ts
-    ./app/page.tsx
-
-  #4 [Client Component Browser]:
-    ./lib/config.ts [Client Component Browser]
-    ./app/component/Footer.tsx [Client Component Browser]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  #5 [Client Component Browser]:
-    ./lib/config.ts [Client Component Browser]
-    ./app/component/Pricing.tsx [Client Component Browser]
-    ./app/component/Pricing.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-
-  #6 [Client Component SSR]:
-    ./lib/config.ts [Client Component SSR]
-    ./app/component/Footer.tsx [Client Component SSR]
-    ./app/component/Footer.tsx [Server Component]
-    ./app/layout.tsx [Server Component]
-
-  #7 [Client Component SSR]:
-    ./lib/config.ts [Client Component SSR]
-    ./app/component/Pricing.tsx [Client Component SSR]
-    ./app/component/Pricing.tsx [Server Component]
-    ./app/page.tsx [Server Component]
-[00:14:30.610] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:30.766] Browser WARN    Image with src "/salon.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:14:49.139] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:10.210] Server  LOG     ✓ Compiled in 145ms
-[00:28:11.261] Server  LOG     ✓ Compiled in 132ms
-[00:28:13.333] Server  LOG     ✓ Compiled in 117ms
-[00:28:14.760] Server  LOG     ✓ Compiled in 110ms
-[00:28:29.238] Server  LOG     ✓ Compiled in 183ms
-[00:29:59.099] Server  LOG     ✓ Compiled in 135ms
-[00:31:13.883] Browser ERROR   ./app/contact-us/page.tsx:51:15
+[00:18:33.610] Browser ERROR   ./app/app-functionality/page.tsx:102:15
 Parsing ecmascript source code failed
-  49 |     {
-  50 |       "@type": "ContactPage",
-> 51 |       "@id": `${BASE_URL}/contact-us/#webpage`,
-     |               ^
-  52 |       "url": `${BASE_URL}/contact-us`,
-  53 |       "name": `Contact Us | ${APP_NAME}`,
-  54 |       "headline": `Contact ${APP_NAME}`,
+  100 |             </div>
+  101 |           </div>
+> 102 |         </div>
+      |               ^
+> 103 |       </section>
+      | ^^^^^^^
+  104 |     </>
+  105 |   );
+  106 | }
 
-Expected ';', '}' or <eof>
-[00:31:34.572] Browser ERROR   ./app/contact-us/page.tsx:51:15
+Expected '</', got 'jsx text (
+      )'
+[00:18:33.636] Browser ERROR   ./app/app-functionality/page.tsx:102:15
 Parsing ecmascript source code failed
-  49 |     {
-  50 |       "@type": "ContactPage",
-> 51 |       "@id": `${BASE_URL}/contact-us/#webpage`,
-     |               ^
-  52 |       "url": `${BASE_URL}/contact-us`,
-  53 |       "name": `Contact Us | ${APP_NAME}`,
-  54 |       "headline": `Contact ${APP_NAME}`,
+  100 |             </div>
+  101 |           </div>
+> 102 |         </div>
+      |               ^
+> 103 |       </section>
+      | ^^^^^^^
+  104 |     </>
+  105 |   );
+  106 | }
 
-Expected ';', '}' or <eof>
-[00:31:37.443] Browser ERROR   ./app/contact-us/page.tsx:51:15
-Parsing ecmascript source code failed
-  49 |     {
-  50 |       "@type": "ContactPage",
-> 51 |       "@id": `${BASE_URL}/contact-us/#webpage`,
-     |               ^
-  52 |       "url": `${BASE_URL}/contact-us`,
-  53 |       "name": `Contact Us | ${APP_NAME}`,
-  54 |       "headline": `Contact ${APP_NAME}`,
+Expected '</', got 'jsx text (
+      )'
+[00:19:13.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:13.187] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-Expected ';', '}' or <eof>
-[00:44:13.233] Server  LOG     ✓ Compiled in 193ms
-[00:44:13.246] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:44:14.769] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:47:13.875] Server  LOG     ✓ Compiled in 138ms
-[00:47:15.829] Server  LOG     ✓ Compiled in 129ms
-[00:49:04.550] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:49:04.732] Browser WARN    Image with src "/dentist-appointment.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:53:35.459] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:53:43.564] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:54:29.066] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:54:29.259] Browser WARN    Image with src "/salon.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:55:15.865] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:27.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:46.817] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:55.666] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:55.747] Browser WARN    Image with src "/salon.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:55:59.691] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:56:47.334] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:56:47.704] Browser WARN    Image with src "/salon.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:56:50.102] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:56:50.320] Browser WARN    Image with src "/salon.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:57:58.829] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:57:58.988] Browser WARN    Image with src "/salon.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:58:23.892] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:34.602] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:34.858] Browser WARN    Image with src "/physiotherapy-appointment.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[01:00:09.462] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:00:09.645] Browser WARN    Image with src "/physiotherapy-appointment.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:19:25.417] Server  LOG     ✓ Compiled in 111ms
+[00:19:50.302] Server  LOG     ✓ Compiled in 158ms
+[00:19:51.247] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:52.334] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:19:56.449] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:57.334] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:20:01.118] Server  ERROR   ⨯ ReferenceError: APP_NAME is not defined
+[00:20:01.642] Browser ERROR   uncaughtError: ReferenceError: APP_NAME is not defined
+[00:20:01.684] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:02.333] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:20:04.668] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:05.361] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:20:10.279] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:11.335] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:22:37.718] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:38.330] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:22:41.183] Server  LOG     ✓ Compiled in 123ms
+[00:23:21.477] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:34.482] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:35.332] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+
+[00:24:37.436] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:24.323] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:08.060] Server  LOG     ✓ Compiled in 108ms
+[00:27:22.738] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:23.333] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/app-funct..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-scribe-recorder-ready="true"
+                        >
+                  ...
+

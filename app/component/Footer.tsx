@@ -21,6 +21,7 @@ export default function Footer() {
     { label: "Contact Us", href: `${BASE_URL}/contact-us` },
     { label: "Privacy Policy", href: `${BASE_URL}/privacy-policy` },
     { label: "Terms of Conditions", href: `${BASE_URL}/terms-of-conditions` },
+    // { label: "App Functionality", href: `${BASE_URL}/app-functionality-demo-video` },
   ];
   return (
     <footer className="relative bg-gradient-to-br from-neutral-50 via-white to-indigo-500/30">

@@ -1,10 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/contact-us/page": "app/contact-us/page.js",
+  "/app-functionality-demo-video/page": "app/app-functionality-demo-video/page.js",
+  "/app-functionality/page": "app/app-functionality/page.js",
   "/page": "app/page.js",
-  "/privacy-policy/page": "app/privacy-policy/page.js",
-  "/solutions/dentist-appointment-scheduling-app/page": "app/solutions/dentist-appointment-scheduling-app/page.js",
-  "/solutions/doctor-appointment-scheduling-app/page": "app/solutions/doctor-appointment-scheduling-app/page.js",
-  "/solutions/hair-salon-appointment-scheduling-app/page": "app/solutions/hair-salon-appointment-scheduling-app/page.js",
-  "/solutions/physiotherapist-appointment-booking-app/page": "app/solutions/physiotherapist-appointment-booking-app/page.js"
+  "/solutions/doctor-appointment-scheduling-app/page": "app/solutions/doctor-appointment-scheduling-app/page.js"
 }
