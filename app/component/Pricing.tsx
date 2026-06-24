@@ -151,30 +151,29 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
             <div className="relative grid gap-8 lg:grid-cols-[1fr_320px] lg:items-center">
               <div>
                 <Heading
-                  badge="Simple pricing"
-                  title="Plans from ₹999/month — scale when you grow"
-                  description="Starter includes 1 seat and 250 bookings/month. Add seats or upgrade for WhatsApp automation, branding, and multi-location support."
+                  badge="Important Pricing Benefit"
+                  title="Start Free with 250 Bookings/Month"
+                  description="Every workspace gets the first 250 appointments free. After that, choose a plan based on the number of seats/service providers you need."
                   titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
                   descriptionClassName="text-indigo-50"
                 />
                 <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-white">
-                  <span className="rounded-xl bg-white/15 px-4 py-2 ring-1 ring-white/20">250 bookings on Starter</span>
-                  <span className="rounded-xl bg-white/15 px-4 py-2 ring-1 ring-white/20">GST shown at checkout</span>
-                  <span className="rounded-xl bg-white/15 px-4 py-2 ring-1 ring-white/20">Extra seats ₹799/mo</span>
+                  <span className="rounded-xl bg-white/15 px-4 py-2 ring-1 ring-white/20">Free for every workspace</span>
+                  <span className="rounded-xl bg-white/15 px-4 py-2 ring-1 ring-white/20">Upgrade only when you grow</span>
+                  <span className="rounded-xl bg-white/15 px-4 py-2 ring-1 ring-white/20">Plans based on seats</span>
                 </div>
               </div>
               <div className="rounded-3xl bg-white p-4 shadow-2xl sm:p-6 space-y-3">
-                <div className="text-sm font-semibold uppercase tracking-widest text-slate-500">Starter highlight</div>
+                <div className="text-sm font-semibold uppercase tracking-widest text-slate-500">Included Free</div>
                 <div className="flex items-end gap-2">
-                  <span className="text-5xl font-black tracking-tight text-slate-950">₹999</span>
-                  <span className="pb-2 text-sm font-bold text-slate-600">/month</span>
+                  <span className="text-5xl font-black tracking-tight text-slate-950">250</span>
+                  <span className="pb-2 text-sm font-bold text-slate-600">bookings/month</span>
                 </div>
                 <div className="rounded-2xl bg-indigo-50 p-4">
-                  <div className="text-md font-semibold text-indigo-800">1 seat · 250 bookings included</div>
-                  <div className="text-sm leading-6 text-indigo-600">Launch your booking page and dashboard in minutes.</div>
+                  <div className="text-sm">Start accepting appointments without payment. Upgrade when your workspace needs more seats or more capacity.</div>
                 </div>
                 <Link href={REGISTER_GOOGLE_URL} target="_blank" className="mt-5 flex w-full items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700">
-                  Get started
+                  Start Free Now
                 </Link>
               </div>
             </div>
