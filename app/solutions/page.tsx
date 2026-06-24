@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import { APP_NAME, BASE_URL, contactInfo, REGISTER_GOOGLE_URL, LOGIN_URL } from "@/lib/config";
+import { APP_NAME, BASE_URL, contactInfo, REGISTER_URL } from "@/lib/config";
 import { businessCategories, solutionPages } from "@/lib/solutions-data";
 import SolutionsCategoryDashboard from "./SolutionsCategoryDashboard";
 import Heading from "@/app/component/Heading";
@@ -118,7 +118,7 @@ function CategoryDashboardBlock({
       </div>
 
       <Link href={category.learnMoreHref} aria-label={`Learn more about ${category.title} - Solutions`} className={`inline-flex w-fit items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition ${accent.button}`}>
-        Learn more
+        Sign Up for Free
         <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
@@ -272,18 +272,6 @@ export default function SolutionsPage() {
               wrapperClassName="space-y-4"
               titleClassName="text-4xl font-black tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]"
             />
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Start free workspace - Solutions" className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700">
-                Start free workspace
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-              <Link href={`${BASE_URL}/pricing`} aria-label="View pricing - Solutions" className="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-800 transition hover:border-neutral-400 hover:bg-neutral-50">
-                View pricing
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -349,7 +337,7 @@ export default function SolutionsPage() {
                   />
                   
                   <div className="mt-8">
-                  <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Solutions" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                  <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Solutions" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">

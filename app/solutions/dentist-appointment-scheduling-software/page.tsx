@@ -284,7 +284,7 @@ return (
                             </svg>
                             Sign up with Google
                         </Link>
-                        <Link href={`${BASE_URL}/contact-us`} aria-label="Contact Us - Dentist Appointment Scheduling Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Contact Us</Link>
+                        <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Dentist Appointment Scheduling Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
                     </div>
                     
                     <div className="flex flex-wrap gap-3">
@@ -738,7 +738,7 @@ return (
             ))}
           </div>
           <div className="mt-5 text-center">
-            <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Start your dental clinic booking setup - Dentist Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white shadow-md transition hover:bg-indigo-700">Start your dental clinic booking setup</Link>
+            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your dental clinic booking setup - Dentist Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
           </div>
         </div>
       </div>
@@ -854,7 +854,7 @@ return (
                 />
                 
                 <div className="mt-8">
-                <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Dentist Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Dentist Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-3 text-white">

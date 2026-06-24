@@ -155,7 +155,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center justify-between gap-4">
             <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Sign In - Navbar" className="text-sm text-indigo-600 cursor-pointer px-5 py-2.5 rounded-xl bg-indigo-500/10">Sign In</Link>
-            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Sign Up - Navbar" className="rounded-xl bg-indigo-600 text-white text-sm px-5 py-2.5">Sign Up</Link>
+            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Sign Up - Navbar" className="rounded-xl bg-indigo-600 text-white text-sm px-5 py-2.5">Start Free</Link>
           </div>
 
           <button aria-label="Toggle menu" className="lg:hidden inline-flex items-center justify-center rounded-xl p-2 text-indigo-600 cursor-pointer bg-indigo-500/10 hover:bg-indigo-600 hover:text-white transition-colors" onClick={() => { setOpen((v) => !v); if (open) setMobileSolutionsOpen(false); }} type="button">

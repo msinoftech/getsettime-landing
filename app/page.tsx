@@ -548,7 +548,7 @@ export default function Home() {
                 />
                 
                 <div className="mt-8">
-                  <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Home" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                  <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Home" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-3 text-white">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
-import { APP_NAME, BASE_URL, LOGIN_URL, REGISTER_GOOGLE_URL, contactInfo } from "@/lib/config";
+import { APP_NAME, BASE_URL, LOGIN_URL, REGISTER_URL, REGISTER_GOOGLE_URL, contactInfo } from "@/lib/config";
 import Heading from "../component/Heading";
 import Card from "../component/Card";
 import CheckList from "../component/CheckList";
@@ -440,7 +440,7 @@ export default function FeaturesPage() {
                     />
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Start free workspace - Features" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">Start free workspace</Link>
+                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Start free workspace - Features" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">Get Started for Free</Link>
                         <Link href={`${BASE_URL}/pricing`} aria-label="View Pricing - Features" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">View Pricing</Link>
                     </div>
 
@@ -1050,7 +1050,7 @@ export default function FeaturesPage() {
 
                     <div className="relative mt-5 rounded-2xl bg-blue-50 p-4 ring-1 ring-blue-100">
                       <div className="text-sm font-bold text-blue-700">1 seat included</div>
-                      <div className="mt-1 text-xs text-blue-600">First 250 bookings/month included</div>
+                      <div className="mt-1 text-xs text-blue-600">First 250 bookings/month included free</div>
                     </div>
 
                     <ul className="relative mt-6 space-y-3">
@@ -1072,8 +1072,8 @@ export default function FeaturesPage() {
                     </ul>
 
                     <div className="relative mt-8 space-y-3">
-                      <Link href={REGISTER_GOOGLE_URL} target="_blank" className="flex w-full items-center justify-center rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:bg-indigo-700"
-                      >Get started</Link>
+                      <Link href={REGISTER_URL} target="_blank" className="flex w-full items-center justify-center rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:bg-indigo-700"
+                      >Get Started Free</Link>
                       <Link href={`${BASE_URL}/pricing`} className="flex w-full items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 px-6 py-3 text-sm font-semibold text-neutral-800 transition hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700">Compare all plans</Link>
                     </div>
                   </div>
@@ -1099,7 +1099,7 @@ export default function FeaturesPage() {
                   />
                   
                   <div className="mt-8">
-                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Features" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Features" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">

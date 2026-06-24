@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import { APP_NAME, BASE_URL, LOGIN_URL, REGISTER_GOOGLE_URL, contactInfo, } from "@/lib/config";
+import { APP_NAME, BASE_URL, REGISTER_URL, REGISTER_GOOGLE_URL, contactInfo, } from "@/lib/config";
 import { comparisonRows, pricingFaqItems, pricingTiers, EXTRA_SEAT_PRICE, } from "@/lib/pricing-data";
 import Pricing from "../component/Pricing";
 import PricingComparison from "../component/PricingComparison";
@@ -345,7 +345,7 @@ export default function PricingPage() {
               />
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Get started - Pricing" className="flex items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm text-white">Get started — ₹999/mo</Link>
+                <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Get started - Pricing" className="flex items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm text-white">Get Started Free</Link>
                 <Link href={`${BASE_URL}/contact-us`} aria-label="Talk to sales - Pricing" className="flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm text-white">Talk to sales</Link>
               </div>
 
@@ -593,7 +593,7 @@ export default function PricingPage() {
                       ))}
                     </div>
 
-                    <Link href={`${BASE_URL}/contact-us`} aria-label="Talk to sales about teams - Pricing" className="mt-6 inline-flex rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Talk to sales about teams</Link>
+                    <Link href={`${BASE_URL}/contact-us`} aria-label="Talk to sales about teams - Pricing" className="mt-6 inline-flex rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Talk to Sales</Link>
                   </div>
                 </div>
 
@@ -679,7 +679,7 @@ export default function PricingPage() {
                   />
                   
                   <div className="mt-8">
-                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Pricing" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Pricing" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">

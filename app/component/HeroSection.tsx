@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BASE_URL, REGISTER_GOOGLE_URL } from "@/lib/config";
+import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import Logo from "./Logo";
 import Link from "next/link";
 import Heading from "./Heading";
@@ -37,7 +37,7 @@ export default function HeroSection() {
                 </svg>
                 Sign up with Google
               </Link>
-              <Link href={`${BASE_URL}/contact-us`} aria-label="Contact Us - Hero Section" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Contact Us</Link>
+              <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Hero Section" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
             </div>
 
             {/* Hero stats */}

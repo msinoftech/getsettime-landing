@@ -1,3 +1,5 @@
+import { REGISTER_GOOGLE_URL } from "./config";
+
 export type BusinessType = {
   label: string;
   href: string;
@@ -46,16 +48,16 @@ export const businessCategories: BusinessCategory[] = [
       "Online appointment booking for patients, 24/7 from any device",
       "Automated WhatsApp & SMS reminders to reduce no-shows",
     ],
-    learnMoreHref: "/solutions/doctor-appointment-scheduling-software",
+    learnMoreHref: REGISTER_GOOGLE_URL,
     image: "/grow-doctor.jpg",
     imageAlt: "Medical and health services appointment scheduling",
     businessTypes: [
       { label: "Medical Clinics & Doctors", href: "/solutions/doctor-appointment-scheduling-software" },
       { label: "Dentists", href: "/solutions/dentist-appointment-scheduling-software" },
       { label: "Physiotherapists", href: "/solutions/physiotherapist-appointment-booking-software" },
-      { label: "Chiropractors", href: "/contact-us" },
-      { label: "Massage", href: "/contact-us" },
-      { label: "Psychologists", href: "/contact-us" },
+      // { label: "Chiropractors", href: "/contact-us" },
+      // { label: "Massage", href: "/contact-us" },
+      // { label: "Psychologists", href: "/contact-us" },
     ],
     dashboard: {
       label: "Clinic Dashboard",
@@ -81,15 +83,15 @@ export const businessCategories: BusinessCategory[] = [
       "Easily group services into categories for simple searching",
       "Stylist calendars, team sync, and WhatsApp client reminders",
     ],
-    learnMoreHref: "/solutions/salon-appointment-scheduling-software",
+    learnMoreHref: REGISTER_GOOGLE_URL,
     image: "/salon-appointment.jpg",
     imageAlt: "Beauty and wellness appointment scheduling",
     businessTypes: [
-      { label: "Hair salons", href: "/solutions/salon-appointment-scheduling-software" },
-      { label: "Beauty salons", href: "/contact-us" },
-      { label: "Spa salons", href: "/contact-us" },
-      { label: "Nail salons", href: "/contact-us" },
-      { label: "Barber shops", href: "/contact-us" },
+      { label: "Salons", href: "/solutions/salon-appointment-scheduling-software" },
+      // { label: "Beauty salons", href: "/contact-us" },
+      // { label: "Spa salons", href: "/contact-us" },
+      // { label: "Nail salons", href: "/contact-us" },
+      // { label: "Barber shops", href: "/contact-us" },
     ],
     dashboard: {
       label: "Salon Dashboard",
@@ -115,15 +117,15 @@ export const businessCategories: BusinessCategory[] = [
       "Synchronise your business calendar with Google Calendar",
       "Accept online bookings and send automated reminders",
     ],
-    learnMoreHref: "/contact-us",
+    learnMoreHref: REGISTER_GOOGLE_URL,
     image: "/physiotherapy-appointment.jpg",
     imageAlt: "Personal services appointment scheduling",
     businessTypes: [
-      { label: "Consulting", href: "/contact-us" },
-      { label: "Counselling", href: "/contact-us" },
-      { label: "Coaching", href: "/contact-us" },
-      { label: "Cleaning", href: "/contact-us" },
-      { label: "Pet services", href: "/contact-us" },
+      // { label: "Consulting", href: "/contact-us" },
+      // { label: "Counselling", href: "/contact-us" },
+      // { label: "Coaching", href: "/contact-us" },
+      // { label: "Cleaning", href: "/contact-us" },
+      // { label: "Pet services", href: "/contact-us" },
     ],
     dashboard: {
       label: "Services Dashboard",
@@ -149,14 +151,14 @@ export const businessCategories: BusinessCategory[] = [
       "Easy scheduling of fitness classes and sports coaching",
       "Set availability for trainers and manage recurring bookings",
     ],
-    learnMoreHref: "/contact-us",
+    learnMoreHref: REGISTER_GOOGLE_URL,
     image: "/physiotherapy-services.jpg",
     imageAlt: "Sports and fitness appointment scheduling",
     businessTypes: [
-      { label: "Personal trainers", href: "/contact-us" },
-      { label: "Gyms", href: "/contact-us" },
-      { label: "Fitness classes", href: "/contact-us" },
-      { label: "Yoga classes", href: "/contact-us" },
+      // { label: "Personal trainers", href: "/contact-us" },
+      // { label: "Gyms", href: "/contact-us" },
+      // { label: "Fitness classes", href: "/contact-us" },
+      // { label: "Yoga classes", href: "/contact-us" },
     ],
     dashboard: {
       label: "Fitness Dashboard",
