@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 
 export interface FaqItem {
@@ -32,9 +31,9 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
                 : "border-slate-200/80 bg-white/80 shadow-[0_10px_35px_rgba(15,23,42,0.06)] hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-[0_18px_50px_rgba(99,102,241,0.10)]"
             }`}
           >
-            <button type="button" onClick={() => toggle(index)} className="flex w-full items-center gap-4 p-5 text-left cursor-pointer" aria-expanded={isOpen} aria-controls={`faq-content-${index}`} id={`faq-trigger-${index}`}>
+            <button type="button" onClick={() => toggle(index)} className="flex w-full items-center gap-3 p-4 sm:p-5 text-left cursor-pointer" aria-expanded={isOpen} aria-controls={`faq-content-${index}`} id={`faq-trigger-${index}`}>
               <div
-                className={`mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border transition-all ${
+                className={`mt-0.5 h-11 w-11 hidden sm:flex shrink-0 items-center justify-center rounded-xl border transition-all ${
                   isOpen
                     ? "border-indigo-200 bg-gradient-to-br from-indigo-600 to-indigo-500 text-white shadow-lg"
                     : "border-slate-200 bg-slate-50 text-slate-600 group-hover:border-indigo-200 group-hover:bg-indigo-50 group-hover:text-indigo-700"
@@ -44,11 +43,11 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
               </div>
 
               <div className="min-w-0 flex-1">
-                <div className="text-base font-semibold text-neutral-900">{item.title}</div>
+                <div className="text-sm sm:text-base font-semibold text-neutral-900">{item.title}</div>
               </div>
 
               <div
-                className={`flex h-10 w-10 text-xl shrink-0 items-center justify-center rounded-xl border transition-all ${
+                className={`flex sm:h-10 sm:w-10 h-8 w-8 text-xl shrink-0 items-center justify-center rounded-xl border transition-all ${
                   isOpen
                     ? "border-indigo-200 bg-indigo-50 text-indigo-700"
                     : "border-slate-200 bg-white text-slate-500 group-hover:border-indigo-200 group-hover:text-indigo-700"

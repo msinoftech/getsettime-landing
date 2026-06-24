@@ -11,6 +11,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${BASE_URL}/features`,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/pricing`,
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/blog`,
       priority: 0.8,
     },
@@ -19,19 +27,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/solutions/doctor-appointment-scheduling-app`,
+      url: `${BASE_URL}/solutions/doctor-appointment-scheduling-software`,
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/solutions/dentist-appointment-scheduling-app`,
+      url: `${BASE_URL}/solutions/dentist-appointment-scheduling-software`,
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/solutions/hair-salon-appointment-scheduling-app`,
+      url: `${BASE_URL}/solutions/salon-appointment-scheduling-software`,
       priority: 0.8,
     },
     {
-      url: `${BASE_URL}/solutions/physiotherapist-appointment-booking-app`,
+      url: `${BASE_URL}/solutions/physiotherapist-appointment-booking-software`,
       priority: 0.8,
     },
     // Dynamic blog detail routes

@@ -5,7 +5,7 @@ import { BASE_URL, APP_NAME, contactInfo } from "@/lib/config";
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
-// import { CRISP_WEBSITE_ID } from "@/lib/config";
+import { CRISP_WEBSITE_ID } from "@/lib/config";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -69,17 +69,14 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           `}
         </Script>
         
-        {/* FastBots — GetSetTime support chat (ID from lib/config or NEXT_PUBLIC_FASTBOTS_BOT_ID) */}
-        {/* <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cmnh1yilz091ipa1pl120d4d6"></script> */}
-        
         {/* Crisp — GetSetTime support chat (ID from lib/config or NEXT_PUBLIC_CRISP_WEBSITE_ID) */}
-        {/* <Script id="crisp-chat" strategy="afterInteractive">
+        <Script id="crisp-chat" strategy="afterInteractive">
           {`
             window.$crisp=[];
             window.CRISP_WEBSITE_ID="${CRISP_WEBSITE_ID}";
             (function(){var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
           `}
-        </Script> */}
+        </Script>
       </head>
 
       <body className={`${roboto.variable}`}>
@@ -89,7 +86,9 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         </noscript>
 
         <Navbar />
+        <main>
           {children}
+        </main>
         <Footer />
       </body>
     </html>

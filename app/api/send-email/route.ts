@@ -14,9 +14,15 @@ export async function POST(req: Request) {
 
     const isNewsletter = professions === "Newsletter" || name === "Newsletter Subscriber";
 
+    const subjectDate = new Date().toLocaleDateString("en-IN", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+
     const subject = isNewsletter
-      ? "New Newsletter Subscription"
-      : "New Inquiry via Contact Form";
+      ? `🔔 New Newsletter Subscriber: ${email} (${subjectDate})`
+      : `📩 New Lead: ${name}${professions ? ` — ${professions}` : ""} (${subjectDate})`;
 
     const headerTitle = isNewsletter
       ? "New Newsletter Subscription"

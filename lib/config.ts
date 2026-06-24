@@ -1,17 +1,17 @@
 export const APP_NAME = "GetSetTime";
 export const BASE_URL = "https://www.getsettime.com";
-//export const BASE_URL = "http://localhost:3001";
 export const LOGIN_URL = "https://app.getsettime.com";
 export const REGISTER_URL = "https://app.getsettime.com/register";
 export const REGISTER_GOOGLE_URL = "https://app.getsettime.com/register?g_signup=1";
 
 /** Crisp chat — set NEXT_PUBLIC_CRISP_WEBSITE_ID in env to override per environment */
-// export const CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID ?? "e108d784-7585-4ae1-9c0b-c3a9f0fe394b";
+export const CRISP_WEBSITE_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID ?? "e108d784-7585-4ae1-9c0b-c3a9f0fe394b";
 
 export const contactInfo = {
   logo: "/getsettime-logo.jpg",
   email: "office.getsettime@gmail.com",
-  address: "Chandigarh, India"
+  address: "Chandigarh, India",
+  DEFAULT_IMAGE: "/dashboard.jpg"
 };
 
 export const socialLinks = [

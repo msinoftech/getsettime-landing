@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+,     "app/component/TestimonialSlider.tsx___", "app/component/BusinessTypes.tsx__"  ],
   "exclude": [
     "node_modules"
   ]

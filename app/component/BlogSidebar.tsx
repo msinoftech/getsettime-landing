@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/blog-data";
@@ -53,7 +52,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
         <ul className="space-y-2">
           {blogCategories.filter(cat => cat !== "All").map((category) => (
             <li key={category}>
-              <Link href={`${BASE_URL}/blog/?category=${encodeURIComponent(category)}`} className="group flex items-center justify-between px-4 py-2 rounded-xl bg-indigo-50 transition-all duration-200">
+              <Link href={`${BASE_URL}/blog/?category=${encodeURIComponent(category)}`} aria-label="Category - Blog" className="group flex items-center justify-between px-4 py-2 rounded-xl bg-indigo-50 transition-all duration-200">
                 <span className="text-sm group-hover:text-indigo-600 transition-colors">{category}</span>
                 <svg className="w-4 h-4 text-neutral-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -75,7 +74,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
           </div>
           <div className="space-y-3">
             {relatedPosts.map((post) => (
-              <Link key={post.id} href={`${BASE_URL}/blog/${post.slug}`} className="group block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
+              <Link key={post.id} href={`${BASE_URL}/blog/${post.slug}`} aria-label="Related Post - Blog" className="group block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
                 <span className="inline-block px-2.5 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded-full mb-2">{post.category}</span>
                 <h4 className="text-sm font-semibold text-neutral-900 group-hover:text-indigo-600 transition-colors">{post.title}</h4>
               </Link>
@@ -109,7 +108,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
         <div className="relative z-10 space-y-4">
           <div className="text-lg font-bold">Ready to Get Started?</div>
           <div>Transform your scheduling with GetSetTime. Get started today.</div>
-          <Link href={`${LOGIN_URL}`} className="inline-flex items-center gap-2 px-6  py-3 bg-indigo-600 text-white rounded-xl">Get Started</Link>
+          <Link href={`${LOGIN_URL}`} aria-label="Get Started - Blog Sidebar" className="inline-flex items-center gap-2 px-6  py-3 bg-indigo-600 text-white rounded-xl">Get Started</Link>
         </div>
       </div>
     </aside>

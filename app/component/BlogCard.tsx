@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/blog-data";
@@ -10,31 +9,32 @@ interface BlogCardProps {
 export function BlogCard({ post }: BlogCardProps) {
   return (
     <article className="group relative h-full">
-      <Link href={`/blog/${post.slug}`} className="block h-full">
-        <div className="relative h-full bg-white rounded-xl overflow-hidden shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-          
-          <div className="relative overflow-hidden">
-            <Image src={`/${post.coverImage}`} alt={post.title} width={500} height={400} className="object-cover aspect-[4/3] w-full h-full transition-transform duration-700 group-hover:scale-110"/>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute top-4 left-4 z-10">
-              <span className="px-4 py-2 text-sm bg-white/90 text-indigo-600 rounded-xl shadow-sm transition-all duration-300 group-hover:bg-indigo-600 group-hover:text-white">{post.category}</span>
+      <Link href={`/blog/${post.slug}`} aria-label="Blog Post Details - Blog" className="block h-full">
+        <div className="relative h-full bg-white rounded-xl overflow-hidden shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between">
+
+          <div className="relative">
+            <div className="relative overflow-hidden">
+              <Image src={`/${post.coverImage}`} alt={post.title} width={800} height={400} className="object-cover aspect-[4/3] w-full h-full transition-transform duration-700 group-hover:scale-110"/>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+
+            <div className="p-4 space-y-3">
+              <h3 className="text-lg font-bold text-neutral-900 group-hover:text-indigo-600 transition-colors duration-300">{post.title}</h3>
+              <p>{post.excerpt.length > 120 ? `${post.excerpt.slice(0, 120).trimEnd()}…` : post.excerpt}</p>
             </div>
           </div>
           
-          <div className="p-6 space-y-3">
-            <h3 className="text-lg font-bold text-neutral-900 group-hover:text-indigo-600 transition-colors duration-300">{post.title}</h3>
-            <p>{post.excerpt}</p>
-            <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-              <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                  <Image src={`/${post.author.avatar}`} alt={post.author.name} fill className="object-cover"/>
-                </div>
-                <div>
-                  <p className="font-semibold">{post.author.name}</p>
-                  <p>{post.author.role}</p>
-                </div>
-              </div>
-              <time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+          <div className="p-4">            
+            <div className="flex items-center justify-between pt-4 border-t border-neutral-100 text-sm text-indigo-600">
+              <span className="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+                {post.category}
+              </span>
+              <span className="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                <time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+              </span>
+              
             </div>
           </div>
 

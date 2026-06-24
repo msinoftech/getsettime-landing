@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Suspense } from "react";
-import { APP_NAME, BASE_URL, contactInfo } from "@/lib/config";
+import { APP_NAME, BASE_URL, contactInfo, LOGIN_URL } from "@/lib/config";
 import { blogPosts } from "@/lib/blog-data";
 import { BlogList } from "../component/BlogList";
-import { FaqSection } from "../component/FaqSection";
+import Link from "next/link";
+import Heading from "../component/Heading";
 
 function BlogListSkeleton() {
   return (
@@ -32,36 +33,38 @@ function BlogListSkeleton() {
   );
 }
 
+const pageUrl = `${BASE_URL}/blog`;
+
 export const metadata: Metadata = {
   title: `Blog | ${APP_NAME} - Scheduling Tips, Best Practices & Industry Insights`,
   description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, product updates, and insights to help you manage appointments more efficiently.`,
   keywords: [ "appointment scheduling blog", "scheduling tips", "booking best practices", "calendar management", "business scheduling", "no-show reduction", "team scheduling", "healthcare scheduling"],
   alternates: {
-    canonical: `${BASE_URL}/blog`,
+    canonical: pageUrl,
   },
   openGraph: {
     title: `Blog | ${APP_NAME} - Scheduling Tips, Best Practices & Industry Insights`,
     description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, product updates, and insights to help you manage appointments more efficiently.`,
-    url: `${BASE_URL}/blog`,
+    url: pageUrl,
     type: "website",
     siteName: `${APP_NAME}`,
     locale: "en",
     images: [
       {
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 500,
-        height: 500,
-        alt: `${APP_NAME} Blog - Scheduling Tips & Best Practices`,
+        url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+        width: 1200,
+        height: 630,
+        alt: `Blog | ${APP_NAME} - Scheduling Tips & Best Practices`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: `${BASE_URL}/blog`,
+    site: pageUrl,
     creator: `${BASE_URL}`,
     title: `Blog | ${APP_NAME} - Scheduling Tips & Best Practices`,
-    description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, and insights.`,
-    images: `${BASE_URL}${contactInfo.logo}`,
+    description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, product updates, and insights to help you manage appointments more efficiently.`,
+    images: [`${BASE_URL}${contactInfo.DEFAULT_IMAGE}`],
   },
 };
 
@@ -78,36 +81,70 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": `${BASE_URL}/blog/#blog`,
-        "mainEntityOfPage": `${BASE_URL}/blog`,
-        "name": `Blog | ${APP_NAME}`,
-        "description": `Expert scheduling tips, industry best practices, product updates, and insights from ${APP_NAME}`,
-        "publisher": {
-          "@type": "Organization",
-          "name": `${APP_NAME}`,
-          "url": `${BASE_URL}/blog`,
-          "logo": {
-            "@type": "ImageObject",
-            "url": `${BASE_URL}${contactInfo.logo}`
-          }
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        "name": `${APP_NAME}`,
+        "url": `${BASE_URL}`,
+        "image": {
+          "@type": "ImageObject",
+          "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+          "width": 1200,
+          "height": 630
         },
+        "description": "GetSetTime is a smart appointment scheduling platform trusted by 5,000+ doctors, salon owners, and wellness professionals. Simple to set up, smart enough to run itself.",
+        "slogan": "Precision Scheduling for Modern Care",
+        "foundingDate": "2025",
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "value": "10"
+        },
+        "areaServed": "Worldwide",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "availableLanguage": ["English", "Hindi", "Punjabi"],
+            "areaServed": "Worldwide",
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "availableLanguage": ["English", "Hindi", "Punjabi"],
+            "areaServed": "Worldwide"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/getsettime",
+          "https://x.com/getsettime",
+          "https://www.instagram.com/getsettime",
+          "https://www.youtube.com/@GetSetTime"
+        ]
       },
       {
         "@type": "WebPage",
-        "@id": `${BASE_URL}/blog/#BlogPage`,
-        "url": `${BASE_URL}/blog`,
+        "@id": `${pageUrl}/#webpage`,
+        "url": `${pageUrl}`,
         "name": `Blog | ${APP_NAME}`,
+        "description": `Explore the ${APP_NAME} blog for expert scheduling tips and best practices.`,
         "isPartOf": {
-          "@id": `${BASE_URL}/blog/#WebSite`
+          "@id": `${BASE_URL}/#website`
         },
+        "about": {
+          "@id": `${BASE_URL}/#softwareapplication`
+        },
+        "mainEntity": {
+          "@id": `${pageUrl}/#collectionpage`
+        },
+        "publisher": {
+          "@id": `${BASE_URL}/#organization`
+        },
+        "inLanguage": "en",
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": `${BASE_URL}${contactInfo.logo}`
+          "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+          "width": 1200,
+          "height": 630
         },
-        "datePublished": "2026-02-10",
-        "dateModified": `${new Date().toISOString().split('T')[0]}`,
-        "description": `Explore the ${APP_NAME} blog for expert scheduling tips and best practices.`,
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -121,22 +158,40 @@ export default function BlogPage() {
               "@type": "ListItem",
               "position": 2,
               "name": "Blog",
-              "item": `${BASE_URL}/blog`
+              "item": pageUrl
             }
           ]
         }
       },
       {
         "@type": "CollectionPage",
-        "@id": `${BASE_URL}/blog/#CollectionPage`,
+        "@id": `${pageUrl}/#collectionpage`,
+        "url": pageUrl,
         "name": `Blog | ${APP_NAME}`,
         "description": "Collection of articles about appointment scheduling and business management",
-        "url": `${BASE_URL}/blog`,
-        "numberOfItems": `${blogPosts.length}`
+        "isPartOf": {
+          "@id": `${BASE_URL}/#website`
+        },
+        "about": {
+          "@id": `${BASE_URL}/#softwareapplication`
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "@id": `${pageUrl}/#bloglist`,
+          "name": "Blog Articles",
+          "numberOfItems": blogPosts.length,
+          "itemListOrder": "https://schema.org/ItemListOrderAscending",
+          "itemListElement": blogPosts.map((post, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "url": `${BASE_URL}/blog/${post.slug}`,
+            "name": post.title
+          }))
+        }
       },
       {
         "@type": "FAQPage",
-        "@id": `${BASE_URL}/#FAQPage`,
+        "@id": `${pageUrl}/#faqpage`,
         "mainEntity": faqItems.map((item) => ({
           "@type": "Question",
           "name": item.title,
@@ -184,64 +239,74 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.14),transparent_28%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.16),transparent_24%),linear-gradient(180deg,#f8fafc_0%,#ffffff_48%,#f8fafc_100%)] py-14 sm:py-20">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute left-[-6rem] top-20 h-56 w-56 rounded-full bg-violet-400/20 blur-3xl" />
-          <div className="absolute right-[-3rem] top-10 h-44 w-44 rounded-full bg-indigo-400/20 blur-3xl" />
-          <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl" />
-        </div>
-        <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12 px-4 sm:px-6 lg:px-8">
-          {/* left: Title */}
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-indigo-500" />
-              Frequently Asked Questions
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Answers that feel as smooth as your booking flow.</h2>
-            <p>Turn a plain FAQ block into a premium conversion section. This layout gives GetSetTime a more modern SaaS feel with glassmorphism, soft gradients, animated cards, and a stronger content hierarchy.</p>
+      {/* Call-to-Action Section */}
+      <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10">
+              <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
+                {/* left: Content */}
+                <div className="space-y-3">
+                  <Heading
+                    badge="Built for Modern Business"
+                    title="Ready for GetSetTime To Manage Your Appointments"
+                    description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    descriptionClassName = "text-white"
+                  />
+                  
+                  <div className="mt-8">
+                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Blog" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                  </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl bg-white shadow-xl">
-                <div className="p-4 space-y-3">
-                  <svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-semibold text-neutral-900">Smart scheduling</p>
-                  <p>Highlight automation, reminders, and live availability.</p>
+                  <div className="mt-8 flex flex-wrap gap-3 text-white">
+                    {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
+                      <span key={item}>✔ {item}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="rounded-xl bg-white shadow-xl">
-                <div className="p-4 space-y-3">
-                  <svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>
-                  <p className="font-semibold text-neutral-900">Build trust</p>
-                  <p>Reduce friction with short supportive answers and better clarity.</p>
-                </div>
-              </div>
-              <div className="rounded-xl bg-white shadow-xl">
-                <div className="p-4 space-y-3">
-                  <svg className="h-8 w-8 text-fuchsia-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="font-semibold text-neutral-900">Premium feel</p>
-                  <p>Matches polished hero and feature sections better than a plain list.</p>
-                </div>
-              </div>
-              <div className="rounded-xl bg-white shadow-xl">
-                <div className="p-4 space-y-3">
-                <svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>
-                  <p className="font-semibold text-neutral-900">Easy growth</p>
-                  <p>Scale bookings smoothly with structured workflows and clear next steps.</p>
+                {/* right: Image */}
+                <div className="relative mx-auto w-full hidden lg:block">
+                  <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="font-semibold text-neutral-900">Today’s bookings</div>
+                          <div>Live preview</div>
+                        </div>
+                        <div className="h-2 w-2 rounded-full bg-emerald-600" />
+                      </div>
+                      <div className="mt-5 space-y-3">
+                        {[
+                          { time: '10:00 AM', title: 'Consultation' },
+                          { time: '12:30 PM', title: '15 Minutes chat' },
+                          { time: '03:00 PM', title: 'Follow-up Call' },
+                        ].map((item) => (
+                          <div key={item.time} className="flex items-center justify-between rounded-lg bg-neutral-50 px-3 sm:px-4 py-2 sm:py-3">
+                            <div>
+                              <div className="text-sm sm:text-base font-medium text-neutral-900">{item.title}</div>
+                              <div className="text-xs sm:text-sm text-neutral-600">{item.time}</div>
+                            </div>
+                            <span className="rounded-md bg-emerald-50 px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium text-emerald-700">Confirmed</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-4 rounded-xl bg-indigo-50 p-4">
+                        <div>Reminders sent</div>
+                        <div className="text-2xl font-bold text-neutral-900">1,284</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                    <div>No-show reduction</div>
+                    <div className="text-xl font-bold text-neutral-900">-32%</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          {/* right: FAQ Section */}
-          <div>
-            <FaqSection items={faqItems} />
-          </div>
-        </div>
-      </section>
+        </section>
     </>
   );
 }

@@ -55,8 +55,10 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
         getPostCategories(post).includes(selectedCategory)
       );
     }
-    
-    return filtered;
+
+    return [...filtered].sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
   }, [posts, selectedCategory]);
 
   const visiblePosts = filteredPosts.slice(0, visibleCount);
@@ -112,10 +114,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
               </svg>
 
               {isCategoryDropdownOpen && (
-                <ul
-                  role="listbox"
-                  className="absolute z-20 mt-2 w-full rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden"
-                >
+                <ul role="listbox" className="absolute z-20 mt-2 w-full max-h-60 overflow-y-auto rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
                   {blogCategories.map((category) => {
                     const isActive = category === selectedCategory;
                     return (
@@ -141,12 +140,12 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
 
           {/* Results Count */}
           <div className="flex items-center justify-end w-full">
-            <p> Showing <span className="font-semibold text-neutral-900">{visiblePosts.length}</span> of{" "}
+            <div> Showing <span className="font-semibold text-neutral-900">{visiblePosts.length}</span> of{" "}
               <span className="font-semibold text-neutral-900">{filteredPosts.length}</span> articles
               {selectedCategory !== "All" && (
                 <span> in <span className="text-indigo-600 font-medium">{selectedCategory}</span></span>
               )}
-            </p>
+            </div>
           </div>
 
       </div>
@@ -167,7 +166,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 className="font-semibold text-neutral-900 mb-2">No articles found</h3>
+          <div className="font-semibold text-neutral-900 mb-2">No articles found</div>
           <p>Try selecting a different category</p>
         </div>
       )}

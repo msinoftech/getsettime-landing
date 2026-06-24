@@ -3,10 +3,12 @@ import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { APP_NAME, BASE_URL, contactInfo } from "@/lib/config";
+import { APP_NAME, BASE_URL, contactInfo, LOGIN_URL } from "@/lib/config";
 import { blogPosts, getBlogBySlug, getRelatedPosts, getPrevNextPosts, getPostCategories } from "@/lib/blog-data";
 import { BlogSidebar } from "@/app/component/BlogSidebar";
 import { FaqSection } from "@/app/component/FaqSection";
+import { PostViews } from "@/app/component/PostViews";
+import Heading from "@/app/component/Heading";
 
 interface BlogDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -182,55 +184,68 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       {/* Structured Data */}
       <Script id="blog-detail-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData, null,  2) }} />
 
-      <section className="relative pt-12 pb-8">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-indigo-400/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
+      <section className="relative overflow-hidden pt-10">
+        <div className="absolute inset-0 hidden sm:block pointer-events-none overflow-hidden">
+          <div className="absolute -top-10 left-1/4 w-[28rem] h-[28rem] bg-indigo-400/15 rounded-full blur-3xl" />
+          <div className="absolute top-32 right-0 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.06),transparent_55%)]" />
         </div>
-        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {getPostCategories(post).map((category) => (
-              <Link key={category} href={`/blog?category=${encodeURIComponent(category)}`} className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-xl hover:shadow-lg transition-shadow">{category}</Link>
-            ))}
-            <span className="text-neutral-500">Published on: {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          {/* Title */}
+          <h1 className="mt-6 text-center text-3xl font-bold leading-tight tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">{post.title}</h1>
+          {/* Author + meta */}
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm">
+            <div className="flex items-center gap-1">
+                <span><svg className="w-4 h-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                <span className="text-neutral-500">{post.author.name}</span>              
+            </div>
+
+            <div className="flex items-center gap-2 text-neutral-500">
+              <svg className="h-4 w-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+              <time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-2.5">
+              {getPostCategories(post).map((category) => (
+                <Link key={category} href={`/blog?category=${encodeURIComponent(category)}`} className="inline-flex items-center gap-1.5 text-sm text-neutral-500">
+                  <svg className="h-4 w-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+                  {category}
+                </Link>
+              ))}
+            </div>
+
+            <PostViews slug={post.slug} />
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 text-center">{post.title}</h1>
-          <div className="relative w-full rounded-xl overflow-hidden">
-            <Image src={`/${post.coverImage}`} alt={post.title} width={1000} height={500} className="object-cover" priority />
+        </div>
+
+        {/* Cover image */}
+        <div className="relative z-10 mx-auto mt-6 max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-2xl">
+            <Image src={`/${post.coverImage}`} alt={post.title} width={800} height={400} className="aspect-[2/1] w-full object-cover" priority />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
         </div>
       </section>
 
       {/* Main Content */}
       <section className="relative py-12 lg:py-16">
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 hidden sm:block pointer-events-none">
           <div className="absolute top-20 right-10 w-72 h-72 bg-indigo-400/10 rounded-full blur-3xl" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
         </div>
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <article className="lg:col-span-8">
               
-              <div className="bg-white rounded-xl shadow-md p-6">
+              <div className="relative">
                 <div className="blog-content space-y-4" dangerouslySetInnerHTML={{ __html: post.content }} />
-              </div>
-
-              <div className="mt-10 p-6 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl">
-                <div className="flex flex-col sm:flex-row items-start gap-6">
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                    <Image src={`/${post.author.avatar}`} alt={post.author.name} fill className="object-cover" />
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-xs font-semibold text-indigo-600 uppercase tracking-widest">Written by</div>
-                    <div className="font-semibold text-neutral-900">{post.author.name}</div>
-                    <div className="text-neutral-500 text-sm">{post.author.role} at {APP_NAME}</div>
-                  </div>
-                </div>
               </div>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {prevPost ? (
-                  <Link href={`/blog/${prevPost.slug}`} className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <Link href={`/blog/${prevPost.slug}`} aria-label="Previous Post - Blog" className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neutral-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors duration-200">
                       <svg className="w-5 h-5 text-neutral-500 group-hover:text-indigo-600 transition-colors group-hover:-translate-x-0.5 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -242,7 +257,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     </div>
                   </Link>
                 ) : (
-                  <Link href="/blog" className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <Link href="/blog" aria-label="All Posts - Blog" className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neutral-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors duration-200">
                       <svg className="w-5 h-5 text-neutral-500 group-hover:text-indigo-600 transition-colors group-hover:-translate-x-0.5 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -256,7 +271,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 )}
 
                 {nextPost ? (
-                  <Link href={`/blog/${nextPost.slug}`} className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
+                  <Link href={`/blog/${nextPost.slug}`} aria-label="Next Post - Blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
                     <div className="flex-1 text-right">
                       <div className="text-xs font-medium text-white/70 uppercase tracking-wider">Next</div>
                       <p className="font-semibold text-white">{nextPost.title}</p>
@@ -268,7 +283,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     </div>
                   </Link>
                 ) : (
-                  <Link href="/blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
+                  <Link href="/blog" aria-label="More Posts - Blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
                     <div className="flex-1 text-right">
                       <div className="text-xs font-medium text-white/70 uppercase tracking-wider">Explore</div>
                       <p className="font-semibold text-white">More Articles</p>
@@ -298,6 +313,75 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Call-to-Action Section */}
+      <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10">
+              <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
+                {/* left: Content */}
+                <div className="space-y-3">
+                  <Heading
+                    badge="Built for Modern Business"
+                    title="Ready for GetSetTime To Manage Your Appointments"
+                    description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    descriptionClassName = "text-white"
+                  />
+                  
+                  <div className="mt-8">
+                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Blog Detail" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-3 text-white">
+                    {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
+                      <span key={item}>✔ {item}</span>
+                    ))}
+                  </div>
+                </div>
+                {/* right: Image */}
+                <div className="relative mx-auto w-full hidden lg:block">
+                  <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="font-semibold text-neutral-900">Today’s bookings</div>
+                          <div>Live preview</div>
+                        </div>
+                        <div className="h-2 w-2 rounded-full bg-emerald-600" />
+                      </div>
+                      <div className="mt-5 space-y-3">
+                        {[
+                          { time: '10:00 AM', title: 'Consultation' },
+                          { time: '12:30 PM', title: '15 Minutes chat' },
+                          { time: '03:00 PM', title: 'Follow-up Call' },
+                        ].map((item) => (
+                          <div key={item.time} className="flex items-center justify-between rounded-lg bg-neutral-50 px-3 sm:px-4 py-2 sm:py-3">
+                            <div>
+                              <div className="text-sm sm:text-base font-medium text-neutral-900">{item.title}</div>
+                              <div className="text-xs sm:text-sm text-neutral-600">{item.time}</div>
+                            </div>
+                            <span className="rounded-md bg-emerald-50 px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium text-emerald-700">Confirmed</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-4 rounded-xl bg-indigo-50 p-4">
+                        <div>Reminders sent</div>
+                        <div className="text-2xl font-bold text-neutral-900">1,284</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                    <div>No-show reduction</div>
+                    <div className="text-xl font-bold text-neutral-900">-32%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </>
   );
 }

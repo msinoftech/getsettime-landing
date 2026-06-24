@@ -102,12 +102,14 @@ const ContactForm = () => {
     <>
     <form onSubmit={handleSubmit} className="space-y-4" aria-live="polite">
       <input id="name" name="name" type="text" required placeholder="Full Name" value={formData.name} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3">
         <input id="phone" name="phone" type="tel" required inputMode="tel" placeholder="Phone" value={formData.phone} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
         <input id="email" name="email" type="email" required placeholder="Email" value={formData.email} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3">
-        <select id="professions" aria-label="Select Professions" name="professions" value={formData.professions} onChange={handleChange} className="block w-full text-neutral-600 rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        <select id="professions" aria-label="Select Professions" required name="professions" value={formData.professions} onChange={handleChange} className="block w-full text-neutral-600 rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500">
           <option value="">Select Profession</option>
           {professions.map((profession) => (
             <option key={profession} value={profession}>{profession}</option>
@@ -115,11 +117,13 @@ const ContactForm = () => {
         </select>
       </div>
       <textarea id="message" name="message" rows={4} required placeholder="How can we help?" value={formData.message} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
+
       <div className="block sm:flex items-center justify-between items-center justify-between gap-3">
         <button type="submit" disabled={status === "sending"} className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3" aria-disabled={status === "sending"}>
           {status === "sending" ? "Sending…" : "Send Message"}
         </button>
       </div>
+      
       {status === "success" && (
         <div className="mt-2 p-3 rounded-md bg-green-50 border border-green-200 text-sm text-green-700">
           ✓ Email sent successfully! We&apos;ll get back to you shortly.

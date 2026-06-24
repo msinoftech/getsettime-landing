@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Heading from './Heading';
 
 // Define company logos
 const companies = [
@@ -68,10 +69,12 @@ export default function TrustedCompanies() {
 
   return (
     <section className="py-14 sm:py-20 bg-neutral-50">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2">
-          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Integrated with Leading Apps Worldwide</h2>
-          <p>Join thousands of Companies that rely on our scheduling platform to power their business</p>
+          <Heading
+            title="Easily To Integrate"
+            description="Our system supports the world's leading operational tools for centralized and professional practices."
+          />
         </div>
         <div className="relative overflow-hidden">          
           <div className="overflow-hidden py-6 w-full">

@@ -22,7 +22,7 @@
     <circle cx="60" cy="140" r="70" fill="#22c55e" fill-opacity="0.25"/>
   </g>
 
-  <g opacity="0.35" stroke-width="2" fill="none">
+  <g opacity="0.35" strokeWidth="2" fill="none">
     <path d="M60 620 C200 600, 260 520, 420 520 C560 520, 640 600, 740 590" stroke="#0ea5e9"/>
     <path d="M40 680 C240 670, 320 610, 460 610 C600 610, 680 680, 780 670" stroke="#a78bfa"/>
   </g>

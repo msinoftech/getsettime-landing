@@ -1,13 +1,12 @@
-"use client";
 import Link from "next/link";
 import { BASE_URL } from "@/lib/config";
 
 export default function Logo() {
 
   return (
-    <Link href={BASE_URL} className="flex items-center gap-3 group">
+    <Link href={BASE_URL} aria-label="GetSetTime - Logo" className="flex items-center gap-3 group">
         <div className="logo-container" style={{ overflow: 'visible', padding: '15px', margin: '-15px', display: 'inline-block' }}>
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3448.58 799.54" className="h-10 w-auto" width="200" height="48" preserveAspectRatio="xMidYMid meet" style={{ overflow: 'visible', display: 'block' }}>
+            <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 3448.58 799.54" className="h-10 w-auto" width="200" height="48" preserveAspectRatio="xMidYMid meet" style={{ overflow: 'visible', display: 'block' }}>
             <g aria-hidden={true}>
               <circle fill="#4b39f4" cx="399.77" cy="399.77" r="360" className="" style={{ transformOrigin: '399.77px 399.77px' }}/>
               <circle fill="#4b39f4" cx="399.77" cy="399.77" r="250" className="animate-ping" style={{ transformOrigin: '399.77px 399.77px' }}/>
