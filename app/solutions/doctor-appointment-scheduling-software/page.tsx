@@ -579,14 +579,14 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     <div className="truncate text-lg font-bold text-neutral-900">Dr. Emma Williams</div>
                     <div className="truncate text-xs text-neutral-500">MBBS, MD • 10+ years experience</div>
                   </div>
-                  <div className="hidden shrink-0 flex-col items-end gap-1 sm:flex">
-                    <div className="flex items-center gap-1 rounded-md bg-amber-50 px-2 py-1 text-amber-700">
-                      <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.69-1.54 1.12l-3.56-2.59a1 1 0 00-1.18 0l-3.56 2.59c-.78.57-1.84-.2-1.54-1.12l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.61c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" /></svg>
-                      <span className="text-xs font-bold">4.9</span>
+
+                  <div className="hidden sm:flex items-center gap-3 rounded-2xl border border-emerald-100 bg-white px-3 py-2 shadow-sm">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-emerald-50 text-lg">
+                      ✅
                     </div>
-                    <div className="inline-flex items-center gap-1.5 rounded-md bg-indigo-50 px-2 py-1 text-[11px] font-medium text-indigo-700">
-                      <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
-                      Booking active
+                    <div>
+                      <div className="text-xs text-slate-500">Today’s bookings</div>
+                      <div className="text-md font-semibold text-slate-900">18 Confirmed</div>
                     </div>
                   </div>
                 </div>

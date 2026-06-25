@@ -1071,8 +1071,8 @@ export default function FeaturesPage() {
                       ))}
                     </ul>
 
-                    <div className="relative mt-8 space-y-3">
-                      <Link href={REGISTER_URL} target="_blank" className="flex w-full items-center justify-center rounded-xl bg-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:bg-indigo-700"
+                    <div className="relative flex flex-col sm:flex-row gap-3 mt-8">
+                      <Link href={REGISTER_URL} target="_blank" className="flex w-full items-center justify-center rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:bg-indigo-700"
                       >Get Started Free</Link>
                       <Link href={`${BASE_URL}/pricing`} className="flex w-full items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 px-6 py-3 text-sm font-semibold text-neutral-800 transition hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700">Compare all plans</Link>
                     </div>

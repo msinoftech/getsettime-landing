@@ -341,7 +341,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         question: "Does it integrate with existing calendars?",
-        answer: "Yes. Most appointment booking software syncs with Google Calendar, Outlook, Apple Calendar, and other major platforms."
+        answer: "Yes. Most appointment booking software syncs with Google Calendar, Outlook, and other major platforms."
       },
     ],
   },
@@ -444,7 +444,20 @@ export const blogPosts: BlogPost[] = [
     category: "Healthcare",
     publishedAt: "2026-06-23",
     keywords: "",
-    faq: [],
+    faq: [
+      {
+        question: "What Is Clinic Management Software?",
+        answer: "A software that helps clinics run day-to-day operations without relying on paper, spreadsheets, or duct-taped-together tools. <br> It typically handles patient registration, appointment scheduling, medical records, billing, and reporting — all from a single platform"
+      },
+      {
+        question: "How Can I Choose the Best Software for Clinic Management?",
+        answer: "The decision comes down to a few concrete factors: what your clinic actually needs now, what you'll need in 12–24 months, and what you can realistically support in terms of cost and setup."
+      },
+      {
+        question: "Does Clinic software manage routine tasks automatically?",
+        answer: "Yes, Clinic management software that centralises and automates your clinic's daily tasks, such as appointment management, staff schedules, and patient records. Also, maintaining the workflow without human intervention."
+      },
+    ],
   },
 ];
 

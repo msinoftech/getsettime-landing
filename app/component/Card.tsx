@@ -42,7 +42,7 @@ export default function Card({
   stat,
   statUnit,
   statClassName = "text-3xl tracking-tight sm:text-4xl text-neutral-900",
-  statUnitClassName = " text-base text-neutral-500 sm:text-lg",
+  statUnitClassName = "text-sm font-medium text-neutral-600",
   wrapperClassName = "group relative rounded-xl bg-gradient-to-br from-indigo-50 to-indigo-50 px-3 py-3 transition duration-300 hover:-translate-y-1 hover:shadow-xl",
   innerClassName = "h-full space-y-3 rounded-xl bg-white p-4 sm:p-6 shadow-md transition duration-300 group-hover:shadow-xl",
   iconWrapperClassName = "flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-100",
@@ -71,7 +71,7 @@ export default function Card({
         {stat != null && (
           <div className={statClassName}>
             {stat}
-            {statUnit != null && <span className={statUnitClassName}>{statUnit}</span>}
+            {statUnit != null && <span className={statUnitClassName}> {statUnit}</span>}
           </div>
         )}
         <h3 className={titleClassName}>{title}</h3>
