@@ -1,5 +1,5 @@
 "use client";
-import { REGISTER_GOOGLE_URL } from "@/lib/config";
+import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import { pricingTiers, EXTRA_SEAT_PRICE, type PricingTier } from "@/lib/pricing-data";
 import Link from "next/link";
 import type { FC } from "react";
@@ -172,7 +172,7 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
                 <div className="rounded-2xl bg-indigo-50 p-4">
                   <div className="text-sm">Start accepting appointments without payment. Upgrade when your workspace needs more seats or more capacity.</div>
                 </div>
-                <Link href={REGISTER_GOOGLE_URL} target="_blank" className="mt-5 flex w-full items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700">
+                <Link href={REGISTER_URL} target="_blank" className="mt-5 flex w-full items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700">
                   Start Free Now
                 </Link>
               </div>

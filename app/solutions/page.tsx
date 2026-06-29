@@ -295,7 +295,7 @@ export default function SolutionsPage() {
             title="In-depth guides for popular"
             highlightText="business types."
             description="Explore dedicated breakdowns of how GetSetTime fits each profession — features, workflows, and setup tips."
-            wrapperClassName="text-center mb-6"
+            wrapperClassName="text-center mb-6 space-y-4"
           />
 
           <div className="grid gap-5 grid-cols-2 lg:grid-cols-4">

@@ -12,6 +12,7 @@ import InteractiveCalendar from "./component/InteractiveCalendar";
 import Heading from "./component/Heading";
 import Card from "./component/Card";
 import { CheckListItem } from "./component/CheckList";
+import HeroBanner from "./component/HeroBanner";
 
 export const metadata: Metadata = {
   title: `${APP_NAME} – Scheduling Software for Appointment Booking`,
@@ -260,7 +261,8 @@ export default function Home() {
       {/* Add Structured Data for Home Page */}
       <Script id="homepage-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData, null, 2),}}/>
 
-      <Hero />
+      {/* <Hero /> */}
+      <HeroBanner />
 
       <TrustedCompanies />
 

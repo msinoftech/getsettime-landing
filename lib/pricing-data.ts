@@ -1,4 +1,4 @@
-import { BASE_URL, LOGIN_URL } from "@/lib/config";
+import { BASE_URL, LOGIN_URL, REGISTER_URL } from "@/lib/config";
 
 export type PricingTier = {
   name: string;
@@ -32,8 +32,8 @@ export const pricingTiers: PricingTier[] = [
       "Basic reporting",
       "Community support",
     ],
-    buttonText: "Get Started",
-    buttonLink: LOGIN_URL,
+    buttonText: "Start Free",
+    buttonLink: REGISTER_URL,
   },
   {
     name: "Professional",
@@ -55,7 +55,7 @@ export const pricingTiers: PricingTier[] = [
       "Priority support",
     ],
     popular: true,
-    buttonText: "Get Started",
+    buttonText: "Get Started Free",
     buttonLink: LOGIN_URL,
   },
   {

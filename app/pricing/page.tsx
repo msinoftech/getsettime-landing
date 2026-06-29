@@ -381,7 +381,6 @@ export default function PricingPage() {
 
                 <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-2 sm:p-3">
                     {/* Decorative dotted backdrop */}
-                    <div className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:radial-gradient(rgba(99,102,241,0.12)_1px,transparent_1px)] [background-size:16px_16px]" aria-hidden />
                     <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
 
                     {/* Billing header */}
@@ -620,7 +619,7 @@ export default function PricingPage() {
 
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <p className="w-80 text-sm text-neutral-600">See reminders, analytics, and industry workflows on the features page.</p>
-                        <Link href={`${BASE_URL}/features`} aria-label="All features - Pricing" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">All features →</Link>
+                        <Link href={`${BASE_URL}/features`} aria-label="All features - Pricing" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">All features</Link>
                     </div>
                 </div>
               </div>

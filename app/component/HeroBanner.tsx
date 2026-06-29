@@ -1,0 +1,463 @@
+import Image from "next/image";
+import Link from "next/link";
+import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
+import Logo from "./Logo";
+
+const todaysBookings = [
+  { time: "09:30 AM", duration: "60 min", name: "Sarah Johnson", service: "Consultation", status: "Confirmed" },
+  { time: "11:00 AM", duration: "45 min", name: "Michael Chen", service: "Follow-up Session", status: "Confirmed" },
+  { time: "01:30 PM", duration: "60 min", name: "Emily Davis", service: "Therapy Session", status: "Pending" },
+  { time: "03:00 PM", duration: "30 min", name: "David Wilson", service: "Skin Treatment", status: "Confirmed" },
+];
+
+const upcomingMeetings = [
+  { name: "Dr. Amanda Lee", role: "Consultation", date: "Tue, 30 Apr", time: "10:00 AM", avatar: "/doctor-profile.jpg" },
+  { name: "James Rodriguez", role: "Physiotherapy", date: "Tue, 30 Apr", time: "02:00 PM", avatar: "/grow-doctor.jpg" },
+];
+
+const activityData = [
+  { label: "24 Apr", value: 30 },
+  { label: "25 Apr", value: 22 },
+  { label: "26 Apr", value: 34 },
+  { label: "27 Apr", value: 60 },
+  { label: "28 Apr", value: 52 },
+  { label: "29 Apr", value: 28 },
+  { label: "30 Apr", value: 40 },
+];
+
+const industries = [
+  {
+    label: "Clinics",
+    icon: ( <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
+    </svg>
+    ),
+  },
+  {
+    label: "Salons",
+    icon: (<svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.42 9.42 8 12"/><circle cx="4" cy="8" r="2"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m14 6-8.58 8.58"/><circle cx="4" cy="16" r="2"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.8 14.8 14 18"/>
+    </svg>
+    ),
+  },
+  {
+    label: "Consultants",
+    icon: (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>),
+  },
+  {
+    label: "Real Estate",
+    icon: (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>),
+  },
+  {
+    label: "Fitness",
+    icon: (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z"/><path d="m2.5 21.5 1.4-1.4"/><path d="m20.1 3.9 1.4-1.4"/><path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z"/><path d="m9.6 14.4 4.8-4.8"/></svg>),
+  },
+  {
+    label: "Agencies",
+    icon: (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>),
+  },
+];
+
+export default function HeroBanner() {
+  return (
+    <section className="relative overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#fbfaff_45%,#f1edfd_100%)] py-14 sm:py-20">
+      
+      <div className="absolute inset-0 pointer-events-none hidden sm:block">
+        <div className="absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-indigo-300/30 blur-3xl" />
+        <div className="absolute right-1/4 bottom-0 h-72 w-72 rounded-full bg-violet-300/30 blur-3xl" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-10 xl:grid-cols-2 lg:gap-6">
+          {/* Left column */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur"><span className="h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500"></span>Free 250 Bookings / Month Included</div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">
+              Book More{" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Appointments.</span><br/>Manage Your Team. <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Reduce No-Shows.</span>
+            </h1>
+
+            <p>GetSetTime is an all-in-one appointment booking platform for clinics, salons, consultants, agencies, and service teams to manage bookings, availability, reminders, providers, and customer scheduling from one simple dashboard.</p>
+
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Start Free - Hero Banner" className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition">
+                Start Free — 250 Bookings Included
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6l6 6-6 6" /></svg>
+              </Link>
+
+              {/* <button type="button" aria-label="Watch Demo" className="inline-flex items-center gap-2.5 rounded-xl px-2 py-2 text-sm font-semibold text-neutral-800 transition hover:text-indigo-600">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 bg-white shadow-sm">
+                  <svg className="h-4 w-4 translate-x-px text-neutral-800" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+                Watch Demo
+              </button> */}
+            </div>
+
+            <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span>No credit card required</span>
+              <span className="text-neutral-500">•</span>
+              <span>Free setup</span>
+              <span className="text-neutral-500">•</span>
+              <span>Cancel anytime</span>
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {industries.map((item) => (
+                <span key={item.label} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 shadow-sm">
+                  {item.icon}
+                  {item.label}
+                </span>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 shadow-sm space-y-1">
+                    <div className="flex items-center gap-2">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </span>
+                        <div>
+                            <div className="text-lg font-bold text-neutral-900">250</div>
+                            <div className="text-xs font-semibold text-neutral-800">Free Bookings</div>
+                        </div>
+                    </div>
+                    <div className="text-xs text-neutral-500">Every month, forever</div>
+                </div>
+
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 shadow-sm space-y-1">
+                    <div className="flex items-center gap-2">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
+                            </svg>
+                        </span>
+                        <div>
+                            <div className="text-sm font-bold text-neutral-900">Multi-Provider Scheduling</div>
+                        </div>
+                    </div>
+                    <div className="text-xs text-neutral-500">Manage your entire team</div>
+                </div>
+
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 shadow-sm space-y-1">
+                    <div className="flex items-center gap-2">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                            <svg className="h-5 w-5" viewBox="0 0 32 32" fill="currentColor">
+                                <path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 27l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.5-1.5-5.4C5.6 9.3 10.3 4.6 16 4.6S26.4 9.3 26.4 15 21.7 24.8 16 24.8zm5.7-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z" />
+                            </svg>
+                        </span>
+                        <div>
+                            <div className="text-sm font-bold text-neutral-900">WhatsApp &amp; Email Reminders</div>
+                        </div>
+                    </div>
+                    <div className="text-xs text-neutral-500">Reduce no-shows</div>
+                </div>
+            </div>
+          </div>
+
+          {/* Right column - Dashboard mockup */}
+          <div className="relative">
+            <div className="overflow-hidden rounded-2xl bg-white shadow-2xl animate-fade-in-scale">
+                {/* Window bar */}
+                <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="relative">
+                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 animate-pulse"></div>
+                      <div className="absolute inset-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400 animate-ping"></div>
+                    </div>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-400"></div>
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-600"></div>
+                  </div>
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-600 animate-pulse"></div>
+                    <span className="text-[10px] sm:text-xs font-medium text-neutral-700">LIVE</span>
+                  </div>
+                </div>
+
+                {/* Top header */}
+                <div className="flex items-center justify-between px-3 py-3">
+                    <div className="flex items-center gap-2.5">
+                        <Logo />
+                    </div>
+                    <div className="flex items-center gap-5 text-center">
+                        <div>
+                            <div className="text-base font-bold text-indigo-600">24</div>
+                            <div className="text-[11px] text-neutral-500">Today</div>
+                        </div>
+                        <div>
+                            <div className="text-base font-bold text-neutral-900">7</div>
+                            <div className="text-[11px] text-neutral-500">Pending</div>
+                        </div>
+                        <div>
+                            <div className="text-base font-bold text-emerald-600">92%</div>
+                            <div className="text-[11px] text-neutral-500">Filled</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex">
+                    {/* Sidebar */}
+                    <div className="hidden w-12 shrink-0 flex-col items-center gap-5 border-r border-neutral-100 py-5 text-neutral-400 sm:flex">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 12l9-9 9 9M5 10v10h14V10" />
+                            </svg>
+                        </span>
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
+                        </svg>
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 00-4-5.7V5a2 2 0 10-4 0v.3C7.7 6.2 6 8.4 6 11v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6H5v6m4 0H5m4 0h6m0 0v-10h4v10m-4 0H9m6 0h4M9 13V9m6 4V5" />
+                        </svg>
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10.3 3.9a1.5 1.5 0 013.4 0l.2 1a1.5 1.5 0 002.2.9l.9-.5a1.5 1.5 0 012 2l-.5.9a1.5 1.5 0 00.9 2.2l1 .2a1.5 1.5 0 010 3.4l-1 .2a1.5 1.5 0 00-.9 2.2l.5.9a1.5 1.5 0 01-2 2l-.9-.5a1.5 1.5 0 00-2.2.9l-.2 1a1.5 1.5 0 01-3.4 0l-.2-1a1.5 1.5 0 00-2.2-.9l-.9.5a1.5 1.5 0 01-2-2l.5-.9a1.5 1.5 0 00-.9-2.2l-1-.2a1.5 1.5 0 010-3.4l1-.2a1.5 1.5 0 00.9-2.2l-.5-.9a1.5 1.5 0 012-2l.9.5a1.5 1.5 0 002.2-.9z" />
+                            <circle cx="12" cy="12" r="2.5" />
+                        </svg>
+                    </div>
+
+                    <div className="min-w-0 flex-1 p-3">
+                        {/* Bookings + meetings */}
+                        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                            {/* Today's Bookings */}
+                            <div>
+                                <div className="mb-2 flex items-center justify-between">
+                                    <div className="text-sm font-semibold text-neutral-800">Today&apos;s Bookings</div>
+                                    <span className="text-xs font-medium text-indigo-600">View all</span>
+                                </div>
+                                <div className="rounded-xl border border-neutral-100">
+                                    {todaysBookings.map((b, idx) => (
+                                    <div key={b.name} className={`flex items-center gap-3 px-3 py-2.5 ${idx !== todaysBookings.length - 1 ? "border-b border-neutral-100" : ""}`}>
+                                        <div className="w-16 shrink-0">
+                                            <div className="text-xs font-bold text-neutral-900">{b.time}</div>
+                                            <div className="text-[10px] text-neutral-400">{b.duration}</div>
+                                        </div>
+                                        <div className="min-w-0 flex-1">
+                                            <div className="truncate text-xs font-semibold text-neutral-800">{b.name}</div>
+                                            <div className="truncate text-[10px] text-neutral-500">{b.service}</div>
+                                        </div>
+                                        <span
+                                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium ${
+                                            b.status === "Confirmed"
+                                            ? "bg-emerald-50 text-emerald-600"
+                                            : "bg-amber-50 text-amber-600"
+                                        }`}
+                                        >
+                                        <span className={`h-1.5 w-1.5 rounded-full ${b.status === "Confirmed" ? "bg-emerald-500" : "bg-amber-500"}`} />
+                                        {b.status}
+                                        </span>
+                                    </div>
+                                    ))}
+                                </div>
+                                <div className="mt-2 text-right text-[11px] font-medium text-indigo-600">View all bookings →</div>
+                            </div>
+
+                            {/* Upcoming Meetings */}
+                            <div>
+                                <div className="mb-2 flex items-center justify-between">
+                                    <div className="text-sm font-semibold text-neutral-800">Upcoming Meetings</div>
+                                    <span className="text-xs font-medium text-indigo-600">View all</span>
+                                </div>
+                                <div className="space-y-3">
+                                    {upcomingMeetings.map((m) => (
+                                    <div key={m.name} className="rounded-xl border border-neutral-100 p-3">
+                                        <div className="flex items-center gap-2.5">
+                                        <Image
+                                            src={m.avatar}
+                                            alt={m.name}
+                                            width={36}
+                                            height={36}
+                                            className="h-9 w-9 rounded-full object-cover"
+                                        />
+                                        <div className="min-w-0">
+                                            <div className="truncate text-xs font-semibold text-neutral-800">{m.name}</div>
+                                            <div className="truncate text-[10px] text-neutral-500">{m.role}</div>
+                                        </div>
+                                        </div>
+                                        <div className="mt-2.5 flex items-center justify-between text-[10px] text-neutral-500">
+                                        <span className="flex items-center gap-1">
+                                            <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                            {m.date}
+                                        </span>
+                                        <span className="flex items-center gap-1">
+                                            <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 7v5l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            {m.time}
+                                        </span>
+                                        <span className="flex items-center gap-1 text-emerald-600">
+                                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                                            Confirmed
+                                        </span>
+                                        </div>
+                                    </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Bottom row */}
+                        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-[1.2fr_1fr_0.9fr]">
+                            {/* Booking Activity */}
+                            <div className="rounded-xl border border-neutral-100 p-3">
+                                <div className="mb-2 flex items-center justify-between">
+                                    <div className="text-sm font-semibold text-neutral-800">Booking Activity</div>
+                                    <span className="inline-flex items-center gap-1 rounded-md border border-neutral-200 px-2 py-0.5 text-[10px] text-neutral-500">
+                                        This Week
+                                        <svg className="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 9l6 6 6-6" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div className="flex gap-1.5">
+                                    <div className="flex flex-col justify-between py-1 text-[8px] text-neutral-400">
+                                    <span>80</span>
+                                    <span>60</span>
+                                    <span>40</span>
+                                    <span>20</span>
+                                    </div>
+                                    <div className="flex-1">
+                                    <svg className="h-20 w-full" viewBox="0 0 280 80" preserveAspectRatio="none">
+                                        <defs>
+                                        <linearGradient id="bookingArea" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor="rgb(99,102,241)" stopOpacity="0.25" />
+                                            <stop offset="100%" stopColor="rgb(99,102,241)" stopOpacity="0.02" />
+                                        </linearGradient>
+                                        </defs>
+                                        <path
+                                        d={`M ${activityData
+                                            .map((d, i) => `${(i / (activityData.length - 1)) * 280} ${80 - (d.value / 80) * 80}`)
+                                            .join(" L ")} L 280 80 L 0 80 Z`}
+                                        fill="url(#bookingArea)"
+                                        />
+                                        <path
+                                        d={`M ${activityData
+                                            .map((d, i) => `${(i / (activityData.length - 1)) * 280} ${80 - (d.value / 80) * 80}`)
+                                            .join(" L ")}`}
+                                        fill="none"
+                                        stroke="rgb(99,102,241)"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        />
+                                        {activityData.map((d, i) => (
+                                        <circle
+                                            key={d.label}
+                                            cx={(i / (activityData.length - 1)) * 280}
+                                            cy={80 - (d.value / 80) * 80}
+                                            r="2.5"
+                                            fill="rgb(99,102,241)"
+                                        />
+                                        ))}
+                                    </svg>
+                                    <div className="flex justify-between text-[7px] text-neutral-400">
+                                        {activityData.map((d) => (
+                                        <span key={d.label}>{d.label}</span>
+                                        ))}
+                                    </div>
+                                    </div>
+                                </div>
+                                <div className="mt-2 flex flex-wrap gap-2">
+                                    <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 text-[9px] font-medium text-emerald-600">
+                                    Confirmed <span className="font-bold">128</span>
+                                    </span>
+                                    <span className="inline-flex items-center gap-1 rounded-md bg-amber-50 px-2 py-0.5 text-[9px] font-medium text-amber-600">
+                                    Pending <span className="font-bold">32</span>
+                                    </span>
+                                    <span className="inline-flex items-center gap-1 rounded-md bg-red-50 px-2 py-0.5 text-[9px] font-medium text-red-600">
+                                    Cancelled <span className="font-bold">6</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Calendar */}
+                            <div className="rounded-xl border border-neutral-100 p-3">
+                            <div className="mb-2 flex items-center justify-between">
+                                <h3 className="text-xs font-semibold text-neutral-800">April 2025</h3>
+                                <div className="flex items-center gap-1 text-neutral-400">
+                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-7 gap-y-1 text-center text-[9px] text-neutral-400">
+                                {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
+                                <span key={i} className="font-medium">{d}</span>
+                                ))}
+                            </div>
+                            <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-[9px] text-neutral-600">
+                                {[30, 31].map((d) => (
+                                <span key={`p${d}`} className="text-neutral-300">{d}</span>
+                                ))}
+                                {Array.from({ length: 30 }, (_, i) => i + 1).map((d) => (
+                                <span
+                                    key={d}
+                                    className={
+                                    d === 30
+                                        ? "mx-auto flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 font-semibold text-white"
+                                        : ""
+                                    }
+                                >
+                                    {d}
+                                </span>
+                                ))}
+                                {[1, 2, 3].map((d) => (
+                                <span key={`n${d}`} className="text-neutral-300">{d}</span>
+                                ))}
+                            </div>
+                            </div>
+
+                            {/* Actions */}
+                            <div className="space-y-2 hidden sm:block">
+                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm">
+                                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                    </svg>
+                                    New Booking
+                                </button>
+                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-white shadow-sm px-3 py-2 text-xs font-semibold text-neutral-700">
+                                    <svg className="h-4 w-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                                    </svg>
+                                    Send Reminders
+                                </button>
+                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg shadow-sm bg-white px-3 py-2 text-xs font-semibold text-neutral-700">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-indigo-500"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><rect x="15" y="5" width="4" height="12" rx="1"/><rect x="7" y="8" width="4" height="9" rx="1"/></svg>
+                                    View Reports
+                                </button>
+
+                                <div className="flex items-center gap-2 rounded-lg shadow-sm bg-gray-100 px-3 py-2">
+                                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
+                                    </span>
+                                    <div className="leading-tight">
+                                        <div className="text-xs font-semibold text-neutral-800">Need help?</div>
+                                        <div className="text-[10px] text-neutral-500">Visit our Help Center</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
