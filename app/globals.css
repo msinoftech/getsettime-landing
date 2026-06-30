@@ -80,9 +80,3 @@ p{
 .blog-content tr:nth-child(even) td {
   background: var(--color-neutral-50);
 }
-
-@media (max-width: 768px) {
-  p{
-    font-size: 14px;
-  }
-}

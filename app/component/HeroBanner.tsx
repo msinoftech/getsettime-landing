@@ -16,13 +16,13 @@ const upcomingMeetings = [
 ];
 
 const activityData = [
-  { label: "24 Apr", value: 30 },
-  { label: "25 Apr", value: 22 },
-  { label: "26 Apr", value: 34 },
-  { label: "27 Apr", value: 60 },
-  { label: "28 Apr", value: 52 },
-  { label: "29 Apr", value: 28 },
-  { label: "30 Apr", value: 40 },
+  { label: "Mon", value: 30 },
+  { label: "Tue", value: 22 },
+  { label: "Wed", value: 34 },
+  { label: "Thu", value: 60 },
+  { label: "Fri", value: 52 },
+  { label: "Sat", value: 28 },
+  { label: "Sun", value: 40 },
 ];
 
 const industries = [
@@ -61,18 +61,18 @@ const industries = [
 
 export default function HeroBanner() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#fbfaff_45%,#f1edfd_100%)] py-14 sm:py-20">
+    <section className="relative overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#fbfaff_45%,#f1edfd_100%)] py-14 sm:py-16">
       
       <div className="absolute inset-0 pointer-events-none hidden sm:block">
         <div className="absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-indigo-300/30 blur-3xl" />
         <div className="absolute right-1/4 bottom-0 h-72 w-72 rounded-full bg-violet-300/30 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 xl:grid-cols-2 lg:gap-6">
           {/* Left column */}
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur"><span className="h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500"></span>Free 250 Bookings / Month Included</div>
+          <div className="space-y-5">
+            {/* <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur"><span className="h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500"></span>Free 250 Bookings / Month Included</div> */}
 
             <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">
               Book More{" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Appointments.</span><br/>Manage Your Team. <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Reduce No-Shows.</span>
@@ -187,15 +187,15 @@ export default function HeroBanner() {
                     <div className="flex items-center gap-5 text-center">
                         <div>
                             <div className="text-base font-bold text-indigo-600">24</div>
-                            <div className="text-[11px] text-neutral-500">Today</div>
+                            <div className="text-xs text-neutral-500">Today</div>
                         </div>
                         <div>
                             <div className="text-base font-bold text-neutral-900">7</div>
-                            <div className="text-[11px] text-neutral-500">Pending</div>
+                            <div className="text-xs text-neutral-500">Pending</div>
                         </div>
                         <div>
                             <div className="text-base font-bold text-emerald-600">92%</div>
-                            <div className="text-[11px] text-neutral-500">Filled</div>
+                            <div className="text-xs text-neutral-500">Filled</div>
                         </div>
                     </div>
                 </div>
@@ -240,14 +240,14 @@ export default function HeroBanner() {
                                     <div key={b.name} className={`flex items-center gap-3 px-3 py-2.5 ${idx !== todaysBookings.length - 1 ? "border-b border-neutral-100" : ""}`}>
                                         <div className="w-16 shrink-0">
                                             <div className="text-xs font-bold text-neutral-900">{b.time}</div>
-                                            <div className="text-[10px] text-neutral-400">{b.duration}</div>
+                                            <div className="text-xs text-neutral-400">{b.duration}</div>
                                         </div>
                                         <div className="min-w-0 flex-1">
-                                            <div className="truncate text-xs font-semibold text-neutral-800">{b.name}</div>
-                                            <div className="truncate text-[10px] text-neutral-500">{b.service}</div>
+                                            <div className="truncate text-sm font-semibold text-neutral-800">{b.name}</div>
+                                            <div className="truncate text-xs text-neutral-500">{b.service}</div>
                                         </div>
                                         <span
-                                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium ${
+                                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${
                                             b.status === "Confirmed"
                                             ? "bg-emerald-50 text-emerald-600"
                                             : "bg-amber-50 text-amber-600"
@@ -272,35 +272,35 @@ export default function HeroBanner() {
                                     {upcomingMeetings.map((m) => (
                                     <div key={m.name} className="rounded-xl border border-neutral-100 p-3">
                                         <div className="flex items-center gap-2.5">
-                                        <Image
-                                            src={m.avatar}
-                                            alt={m.name}
-                                            width={36}
-                                            height={36}
-                                            className="h-9 w-9 rounded-full object-cover"
-                                        />
-                                        <div className="min-w-0">
-                                            <div className="truncate text-xs font-semibold text-neutral-800">{m.name}</div>
-                                            <div className="truncate text-[10px] text-neutral-500">{m.role}</div>
+                                            <Image
+                                                src={m.avatar}
+                                                alt={m.name}
+                                                width={40}
+                                                height={40}
+                                                className="h-12 w-12 rounded-full object-cover"
+                                            />
+                                            <div className="min-w-0">
+                                                <div className="truncate text-sm font-semibold text-neutral-800">{m.name}</div>
+                                                <div className="truncate text-xs text-neutral-500">{m.role}</div>
+                                            </div>
                                         </div>
-                                        </div>
-                                        <div className="mt-2.5 flex items-center justify-between text-[10px] text-neutral-500">
-                                        <span className="flex items-center gap-1">
-                                            <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                            </svg>
-                                            {m.date}
-                                        </span>
-                                        <span className="flex items-center gap-1">
-                                            <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 7v5l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            {m.time}
-                                        </span>
-                                        <span className="flex items-center gap-1 text-emerald-600">
-                                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                                            Confirmed
-                                        </span>
+                                        <div className="mt-2.5 flex items-center justify-between text-xs text-neutral-500">
+                                            <span className="flex items-center gap-1">
+                                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                                </svg>
+                                                {m.date}
+                                            </span>
+                                            <span className="flex items-center gap-1">
+                                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 7v5l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                {m.time}
+                                            </span>
+                                            <span className="flex items-center gap-1 text-emerald-600">
+                                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                                                Confirmed
+                                            </span>
                                         </div>
                                     </div>
                                     ))}
@@ -314,7 +314,7 @@ export default function HeroBanner() {
                             <div className="rounded-xl border border-neutral-100 p-3">
                                 <div className="mb-2 flex items-center justify-between">
                                     <div className="text-sm font-semibold text-neutral-800">Booking Activity</div>
-                                    <span className="inline-flex items-center gap-1 rounded-md border border-neutral-200 px-2 py-0.5 text-[10px] text-neutral-500">
+                                    <span className="inline-flex items-center gap-1 rounded-md border border-neutral-200 px-2 py-0.5 text-[11px] text-neutral-500">
                                         This Week
                                         <svg className="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 9l6 6 6-6" />
@@ -322,11 +322,11 @@ export default function HeroBanner() {
                                     </span>
                                 </div>
                                 <div className="flex gap-1.5">
-                                    <div className="flex flex-col justify-between py-1 text-[8px] text-neutral-400">
-                                    <span>80</span>
-                                    <span>60</span>
-                                    <span>40</span>
-                                    <span>20</span>
+                                    <div className="flex flex-col justify-between py-1 text-[10px] text-neutral-400">
+                                        <span>80</span>
+                                        <span>60</span>
+                                        <span>40</span>
+                                        <span>20</span>
                                     </div>
                                     <div className="flex-1">
                                     <svg className="h-20 w-full" viewBox="0 0 280 80" preserveAspectRatio="none">
@@ -362,7 +362,7 @@ export default function HeroBanner() {
                                         />
                                         ))}
                                     </svg>
-                                    <div className="flex justify-between text-[7px] text-neutral-400">
+                                    <div className="flex justify-between text-[9px] text-neutral-400">
                                         {activityData.map((d) => (
                                         <span key={d.label}>{d.label}</span>
                                         ))}
@@ -370,13 +370,13 @@ export default function HeroBanner() {
                                     </div>
                                 </div>
                                 <div className="mt-2 flex flex-wrap gap-2">
-                                    <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 text-[9px] font-medium text-emerald-600">
+                                    <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-600">
                                     Confirmed <span className="font-bold">128</span>
                                     </span>
-                                    <span className="inline-flex items-center gap-1 rounded-md bg-amber-50 px-2 py-0.5 text-[9px] font-medium text-amber-600">
+                                    <span className="inline-flex items-center gap-1 rounded-md bg-amber-50 px-2 py-0.5 text-[10px] font-medium text-amber-600">
                                     Pending <span className="font-bold">32</span>
                                     </span>
-                                    <span className="inline-flex items-center gap-1 rounded-md bg-red-50 px-2 py-0.5 text-[9px] font-medium text-red-600">
+                                    <span className="inline-flex items-center gap-1 rounded-md bg-red-50 px-2 py-0.5 text-[10px] font-medium text-red-600">
                                     Cancelled <span className="font-bold">6</span>
                                     </span>
                                 </div>
@@ -385,34 +385,27 @@ export default function HeroBanner() {
                             {/* Calendar */}
                             <div className="rounded-xl border border-neutral-100 p-3">
                             <div className="mb-2 flex items-center justify-between">
-                                <h3 className="text-xs font-semibold text-neutral-800">April 2025</h3>
+                                <div className="text-sm font-semibold text-neutral-800">April 2025</div>
                                 <div className="flex items-center gap-1 text-neutral-400">
-                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                </svg>
-                                <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
+                                    <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                    <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-7 gap-y-1 text-center text-[9px] text-neutral-400">
+                            <div className="grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-400">
                                 {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
                                 <span key={i} className="font-medium">{d}</span>
                                 ))}
                             </div>
-                            <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-[9px] text-neutral-600">
+                            <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-600">
                                 {[30, 31].map((d) => (
                                 <span key={`p${d}`} className="text-neutral-300">{d}</span>
                                 ))}
                                 {Array.from({ length: 30 }, (_, i) => i + 1).map((d) => (
-                                <span
-                                    key={d}
-                                    className={
-                                    d === 30
-                                        ? "mx-auto flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 font-semibold text-white"
-                                        : ""
-                                    }
-                                >
+                                <span key={d} className={ d === 30 ? "mx-auto flex h-4 w-4 items-center justify-center rounded-full text-indigo-600 font-bold" : "" }>
                                     {d}
                                 </span>
                                 ))}

@@ -332,7 +332,7 @@ export default function PricingPage() {
             <div className="absolute top-1/3 left-1/2 h-80 w-80 -translate-x-1/3 -translate-y-1/2 rounded-full bg-indigo-600/30 blur-3xl" />
           </div>
 
-          <div className="relative z-10 mx-auto grid max-w-7xl px-4 sm:px-6 lg:px-8 items-center gap-12 lg:grid-cols-2 lg:gap-14">
+          <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-12 lg:grid-cols-2 lg:gap-14">
             {/* Left section */}
             <div className="space-y-6">
               <Heading
@@ -495,7 +495,7 @@ export default function PricingPage() {
             <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-violet-400/10 blur-3xl" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="mb-10 text-center md:mb-12">
               <Heading
                 badge="Why our pricing works"
@@ -543,7 +543,7 @@ export default function PricingPage() {
 
         {/* Feature comparison */}
         <section className="py-12 sm:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <Heading
                 badge="Compare plans"
                 title="Every feature, side by side"
@@ -561,7 +561,7 @@ export default function PricingPage() {
             <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-violet-400/10 blur-3xl" />
           </div>
 
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
               <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
                 {/* left: Extra seats */}
                 <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-900 via-neutral-900 to-indigo-950 p-6 text-white shadow-2xl sm:p-8 lg:col-span-5">
@@ -635,7 +635,7 @@ export default function PricingPage() {
               <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl" />
             </div>
 
-            <div className="relative mx-auto grid max-w-7xl px-4 sm:px-6 lg:px-8 gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
+            <div className="relative mx-auto grid container px-4 sm:px-6 lg:px-8 gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
               {/* left: Title */}
               <div className="space-y-3">
                   <Heading

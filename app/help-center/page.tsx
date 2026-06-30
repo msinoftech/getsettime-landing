@@ -137,7 +137,7 @@ export default function HelpCenterPage() {
           <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-emerald-300/15 blur-3xl animate-pulse [animation-delay:2s]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
             <h1 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-[40px]">
               Help{" "}

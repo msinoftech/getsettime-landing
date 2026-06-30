@@ -276,7 +276,7 @@ export default function Home() {
           <div className="absolute bottom-[-120px] left-1/3 h-80 w-80 rounded-full bg-emerald-300/20 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-6 lg:gap-10 lg:grid-cols-2">
               {/* left: Content */}
               <div className="space-y-3">
@@ -369,7 +369,7 @@ export default function Home() {
 
       <section id="resources" className="relative py-14 sm:py-20">
         <div className="absolute w-full inset-0 bg-gradient-to-br from-transparent via-indigo-400/20 to-transparent pointer-events-none"></div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-6 lg:gap-10 lg:grid-cols-2">
             {/* left: Content */}
             <div className="relative space-y-3">
@@ -507,7 +507,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12 px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto grid container gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12 px-4 sm:px-6 lg:px-8">
           {/* left: Title */}
           <div className="space-y-3">
             <Heading

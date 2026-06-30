@@ -5,7 +5,7 @@ export default function GoogleMeetLinkFunctionalityPage() {
   return (
     <>
       <section className="relative overflow-hidden py-14 sm:py-20">
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
             <div className="col-span-12">
                 <div className="relative bg-white">

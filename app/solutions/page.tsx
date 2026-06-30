@@ -261,7 +261,7 @@ export default function SolutionsPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.06),transparent_55%)]" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="relative mx-auto container px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <Heading
               badge="Solutions for every service business"
@@ -278,7 +278,7 @@ export default function SolutionsPage() {
 
       {/* Categories Section */}
       <section className="relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:gap-8">
             {businessCategories.map((category, index) => (
               <CategoryDashboardBlock key={category.id} category={category} index={index} />
@@ -289,7 +289,7 @@ export default function SolutionsPage() {
 
       {/* Deep-dive guides */}
       <section className="py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto container px-4 sm:px-6 lg:px-8">
           <Heading
             badge="Go deeper"
             title="In-depth guides for popular"

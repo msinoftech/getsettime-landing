@@ -215,7 +215,7 @@ export default function BlogPage() {
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-300/15 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-indigo-500" />
@@ -232,7 +232,7 @@ export default function BlogPage() {
 
       {/* Blog List Section */}
       <section className="relative pb-12">
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <Suspense fallback={<BlogListSkeleton />}>
             <BlogList posts={blogPosts} postsPerPage={6} />
           </Suspense>

@@ -260,7 +260,7 @@ return (
             <div className="absolute top-1/3 left-1/2 -translate-x-1/3 -translate-y-1/2 w-80 h-80 bg-indigo-600/30 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
                 {/* Left column - Content */}
                 <div className="space-y-6">
@@ -452,7 +452,7 @@ return (
         <div className="absolute top-10 left-10 hidden sm:block w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 hidden sm:block w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
     
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Heading
               badge="Features"
               title="Everything a Dentist Needs to Run a Tighter Schedule"
@@ -473,7 +473,7 @@ return (
             <div className="absolute left-10 top-16 h-72 w-72 rounded-full bg-violet-300/20 blur-3xl" />
             <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-2">
                 {/* Left column - Content */}
                 <div className="space-y-3">
@@ -603,7 +603,7 @@ return (
 
     {/* WHY DENTAL CLINIC CHOOSE US SECTION */}
     <section className="relative py-14 sm:py-20 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 lg:grid-cols-2">
                 {/* Left column - Content */}
                 <div className="relative rounded-2xl overflow-hidden bg-white p-3 shadow-xl">
@@ -642,7 +642,7 @@ return (
       <div className="absolute -right-14 bottom-16 hidden sm:block h-56 w-56 rounded-full bg-indigo-500/25 blur-3xl" />
       <div className="absolute left-1/2 top-0 hidden sm:block h-24 w-[60%] -translate-x-1/2 rounded-b-[48px] bg-white/35 blur-2xl" />
       
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 items-start">
           {/* Left */}
           <div className="space-y-4">
@@ -752,7 +752,7 @@ return (
             <div className="absolute right-8 bottom-16 h-44 w-44 rounded-full bg-violet-400/25 blur-3xl" />
         </div>
         
-        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto grid lg:grid-cols-2 gap-12">
+        <div className="container px-4 sm:px-6 lg:px-8 mx-auto grid lg:grid-cols-2 gap-12">
             {/* LEFT CONTENT */}
             <div className="relative z-10 space-y-4">
                 <Heading
@@ -812,7 +812,7 @@ return (
             <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl px-4 sm:px-6 lg:px-8 gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
+        <div className="relative mx-auto grid container px-4 sm:px-6 lg:px-8 gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
             {/* left: Title */}
             <div className="space-y-3">
                 <Heading
@@ -841,34 +841,34 @@ return (
     {/* Call-to-Action Section */}
     <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10">
-            <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
-            {/* left: Content */}
-            <div className="space-y-3">
-                <Heading
-                badge="Built for Modern Business"
-                title="Ready for GetSetTime To Manage Your Appointments"
-                description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
-                descriptionClassName = "text-white"
-                />
-                
-                <div className="mt-8">
-                <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Dentist Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
-                </div>
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10">
+                <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
+                {/* left: Content */}
+                <div className="space-y-3">
+                    <Heading
+                    badge="Built for Modern Business"
+                    title="Ready for GetSetTime To Manage Your Appointments"
+                    description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    descriptionClassName = "text-white"
+                    />
+                    
+                    <div className="mt-8">
+                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Dentist Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
+                    </div>
 
-                <div className="mt-8 flex flex-wrap gap-3 text-white">
-                {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                    <span key={item}>✔ {item}</span>
-                ))}
+                    <div className="mt-8 flex flex-wrap gap-3 text-white">
+                    {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
+                        <span key={item}>✔ {item}</span>
+                    ))}
+                    </div>
+                </div>
+                {/* right: Image */}
+                <div className="relative mx-auto w-full bg-white p-4 sm:p-8 rounded-xl shadow-xl">
+                    <ContactForm />               
+                </div>
                 </div>
             </div>
-            {/* right: Image */}
-            <div className="relative mx-auto w-full bg-white p-4 sm:p-8 rounded-xl shadow-xl">
-                <ContactForm />               
-            </div>
-            </div>
-        </div>
         </div>
     </section>
     </>

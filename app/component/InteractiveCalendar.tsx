@@ -177,7 +177,7 @@ export default function InteractiveCalendar() {
         <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-emerald-600/20 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl px-4 sm:px-6 lg:px-8 gap-10 lg:grid-cols-2 lg:gap-14">
+      <div className="relative mx-auto grid container px-4 sm:px-6 lg:px-8 gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Left: Interactive Calendar */}
         <div className="order-2 lg:order-1 relative xl:pb-12">
           <div className="relative rounded-xl bg-white shadow-xl p-4">

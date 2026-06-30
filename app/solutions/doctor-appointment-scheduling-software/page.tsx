@@ -309,7 +309,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/3 -translate-y-1/2 w-80 h-80 bg-indigo-600/30 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
           {/* Left column - Content */}
           <div className="space-y-6">
@@ -493,7 +493,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
       <div className="absolute top-10 left-10 w-72 h-72 hidden sm:block bg-indigo-600/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-80 h-80 hidden sm:block bg-emerald-500/20 rounded-full blur-3xl"></div>
       
-      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
         
         <Heading
           badge="The Real Problem"
@@ -514,7 +514,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
     <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white via-indigo-50/40 to-white overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] hidden sm:block h-[500px] bg-indigo-200/30 blur-3xl rounded-full" />
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         
         <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 items-center relative">
           {/* LEFT */}
@@ -712,7 +712,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
       <div className="absolute top-0 left-0 w-72 h-72 hidden sm:block bg-indigo-300/30 blur-3xl rounded-full"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 hidden sm:block bg-purple-300/30 blur-3xl rounded-full"></div>
       
-      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
+      <div className="container px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
         <Heading
           badge="Features"
           title="Everything a Doctor Needs —"
@@ -737,7 +737,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
       <div className="absolute -right-14 bottom-16 h-56 w-56 hidden sm:block rounded-full bg-indigo-500/25 blur-3xl" />
       <div className="absolute left-1/2 top-0 h-24 w-[60%] -translate-x-1/2 hidden sm:block rounded-b-[48px] bg-white/35 blur-2xl" />
       
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 items-start">
           {/* Left */}
           <div className="space-y-4">
@@ -858,7 +858,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
       <div className="absolute -left-10 top-10 h-52 w-52 hidden sm:block rounded-full bg-indigo-200/30 blur-3xl" />
       <div className="absolute -right-10 bottom-10 h-56 w-56 hidden sm:block rounded-full bg-emerald-200/30 blur-3xl" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         {/* left: Content */}
         <div className="space-y-3">
           <Heading
@@ -911,7 +911,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
           <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl px-4 sm:px-6 lg:px-8 gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
+        <div className="relative mx-auto grid container px-4 sm:px-6 lg:px-8 gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-12">
           {/* left: Title */}
           <div className="space-y-3">
             <Heading

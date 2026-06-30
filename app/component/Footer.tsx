@@ -28,7 +28,7 @@ export default function Footer() {
     <footer className="relative bg-gradient-to-br from-neutral-50 via-white to-indigo-500/30">
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="mx-auto container px-4 sm:px-6 lg:px-8 pt-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {/* Brand Column */}
             <div className="lg:col-span-1 space-y-3">

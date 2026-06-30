@@ -4,7 +4,7 @@ import { CheckListItem } from "./CheckList";
 export default function Support() {
    return (
       <section id="support" className="relative py-14 sm:py-20 scroll-mt-20">
-       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
            {/* Left: Content */}
            <div className="lg:col-span-7 space-y-4">
@@ -67,7 +67,7 @@ export default function Support() {
                     </div>
                     <div className="mt-4 flex items-center gap-2">
                       <input aria-label="Type your message" placeholder="Type your message..." className="w-full rounded-lg border border-neutral-200 bg-white/80 px-3 py-2 text-sm text-neutral-800 placeholder-neutral-400" />
-                      <button className="rounded-xl cursor-pointer bg-indigo-600 text-white text-sm px-4 py-2.5">Send</button>
+                      <button className="rounded-xl bg-indigo-600 text-white text-sm px-4 py-2.5">Send</button>
                     </div>
                  </div>
                </div>

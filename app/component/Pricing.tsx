@@ -142,10 +142,10 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(99,102,241,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,102,241,0.04)_1px,transparent_1px)] bg-[size:52px_52px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
 
         {!isPage && (
-          <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-4 shadow-2xl shadow-indigo-600/20 sm:p-8 md:p-10">
+          <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-4 shadow-2xl shadow-indigo-600/20 sm:p-8 md:p-10 max-w-7xl mx-auto">
             <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/20 blur-3xl" />
             <div className="absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
             <div className="relative grid gap-8 lg:grid-cols-[1fr_320px] lg:items-center">

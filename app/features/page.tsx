@@ -427,7 +427,7 @@ export default function FeaturesPage() {
               <div className="absolute top-1/3 left-1/2 h-80 w-80 -translate-x-1/3 -translate-y-1/2 rounded-full bg-indigo-600/30 blur-3xl" />
             </div>
 
-            <div className="relative z-10 mx-auto grid max-w-7xl px-4 sm:px-6 lg:px-8 items-center gap-12 lg:grid-cols-2 lg:gap-14">
+            <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-12 lg:grid-cols-2 lg:gap-14">
                 {/* left: Content */}
                 <div className="space-y-6">
                     <Heading
@@ -636,7 +636,7 @@ export default function FeaturesPage() {
         
         {/* Trusted at Scale */}
         <section className="relative overflow-hidden bg-neutral-50 py-14 sm:py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto container px-4 sm:px-6 lg:px-8">
               <div className="mb-10 text-center">
                   <Heading
                       badge="Trusted at scale"
@@ -710,7 +710,7 @@ export default function FeaturesPage() {
 
         {/* Feature */}
         <section className="relative py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="mb-10 text-center">
                     <Heading
                         badge="Feature"
@@ -737,7 +737,7 @@ export default function FeaturesPage() {
 
         {/* Automation journey */}
         <section className="relative overflow-hidden bg-[#f5f7ff] py-16 sm:py-24">
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
               <div className="lg:sticky lg:top-24">
                 <Heading
@@ -787,7 +787,7 @@ export default function FeaturesPage() {
         </section>
 
         <section className="relative overflow-hidden">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto container px-4 sm:px-6 lg:px-8">
               <div className="mt-16 overflow-hidden rounded-3xl bg-white">
                 <div className="mb-10 text-center">
                   <Heading
@@ -829,7 +829,7 @@ export default function FeaturesPage() {
 
         {/* Control center */}
         <section className="relative overflow-hidden py-16 sm:py-24">
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
                 {/* Left side */}
                 <div className="relative">
@@ -1009,7 +1009,7 @@ export default function FeaturesPage() {
         {/* Launch offer */}
         <section className="relative py-16 sm:py-24">
             <div className="absolute w-full inset-0 bg-gradient-to-br from-transparent via-indigo-400/20 to-transparent pointer-events-none"></div>
-            <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
 
               <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
                 <div className="space-y-3">
