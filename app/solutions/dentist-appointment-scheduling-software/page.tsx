@@ -270,17 +270,17 @@ return (
                         highlightText="Best Dentist Scheduling Software"
                         description="GetSetTime helps dentists automate bookings, reduce no-shows, and free up front-desk time — so your team can focus on patients, not phone calls."
                         headingTag="h1"
-                        titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900"
+                        titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
                     <div className="flex flex-col sm:flex-row gap-4">
                         <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google - Dentist Appointment Scheduling Software" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
                             <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
-                            <g>
-                                <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
-                                <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
-                                <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
-                                <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
-                            </g>
+                                <g>
+                                    <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                                    <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                                    <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                                    <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                                </g>
                             </svg>
                             Sign up with Google
                         </Link>
@@ -358,16 +358,16 @@ return (
                                     ].map((kpi) => (
                                         <div key={kpi.label} className={`group rounded-xl border border-neutral-100 bg-gradient-to-br ${kpi.bg} p-2.5 shadow-sm ring-1 ${kpi.ring} transition duration-300 hover:-translate-y-0.5 hover:shadow-md`}>
                                             <div className="flex items-center justify-between">
-                                                <span className={`flex h-6 w-6 items-center justify-center rounded-lg ${kpi.iconBg} text-white shadow-sm`}>
-                                                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={kpi.icon} /></svg>
+                                                <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${kpi.iconBg} text-white shadow-sm`}>
+                                                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={kpi.icon} /></svg>
                                                 </span>
-                                                <span className="inline-flex items-center gap-0.5 text-[9px] font-bold text-emerald-600">
-                                                    <svg className="h-2 w-2" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
+                                                <span className="inline-flex items-center gap-0.5 text-xs font-bold text-emerald-600">
+                                                    <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
                                                     {kpi.trend}
                                                 </span>
                                             </div>
-                                            <div className="mt-1.5 text-[9px] font-semibold uppercase tracking-wide text-neutral-500">{kpi.label}</div>
-                                            <div className={`text-lg font-bold tabular-nums ${kpi.accent}`}>{kpi.value}</div>
+                                            <div className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">{kpi.label}</div>
+                                            <div className={`text-xl font-bold tabular-nums ${kpi.accent}`}>{kpi.value}</div>
                                         </div>
                                     ))}
                                 </div>

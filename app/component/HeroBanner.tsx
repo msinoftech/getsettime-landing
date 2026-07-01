@@ -74,7 +74,7 @@ export default function HeroBanner() {
           <div className="space-y-5">
             {/* <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur"><span className="h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500"></span>Free 250 Bookings / Month Included</div> */}
 
-            <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">
+            <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize">
               Book More{" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Appointments.</span><br/>Manage Your Team. <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Reduce No-Shows.</span>
             </h1>
 

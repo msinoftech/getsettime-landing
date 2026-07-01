@@ -46,15 +46,14 @@ export default function TermsOfConditions() {
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-300/15 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">
-              Terms &{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">
-                Conditions
-              </span>
-            </h1>
-            <p>Please read these terms carefully before using our service. By accessing or using GetSetTime, you agree to be bound by these terms.</p>
+        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-6">
+            <Heading
+              title="Terms & Conditions"
+              description="Please read these terms carefully before using our service. By accessing or using GetSetTime, you agree to be bound by these terms."
+              headingTag="h1"
+              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+            />
           </div>
 
           <div className="flex justify-center mb-8">
@@ -67,7 +66,7 @@ export default function TermsOfConditions() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-sm border border-neutral-100 p-8 sm:p-12">
             <div className="prose prose-neutral max-w-none">
               
@@ -239,7 +238,7 @@ export default function TermsOfConditions() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   

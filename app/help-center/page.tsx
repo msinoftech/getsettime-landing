@@ -139,15 +139,14 @@ export default function HelpCenterPage() {
 
         <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-            <h1 className="text-3xl font-bold text-neutral-900 md:text-4xl lg:text-[40px]">
-              Help{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">
-                Center
-              </span>
-            </h1>
-            <p className="mt-4 text-neutral-600">
-              Step-by-step guides to help you set up, manage appointments, and get the most out of {APP_NAME}.
-            </p>
+
+            <Heading
+              badge="Help Center"
+              title="How can we help you?"
+              description={`Step-by-step guides to help you set up, manage appointments, and get the most out of ${APP_NAME}.`}
+              headingTag="h1"
+              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+            />
 
             <div className="mt-6 flex justify-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-neutral-100 bg-white px-4 py-2 shadow-sm">
@@ -174,7 +173,7 @@ export default function HelpCenterPage() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   

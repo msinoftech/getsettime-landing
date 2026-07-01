@@ -319,7 +319,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
               highlightText="That Works While You Treat Patients"
               description="Stop managing bookings over phone calls. GetSetTime lets patients book online, sends automatic reminders, and keeps your day organised — no tech skills needed."
               headingTag="h1"
-              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900"
+              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
             />
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -396,7 +396,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     <div className="truncate text-lg font-bold text-neutral-900">Dr. Michael Johnson</div>
                     <div className="truncate text-xs text-neutral-500">Today&apos;s appointments · General Clinic</div>
                   </div>
-                  <div className="hidden items-center gap-2 text-[10px] font-medium text-neutral-500 sm:flex">
+                  <div className="hidden items-center gap-2 text-xs font-medium text-neutral-500 sm:flex">
                     <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-400" />Open</span>
                     <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-red-400" />Booked</span>
                     <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-amber-400" />Pending</span>
@@ -464,7 +464,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                       <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-neutral-700">
                         <div className="h-full w-[86%] rounded-full bg-gradient-to-r from-indigo-500 to-emerald-500" />
                       </div>
-                      <div className="mt-3 flex items-center justify-between text-[11px] text-neutral-400">
+                      <div className="mt-3 flex items-center justify-between text-xs text-neutral-400">
                         <span>9 booked</span>
                         <span>3 open</span>
                       </div>
@@ -948,7 +948,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   

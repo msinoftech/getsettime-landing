@@ -48,14 +48,13 @@ export default function PrivacyPolicy() {
 
         <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">
-              Privacy{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">
-                Policy
-              </span>
-            </h1>
-            <p>Your privacy matters to us. Learn how we collect, use, and protect your personal information while providing you with the best scheduling experience.</p>
+          <div className="text-center max-w-3xl mx-auto mb-6">          
+            <Heading
+              title="Privacy Policy"
+              description="Your privacy matters to us. Learn how we collect, use, and protect your personal information while providing you with the best scheduling experience."
+              headingTag="h1"
+              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+            />
           </div>
         </div>
 
@@ -303,7 +302,7 @@ export default function PrivacyPolicy() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   

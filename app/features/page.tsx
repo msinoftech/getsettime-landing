@@ -436,7 +436,7 @@ export default function FeaturesPage() {
                         highlightText="beautifully automated."
                         description={`${APP_NAME} gives service businesses a unified system for online bookings, WhatsApp reminders, calendar sync, customer records, staff scheduling, and performance insights.`}
                         headingTag="h1"
-                        titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900"
+                        titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
 
                     <div className="flex flex-col sm:flex-row gap-4">
@@ -510,7 +510,7 @@ export default function FeaturesPage() {
                                         +18%
                                     </span>
                                 </div>
-                                <svg viewBox="0 0 240 70" preserveAspectRatio="none" className="mt-2 h-16 w-full" aria-hidden>
+                                <svg viewBox="0 0 240 70" preserveAspectRatio="none" className="mt-2 h-26 w-full" aria-hidden>
                                     <defs>
                                         <linearGradient id="featArea" x1="0" y1="0" x2="0" y2="1">
                                             <stop offset="0%" stopColor="rgb(99,102,241)" stopOpacity="0.35" />
@@ -518,16 +518,16 @@ export default function FeaturesPage() {
                                         </linearGradient>
                                     </defs>
                                     <path d="M0,52 L40,40 L80,46 L120,26 L160,32 L200,14 L240,22 L240,70 L0,70 Z" fill="url(#featArea)" />
-                                    <path d="M0,52 L40,40 L80,46 L120,26 L160,32 L200,14 L240,22" fill="none" stroke="rgb(99,102,241)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    <circle cx="200" cy="14" r="3.5" fill="white" stroke="rgb(99,102,241)" strokeWidth="2.5" />
+                                    <path d="M0,52 L40,40 L80,46 L120,26 L160,32 L200,14 L240,22" fill="none" stroke="rgb(99,102,241)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    <circle cx="200" cy="14" r="3"  fill="white" stroke="rgb(99,102,241)" strokeWidth="2" />
                                 </svg>
                                 <div className="mt-1 flex justify-between text-[9px] font-medium text-neutral-400">
                                     {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (<span key={i}>{d}</span>))}
                                 </div>
                             </div>
                             <div className="flex items-center justify-center gap-3 rounded-xl border border-neutral-100 bg-white p-3 shadow-sm sm:col-span-2">
-                                <div className="relative h-20 w-20 shrink-0">
-                                    <svg viewBox="0 0 100 100" className="h-20 w-20 -rotate-90" aria-hidden>
+                                <div className="relative h-30 w-30 shrink-0">
+                                    <svg viewBox="0 0 100 100" className="h-30 w-30 -rotate-90" aria-hidden>
                                         <circle cx="50" cy="50" r="40" fill="none" stroke="rgb(238,242,255)" strokeWidth="12" />
                                         <circle cx="50" cy="50" r="40" fill="none" stroke="url(#featRing)" strokeWidth="12" strokeLinecap="round" strokeDasharray="216 251" />
                                         <defs>
@@ -538,13 +538,13 @@ export default function FeaturesPage() {
                                         </defs>
                                     </svg>
                                     <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                        <span className="text-lg font-bold text-neutral-900">86%</span>
+                                        <span className="text-2xl font-bold text-neutral-900">86%</span>
                                     </div>
                                 </div>
                                 <div className="min-w-0">
-                                    <div className="text-[10px] font-semibold uppercase tracking-wide text-neutral-500">Slot use</div>
-                                    <div className="text-sm font-bold text-neutral-900">Optimised</div>
-                                    <div className="mt-0.5 text-[11px] text-neutral-400">7 slots open</div>
+                                    <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Slot use</div>
+                                    <div className="text-lg font-bold text-neutral-900">Optimised</div>
+                                    <div className="mt-0.5 text-xs text-neutral-400">7 slots open</div>
                                 </div>
                             </div>
                         </div>
@@ -1094,7 +1094,7 @@ export default function FeaturesPage() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   

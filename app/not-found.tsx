@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { APP_NAME } from "@/lib/config";
+import Heading from "./component/Heading";
 
 export const metadata: Metadata = {
   title: `Page not found – ${APP_NAME}`,
@@ -17,33 +18,18 @@ export default function NotFound() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
-        <p className="text-sm font-semibold tracking-wide text-indigo-600 uppercase mb-3">
-          Error 404
-        </p>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 mb-4">
-          <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">
-            This slot
-          </span>{" "}
-          is empty
-        </h1>
-        <p className="text-base sm:text-lg text-neutral-600 max-w-xl mx-auto mb-10">
-          We could not find that page. The link may be wrong or the page may have moved. Head back
-          to {APP_NAME} to keep your appointments on track.
-        </p>
+        <Heading
+          badge="Error 404"
+          title="This slot"
+          highlightText="is empty"
+          description={`We could not find that page. The link may be wrong or the page may have moved. Head back to ${APP_NAME} to keep your appointments on track.`}
+          headingTag="h1"
+          titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+        />
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/"
-            className="bg-indigo-600 text-white text-sm font-medium px-6 py-3 rounded-xl hover:bg-indigo-700 transition-colors"
-          >
-            Back to home
-          </Link>
-          <Link
-            href="/contact-us"
-            className="bg-gray-900 text-white text-sm font-medium px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors"
-          >
-            Contact us
-          </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+          <Link href="/" className="bg-indigo-600 text-white text-sm font-medium px-6 py-3 rounded-xl hover:bg-indigo-700 transition-colors">Back to home</Link>
+          <Link href="/contact-us" className="bg-gray-900 text-white text-sm font-medium px-6 py-3 rounded-xl hover:bg-gray-800 transition-colors">Contact us</Link>
         </div>
       </div>
     </div>

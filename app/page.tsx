@@ -545,7 +545,7 @@ export default function Home() {
                   badge="Built for Modern Business"
                   title="Ready for GetSetTime To Manage Your Appointments"
                   description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                  titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                  titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                   descriptionClassName = "text-white"
                 />
                 

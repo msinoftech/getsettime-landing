@@ -169,24 +169,24 @@ export default function ContactUs() {
             <div className="h-full min-h-0">
               <div className="h-full rounded-2xl bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.15),_transparent_30%),linear-gradient(180deg,#f8faff_0%,#eef2ff_100%)] shadow-md p-4 sm:p-6 lg:p-8 shadow-md">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-700 shadow-sm">
-                    <span className="h-2 w-2 rounded-full bg-indigo-500" />
-                    quick discussion
-                  </div>
-                  <h1 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Book a quick discussion with a product specialist</h1>
-                  <p>Speak with a product specialist to explore your requirements and next steps.</p>
+                  <Heading
+                    badge="quick discussion"
+                    title="Book a quick discussion with a product specialist"
+                    description="Speak with a product specialist to explore your requirements and next steps."
+                    headingTag="h1"
+                    titleClassName="text-3xl md:text-4xl font-black text-neutral-900 capitalize"
+                  />
                   <ContactForm />
                 </div>
               </div>
             </div>
             {/* right: Image */}
             <div className="space-y-6">
-              <div className="w-fit inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-700 shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-indigo-500" />
-                Contact us
-              </div>
-              <div className="text-3xl md:text-4xl lg:text-[40px] font-bold text-neutral-900">Have a question about scheduling or bookings?</div>
-              <p>Send us a quick message and our team will get back to you shortly. We’re happy to help you with setup, integrations, or general queries.</p>
+              <Heading
+                badge="Contact us"
+                title="Have a question about scheduling or bookings?"
+                description="Send us a quick message and our team will get back to you shortly. We’re happy to help you with setup, integrations, or general queries."
+              />
               <div className="space-y-4">
                 <InfoItem
                   title="Fast response"
@@ -230,7 +230,7 @@ export default function ContactUs() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   

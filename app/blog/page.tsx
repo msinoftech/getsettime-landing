@@ -217,15 +217,14 @@ export default function BlogPage() {
 
         <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-indigo-500" />
-              Articles
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">
-              Insights & Resources for{" "}
-              <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">Smarter Scheduling</span>
-            </h1>
-            <p>Discover expert tips, industry best practices, and the latest insights to help you streamline your appointment management and grow your business.</p>
+            <Heading
+              badge="Articles"
+              title="Insights & Resources for"
+              highlightText="Smarter Scheduling"
+              description="Discover expert tips, industry best practices, and the latest insights to help you streamline your appointment management and grow your business."
+              headingTag="h1"
+              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+            />
           </div>
         </div>
       </section>

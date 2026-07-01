@@ -300,7 +300,7 @@ return (
                         highlightText="Fills Every Chair"
                         description="GetSetTime is an easy-to-use appointment booking system built for every salon — no tech skills needed. Automate bookings, send reminders, and never lose a client to a missed appointment again."
                         headingTag="h1"
-                        titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900"
+                        titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
                     <div className="flex flex-col sm:flex-row gap-4">
                         <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google - Salon Appointment Scheduling Software" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
@@ -388,15 +388,15 @@ return (
                                     ].map((kpi) => (
                                         <div key={kpi.label} className={`group rounded-xl border border-neutral-100 bg-gradient-to-br ${kpi.bg} p-2.5 shadow-sm ring-1 ${kpi.ring} transition duration-300 hover:-translate-y-0.5 hover:shadow-md`}>
                                             <div className="flex items-center justify-between">
-                                                <span className={`flex h-6 w-6 items-center justify-center rounded-lg ${kpi.iconBg} text-white shadow-sm`}>
-                                                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={kpi.icon} /></svg>
+                                                <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${kpi.iconBg} text-white shadow-sm`}>
+                                                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={kpi.icon} /></svg>
                                                 </span>
-                                                <span className="inline-flex items-center gap-0.5 text-[9px] font-bold text-emerald-600">
+                                                <span className="inline-flex items-center gap-0.5 text-xs font-bold text-emerald-600">
                                                     <svg className="h-2 w-2" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
                                                     {kpi.trend}
                                                 </span>
                                             </div>
-                                            <div className="mt-1.5 text-[9px] font-semibold uppercase tracking-wide text-neutral-500">{kpi.label}</div>
+                                            <div className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">{kpi.label}</div>
                                             <div className={`text-lg font-bold tabular-nums ${kpi.accent}`}>{kpi.value}</div>
                                         </div>
                                     ))}
@@ -421,7 +421,7 @@ return (
                                                         <div className="truncate text-sm font-semibold text-neutral-900">{service}</div>
                                                         <div className="truncate text-xs text-neutral-500">{client}</div>
                                                     </div>
-                                                    <span className="shrink-0 rounded-full bg-white px-2 py-1 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-100">{time}</span>
+                                                    <span className="shrink-0 rounded-full bg-white px-2 py-1 text-xs font-bold text-emerald-600 ring-1 ring-emerald-100">{time}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -446,7 +446,7 @@ return (
                                                         <div className="truncate text-xs text-neutral-500">{role}</div>
                                                     </div>
                                                     <span
-                                                        className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold ${
+                                                        className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold ${
                                                         status === "Available"
                                                             ? "bg-emerald-50 text-emerald-600"
                                                             : "bg-amber-50 text-amber-600"
@@ -530,9 +530,9 @@ return (
                         <div className="grid gap-4 sm:grid-cols-2">
                             <div className="order-2 sm:order-2 rounded-2xl bg-white p-4 shadow-sm">
                                 <div className="hidden sm:block">
-                                    <div className="text-sm uppercase text-indigo-600">Salon Dashboard</div>
+                                    <div className="text-xs uppercase text-indigo-600">Salon Dashboard</div>
                                     <div className="text-2xl font-bold text-neutral-900">Glow Studio Salon</div>
-                                    <div className="text-neutral-600">Salon · Open Today</div>
+                                    <div className="text-xs text-neutral-600">Salon · Open Today</div>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
@@ -549,9 +549,9 @@ return (
                                     </div>
 
                                     <div className="mt-4 rounded-2xl bg-indigo-600 p-4 text-white shadow-lg">
-                                        <div className="opacity-90">Next appointment</div>
-                                        <div className="mt-1 font-semibold">Nicole Jackson · 11:00 AM</div>
-                                        <div className="opacity-90">Hair Spa + Styling · Chair 2</div>
+                                        <div className="opacity-90 text-xs">Next appointment</div>
+                                        <div className="mt-1 font-semibold text-lg">Nicole Jackson · 11:00 AM</div>
+                                        <div className="opacity-90 text-xs">Hair Spa + Styling · Chair 2</div>
                                     </div>
                                 </div>
 
@@ -580,8 +580,8 @@ return (
                                         />
                                     </div>
                                     <div>
-                                        <div className="font-semibold text-neutral-900">Ava Reynolds</div>
-                                        <div className="text-neutral-600">Senior Stylist · 8+ years</div>
+                                        <div className="font-semibold text-lg text-neutral-900">Ava Reynolds</div>
+                                        <div className="text-xs text-neutral-600">Senior Stylist · 8+ years</div>
                                     </div>
                                 </div>
 
@@ -590,9 +590,9 @@ return (
                                         <div className="font-semibold text-neutral-900">Availability Calendar</div>
                                         <span className="rounded-md bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-600">Friday</span>
                                     </div>
-                                    <div className="text-neutral-600">Pick a service slot for quick booking.</div>
+                                    <div className="text-xs text-neutral-600">Pick a service slot for quick booking.</div>
                                     <div className="mt-3">
-                                        <div className="uppercase text-sm text-neutral-500">Salon services</div>
+                                        <div className="uppercase text-xs text-neutral-500">Salon services</div>
                                         <div className="mt-2 flex flex-wrap gap-2">
                                             {["Haircut", "Hair Spa", "Color", "Keratin", "Facial", "Bridal Makeup"].map((service, idx) => (
                                                 <span
@@ -927,7 +927,7 @@ return (
                         badge="Built for Modern Business"
                         title="Ready for GetSetTime To Manage Your Appointments"
                         description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                        titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                        titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                         descriptionClassName = "text-white"
                         />
                         

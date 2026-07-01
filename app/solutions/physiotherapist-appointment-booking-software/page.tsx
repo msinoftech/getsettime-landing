@@ -290,7 +290,7 @@ const growthRoadmap = [
                 highlightText="Physio Clinics"
                 description="Stay on your role, forget the admin workload. Getsettime - your patients book online appointments, receive automatic reminders, and your schedule stays organized."
                 headingTag="h1"
-                titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900"
+                titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
               />
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -354,10 +354,10 @@ const growthRoadmap = [
                           </span>
                           <div>
                             <div className="text-sm font-bold leading-tight text-neutral-900">Physiotherapy</div>
-                            <div className="text-[11px] text-neutral-500">Consultation</div>
+                            <div className="text-xs text-neutral-500">Consultation</div>
                           </div>
                         </div>
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-600 ring-1 ring-emerald-100">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-600 ring-1 ring-emerald-100">
                           <span className="relative flex h-1.5 w-1.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" /><span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" /></span>
                           Live
                         </span>
@@ -372,7 +372,7 @@ const growthRoadmap = [
                           { t: '04:15 PM', booked: true },
                           { t: '06:00 PM', booked: false },
                         ].map((slot) => (
-                          <span key={slot.t} className={`rounded-lg border px-1 py-1.5 text-center text-[11px] font-semibold transition hover:-translate-y-0.5 ${slot.booked ? 'border-red-200 bg-red-50 text-red-400 line-through decoration-red-300' : 'border-emerald-200 bg-emerald-50 text-emerald-700'}`}>{slot.t}</span>
+                          <span key={slot.t} className={`rounded-lg border px-1 py-1.5 text-center text-xs font-semibold transition hover:-translate-y-0.5 ${slot.booked ? 'border-red-200 bg-red-50 text-red-400 line-through decoration-red-300' : 'border-emerald-200 bg-emerald-50 text-emerald-700'}`}>{slot.t}</span>
                         ))}
                       </div>
 
@@ -380,9 +380,9 @@ const growthRoadmap = [
                         <Image src="/physiotherapy-profile.jpg" alt="physiotherapy profile" className="h-10 w-10 rounded-full object-cover ring-2 ring-white" width={50} height={50}/>
                         <div className="min-w-0 flex-1">
                           <div className="truncate text-sm font-semibold text-neutral-900">Physiotherapist</div>
-                          <div className="truncate text-[11px] text-neutral-500">Trusted &amp; experienced</div>
+                          <div className="truncate text-xs text-neutral-500">Trusted &amp; experienced</div>
                         </div>
-                        <span className="inline-flex shrink-0 items-center gap-1 rounded-md bg-amber-50 px-2 py-1 text-[11px] font-bold text-amber-700">
+                        <span className="inline-flex shrink-0 items-center gap-1 rounded-md bg-amber-50 px-2 py-1 text-xs font-bold text-amber-700">
                           <svg className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.69-1.54 1.12l-3.56-2.59a1 1 0 00-1.18 0l-3.56 2.59c-.78.57-1.84-.2-1.54-1.12l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.61c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" /></svg>
                           4.8
                         </span>
@@ -400,8 +400,8 @@ const growthRoadmap = [
                       <div className="relative space-y-0">
                         {['Instant confirmation', '24-hour reminder', '1-hour reminder', 'Treatment plan + follow-up'].map((item, i, arr) => (
                           <div key={item} className="relative flex gap-3 pb-3 last:pb-0">
-                            {i < arr.length - 1 && <span className="absolute left-[11px] top-6 h-full w-px bg-white/15" aria-hidden />}
-                            <span className="relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-[10px] font-bold text-white ring-4 ring-slate-900">{i + 1}</span>
+                            {i < arr.length - 1 && <span className="absolute left-3 top-6 h-full w-px bg-white/15" aria-hidden />}
+                            <span className="relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-xs font-bold text-white ring-4 ring-slate-900">{i + 1}</span>
                             <div className="text-xs text-white/85">{item}</div>
                           </div>
                         ))}
@@ -489,11 +489,11 @@ const growthRoadmap = [
                       </span>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-500">Physiotherapy Dashboard</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-indigo-500">Physiotherapy Dashboard</span>
                       <div className="truncate text-lg font-bold text-neutral-900">Camille Dubois</div>
                       <div className="truncate text-xs text-neutral-500">Physiotherapist · Booking overview</div>
                     </div>
-                    <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-semibold text-neutral-500 ring-1 ring-neutral-100 sm:inline-flex">
+                    <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-neutral-500 ring-1 ring-neutral-100 sm:inline-flex">
                       <svg className="h-3 w-3 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                       This week
                     </span>
@@ -508,14 +508,14 @@ const growthRoadmap = [
                           <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Bookings this week</div>
                           <div className="mt-1 flex items-baseline gap-1.5">
                             <span className="text-2xl font-black tabular-nums text-neutral-900">312</span>
-                            <span className="inline-flex items-center gap-0.5 text-[11px] font-bold text-emerald-600">
+                            <span className="inline-flex items-center gap-0.5 text-xs font-bold text-emerald-600">
                               <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
                               18%
                             </span>
                           </div>
                         </div>
                       </div>
-                      <svg viewBox="0 0 240 80" preserveAspectRatio="none" className="mt-2 h-20 w-full" aria-hidden>
+                      <svg viewBox="0 0 240 80" preserveAspectRatio="none" className="mt-2 h-26 w-full" aria-hidden>
                         <defs>
                           <linearGradient id="physioArea" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0%" stopColor="rgb(99,102,241)" stopOpacity="0.35" />
@@ -523,19 +523,19 @@ const growthRoadmap = [
                           </linearGradient>
                         </defs>
                         <path d="M0,60 L40,46 L80,52 L120,30 L160,38 L200,18 L240,26 L240,80 L0,80 Z" fill="url(#physioArea)" />
-                        <path d="M0,60 L40,46 L80,52 L120,30 L160,38 L200,18 L240,26" fill="none" stroke="rgb(99,102,241)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                        <circle cx="200" cy="18" r="3.5" fill="white" stroke="rgb(99,102,241)" strokeWidth="2.5" />
+                        <path d="M0,60 L40,46 L80,52 L120,30 L160,38 L200,18 L240,26" fill="none" stroke="rgb(99,102,241)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="200" cy="18" r="3" fill="white" stroke="rgb(99,102,241)" strokeWidth="2" />
                       </svg>
-                      <div className="mt-1 flex justify-between text-[9px] font-medium text-neutral-400">
+                      <div className="mt-1 flex justify-between text-xs font-medium text-neutral-400">
                         {["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((d) => (<span key={d}>{d}</span>))}
                       </div>
                     </div>
 
                     {/* Utilisation ring */}
                     <div className="relative flex flex-col items-center justify-center rounded-xl border border-neutral-100 bg-white p-4 shadow-sm sm:col-span-2">
-                      <div className="text-[11px] font-semibold uppercase tracking-wide text-neutral-500">Slot use</div>
-                      <div className="relative mt-2 h-24 w-24">
-                        <svg viewBox="0 0 100 100" className="h-24 w-24 -rotate-90" aria-hidden>
+                      <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Slot use</div>
+                      <div className="relative mt-2 h-30 w-30">
+                        <svg viewBox="0 0 100 100" className="h-30 w-30 -rotate-90" aria-hidden>
                           <circle cx="50" cy="50" r="40" fill="none" stroke="rgb(238,242,255)" strokeWidth="12" />
                           <circle cx="50" cy="50" r="40" fill="none" stroke="url(#physioRing)" strokeWidth="12" strokeLinecap="round" strokeDasharray="216.2 251.3" />
                           <defs>
@@ -547,7 +547,7 @@ const growthRoadmap = [
                         </svg>
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
                           <span className="text-2xl font-black text-neutral-900">86%</span>
-                          <span className="text-[9px] font-medium text-neutral-400">booked</span>
+                          <span className="text-xs font-medium text-neutral-400">booked</span>
                         </div>
                       </div>
                     </div>
@@ -558,13 +558,13 @@ const growthRoadmap = [
                     <div className="relative h-full overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-4 text-white shadow-md shadow-indigo-500/20">
                       <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-white/10" aria-hidden />
                       <div className="relative space-y-1">
-                        <div className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-white/80">
+                        <div className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-white/80">
                           <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                           Next appointment
                         </div>
                         <div className="text-base font-bold">Lina Wagner · 11:00 AM</div>
                         <div className="text-xs text-white/80">Consultation · Room 2</div>
-                        <div className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-[11px] font-medium">
+                        <div className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-medium">
                           <span className="h-1.5 w-1.5 rounded-full bg-white" />
                           Check-in in 20 mins
                         </div>
@@ -574,7 +574,7 @@ const growthRoadmap = [
                     <div className="h-full rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
                       <div className="mb-3 flex items-center justify-between">
                         <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Availability</div>
-                        <div className="flex items-center gap-2 text-[10px] font-medium text-neutral-500">
+                        <div className="flex items-center gap-2 text-xs font-medium text-neutral-500">
                           <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-400" />Open</span>
                           <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-red-400" />Booked</span>
                         </div>
@@ -583,7 +583,7 @@ const growthRoadmap = [
                         {["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30"].map((time, i) => (
                           <span
                             key={i}
-                            className={`rounded-lg border px-1 py-1.5 text-center text-[11px] font-semibold transition hover:-translate-y-0.5 ${
+                            className={`rounded-lg border px-1 py-1.5 text-center text-xs font-semibold transition hover:-translate-y-0.5 ${
                               time === "11:00"
                                 ? "border-red-200 bg-red-50 text-red-400 line-through decoration-red-300"
                                 : "border-emerald-200 bg-emerald-50 text-emerald-700"
@@ -597,7 +597,7 @@ const growthRoadmap = [
                   </div>
 
                   {/* Service tags */}
-                  <div className="relative flex flex-wrap gap-1.5">
+                  <div className="relative flex flex-wrap gap-2">
                     {[
                       "Consultations",
                       "Evaluations",
@@ -606,7 +606,7 @@ const growthRoadmap = [
                       "Referrals",
                       "Reports",
                     ].map((tag, i) => (
-                      <span key={i} className="rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-[10px] font-semibold text-indigo-700">{tag}</span>
+                      <span key={i} className="rounded-full border border-indigo-100 bg-indigo-50 px-2.5 py-1 text-xs font-semibold text-indigo-700">{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -672,7 +672,7 @@ const growthRoadmap = [
                       <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-white shadow-md ${stat.iconBg}`}>
                         <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} /></svg>
                       </span>
-                      <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600">
+                      <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-50 px-2 py-1 text-xs font-bold text-emerald-600">
                         <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
                         {stat.delta}
                       </span>
@@ -682,7 +682,7 @@ const growthRoadmap = [
                       <span className="text-lg font-bold text-neutral-300">%</span>
                     </div>
                     <div className="relative mt-2 text-sm font-semibold text-neutral-900">{stat.label}</div>
-                    <div className="relative mt-2 h-1.5 w-full overflow-hidden rounded-full bg-neutral-100">
+                    <div className="relative mt-2 h-2 w-full overflow-hidden rounded-full bg-neutral-100">
                       <div className={`h-full rounded-full bg-gradient-to-r ${stat.bar}`} style={{ width: `${stat.value}%` }} />
                     </div>
                     <div className="relative mt-2 text-xs text-neutral-600">{stat.desc}</div>
@@ -903,7 +903,7 @@ const growthRoadmap = [
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   

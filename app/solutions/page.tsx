@@ -94,8 +94,7 @@ function CategoryDashboardBlock({
           {category.dashboard.label}
         </span>
       </div>
-
-      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">{category.title}</h3>
+      <h3 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl capitalize">{category.title}</h3>
       <p>{category.description}</p>
 
       <ul className="space-y-2.5">
@@ -270,7 +269,7 @@ export default function SolutionsPage() {
               headingTag="h1"
               description={`${APP_NAME} powers online booking, WhatsApp reminders, and smart calendars for clinics, salons, studios, and personal-service pros — each with a dashboard built for how they work.`}
               wrapperClassName="space-y-4"
-              titleClassName="text-4xl font-black tracking-tight text-neutral-900 md:text-5xl lg:text-[52px]"
+              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
             />
           </div>
         </div>
@@ -332,7 +331,7 @@ export default function SolutionsPage() {
                   badge="Built for Modern Business"
                   title="Ready for GetSetTime To Manage Your Appointments"
                   description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                  titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                  titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                   descriptionClassName = "text-white"
                   />
                   

@@ -1,0 +1,189 @@
+"use client";
+
+import { useState } from "react";
+import { pricingTiers } from "@/lib/pricing-data";
+
+function getDisplayPrice(price: string, tierName: string, isAnnual: boolean): string {
+  if (price === "Free") return "Free";
+  const annualDiscount = tierName === "Starter" ? 1 : 0.9;
+  const monthlyPrice = Number(price);
+  const annualPrice = Math.round(monthlyPrice * annualDiscount);
+  return isAnnual ? `${annualPrice}` : `${monthlyPrice}`;
+}
+
+const tierMeta: Record<string, { accent: string; iconBg: string; ring: string; bg: string; icon: string; popular?: boolean }> = {
+  Starter: {
+    accent: "text-indigo-600",
+    iconBg: "bg-indigo-600",
+    ring: "ring-indigo-100",
+    bg: "from-indigo-50 to-white",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+  },
+  Professional: {
+    accent: "text-violet-600",
+    iconBg: "bg-violet-600",
+    ring: "ring-violet-200",
+    bg: "from-violet-50 to-white",
+    icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z",
+    popular: true,
+  },
+  Enterprise: {
+    accent: "text-emerald-600",
+    iconBg: "bg-emerald-600",
+    ring: "ring-emerald-100",
+    bg: "from-emerald-50 to-white",
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3m9-12h.01M9 9h.01M9 12h.01M9 15h.01M12 12h.01M12 15h.01M15 9h.01M15 12h.01M15 15h.01",
+  },
+};
+
+export default function PricingHeroPreview() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
+  return (
+    <div className="relative animate-fade-in-scale">
+      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-2xl">
+        {/* Window chrome */}
+        <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="relative">
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 animate-pulse"></div>
+              <div className="absolute inset-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400 animate-ping"></div>
+            </div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-400"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-600"></div>
+          </div>
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-600 animate-pulse"></div>
+            <span className="text-[10px] sm:text-xs font-medium text-neutral-700">LIVE</span>
+          </div>
+        </div>
+
+        <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-2 sm:p-3">
+          <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
+
+          {/* Billing header */}
+          <div className="relative mb-4 flex items-center gap-3">
+            <div className="relative shrink-0">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-indigo-500/30 to-violet-500/30 blur" aria-hidden />
+              <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/20">
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
+              </div>
+            </div>
+            <div className="flex-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-indigo-500">Billing</span>
+              <div className="text-lg font-bold text-neutral-900">Plans &amp; Pricing</div>
+              <div className="text-xs text-neutral-400">Simple, transparent, cancel anytime</div>
+            </div>
+            <div className="hidden items-center rounded-full bg-white p-1 text-xs shadow-sm sm:flex">
+              <button
+                type="button"
+                onClick={() => setIsAnnual(false)}
+                aria-label="Monthly billing"
+                role="tab"
+                className={`rounded-full px-2.5 py-1 transition ${!isAnnual ? "bg-indigo-600 text-white shadow-sm" : "text-neutral-400 hover:text-neutral-600"}`}
+              >
+                Monthly
+              </button>
+              <button
+                type="button"
+                onClick={() => setIsAnnual(true)}
+                aria-label="Yearly billing"
+                role="tab"
+                className={`rounded-full px-2 py-1 transition ${isAnnual ? "bg-indigo-600 text-white shadow-sm" : "text-neutral-400 hover:text-neutral-600"}`}
+              >
+                Yearly
+              </button>
+            </div>
+          </div>
+
+          <div className="relative mb-4 grid grid-cols-3 gap-2 sm:gap-3">
+            {pricingTiers.map((tier) => {
+              const meta = tierMeta[tier.name];
+              const label = tier.name === "Professional" ? "Pro" : tier.name;
+              const displayPrice = getDisplayPrice(tier.price, tier.name, isAnnual);
+
+              return (
+                <div key={tier.name} className={`group relative overflow-hidden rounded-xl border border-neutral-100 bg-gradient-to-br ${meta.bg} p-3 shadow-sm ring-1 ${meta.ring} transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-4`}>
+                  {meta.popular && (
+                    <span className="absolute right-1.5 top-1.5 rounded-full bg-violet-600 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wide text-white">Popular</span>
+                  )}
+                  <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${meta.iconBg} text-white shadow-sm`}>
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={meta.icon} />
+                    </svg>
+                  </div>
+                  <div className="mt-2 text-[10px] font-semibold uppercase tracking-wide text-neutral-500">{label}</div>
+                  <div className={`mt-0.5 flex items-baseline gap-0.5 ${meta.accent}`}>
+                    <span className="text-xl font-bold tabular-nums sm:text-2xl">₹{displayPrice}</span>
+                    <span className="text-[10px] font-medium text-neutral-400">/mo</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="relative rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
+            <div className="mb-3 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                <svg className="h-4 w-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
+                Plans &amp; billing
+              </div>
+              <div className="inline-flex items-center gap-1 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm shadow-indigo-200">
+                Compare
+                <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              {pricingTiers.map((tier) => {
+                const displayPrice = getDisplayPrice(tier.price, tier.name, isAnnual);
+
+                return (
+                  <div
+                    key={tier.name}
+                    className={`flex items-center gap-3 rounded-xl border p-3 transition hover:-translate-y-0.5 hover:shadow-md ${
+                      tier.popular
+                        ? "border-violet-200 bg-violet-50/60 ring-1 ring-violet-100"
+                        : tier.name === "Enterprise"
+                          ? "border-emerald-100 bg-emerald-50/60"
+                          : "border-neutral-100 bg-neutral-50"
+                    }`}
+                  >
+                    <div
+                      className={`flex h-10 w-14 shrink-0 flex-col items-center justify-center rounded-lg text-center shadow-sm ring-1 ring-neutral-100 ${
+                        tier.popular ? "bg-violet-600 text-white" : "bg-white"
+                      }`}
+                    >
+                      <span className={`text-[10px] font-medium uppercase ${tier.popular ? "text-violet-100" : "text-neutral-400"}`}>
+                        {tier.name === "Professional" ? "Pro" : tier.name.slice(0, 3)}
+                      </span>
+                      <span className={`text-sm font-bold ${tier.popular ? "text-white" : "text-neutral-800"}`}>
+                        ₹{displayPrice}
+                      </span>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold text-neutral-800">{tier.name}</div>
+                      <div className="text-sm text-neutral-700">{tier.seatTitle}</div>
+                    </div>
+                    <span
+                      className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold sm:text-xs ${
+                        tier.popular
+                          ? "bg-violet-100 text-violet-700"
+                          : tier.name === "Enterprise"
+                            ? "bg-emerald-100 text-emerald-700"
+                            : "bg-neutral-200 text-neutral-700"
+                      }`}
+                    >
+                      {tier.popular && <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />}
+                      {tier.popular ? "Popular" : tier.name === "Enterprise" ? "Custom" : "Start here"}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

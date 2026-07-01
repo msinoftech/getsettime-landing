@@ -44,7 +44,7 @@ export default function Card({
   statClassName = "text-3xl tracking-tight sm:text-4xl text-neutral-900",
   statUnitClassName = "text-sm font-medium text-neutral-600",
   wrapperClassName = "group relative rounded-xl bg-gradient-to-br from-indigo-50 to-indigo-50 px-3 py-3 transition duration-300 hover:-translate-y-1 hover:shadow-xl",
-  innerClassName = "h-full space-y-3 rounded-xl bg-white p-4 sm:p-6 shadow-md transition duration-300 group-hover:shadow-xl",
+  innerClassName = "h-full space-y-3 rounded-xl bg-white p-4 sm:p-6 drop-shadow-lg transition duration-300 group-hover:drop-shadow-xl",
   iconWrapperClassName = "flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-100",
   titleClassName = "font-medium text-neutral-900",
   descriptionClassName = "text-neutral-600",
@@ -75,7 +75,7 @@ export default function Card({
           </div>
         )}
         <h3 className={titleClassName}>{title}</h3>
-        <div className={descriptionClassName}>{description}</div>
+        <p className={descriptionClassName}>{description}</p>
         {bullets && bullets.length > 0 && (
           <div className={bulletsClassName}>
             {bullets.map((item) => (
