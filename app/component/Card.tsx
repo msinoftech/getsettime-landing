@@ -43,7 +43,7 @@ export default function Card({
   statUnit,
   statClassName = "text-3xl tracking-tight sm:text-4xl text-neutral-900",
   statUnitClassName = "text-sm font-medium text-neutral-600",
-  wrapperClassName = "group relative rounded-xl bg-gradient-to-br from-indigo-50 to-indigo-50 px-3 py-3 transition duration-300 hover:-translate-y-1 hover:shadow-xl",
+  wrapperClassName = "group relative rounded-xl bg-gradient-to-br from-indigo-50 to-indigo-50 px-3 py-3 transition duration-300 hover:-translate-y-1 hover:drop-shadow-xl",
   innerClassName = "h-full space-y-3 rounded-xl bg-white p-4 sm:p-6 drop-shadow-lg transition duration-300 group-hover:drop-shadow-xl",
   iconWrapperClassName = "flex h-14 w-14 items-center justify-center rounded-xl bg-indigo-100",
   titleClassName = "font-medium text-neutral-900",
@@ -79,7 +79,7 @@ export default function Card({
         {bullets && bullets.length > 0 && (
           <div className={bulletsClassName}>
             {bullets.map((item) => (
-              <div key={item}>✓ {item}</div>
+              <div key={item} className="flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {item}</div>
             ))}
           </div>
         )}

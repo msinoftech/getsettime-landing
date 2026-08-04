@@ -1,17 +1,25 @@
 "use client";
 
-import { useState } from "react";
-import { pricingTiers } from "@/lib/pricing-data";
+import { useMemo, useState } from "react";
+import { pricingTiers, applyRegionalPrices, formatPrice } from "@/lib/pricing-data";
+import { useRegionalPricing } from "./useRegionalPricing";
 
-function getDisplayPrice(price: string, tierName: string, isAnnual: boolean): string {
+function getDisplayPrice(price: string, tierName: string, isAnnual: boolean): number | "Free" {
   if (price === "Free") return "Free";
-  const annualDiscount = tierName === "Starter" ? 1 : 0.9;
+  const annualDiscount = tierName === "Starter" || tierName === "Free" ? 1 : 0.9;
   const monthlyPrice = Number(price);
   const annualPrice = Math.round(monthlyPrice * annualDiscount);
-  return isAnnual ? `${annualPrice}` : `${monthlyPrice}`;
+  return isAnnual ? annualPrice : monthlyPrice;
 }
 
 const tierMeta: Record<string, { accent: string; iconBg: string; ring: string; bg: string; icon: string; popular?: boolean }> = {
+  Free: {
+    accent: "text-cyan-600",
+    iconBg: "bg-cyan-600",
+    ring: "ring-cyan-100",
+    bg: "from-cyan-50 to-white",
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
   Starter: {
     accent: "text-indigo-600",
     iconBg: "bg-indigo-600",
@@ -38,10 +46,12 @@ const tierMeta: Record<string, { accent: string; iconBg: string; ring: string; b
 
 export default function PricingHeroPreview() {
   const [isAnnual, setIsAnnual] = useState(false);
+  const region = useRegionalPricing();
+  const tiers = useMemo(() => applyRegionalPrices(pricingTiers, region), [region]);
 
   return (
     <div className="relative animate-fade-in-scale">
-      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-2xl">
+      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
         {/* Window chrome */}
         <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
           <div className="flex items-center gap-2 sm:gap-3">
@@ -62,86 +72,60 @@ export default function PricingHeroPreview() {
           <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
 
           {/* Billing header */}
-          <div className="relative mb-4 flex items-center gap-3">
-            <div className="relative shrink-0">
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-indigo-500/30 to-violet-500/30 blur" aria-hidden />
-              <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/20">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>
-              </div>
-            </div>
-            <div className="flex-1">
-              <span className="text-xs font-bold uppercase tracking-wider text-indigo-500">Billing</span>
-              <div className="text-lg font-bold text-neutral-900">Plans &amp; Pricing</div>
+          <div className="relative mb-4 flex flex-wrap items-start gap-2.5 sm:flex-nowrap sm:items-center sm:gap-3">
+            <div className="min-w-0 flex-1">
+              <div className="text-base font-bold text-neutral-900 sm:text-lg">Plans &amp; Pricing</div>
               <div className="text-xs text-neutral-400">Simple, transparent, cancel anytime</div>
             </div>
-            <div className="hidden items-center rounded-full bg-white p-1 text-xs shadow-sm sm:flex">
-              <button
-                type="button"
-                onClick={() => setIsAnnual(false)}
-                aria-label="Monthly billing"
-                role="tab"
-                className={`rounded-full px-2.5 py-1 transition ${!isAnnual ? "bg-indigo-600 text-white shadow-sm" : "text-neutral-400 hover:text-neutral-600"}`}
-              >
+            <div className="flex items-center rounded-full bg-white p-1 text-[11px] drop-shadow-sm">
+              <button type="button" onClick={() => setIsAnnual(false)} aria-label="Monthly billing" role="tab" className={`flex-1 rounded-full px-2.5 py-1 transition ${!isAnnual ? "bg-indigo-600 text-white drop-shadow-sm" : "text-neutral-400 hover:text-neutral-600"}`}>
                 Monthly
               </button>
-              <button
-                type="button"
-                onClick={() => setIsAnnual(true)}
-                aria-label="Yearly billing"
-                role="tab"
-                className={`rounded-full px-2 py-1 transition ${isAnnual ? "bg-indigo-600 text-white shadow-sm" : "text-neutral-400 hover:text-neutral-600"}`}
-              >
+              <button type="button" onClick={() => setIsAnnual(true)} aria-label="Yearly billing" role="tab" className={`flex-1 rounded-full px-2 py-1 transition ${isAnnual ? "bg-indigo-600 text-white drop-shadow-sm" : "text-neutral-400 hover:text-neutral-600"}`}>
                 Yearly
               </button>
             </div>
           </div>
 
-          <div className="relative mb-4 grid grid-cols-3 gap-2 sm:gap-3">
-            {pricingTiers.map((tier) => {
+          <div className="relative mb-4 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+            {tiers.map((tier) => {
               const meta = tierMeta[tier.name];
               const label = tier.name === "Professional" ? "Pro" : tier.name;
               const displayPrice = getDisplayPrice(tier.price, tier.name, isAnnual);
 
               return (
-                <div key={tier.name} className={`group relative overflow-hidden rounded-xl border border-neutral-100 bg-gradient-to-br ${meta.bg} p-3 shadow-sm ring-1 ${meta.ring} transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-4`}>
+                <div key={tier.name} className={`group relative overflow-hidden rounded-xl border border-neutral-100 bg-gradient-to-br ${meta.bg} p-2.5 drop-shadow-sm ring-1 ${meta.ring} transition duration-300 hover:-translate-y-0.5 hover:drop-shadow-md sm:p-4`}>
                   {meta.popular && (
                     <span className="absolute right-1.5 top-1.5 rounded-full bg-violet-600 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wide text-white">Popular</span>
                   )}
-                  <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${meta.iconBg} text-white shadow-sm`}>
+                  <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${meta.iconBg} text-white drop-shadow-sm`}>
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
                       <path strokeLinecap="round" strokeLinejoin="round" d={meta.icon} />
                     </svg>
                   </div>
                   <div className="mt-2 text-[10px] font-semibold uppercase tracking-wide text-neutral-500">{label}</div>
-                  <div className={`mt-0.5 flex items-baseline gap-0.5 ${meta.accent}`}>
-                    <span className="text-xl font-bold tabular-nums sm:text-2xl">₹{displayPrice}</span>
-                    <span className="text-[10px] font-medium text-neutral-400">/mo</span>
+                  <div className={`mt-0.5 flex flex-wrap items-baseline gap-0.5 ${meta.accent}`}>
+                    <span className="text-xl font-bold tabular-nums sm:text-2xl">
+                      {displayPrice === "Free" ? "Free" : formatPrice(displayPrice, region.currency)}
+                    </span>
+                    {displayPrice !== "Free" && (
+                      <span className="text-[10px] font-medium text-neutral-400">/mo</span>
+                    )}
                   </div>
                 </div>
               );
             })}
           </div>
 
-          <div className="relative rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center justify-between gap-2">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
-                <svg className="h-4 w-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
-                Plans &amp; billing
-              </div>
-              <div className="inline-flex items-center gap-1 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm shadow-indigo-200">
-                Compare
-                <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-              </div>
-            </div>
-
+          <div className="relative rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
             <div className="space-y-2">
-              {pricingTiers.map((tier) => {
+              {tiers.map((tier) => {
                 const displayPrice = getDisplayPrice(tier.price, tier.name, isAnnual);
 
                 return (
                   <div
                     key={tier.name}
-                    className={`flex items-center gap-3 rounded-xl border p-3 transition hover:-translate-y-0.5 hover:shadow-md ${
+                    className={`flex flex-wrap items-center gap-2.5 rounded-xl border p-2.5 transition hover:-translate-y-0.5 hover:drop-shadow-md sm:flex-nowrap sm:gap-3 sm:p-3 ${
                       tier.popular
                         ? "border-violet-200 bg-violet-50/60 ring-1 ring-violet-100"
                         : tier.name === "Enterprise"
@@ -150,7 +134,7 @@ export default function PricingHeroPreview() {
                     }`}
                   >
                     <div
-                      className={`flex h-10 w-14 shrink-0 flex-col items-center justify-center rounded-lg text-center shadow-sm ring-1 ring-neutral-100 ${
+                      className={`flex h-10 w-14 shrink-0 flex-col items-center justify-center rounded-lg text-center drop-shadow-sm ring-1 ring-neutral-100 ${
                         tier.popular ? "bg-violet-600 text-white" : "bg-white"
                       }`}
                     >
@@ -158,7 +142,7 @@ export default function PricingHeroPreview() {
                         {tier.name === "Professional" ? "Pro" : tier.name.slice(0, 3)}
                       </span>
                       <span className={`text-sm font-bold ${tier.popular ? "text-white" : "text-neutral-800"}`}>
-                        ₹{displayPrice}
+                        {displayPrice === "Free" ? "Free" : formatPrice(displayPrice, region.currency)}
                       </span>
                     </div>
                     <div className="min-w-0 flex-1">
@@ -166,7 +150,7 @@ export default function PricingHeroPreview() {
                       <div className="text-sm text-neutral-700">{tier.seatTitle}</div>
                     </div>
                     <span
-                      className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold sm:text-xs ${
+                      className={`ml-auto inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold sm:ml-0 sm:text-xs ${
                         tier.popular
                           ? "bg-violet-100 text-violet-700"
                           : tier.name === "Enterprise"
@@ -175,7 +159,7 @@ export default function PricingHeroPreview() {
                       }`}
                     >
                       {tier.popular && <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />}
-                      {tier.popular ? "Popular" : tier.name === "Enterprise" ? "Custom" : "Start here"}
+                      {tier.popular ? "Popular" : tier.name === "Enterprise" ? "Custom" : tier.name === "Free" ? "Try free" : "Start here"}
                     </span>
                   </div>
                 );

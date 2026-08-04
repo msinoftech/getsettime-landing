@@ -10,7 +10,7 @@ export function BlogCard({ post }: BlogCardProps) {
   return (
     <article className="group relative h-full">
       <Link href={`/blog/${post.slug}`} aria-label="Blog Post Details - Blog" className="block h-full">
-        <div className="relative h-full bg-white rounded-xl overflow-hidden shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between">
+        <div className="relative h-full bg-white rounded-xl overflow-hidden drop-shadow-md transition-all duration-500 hover:drop-shadow-2xl hover:-translate-y-2 flex flex-col justify-between">
 
           <div className="relative">
             <div className="relative overflow-hidden">

@@ -97,7 +97,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
               <button
                 type="button"
                 onClick={() => setIsCategoryDropdownOpen((prev) => !prev)}
-                className="w-full px-4 py-3 pr-10 rounded-xl bg-white text-neutral-700 border border-neutral-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 cursor-pointer text-left"
+                className="w-full px-4 py-3 pr-10 rounded-xl bg-white text-neutral-700 border border-neutral-200 drop-shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 cursor-pointer text-left"
                 aria-haspopup="listbox"
                 aria-expanded={isCategoryDropdownOpen}
               >
@@ -114,7 +114,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
               </svg>
 
               {isCategoryDropdownOpen && (
-                <ul role="listbox" className="absolute z-20 mt-2 w-full max-h-60 overflow-y-auto rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
+                <ul role="listbox" className="absolute z-20 mt-2 w-full max-h-60 overflow-y-auto rounded-xl border border-neutral-200 bg-white drop-shadow-lg overflow-hidden">
                   {blogCategories.map((category) => {
                     const isActive = category === selectedCategory;
                     return (
@@ -160,7 +160,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 bg-white rounded-xl shadow-sm">
+        <div className="text-center py-16 bg-white rounded-xl drop-shadow-sm">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-neutral-100 flex items-center justify-center">
             <svg className="w-8 h-8 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -174,7 +174,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
       {/* Load More Button */}
       {hasMorePosts && (
         <div className="flex justify-center">
-          <button onClick={handleLoadMore} disabled={isLoading} className="group relative inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+          <button onClick={handleLoadMore} disabled={isLoading} className="group relative inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-xl drop-shadow-lg hover:drop-shadow-xl transition-all duration-300 hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0">
             {isLoading ? (
               <>
                 <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">

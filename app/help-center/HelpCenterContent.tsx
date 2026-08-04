@@ -44,7 +44,7 @@ export default function HelpCenterContent() {
       <aside className="lg:col-span-4">
         <nav
           aria-label="Help center table of contents"
-          className="sticky top-24 rounded-2xl border border-neutral-100 bg-white p-5 shadow-sm sm:p-6"
+          className="sticky top-24 rounded-2xl border border-neutral-100 bg-white p-5 drop-shadow-sm sm:p-6"
         >
           <div className="mb-5 flex items-center gap-2">
             <svg className="h-5 w-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -71,7 +71,7 @@ export default function HelpCenterContent() {
                             onClick={() => scrollToSection(section.id)}
                             className={`group flex w-full items-start gap-2 rounded-xl px-3 py-2.5 text-left text-sm transition-all duration-200 ${
                               isActive
-                                ? "bg-indigo-50 font-semibold text-indigo-700 shadow-sm"
+                                ? "bg-indigo-50 font-semibold text-indigo-700 drop-shadow-sm"
                                 : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
                             }`}
                             aria-current={isActive ? "true" : undefined}
@@ -117,7 +117,7 @@ export default function HelpCenterContent() {
             <article
               key={section.id}
               id={section.id}
-              className="scroll-mt-28 rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm sm:p-8"
+              className="scroll-mt-28 rounded-2xl border border-neutral-100 bg-white p-6 drop-shadow-sm sm:p-8"
             >
               <div className="mb-4 flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700">
@@ -132,7 +132,7 @@ export default function HelpCenterContent() {
               <ol className="mt-6 space-y-4">
                 {section.steps.map((step, stepIndex) => (
                   <li key={step.title} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-sm font-bold text-white shadow-md shadow-indigo-500/25">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-sm font-bold text-white drop-shadow-md drop-shadow-indigo-500/25">
                       {stepIndex + 1}
                     </span>
                     <div className="min-w-0 pt-0.5">
@@ -157,7 +157,7 @@ export default function HelpCenterContent() {
             </article>
           ))}
 
-          <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-6 text-white shadow-lg sm:p-8">
+          <div className="rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-6 text-white drop-shadow-lg sm:p-8">
             <div className="text-xl font-bold sm:text-2xl">Ready to get started?</div>
             <p className="mt-2 max-w-xl text-indigo-100">
               Put these guides into action — create your account and start accepting online bookings today.

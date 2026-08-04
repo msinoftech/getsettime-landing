@@ -10,6 +10,7 @@ export default function Footer() {
     { label: "Support", href: `/contact-us` },
     { label: "Pricing", href: `/pricing` },
     { label: "Blog", href: `${BASE_URL}/blog` },
+    { label: "Contact Us", href: `${BASE_URL}/contact-us` },
   ];
   const solutionsLinks = [
     { label: "Doctor appointment Software", href: `${BASE_URL}/solutions/doctor-appointment-scheduling-software` },    
@@ -18,11 +19,10 @@ export default function Footer() {
     { label: "Salon appointment Software", href: `${BASE_URL}/solutions/salon-appointment-scheduling-software` },
   ];
   const resourcesLinks = [
-    { label: "Contact Us", href: `${BASE_URL}/contact-us` },
+    // { label: "Claim Free Booking Page", href: `${BASE_URL}/claim-now-free-appointment-scheduling-software` },
     { label: "Help Center", href: `${BASE_URL}/help-center` },
     { label: "Privacy Policy", href: `${BASE_URL}/privacy-policy` },
     { label: "Terms of Conditions", href: `${BASE_URL}/terms-of-conditions` },
-    // { label: "App Functionality", href: `${BASE_URL}/app-functionality-demo-video` },
   ];
   return (
     <footer className="relative bg-gradient-to-br from-neutral-50 via-white to-indigo-500/30">
@@ -33,7 +33,7 @@ export default function Footer() {
             {/* Brand Column */}
             <div className="lg:col-span-1 space-y-3">
               <div><Logo /></div>
-              <p>An advanced tool trusted by 5000+ clients globally to run daily complex scheduling tasks effortlessly.</p>
+              <p>GetSetTime is a cloud-based scheduling software built for appointment-based services and businesses to manage bookings effortlessly. Simple scheduling, fewer no-shows, more time for what matters — running your practice.</p>
               {/* Social Links */}
               <div className="flex gap-3">
                 {socialLinks.map((item) => (

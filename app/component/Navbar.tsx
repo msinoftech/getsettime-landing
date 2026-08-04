@@ -119,8 +119,8 @@ export default function Navbar() {
                 </svg>
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${desktopSolutionsOpen || isActive("/solutions") ? "w-full" : "w-0"}`}></span>
               </button>
-              <div className="absolute left-1/2 top-full w-[380px] -translate-x-1/2">
-                <div className={`${desktopSolutionsOpen ? "block pointer-events-auto opacity-100 translate-y-0" : "hidden pointer-events-none opacity-0 translate-y-2"} transition-all duration-200 rounded-2xl bg-white/95 backdrop-blur border border-gray-200 shadow-[0_16px_40px_rgba(15,23,42,0.12)] p-3`}>
+              <div className="absolute left-1/2 top-full w-[400px] -translate-x-1/2">
+                <div className={`${desktopSolutionsOpen ? "block pointer-events-auto opacity-100 translate-y-0" : "hidden pointer-events-none opacity-0 translate-y-2"} transition-all duration-200 rounded-2xl bg-white/95 backdrop-blur border border-gray-200 drop-shadow-[0_16px_40px_rgba(15,23,42,0.12)] p-3`}>
                   <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                     <div className="flex items-center justify-between gap-2">
                       <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-400">Solutions</div>
@@ -128,22 +128,37 @@ export default function Navbar() {
                     </div>
                     <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Explore industry-specific scheduling pages</div>
                   </div>
-                  <Link href="/solutions/doctor-appointment-scheduling-software" aria-label="Doctor appointment Software - Navbar" aria-current={isActive("/solutions/doctor-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/doctor-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                    <span className="leading-5">Doctor appointment Software</span>
-                  </Link>
-                  <Link href="/solutions/dentist-appointment-scheduling-software" aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dentist-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/dentist-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                    <span className="leading-5">Dentist appointment Software</span>
-                  </Link>
-                  <Link href="/solutions/physiotherapist-appointment-booking-software" aria-label="Physiotherapy appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                    <span className="leading-5">Physiotherapy appointment Software</span>
-                  </Link>
-                  <Link href="/solutions/salon-appointment-scheduling-software" aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                    <span className="leading-5">Salon appointment Software</span>
-                  </Link>
+
+                  <div className="grid grid-cols-2 gap-1">
+                    <Link href="/solutions/doctor-appointment-scheduling-software" aria-label="Doctor appointment Software - Navbar" aria-current={isActive("/solutions/doctor-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/doctor-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                      <span className="leading-5">Doctor</span>
+                    </Link>
+                    <Link href="/solutions/dentist-appointment-scheduling-software" aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dentist-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/dentist-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                      <span className="leading-5">Dentist</span>
+                    </Link>
+                    <Link href="/solutions/dermatology-appointment-scheduling-software" aria-label="Dermatology appointment Software - Navbar" aria-current={isActive("/solutions/dermatology-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/dermatology-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                      <span className="leading-5">Dermatology</span>
+                    </Link>
+                    <Link href="/solutions/physiotherapist-appointment-booking-software" aria-label="Physiotherapy appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                      <span className="leading-5">Physiotherapy</span>
+                    </Link>
+                    <Link href="/solutions/salon-appointment-scheduling-software" aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                      <span className="leading-5">Salon</span>
+                    </Link>
+                    {/* <Link href="/solutions/real-estate-appointment-booking-software" aria-label="Real Estate appointment Software - Navbar" aria-current={isActive("/solutions/real-estate-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/real-estate-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                      <span className="leading-5">Real Estate</span>
+                    </Link>
+                    <Link href="/solutions/tutor-appointment-booking-software" aria-label="Tutor appointment booking software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                      <span className="leading-5">Tutor</span>
+                    </Link> */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -174,7 +189,7 @@ export default function Navbar() {
           <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[999] lg:hidden animate-fade-in" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}/>
           
           {/* Mobile menu */}
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm lg:hidden z-[999] flex flex-col bg-white shadow-2xl border-l border-gray-200/50 animate-slide-in-right">
+          <div className="fixed inset-y-0 right-0 w-full max-w-sm lg:hidden z-[999] flex flex-col bg-white drop-shadow-2xl border-l border-gray-200/50 animate-slide-in-right">
             {/* Header with close button */}
             <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200/50 shrink-0">
               <div className="flex items-center gap-3" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}>
@@ -230,10 +245,22 @@ export default function Navbar() {
                     <div className="mb-2 pb-2">
                       <Link className="text-[12px] font-bold tracking-wider text-zinc-600 hover:text-indigo-600" href="/solutions" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}>View all Solutions</Link>
                     </div>
-                    <Link href="/solutions/doctor-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Doctor appointment Software - Navbar" aria-current={isActive("/solutions/doctor-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/doctor-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Doctor appointment Software</Link>
-                    <Link href="/solutions/dentist-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dentist-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/dentist-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Dentist appointment Software</Link>
-                    <Link href="/solutions/physiotherapist-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Physiotherapist appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Physiotherapist appointment Software</Link>
-                    <Link href="/solutions/salon-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Salon appointment Software</Link>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
+                      <Link href="/solutions/doctor-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Doctor appointment Software - Navbar" aria-current={isActive("/solutions/doctor-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/doctor-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Doctor</Link>
+
+                      <Link href="/solutions/dentist-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dentist-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/dentist-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Dentist</Link>
+
+                      <Link href="/solutions/dermatology-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dermatology-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/dermatology-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Dermatology</Link>
+
+                      <Link href="/solutions/physiotherapist-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Physiotherapist appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Physiotherapist</Link>
+
+                      {/* <Link href="/solutions/real-estate-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Physiotherapist appointment Software - Navbar" aria-current={isActive("/solutions/real-estate-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/real-estate-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Real Estate</Link> */}
+
+                      <Link href="/solutions/salon-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Salon</Link>
+
+                      {/* <Link href="/solutions/tutor-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Tutor</Link> */}
+                    </div>
                   </div>
                 )}
                 <Link href={`${BASE_URL}/blog`} onClick={(e) => handleAnchorClick(e, null)} aria-label="Blog - Navbar" aria-current={isActive("/blog") ? "page" : undefined} className={`group flex items-center gap-3 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 relative overflow-hidden ${isActive("/blog") ? "text-indigo-600 bg-gradient-to-r from-indigo-50 to-blue-50" : "text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50"}`} style={{ animationDelay: "150ms" }}>

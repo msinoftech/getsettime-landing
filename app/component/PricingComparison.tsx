@@ -1,11 +1,12 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import type { ComparisonCell, ComparisonRow } from "@/lib/pricing-data";
-import { pricingTiers } from "@/lib/pricing-data";
+import { Fragment, useMemo, useState, type ReactNode } from "react";
+import type { ComparisonCell, ComparisonRow, RegionalPricing } from "@/lib/pricing-data";
+import { pricingTiers, applyRegionalPrices, formatPrice } from "@/lib/pricing-data";
+import { useRegionalPricing } from "./useRegionalPricing";
 
-const PLANS = ["Starter", "Professional", "Enterprise"] as const;
-const POPULAR_INDEX = 1;
+const PLANS = ["Free", "Starter", "Professional", "Enterprise"] as const;
+const POPULAR_INDEX = 2;
 
 const categoryBreaks: { label: string; fromIndex: number }[] = [
   { label: "Plans & capacity", fromIndex: 0 },
@@ -15,8 +16,12 @@ const categoryBreaks: { label: string; fromIndex: number }[] = [
   { label: "Enterprise scale", fromIndex: 12 },
 ];
 
-function tierMeta(name: (typeof PLANS)[number]) {
-  return pricingTiers.find((t) => t.name === name);
+/** "+ GST" / "+ VAT" / "" — derived from the region's tax label */
+function taxSuffix(region: RegionalPricing): string {
+  const label = region.taxLabel ?? "";
+  if (label.includes("GST")) return " + GST";
+  if (label.includes("VAT")) return " + VAT";
+  return "";
 }
 
 function CellValue({
@@ -24,7 +29,7 @@ function CellValue({
   emphasized,
   compact,
 }: {
-  value: ComparisonCell;
+  value: ComparisonCell | ReactNode;
   emphasized?: boolean;
   compact?: boolean;
 }) {
@@ -34,7 +39,7 @@ function CellValue({
   if (value === true) {
     return (
       <span
-        className={`inline-flex ${size} shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/30 ${compact ? "" : "mx-auto"}`}
+        className={`inline-flex ${size} shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white drop-shadow-md drop-shadow-emerald-500/30 ${compact ? "" : "mx-auto"}`}
         aria-label="Included"
       >
         <svg className={iconSize} viewBox="0 0 20 20" fill="currentColor" aria-hidden>
@@ -61,9 +66,9 @@ function CellValue({
     );
   }
 
-  const isPrice = typeof value === "string" && value.startsWith("₹");
+  const isPrice = typeof value === "string" && (value.startsWith("₹") || value === "Free");
 
-  if (emphasized || isPrice) {
+  if (emphasized || isPrice || typeof value !== "string") {
     return (
       <span
         className={`shrink-0 bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text font-bold tracking-tight text-transparent ${
@@ -120,8 +125,8 @@ function planColumnClass(index: number, part: "head" | "body") {
     return part === "head" ? "bg-white/60" : "";
   }
   return part === "head"
-    ? "relative z-10 bg-gradient-to-b from-indigo-600 to-violet-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"
-    : "relative z-10 bg-gradient-to-b from-indigo-50/90 via-indigo-50/50 to-violet-50/30 shadow-[inset_0_0_0_1px_rgba(99,102,241,0.08)]";
+    ? "relative z-10 bg-gradient-to-b from-indigo-600 to-violet-600 text-white drop-shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]"
+    : "relative z-10 bg-gradient-to-b from-indigo-50/90 via-indigo-50/50 to-violet-50/30 drop-shadow-[inset_0_0_0_1px_rgba(99,102,241,0.08)]";
 }
 
 function ComparisonLegend({ className = "" }: { className?: string }) {
@@ -165,13 +170,30 @@ type PricingComparisonProps = {
 
 export default function PricingComparison({ rows }: PricingComparisonProps) {
   const [activePlan, setActivePlan] = useState<number>(POPULAR_INDEX);
+  const region = useRegionalPricing();
   const categoryAt = (index: number) => categoryBreaks.find((c) => c.fromIndex === index)?.label;
 
-  const planCells = (row: ComparisonRow): ComparisonCell[] => [
-    row.starter,
-    row.professional,
-    row.enterprise,
-  ];
+  const localizedTiers = useMemo(() => applyRegionalPrices(pricingTiers, region), [region]);
+  const tierMeta = (name: (typeof PLANS)[number]) => localizedTiers.find((t) => t.name === name);
+
+  const priceNode = (plan: "starter" | "professional" | "enterprise"): ReactNode =>
+    formatPrice(region.prices[plan], region.currency);
+
+  const planCells = (row: ComparisonRow): (ComparisonCell | ReactNode)[] => {
+    // The "Monthly price" row follows the visitor's regional pricing
+    if (row.highlight && row.feature.startsWith("Monthly price")) {
+      return ["Free", priceNode("starter"), priceNode("professional"), priceNode("enterprise")];
+    }
+    return [row.free, row.starter, row.professional, row.enterprise];
+  };
+
+  const featureLabel = (row: ComparisonRow): string => {
+    if (row.highlight && row.feature.startsWith("Monthly price")) {
+      const tax = taxSuffix(region);
+      return tax ? `Monthly price (excl.${tax.replace(" + ", " ")})` : "Monthly price";
+    }
+    return row.feature;
+  };
 
   return (
     <div className="relative">
@@ -180,13 +202,11 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
         aria-hidden
       />
 
-      <div className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:rounded-3xl">
+      <div className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 drop-shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:rounded-3xl">
         {/* ——— Mobile & tablet: plan tabs + feature list ——— */}
         <div className="lg:hidden">
           <div className="border-b border-slate-100 bg-gradient-to-r from-slate-50/90 via-white to-slate-50/90 p-3 sm:p-4">
-            <p className="mb-3 text-center text-xs font-medium text-neutral-500">
-              Tap a plan to compare features
-            </p>
+            <p className="mb-3 text-center text-xs font-medium text-neutral-500">Tap a plan to compare features</p>
             <div
               className="-mx-1 flex gap-2 overflow-x-auto overscroll-x-contain px-1 pb-1 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               role="tablist"
@@ -203,11 +223,11 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActivePlan(i)}
-                    className={`min-w-[calc(33.333%-0.35rem)] flex-1 snap-center rounded-2xl border px-3 py-3 text-left transition-all sm:min-w-[140px] sm:px-4 ${
+                    className={`min-w-[calc(25%-0.35rem)] flex-1 snap-center rounded-2xl border px-3 py-3 text-left transition-all sm:min-w-[140px] sm:px-4 ${
                       isActive
                         ? isPopular
-                          ? "border-indigo-500 bg-gradient-to-b from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-300/40"
-                          : "border-indigo-400 bg-indigo-50 shadow-md ring-2 ring-indigo-200"
+                          ? "border-indigo-500 bg-gradient-to-b from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-300/40"
+                          : "border-indigo-400 bg-indigo-50 drop-shadow-md ring-2 ring-indigo-200"
                         : "border-slate-200 bg-white text-neutral-900 hover:border-indigo-200"
                     }`}
                   >
@@ -234,14 +254,14 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                             isActive && isPopular ? "text-white" : "text-neutral-900"
                           }`}
                         >
-                          ₹{meta.price}
+                          {meta.price === "Free" ? "Free" : formatPrice(Number(meta.price), region.currency)}
                         </span>
                         <span
                           className={`mt-0.5 block text-[10px] ${
                             isActive && isPopular ? "text-indigo-100" : "text-neutral-500"
                           }`}
                         >
-                          /mo + GST
+                          {meta.price === "Free" ? "forever" : `/mo${taxSuffix(region)}`}
                         </span>
                       </>
                     )}
@@ -275,7 +295,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                           row.highlight ? "font-semibold text-neutral-900" : "font-medium text-neutral-700"
                         }`}
                       >
-                        {row.feature}
+                        {featureLabel(row)}
                       </span>
                     </div>
                     <div className="flex shrink-0 items-center justify-end">
@@ -300,7 +320,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="sticky left-0 z-20 w-[28%] min-w-[200px] border-b border-r border-slate-100 bg-slate-50/95 px-5 py-5 text-left align-bottom backdrop-blur-sm xl:min-w-[240px]">
+                  <th className="sticky left-0 z-20 w-[22%] min-w-[180px] border-b border-r border-slate-100 bg-slate-50/95 px-5 py-5 text-left align-bottom backdrop-blur-sm xl:min-w-[220px]">
                     <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Compare</span>
                     <p className="mt-1 text-base font-bold text-neutral-900">What&apos;s included</p>
                   </th>
@@ -310,7 +330,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                     return (
                       <th
                         key={plan}
-                        className={`w-[24%] border-b px-4 py-5 text-center align-bottom xl:px-5 ${planColumnClass(i, "head")} ${
+                        className={`w-[19.5%] border-b px-3 py-5 text-center align-bottom xl:px-4 ${planColumnClass(i, "head")} ${
                           isPopular ? "border-indigo-500/30" : "border-slate-100"
                         }`}
                       >
@@ -326,10 +346,10 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                         {meta && (
                           <>
                             <p className={`mt-2 text-2xl font-black tracking-tight xl:text-3xl ${isPopular ? "text-white" : "text-neutral-900"}`}>
-                              ₹{meta.price}
+                              {meta.price === "Free" ? "Free" : formatPrice(Number(meta.price), region.currency)}
                             </p>
                             <p className={`mt-0.5 text-xs ${isPopular ? "text-indigo-100" : "text-neutral-500"}`}>
-                              /month + GST
+                              {meta.price === "Free" ? "No credit card required" : `/month${taxSuffix(region)}`}
                             </p>
                             <p className={`mt-2 text-[11px] leading-snug ${isPopular ? "text-indigo-100/90" : "text-neutral-500"}`}>
                               {meta.seatTitle}
@@ -349,7 +369,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
 
                   return (
                     <Fragment key={row.feature}>
-                      {categoryLabel && <CategoryRow label={categoryLabel} colSpan={4} />}
+                      {categoryLabel && <CategoryRow label={categoryLabel} colSpan={5} />}
                       <tr
                         className={`group border-b border-slate-100/80 transition-colors last:border-b-0 ${
                           row.highlight
@@ -371,7 +391,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                                 row.highlight ? "font-semibold text-neutral-900" : "text-neutral-700"
                               }`}
                             >
-                              {row.feature}
+                              {featureLabel(row)}
                             </span>
                           </div>
                         </td>

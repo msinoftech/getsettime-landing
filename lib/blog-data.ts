@@ -1,4 +1,5 @@
-import { APP_NAME } from "./config";
+import { APP_NAME, BASE_URL } from "./config";
+
 
 export interface BlogPost {
   id: string;
@@ -251,7 +252,7 @@ export const blogPosts: BlogPost[] = [
     content: 
     `<p>Still managing appointments manually is a common practice in service-based businesses. But it is now costly and inefficient when it can be handled automatically.</p>
     <p>Phone tags, missed bookings, double-scheduled slots, and no-shows are not just frustrating. They eat into revenue, damage client trust, and slow your business growth.</p>
-    <p>Picked based on needs, appointment scheduling software solves these problems without manual intervention. It automates the booking process, keeps your calendar organized, and gives clients a simple way to book an appointment with you — 24/7, without back-and-forth. If you run a service-based business like a clinic, salon, wellness center, etc., and still rely on old methods to manage bookings - phone calls, text messages, or spreadsheets, this guide is for you:</p>
+    <p>Picked based on needs, <a href="${BASE_URL}">appointment scheduling software</a> solves these problems without manual intervention. It automates the booking process, keeps your calendar organized, and gives clients a simple way to book an appointment with you — 24/7, without back-and-forth. If you run a service-based business like a clinic, salon, wellness center, etc., and still rely on old methods to manage bookings - phone calls, text messages, or spreadsheets, this guide is for you:</p>
     
     <h2>What Is Appointment Scheduling Software?</h2>
     <p>It is a digital tool; someone calls it an "online booking system," an "application," or "SaaS". That allows businesses and professionals to manage bookings online.</p>

@@ -29,11 +29,8 @@ export default function Newsletter({ className }: NewsletterProps) {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              name: "Newsletter Subscriber",
+              formType: "newsletter",
               email,
-              phone: "",
-              department: "Newsletter",
-              message: "Please subscribe this email to the newsletter.",
             }),
           });
     

@@ -33,8 +33,8 @@ function InfoItem({ title, desc, icon, }: {
   icon: React.ReactNode;
 }) {
   return (
-    <div className="flex gap-4 rounded-xl bg-white/80 p-3 shadow-xl transition-all duration-300 hover:-translate-y-1">
-      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/25">{icon}</span>
+    <div className="flex gap-4 rounded-xl bg-white/80 p-3 drop-shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white drop-shadow-lg drop-shadow-indigo-500/25">{icon}</span>
       <div>
         <div className="text-base font-semibold text-neutral-900">{title}</div>
         <p>{desc}</p>
@@ -167,7 +167,7 @@ export default function ContactUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             {/* left: Content */}
             <div className="h-full min-h-0">
-              <div className="h-full rounded-2xl bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.15),_transparent_30%),linear-gradient(180deg,#f8faff_0%,#eef2ff_100%)] shadow-md p-4 sm:p-6 lg:p-8 shadow-md">
+              <div className="h-full rounded-2xl bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.15),_transparent_30%),linear-gradient(180deg,#f8faff_0%,#eef2ff_100%)] drop-shadow-md p-4 sm:p-6 lg:p-8 drop-shadow-md">
                 <div className="space-y-6">
                   <Heading
                     badge="quick discussion"
@@ -247,7 +247,7 @@ export default function ContactUs() {
                 {/* right: Image */}
                 <div className="relative mx-auto w-full hidden lg:block">
                   <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
-                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 drop-shadow-xl">
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="font-semibold text-neutral-900">Today’s bookings</div>
@@ -277,7 +277,7 @@ export default function ContactUs() {
                     </div>
                   </div>
 
-                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 drop-shadow-xl animate-float">
                     <div>No-show reduction</div>
                     <div className="text-xl font-bold text-neutral-900">-32%</div>
                   </div>

@@ -17,7 +17,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
     <aside className="space-y-8">
 
       {/* Recent Posts Widget */}
-      <div className="bg-white rounded-xl p-6 shadow-md">
+      <div className="bg-white rounded-xl p-6 drop-shadow-md">
         <div className="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
           <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -42,7 +42,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
       </div>
 
       {/* Categories Widget */}
-      <div className="bg-white rounded-xl p-6 shadow-md">
+      <div className="bg-white rounded-xl p-6 drop-shadow-md">
         <div className="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
           <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
@@ -65,7 +65,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
 
       {/* Related Posts Widget */}
       {relatedPosts.length > 0 && (
-        <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 shadow-md">
+        <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 drop-shadow-md">
           <div className="text-lg font-bold text-neutral-900 mb-4 flex items-center gap-2">
             <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
@@ -74,7 +74,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
           </div>
           <div className="space-y-3">
             {relatedPosts.map((post) => (
-              <Link key={post.id} href={`${BASE_URL}/blog/${post.slug}`} aria-label="Related Post - Blog" className="group block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
+              <Link key={post.id} href={`${BASE_URL}/blog/${post.slug}`} aria-label="Related Post - Blog" className="group block p-4 bg-white rounded-xl drop-shadow-sm hover:drop-shadow-md transition-all duration-200 hover:-translate-y-0.5">
                 <span className="inline-block px-2.5 py-1 text-xs font-medium bg-indigo-100 text-indigo-600 rounded-full mb-2">{post.category}</span>
                 <h4 className="text-sm font-semibold text-neutral-900 group-hover:text-indigo-600 transition-colors">{post.title}</h4>
               </Link>
@@ -84,7 +84,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
       )}
 
       {/* Newsletter Widget */}
-      <div className="bg-gradient-to-br from-indigo-600 to-blue-500 rounded-xl p-6 shadow-lg text-white space-y-4">
+      <div className="bg-gradient-to-br from-indigo-600 to-blue-500 rounded-xl p-6 drop-shadow-lg text-white space-y-4">
         <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -99,7 +99,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
       </div>
 
       {/* CTA Widget */}
-      <div className="bg-indigo-300 rounded-xl p-6 shadow-lg text-white overflow-hidden relative">
+      <div className="bg-indigo-300 rounded-xl p-6 drop-shadow-lg text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -right-10 -top-10 w-40 h-40 bg-white rounded-full" />
           <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-white rounded-full" />

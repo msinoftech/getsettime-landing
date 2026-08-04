@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import { APP_NAME, BASE_URL, REGISTER_URL, REGISTER_GOOGLE_URL, contactInfo, } from "@/lib/config";
-import { comparisonRows, pricingFaqItems, pricingTiers, EXTRA_SEAT_PRICE, } from "@/lib/pricing-data";
+import { comparisonRows, pricingTiers, } from "@/lib/pricing-data";
 import Pricing from "../component/Pricing";
 import PricingComparison from "../component/PricingComparison";
 import PricingHeroPreview from "../component/PricingHeroPreview";
+import RegionalPrice from "../component/RegionalPrice";
+import { PricingFaqItem, pricingFaqItems } from "../component/PricingFaqSection";
 import Heading from "../component/Heading";
 import Card from "../component/Card";
 import { FaqSection } from "../component/FaqSection";
 
 const heroHighlights = [
-  "Plans from ₹999/month",
-  "250 bookings/month on Starter",
-  `Extra seats ₹${EXTRA_SEAT_PRICE}/month`,
+  { key: "plans", node: <RegionalPrice plan="starter" prefix="Plans from " suffix="/month" /> },
+  { key: "bookings", node: "250 bookings/month on Starter" },
+  { key: "seats", node: <RegionalPrice plan="extraSeat" prefix="Extra seats " suffix="/month" /> },
 ];
 
 const pageUrl = `${BASE_URL}/pricing`;
@@ -51,7 +53,6 @@ export const metadata: Metadata = {
 
 const valueProps = [
   {
-    badge: "Starter",
     stat: "250",
     statUnit: "bookings / mo",
     title: "Booking volume included",
@@ -69,8 +70,7 @@ const valueProps = [
     featured: false,
   },
   {
-    badge: "Team scaling",
-    stat: `₹${EXTRA_SEAT_PRICE}`,
+    stat: <RegionalPrice plan="extraSeat" />,
     statUnit: "per extra seat",
     title: "Pay for seats, not surprises",
     description: "Plans bundle provider seats upfront. Add stylists, doctors, or therapists anytime without switching platforms.",
@@ -87,11 +87,15 @@ const valueProps = [
     featured: true,
   },
   {
-    badge: "Annual billing",
     stat: "10%",
     statUnit: "saved yearly",
     title: "Rewards when you commit",
-    description: "Professional and Enterprise unlock 10% off with annual billing. Starter stays on simple monthly ₹999.",
+    description: (
+      <>
+        Professional and Enterprise unlock 10% off with annual billing. Starter stays on simple monthly{" "}
+        <RegionalPrice plan="starter" />.
+      </>
+    ),
     bullets: ["Pro & Enterprise only", "Starter stays monthly", "Transparent INR invoices"],
     icon: (
       <svg className="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
@@ -155,11 +159,12 @@ const trustPoints = [
 ];
 
 export default function PricingPage() {
+ 
   const schemaOffers = pricingTiers.map((tier) => ({
     "@type": "Offer",
-    "@id": `${pageUrl}/#offer`,
+    "@id": `${pageUrl}/#offer-${tier.name.toLowerCase()}`,
     "name": `${APP_NAME} ${tier.name}`,
-    "price": tier.price,
+    "price": tier.price === "Free" ? "0" : tier.price,
     "priceCurrency": "INR",
     "description": tier.description,
     "url": `${pageUrl}`,
@@ -311,10 +316,14 @@ export default function PricingPage() {
         "@id": `${pageUrl}/#faqpage`,
         "mainEntity": pricingFaqItems.map((item) => ({
           "@type": "Question",
-          "name": item.title,
-          "acceptedAnswer": {
+          name: item.title,
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": item.content.replace(/<[^>]+>/g, ""),
+            text:
+              item.contentText ??
+              (typeof item.content === "string"
+                ? item.content.replace(/<[^>]+>/g, "")
+                : ""),
           },
         })),
       },
@@ -328,12 +337,13 @@ export default function PricingPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden py-14 sm:py-20">
+          
           <div className="absolute inset-0 -z-10 hidden sm:block">
             <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-emerald-500/20 blur-3xl" />
             <div className="absolute top-1/3 left-1/2 h-80 w-80 -translate-x-1/3 -translate-y-1/2 rounded-full bg-indigo-600/30 blur-3xl" />
           </div>
 
-          <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-12 lg:grid-cols-2 lg:gap-14">
+          <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-14">
             {/* Left section */}
             <div className="space-y-6">
               <Heading
@@ -345,22 +355,79 @@ export default function PricingPage() {
                 titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
               />
 
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Get started - Pricing" className="flex items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm text-white">Get Started Free</Link>
-                <Link href={`${BASE_URL}/contact-us`} aria-label="Talk to sales - Pricing" className="flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm text-white">Talk to sales</Link>
+              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google - Doctor Appointment Scheduling Software" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
+                    <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
+                    <g>
+                        <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                        <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                        <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                        <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                    </g>
+                    </svg>
+                    Sign up with Google
+                </Link>
+                <Link href={`${BASE_URL}/contact-us`} aria-label="Talk to sales - Pricing" className="flex w-full items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm text-white sm:w-auto">Talk to sales</Link>
               </div>
 
-              <div className="flex flex-wrap gap-3 text-sm font-medium text-neutral-600">
+              <div className="flex flex-wrap gap-2.5 text-xs font-medium text-neutral-600 sm:gap-3 sm:text-sm">
                 {heroHighlights.map((item) => (
-                  <span key={item} className="rounded-full border border-neutral-200 bg-white px-4 py-2">
-                    {item}
+                  <span key={item.key} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 drop-shadow-sm">
+                    {item.node}
                   </span>
                 ))}
+              </div>
+
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                      <div className="flex items-center gap-2">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                          </span>
+                          <div>
+                              <div className="text-lg font-bold text-neutral-900">250</div>
+                              <div className="text-xs font-semibold text-neutral-800">Free Bookings</div>
+                          </div>
+                      </div>
+                      <div className="text-xs text-neutral-500">Included every month on Starter</div>
+                  </div>
+
+                  <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                      <div className="flex items-center gap-2">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
+                              </svg>
+                          </span>
+                          <div>
+                              <div className="text-sm font-bold text-neutral-900">Seat-Based Plans</div>
+                          </div>
+                      </div>
+                      <div className="text-xs text-neutral-500">Add providers anytime you grow</div>
+                  </div>
+
+                  <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                      <div className="flex items-center gap-2">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                              </svg>
+                          </span>
+                          <div>
+                              <div className="text-sm font-bold text-neutral-900">Transparent INR</div>
+                          </div>
+                      </div>
+                      <div className="text-xs text-neutral-500">No per-booking fees on Starter</div>
+                  </div>
               </div>
             </div>
 
             {/* Right section */}
-            <PricingHeroPreview />
+            <div className="mx-auto w-full">
+              <PricingHeroPreview />
+            </div>
           </div>
         </section>
 
@@ -386,22 +453,18 @@ export default function PricingPage() {
                 <Card
                   key={item.title}
                   iconNode={item.icon}
-                  badge={item.badge}
                   stat={item.stat}
                   statUnit={item.statUnit}
                   statClassName={`text-3xl tracking-tight sm:text-4xl font-bold ${item.valueColor}`}
                   title={item.title}
-                  titleClassName="mt-3 text-lg font-bold text-neutral-900"
                   description={item.description}
-                  descriptionClassName="mt-2 flex-1 text-sm leading-relaxed text-neutral-600"
+                  iconWrapperClassName={`flex h-12 w-12 items-center justify-center rounded-xl ${item.iconBg}`}
                   footer={
                     <ul className="mt-5 space-y-2 border-t border-neutral-100 pt-4">
                       {item.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-center gap-2 text-sm text-neutral-700">
-                          <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md ${item.iconBg}`}>
-                            <svg className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                              <path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.2 7.2a1 1 0 01-1.415 0l-3-3a1 1 0 111.414-1.41l2.293 2.29 6.493-6.49a1 1 0 011.415 0z" clipRule="evenodd"/>
-                            </svg>
+                          <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md ${item.iconBg}`}>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg>
                           </span>
                           {bullet}
                         </li>
@@ -412,8 +475,8 @@ export default function PricingPage() {
               ))}
             </div>
           </div>
-        </section>
-
+        </section>        
+        
         {/* Plans + toggle + cards */}
         <Pricing variant="page" />
 
@@ -438,9 +501,9 @@ export default function PricingPage() {
           </div>
 
           <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
-              <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="grid gap-6 sm:gap-8 lg:grid-cols-12 lg:gap-10">
                 {/* left: Extra seats */}
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-900 via-neutral-900 to-indigo-950 p-6 text-white shadow-2xl sm:p-8 lg:col-span-5">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-900 via-neutral-900 to-indigo-950 p-5 text-white drop-shadow-2xl sm:p-8 lg:col-span-5">
                   <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-indigo-500/20 blur-2xl" aria-hidden />
                   <div className="relative">
                     <Heading
@@ -448,18 +511,18 @@ export default function PricingPage() {
                       title="Need more providers?"
                       description="Scale your team without changing tools. Extra seats bill monthly and can be added anytime from your workspace."
                       wrapperClassName="space-y-3"
-                      badgeClassName="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur"
+                      badgeClassName="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 drop-shadow-sm backdrop-blur"
                       titleClassName="text-2xl font-bold tracking-tight sm:text-3xl"
                       descriptionClassName=""
                     />
 
-                    <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                    <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur sm:mt-6 sm:p-5">
                       <p className="text-sm text-indigo-200">Extra seat pricing</p>
-                      <p className="mt-1 text-4xl tracking-tight">
-                        ₹{EXTRA_SEAT_PRICE}
+                      <p className="mt-1 text-3xl tracking-tight sm:text-4xl">
+                        <RegionalPrice plan="extraSeat" />
                         <span className="text-lg font-semibold text-white"> / month</span>
                       </p>
-                      <p className="mt-1 text-white">+ 18% GST · prorated when added mid-cycle</p>
+                      <p className="mt-1 text-sm text-white sm:text-base">+ 18% GST · prorated when added mid-cycle</p>
                     </div>
 
                     <div className="mt-5 flex flex-wrap gap-2">
@@ -468,7 +531,7 @@ export default function PricingPage() {
                       ))}
                     </div>
 
-                    <Link href={`${BASE_URL}/contact-us`} aria-label="Talk to sales about teams - Pricing" className="mt-6 inline-flex rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Talk to Sales</Link>
+                    <Link href={`${BASE_URL}/contact-us`} aria-label="Talk to sales about teams - Pricing" className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50 sm:w-auto">Talk to Sales</Link>
                   </div>
                 </div>
 
@@ -483,7 +546,7 @@ export default function PricingPage() {
 
                     <div className="mt-6 grid gap-3 sm:grid-cols-2">
                         {trustPoints.map((point) => (
-                        <div key={point.title} className={`group flex gap-4 rounded-2xl border bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md ${point.border}`}>
+                        <div key={point.title} className={`group flex gap-3 rounded-2xl border bg-white p-3.5 drop-shadow-sm transition duration-300 hover:-translate-y-0.5 hover:drop-shadow-md sm:gap-4 sm:p-4 ${point.border}`}>
                             <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition group-hover:scale-105 ${point.iconBg}`}>{point.icon}</div>
                             <div className="min-w-0">
                             <p className="font-semibold text-neutral-900">{point.title}</p>
@@ -493,9 +556,8 @@ export default function PricingPage() {
                         ))}
                     </div>
 
-                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <p className="w-80 text-sm text-neutral-600">See reminders, analytics, and industry workflows on the features page.</p>
-                        <Link href={`${BASE_URL}/features`} aria-label="All features - Pricing" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">All features</Link>
+                    <div className="mt-4">
+                        <p className="w-full text-sm text-neutral-600">See reminders, analytics, and industry workflows on the features page.</p>
                     </div>
                 </div>
               </div>
@@ -533,7 +595,7 @@ export default function PricingPage() {
               </div>
               {/* right: FAQ Section */}
               <div>
-                  <FaqSection items={pricingFaqItems} />
+                  <FaqSection items={pricingFaqItems as PricingFaqItem[]} />
               </div>
             </div>
         </section>
@@ -566,7 +628,7 @@ export default function PricingPage() {
                 {/* right: Image */}
                 <div className="relative mx-auto w-full hidden lg:block">
                   <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
-                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 drop-shadow-xl">
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="font-semibold text-neutral-900">Today’s bookings</div>
@@ -596,7 +658,7 @@ export default function PricingPage() {
                     </div>
                   </div>
 
-                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 drop-shadow-xl animate-float">
                     <div>No-show reduction</div>
                     <div className="text-xl font-bold text-neutral-900">-32%</div>
                   </div>
@@ -605,7 +667,6 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
-
     </>
   );
 }

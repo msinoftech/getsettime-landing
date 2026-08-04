@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Script from "next/script";
 import Link from "next/link";
-import { LOGIN_URL, BASE_URL, APP_NAME, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
+import { BASE_URL, APP_NAME, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import { FaqSection } from "@/app/component/FaqSection";
 import Card from "@/app/component/Card";
 import Heading from "@/app/component/Heading";
-import ContactForm from "@/app/component/ContactForm";
 import { CheckListItem } from "@/app/component/CheckList";
+import DemoFreeForm from "@/app/component/DemoFreeForm";
 
 const pageUrl = `${BASE_URL}/solutions/physiotherapist-appointment-booking-software`;
 
@@ -268,6 +268,90 @@ const growthRoadmap = [
   },
 ];
 
+const ctaHighlightFeatures = [
+  {
+    title: "Online Booking 24/7",
+    description: "Let customers book anytime.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
+        <path d="m9 16 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Auto Reminders",
+    description: "Reduce no-shows effortlessly.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13.73 21a2 2 0 0 1-3.46 0" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Team & Calendar Management",
+    description: "Manage staff, services and schedules.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "Grow Your Business",
+    description: "More bookings. More happy clients.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7 16V9M12 16V5M17 16v-3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+];
+
+const ctaTrustAvatars = [
+  "/doctor-profile.jpg",
+  "/dentist-profile.jpg",
+  "/salon-profile.jpg",
+  "/physiotherapy-profile.jpg",
+];
+
+const ctaTrustBadges = [
+  {
+    title: "Secure & Reliable",
+    description: "Enterprise grade security",
+    icon: (
+      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Super Easy Setup",
+    description: "Get started in minutes",
+    icon: (
+      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+  },
+  {
+    title: "24/7 Support",
+    description: "We're here to help",
+    icon: (
+      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm18 0h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5Z" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+];
+
   return (
     <>
       {/* Add Structured Data for Physiotherapy Appointment Booking App Page */}
@@ -308,48 +392,67 @@ const growthRoadmap = [
                 <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Physiotherapist Appointment Booking Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
               </div>
               
-              <div className="flex flex-wrap gap-3">
-                  <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                      <div className="text-gray-500">Patients</div>
-                      <div className="text-2xl font-bold text-gray-900 mt-1">10,000+</div>
-                      <div className="mt-4 h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full w-[80%] bg-indigo-600 rounded-full"></div>
-                      </div>
-                  </div>
-                  <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                      <div className="text-gray-500">Time Saved</div>
-                      <div className="text-2xl font-bold text-gray-900 mt-1">3 hrs</div>
-                      <div className="mt-3 flex gap-1">
-                      {[1,2,3,4,5].map((i)=>(
-                          <div key={i} className="h-2 flex-1 bg-indigo-600 rounded"></div>
-                      ))}
-                      </div>
-                  </div>
-                  <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                      <div className="text-gray-500">Physiotherapy Rating</div>
-                      <div className="text-2xl font-bold text-yellow-500 mt-1">4.8 ★</div>
-                      <div className="mt-3 flex gap-1">
-                      {[1,2,3,4,5].map((i)=>(
-                          <span key={i} className="text-yellow-500">★</span>
-                      ))}
-                      </div>
-                  </div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                    <div className="flex items-center gap-2">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
+                            </svg>
+                        </span>
+                        <div>
+                            <div className="text-lg font-bold text-neutral-900">10,000+</div>
+                            <div className="text-xs font-semibold text-neutral-800">Appointments</div>
+                        </div>
+                    </div>
+                    <div className="text-xs text-neutral-500">Booked across clinics using GetSetTime</div>
+                </div>
+
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                    <div className="flex items-center gap-2">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </span>
+                        <div>
+                            <div className="text-lg font-bold text-neutral-900">3 hrs</div>
+                            <div className="text-xs font-semibold text-neutral-800">Time Saved</div>
+                        </div>
+                    </div>
+                    <div className="text-xs text-neutral-500">Daily admin time back for your team</div>
+                </div>
+
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                    <div className="flex items-center gap-2">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+                            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 9.11c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                        </span>
+                        <div>
+                            <div className="text-lg font-bold text-neutral-900">4.8 ★</div>
+                            <div className="text-xs font-semibold text-neutral-800">Patient Rating</div>
+                        </div>
+                    </div>
+                    <div className="text-xs text-neutral-500">Average feedback from patients</div>
+                </div>
               </div>
             </div>
+
             {/* Right column - Interactive Demo */}
             <div className="relative">
-              <div className="rounded-2xl bg-white/20 p-4 shadow-xl animate-fade-in-scale">
-                <div className="grid gap-3">
+                <div className="grid gap-3 animate-fade-in-scale">
                   <div className="overflow-hidden rounded-2xl">
                     <Image src="/physiotherapy-appointment.jpg" alt="physiotherapy appointment staff working" className="h-50 w-full object-cover" width={500} height={500}/>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm space-y-3">
+                    <div className="relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-4 drop-shadow-sm space-y-3">
                       <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-indigo-400/10 blur-2xl" aria-hidden />
                       <div className="relative flex items-start justify-between gap-2">
                         <div className="flex items-center gap-2">
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/20">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-md drop-shadow-indigo-500/20">
                             <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                           </span>
                           <div>
@@ -389,7 +492,7 @@ const growthRoadmap = [
                       </div>
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 p-4 text-white shadow-md">
+                    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 p-4 text-white drop-shadow-md">
                       <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-indigo-500/20 blur-2xl" aria-hidden />
                       <div className="relative mb-3 flex items-center gap-2">
                         <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-indigo-300">
@@ -410,7 +513,6 @@ const growthRoadmap = [
                   </div>
 
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -458,7 +560,7 @@ const growthRoadmap = [
 
             {/* Right column - Dashboard graphics */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-2xl">
+              <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
                 {/* Window chrome */}
                 <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-4">
                   <div className="flex items-center gap-2 sm:gap-3">
@@ -483,7 +585,7 @@ const growthRoadmap = [
                   <div className="relative flex items-center gap-3">
                     <div className="relative shrink-0">
                       <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-indigo-500/30 to-violet-500/30 blur" aria-hidden />
-                      <Image src="/physiotherapy-profile.jpg" alt="physiotherapy profile" className="relative h-14 w-14 rounded-full border-4 border-white object-cover shadow-md" width={64} height={64} priority />
+                      <Image src="/physiotherapy-profile.jpg" alt="physiotherapy profile" className="relative h-14 w-14 rounded-full border-4 border-white object-cover drop-shadow-md" width={64} height={64} priority />
                       <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-emerald-500">
                         <svg className="h-2.5 w-2.5 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                       </span>
@@ -500,9 +602,9 @@ const growthRoadmap = [
                   </div>
 
                   {/* Hero: trend chart + utilisation ring */}
-                  <div className="relative grid grid-cols-2 sm:grid-cols-5 gap-4">
+                  <div className="relative grid grid-cols-1 min-[440px]:grid-cols-2 sm:grid-cols-5 gap-4">
                     {/* Booking trend area chart */}
-                    <div className="relative overflow-hidden rounded-xl border border-neutral-100 bg-white p-4 shadow-sm sm:col-span-3">
+                    <div className="relative overflow-hidden rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm sm:col-span-3">
                       <div className="flex items-start justify-between">
                         <div>
                           <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Bookings this week</div>
@@ -532,7 +634,7 @@ const growthRoadmap = [
                     </div>
 
                     {/* Utilisation ring */}
-                    <div className="relative flex flex-col items-center justify-center rounded-xl border border-neutral-100 bg-white p-4 shadow-sm sm:col-span-2">
+                    <div className="relative flex flex-col items-center justify-center rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm sm:col-span-2">
                       <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Slot use</div>
                       <div className="relative mt-2 h-30 w-30">
                         <svg viewBox="0 0 100 100" className="h-30 w-30 -rotate-90" aria-hidden>
@@ -555,7 +657,7 @@ const growthRoadmap = [
 
                   {/* Next appointment + availability */}
                   <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
-                    <div className="relative h-full overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-4 text-white shadow-md shadow-indigo-500/20">
+                    <div className="relative h-full overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-4 text-white drop-shadow-md drop-shadow-indigo-500/20">
                       <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-white/10" aria-hidden />
                       <div className="relative space-y-1">
                         <div className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-white/80">
@@ -571,7 +673,7 @@ const growthRoadmap = [
                       </div>
                     </div>
 
-                    <div className="h-full rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
+                    <div className="h-full rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm">
                       <div className="mb-3 flex items-center justify-between">
                         <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Availability</div>
                         <div className="flex items-center gap-2 text-xs font-medium text-neutral-500">
@@ -616,12 +718,12 @@ const growthRoadmap = [
         </div>
       </section>
 
-      {/* POPULAR SERVICES SECTION */}
+      {/* DAY-TO-DAY USE SECTION */}
       <section className="relative bg-slate-50 py-16 lg:py-20">
        <div className="mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* LEFT COLUMN */}
-            <div className="relative rounded-2xl overflow-hidden bg-white p-3 shadow-xl">
+            <div className="relative rounded-2xl overflow-hidden bg-white p-3 drop-shadow-xl">
               <Image src="/physiotherapy-services.jpg" alt="physiotherapy services available" className="h-full w-full object-cover rounded-xl" width={500} height={500} />
             </div>
             {/* RIGHT COLUMN */}
@@ -634,12 +736,12 @@ const growthRoadmap = [
               />
               <div className="mt-6 flex flex-wrap gap-2">
                 {services.map((service, index) => (
-                  <span key={index} className="rounded-xl border border-neutral-200 bg-white px-3 py-2 text-xs font-medium text-neutral-600 shadow-sm">
+                  <span key={index} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 drop-shadow-sm">
                     {service}
                   </span>
                 ))}
               </div>
-              <div className="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-2">
+              <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2">
                 {[
                   {
                     label: "Reminders delivered",
@@ -666,10 +768,10 @@ const growthRoadmap = [
                     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
                   },
                 ].map((stat) => (
-                  <div key={stat.label} className={`group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm ring-1 ${stat.ring} transition duration-300 hover:-translate-y-1 hover:shadow-xl`}>
+                  <div key={stat.label} className={`group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-4 drop-shadow-sm ring-1 ${stat.ring} transition duration-300 hover:-translate-y-1 hover:drop-shadow-xl`}>
                     <div className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full ${stat.glow} blur-2xl`} aria-hidden />
                     <div className="relative flex items-center justify-between">
-                      <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-white shadow-md ${stat.iconBg}`}>
+                      <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-white drop-shadow-md ${stat.iconBg}`}>
                         <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} /></svg>
                       </span>
                       <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-50 px-2 py-1 text-xs font-bold text-emerald-600">
@@ -723,9 +825,9 @@ const growthRoadmap = [
               </div>
             </div>
             {/* Right */}
-            <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 shadow-2xl backdrop-blur">
+            <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
               <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
-                <div className="relative overflow-hidden rounded-2xl hidden sm:block border border-neutral-200 bg-white p-3 shadow-sm">
+                <div className="relative overflow-hidden rounded-2xl hidden sm:block border border-neutral-200 bg-white p-3 drop-shadow-sm">
                   <div className="flex items-center gap-2 text-neutral-700 font-semibold">
                     <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                       <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -744,7 +846,7 @@ const growthRoadmap = [
                         <button key={time} type="button"
                           className={`rounded-xl border px-2 py-2 text-sm font-medium transition-all duration-200 ${
                             time === "10:00 AM"
-                              ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-300/60"
+                              ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
                               : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
                           }`}
                         >
@@ -784,7 +886,7 @@ const growthRoadmap = [
             </div>
           </div>
 
-          <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 shadow-xl backdrop-blur">
+          <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 drop-shadow-xl backdrop-blur">
             <h3 className="text-2xl font-bold text-center text-neutral-900">Supports Every Type of Physiotherapy Appointment</h3>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
               {[
@@ -794,11 +896,11 @@ const growthRoadmap = [
                 "Follow-up Appointment",
                 "Rehabilitation Program",
               ].map((tag) => (
-                <span key={tag} className="px-3 py-1.5">✓ {tag}</span>
+                <span key={tag} className="px-3 py-1.5 flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}</span>
               ))}
             </div>
             <div className="mt-5 text-center">
-              <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Set Up Your Physiotherapy Booking System - Physiotherapist Appointment Booking Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
+              <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Set Up Your Physiotherapy Booking System - Physiotherapist Appointment Booking Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
             </div>
           </div>
         </div>
@@ -820,9 +922,9 @@ const growthRoadmap = [
                   />
                   
                   {growthRoadmap.map((point, i) => (
-                    <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 drop-shadow-md transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
                         <div className="flex items-start gap-2">
-                            <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-500/25">
+                            <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
                                 <span className="text-sm font-bold">0{i + 1}</span>
                             </div>
                             <div className="relative">
@@ -835,10 +937,10 @@ const growthRoadmap = [
               </div>
               {/* RIGHT FEATURES GRID */}
               <div className="relative">
-                  <div className="rounded-xl bg-white p-3 shadow-xl">
+                  <div className="rounded-xl bg-white p-3 drop-shadow-xl">
                       <Image src="/physiotherapy-grow.jpg" alt="Physiotherapy growth roadmap" width={600} height={500} className="w-full h-full rounded-xl object-cover" />
                   </div>
-                  <div className="absolute right-0 -top-10 hidden lg:block w-60 rounded-xl bg-white p-4 shadow-md animate-float">
+                  <div className="absolute right-0 -top-10 hidden lg:block w-60 rounded-xl bg-white p-4 drop-shadow-md animate-float">
                       <div className="text-sm uppercase text-neutral-400">Physiotherapy growth</div>
                       <div className="font-bold text-neutral-900">30 days to grow your Physiotherapy</div>
                       <div className="mt-3 flex items-end gap-2">
@@ -852,7 +954,7 @@ const growthRoadmap = [
                         <div className="h-16 w-3 rounded-full bg-indigo-500" />
                       </div>
                   </div>
-                  <div className="pointer-events-none absolute left-0 -bottom-10 hidden lg:block rounded-xl border border-violet-100 bg-white p-4 shadow-xl animate-float">
+                  <div className="pointer-events-none absolute left-0 -bottom-10 hidden lg:block rounded-xl border border-violet-100 bg-white p-4 drop-shadow-xl animate-float">
                       <div className="text-sm uppercase text-neutral-500">New booking</div>
                       <div className="mt-1 font-bold text-neutral-900">Lucia Morales · 11:30 AM</div>
                       <div className="text-neutral-600">Synced to Physiotherapy operations board</div>
@@ -895,10 +997,10 @@ const growthRoadmap = [
       {/* Call-to-Action Section */}
       <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10 md:p-6 lg:p-8 xl:p-10">
               <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
                 {/* left: Content */}
-                <div className="space-y-3">
+                <div className="space-y-6">
                   <Heading
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
@@ -907,24 +1009,76 @@ const growthRoadmap = [
                     descriptionClassName = "text-white"
                   />
                   
-                  <div className="mt-8">
-                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Physiotherapist Appointment Booking Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
+                  {/* <div className="mt-8">
+                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Doctor Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
+                  </div> */}
+
+                  <div className="space-y-5">
+                    {ctaHighlightFeatures.map((item) => (
+                      <div key={item.title} className="flex items-center gap-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white drop-shadow-sm">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <p className="text-base font-bold text-white">{item.title}</p>
+                          <p className="text-sm text-white/85">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
 
-                  <div className="mt-8 flex flex-wrap gap-3 text-white">
-                    {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                      <span key={item}>✔ {item}</span>
-                    ))}
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex -space-x-2.5">
+                        {ctaTrustAvatars.map((src) => (
+                          <Image
+                            key={src}
+                            src={src}
+                            alt=""
+                            width={40}
+                            height={40}
+                            className="relative h-10 w-10 rounded-full border-2 border-white object-cover"
+                          />
+                        ))}
+                      </div>
+                      <div className="hidden h-10 w-px bg-white/30 sm:block" aria-hidden />
+                      <div>
+                        <p className="text-sm leading-snug text-white">
+                          Trusted by <span className="font-semibold">2,500+</span> businesses worldwide
+                        </p>
+                        <div className="mt-1 flex gap-0.5" aria-label="5 out of 5 stars">
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <svg key={i} className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl bg-slate-100/95 px-4 py-4 sm:px-5">
+                      <div className="grid gap-4 sm:grid-cols-3 sm:gap-3">
+                        {ctaTrustBadges.map((item) => (
+                          <div key={item.title} className="flex items-start gap-2">
+                            {item.icon}
+                            <div className="min-w-0">
+                              <div className="text-sm font-bold text-indigo-950">{item.title}</div>
+                              <div className="text-xs text-slate-500">{item.description}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 {/* right: Image */}
-                <div className="relative mx-auto w-full bg-white p-4 sm:p-8 rounded-xl shadow-xl">
-                  <ContactForm />               
+                <div className="relative mx-auto w-full rounded-xl drop-shadow-xl">
+                  <DemoFreeForm businessType="Physiotherapy Clinic"/>               
                 </div>
               </div>
             </div>
           </div>
-      </section>
+    </section>
     </>
   );
 }

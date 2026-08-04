@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Script from "next/script";
-import { BASE_URL, LOGIN_URL, APP_NAME, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
+import { BASE_URL, APP_NAME, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import Link from "next/link";
 import { FaqSection } from "@/app/component/FaqSection";
 import Card from "@/app/component/Card";
 import Heading from "@/app/component/Heading";
-import ContactForm from "@/app/component/ContactForm";
 import { CheckListItem } from "@/app/component/CheckList";
+import DemoFreeForm from "@/app/component/DemoFreeForm";
 
 const pageUrl = `${BASE_URL}/solutions/dentist-appointment-scheduling-software`;
 
@@ -247,6 +247,90 @@ const growthRoadmap = [
         detail: "The interface is built to be straightforward for clinical staff, not software teams. Most users are comfortable with the full feature set within a day or two of regular use.",
     },
 ];
+
+const ctaHighlightFeatures = [
+    {
+      title: "Online Booking 24/7",
+      description: "Let customers book anytime.",
+      icon: (
+        <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
+          <path d="m9 16 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+    {
+      title: "Auto Reminders",
+      description: "Reduce no-shows effortlessly.",
+      icon: (
+        <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+    {
+      title: "Team & Calendar Management",
+      description: "Manage staff, services and schedules.",
+      icon: (
+        <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      ),
+    },
+    {
+      title: "Grow Your Business",
+      description: "More bookings. More happy clients.",
+      icon: (
+        <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M7 16V9M12 16V5M17 16v-3" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+  ];
+  
+  const ctaTrustAvatars = [
+    "/doctor-profile.jpg",
+    "/dentist-profile.jpg",
+    "/salon-profile.jpg",
+    "/physiotherapy-profile.jpg",
+  ];
+  
+  const ctaTrustBadges = [
+    {
+      title: "Secure & Reliable",
+      description: "Enterprise grade security",
+      icon: (
+        <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+    {
+      title: "Super Easy Setup",
+      description: "Get started in minutes",
+      icon: (
+        <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+      ),
+    },
+    {
+      title: "24/7 Support",
+      description: "We're here to help",
+      icon: (
+        <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm18 0h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5Z" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    },
+  ];
   
 return (
     <>
@@ -287,79 +371,85 @@ return (
                         <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Dentist Appointment Scheduling Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
                     </div>
                     
-                    <div className="flex flex-wrap gap-3">
-                        <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                            <div className="text-gray-500">Patients</div>
-                            <div className="text-2xl font-bold text-gray-900 mt-1">10,000+</div>
-                            <div className="mt-4 h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full w-[80%] bg-indigo-600 rounded-full"></div>
-                            </div>
-                        </div>
-                        <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                            <div className="text-gray-500">Time Saved</div>
-                            <div className="text-2xl font-bold text-gray-900 mt-1">3 hrs</div>
-                            <div className="mt-3 flex gap-1">
-                            {[1,2,3,4,5].map((i)=>(
-                                <div key={i} className="h-2 flex-1 bg-indigo-600 rounded"></div>
-                            ))}
-                            </div>
-                        </div>
-                        <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                            <div className="text-gray-500">Dental Clinic Rating</div>
-                            <div className="text-2xl font-bold text-yellow-500 mt-1">4.8 ★</div>
-                            <div className="mt-3 flex gap-1">
-                            {[1,2,3,4,5].map((i)=>(
-                                <span key={i} className="text-yellow-500">★</span>
-                            ))}
-                            </div>
-                        </div>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                      <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                          <div className="flex items-center gap-2">
+                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
+                                  </svg>
+                              </span>
+                              <div>
+                                  <div className="text-lg font-bold text-neutral-900">10,000+</div>
+                                  <div className="text-xs font-semibold text-neutral-800">Appointments</div>
+                              </div>
+                          </div>
+                          <div className="text-xs text-neutral-500">Booked across clinics using GetSetTime</div>
+                      </div>
+
+                      <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                          <div className="flex items-center gap-2">
+                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  </svg>
+                              </span>
+                              <div>
+                                  <div className="text-lg font-bold text-neutral-900">3 hrs</div>
+                                  <div className="text-xs font-semibold text-neutral-800">Time Saved</div>
+                              </div>
+                          </div>
+                          <div className="text-xs text-neutral-500">Daily admin time back for your team</div>
+                      </div>
+
+                      <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                          <div className="flex items-center gap-2">
+                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+                                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 9.11c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                  </svg>
+                              </span>
+                              <div>
+                                  <div className="text-lg font-bold text-neutral-900">4.8 ★</div>
+                                  <div className="text-xs font-semibold text-neutral-800">Patient Rating</div>
+                              </div>
+                          </div>
+                          <div className="text-xs text-neutral-500">Average feedback from patients</div>
+                      </div>
                     </div>
+
                 </div>
+
                 {/* Right column - Interactive Demo */}
                 <div className="relative space-y-4 animate-fade-in-scale">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="rounded-2xl overflow-hidden shadow-lg">
+                    <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
+                        <div className="rounded-2xl overflow-hidden drop-shadow-lg">
                             <Image src="/dentist-appointment.jpg" className="h-64 w-full object-cover" alt="Dental Clinic Dashboard" width={500} height={500} />
                         </div>
-                        <div className="rounded-2xl overflow-hidden hidden md:block shadow-lg">
+                        <div className="rounded-2xl overflow-hidden hidden md:block drop-shadow-lg">
                             <Image src="/dentist-booking.jpg" className="h-64 w-full object-cover" alt="Dental Clinic Bookings" width={500} height={500} />
                         </div>
                     </div>
 
                     <div className="relative">
-                        <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-2xl">
-                            {/* Window chrome */}
-                            <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-4">
-                                <div className="flex items-center gap-2 sm:gap-3">
-                                    <div className="relative">
-                                        <div className="h-2.5 w-2.5 animate-pulse rounded-full bg-red-500 sm:h-3 sm:w-3" />
-                                        <div className="absolute inset-0 h-2.5 w-2.5 animate-ping rounded-full bg-red-400 sm:h-3 sm:w-3" />
-                                    </div>
-                                    <div className="h-2.5 w-2.5 rounded-full bg-yellow-400 sm:h-3 sm:w-3" />
-                                    <div className="h-2.5 w-2.5 rounded-full bg-green-600 sm:h-3 sm:w-3" />
-                                </div>
-                                <div className="flex items-center gap-1.5 sm:gap-2">
-                                    <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-600 sm:h-2 sm:w-2" />
-                                    <span className="text-[10px] font-medium text-neutral-700 sm:text-xs">LIVE</span>
-                                </div>
-                            </div>
+                        <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
 
-                            <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-4">
+                            <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-3 sm:p-4">
                                 {/* Decorative dotted backdrop */}
                                 <div className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:radial-gradient(rgba(99,102,241,0.12)_1px,transparent_1px)] [background-size:16px_16px]" aria-hidden />
                                 <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
 
                                 {/* KPI strip */}
-                                <div className="relative mb-4 grid grid-cols-3 gap-2.5">
+                                <div className="relative mb-4 grid grid-cols-1 gap-2 min-[420px]:grid-cols-2 sm:grid-cols-3 sm:gap-2.5">
                                     {[
                                         { label: "Appointments", value: "24", trend: "+9%", accent: "text-indigo-600", iconBg: "bg-indigo-600", bg: "from-indigo-50 to-white", ring: "ring-indigo-100", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
                                         { label: "Confirmed", value: "21", trend: "+6%", accent: "text-emerald-600", iconBg: "bg-emerald-600", bg: "from-emerald-50 to-white", ring: "ring-emerald-100", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
                                         { label: "Chair use", value: "92%", trend: "+4%", accent: "text-violet-600", iconBg: "bg-violet-600", bg: "from-violet-50 to-white", ring: "ring-violet-100", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
                                     ].map((kpi) => (
-                                        <div key={kpi.label} className={`group rounded-xl border border-neutral-100 bg-gradient-to-br ${kpi.bg} p-2.5 shadow-sm ring-1 ${kpi.ring} transition duration-300 hover:-translate-y-0.5 hover:shadow-md`}>
+                                        <div key={kpi.label} className={`group rounded-xl border border-neutral-100 bg-gradient-to-br ${kpi.bg} p-2.5 drop-shadow-sm ring-1 ${kpi.ring} transition duration-300 hover:-translate-y-0.5 hover:drop-shadow-md sm:p-3`}>
                                             <div className="flex items-center justify-between">
-                                                <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${kpi.iconBg} text-white shadow-sm`}>
-                                                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={kpi.icon} /></svg>
+                                                <span className={`flex h-8 w-8 items-center justify-center rounded-lg ${kpi.iconBg} text-white drop-shadow-sm sm:h-9 sm:w-9`}>
+                                                    <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={kpi.icon} /></svg>
                                                 </span>
                                                 <span className="inline-flex items-center gap-0.5 text-xs font-bold text-emerald-600">
                                                     <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
@@ -367,13 +457,13 @@ return (
                                                 </span>
                                             </div>
                                             <div className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">{kpi.label}</div>
-                                            <div className={`text-xl font-bold tabular-nums ${kpi.accent}`}>{kpi.value}</div>
+                                            <div className={`text-lg font-bold tabular-nums sm:text-xl ${kpi.accent}`}>{kpi.value}</div>
                                         </div>
                                     ))}
                                 </div>
 
-                                <div className="relative grid gap-4 sm:grid-cols-2">
-                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
+                                <div className="relative grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
+                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
                                         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                             <svg className="h-4 w-4 text-emerald-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             Upcoming
@@ -383,7 +473,7 @@ return (
                                                 ["10:00 AM", "Dental Checkup", "Ryan Walker"],
                                                 ["11:30 AM", "Dental Cleaning", "Anthony Collins"],
                                             ].map(([time, service, patient]) => (
-                                            <div key={time} className="flex items-center gap-3 rounded-xl border border-emerald-100 bg-emerald-50/60 p-2.5">
+                                            <div key={time} className="flex flex-wrap items-center gap-2.5 rounded-xl border border-emerald-100 bg-emerald-50/60 p-2.5 sm:flex-nowrap sm:gap-3">
                                                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-[11px] font-bold text-white">
                                                     {patient.split(" ").map((w) => w[0]).slice(0, 2).join("")}
                                                 </div>
@@ -391,13 +481,13 @@ return (
                                                     <div className="truncate text-sm font-semibold text-neutral-900">{service}</div>
                                                     <div className="truncate text-xs text-neutral-500">{patient}</div>
                                                 </div>
-                                                <span className="shrink-0 rounded-full bg-white px-2 py-1 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-100">{time}</span>
+                                                <span className="ml-auto shrink-0 rounded-full bg-white px-2 py-1 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-100 sm:ml-0">{time}</span>
                                             </div>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
+                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
                                         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                             <svg className="h-4 w-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                                             Clinic Staff
@@ -407,7 +497,7 @@ return (
                                                 ["Dr. David Harris", "Dental Specialist", "Available"],
                                                 ["Dr. Gabriel Robinson", "Dental Expert", "Busy"],
                                             ].map(([name, role, status]) => (
-                                                <div key={name} className="flex items-center gap-3 rounded-xl border border-neutral-100 bg-neutral-50 p-2.5">
+                                                <div key={name} className="flex flex-wrap items-center gap-2.5 rounded-xl border border-neutral-100 bg-neutral-50 p-2.5 sm:flex-nowrap sm:gap-3">
                                                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-[11px] font-bold text-indigo-700">
                                                         {name.replace("Dr. ", "").split(" ").map((w) => w[0]).slice(0, 2).join("")}
                                                     </div>
@@ -416,13 +506,12 @@ return (
                                                         <div className="truncate text-xs text-neutral-500">{role}</div>
                                                     </div>
                                                     <span
-                                                        className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold ${
+                                                        className={`ml-auto inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold sm:ml-0 ${
                                                         status === "Available"
                                                             ? "bg-emerald-50 text-emerald-600"
                                                             : "bg-amber-50 text-amber-600"
                                                         }`}
                                                     >
-                                                        <span className={`h-1.5 w-1.5 rounded-full ${status === "Available" ? "bg-emerald-500" : "bg-amber-500"}`} />
                                                         {status}
                                                     </span>
                                                 </div>
@@ -431,11 +520,11 @@ return (
                                     </div>
                                 </div>
 
-                                <div className="relative mt-4 flex items-center gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3">
+                                <div className="relative mt-4 flex items-start gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-3 sm:items-center sm:px-4">
                                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-600 text-white">
                                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                                     </span>
-                                    <div className="text-sm font-medium text-indigo-700">
+                                    <div className="text-xs font-medium leading-relaxed text-indigo-700 sm:text-sm">
                                         WhatsApp reminders sent to <span className="font-bold">12 patients</span> for tomorrow&apos;s visits.
                                     </div>
                                 </div>
@@ -496,14 +585,14 @@ return (
                     </div>
                 </div>
                 {/* Right column - Interactive Demo */}
-                <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-4 shadow-xl">
-                    <div className="rounded-2xl bg-[#f5f6fb] text-neutral-900">
+                <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-4 drop-shadow-xl">
+                    <div className="bg-white p-4 rounded-2xl text-neutral-900">
                         <div className="grid gap-4 sm:grid-cols-2">
-                            <div className="order-2 sm:order-2 rounded-2xl bg-white p-4 shadow-sm">
+                            <div className="order-2 sm:order-2 rounded-2xl bg-white p-4 drop-shadow-sm">
                                 <div className="text-xl hidden sm:block font-black text-neutral-900">Dental Clinic</div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1">
-                                    <div className="rounded-2xl hidden sm:block bg-white p-4 mt-3 shadow-sm">
+                                    <div className="rounded-2xl hidden sm:block bg-white p-4 mt-3 drop-shadow-sm">
                                         <div className="font-medium text-neutral-800">Appointments growing smoothly</div>
                                         <div className="mt-3 flex items-end gap-2">
                                             {["h-8","h-12","h-10","h-16","h-14","h-9","h-11","h-16"].map((bar, idx) => (
@@ -512,7 +601,7 @@ return (
                                         </div>
                                     </div>
 
-                                    <div className="mt-4 rounded-2xl bg-indigo-600 p-4 text-white shadow-lg">
+                                    <div className="mt-4 rounded-2xl bg-indigo-600 p-4 text-white drop-shadow-lg">
                                         <div className="opacity-90">Next appointment</div>
                                         <div className="mt-1 font-semibold">Emma Wilson · 11:00 AM</div>
                                         <div className="opacity-90">Dental Checkup · Room 2</div>
@@ -520,11 +609,11 @@ return (
                                 </div>
 
                                 <div className="mt-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-3">
-                                    <div className="rounded-xl bg-indigo-50 border border-indigo-100 p-3 shadow-md">
+                                    <div className="rounded-xl bg-indigo-50 border border-indigo-100 p-3 drop-shadow-md">
                                         <div className="text-indigo-600">Patient rating</div>
                                         <div className="text-xl font-bold">4.9/5</div>
                                     </div>
-                                    <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-3 shadow-md">
+                                    <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-3 drop-shadow-md">
                                         <div className="text-emerald-600">Reminders sent</div>
                                         <div className="text-xl font-bold">126</div>
                                     </div>
@@ -532,12 +621,12 @@ return (
                             </div>
 
                             <div className="order-1 sm:order-1 space-y-3">
-                                <div className="rounded-xl border border-neutral-100 bg-white shadow-sm p-3 space-y-1">
+                                <div className="rounded-xl border border-neutral-100 bg-white drop-shadow-sm p-3 space-y-1">
                                     <div className="relative">
                                         <Image
                                         src="/dentist-profile.jpg"
                                         alt="Dental Clinic Profile"
-                                        className="relative h-16 w-16 rounded-full border-4 border-white object-cover shadow-md"
+                                        className="relative h-16 w-16 rounded-full border-4 border-white object-cover drop-shadow-md"
                                         width={64}
                                         height={64}
                                         priority
@@ -549,7 +638,7 @@ return (
                                     </div>
                                 </div>
 
-                                <div className="rounded-2xl bg-white p-4 shadow-sm">                                    
+                                <div className="rounded-2xl bg-white p-4 drop-shadow-sm">                                    
                                     <div className="mt-3">
                                         <div className="uppercase text-sm text-neutral-500">Dental Clinic services</div>
                                         <div className="mt-2 flex flex-wrap gap-2">
@@ -606,7 +695,7 @@ return (
         <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 lg:grid-cols-2">
                 {/* Left column - Content */}
-                <div className="relative rounded-2xl overflow-hidden bg-white p-3 shadow-xl">
+                <div className="relative rounded-2xl overflow-hidden bg-white p-3 drop-shadow-xl">
                     <Image src="/dentist-service.jpg" alt="dentist services available" className="h-full w-full object-cover rounded-xl" width={500} height={500} />
                 </div>
                 {/* Right column - Interactive Demo */}
@@ -663,9 +752,9 @@ return (
             </div>
           </div>
           {/* Right */}
-          <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 shadow-2xl backdrop-blur">
+          <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
             <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
-              <div className="relative overflow-hidden rounded-2xl hidden sm:block border border-neutral-200 bg-white p-3 shadow-sm">
+              <div className="relative overflow-hidden rounded-2xl hidden sm:block border border-neutral-200 bg-white p-3 drop-shadow-sm">
                 <div className="flex items-center gap-2 text-neutral-700 font-semibold">
                   <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -684,7 +773,7 @@ return (
                       <button key={time} type="button"
                         className={`rounded-xl border px-2 py-2 text-sm font-medium transition-all duration-200 ${
                           time === "10:00 AM"
-                            ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-300/60"
+                            ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
                             : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
                         }`}
                       >
@@ -724,8 +813,8 @@ return (
           </div>
         </div>
 
-        <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 shadow-xl backdrop-blur">
-          <h3 className="text-2xl font-bold text-center text-neutral-900">Supports Every Type of Physiotherapy Appointment</h3>
+        <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 drop-shadow-xl backdrop-blur">
+          <h3 className="text-2xl font-bold text-center text-neutral-900">Supports Every Type of Dental Clinic Appointment</h3>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             {[
               "Initial Consultation",
@@ -734,11 +823,11 @@ return (
               "Follow-up Appointment",
               "Rehabilitation Program",
             ].map((tag) => (
-              <span key={tag} className="px-3 py-1.5">✓ {tag}</span>
+              <span key={tag} className="px-3 py-1.5 flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}</span>
             ))}
           </div>
           <div className="mt-5 text-center">
-            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your dental clinic booking setup - Dentist Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
+            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your dental clinic booking setup - Dentist Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
           </div>
         </div>
       </div>
@@ -761,9 +850,9 @@ return (
                   description="No long onboarding process. No IT knowledge required. Most clinics are taking bookings within a single afternoon."
                 />
                 {growthRoadmap.map((point, i) => (
-                    <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 drop-shadow-md transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
                         <div className="flex items-start gap-2">
-                            <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-500/25">
+                            <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
                                 <div className="font-bold">0{i + 1}</div>
                             </div>
                             <div className="relative">
@@ -776,10 +865,10 @@ return (
             </div>
 
             {/* RIGHT FEATURES GRID */}
-            <div className="relative rounded-2xl shadow-xl bg-white p-3">                
+            <div className="relative rounded-2xl drop-shadow-xl bg-white p-3">                
                 <Image src="/dentist-grow-2.1.jpg" alt="Dental Clinic Growth Roadmap" width={700} height={600} className="w-full h-full rounded-xl object-cover"/>
 
-                <div className="absolute right-0 -top-10 hidden lg:block w-50 rounded-xl bg-white p-4 shadow-md animate-float">
+                <div className="absolute right-0 -top-10 hidden lg:block w-50 rounded-xl bg-white p-4 drop-shadow-md animate-float">
                     <div className="text-sm uppercase text-neutral-400">Dental Clinic Growth</div>
                     <div className="font-bold text-neutral-900">30 days to grow your dental clinic</div>
                     <div className="mt-3 flex items-end gap-2">
@@ -794,7 +883,7 @@ return (
                     </div>
                 </div>
 
-                <div className="pointer-events-none hidden lg:block absolute left-0 -bottom-10 rounded-xl border border-violet-100 bg-white p-4 shadow-xl animate-float">
+                <div className="pointer-events-none hidden lg:block absolute left-0 -bottom-10 rounded-xl border border-violet-100 bg-white p-4 drop-shadow-xl animate-float">
                     <div className="text-sm uppercase text-neutral-500">New Appointment</div>
                     <div className="mt-1 font-bold text-neutral-900">Jason Howard · 11:30 AM</div>
                     <div className="text-neutral-600">Synced to Dentist Clinic Operations Board</div>
@@ -840,36 +929,88 @@ return (
 
     {/* Call-to-Action Section */}
     <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10">
-                <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10 md:p-6 lg:p-8 xl:p-10">
+              <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
                 {/* left: Content */}
-                <div className="space-y-3">
-                    <Heading
+                <div className="space-y-6">
+                  <Heading
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
-                    />
-                    
-                    <div className="mt-8">
-                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Dentist Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
+                  />
+                  
+                  {/* <div className="mt-8">
+                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Doctor Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
+                  </div> */}
+
+                  <div className="space-y-5">
+                    {ctaHighlightFeatures.map((item) => (
+                      <div key={item.title} className="flex items-center gap-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white drop-shadow-sm">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <p className="text-base font-bold text-white">{item.title}</p>
+                          <p className="text-sm text-white/85">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex -space-x-2.5">
+                        {ctaTrustAvatars.map((src) => (
+                          <Image
+                            key={src}
+                            src={src}
+                            alt=""
+                            width={40}
+                            height={40}
+                            className="relative h-10 w-10 rounded-full border-2 border-white object-cover"
+                          />
+                        ))}
+                      </div>
+                      <div className="hidden h-10 w-px bg-white/30 sm:block" aria-hidden />
+                      <div>
+                        <p className="text-sm leading-snug text-white">
+                          Trusted by <span className="font-semibold">2,500+</span> businesses worldwide
+                        </p>
+                        <div className="mt-1 flex gap-0.5" aria-label="5 out of 5 stars">
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <svg key={i} className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap gap-3 text-white">
-                    {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                        <span key={item}>✔ {item}</span>
-                    ))}
+                    <div className="rounded-2xl bg-slate-100/95 px-4 py-4 sm:px-5">
+                      <div className="grid gap-4 sm:grid-cols-3 sm:gap-3">
+                        {ctaTrustBadges.map((item) => (
+                          <div key={item.title} className="flex items-start gap-2">
+                            {item.icon}
+                            <div className="min-w-0">
+                              <div className="text-sm font-bold text-indigo-950">{item.title}</div>
+                              <div className="text-xs text-slate-500">{item.description}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
+                  </div>
                 </div>
                 {/* right: Image */}
-                <div className="relative mx-auto w-full bg-white p-4 sm:p-8 rounded-xl shadow-xl">
-                    <ContactForm />               
+                <div className="relative mx-auto w-full rounded-xl drop-shadow-xl">
+                  <DemoFreeForm businessType="Dental Clinic"/>               
                 </div>
-                </div>
+              </div>
             </div>
-        </div>
+          </div>
     </section>
     </>
 );

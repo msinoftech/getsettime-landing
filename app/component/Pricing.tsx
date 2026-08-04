@@ -1,9 +1,17 @@
 "use client";
 import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
-import { pricingTiers, EXTRA_SEAT_PRICE, type PricingTier } from "@/lib/pricing-data";
+import {
+  pricingTiers,
+  applyRegionalPrices,
+  formatPrice,
+  formatRegionalPrice,
+  type PricingTier,
+  type RegionalPricing,
+} from "@/lib/pricing-data";
+import { useRegionalPricing } from "./useRegionalPricing";
 import Link from "next/link";
 import type { FC } from "react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Heading from "./Heading";
 
 interface PricingHeaderContent {
@@ -41,34 +49,46 @@ interface PricingProps {
   variant?: "home" | "page";
 }
 
-export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier, isAnnual }) => {
-  const annualDiscount = tier.name === "Starter" || tier.price === "Free" ? 1 : 0.9; // no annual discount on Starter
+export const PricingCard: FC<{
+  tier: PricingTier;
+  isAnnual: boolean;
+  region: RegionalPricing;
+}> = ({ tier, isAnnual, region }) => {
+  const annualDiscount = tier.name === "Starter" || tier.price === "Free" ? 1 : 0.9;
   const monthlyPrice = Number(tier.price);
   const annualPrice = Math.round(monthlyPrice * annualDiscount);
   const displayPrice = tier.price === "Free" ? "Free" : isAnnual ? `${annualPrice}` : `${monthlyPrice}`;
 
   return (
-    <div className={`pricing-card relative h-full rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl space-y-4 ${ tier.popular ? 'border-indigo-300 bg-white/75 shadow-xl shadow-indigo-200/50 ring-1 ring-indigo-200 backdrop-blur' : 'border-white/70 bg-white/80 shadow-xl shadow-slate-200/70 backdrop-blur' }`}>
+    <div className={`pricing-card relative h-full rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-xl space-y-4 ${ tier.popular ? 'border-indigo-300 bg-white/75 drop-shadow-xl drop-shadow-indigo-200/50 ring-1 ring-indigo-200 backdrop-blur' : 'border-white/70 bg-white/80 drop-shadow-xl drop-shadow-slate-200/70 backdrop-blur' }`}>
       {tier.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <div className="bg-indigo-600 text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-lg">Most Popular</div>
+          <div className="bg-indigo-600 text-white text-xs font-semibold px-4 py-2 rounded-xl drop-shadow-lg">Most Popular</div>
         </div>
       )}
 
       <div className="relative space-y-4">
-        <div className="flex flex-col sm:flex-row items-start justify-between gap-2">
-          <div>
+        <div className="flex flex-col sm:flex-row justify-between gap-2">
+          <div className="basis-1/2">
             <div className="font-medium uppercase tracking-widest text-indigo-600">{tier.name}</div>
             <div>{tier.subtitle}</div>
           </div>
-          <span>
-            {tier.price === "Free" ? "" : <><span className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-600">GST Extra</span></>}
+          <span className="basis-1/2 text-right">
+            {tier.price === "Free" || !region.taxLabel ? (
+              ""
+            ) : (
+              <span className="inline-block rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-600">
+                {region.taxLabel}
+              </span>
+            )}
           </span>
         </div>
         
         <div className="relative">
           <span className="text-4xl font-bold text-neutral-900">
-            {tier.price === "Free" ? displayPrice : <><span className="rate-sign">₹</span>{displayPrice}</>}
+            {tier.price === "Free"
+              ? displayPrice
+              : formatPrice(Number(displayPrice), region.currency)}
           </span>
           {tier.price !== "Free" && (
             <span className="text-neutral-600 ml-1">
@@ -105,8 +125,8 @@ export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier
         ))}
       </div>
 
-      <Link href={tier.buttonLink} target="_blank" aria-label={`${tier.buttonText} - Pricing Card`} className={`w-full flex items-center justify-center rounded-xl px-4 py-2.5 text-sm transition-all duration-300 ${
-      tier.popular ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-xl' : 'border border-slate-200 bg-neutral-900 text-white hover:bg-neutral-800' }`}
+      <Link href={tier.buttonLink} target="_blank" aria-label={`Start with - ${tier.name} plan`} className={`w-full flex items-center justify-center rounded-xl px-4 py-2.5 text-sm transition-all duration-300 ${
+      tier.popular ? 'bg-indigo-600 text-white drop-shadow-lg drop-shadow-indigo-500/25 hover:drop-shadow-xl' : 'border border-slate-200 bg-neutral-900 text-white hover:bg-neutral-800' }`}
       >{tier.buttonText}</Link>
     </div>
   );
@@ -114,23 +134,27 @@ export const PricingCard: FC<{ tier: PricingTier; isAnnual: boolean }> = ({ tier
 
 export const BillingToggle: FC<{ isAnnual: boolean; onChange: (annual: boolean) => void }> = ({ isAnnual, onChange }) => (
   <div className="flex justify-center mb-16">
-    <div className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/90 p-2 shadow-lg shadow-slate-200/60 backdrop-blur">
-      <button type="button" onClick={() => onChange(false)} className={`rounded-xl px-5 py-2 text-sm cursor-pointer ${ !isAnnual ? "bg-indigo-600 text-white shadow" : "bg-white text-neutral-600 hover:bg-indigo-500/10 hover:text-indigo-600" }`}>Monthly</button>
-      <button type="button" onClick={() => onChange(true)} className={`rounded-xl px-5 py-2 text-sm cursor-pointer ${ isAnnual ? "bg-indigo-600 text-white shadow" : "bg-white text-neutral-600 hover:bg-indigo-500/10 hover:text-indigo-600" }`}>Annual</button>
+    <div className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/90 p-2 drop-shadow-lg drop-shadow-slate-200/60 backdrop-blur">
+      <button type="button" onClick={() => onChange(false)} className={`rounded-xl px-5 py-2 text-sm cursor-pointer ${ !isAnnual ? "bg-indigo-600 text-white drop-shadow" : "bg-white text-neutral-600 hover:bg-indigo-500/10 hover:text-indigo-600" }`}>Monthly</button>
+      <button type="button" onClick={() => onChange(true)} className={`rounded-xl px-5 py-2 text-sm cursor-pointer ${ isAnnual ? "bg-indigo-600 text-white drop-shadow" : "bg-white text-neutral-600 hover:bg-indigo-500/10 hover:text-indigo-600" }`}>Annual</button>
       <div className="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-md">Save 10%</div>
     </div>
   </div>
 );
 
-export default function Pricing({ bottomCtaContent, trustContent, variant = "home" }: PricingProps = {}) {
+export default function Pricing({ variant = "home" }: PricingProps = {}) {
   const [isAnnual, setIsAnnual] = useState(false);
   const isPage = variant === "page";
+  const region = useRegionalPricing();
 
-  const tiers = pricingTiers.map((tier) =>
-    tier.name === "Enterprise"
-      ? tier
-      : { ...tier, buttonLink: tier.buttonText === "Get Started" ? REGISTER_GOOGLE_URL : tier.buttonLink }
-  );
+  const tiers = useMemo(() => {
+    const localized = applyRegionalPrices(pricingTiers, region);
+    return localized.map((tier) =>
+      tier.name === "Enterprise"
+        ? tier
+        : { ...tier, buttonLink: tier.buttonText === "Get Started" ? REGISTER_GOOGLE_URL : tier.buttonLink }
+    );
+  }, [region]);
 
   return (
     <section id="pricing" className={`relative overflow-hidden bg-[#f6f7fb] scroll-mt-20 ${isPage ? "py-10 sm:py-14" : "py-20"}`}>
@@ -145,7 +169,7 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
 
         {!isPage && (
-          <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-4 shadow-2xl shadow-indigo-600/20 sm:p-8 md:p-10 max-w-7xl mx-auto">
+          <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-4 drop-shadow-2xl drop-shadow-indigo-600/20 sm:p-8 md:p-10 max-w-7xl mx-auto">
             <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/20 blur-3xl" />
             <div className="absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
             <div className="relative grid gap-8 lg:grid-cols-[1fr_320px] lg:items-center">
@@ -163,7 +187,7 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
                   <span className="rounded-xl bg-white/15 px-4 py-2 ring-1 ring-white/20">Plans based on seats</span>
                 </div>
               </div>
-              <div className="rounded-3xl bg-white p-4 shadow-2xl sm:p-6 space-y-3">
+              <div className="rounded-3xl bg-white p-4 drop-shadow-2xl sm:p-6 space-y-3">
                 <div className="text-sm font-semibold uppercase tracking-widest text-slate-500">Included Free</div>
                 <div className="flex items-end gap-2">
                   <span className="text-5xl font-black tracking-tight text-slate-950">250</span>
@@ -172,7 +196,7 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
                 <div className="rounded-2xl bg-indigo-50 p-4">
                   <div className="text-sm">Start accepting appointments without payment. Upgrade when your workspace needs more seats or more capacity.</div>
                 </div>
-                <Link href={REGISTER_URL} target="_blank" className="mt-5 flex w-full items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700">
+                <Link href={REGISTER_URL} target="_blank" aria-label="Start Free Now" role="button" className="mt-5 flex w-full items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700">
                   Start Free Now
                 </Link>
               </div>
@@ -184,21 +208,21 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
           <Heading
             badge="Pricing Plans"
             title="Choose the plan that fits your team"
-            description="Transparent monthly pricing in INR. Toggle annual billing on Professional and Enterprise to save 10%."
+            description={`Transparent monthly pricing in ${region.currencyLabel}. Toggle annual billing on Professional and Enterprise to save 10%.`}
             wrapperClassName="mb-6 space-y-3 text-center"
           />
         )}
 
         <BillingToggle isAnnual={isAnnual} onChange={setIsAnnual} />
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-3 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
           {tiers.map((tier: PricingTier) => (
-            <PricingCard key={tier.name} tier={tier} isAnnual={isAnnual} />
+            <PricingCard key={tier.name} tier={tier} isAnnual={isAnnual} region={region} />
           ))}
         </div>
 
         {/* BOTTOM CTA SECTION */}
-        <div className="mt-10 rounded-2xl bg-white p-6 shadow-sm">
+        <div className="mt-10 rounded-2xl bg-white p-6 drop-shadow-sm">
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="space-y-2">
               <h3 className="text-xl text-neutral-900 font-bold">Need more service providers?</h3>
@@ -206,7 +230,9 @@ export default function Pricing({ bottomCtaContent, trustContent, variant = "hom
             </div>
             <div className="rounded-xl bg-neutral-900 px-6 py-4 text-white">
               <p className="text-sm text-white">Extra Seat</p>
-              <p className="text-2xl font-bold">₹{EXTRA_SEAT_PRICE} / month</p>
+              <p className="text-2xl font-bold">
+                {formatRegionalPrice("extraSeat", region)} / month
+              </p>
             </div>
           </div>
         </div>

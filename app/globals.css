@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../lib/**/*.{ts,tsx}";
 
 body {
   color: var(--color-neutral-600);
@@ -18,6 +19,26 @@ p{
   50% { transform: translateY(-20px); }
 }
 
+@keyframes aurora-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 20px) scale(1.1); }
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 @keyframes fade-in-scale {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -26,6 +47,16 @@ p{
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes bf-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bf-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 @keyframes slide-in-right {
@@ -79,4 +110,55 @@ p{
 }
 .blog-content tr:nth-child(even) td {
   background: var(--color-neutral-50);
+}
+
+
+@media (min-width: 1280px) and (max-width: 1500px) {
+  .free-booking-feature span {
+    font-size: 10px;
+  }
+}
+
+/* Keep country selector inside the shared field shell (no split borders) */
+.intl-phone-shell .react-international-phone-country-selector {
+  flex-shrink: 0;
+}
+.intl-phone-shell .react-international-phone-country-selector-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0 0.35rem 0 0.75rem;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.intl-phone-shell .react-international-phone-country-selector-button:hover,
+.intl-phone-shell .react-international-phone-country-selector-button:focus {
+  background: transparent !important;
+}
+.intl-phone-shell .react-international-phone-country-selector-dropdown {
+  z-index: 50;
+  max-height: 15rem;
+  overflow: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+@keyframes solutions-stage-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.solutions-stage {
+  animation: solutions-stage-in 0.35s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solutions-stage {
+    animation: none;
+  }
 }

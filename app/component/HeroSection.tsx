@@ -42,15 +42,15 @@ export default function HeroSection() {
 
             {/* Hero stats */}
             <div className="flex flex-wrap gap-3">
-              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
+              <div className="bg-white rounded-2xl drop-shadow-sm p-5 hover:drop-shadow-md transition">
                 <div className="text-xl sm:text-3xl font-bold text-neutral-900">50K+</div>
                 <div className="text-xs sm:text-sm">Active Users</div>
               </div>
-              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
+              <div className="bg-white rounded-2xl drop-shadow-sm p-5 hover:drop-shadow-md transition">
                 <div className="text-xl sm:text-3xl font-bold text-neutral-900">2M+</div>
                 <div className="text-xs sm:text-sm">Appointments</div>
               </div>
-              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
+              <div className="bg-white rounded-2xl drop-shadow-sm p-5 hover:drop-shadow-md transition">
                 <div className="text-xl sm:text-3xl font-bold text-neutral-900">98%</div>
                 <div className="text-xs sm:text-sm">Satisfaction</div>
               </div>
@@ -59,7 +59,7 @@ export default function HeroSection() {
           {/* Right column - Interactive Demo */}
           <div className="relative w-full">
             <div className="relative mx-auto w-full max-w-full animate-fade-in-scale">
-              <div className="relative w-full min-h-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="relative w-full min-h-auto bg-white rounded-2xl drop-shadow-2xl overflow-hidden">
                 {/* Booking Admin Dashboard Header */}
                 <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
                   <div className="flex items-center gap-2 sm:gap-3">
@@ -118,8 +118,8 @@ export default function HeroSection() {
                           key={idx}
                           className={`flex items-center gap-2 sm:gap-3 p-2 rounded-lg sm:rounded-xl transition-all duration-300 cursor-pointer
                             ${booking.status === 'confirmed'
-                              ? 'bg-white/25 shadow-lg hover:shadow-500/20'
-                              : 'bg-white/10 hover:shadow-500/20'
+                              ? 'bg-white/25 drop-shadow-lg hover:drop-shadow-500/20'
+                              : 'bg-white/10 hover:drop-shadow-500/20'
                             } hover:-translate-y-1`}
                         >
                           <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold text-white bg-indigo-600 flex-shrink-0`}>
@@ -149,7 +149,7 @@ export default function HeroSection() {
                         { name: "Daniel Wilson", role: "Engineer", meeting: "Sprint Planning", time: "01:00 PM", date: "30 Apr", avatar: "/man.png" },
                         { name: "Isabella Miller", role: "HR Manager", meeting: "Interview Discussion", time: "02:00 PM", date: "30 Apr", avatar: "/teacher.png" },
                       ].map((meeting, idx) => (
-                        <div key={idx} className="flex items-center gap-2 p-2 rounded-lg sm:rounded-xl bg-white shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div key={idx} className="flex items-center gap-2 p-2 rounded-lg sm:rounded-xl bg-white drop-shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                           <div className="relative flex-shrink-0">
                             <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
                               <Image src={meeting.avatar} alt={meeting.name} width={32} height={32} className="object-cover" />

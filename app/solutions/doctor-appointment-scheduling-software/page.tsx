@@ -3,11 +3,11 @@ import Image from "next/image";
 import Script from "next/script";
 import Link from "next/link";
 import Card from "@/app/component/Card";
-import { APP_NAME, BASE_URL, contactInfo, REGISTER_GOOGLE_URL, LOGIN_URL, REGISTER_URL  } from "@/lib/config";
+import { APP_NAME, BASE_URL, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL  } from "@/lib/config";
 import { FaqSection } from "@/app/component/FaqSection";
 import Heading from "@/app/component/Heading";
-import ContactForm from "@/app/component/ContactForm";
 import { CheckListItem } from "@/app/component/CheckList";
+import DemoFreeForm from "@/app/component/DemoFreeForm";
 
 const pageUrl = `${BASE_URL}/solutions/doctor-appointment-scheduling-software`;
 
@@ -102,6 +102,90 @@ const features = [
     title: "Waiting Rooms Turn A Nightmare",
     description: "When appointments aren't managed digitally, patients stack up for hours. Frustrated waiting rooms hurt patient satisfaction and can damage your clinic's reputation, too.",
     icon: <svg fill="#4f39f6" height="40px" width="40px" version="1.1" id="Layer_1" viewBox="0 0 128 128"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <circle cx="39.2" cy="17.9" r="12.6"></circle> <path d="M78.6,70.2l-21.2,0l-5.7-28.4c-3.4-14.8-24.2-10.4-22,4.1l6.6,33c1,5,5,9.3,11.3,9.3h27.1c0,0,0,21.2,0,30 c0,9.5,13.3,9.5,13.3,0.2V79.7C88,75.1,84.8,70.2,78.6,70.2z"></path> <path d="M64.7,90.6H46.9c-6.4,0-11.8-3.8-13.4-11l-5.8-28.2c-1.4-6.9-11.1-4.6-9.8,2.1L24,82.9c2.5,11,11.9,18.1,21.4,18.1h19.5 C71.7,101,71.7,90.6,64.7,90.6z"></path> <path d="M91.1,3.9c-11.2,0-20.3,9.1-20.3,20.3c0,11.2,9.1,20.3,20.3,20.3c11.2,0,20.3-9.1,20.3-20.3C111.4,13.1,102.3,3.9,91.1,3.9 z M91.1,40.7c-9.1,0-16.5-7.4-16.5-16.5c0-9.1,7.4-16.5,16.5-16.5c9.1,0,16.5,7.4,16.5,16.5C107.5,33.3,100.1,40.7,91.1,40.7z"></path> <path d="M99.5,20l-8,3.6v-9.4c0-1.5-2.2-1.4-2.2,0l0,11.3c0,0.8,0.9,1.5,1.7,1l9.4-4.5C101.7,21.3,100.9,19.3,99.5,20z"></path> </g> </g></svg>,
+  },
+];
+
+const ctaHighlightFeatures = [
+  {
+    title: "Online Booking 24/7",
+    description: "Let customers book anytime.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
+        <path d="m9 16 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Auto Reminders",
+    description: "Reduce no-shows effortlessly.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13.73 21a2 2 0 0 1-3.46 0" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Team & Calendar Management",
+    description: "Manage staff, services and schedules.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "Grow Your Business",
+    description: "More bookings. More happy clients.",
+    icon: (
+      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7 16V9M12 16V5M17 16v-3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+];
+
+const ctaTrustAvatars = [
+  "/doctor-profile.jpg",
+  "/dentist-profile.jpg",
+  "/salon-profile.jpg",
+  "/physiotherapy-profile.jpg",
+];
+
+const ctaTrustBadges = [
+  {
+    title: "Secure & Reliable",
+    description: "Enterprise grade security",
+    icon: (
+      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Super Easy Setup",
+    description: "Get started in minutes",
+    icon: (
+      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+  },
+  {
+    title: "24/7 Support",
+    description: "We're here to help",
+    icon: (
+      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm18 0h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5Z" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
   },
 ];
 
@@ -279,20 +363,20 @@ export default function DoctorAppointmentSchedulingSoftware() {
 
   const DoctorAppointmentBookingAppPoints = [
     {
-      title: "Patients book themselves",
-      desc: "Share your booking link on WhatsApp, your website, or Google. Patients choose a slot without calling you.",
+      title: "Personalised Dashboard",
+      desc: "Where doctors can analyse, track, and control the routine tasks: set availability, check appointments, review no-shows, etc.",
     },
     {
-      title: "Reminders go out automatically.",
-      desc: "SMS and WhatsApp reminders are sent to patients 24 hours before — no manual follow-up from your team.",
+      title: "Alerts and Reminders Management",
+      desc: "Make your own rules when the system notifies you, and send a reminder to your clients via email or WhatsApp.",
     },
     {
-      title: "Auto Sync and an organised calendar ",
-      desc: "See all upcoming appointments in one place. No double-bookings, no paper chaos.",
+      title: "Real-time Calendar Sync",
+      desc: "Once you set your availability and create events, your calendar automatically organises and updates itself to reflect upcoming bookings.",
     },
     {
-      title: "Works for all clinic sizes",
-      desc: "Whether you're a solo practitioner or running a multi-doctor clinic, GetSetTime",
+      title: "Cloud-Based Access",
+      desc: "Easy-to-accessible. Anytime, anywhere, you can access it on your device",
     },
   ];
 
@@ -337,39 +421,59 @@ export default function DoctorAppointmentSchedulingSoftware() {
               <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Doctor Appointment Scheduling Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                <div className="text-gray-500">Appointments</div>
-                <div className="text-2xl font-bold text-gray-900 mt-1">10,000+</div>
-                <div className="mt-4 h-2 bg-gray-200 rounded-full overflow-hidden">
-                  <div className="h-full w-[80%] bg-indigo-600 rounded-full"></div>
-                </div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                  <div className="flex items-center gap-2">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
+                          </svg>
+                      </span>
+                      <div>
+                          <div className="text-lg font-bold text-neutral-900">10,000+</div>
+                          <div className="text-xs font-semibold text-neutral-800">Appointments</div>
+                      </div>
+                  </div>
+                  <div className="text-xs text-neutral-500">Booked across clinics using GetSetTime</div>
               </div>
-              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                <div className="text-gray-500">Time Saved</div>
-                <div className="text-2xl font-bold text-gray-900 mt-1">3 hrs</div>
-                <div className="mt-3 flex gap-1">
-                  {[1,2,3,4,5].map((i)=>(
-                    <div key={i} className="h-2 flex-1 bg-indigo-600 rounded"></div>
-                  ))}
-                </div>
+
+              <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                  <div className="flex items-center gap-2">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                      </span>
+                      <div>
+                          <div className="text-lg font-bold text-neutral-900">3 hrs</div>
+                          <div className="text-xs font-semibold text-neutral-800">Time Saved</div>
+                      </div>
+                  </div>
+                  <div className="text-xs text-neutral-500">Daily admin time back for your team</div>
               </div>
-              <div className="bg-white rounded-2xl shadow-sm p-5 hover:shadow-md transition">
-                <div className="text-gray-500">Patient Rating</div>
-                <div className="text-2xl font-bold text-yellow-500 mt-1">4.8 ★</div>
-                <div className="mt-3 flex gap-1">
-                  {[1,2,3,4,5].map((i)=>(
-                    <span key={i} className="text-yellow-500">★</span>
-                  ))}
-                </div>
+
+              <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                  <div className="flex items-center gap-2">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 9.11c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                          </svg>
+                      </span>
+                      <div>
+                          <div className="text-lg font-bold text-neutral-900">4.8 ★</div>
+                          <div className="text-xs font-semibold text-neutral-800">Patient Rating</div>
+                      </div>
+                  </div>
+                  <div className="text-xs text-neutral-500">Average feedback from patients</div>
               </div>
             </div>
+
           </div>
           {/* Right column - Interactive Demo */}
           <div className="relative">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-100 via-white to-cyan-100 blur-3xl" />           
 
-            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-2xl animate-fade-in-scale">
+            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl animate-fade-in-scale">
               {/* Window chrome */}
               <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-4">
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -389,7 +493,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
               <div className="bg-gradient-to-br from-white via-indigo-50/30 to-white p-4">
                 {/* Doctor header */}
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-base font-bold text-white shadow-md shadow-indigo-500/20">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-base font-bold text-white drop-shadow-md drop-shadow-indigo-500/20">
                     MJ
                   </div>
                   <div className="min-w-0 flex-1">
@@ -420,11 +524,11 @@ export default function DoctorAppointmentSchedulingSoftware() {
                   ].map((slot) => (
                     <div
                       key={slot.time}
-                      className={`rounded-lg border px-2 py-2 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
+                      className={`rounded-lg border px-2 py-2 text-center transition-all duration-300 hover:-translate-y-0.5 hover:drop-shadow-md ${
                         slot.status === "Booked"
                           ? "border-red-200 bg-red-50 text-red-500 line-through decoration-red-300"
                           : slot.status === "Selected"
-                          ? "border-indigo-600 bg-indigo-600 text-white shadow-md shadow-indigo-500/25"
+                          ? "border-indigo-600 bg-indigo-600 text-white drop-shadow-md drop-shadow-indigo-500/25"
                           : slot.status === "Pending"
                           ? "border-amber-200 bg-amber-50 text-amber-700"
                           : "border-emerald-200 bg-emerald-50 text-emerald-700"
@@ -436,11 +540,10 @@ export default function DoctorAppointmentSchedulingSoftware() {
                 </div>
 
                 <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
+                  <div className="rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm">
                     <div className="mb-3 flex items-center justify-between">
                       <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Next patient</div>
                       <div className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-1 text-[11px] font-semibold text-emerald-700">
-                        <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                         Confirmed
                       </div>
                     </div>
@@ -453,7 +556,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     </div>
                   </div>
 
-                  <div className="relative overflow-hidden rounded-xl bg-neutral-900 p-4 text-white shadow-md">
+                  <div className="relative overflow-hidden rounded-xl bg-neutral-900 p-4 text-white drop-shadow-md">
                     <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-indigo-500/20" />
                     <div className="relative">
                       <div className="text-xs font-medium text-neutral-400">Today at a glance</div>
@@ -497,8 +600,8 @@ export default function DoctorAppointmentSchedulingSoftware() {
         
         <Heading
           badge="The Real Problem"
-          title="Running a Clinic (Practice) Without a Booking System Is Costing You More Than You Think"
-          description="Even in metro cities, Most doctors still rely on phone calls, paper registers, and word of mouth to manage appointments. Here's what that looks like every day."
+          title="Running a Clinic Without a Booking System Is Costing You More Than You Think"
+          description="Still, many healthcare practitioners, even in metro cities, rely on traditional methods for managing appointments. Then, what? Every day, the same routine, same headaches that can be overcome. They experience:"
           wrapperClassName="text-center max-w-4xl mx-auto mb-8 space-y-3"
         />
         
@@ -521,14 +624,14 @@ export default function DoctorAppointmentSchedulingSoftware() {
           <div className="space-y-3">
             <Heading
               badge="The Solution"
-              title="Our doctor appointment booking app"
-              highlightText="manages routine work effortlessly."
-              description="GetSetTime is a simple online doctor appointment booking system. Patients find your availability, pick a time, and confirm — all without a single phone call to your clinic."
+              title="A Tailored Scheduling Software for Solo Practitioners to"
+              highlightText="Handle Routine Tasks Effortlessly"
+              description="One centralised system where doctors can track real-time performance and set repetitive tasks for automation."
             />
             <div className="space-y-3">
               {DoctorAppointmentBookingAppPoints.map((point, i) => (
-                <div key={i} className="group flex gap-4 p-4 rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  <div className="flex h-9 w-9 min-w-9 min-h-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/25">✓</div>
+                <div key={i} className="group flex gap-4 p-4 rounded-xl bg-white drop-shadow-sm transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
+                  <div className="flex h-9 w-9 min-w-9 min-h-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white drop-shadow-lg drop-shadow-indigo-500/25"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg></div>
                   <div>
                     <div className="font-medium text-neutral-900">{point.title}</div>
                     <p>{point.desc}</p>
@@ -540,7 +643,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
           {/* RIGHT - EXACT REF UI */}
           <div className="relative">           
           
-            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-2xl">
+            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
               {/* Window chrome */}
               <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-4">
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -559,13 +662,13 @@ export default function DoctorAppointmentSchedulingSoftware() {
 
               <div className="bg-gradient-to-br from-white via-indigo-50/30 to-white p-3 md:p-4">
                 {/* Doctor header */}
-                <div className="flex items-center gap-4 rounded-xl border border-neutral-100 bg-white p-4 shadow-sm">
+                <div className="flex items-center gap-4 rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm">
                   <div className="relative shrink-0">
                     <div className="absolute inset-0 rounded-full bg-indigo-300/40 blur-md" />
                     <Image
                       src="/doctor-profile.jpg"
                       alt="Doctor profile"
-                      className="relative h-16 w-16 rounded-full border-4 border-white object-cover shadow-md"
+                      className="relative h-16 w-16 rounded-full border-4 border-white object-cover drop-shadow-md"
                       width={64}
                       height={64}
                       priority
@@ -580,7 +683,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     <div className="truncate text-xs text-neutral-500">MBBS, MD • 10+ years experience</div>
                   </div>
 
-                  <div className="hidden sm:flex items-center gap-3 rounded-2xl border border-emerald-100 bg-white px-3 py-2 shadow-sm">
+                  <div className="hidden sm:flex items-center gap-3 rounded-2xl border border-emerald-100 bg-white px-3 py-2 drop-shadow-sm">
                     <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-emerald-50 text-lg">
                       ✅
                     </div>
@@ -594,7 +697,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                 <div className="mt-4 grid gap-4 grid-cols-1 md:grid-cols-2">
                   <div className="space-y-4">
                     {/* Next appointment */}
-                    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-4 text-white shadow-md shadow-indigo-500/20">
+                    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-4 text-white drop-shadow-md drop-shadow-indigo-500/20">
                       <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-white/10" />
                       <div className="relative">
                         <div className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-white/80">
@@ -608,7 +711,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
 
                     {/* Stat tiles */}
                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-3">
-                      <div className="rounded-xl border border-neutral-100 bg-white p-3 shadow-sm">
+                      <div className="rounded-xl border border-neutral-100 bg-white p-3 drop-shadow-sm">
                         <div className="flex items-center gap-2">
                           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
                             <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.69-1.54 1.12l-3.56-2.59a1 1 0 00-1.18 0l-3.56 2.59c-.78.57-1.84-.2-1.54-1.12l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.61c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" /></svg>
@@ -617,7 +720,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                         </div>
                         <div className="mt-1.5 text-xl font-bold text-neutral-900">4.9<span className="text-sm font-medium text-neutral-400">/5</span></div>
                       </div>
-                      <div className="rounded-xl border border-neutral-100 bg-white p-3 shadow-sm">
+                      <div className="rounded-xl border border-neutral-100 bg-white p-3 drop-shadow-sm">
                         <div className="flex items-center gap-2">
                           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
                             <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
@@ -629,7 +732,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     </div>
 
                     {/* Weekly bookings mini chart */}
-                    <div className="rounded-xl hidden md:block border border-neutral-100 bg-white p-4 shadow-sm">
+                    <div className="rounded-xl hidden md:block border border-neutral-100 bg-white p-4 drop-shadow-sm">
                       <div className="flex items-center justify-between">
                         <div className="text-xs font-semibold text-neutral-700">This week&apos;s bookings</div>
                         <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700">
@@ -657,7 +760,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     </div>
                   </div>
 
-                  <div className="rounded-xl space-y-3 bg-white p-4 shadow-md">
+                  <div className="rounded-xl space-y-3 bg-white p-4 drop-shadow-md">
                     <div className="flex items-center justify-between gap-4">
                       <div>
                         <div className="font-bold text-neutral-900">Availability</div>
@@ -676,7 +779,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                         { label: "04:00 PM", status: "available" },
                         { label: "04:30 PM", status: "available" },
                       ].map((slot) => (
-                        <div key={slot.label} className={`rounded-lg border px-2 py-2 text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md  decoration-red-300 ${
+                        <div key={slot.label} className={`rounded-lg border px-2 py-2 text-center transition-all duration-300 hover:-translate-y-0.5 hover:drop-shadow-md ${
                             slot.status === "available"
                               ? "border-emerald-200 bg-emerald-50 text-emerald-700"
                               : slot.status === "booked"
@@ -723,13 +826,13 @@ export default function DoctorAppointmentSchedulingSoftware() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {needsChecklist.map((item, i) => (
-            <Card key={item.title} title={item.title} description={item.desc} icon={item.icon} iconWrapperClassName = "w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-md" wrapperClassName = "relative" />
+            <Card key={item.title} title={item.title} description={item.desc} icon={item.icon} iconWrapperClassName = "w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white drop-shadow-md" wrapperClassName = "relative" />
           ))}
         </div>
       </div>
     </section>
 
-    {/* CLINIC SCHEDULING CHALLENGES SECTION */}
+    {/* CLINIC REALTY CHECK SECTION */}
     <section className="relative overflow-hidden py-14 sm:py-20 bg-[linear-gradient(180deg,#eef2ff_0%,#e0f2fe_55%,#f8fafc_100%)]">
       
       <div className="absolute inset-0 hidden sm:block bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.22),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.24),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_35%)]" />
@@ -743,8 +846,9 @@ export default function DoctorAppointmentSchedulingSoftware() {
           <div className="space-y-4">
             <Heading 
               badge="Clinic Reality Check" 
-              title="Why modern clinics switch to smarter appointment scheduling" 
-              description="As patient demand increases, manual booking creates delays, front-desk overload, and inconsistent follow-up. A structured digital system helps your clinic deliver faster and more predictable care." 
+              title="Why Should Healthcare Service Providers" 
+              highlightText="Switch To A Booking System?"
+              description="A structured booking system helps your clinic deliver faster, more predictable care, especially as patient volumes increase. It efficiently handles the front-desk overload." 
             />
 
             <div className="space-y-3">
@@ -759,9 +863,9 @@ export default function DoctorAppointmentSchedulingSoftware() {
             </div>
           </div>
           {/* Right */}
-          <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 shadow-2xl backdrop-blur">
+          <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
             <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
-              <div className="relative overflow-hidden hidden sm:block rounded-2xl border border-neutral-200 bg-white p-3 shadow-sm">
+              <div className="relative overflow-hidden hidden sm:block rounded-2xl border border-neutral-200 bg-white p-3 drop-shadow-sm">
                 <div className="flex items-center gap-2 font-semibold text-neutral-700">
                   <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -780,7 +884,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                       <button key={time} type="button"
                         className={`rounded-xl border px-2 py-2 font-medium transition-all duration-200 ${
                           time === "10:00 AM"
-                            ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-300/60"
+                            ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
                             : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
                         }`}
                       >
@@ -828,7 +932,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 shadow-xl backdrop-blur">
+        <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 drop-shadow-xl backdrop-blur">
           <h3 className="text-2xl font-bold text-center text-neutral-900">Built for every type of medical practice</h3>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             {[
@@ -841,12 +945,12 @@ export default function DoctorAppointmentSchedulingSoftware() {
               "Mental Wellness",
               "Physiotherapy",
             ].map((tag) => (
-              <span key={tag} className="p-1">✓ {tag}</span>
+              <span key={tag} className="p-1 flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}</span>
             ))}
           </div>
 
           <div className="mt-5 text-center">
-            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your clinic setup - Doctor Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
+            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your clinic setup - Doctor Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
           </div>
         </div>
       </div>
@@ -873,8 +977,8 @@ export default function DoctorAppointmentSchedulingSoftware() {
               "Improve repeat visits with automated reminders and follow-up nudges",
               "Track clinic growth with clear appointment and utilisation insights",
             ].map((point, index) => (
-              <div key={point} className="flex items-start gap-3 rounded-xl bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-500/25">
+              <div key={point} className="flex items-start gap-3 rounded-xl bg-white p-3 drop-shadow-sm transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
+                <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
                   <span className="font-bold">0{index + 1}</span>
                 </div>
                 <p className="text-neutral-700">{point}</p>
@@ -884,7 +988,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
         </div>
         {/* right: Image */}
         <div className="relative">
-          <div className="rounded-xl border border-white bg-white p-3 shadow-xl">
+          <div className="rounded-xl border border-white bg-white p-3 drop-shadow-xl">
             <Image
               src="/grow-doctor-2.jpg"
               alt="Doctor reviewing clinic growth on portal dashboard"
@@ -893,7 +997,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
               className="w-full rounded-xl object-cover"
             />
           </div>
-          <div className="absolute -bottom-4 right-4 hidden lg:block rounded-xl border border-emerald-100 bg-white px-4 py-3 shadow-lg space-y-2 animate-float">
+          <div className="absolute -bottom-4 right-4 hidden lg:block rounded-xl border border-emerald-100 bg-white px-4 py-3 drop-shadow-lg space-y-2 animate-float">
             <div className="text-sm uppercase text-neutral-500">Monthly growth</div>
             <div className="text-lg font-bold"><span className="text-emerald-600 text-3xl">+38%</span> appointments</div>
           </div>
@@ -940,10 +1044,10 @@ export default function DoctorAppointmentSchedulingSoftware() {
     {/* Call-to-Action Section */}
     <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10 md:p-6 lg:p-8 xl:p-10">
               <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
                 {/* left: Content */}
-                <div className="space-y-3">
+                <div className="space-y-6">
                   <Heading
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
@@ -952,19 +1056,71 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     descriptionClassName = "text-white"
                   />
                   
-                  <div className="mt-8">
+                  {/* <div className="mt-8">
                     <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Doctor Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
+                  </div> */}
+
+                  <div className="space-y-5">
+                    {ctaHighlightFeatures.map((item) => (
+                      <div key={item.title} className="flex items-center gap-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white drop-shadow-sm">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <p className="text-base font-bold text-white">{item.title}</p>
+                          <p className="text-sm text-white/85">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
 
-                  <div className="mt-8 flex flex-wrap gap-3 text-white">
-                    {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                      <span key={item}>✔ {item}</span>
-                    ))}
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex -space-x-2.5">
+                        {ctaTrustAvatars.map((src) => (
+                          <Image
+                            key={src}
+                            src={src}
+                            alt=""
+                            width={40}
+                            height={40}
+                            className="relative h-10 w-10 rounded-full border-2 border-white object-cover"
+                          />
+                        ))}
+                      </div>
+                      <div className="hidden h-10 w-px bg-white/30 sm:block" aria-hidden />
+                      <div>
+                        <p className="text-sm leading-snug text-white">
+                          Trusted by <span className="font-semibold">2,500+</span> businesses worldwide
+                        </p>
+                        <div className="mt-1 flex gap-0.5" aria-label="5 out of 5 stars">
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <svg key={i} className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl bg-slate-100/95 px-4 py-4 sm:px-5">
+                      <div className="grid gap-4 sm:grid-cols-3 sm:gap-3">
+                        {ctaTrustBadges.map((item) => (
+                          <div key={item.title} className="flex items-start gap-2">
+                            {item.icon}
+                            <div className="min-w-0">
+                              <div className="text-sm font-bold text-indigo-950">{item.title}</div>
+                              <div className="text-xs text-slate-500">{item.description}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 {/* right: Image */}
-                <div className="relative mx-auto w-full bg-white p-4 sm:p-8 rounded-xl shadow-xl">
-                  <ContactForm />               
+                <div className="relative mx-auto w-full rounded-xl drop-shadow-xl">
+                  <DemoFreeForm businessType="Clinic / Healthcare"/>
                 </div>
               </div>
             </div>

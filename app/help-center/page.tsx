@@ -124,12 +124,7 @@ export default function HelpCenterPage() {
 
   return (
     <>
-      <Script
-        id="help-center-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <Script id="help-center-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       <section className="relative py-14 sm:py-20">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -149,7 +144,7 @@ export default function HelpCenterPage() {
             />
 
             <div className="mt-6 flex justify-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-neutral-100 bg-white px-4 py-2 shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-neutral-100 bg-white px-4 py-2 drop-shadow-sm">
                 <svg className="h-4 w-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -190,7 +185,7 @@ export default function HelpCenterPage() {
                 {/* right: Image */}
                 <div className="relative mx-auto w-full hidden lg:block">
                   <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
-                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 drop-shadow-xl">
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="font-semibold text-neutral-900">Today’s bookings</div>
@@ -221,7 +216,7 @@ export default function HelpCenterPage() {
                     </div>
                   </div>
 
-                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 drop-shadow-xl animate-float">
                     <div>No-show reduction</div>
                     <div className="text-xl font-bold text-neutral-900">-32%</div>
                   </div>

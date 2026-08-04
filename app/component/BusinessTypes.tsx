@@ -14,7 +14,7 @@ const SectionTitle: FC<{ eyebrow: string; title: string; desc?: string }> = ({ e
 );
 
 const BusinessTabs: FC<{ tabs: string[]; active: string; onChange: (v: string) => void }> = ({ tabs, active, onChange }) => (
-  <div role="tablist" aria-label="Business types" className="inline-flex items-center rounded-2xl bg-white/60 p-1 shadow-sm">
+  <div role="tablist" aria-label="Business types" className="inline-flex items-center rounded-2xl bg-white/60 p-1 drop-shadow-sm">
     {tabs.map((t) => (
       <button
         key={t}
@@ -26,7 +26,7 @@ const BusinessTabs: FC<{ tabs: string[]; active: string; onChange: (v: string) =
         onClick={() => onChange(t)}
         className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
           active === t
-            ? "bg-neutral-900 text-white shadow"
+            ? "bg-neutral-900 text-white drop-shadow"
             : "text-neutral-700 hover:bg-white/70"
         }`}
       >
@@ -37,9 +37,9 @@ const BusinessTabs: FC<{ tabs: string[]; active: string; onChange: (v: string) =
 );
 
 const BusinessCard: FC<{ title: string; points: string[]; icon: string }> = ({ title, points, icon }) => (
-  <article className="group rounded-2xl p-5 bg-white/50 backdrop-blur-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1" aria-label={title}>
+  <article className="group rounded-2xl p-5 bg-white/50 backdrop-blur-md drop-shadow-sm hover:drop-shadow-xl transition-all duration-300 hover:-translate-y-1" aria-label={title}>
     <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-xl bg-neutral-900 text-white flex items-center justify-center text-lg shadow-md" aria-hidden="true">{icon}</div>
+      <div className="w-10 h-10 rounded-xl bg-neutral-900 text-white flex items-center justify-center text-lg drop-shadow-md" aria-hidden="true">{icon}</div>
       <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
     </div>
     <ul className="mt-3 space-y-2 list-none">

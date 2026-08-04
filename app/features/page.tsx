@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
-import { APP_NAME, BASE_URL, LOGIN_URL, REGISTER_URL, REGISTER_GOOGLE_URL, contactInfo } from "@/lib/config";
+import { APP_NAME, BASE_URL, REGISTER_URL, REGISTER_GOOGLE_URL, contactInfo } from "@/lib/config";
 import Heading from "../component/Heading";
 import Card from "../component/Card";
 import CheckList from "../component/CheckList";
+import RegionalPrice from "../component/RegionalPrice";
 
 const pageUrl = `${BASE_URL}/features`;
 
@@ -40,19 +41,18 @@ export const metadata: Metadata = {
 };
 
 const heroHighlights = [
-    "Plans from ₹999/month",
-    "250 bookings/month on Starter",
-    "Built for clinics, salons & services",
+  { key: "Price", node: "Reasonable Price" },
+  { key: "Support", node: "Free Technical Support" },
+  { key: "Easy", node: "Easy To Sign Up" },
 ];
 
 const schedule = [
     { time: "09:00", period: "AM", title: "Dental Consultation", meta: "Dr. Alexander Smith • Room 2", status: "Confirmed", tone: "indigo" },
-    { time: "11:30", period: "AM", title: "Hair Treatment", meta: "Olivia Brown • Salon Desk", status: "Paid", tone: "emerald" },
+    { time: "11:30", period: "AM", title: "Root Canal Procedure", meta: "Dr. Olivia Brown • Operatory 1", status: "Paid", tone: "emerald" },
 ];
 
 const featureSuiteCards = [
   {
-    badge: "Booking",
     title: "Online booking engine",
     description: "Create branded booking experiences for services, departments, providers, locations and event types.",
     bullets: ["Custom availability rules", "Buffer times and capacity", "Reschedule and cancel flows"],
@@ -64,7 +64,6 @@ const featureSuiteCards = [
     iconWrapperClassName: "grid h-14 w-14 place-items-center rounded-2xl bg-indigo-50 text-indigo-600",
   },
   {
-    badge: "Reminder",
     title: "WhatsApp automation",
     description: "Send booking confirmations, reminders, reschedule links and follow-ups without manual staff work.",
     bullets: ["Instant confirmation", "Reminder sequences", "Real-time customer updates"],
@@ -77,7 +76,6 @@ const featureSuiteCards = [
     iconWrapperClassName: "grid h-14 w-14 place-items-center rounded-2xl bg-emerald-50 text-emerald-700",
   },
   {
-    badge: "Team",
     title: "Provider management",
     description: "Manage staff calendars, roles, working hours, leave days, rooms, resources and service assignments.",
     bullets: ["Provider availability", "Department/service mapping", "Multi-location scheduling"],
@@ -98,7 +96,7 @@ const workflowSteps = [
     title: "Customer books a slot",
     description: "Online booking page validates availability, service rules, provider and branch.",
     accentBar: "bg-gradient-to-b from-indigo-500 to-violet-500",
-    iconWrap: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg shadow-indigo-200",
+    iconWrap: "bg-gradient-to-br from-indigo-500 to-indigo-600 text-white drop-shadow-lg drop-shadow-indigo-200",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -111,7 +109,7 @@ const workflowSteps = [
     title: "Calendar and team update",
     description: "Staff schedule, internal dashboard and Google Calendar stay synchronized.",
     accentBar: "bg-gradient-to-b from-violet-500 to-purple-500",
-    iconWrap: "bg-gradient-to-br from-violet-500 to-purple-600 text-white shadow-lg shadow-violet-200",
+    iconWrap: "bg-gradient-to-br from-violet-500 to-purple-600 text-white drop-shadow-lg drop-shadow-violet-200",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -124,7 +122,7 @@ const workflowSteps = [
     title: "WhatsApp reminders trigger",
     description: "Customers get confirmation, reminders and reschedule links automatically.",
     accentBar: "bg-gradient-to-b from-emerald-500 to-green-500",
-    iconWrap: "bg-gradient-to-br from-emerald-500 to-green-600 text-white shadow-lg shadow-emerald-200",
+    iconWrap: "bg-gradient-to-br from-emerald-500 to-green-600 text-white drop-shadow-lg drop-shadow-emerald-200",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -137,7 +135,7 @@ const workflowSteps = [
     title: "Follow-up grows retention",
     description: "Review requests, rebooking prompts and customer notes keep relationships warm.",
     accentBar: "bg-gradient-to-b from-cyan-500 to-sky-500",
-    iconWrap: "bg-gradient-to-br from-cyan-500 to-sky-600 text-white shadow-lg shadow-cyan-200",
+    iconWrap: "bg-gradient-to-br from-cyan-500 to-sky-600 text-white drop-shadow-lg drop-shadow-cyan-200",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -148,11 +146,8 @@ const workflowSteps = [
 
 const industryCards = [
   {
-    badge: "Clinics",
     title: "Reduce front-desk load",
     description: "Let patients book, reschedule and receive reminders without repeated calls.",
-    href: "/solutions/doctor-appointment-scheduling-software",
-    featured: false,
     gradient: "from-indigo-500/10 via-transparent to-transparent",
     iconWrap: "bg-indigo-100 text-indigo-600 ring-indigo-200/60",
     icon: (
@@ -162,11 +157,8 @@ const industryCards = [
     ),
   },
   {
-    badge: "Salons",
     title: "Fill staff calendars",
     description: "Manage providers, services, durations, payments and reminders from one screen.",
-    href: "/solutions/salon-appointment-scheduling-software",
-    featured: true,
     gradient: "from-violet-500/15 via-indigo-500/5 to-transparent",
     iconWrap: "bg-violet-100 text-violet-600 ring-violet-200/60",
     icon: (
@@ -176,11 +168,8 @@ const industryCards = [
     ),
   },
   {
-    badge: "Services",
     title: "Scale operations",
     description: "Coordinate teams, locations, booking rules and customer communication smoothly.",
-    href: "/solutions/physiotherapist-appointment-booking-software",
-    featured: false,
     gradient: "from-emerald-500/10 via-transparent to-transparent",
     iconWrap: "bg-emerald-100 text-emerald-600 ring-emerald-200/60",
     icon: (
@@ -199,7 +188,7 @@ const weeklyBookings = [
   { day: "Fri", bookings: 47 },
   { day: "Sat", bookings: 62 },
   { day: "Sun", bookings: 34 },
-] as const;
+];
 
 const bookingChart = (() => {
   const width = 400;
@@ -417,7 +406,7 @@ export default function FeaturesPage() {
 
   return (
     <>
-        <Script id="features-page-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData, null, 2) }} />
+        <Script id="features-page-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
         {/* Hero */}
         <section className="relative overflow-hidden py-14 sm:py-20">
@@ -427,32 +416,87 @@ export default function FeaturesPage() {
               <div className="absolute top-1/3 left-1/2 h-80 w-80 -translate-x-1/3 -translate-y-1/2 rounded-full bg-indigo-600/30 blur-3xl" />
             </div>
 
-            <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-12 lg:grid-cols-2 lg:gap-14">
+            <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-14">
                 {/* left: Content */}
                 <div className="space-y-6">
                     <Heading
-                        badge="Product Features"
-                        title="All your appointment operations,"
-                        highlightText="beautifully automated."
-                        description={`${APP_NAME} gives service businesses a unified system for online bookings, WhatsApp reminders, calendar sync, customer records, staff scheduling, and performance insights.`}
+                        badge="More Than Your Expectations"
+                        title="One System for Scheduling All Your"
+                        highlightText="Appointment Operations."
+                        description="GetSetTime provides you with a unified dashboard to manage online bookings, WhatsApp reminders, calendar sync, customer records, staff scheduling, and review performance insights."
                         headingTag="h1"
                         titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Start free workspace - Features" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">Get Started for Free</Link>
+                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google - Doctor Appointment Scheduling Software" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
+                            <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
+                            <g>
+                                <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                                <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                                <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                                <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                            </g>
+                            </svg>
+                            Sign up with Google
+                        </Link>
                         <Link href={`${BASE_URL}/pricing`} aria-label="View Pricing - Features" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">View Pricing</Link>
                     </div>
 
-                    <div className="flex flex-wrap gap-3 text-sm font-medium text-neutral-600">
+                    <div className="flex flex-wrap gap-2 text-sm font-medium text-neutral-600">
                         {heroHighlights.map((item) => (
-                        <span key={item} className="rounded-full border border-neutral-200 bg-white px-4 py-2">{item}</span>
+                        <span key={item.key} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 drop-shadow-sm">{item.node}</span>
                         ))}
                     </div>
+                    
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                        <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                            <div className="flex items-center gap-2">
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div className="text-sm font-bold text-neutral-900">Online Booking</div>
+                                </div>
+                            </div>
+                            <div className="text-xs text-neutral-500">Branded pages &amp; availability rules</div>
+                        </div>
+
+                        <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                            <div className="flex items-center gap-2">
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                                    <svg className="h-5 w-5" viewBox="0 0 32 32" fill="currentColor">
+                                        <path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 27l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.5-1.5-5.4C5.6 9.3 10.3 4.6 16 4.6S26.4 9.3 26.4 15 21.7 24.8 16 24.8zm5.7-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div className="text-sm font-bold text-neutral-900">WhatsApp Automation</div>
+                                </div>
+                            </div>
+                            <div className="text-xs text-neutral-500">Confirmations &amp; reminder sequences</div>
+                        </div>
+
+                        <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                            <div className="flex items-center gap-2">
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <div className="text-sm font-bold text-neutral-900">Calendar Sync</div>
+                                </div>
+                            </div>
+                            <div className="text-xs text-neutral-500">Two-way Google Calendar updates</div>
+                        </div>
+                    </div>
+
                 </div>
                 {/* right: Dashboard preview */}
-                <div className="relative animate-fade-in-scale">
-                  <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white shadow-2xl">
+                <div className="relative animate-fade-in-scale lg:max-w-none">
+                  <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
                       {/* Window chrome */}
                       <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
                         <div className="flex items-center gap-2 sm:gap-3">
@@ -474,15 +518,15 @@ export default function FeaturesPage() {
                         <div className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:radial-gradient(rgba(99,102,241,0.12)_1px,transparent_1px)] [background-size:16px_16px]" aria-hidden />
                         <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
 
-                        <div className="relative mb-4 grid grid-cols-3 gap-2 sm:gap-3">
+                        <div className="relative mb-4 grid gap-2 grid-cols-1 min-[440px]:grid-cols-2 sm:grid-cols-3 sm:gap-3">
                             {[
                             { label: "Bookings", value: "84", trend: "+12%", up: true, accent: "text-indigo-600", iconBg: "bg-indigo-600", ring: "ring-indigo-100", bg: "from-indigo-50 to-white", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
                             { label: "Confirmed", value: "71", trend: "+8%", up: true, accent: "text-emerald-600", iconBg: "bg-emerald-600", ring: "ring-emerald-100", bg: "from-emerald-50 to-white", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
                             { label: "Revenue", value: "₹48K", trend: "+23%", up: true, accent: "text-violet-600", iconBg: "bg-violet-600", ring: "ring-violet-100", bg: "from-violet-50 to-white", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" },
                             ].map((stat) => (
-                            <div key={stat.label} className={`group relative overflow-hidden rounded-xl border border-neutral-100 bg-gradient-to-br ${stat.bg} p-3 shadow-sm ring-1 ${stat.ring} transition duration-300 hover:-translate-y-0.5 hover:shadow-md sm:p-4`}>
+                            <div key={stat.label} className={`group relative overflow-hidden rounded-xl border border-neutral-100 bg-gradient-to-br ${stat.bg} p-3 drop-shadow-sm ring-1 ${stat.ring} transition duration-300 hover:-translate-y-0.5 hover:drop-shadow-md sm:p-4`}>
                                 <div className="flex items-center justify-between">
-                                    <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${stat.iconBg} text-white shadow-sm`}>
+                                    <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${stat.iconBg} text-white drop-shadow-sm`}>
                                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
                                             <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
                                         </svg>
@@ -501,8 +545,8 @@ export default function FeaturesPage() {
                         </div>
 
                         {/* Bookings trend chart + utilisation ring */}
-                        <div className="relative mb-4 grid gap-3 grid-cols-2 sm:grid-cols-5">
-                            <div className="rounded-xl border border-neutral-100 bg-white p-3 shadow-sm sm:col-span-3">
+                        <div className="relative mb-4 grid grid-cols-1 gap-3 sm:grid-cols-5">
+                            <div className="rounded-xl border border-neutral-100 bg-white p-3 drop-shadow-sm sm:col-span-3">
                                 <div className="flex items-center justify-between">
                                     <span className="text-[10px] font-semibold uppercase tracking-wide text-neutral-500">Bookings this week</span>
                                     <span className="inline-flex items-center gap-0.5 text-[10px] font-bold text-emerald-600">
@@ -525,7 +569,7 @@ export default function FeaturesPage() {
                                     {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (<span key={i}>{d}</span>))}
                                 </div>
                             </div>
-                            <div className="flex items-center justify-center gap-3 rounded-xl border border-neutral-100 bg-white p-3 shadow-sm sm:col-span-2">
+                            <div className="flex items-center justify-center gap-3 rounded-xl border border-neutral-100 bg-white p-3 drop-shadow-sm sm:col-span-2">
                                 <div className="relative h-30 w-30 shrink-0">
                                     <svg viewBox="0 0 100 100" className="h-30 w-30 -rotate-90" aria-hidden>
                                         <circle cx="50" cy="50" r="40" fill="none" stroke="rgb(238,242,255)" strokeWidth="12" />
@@ -550,23 +594,12 @@ export default function FeaturesPage() {
                         </div>
 
                         <div className="relative rounded-xl bg-white">
-                            <div className="mb-3 flex items-center justify-between gap-2">
-                              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
-                                  <svg className="h-4 w-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                  Bookings
-                              </div>
-                              <div className="inline-flex items-center gap-1 rounded-lg bg-indigo-600 px-3 py-1 text-xs font-semibold text-white shadow-sm shadow-indigo-200">
-                                  <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
-                                  New booking
-                              </div>
-                            </div>
-
                             <div className="space-y-2.5">
                             {schedule.map((item) => {
                                 const person = item.meta.split("•")[0].trim();
                                 const initials = person.replace("Dr. ", "").split(" ").map((w) => w[0]).slice(0, 2).join("");
                                 return (
-                                <div key={item.time} className={`flex items-center gap-3 rounded-xl border p-2.5 transition hover:-translate-y-0.5 hover:shadow-md ${
+                                <div key={item.time} className={`flex flex-wrap items-center gap-2.5 rounded-xl border p-2.5 transition hover:-translate-y-0.5 hover:drop-shadow-md sm:flex-nowrap sm:gap-3 ${
                                     item.tone === "indigo"
                                     ? "border-indigo-100 bg-indigo-50/60"
                                     : item.tone === "emerald"
@@ -574,7 +607,7 @@ export default function FeaturesPage() {
                                         : "border-neutral-100 bg-neutral-50"
                                 }`}
                                 >
-                                <div className="flex h-10 w-14 shrink-0 flex-col items-center justify-center rounded-lg bg-white text-center shadow-sm ring-1 ring-neutral-100">
+                                <div className="flex h-10 w-14 shrink-0 flex-col items-center justify-center rounded-lg bg-white text-center drop-shadow-sm ring-1 ring-neutral-100">
                                     <span className="text-[10px] font-medium uppercase text-neutral-400">{item.period}</span>
                                     <span className="text-sm font-bold text-neutral-800">{item.time}</span>
                                 </div>
@@ -588,7 +621,7 @@ export default function FeaturesPage() {
                                     <div className="truncate text-neutral-600 text-sm">{item.meta}</div>
                                 </div>
                                 <span
-                                    className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-semibold sm:text-xs ${
+                                    className={`ml-auto shrink-0 rounded-full px-2.5 py-1 text-[10px] font-semibold sm:ml-0 sm:text-xs ${
                                     item.status === "Confirmed"
                                         ? "bg-indigo-100 text-indigo-700"
                                         : item.status === "Paid"
@@ -617,7 +650,7 @@ export default function FeaturesPage() {
                             </div>
                             </div>
                             <div className="flex items-center gap-3 rounded-xl border border-indigo-100 bg-indigo-50/60 p-3">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 shadow-sm ring-1 ring-neutral-100">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 drop-shadow-sm ring-1 ring-neutral-100">
                                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
@@ -634,22 +667,22 @@ export default function FeaturesPage() {
             </div>
         </section>
         
-        {/* Trusted at Scale */}
+        {/* Build Around */}
         <section className="relative overflow-hidden bg-neutral-50 py-14 sm:py-20">
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
               <div className="mb-10 text-center">
                   <Heading
-                      badge="Trusted at scale"
-                      title="Numbers that reflect real scheduling volume"
+                      badge="Built Around"
+                      title="That Every Appointment-Based Business Is Looking For"
                   />
               </div>
 
-              <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 grid-cols-1 min-[440px]:grid-cols-2 lg:grid-cols-4">
                   {[
                   {
-                      value: "50K+",
-                      label: "Active users",
-                      detail: "Clinics, salons & service teams",
+                      label: "Centralized Platform",
+                      detail: "One-for-all Dashboard",
+                      description: "Schedule your appointments and manage your staff and resources",
                       icon: (
                       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -660,9 +693,9 @@ export default function FeaturesPage() {
                       border: "border-indigo-100 hover:border-indigo-200",
                   },
                   {
-                      value: "2M+",
-                      label: "Appointments handled",
-                      detail: "Booked through GetSetTime",
+                      label: "Cloud-Based",
+                      detail: "Real-time Calendar Sync",
+                      description: "No installations; manage from anywhere on your device",
                       icon: (
                       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -673,9 +706,9 @@ export default function FeaturesPage() {
                       border: "border-violet-100 hover:border-violet-200",
                   },
                   {
-                      value: "24/7",
-                      label: "Self-service booking",
-                      detail: "Clients book anytime online",
+                      label: "Self Booking",
+                      detail: "Around the Clock",
+                      description: "Allow your clients to book anytime",
                       icon: (
                       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -686,9 +719,9 @@ export default function FeaturesPage() {
                       border: "border-emerald-100 hover:border-emerald-200",
                   },
                   {
-                      value: "Auto",
-                      label: "WhatsApp reminders",
-                      detail: "Confirmations & follow-ups",
+                      label: "Reminder Automation",
+                      detail: "Works as require",
+                      description: "Set up, send at confirmation and  for follow-up",
                       icon: (
                           <svg viewBox="0 0 16 16" className="h-6 w-6" fill="currentColor"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.42 9.49c-.19-.09-1.1-.54-1.27-.61s-.29-.09-.42.1-.48.6-.59.73-.21.14-.4 0a5.13 5.13 0 0 1-1.49-.92 5.25 5.25 0 0 1-1-1.29c-.11-.18 0-.28.08-.38s.18-.21.28-.32a1.39 1.39 0 0 0 .18-.31.38.38 0 0 0 0-.33c0-.09-.42-1-.58-1.37s-.3-.32-.41-.32h-.4a.72.72 0 0 0-.5.23 2.1 2.1 0 0 0-.65 1.55A3.59 3.59 0 0 0 5 8.2 8.32 8.32 0 0 0 8.19 11c.44.19.78.3 1.05.39a2.53 2.53 0 0 0 1.17.07 1.93 1.93 0 0 0 1.26-.88 1.67 1.67 0 0 0 .11-.88c-.05-.07-.17-.12-.36-.21z"></path><path d="M13.29 2.68A7.36 7.36 0 0 0 8 .5a7.44 7.44 0 0 0-6.41 11.15l-1 3.85 3.94-1a7.4 7.4 0 0 0 3.55.9H8a7.44 7.44 0 0 0 5.29-12.72zM8 14.12a6.12 6.12 0 0 1-3.15-.87l-.22-.13-2.34.61.62-2.28-.14-.23a6.18 6.18 0 0 1 9.6-7.65 6.12 6.12 0 0 1 1.81 4.37A6.19 6.19 0 0 1 8 14.12z"></path></g></svg>
                       ),
@@ -697,24 +730,25 @@ export default function FeaturesPage() {
                       border: "border-green-100 hover:border-green-200",
                   },
                   ].map((stat) => (
-                  <div key={stat.label} className={`group rounded-2xl border bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg space-y-2 ${stat.border}`}>
+                  <div key={stat.label} className={`group rounded-2xl border bg-white p-5 drop-shadow-sm transition duration-300 hover:-translate-y-1 hover:drop-shadow-lg space-y-2 ${stat.border}`}>
                       <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${stat.iconBg} transition group-hover:scale-105`}>{stat.icon}</div>
-                      <div className={`text-3xl font-bold tracking-tight ${stat.valueColor}`}>{stat.value}</div>
+                      {/* <div className={`text-3xl font-bold tracking-tight ${stat.valueColor}`}>{stat.value}</div> */}
                       <div className="font-semibold text-neutral-900">{stat.label}</div>
-                      <div>{stat.detail}</div>
+                      <div><i>{stat.detail}</i></div>
+                      <div>{stat.description}</div>
                   </div>
                   ))}
               </div>
             </div>
         </section>
 
-        {/* Feature */}
+        {/* Core Functionality */}
         <section className="relative py-20">
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="mb-10 text-center">
                     <Heading
-                        badge="Feature"
-                        title="Built for the real workflow of service businesses."
+                        badge="Core Functionality"
+                        title="That Matches Your Business's Real Workflow"
                         description="From the first booking request to follow-up reminders, GetSetTime keeps your team, customers and calendars synchronized in one professional operating layer."
                     />
                 </div>
@@ -723,7 +757,6 @@ export default function FeaturesPage() {
                   {featureSuiteCards.map((card) => (
                     <Card
                       key={card.title}
-                      badge={card.badge}
                       title={card.title}
                       description={card.description}
                       bullets={card.bullets}
@@ -739,7 +772,7 @@ export default function FeaturesPage() {
         <section className="relative overflow-hidden bg-[#f5f7ff] py-16 sm:py-24">
           <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
-              <div className="lg:sticky lg:top-24">
+              <div className="relative">
                 <Heading
                   badge="Automation journey"
                   title="A complete appointment workflow that runs without chaos."
@@ -747,13 +780,21 @@ export default function FeaturesPage() {
                   wrapperClassName="space-y-3"
                 />
                 <div className="mt-8 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-indigo-100 bg-white/80 p-4 shadow-sm backdrop-blur">
+                  <div className="rounded-2xl border border-indigo-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
                     <div className="text-3xl font-bold text-indigo-600">4</div>
                     <p className="text-sm text-neutral-600">Automated stages</p>
                   </div>
-                  <div className="rounded-2xl border border-emerald-100 bg-white/80 p-4 shadow-sm backdrop-blur">
+                  <div className="rounded-2xl border border-emerald-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
                     <div className="text-3xl font-bold text-emerald-600">2</div>
                     <p className="text-sm text-neutral-600">Manual follow-ups</p>
+                  </div>
+                  <div className="rounded-2xl border border-violet-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
+                    <div className="text-3xl font-bold text-violet-600">3</div>
+                    <p className="text-sm text-neutral-600">Reminder channels</p>
+                  </div>
+                  <div className="rounded-2xl border border-sky-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
+                    <div className="text-3xl font-bold text-sky-600">24/7</div>
+                    <p className="text-sm text-neutral-600">Online booking</p>
                   </div>
                 </div>
               </div>
@@ -762,7 +803,7 @@ export default function FeaturesPage() {
                 <div className="absolute left-[1.65rem] top-6 bottom-6 hidden w-px bg-gradient-to-b from-indigo-300 via-violet-300 to-emerald-300 sm:block" aria-hidden />
 
                 {workflowSteps.map((item) => (
-                  <article key={item.title} className="group relative overflow-hidden rounded-2xl border border-white/80 bg-white/90 p-5 shadow-md shadow-indigo-100/20 backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl sm:p-6">
+                  <article key={item.title} className="group relative overflow-hidden rounded-2xl border border-white/80 bg-white/90 p-5 drop-shadow-md drop-shadow-indigo-100/20 backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-indigo-200 hover:drop-shadow-xl sm:p-6">
                     <div className={`absolute inset-y-0 left-0 w-1 ${item.accentBar}`} aria-hidden />
                     <span className="pointer-events-none absolute right-1 top-0 select-none text-7xl font-black leading-none text-indigo-50 transition group-hover:text-indigo-100/80">{item.step}</span>
 
@@ -786,40 +827,31 @@ export default function FeaturesPage() {
           </div>
         </section>
 
+        {/* By industry */}
         <section className="relative overflow-hidden">
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
               <div className="mt-16 overflow-hidden rounded-3xl bg-white">
                 <div className="mb-10 text-center">
                   <Heading
                       badge="By industry"
-                      title="Built for how your business actually runs"
-                      description="Tailored scheduling flows for clinics, salons, and growing service teams."
+                      title="Favourable Impact from Day One on Routine Activities You Can Analyze"
+                      description="We aim to exceed your expectations maximize for which you choose Getsettime."
                   />
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-3 md:items-stretch py-2">
+                <div className="grid gap-5 md:grid-cols-3 md:items-stretch p-2">
                   {industryCards.map((card) => (
                     <Card
                       key={card.title}
-                      href={card.href}
-                      badge={card.badge}
                       title={card.title}
                       description={card.description}
                       iconNode={card.icon}
-                      wrapperClassName={`group relative flex flex-col overflow-hidden rounded-xl shadow-sm bg-white p-6 transition duration-300`}
-                      innerClassName="relative"
+                      wrapperClassName={`group relative flex flex-col overflow-hidden rounded-xl bg-white p-6`}
+                      innerClassName="relative space-y-3"
                       iconWrapperClassName={`flex h-12 w-12 items-center justify-center rounded-xl ${card.iconWrap}`}
                       badgeClassName="rounded-md bg-neutral-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-neutral-500 group-hover:bg-indigo-50 group-hover:text-indigo-600"
                       titleClassName="text-xl font-bold text-neutral-900"
-                      overlay={<div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${card.gradient}`} aria-hidden />}
-                      footer={
-                        <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 transition group-hover:gap-2">
-                          View solution
-                          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </span>
-                      }
+                      overlay={<div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${card.gradient}`} />}
                     />
                   ))}
                 </div>
@@ -851,7 +883,7 @@ export default function FeaturesPage() {
 
                 {/* Right side */}
                 <div className="relative">
-                  <div className=" rounded-2xl overflow-hidden border border-neutral-200/80 bg-white shadow-2xl shadow-indigo-100/40">
+                  <div className=" rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl drop-shadow-indigo-100/40">
 
                     <div className="bg-gradient-to-br from-indigo-50/50 via-white to-violet-50/30 p-4">
                         <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
@@ -864,13 +896,13 @@ export default function FeaturesPage() {
                                   <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">+18% vs last week</span>
                               </div>
                             </div>
-                            <div className="inline-flex rounded-xl border border-neutral-200 bg-white p-1 text-xs font-semibold shadow-sm">
+                            <div className="inline-flex rounded-xl border border-neutral-200 bg-white p-1 text-xs font-semibold drop-shadow-sm">
                               <span className="rounded-lg bg-indigo-600 px-3 py-1.5 text-white">Week</span>
                               <span className="px-3 py-1.5 text-neutral-500">Month</span>
                             </div>
                         </div>
 
-                        <div className="relative rounded-2xl border border-indigo-100/80 bg-white p-4 shadow-sm sm:p-5">
+                        <div className="relative rounded-2xl border border-indigo-100/80 bg-white p-4 drop-shadow-sm sm:p-5">
                             <div className="mb-3 flex items-center justify-between gap-2">
                                 <div className="text-sm font-medium text-neutral-700">Daily booking volume</div>
                                 <div className="flex items-center gap-2 text-xs text-neutral-500">
@@ -954,39 +986,20 @@ export default function FeaturesPage() {
                             </svg>
                         </div>
                     
-                        <div className="mt-4 grid gap-3 grid-cols-2 sm:grid-cols-3">
+                        <div className="mt-4 grid gap-3 grid-cols-1 min-[440px]:grid-cols-2 sm:grid-cols-3">
                           {analyticsMetrics.map((metric) => (
-                            <div key={metric.label} className={`group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-md ${metric.cardClassName}`} >
-                              <div className="flex flex-col items-start justify-between gap-3">
-                                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${metric.iconWrap}`}>
-                                  {metric.icon}
-                                </div>
-                                <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${metric.changeClassName}`}>
-                                  {metric.change}
-                                </span>
+                            <div key={metric.label} className={`group flex flex-col relative overflow-hidden rounded-2xl border p-4 drop-shadow-sm transition duration-300 hover:-translate-y-0.5 hover:drop-shadow-md ${metric.cardClassName}`} >
+                              <div className="flex items-start justify-between gap-3">
+                                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${metric.iconWrap}`}>{metric.icon}</span>
+                                <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${metric.changeClassName}`}>{metric.change}</span>
                               </div>
-                              <div className="mt-4 text-xs font-semibold uppercase tracking-wider text-neutral-500">{metric.label}</div>
+                              <div className="mt-2 text-xs font-semibold uppercase tracking-wider text-neutral-500">{metric.label}</div>
                               <div className="mt-1 text-2xl font-bold tracking-tight text-neutral-900">{metric.value}</div>
                             </div>
                           ))}
                         </div>
 
-                        {/* <div className="absolute left-2 bottom-20 z-2 hidden lg:block rounded-xl bg-white px-4 py-4 shadow-sm animate-float rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-5 shadow-sm">
-                          <div className="flex items-center justify-between gap-2">
-                            <div className="text-sm text-neutral-500">Reminder delivery</div>
-                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                            </span>
-                          </div>
-                          <div className="mt-2 text-3xl font-bold text-neutral-900">96.8%</div>
-                          <div className="mt-3 h-2 overflow-hidden rounded-full bg-emerald-100">
-                            <div className="h-full w-[96.8%] rounded-full bg-gradient-to-r from-emerald-500 to-green-500" />
-                          </div>
-                        </div> */}
-
-                        <div className="absolute right-2 top-0 z-2 hidden lg:block rounded-xl bg-white px-4 py-4 shadow-sm animate-float  rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-5 shadow-sm">
+                        <div className="absolute right-2 top-0 z-2 hidden lg:block rounded-xl bg-white px-4 py-4 drop-shadow-sm animate-float  rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-5 drop-shadow-sm">
                           <div className="flex items-center justify-between">
                             <div className="text-sm text-neutral-500">Peak booking day</div>
                             <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-semibold text-indigo-700">Saturday</span>
@@ -1031,19 +1044,21 @@ export default function FeaturesPage() {
 
                 <div className="relative">
                   <div className="absolute -inset-1 rounded-[1.75rem] bg-gradient-to-br from-white/40 to-cyan-200/30 blur-sm" />
-                  <div className="relative overflow-hidden rounded-[1.65rem] bg-white p-6 shadow-2xl sm:p-8">
+                  <div className="relative overflow-hidden rounded-[1.65rem] bg-white p-6 drop-shadow-2xl sm:p-8">
                     <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-indigo-100/60" aria-hidden />
 
                     <div className="relative flex flex-wrap items-start justify-between gap-4">
                       <div>
                         <div className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Starter plan</div>
                         <div className="mt-2 flex items-end gap-1">
-                          <span className="text-5xl font-bold tracking-tight text-neutral-900">₹999</span>
+                          <span className="text-5xl font-bold tracking-tight text-neutral-900">
+                            <RegionalPrice plan="starter" />
+                          </span>
                           <span className="pb-2 text-sm font-medium text-neutral-500">/month</span>
                         </div>
                         <div className="mt-1 text-xs text-neutral-500">+ 18% GST · billed monthly</div>
                       </div>
-                      <span className="rounded-full bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white shadow-md shadow-indigo-200">
+                      <span className="rounded-full bg-indigo-600 px-3 py-1.5 text-xs font-semibold text-white drop-shadow-md drop-shadow-indigo-200">
                         Popular
                       </span>
                     </div>
@@ -1072,7 +1087,7 @@ export default function FeaturesPage() {
                     </ul>
 
                     <div className="relative flex flex-col sm:flex-row gap-3 mt-8">
-                      <Link href={REGISTER_URL} target="_blank" className="flex w-full items-center justify-center rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:bg-indigo-700"
+                      <Link href={REGISTER_URL} target="_blank" className="flex w-full items-center justify-center rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white drop-shadow-lg drop-shadow-indigo-200 transition hover:bg-indigo-700"
                       >Get Started Free</Link>
                       <Link href={`${BASE_URL}/pricing`} className="flex w-full items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 px-6 py-3 text-sm font-semibold text-neutral-800 transition hover:border-indigo-200 hover:bg-indigo-50 hover:text-indigo-700">Compare all plans</Link>
                     </div>
@@ -1111,7 +1126,7 @@ export default function FeaturesPage() {
                 {/* right: Image */}
                 <div className="relative mx-auto w-full hidden lg:block">
                   <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
-                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 drop-shadow-xl">
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="font-semibold text-neutral-900">Today’s bookings</div>
@@ -1140,7 +1155,7 @@ export default function FeaturesPage() {
                     </div>
                   </div>
 
-                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 drop-shadow-xl animate-float">
                     <div>No-show reduction</div>
                     <div className="text-xl font-bold text-neutral-900">-32%</div>
                   </div>

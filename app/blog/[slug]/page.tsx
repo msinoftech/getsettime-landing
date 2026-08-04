@@ -245,7 +245,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {prevPost ? (
-                  <Link href={`/blog/${prevPost.slug}`} aria-label="Previous Post - Blog" className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <Link href={`/blog/${prevPost.slug}`} aria-label="Previous Post - Blog" className="group flex items-center gap-4 p-5 bg-white rounded-2xl drop-shadow-md hover:drop-shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neutral-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors duration-200">
                       <svg className="w-5 h-5 text-neutral-500 group-hover:text-indigo-600 transition-colors group-hover:-translate-x-0.5 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -257,7 +257,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     </div>
                   </Link>
                 ) : (
-                  <Link href="/blog" aria-label="All Posts - Blog" className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <Link href="/blog" aria-label="All Posts - Blog" className="group flex items-center gap-4 p-5 bg-white rounded-2xl drop-shadow-md hover:drop-shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-neutral-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors duration-200">
                       <svg className="w-5 h-5 text-neutral-500 group-hover:text-indigo-600 transition-colors group-hover:-translate-x-0.5 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -271,7 +271,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 )}
 
                 {nextPost ? (
-                  <Link href={`/blog/${nextPost.slug}`} aria-label="Next Post - Blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
+                  <Link href={`/blog/${nextPost.slug}`} aria-label="Next Post - Blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
                     <div className="flex-1 text-right">
                       <div className="text-xs font-medium text-white/70 uppercase tracking-wider">Next</div>
                       <p className="font-semibold text-white">{nextPost.title}</p>
@@ -283,7 +283,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     </div>
                   </Link>
                 ) : (
-                  <Link href="/blog" aria-label="More Posts - Blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
+                  <Link href="/blog" aria-label="More Posts - Blog" className="group flex items-center gap-4 p-5 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-300 hover:-translate-y-1 text-white">
                     <div className="flex-1 text-right">
                       <div className="text-xs font-medium text-white/70 uppercase tracking-wider">Explore</div>
                       <p className="font-semibold text-white">More Articles</p>
@@ -342,7 +342,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 {/* right: Image */}
                 <div className="relative mx-auto w-full hidden lg:block">
                   <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
-                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 drop-shadow-xl">
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="font-semibold text-neutral-900">Today’s bookings</div>
@@ -373,7 +373,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                     </div>
                   </div>
 
-                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 drop-shadow-xl animate-float">
                     <div>No-show reduction</div>
                     <div className="text-xl font-bold text-neutral-900">-32%</div>
                   </div>

@@ -19,13 +19,13 @@ export function CheckListItem({
   icon,
   index,
   as: Tag = "div",
-  wrapperClassName = "group rounded-xl bg-white/80 p-2 shadow-xl transition-all duration-300 hover:-translate-y-1",
+  wrapperClassName = "group rounded-xl bg-white/80 p-2 drop-shadow-xl transition-all duration-300 hover:-translate-y-1",
   innerClassName = "flex items-center gap-2",
-  iconClassName = "flex h-9 w-9 min-h-9 min-w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-sm font-bold text-white shadow-lg shadow-indigo-500/25",
+  iconClassName = "flex h-9 w-9 min-h-9 min-w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-sm font-bold text-white drop-shadow-lg drop-shadow-indigo-500/25",
   textClassName = "",
 }: CheckListItemProps) {
   const content = children ?? text;
-  const badge = icon ?? (index !== undefined ? index : "✓");
+  const badge = icon ?? (index !== undefined ? index : <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg>);
 
   if (Tag === "li") {
     return (

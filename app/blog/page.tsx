@@ -19,7 +19,7 @@ function BlogListSkeleton() {
       {/* Grid Skeleton */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-md">
+          <div key={i} className="bg-white rounded-2xl overflow-hidden drop-shadow-md">
             <div className="h-52 bg-neutral-200 animate-pulse" />
             <div className="p-6 space-y-3">
               <div className="h-4 w-20 bg-neutral-200 rounded animate-pulse" />
@@ -266,7 +266,7 @@ export default function BlogPage() {
                 {/* right: Image */}
                 <div className="relative mx-auto w-full hidden lg:block">
                   <div className="rounded-xl bg-white/14 sm:p-4 backdrop-blur-xl">
-                    <div className="rounded-xl bg-white p-3 sm:p-4 shadow-xl">
+                    <div className="rounded-xl bg-white p-3 sm:p-4 drop-shadow-xl">
                       <div className="flex items-center justify-between">
                         <div>
                           <div className="font-semibold text-neutral-900">Today’s bookings</div>
@@ -297,7 +297,7 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 shadow-xl animate-float">
+                  <div className="absolute -right-5 -bottom-6 hidden lg:block rounded-xl bg-white px-4 py-3 drop-shadow-xl animate-float">
                     <div>No-show reduction</div>
                     <div className="text-xl font-bold text-neutral-900">-32%</div>
                   </div>

@@ -107,7 +107,7 @@ function CalendarMonthPanel() {
   };
 
   return (
-    <div className="rounded-xl bg-white p-3 shadow-xl">
+    <div className="rounded-xl bg-white p-3 drop-shadow-xl">
       <div className="mb-4 flex items-center justify-between text-neutral-900">
         <button type="button" onClick={goToPrevMonth} className="cursor-pointer rounded-md bg-indigo-600 px-1 py-1 text-white transition-colors hover:brightness-110" aria-label="Show previous month">
           <svg className="h-4 w-4 text-white transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@ function CalendarMonthPanel() {
                   onClick={() => handleDateSelect(cell)}
                   className={`flex aspect-square items-center justify-center rounded-lg text-xs text-slate-500 transition-all cursor-pointer sm:rounded-md ${
                     isSelected
-                      ? "bg-indigo-600 text-white shadow-lg shadow-indigo-900/20"
+                      ? "bg-indigo-600 text-white drop-shadow-lg drop-shadow-indigo-900/20"
                       : isMuted
                         ? "bg-white/10 text-slate-50 hover:bg-slate-100"
                         : "bg-white/15 text-slate-950 hover:-translate-y-0.5 hover:bg-slate-100"
@@ -180,7 +180,7 @@ export default function InteractiveCalendar() {
       <div className="relative mx-auto grid container px-4 sm:px-6 lg:px-8 gap-10 lg:grid-cols-2 lg:gap-14">
         {/* Left: Interactive Calendar */}
         <div className="order-2 lg:order-1 relative xl:pb-12">
-          <div className="relative rounded-xl bg-white shadow-xl p-4">
+          <div className="relative rounded-xl bg-white drop-shadow-xl p-4">
             <div className="relative z-10 mb-4 flex items-center justify-between">
               <div className="flex items-center gap-2 sm:gap-3">
                 <div className="relative">
@@ -204,21 +204,21 @@ export default function InteractiveCalendar() {
                 <CalendarMonthPanel />
 
                 <div className="space-y-3 sm:space-y-4 hidden sm:block">
-                  <div className="rounded-xl bg-white/15 p-4 text-white shadow-xl">
+                  <div className="relative rounded-xl bg-white/15 p-4">
                     <div className="mb-3 flex items-center justify-between">
-                      <div className="text-sm font-medium">Automation</div>
-                      <span className="rounded-full bg-white text-emerald-700 px-3 py-1 text-sm">Active</span>
+                      <div className="text-sm font-medium text-white">Automation</div>
+                      <span className="rounded-full bg-white text-emerald-700 px-2 py-0.5 text-xs font-medium">Active</span>
                     </div>
                     <div className="space-y-2 text-xs">
-                      <div className="flex items-center justify-between rounded-2xl bg-white/10 px-3 py-2">
+                      <div className="flex items-center justify-between rounded-2xl bg-white px-3 py-2">
                         <span>Instant confirmation</span>
                         <span className="h-2 w-2 rounded-full bg-emerald-600" />
                       </div>
-                      <div className="flex items-center justify-between rounded-2xl bg-white/10 px-3 py-2">
+                      <div className="flex items-center justify-between rounded-2xl bg-white px-3 py-2">
                         <span>Reminder sequence</span>
                         <span className="h-2 w-2 rounded-full bg-amber-300" />
                       </div>
-                      <div className="flex items-center justify-between rounded-2xl bg-white/10 px-3 py-2">
+                      <div className="flex items-center justify-between rounded-2xl bg-white px-3 py-2">
                         <span>Meeting routing</span>
                         <span className="h-2 w-2 rounded-full bg-sky-300" />
                       </div>
@@ -229,7 +229,7 @@ export default function InteractiveCalendar() {
             </div>
           </div>
 
-          <div className="animate-float mt-4 rounded-xl bg-white hidden lg:block shadow-xl p-4 absolute -bottom-0 right-10 w-64 lg:-bottom-0 lg:-right-5">
+          <div className="animate-float mt-4 rounded-xl bg-white hidden lg:block drop-shadow-xl p-4 absolute -bottom-0 right-10 w-64 lg:-bottom-0 lg:-right-5">
               <div className="mb-3 text-sm font-medium text-neutral-900">Upcoming booking</div>
               <div className="space-y-2">
                 <div className="rounded-xl pb-1">
@@ -251,8 +251,6 @@ export default function InteractiveCalendar() {
                     <span className="rounded-full text-emerald-700 px-2 py-0.5 text-xs font-semibold">Confirmed</span>
                   </div>
                 </div>
-
-                <button type="button" className="w-full rounded-xl bg-indigo-600 px-3 py-2 text-xs font-medium text-white shadow-sm">View Details</button>
               </div>
           </div>
         </div>

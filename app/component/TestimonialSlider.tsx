@@ -70,7 +70,7 @@ export const TestimonialSlider = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur">
+          <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 drop-shadow-sm backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-indigo-500" />
             {badgeLabel}
           </div>
@@ -87,7 +87,7 @@ export const TestimonialSlider = ({
               <div className="grid [grid-template-areas:'stack']">
                 <div key={current.id} className="card [grid-area:stack] transition-all duration-300 ease-in-out">
                   <blockquote
-                    className={`relative text-center rounded-2xl bg-white shadow-sm text-neutral-500 p-6 text-xl transition-all duration-300 ease-in-out ${
+                    className={`relative text-center rounded-2xl bg-white drop-shadow-sm text-neutral-500 p-6 text-xl transition-all duration-300 ease-in-out ${
                       animating
                         ? `${slideDirection === "next" ? "-translate-x-6" : "translate-x-6"} opacity-0`
                         : "translate-x-0 opacity-100"

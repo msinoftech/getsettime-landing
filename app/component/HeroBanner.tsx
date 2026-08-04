@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
+import { REGISTER_GOOGLE_URL, REGISTER_URL, LOGIN_URL } from "@/lib/config";
 import Logo from "./Logo";
 
 const todaysBookings = [
@@ -69,31 +69,31 @@ export default function HeroBanner() {
       </div>
 
       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 xl:grid-cols-2 lg:gap-6">
+        <div className="grid grid-cols-1  gap-10 xl:grid-cols-2 lg:gap-6">
           {/* Left column */}
           <div className="space-y-5">
-            {/* <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 shadow-sm backdrop-blur"><span className="h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500"></span>Free 250 Bookings / Month Included</div> */}
-
             <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize">
-              Book More{" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Appointments.</span><br/>Manage Your Team. <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Reduce No-Shows.</span>
+            Appointment Scheduling {" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Software to Book More </span><br/>Appointments. and <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">Reduce No-Shows</span>
             </h1>
 
-            <p>GetSetTime is an all-in-one appointment booking platform for clinics, salons, consultants, agencies, and service teams to manage bookings, availability, reminders, providers, and customer scheduling from one simple dashboard.</p>
+            <p>GetSetTime is a smart, fully automated scheduling software designed for service-based professionals and individuals tired of managing appointments.</p>
 
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Start Free - Hero Banner" className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition">
-                Start Free — 250 Bookings Included
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6l6 6-6 6" /></svg>
-              </Link>
-
-              {/* <button type="button" aria-label="Watch Demo" className="inline-flex items-center gap-2.5 rounded-xl px-2 py-2 text-sm font-semibold text-neutral-800 transition hover:text-indigo-600">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 bg-white shadow-sm">
-                  <svg className="h-4 w-4 translate-x-px text-neutral-800" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </span>
-                Watch Demo
-              </button> */}
+                <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google - Doctor Appointment Scheduling Software" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
+                    <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
+                    <g>
+                        <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                        <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                        <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                        <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                    </g>
+                    </svg>
+                    Sign up with Google
+                </Link>
+                <Link href={LOGIN_URL} target="_blank" aria-label="Start Free - Hero Banner" className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white drop-shadow-lg transition">
+                    Start Free — 250 Bookings Included
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6l6 6-6 6" /></svg>
+                </Link>
             </div>
 
             <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -106,7 +106,7 @@ export default function HeroBanner() {
 
             <div className="flex flex-wrap gap-2">
               {industries.map((item) => (
-                <span key={item.label} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 shadow-sm">
+                <span key={item.label} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 drop-shadow-sm">
                   {item.icon}
                   {item.label}
                 </span>
@@ -115,7 +115,7 @@ export default function HeroBanner() {
 
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               
-                <div className="rounded-2xl border border-neutral-100 bg-white p-3 shadow-sm space-y-1">
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                     <div className="flex items-center gap-2">
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -130,7 +130,7 @@ export default function HeroBanner() {
                     <div className="text-xs text-neutral-500">Every month, forever</div>
                 </div>
 
-                <div className="rounded-2xl border border-neutral-100 bg-white p-3 shadow-sm space-y-1">
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                     <div className="flex items-center gap-2">
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -144,7 +144,7 @@ export default function HeroBanner() {
                     <div className="text-xs text-neutral-500">Manage your entire team</div>
                 </div>
 
-                <div className="rounded-2xl border border-neutral-100 bg-white p-3 shadow-sm space-y-1">
+                <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                     <div className="flex items-center gap-2">
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
                             <svg className="h-5 w-5" viewBox="0 0 32 32" fill="currentColor">
@@ -162,7 +162,7 @@ export default function HeroBanner() {
 
           {/* Right column - Dashboard mockup */}
           <div className="relative">
-            <div className="overflow-hidden rounded-2xl bg-white shadow-2xl animate-fade-in-scale">
+            <div className="overflow-hidden rounded-2xl bg-white drop-shadow-2xl animate-fade-in-scale">
                 {/* Window bar */}
                 <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
                   <div className="flex items-center gap-2 sm:gap-3">
@@ -180,7 +180,7 @@ export default function HeroBanner() {
                 </div>
 
                 {/* Top header */}
-                <div className="flex items-center justify-between px-3 py-3">
+                <div className="flex flex-wrap items-center justify-between px-3 py-3">
                     <div className="flex items-center gap-2.5">
                         <Logo />
                     </div>
@@ -233,7 +233,6 @@ export default function HeroBanner() {
                             <div>
                                 <div className="mb-2 flex items-center justify-between">
                                     <div className="text-sm font-semibold text-neutral-800">Today&apos;s Bookings</div>
-                                    <span className="text-xs font-medium text-indigo-600">View all</span>
                                 </div>
                                 <div className="rounded-xl border border-neutral-100">
                                     {todaysBookings.map((b, idx) => (
@@ -253,7 +252,6 @@ export default function HeroBanner() {
                                             : "bg-amber-50 text-amber-600"
                                         }`}
                                         >
-                                        <span className={`h-1.5 w-1.5 rounded-full ${b.status === "Confirmed" ? "bg-emerald-500" : "bg-amber-500"}`} />
                                         {b.status}
                                         </span>
                                     </div>
@@ -266,7 +264,7 @@ export default function HeroBanner() {
                             <div>
                                 <div className="mb-2 flex items-center justify-between">
                                     <div className="text-sm font-semibold text-neutral-800">Upcoming Meetings</div>
-                                    <span className="text-xs font-medium text-indigo-600">View all</span>
+                                    {/* <span className="text-xs font-medium text-indigo-600">View all</span> */}
                                 </div>
                                 <div className="space-y-3">
                                     {upcomingMeetings.map((m) => (
@@ -298,7 +296,6 @@ export default function HeroBanner() {
                                                 {m.time}
                                             </span>
                                             <span className="flex items-center gap-1 text-emerald-600">
-                                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                                                 Confirmed
                                             </span>
                                         </div>
@@ -384,57 +381,49 @@ export default function HeroBanner() {
 
                             {/* Calendar */}
                             <div className="rounded-xl border border-neutral-100 p-3">
-                            <div className="mb-2 flex items-center justify-between">
-                                <div className="text-sm font-semibold text-neutral-800">April 2025</div>
-                                <div className="flex items-center gap-1 text-neutral-400">
-                                    <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                    </svg>
-                                    <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
+                                <div className="mb-2 flex items-center justify-between">
+                                    <div className="text-sm font-semibold text-neutral-800">April 2025</div>
                                 </div>
-                            </div>
-                            <div className="grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-400">
-                                {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
-                                <span key={i} className="font-medium">{d}</span>
-                                ))}
-                            </div>
-                            <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-600">
-                                {[30, 31].map((d) => (
-                                <span key={`p${d}`} className="text-neutral-300">{d}</span>
-                                ))}
-                                {Array.from({ length: 30 }, (_, i) => i + 1).map((d) => (
-                                <span key={d} className={ d === 30 ? "mx-auto flex h-4 w-4 items-center justify-center rounded-full text-indigo-600 font-bold" : "" }>
-                                    {d}
-                                </span>
-                                ))}
-                                {[1, 2, 3].map((d) => (
-                                <span key={`n${d}`} className="text-neutral-300">{d}</span>
-                                ))}
-                            </div>
+                                <div className="grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-400">
+                                    {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
+                                    <span key={i} className="font-medium">{d}</span>
+                                    ))}
+                                </div>
+                                <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-600">
+                                    {[30, 31].map((d) => (
+                                    <span key={`p${d}`} className="text-neutral-300">{d}</span>
+                                    ))}
+                                    {Array.from({ length: 30 }, (_, i) => i + 1).map((d) => (
+                                    <span key={d} className={ d === 30 ? "mx-auto flex h-4 w-4 items-center justify-center rounded-full text-indigo-600 font-bold" : "" }>
+                                        {d}
+                                    </span>
+                                    ))}
+                                    {[1, 2, 3].map((d) => (
+                                    <span key={`n${d}`} className="text-neutral-300">{d}</span>
+                                    ))}
+                                </div>
                             </div>
 
                             {/* Actions */}
                             <div className="space-y-2 hidden sm:block">
-                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm">
-                                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-white drop-shadow-sm px-3 py-2 text-xs font-semibold text-neutral-700">
+                                    <svg className="h-4 w-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                                     </svg>
                                     New Booking
                                 </button>
-                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-white shadow-sm px-3 py-2 text-xs font-semibold text-neutral-700">
+                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-white drop-shadow-sm px-3 py-2 text-xs font-semibold text-neutral-700">
                                     <svg className="h-4 w-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                                     </svg>
                                     Send Reminders
                                 </button>
-                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg shadow-sm bg-white px-3 py-2 text-xs font-semibold text-neutral-700">
+                                <button className="flex w-full items-center justify-center gap-1.5 rounded-lg drop-shadow-sm bg-white px-3 py-2 text-xs font-semibold text-neutral-700">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-indigo-500"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><rect x="15" y="5" width="4" height="12" rx="1"/><rect x="7" y="8" width="4" height="9" rx="1"/></svg>
                                     View Reports
                                 </button>
 
-                                <div className="flex items-center gap-2 rounded-lg shadow-sm bg-gray-100 px-3 py-2">
+                                <div className="flex items-center gap-2 rounded-lg drop-shadow-sm bg-gray-100 px-3 py-2">
                                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
                                     </span>

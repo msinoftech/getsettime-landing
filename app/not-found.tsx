@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="relative min-h-[65vh] flex items-center justify-center overflow-hidden">
+    <div className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-300/20 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-400/30 rounded-full blur-3xl animate-pulse [animation-delay:4s]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 text-center">
         <Heading
           badge="Error 404"
           title="This slot"
