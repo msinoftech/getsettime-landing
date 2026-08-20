@@ -1,38 +1,41 @@
-import { BASE_URL } from "@/lib/config";
+import type { ReactNode } from "react";
+import RegionalPrice from "./RegionalPrice";
 
 export type PricingFaqItem = {
   title: string;
-  content: string;
+  content: ReactNode;
+  /** Plain-text fallback for FAQ schema when content includes React nodes */
   contentText?: string;
 };
 
 export const pricingFaqItems: PricingFaqItem[] = [
   {
-    title: "What’s included in the Free plan?",
-    content: "The Free plan gives you 1 seat, a public booking page, email notifications, and up to <strong>250 bookings per month</strong> — with no payment required. Upgrade to Starter or Professional when you need more bookings, calendar sync, or automation.",
+    title: "Which plan is best for me?",
+    content: `Our price plans are tailored to meet everyone's requirements. Solo practitioners can start for free for the first 250 bookings and upgrade at any time. <br/>For handling appointments across 2 sheets with automated scheduling, the Professional plan is perfect. <br/> For a team of more than two service providers across multiple locations with full automation, the Enterprise plan is best.`,
   },
   {
-    title: "What does “250 bookings included” mean on Starter?",
-    content: "Every Starter workspace includes 250 confirmed appointments per calendar month at no extra booking fee. After that, you can continue on unlimited booking volume as part of your plan — upgrade seats or tiers when your team grows.",
+    title: "What happens when I hit my booking limit?",
+    content: `In the free plan, your first 250 bookings for up to 3 months are included at no extra fee for a single sheet. Either you hit the limit before the month ends, or you complete three months of subscription; then you have to choose a paid plan to keep scheduling appointments. <br/> Paid plans include unlimited bookings from day one.`,
   },
   {
-    title: "Is GST included in the listed prices?",
-    content: "Paid plan prices are exclusive of 18% GST. Your invoice will reflect GST as per Indian tax regulations. The Free plan has no charges. Annual billing on Professional and Enterprise saves 10% before GST.",
+    title: "Can I try GetSetTime before committing to a paid plan?",
+    content:
+      "Yes — the Free plan requires no card and gives you a live booking page to test with real clients. You can also book a demo or start Professional for free and decide once you've seen the automation and branding in action",
   },
   {
-    title: "Can I add more staff (seats) later?",
-    content: "Yes. Add extra provider seats anytime at a regional monthly rate per seat (plus GST) on paid plans. Your workspace scales as you hire stylists, doctors, or therapists without switching platforms.",
+    title: "What if I need to add more providers than my plan's seat limit?",
+    content: (
+      <>
+        You&apos;re not locked into a tier by team size. You can add extra seats at any time for{" "}
+        <RegionalPrice plan="extraSeat" suffix="/month" />{" "} each (plus taxes). You don&apos;t need to upgrade your plan.
+      </>
+    ),
+    contentText:
+      "You're not locked into a tier by team size. You can add extra seats at any time for an additional per-seat monthly fee (plus taxes). You don't need to upgrade your plan.",
   },
   {
-    title: "Does Starter get an annual discount?",
-    content: "Annual billing with 10% savings applies to Professional and Enterprise plans. Free and Starter stay on simple pricing so you can start lean and upgrade when ready.",
-  },
-  {
-    title: "Can I change or cancel my plan?",
-    content: "You can upgrade, downgrade, or add seats from your workspace settings. Contact support for Enterprise changes or custom contracts — we aim for flexible, transparent billing.",
-  },
-  {
-    title: "Do you offer a demo before I pay?",
-    content: `Yes. Start on Free, <a href="${BASE_URL}/contact-us" class="text-indigo-600 font-semibold hover:underline">book a demo</a>, or sign in to explore the product. Many teams start free and move to Professional when they need WhatsApp automation and branding.`,
+    title: "Which payment method can I use to pay?",
+    content:
+      "We accept payments from MasterCard, Visa, Visa Debit, American Express, and PayPal. Remember, you don't need to provide card details to start your free trial.",
   },
 ];
