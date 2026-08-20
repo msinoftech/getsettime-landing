@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { COUNTRY_LIST } from "@/lib/CountryList";
 import InternationalPhoneField, {
   isValidInternationalPhone,
 } from "./InternationalPhoneField";
+import { COUNTRY_LIST } from "@/lib/CountryList";
 
 type FormData = {
   fullName: string;
@@ -21,14 +21,16 @@ type FormData = {
 };
 
 const businessTypes = [
-  "Salon & Beauty",
   "Clinic / Healthcare",
-  "Fitness & Wellness",
-  "Consulting",
-  "Home Services",
-  "Education & Coaching",
+  "Dental Clinic",
+  "Physiotherapy Clinic",
+  "Salon & Beauty",
+  "Personal Meetings",
+  "Sports & Fitness",
   "Other",
 ];
+
+const countries = COUNTRY_LIST.map((country) => country.name + " (" + country.iso + ")");
 
 const bookingMethods = [
   "In Person",
@@ -49,7 +51,7 @@ const preferredTimes = [
 
 function FieldLabel({ children, required = true }: { children: React.ReactNode; required?: boolean }) {
   return (
-    <label className="mb-1.5 block text-xs font-medium text-neutral-700 sm:text-sm">
+    <label className="mb-1.5 block text-xs font-medium text-neutral-700">
       {children}
       {required && <span className="text-red-500"> *</span>}
     </label>
@@ -191,12 +193,9 @@ export default function FreeBookingSetupForm() {
     }
   };
 
-  const inputClass =
-    "block w-full rounded-lg border border-neutral-200 bg-white py-3 pl-10 pr-3 text-base text-neutral-800 placeholder:text-neutral-400 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 sm:py-2.5 sm:text-sm";
-  const selectClass =
-    "block w-full rounded-lg border border-neutral-200 bg-white py-3 pl-10 pr-10 text-base text-neutral-800 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 appearance-none sm:py-2.5 sm:text-sm";
-  const textareaClass =
-    "block w-full rounded-lg border border-neutral-200 bg-white px-3 py-3 text-base text-neutral-800 placeholder:text-neutral-400 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 sm:py-2.5 sm:text-sm";
+  const inputClass = "block w-full rounded-lg border border-neutral-200 bg-white py-3 pl-10 pr-3 text-sm text-neutral-800 placeholder:text-neutral-400 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 sm:py-2.5";
+  const selectClass = "block w-full rounded-lg border border-neutral-200 bg-white py-3 pl-10 pr-10 text-sm text-neutral-800 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 appearance-none sm:py-2.5";
+  const textareaClass = "block w-full rounded-lg border border-neutral-200 bg-white px-3 py-3 text-sm text-neutral-800 placeholder:text-neutral-400 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 sm:py-2.5";
 
   return (
     <div id="apply-form" className="mx-auto w-full rounded-2xl border border-neutral-200 bg-white p-4 drop-shadow-lg sm:p-6">
@@ -316,10 +315,8 @@ export default function FreeBookingSetupForm() {
                 className={selectClass}
               >
                 <option value="">Select your country</option>
-                {COUNTRY_LIST.map((c) => (
-                  <option key={c.iso} value={c.name}>
-                    {c.name}
-                  </option>
+                {countries.map((isoCode) => (
+                  <option key={isoCode} value={isoCode}>{isoCode}</option>
                 ))}
               </select>
               <SelectChevron />
@@ -362,6 +359,7 @@ export default function FreeBookingSetupForm() {
                 setFormData((prev) => ({ ...prev, phone }));
                 if (errorMessage) setErrorMessage("");
               }}
+              className="text-xs"
             />
           </div>
 

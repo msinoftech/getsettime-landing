@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
 export interface TestimonialItem {
@@ -103,7 +104,7 @@ export const TestimonialSlider = ({
                     }`}
                   >
                     {current.avatar ? (
-                      <img src={current.avatar} className="h-12 w-12 rounded-xl object-cover" alt={current.name}/>
+                      <Image src={current.avatar} alt={current.name} width={48} height={48} className="h-12 w-12 rounded-xl object-cover" />
                     ) : (
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 text-base font-bold text-white">
                         {currentInitials}

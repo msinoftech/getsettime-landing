@@ -259,7 +259,6 @@ export default function Home() {
       {/* Add Structured Data for Home Page */}
       <Script id="homepage-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData),}}/>
 
-      {/* <Hero /> */}
       <HeroBanner />
 
       <TrustedCompanies />

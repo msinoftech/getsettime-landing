@@ -19,7 +19,7 @@ export default function Footer() {
     { label: "Salon appointment Software", href: `${BASE_URL}/solutions/salon-appointment-scheduling-software` },
   ];
   const resourcesLinks = [
-    // { label: "Claim Free Booking Page", href: `${BASE_URL}/claim-now-free-appointment-scheduling-software` },
+    { label: "Claim Free Booking Page", href: `${BASE_URL}/claim-now-free-appointment-scheduling-software` },
     { label: "Help Center", href: `${BASE_URL}/help-center` },
     { label: "Privacy Policy", href: `${BASE_URL}/privacy-policy` },
     { label: "Terms of Conditions", href: `${BASE_URL}/terms-of-conditions` },
@@ -29,62 +29,72 @@ export default function Footer() {
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="mx-auto container px-4 sm:px-6 lg:px-8 pt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 py-10">
+            
             {/* Brand Column */}
-            <div className="lg:col-span-1 space-y-3">
-              <div><Logo /></div>
-              <p>GetSetTime is a cloud-based scheduling software built for appointment-based services and businesses to manage bookings effortlessly. Simple scheduling, fewer no-shows, more time for what matters — running your practice.</p>
-              {/* Social Links */}
-              <div className="flex gap-3">
-                {socialLinks.map((item) => (
-                    <Link
-                      key={item.link}
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={item.ariaLabel}
-                      className="group flex items-center justify-center w-9 h-9 rounded-full bg-neutral-100 hover:bg-indigo-100 focus:bg-indigo-200 hover:text-indigo-600 transition-all duration-200 outline-none"
-                      dangerouslySetInnerHTML={{ __html: item.icon }}
-                    />
-                  ))}
+            <div className="sm:col-span-3 lg:col-span-1">
+              <div className="lg:col-span-1 space-y-3">
+                <div><Logo /></div>
+                <p>GetSetTime is a cloud-based scheduling software built for appointment-based services and businesses to manage bookings effortlessly. Simple scheduling, fewer no-shows, more time for what matters — running your practice.</p>
+                {/* Social Links */}
+                <div className="flex gap-3">
+                  {socialLinks.map((item) => (
+                      <Link
+                        key={item.link}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={item.ariaLabel}
+                        className="group flex items-center justify-center w-9 h-9 rounded-full bg-neutral-100 hover:bg-indigo-100 focus:bg-indigo-200 hover:text-indigo-600 transition-all duration-200 outline-none"
+                        dangerouslySetInnerHTML={{ __html: item.icon }}
+                      />
+                    ))}
+                </div>
               </div>
             </div>
 
             {/* Useful Links */}
-            <div>
-              <div className="font-semibold text-neutral-900 mb-4">Quick Links</div>
-              <ul className="space-y-2">
-                {usefulLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} aria-label={link.label} className="hover:text-indigo-600 duration-200">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
+            <div className="flex justify-start lg:justify-center">
+              <div>
+                <div className="font-semibold text-neutral-900 mb-4">Quick Links</div>
+                <ul className="space-y-2">
+                  {usefulLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} aria-label={link.label} className="hover:text-indigo-600 duration-200">{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Solutions */}
             <div>
-              <div className="font-semibold text-neutral-900 mb-4">Solutions</div>
-              <ul className="space-y-2">
-                {solutionsLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link href={link.href} aria-label={link.label} className="hover:text-indigo-600 duration-200">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <div className="font-semibold text-neutral-900 mb-4">Solutions</div>
+                <ul className="space-y-2">
+                  {solutionsLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link href={link.href} aria-label={link.label} className="hover:text-indigo-600 duration-200">{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Resources */}
-            <div>
-              <div className="font-semibold text-neutral-900 mb-4">Resources</div>
-              <ul className="space-y-2">
-                {resourcesLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} aria-label={link.label} className="hover:text-indigo-600 duration-200">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
+            <div className="sm:col-span-2 lg:col-span-1">
+              <div>
+                <div className="font-semibold text-neutral-900 mb-4">Resources</div>
+                <ul className="space-y-2">
+                  {resourcesLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} aria-label={link.label} className="hover:text-indigo-600 duration-200">{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
           </div>
 
           {/* Newsletter Signup */}

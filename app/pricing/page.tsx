@@ -112,8 +112,8 @@ const valueProps = [
 
 const trustPoints = [
   {
-    title: "Built for India",
-    detail: "Clinics, salons & wellness studios",
+    title: "Transparent billing",
+    detail: "Shown upfront, no surprise fees",
     iconBg: "bg-indigo-100 text-indigo-600",
     border: "border-indigo-100 hover:border-indigo-200",
     icon: (
@@ -123,8 +123,8 @@ const trustPoints = [
     ),
   },
   {
-    title: "WhatsApp automation",
-    detail: "Reminders on Pro & Enterprise",
+    title: "WhatsApp reminders",
+    detail: "Cut no-shows — live on Pro & Enterprise",
     iconBg: "bg-green-100 text-green-600",
     border: "border-green-100 hover:border-green-200",
     icon: (
@@ -135,8 +135,8 @@ const trustPoints = [
     ),
   },
   {
-    title: "Calendar sync",
-    detail: "Google Calendar two-way",
+    title: "Live calendar sync",
+    detail: "Google Calendar updates both ways, instantly",
     iconBg: "bg-violet-100 text-violet-600",
     border: "border-violet-100 hover:border-violet-200",
     icon: (
@@ -146,8 +146,8 @@ const trustPoints = [
     ),
   },
   {
-    title: "Human support",
-    detail: "Real help, not ticket bots",
+    title: "Real support, real people",
+    detail: "From community help to a 24/7 SLA line ",
     iconBg: "bg-amber-100 text-amber-600",
     border: "border-amber-100 hover:border-amber-200",
     icon: (
@@ -348,9 +348,9 @@ export default function PricingPage() {
             <div className="space-y-6">
               <Heading
                 badge="Pricing"
-                title="Simple plans built for"
-                highlightText="clinics, salons & services."
-                description={`Transparent INR pricing with ${APP_NAME} — seats and booking volume that match how you grow. No hidden tiers and no per-booking surprises on Starter.`}
+                title="Affordable and Transparent Plans for Solo"
+                highlightText="Providers to Multi-Location Teams."
+                description="Start scheduling by claiming the free plan. Collaboration features are available on Starter, Professional, and Enterprise—choose based on team size."
                 headingTag="h1"
                 titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
               />
@@ -441,10 +441,10 @@ export default function PricingPage() {
           <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="mb-10 text-center md:mb-12">
               <Heading
-                badge="Why our pricing works"
-                title="Built for predictable growth,"
-                highlightText="not surprise bills."
-                description="Every plan is designed around how clinics and salons actually scale — booking volume, team seats, and simple upgrades."
+                badge="Affordable For Everyone"
+                title="Bills Will Never Surprise You,"
+                highlightText="Growth Can"
+                description="Our pricing plans are customizable to meet your needs based on booking volume, team size, and the advanced features you require."
               />
             </div>
 
@@ -478,7 +478,14 @@ export default function PricingPage() {
         </section>        
         
         {/* Plans + toggle + cards */}
-        <Pricing variant="page" />
+        <Pricing 
+          variant="page" 
+          headerContent={{
+            badge: "Free Price Card",
+            description: "Perfect for starting and testing the software with essential features - without paying.",
+            wrapperClassName: "mb-8 space-y-3 text-center",
+          }} 
+        />
 
         {/* Feature comparison */}
         <section className="py-12 sm:py-20">
@@ -493,7 +500,7 @@ export default function PricingPage() {
             </div>
         </section>
 
-        {/* Extra seats + trust */}
+        {/* Extra seats + trust why teams choose us */}
         <section className="relative overflow-hidden pb-14 sm:pb-20">
           <div className="pointer-events-none absolute inset-0 hidden sm:block">
             <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-indigo-400/10 blur-3xl" />
@@ -539,8 +546,8 @@ export default function PricingPage() {
                 <div className="lg:col-span-7">
                     <Heading
                         badge="Why teams choose us"
-                        title="Everything you need to run appointments with confidence."
-                        description="From solo practitioners to multi-chair salons — transparent pricing and product depth that grows with you."
+                        title="Everything A Growing Practice Actually Needs."
+                        description="Not a generic calendar — GetSetTime is built around how clinics and salons book, remind, and get paid."
                         wrapperClassName="space-y-3"
                     />
 

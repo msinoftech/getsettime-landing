@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion:</h2>
       <p>To pull away from traditional practices, choose a reliable <b>app to manage appointments more effectively.</b> AI-powered tools like GetSetTime help professionals save time, and clients love the convenience.</p>
     `,
-    coverImage: "schedule-appointments.jpg",
+    coverImage: "schedule-appointments.webp",
     author: {
       name: `${APP_NAME}`,
       avatar: "man.png",
@@ -224,7 +224,7 @@ export const blogPosts: BlogPost[] = [
       
 
     `,
-    coverImage: "online-calendar.jpg",
+    coverImage: "online-calendar.webp",
     author: {
       name: `${APP_NAME}`,
       avatar: "man.png",
@@ -314,7 +314,7 @@ export const blogPosts: BlogPost[] = [
     <p>For service-based professionals — whether you're a therapist, personal trainer, consultant, or salon owner — switching from manual booking to an automated system is one of the most impactful operational decisions you can make.</p>
     <p>If you haven't made the switch yet, now is a good time to start. Try a platform such as Getsettime that fits your workflow, set up your services and availability, and share your booking link with clients.</p>
     `,
-    coverImage: "appointment-scheduling-softwaret.jpg",
+    coverImage: "appointment-scheduling-softwaret.webp",
     author: {
       name: `${APP_NAME}`,
       avatar: "man.png",
@@ -436,7 +436,7 @@ export const blogPosts: BlogPost[] = [
     <p>A well-chosen <strong>clinic management system</strong> pays for itself. A poorly chosen one adds a new problem to the list.</p>
 
     `,
-    coverImage: "choose-a-clinic-management-software.jpg",
+    coverImage: "choose-a-clinic-management-software.webp",
     author: {
       name: `${APP_NAME}`,
       avatar: "man.png",

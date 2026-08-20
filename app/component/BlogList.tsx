@@ -147,12 +147,11 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
               )}
             </div>
           </div>
-
       </div>
 
       {/* Blog Grid */}
       {filteredPosts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {visiblePosts.map((post, index) => (
             <div key={post.id} style={{ animationDelay: `${(index % postsPerPage) * 100}ms` }}>
               <BlogCard post={post} />
@@ -160,7 +159,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 bg-white rounded-xl drop-shadow-sm">
+        <div className="text-center bg-white rounded-xl drop-shadow-sm">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-neutral-100 flex items-center justify-center">
             <svg className="w-8 h-8 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -197,17 +196,6 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
         </div>
       )}
 
-      {/* End of List Message */}
-      {!hasMorePosts && filteredPosts.length > 0 && (
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-5 py-3 text-neutral-600">
-            <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-            <span>You&apos;ve reached the end of the list</span>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

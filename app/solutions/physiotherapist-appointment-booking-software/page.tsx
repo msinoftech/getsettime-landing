@@ -7,7 +7,8 @@ import { FaqSection } from "@/app/component/FaqSection";
 import Card from "@/app/component/Card";
 import Heading from "@/app/component/Heading";
 import { CheckListItem } from "@/app/component/CheckList";
-import DemoFreeForm from "@/app/component/DemoFreeForm";
+import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+
 
 const pageUrl = `${BASE_URL}/solutions/physiotherapist-appointment-booking-software`;
 
@@ -268,90 +269,6 @@ const growthRoadmap = [
   },
 ];
 
-const ctaHighlightFeatures = [
-  {
-    title: "Online Booking 24/7",
-    description: "Let customers book anytime.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
-        <path d="m9 16 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Auto Reminders",
-    description: "Reduce no-shows effortlessly.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M13.73 21a2 2 0 0 1-3.46 0" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Team & Calendar Management",
-    description: "Manage staff, services and schedules.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-  },
-  {
-    title: "Grow Your Business",
-    description: "More bookings. More happy clients.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M7 16V9M12 16V5M17 16v-3" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-];
-
-const ctaTrustAvatars = [
-  "/doctor-profile.jpg",
-  "/dentist-profile.jpg",
-  "/salon-profile.jpg",
-  "/physiotherapy-profile.jpg",
-];
-
-const ctaTrustBadges = [
-  {
-    title: "Secure & Reliable",
-    description: "Enterprise grade security",
-    icon: (
-      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Super Easy Setup",
-    description: "Get started in minutes",
-    icon: (
-      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    title: "24/7 Support",
-    description: "We're here to help",
-    icon: (
-      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm18 0h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5Z" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-];
-
   return (
     <>
       {/* Add Structured Data for Physiotherapy Appointment Booking App Page */}
@@ -444,7 +361,7 @@ const ctaTrustBadges = [
             <div className="relative">
                 <div className="grid gap-3 animate-fade-in-scale">
                   <div className="overflow-hidden rounded-2xl">
-                    <Image src="/physiotherapy-appointment.jpg" alt="physiotherapy appointment staff working" className="h-50 w-full object-cover" width={500} height={500}/>
+                    <Image src="/physiotherapy-appointment.webp" alt="physiotherapy appointment staff working" className="h-50 w-full object-cover" width={500} height={500}/>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -480,7 +397,7 @@ const ctaTrustBadges = [
                       </div>
 
                       <div className="relative flex items-center gap-3 rounded-xl border border-neutral-100 bg-neutral-50 p-2.5">
-                        <Image src="/physiotherapy-profile.jpg" alt="physiotherapy profile" className="h-10 w-10 rounded-full object-cover ring-2 ring-white" width={50} height={50}/>
+                        <Image src="/physiotherapy-profile.webp" alt="physiotherapy profile" className="h-10 w-10 rounded-full object-cover ring-2 ring-white" width={50} height={50}/>
                         <div className="min-w-0 flex-1">
                           <div className="truncate text-sm font-semibold text-neutral-900">Physiotherapist</div>
                           <div className="truncate text-xs text-neutral-500">Trusted &amp; experienced</div>
@@ -585,7 +502,7 @@ const ctaTrustBadges = [
                   <div className="relative flex items-center gap-3">
                     <div className="relative shrink-0">
                       <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-indigo-500/30 to-violet-500/30 blur" aria-hidden />
-                      <Image src="/physiotherapy-profile.jpg" alt="physiotherapy profile" className="relative h-14 w-14 rounded-full border-4 border-white object-cover drop-shadow-md" width={64} height={64} priority />
+                      <Image src="/physiotherapy-profile.webp" alt="physiotherapy profile" className="relative h-14 w-14 rounded-full border-4 border-white object-cover drop-shadow-md" width={64} height={64} priority />
                       <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-emerald-500">
                         <svg className="h-2.5 w-2.5 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                       </span>
@@ -724,7 +641,7 @@ const ctaTrustBadges = [
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* LEFT COLUMN */}
             <div className="relative rounded-2xl overflow-hidden bg-white p-3 drop-shadow-xl">
-              <Image src="/physiotherapy-services.jpg" alt="physiotherapy services available" className="h-full w-full object-cover rounded-xl" width={500} height={500} />
+              <Image src="/physiotherapy-services.webp" alt="physiotherapy services available" className="h-full w-full object-cover rounded-xl" width={500} height={500} />
             </div>
             {/* RIGHT COLUMN */}
             <div className="space-y-3">
@@ -857,7 +774,7 @@ const ctaTrustBadges = [
                   </div>
                 </div>
                 <div className="relative overflow-hidden rounded-2xl border border-neutral-200">
-                  <Image src="/physiotherapy-realty.jpg" alt="physiotherapy appointment schedule interface" width={700} height={700} className="h-full w-full object-cover" />
+                  <Image src="/physiotherapy-realty.webp" alt="physiotherapy appointment schedule interface" width={700} height={700} className="h-full w-full object-cover" />
                   <div className="absolute left-2 top-2 rounded-md bg-indigo-600/90 px-2 py-1 text-xs uppercase tracking-widest text-white">Smart slots</div>
                 </div>
               </div>
@@ -938,7 +855,7 @@ const ctaTrustBadges = [
               {/* RIGHT FEATURES GRID */}
               <div className="relative">
                   <div className="rounded-xl bg-white p-3 drop-shadow-xl">
-                      <Image src="/physiotherapy-grow.jpg" alt="Physiotherapy growth roadmap" width={600} height={500} className="w-full h-full rounded-xl object-cover" />
+                      <Image src="/physiotherapy-grow.webp" alt="Physiotherapy growth roadmap" width={600} height={500} className="w-full h-full rounded-xl object-cover" />
                   </div>
                   <div className="absolute right-0 -top-10 hidden lg:block w-60 rounded-xl bg-white p-4 drop-shadow-md animate-float">
                       <div className="text-sm uppercase text-neutral-400">Physiotherapy growth</div>
@@ -995,90 +912,10 @@ const ctaTrustBadges = [
       </section>
 
       {/* Call-to-Action Section */}
-      <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10 md:p-6 lg:p-8 xl:p-10">
-              <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
-                {/* left: Content */}
-                <div className="space-y-6">
-                  <Heading
-                    badge="Built for Modern Business"
-                    title="Ready for GetSetTime To Manage Your Appointments"
-                    description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
-                    descriptionClassName = "text-white"
-                  />
-                  
-                  {/* <div className="mt-8">
-                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Doctor Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
-                  </div> */}
-
-                  <div className="space-y-5">
-                    {ctaHighlightFeatures.map((item) => (
-                      <div key={item.title} className="flex items-center gap-4">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white drop-shadow-sm">
-                          {item.icon}
-                        </div>
-                        <div>
-                          <p className="text-base font-bold text-white">{item.title}</p>
-                          <p className="text-sm text-white/85">{item.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap items-center gap-4">
-                      <div className="flex -space-x-2.5">
-                        {ctaTrustAvatars.map((src) => (
-                          <Image
-                            key={src}
-                            src={src}
-                            alt=""
-                            width={40}
-                            height={40}
-                            className="relative h-10 w-10 rounded-full border-2 border-white object-cover"
-                          />
-                        ))}
-                      </div>
-                      <div className="hidden h-10 w-px bg-white/30 sm:block" aria-hidden />
-                      <div>
-                        <p className="text-sm leading-snug text-white">
-                          Trusted by <span className="font-semibold">2,500+</span> businesses worldwide
-                        </p>
-                        <div className="mt-1 flex gap-0.5" aria-label="5 out of 5 stars">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <svg key={i} className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                            </svg>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="rounded-2xl bg-slate-100/95 px-4 py-4 sm:px-5">
-                      <div className="grid gap-4 sm:grid-cols-3 sm:gap-3">
-                        {ctaTrustBadges.map((item) => (
-                          <div key={item.title} className="flex items-start gap-2">
-                            {item.icon}
-                            <div className="min-w-0">
-                              <div className="text-sm font-bold text-indigo-950">{item.title}</div>
-                              <div className="text-xs text-slate-500">{item.description}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* right: Image */}
-                <div className="relative mx-auto w-full rounded-xl drop-shadow-xl">
-                  <DemoFreeForm businessType="Physiotherapy Clinic"/>               
-                </div>
-              </div>
-            </div>
-          </div>
-    </section>
+      <SolutionCtaSection
+          badge="Built for Physiotherapy Clinics"
+          businessType="Physiotherapy Clinic"
+      />
     </>
   );
 }

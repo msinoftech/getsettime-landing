@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { REGISTER_GOOGLE_URL, REGISTER_URL, LOGIN_URL } from "@/lib/config";
+import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import Logo from "./Logo";
 
 const todaysBookings = [
@@ -11,8 +11,8 @@ const todaysBookings = [
 ];
 
 const upcomingMeetings = [
-  { name: "Dr. Amanda Lee", role: "Consultation", date: "Tue, 30 Apr", time: "10:00 AM", avatar: "/doctor-profile.jpg" },
-  { name: "James Rodriguez", role: "Physiotherapy", date: "Tue, 30 Apr", time: "02:00 PM", avatar: "/grow-doctor.jpg" },
+  { name: "Dr. Amanda Lee", role: "Consultation", date: "Tue, 30 Apr", time: "10:00 AM", avatar: "/doctor-profile.webp" },
+  { name: "James Rodriguez", role: "Physiotherapy", date: "Tue, 30 Apr", time: "02:00 PM", avatar: "/physiotherapy-profile.webp" },
 ];
 
 const activityData = [
@@ -69,7 +69,7 @@ export default function HeroBanner() {
       </div>
 
       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1  gap-10 xl:grid-cols-2 lg:gap-6">
+        <div className="grid grid-cols-1 items-center gap-10 xl:grid-cols-2 lg:gap-6">
           {/* Left column */}
           <div className="space-y-5">
             <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize">
@@ -90,7 +90,7 @@ export default function HeroBanner() {
                     </svg>
                     Sign up with Google
                 </Link>
-                <Link href={LOGIN_URL} target="_blank" aria-label="Start Free - Hero Banner" className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white drop-shadow-lg transition">
+                <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Start Free - Hero Banner" className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white drop-shadow-lg transition">
                     Start Free — 250 Bookings Included
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6l6 6-6 6" /></svg>
                 </Link>

@@ -15,9 +15,24 @@ import { useMemo, useState } from "react";
 import Heading from "./Heading";
 
 interface PricingHeaderContent {
-  badgeText: string;
-  title: string;
-  description: string;
+  badge?: string;
+  title?: string;
+  highlightText?: string;
+  description?: string;
+  wrapperClassName?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+}
+
+const defaultPricingHeaderContent: Required<Pick<PricingHeaderContent, "badge" | "title" | "description" | "wrapperClassName">> = {
+  badge: "Pricing Plans",
+  title: "Choose the plan that fits your team",
+  description: "Transparent monthly pricing in {currency}. Toggle annual billing on Professional and Enterprise to save 10%.",
+  wrapperClassName: "mb-6 space-y-3 text-center",
+};
+
+function resolvePricingHeaderDescription(template: string, currencyLabel: string) {
+  return template.replaceAll("{currency}", currencyLabel);
 }
 
 interface CtaButton {
@@ -49,6 +64,8 @@ interface PricingProps {
   variant?: "home" | "page";
 }
 
+export type { PricingHeaderContent };
+
 export const PricingCard: FC<{
   tier: PricingTier;
   isAnnual: boolean;
@@ -60,7 +77,7 @@ export const PricingCard: FC<{
   const displayPrice = tier.price === "Free" ? "Free" : isAnnual ? `${annualPrice}` : `${monthlyPrice}`;
 
   return (
-    <div className={`pricing-card relative h-full rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:drop-shadow-xl space-y-4 ${ tier.popular ? 'border-indigo-300 bg-white/75 drop-shadow-xl drop-shadow-indigo-200/50 ring-1 ring-indigo-200 backdrop-blur' : 'border-white/70 bg-white/80 drop-shadow-xl drop-shadow-slate-200/70 backdrop-blur' }`}>
+    <div className={`pricing-card bg-white relative h-full rounded-2xl p-4 sm:p-6 transition-transform duration-300 hover:-translate-y-2 hover:drop-shadow-xl space-y-4 ${ tier.popular ? 'border-indigo-300 drop-shadow-xl drop-shadow-indigo-200/70 ring-2 ring-indigo-200' : 'drop-shadow-xl drop-shadow-slate-200/70' }`}>
       {tier.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
           <div className="bg-indigo-600 text-white text-xs font-semibold px-4 py-2 rounded-xl drop-shadow-lg">Most Popular</div>
@@ -133,19 +150,68 @@ export const PricingCard: FC<{
 };
 
 export const BillingToggle: FC<{ isAnnual: boolean; onChange: (annual: boolean) => void }> = ({ isAnnual, onChange }) => (
-  <div className="flex justify-center mb-16">
-    <div className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/90 p-2 drop-shadow-lg drop-shadow-slate-200/60 backdrop-blur">
-      <button type="button" onClick={() => onChange(false)} className={`rounded-xl px-5 py-2 text-sm cursor-pointer ${ !isAnnual ? "bg-indigo-600 text-white drop-shadow" : "bg-white text-neutral-600 hover:bg-indigo-500/10 hover:text-indigo-600" }`}>Monthly</button>
-      <button type="button" onClick={() => onChange(true)} className={`rounded-xl px-5 py-2 text-sm cursor-pointer ${ isAnnual ? "bg-indigo-600 text-white drop-shadow" : "bg-white text-neutral-600 hover:bg-indigo-500/10 hover:text-indigo-600" }`}>Annual</button>
-      <div className="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded-md">Save 10%</div>
+  <div className="my-10 flex flex-col items-center gap-4 px-4">
+    <div className="relative">
+      <div className="pointer-events-none absolute -right-2 -top-3 z-20 sm:-right-5 sm:-top-3.5" aria-hidden>
+        <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-500/25 ring-2 ring-white sm:px-3 sm:text-[11px]">
+          <svg className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+          </svg>
+          Save 10%
+        </div>
+      </div>
+
+      <div role="radiogroup" aria-label="Billing cycle" className="relative grid grid-cols-2 rounded-2xl border border-slate-200/90 bg-slate-50/90 p-1.5 shadow-[0_10px_40px_-16px_rgba(15,23,42,0.25)] backdrop-blur-sm">
+        <div aria-hidden className={`pointer-events-none absolute bottom-1.5 top-1.5 w-[calc(50%-6px)] rounded-xl bg-white shadow-[0_4px_14px_-6px_rgba(79,70,229,0.35)] ring-1 ring-indigo-100 transition-all duration-300 ease-out ${ isAnnual ? "left-[calc(50%+3px)]" : "left-1.5" }`}/>
+
+        <button
+          type="button"
+          role="radio"
+          aria-checked={!isAnnual}
+          onClick={() => onChange(false)}
+          className={`relative z-10 flex min-w-[7.25rem] flex-col items-center justify-center rounded-xl px-4 py-3 transition-colors duration-200 sm:min-w-[8.75rem] sm:px-6 cursor-pointer ${
+            !isAnnual ? "bg-indigo-600 text-white" : "text-slate-500 hover:text-slate-700"
+          }`}
+        >
+          <span className="text-sm font-semibold">Monthly</span>
+        </button>
+
+        <button
+          type="button"
+          role="radio"
+          aria-checked={isAnnual}
+          onClick={() => onChange(true)}
+          className={`relative z-10 flex min-w-[7.25rem] flex-col items-center justify-center rounded-xl px-4 py-3 transition-colors duration-200 sm:min-w-[8.75rem] sm:px-6 cursor-pointer ${
+            isAnnual ? "bg-indigo-600 text-white" : "text-slate-500 hover:text-slate-700"
+          }`}
+        >
+          <span className="text-sm font-semibold">Annual</span>
+        </button>
+      </div>
     </div>
   </div>
 );
 
-export default function Pricing({ variant = "home" }: PricingProps = {}) {
+export default function Pricing({
+  variant = "home",
+  headerContent,
+}: PricingProps = {}) {
   const [isAnnual, setIsAnnual] = useState(false);
   const isPage = variant === "page";
   const region = useRegionalPricing();
+
+  const plansHeading = {
+    badge: headerContent?.badge ?? defaultPricingHeaderContent.badge,
+    title: headerContent?.title ?? defaultPricingHeaderContent.title,
+    highlightText: headerContent?.highlightText,
+    description: resolvePricingHeaderDescription(
+      headerContent?.description ?? defaultPricingHeaderContent.description,
+      region.currencyLabel,
+    ),
+    wrapperClassName: headerContent?.wrapperClassName ?? defaultPricingHeaderContent.wrapperClassName,
+    titleClassName: headerContent?.titleClassName,
+    descriptionClassName: headerContent?.descriptionClassName,
+  };
 
   const tiers = useMemo(() => {
     const localized = applyRegionalPrices(pricingTiers, region);
@@ -169,7 +235,7 @@ export default function Pricing({ variant = "home" }: PricingProps = {}) {
       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
 
         {!isPage && (
-          <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-4 drop-shadow-2xl drop-shadow-indigo-600/20 sm:p-8 md:p-10 max-w-7xl mx-auto">
+          <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-4 drop-shadow-xl drop-shadow-indigo-600/20 sm:p-8 md:p-10 max-w-7xl mx-auto">
             <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/20 blur-3xl" />
             <div className="absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-white/10 blur-3xl" />
             <div className="relative grid gap-8 lg:grid-cols-[1fr_320px] lg:items-center">
@@ -204,18 +270,19 @@ export default function Pricing({ variant = "home" }: PricingProps = {}) {
           </div>
         )}
 
-        {!isPage && (
-          <Heading
-            badge="Pricing Plans"
-            title="Choose the plan that fits your team"
-            description={`Transparent monthly pricing in ${region.currencyLabel}. Toggle annual billing on Professional and Enterprise to save 10%.`}
-            wrapperClassName="mb-6 space-y-3 text-center"
-          />
-        )}
+        <Heading
+          badge={plansHeading.badge}
+          title={plansHeading.title}
+          highlightText={plansHeading.highlightText}
+          description={plansHeading.description}
+          wrapperClassName={plansHeading.wrapperClassName}
+          titleClassName={plansHeading.titleClassName}
+          descriptionClassName={plansHeading.descriptionClassName}
+        />        
 
         <BillingToggle isAnnual={isAnnual} onChange={setIsAnnual} />
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-4">
           {tiers.map((tier: PricingTier) => (
             <PricingCard key={tier.name} tier={tier} isAnnual={isAnnual} region={region} />
           ))}

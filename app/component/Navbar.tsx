@@ -150,14 +150,10 @@ export default function Navbar() {
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
                       <span className="leading-5">Salon</span>
                     </Link>
-                    {/* <Link href="/solutions/real-estate-appointment-booking-software" aria-label="Real Estate appointment Software - Navbar" aria-current={isActive("/solutions/real-estate-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/real-estate-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                      <span className="leading-5">Real Estate</span>
-                    </Link>
                     <Link href="/solutions/tutor-appointment-booking-software" aria-label="Tutor appointment booking software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
                       <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
                       <span className="leading-5">Tutor</span>
-                    </Link> */}
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -255,11 +251,9 @@ export default function Navbar() {
 
                       <Link href="/solutions/physiotherapist-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Physiotherapist appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Physiotherapist</Link>
 
-                      {/* <Link href="/solutions/real-estate-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Physiotherapist appointment Software - Navbar" aria-current={isActive("/solutions/real-estate-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/real-estate-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Real Estate</Link> */}
-
                       <Link href="/solutions/salon-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Salon</Link>
 
-                      {/* <Link href="/solutions/tutor-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Tutor</Link> */}
+                      <Link href="/solutions/tutor-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Tutor</Link>
                     </div>
                   </div>
                 )}

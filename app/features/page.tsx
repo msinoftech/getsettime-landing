@@ -780,19 +780,19 @@ export default function FeaturesPage() {
                   wrapperClassName="space-y-3"
                 />
                 <div className="mt-8 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-indigo-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
+                  <div className="rounded-2xl border border-indigo-100 bg-white p-4 drop-shadow-sm">
                     <div className="text-3xl font-bold text-indigo-600">4</div>
                     <p className="text-sm text-neutral-600">Automated stages</p>
                   </div>
-                  <div className="rounded-2xl border border-emerald-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
+                  <div className="rounded-2xl border border-emerald-100 bg-white p-4 drop-shadow-sm">
                     <div className="text-3xl font-bold text-emerald-600">2</div>
                     <p className="text-sm text-neutral-600">Manual follow-ups</p>
                   </div>
-                  <div className="rounded-2xl border border-violet-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
+                  <div className="rounded-2xl border border-violet-100 bg-white p-4 drop-shadow-sm">
                     <div className="text-3xl font-bold text-violet-600">3</div>
                     <p className="text-sm text-neutral-600">Reminder channels</p>
                   </div>
-                  <div className="rounded-2xl border border-sky-100 bg-white/80 p-4 drop-shadow-sm backdrop-blur">
+                  <div className="rounded-2xl border border-sky-100 bg-white p-4 drop-shadow-sm">
                     <div className="text-3xl font-bold text-sky-600">24/7</div>
                     <p className="text-sm text-neutral-600">Online booking</p>
                   </div>

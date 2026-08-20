@@ -121,20 +121,20 @@ export const solutionBrowserCategories: SolutionBrowserCategory[] = [
       },
     ],
   },
-  // {
-  //   id: "education",
-  //   label: "Education",
-  //   heading: "Education",
-  //   items: [
-  //     {
-  //       id: "edu-tutor",
-  //       title: "Tutors",
-  //       description: "Let students and parents book classes, demos, and counselling around teacher availability.",
-  //       href: "/solutions/tutor-appointment-booking-software",
-  //       icon: "tutor",
-  //     },
-  //   ],
-  // },
+  {
+    id: "education",
+    label: "Education",
+    heading: "Education",
+    items: [
+      {
+        id: "edu-tutor",
+        title: "Tutors",
+        description: "Let students and parents book classes, demos, and counselling around teacher availability.",
+        href: "/solutions/tutor-appointment-booking-software",
+        icon: "tutor",
+      },
+    ],
+  },
   {
     id: "beauty-wellness",
     label: "Beauty & Wellness",

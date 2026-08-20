@@ -19,7 +19,7 @@ export default function FreeBookingPhoneMockup() {
       <div className="relative rounded-[2rem] border-[3px] border-[#3D3AF3]/30 bg-white p-2 drop-shadow-xl">
         {/* Floating sparkle lines — top right */}
         <div className="pointer-events-none absolute -right-9 -top-12 z-20 w-10 h-26 -rotate-10">
-          <Image src="/sparkle-line.png" alt="Sparkle Lines" width={80} height={50} className="object-contain"/>
+          <Image src="/sparkle-line.webp" alt="Sparkle Lines" width={80} height={50} className="object-contain"/>
         </div>
 
         <div className="overflow-hidden rounded-[1.6rem] bg-neutral-50">

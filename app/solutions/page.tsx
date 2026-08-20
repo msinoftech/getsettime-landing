@@ -94,10 +94,10 @@ const ctaHighlightFeatures = [
 ];
 
 const ctaTrustAvatars = [
-  "/doctor-profile.jpg",
-  "/dentist-profile.jpg",
-  "/salon-profile.jpg",
-  "/physiotherapy-profile.jpg",
+  "/doctor-profile.webp",
+  "/dentist-profile.webp",
+  "/salon-profile.webp",
+  "/physiotherapy-profile.webp",
 ];
 
 const ctaTrustBadges = [

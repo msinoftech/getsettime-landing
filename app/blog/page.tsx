@@ -230,7 +230,7 @@ export default function BlogPage() {
       </section>
 
       {/* Blog List Section */}
-      <section className="relative pb-12">
+      <section className="relative py-14 sm:pb-20">
         <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <Suspense fallback={<BlogListSkeleton />}>
             <BlogList posts={blogPosts} postsPerPage={6} />

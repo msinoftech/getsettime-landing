@@ -19,12 +19,11 @@ type FormData = {
 };
 
 const businessTypeOptions = [
-  "Medical Clinics & Doctors",
-  "Dentists",
-  "Physiotherapists",
-  "Salons",
-  "Beauty & Wellness",
-  "Personal Meetings & Services",
+  "Clinic / Healthcare",
+  "Dental Clinic",
+  "Physiotherapy Clinic",
+  "Salon & Beauty",
+  "Personal Meetings",
   "Sports & Fitness",
   "Other",
 ];

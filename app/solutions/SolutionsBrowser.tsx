@@ -220,7 +220,7 @@ export default function SolutionsBrowser() {
           </div>
 
           <div className="rounded-2xl border border-white/70 bg-white/75 p-2 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.45)] backdrop-blur-xl">
-            <ul className="grid grid-cols-1 lg:grid-cols-1 gap-1.5 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="list">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5 h-50 lg:h-auto overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="list">
               {browserCategories.map((category, index) => {
                 const isActive = category.id === activeId;
                 const t = themeFor(category.id);

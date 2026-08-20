@@ -2,15 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { Caramel } from "next/font/google";
+//import { Caramel } from "next/font/google";
 import { APP_NAME, BASE_URL, contactInfo, REGISTER_URL } from "@/lib/config";
 import FreeBookingSetupForm from "../component/FreeBookingSetupForm";
 import FreeBookingPhoneMockup from "../component/FreeBookingPhoneMockup";
 import Heading from "../component/Heading";
 import Card from "../component/Card";
 import { FaqSection } from "../component/FaqSection";
-
-const caramel = Caramel({ weight: ["400"], subsets: ["latin"] });
 
 const pageUrl = `${BASE_URL}/claim-now-free-appointment-scheduling-software`;
 
@@ -69,12 +67,12 @@ const trustItems = [
 ];
 
 const partnerLogos = [
-  { logo: "/salon-studio-logo.png"},
-  { logo: "/smile-care-logo.png"},
-  { logo: "/fitnation-logo.png"},
-  { logo: "/bright-mind-logo.png"},
-  { logo: "/home-fix-logo.png"},
-  { logo: "/beauty-lounge-logo.png"},
+  { logo: "/salon-studio-logo.webp"},
+  { logo: "/smile-care-logo.webp"},
+  { logo: "/fitnation-logo.webp"},
+  { logo: "/bright-mind-logo.webp"},
+  { logo: "/home-fix-logo.webp"},
+  { logo: "/beauty-lounge-logo.webp"},
 ];
 
 const stats = [
@@ -275,24 +273,20 @@ function TrustIcon({ type }: { type: string }) {
 
 const faqItems = [
   {
-    title: "Is it really free?",
-    content: "Yes, it's really free. We'll set up your booking page in 24 hours and you can start using it immediately.",
+    title: "Who can use GetSetTime for free?",
+    content: "Any individual or business looking for appointment scheduling software can use GetSetTime for free, subject to the platform's current terms and conditions.",
   },
   {
-    title: "Do I need technical knowledge?",
-    content: "No, you don't need any technical knowledge. We'll handle everything for you.",
+    title: "What's included in the free plan?",
+    content: "The free plan is tailored to let you experience the platform and see how it fits your real workflow before committing to a paid tier.<br/>Currently, we offer up to 250 bookings per month, a public booking page, email notifications, a basic calendar view, and community support.",
   },
   {
-    title: "Can I use it for multiple staff members?",
-    content: "Yes, you can use it for multiple staff members. We'll set up your booking page for you.",
+    title: "How do I get started with the free plan?",
+    content: "Sign up and set up your profile — your booking link goes live right away, ready to share with clients via email, social media, or embedded directly on your website.<br/>No credit card or debit card is required to start accepting bookings.",
   },
   {
-    title: "Can customers reschedule or cancel?",
-    content: "Yes, customers can reschedule or cancel their appointments. We'll handle everything for you.",
-  },
-  {
-    title: "What happens after free setup?",
-    content: "After the free setup, you can continue using the booking page for free. You can also upgrade to a paid plan if you want more features.",
+    title: "Can I add staff members under the free plan?",
+    content: "The free plan is limited to a single user and 250 bookings per month, valid for three months from your sign-up date, so staff accounts aren't included at this stage. To add team members, take a look at our paid plans and choose the one that fits your business.",
   },
 ];
 
@@ -300,19 +294,19 @@ const testimonials = [
   {
     name: "Ava Reynolds",
     role: "Salon Owner, Mumbai",
-    image: "/salon-profile.jpg",
+    image: "/salon-profile.webp",
     review: '"GetSetTime completely transformed how we manage appointments. Our bookings increased by 60% in the first month!"',
   },
   {
     name: "Dr. Mia Taylor",
     role: "Dentist, New York",
-    image: "/dentist-profile.jpg",
+    image: "/dentist-profile.webp",
     review: '"No-shows reduced by 70% after we started using automated reminders. Highly recommend!"',
   },
   {
     name: "Camille Dubois",
     role: "Business Coach, London",
-    image: "/physiotherapy-profile.jpg",
+    image: "/physiotherapy-profile.webp",
     review: '"The free setup was amazing. Our new booking page looks so professional and our clients love it!"',
   },
 ];
@@ -638,7 +632,7 @@ export default function FreeBookingPage() {
                     <div className="relative">
                       <div className="relative rounded-full ">
                         <span className="w-128 h-128 text-indigo-600">
-                          <Image src="/gift-card.png" alt="Gift" width={256} height={256} className="object-contain"/>
+                          <Image src="/gift-card.webp" alt="Gift" width={256} height={256} className="object-contain"/>
                         </span>
                       </div>
                     </div>
@@ -732,7 +726,7 @@ export default function FreeBookingPage() {
                   {/* Girl + decorative sparkle lines */}
                   <div className="hidden xl:block absolute bottom-0 xl:right-2">
                     <Image
-                      src="/girl-with-phone-line.png"
+                      src="/girl-with-phone-line.webp"
                       alt="Customer"
                       width={240}
                       height={240}

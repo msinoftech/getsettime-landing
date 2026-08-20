@@ -7,8 +7,7 @@ import Image from "next/image";
 import { APP_NAME, BASE_URL, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import type { ReactNode } from "react";
 import { FaqSection } from "@/app/component/FaqSection";
-import DemoFreeForm from "@/app/component/DemoFreeForm";
-
+import SolutionCtaSection from "@/app/component/SolutionCtaSection";
 
 const pageUrl = `${BASE_URL}/solutions/dermatology-appointment-scheduling-software`;
 const pageTitle = "All-in-one dermatology clinic software for appointment booking";
@@ -187,19 +186,19 @@ const testimonials = [
     quote: "GetSetTime has transformed the way we manage appointments. Our no-show rate has dropped significantly!",
     name: "Dr. Amanda Williams",
     organization: "Williams Dermatology",
-    image: "/doctor-profile.jpg",
+    image: "/doctor-profile.webp",
   },
   {
     quote: "Patients love the easy online booking and reminders. It saves us so much time every day.",
     name: "Dr. Mark Stevens",
     organization: "Clear Skin Dermatology",
-    image: "/dentist-profile.jpg",
+    image: "/dentist-profile.webp",
   },
   {
     quote: "The best scheduling software we've used. Simple, reliable, and excellent customer support.",
     name: "Dr. Priya Patel",
     organization: "Glow Dermatology",
-    image: "/physiotherapy-profile.jpg",
+    image: "/physiotherapy-profile.webp",
   },
 ];
 
@@ -359,90 +358,6 @@ const schemaData = {
   ],
 };
 
-const ctaHighlightFeatures = [
-  {
-    title: "Online Booking 24/7",
-    description: "Let customers book anytime.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
-        <path d="m9 16 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Auto Reminders",
-    description: "Reduce no-shows effortlessly.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M13.73 21a2 2 0 0 1-3.46 0" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Team & Calendar Management",
-    description: "Manage staff, services and schedules.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-  },
-  {
-    title: "Grow Your Business",
-    description: "More bookings. More happy clients.",
-    icon: (
-      <svg className="h-6 w-6 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M7 16V9M12 16V5M17 16v-3" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-];
-
-const ctaTrustAvatars = [
-  "/doctor-profile.jpg",
-  "/dentist-profile.jpg",
-  "/salon-profile.jpg",
-  "/physiotherapy-profile.jpg",
-];
-
-const ctaTrustBadges = [
-  {
-    title: "Secure & Reliable",
-    description: "Enterprise grade security",
-    icon: (
-      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Super Easy Setup",
-    description: "Get started in minutes",
-    icon: (
-      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    title: "24/7 Support",
-    description: "We're here to help",
-    icon: (
-      <svg className="h-6 w-6 shrink-0 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm18 0h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5Z" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-];
-
 export default function DermatologyAppointmentSchedulingSoftware() {
   return (
     <>
@@ -496,10 +411,12 @@ export default function DermatologyAppointmentSchedulingSoftware() {
             {/* Right image — flush to viewport right on large screens */}
             <div className="relative z-10 mt-10 w-full lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:w-1/2 lg:px-0">
                 <div className="relative min-h-[360px] p-2 rounded-2xl sm:min-h-[420px] lg:h-full lg:min-h-0">
-                    <img
-                    src="/dermatology-hero.jpg"
+                    <Image
+                    src="/dermatology-hero.webp"
                     alt="Dermatologist performing a facial treatment on a patient"
                     className="h-full w-full object-cover rounded-2xl"
+                    width={1000}
+                    height={1000}
                     />
 
                     {/* Book Appointment — overlaps left edge of image */}
@@ -556,13 +473,13 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                     {/* Confirmation — bottom-right of image */}
                     <div className="hidden lg:block absolute bottom-4 left-[35%] lg:left-[50%] xl:left-[40%] z-20 w-1/2 rounded-2xl bg-white p-3 shadow-[0_20px_55px_rgba(15,23,42,0.2)] sm:-bottom-4 sm:p-3.5 w-[min(88%,15.75rem)]">
                         <div className="flex items-center gap-3">
-                        <img src="/dermatology-doc.jpg" alt="Dr. Sarah Johnson" className="h-10 w-10 rounded-full object-cover"/>
+                        <Image src="/dermatology-doc.webp" alt="Dr. Sarah Johnson" width={40} height={40} className="h-10 w-10 rounded-full object-cover"/>
                         <div className="min-w-0">
                             <p className="truncate text-sm font-semibold text-slate-900">Sarah Johnson</p>
                             <div className="text-xs text-slate-500">Follow-up Visit</div>
                         </div>
                         </div>
-                        <p className="mt-2 text-[11px] text-slate-400">May 16, 2024 · 11:30 AM</p>
+                        <div className="mt-2 text-xs text-slate-400">May 16, 2024 · 11:30 AM</div>
                         <div className="mt-2.5">
                         <span className="inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">Confirmed</span>
                         </div>
@@ -622,7 +539,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                     {/* Left — doctor dashboard mockup */}
                     <div className="lg:col-span-7 relative mx-auto w-full">
                         {/* <DermatologyDashboardMockup /> */}
-                        <Image src='/best-software-for-dermatology-practices.png' alt='best software for dermatology practices' width={1000} height={1000} />
+                        <Image src='/best-software-for-dermatology-practices.webp' alt='best software for dermatology practices' width={800} height={800} />
                     </div>
 
                     {/* Right — heading + checklist + CTA */}
@@ -726,125 +643,11 @@ export default function DermatologyAppointmentSchedulingSoftware() {
         </section>
 
         {/* Call-to-Action Section */}
-        <section className="w-full bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:p-10 md:p-6 lg:p-8 xl:p-10">
-                  <div className="relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
-                    {/* left: Content */}
-                    <div className="space-y-6">
-                      <Heading
-                        badge="Built for Dermatology Practices"
-                        title="Ready for GetSetTime To Manage Your Appointments"
-                        description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                        titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
-                        descriptionClassName = "text-white"
-                      />
-                      
-                      {/* <div className="mt-8">
-                        <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Get Started - Doctor Appointment Scheduling Software" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
-                      </div> */}
+        <SolutionCtaSection
+          badge="Built for Dermatology Clinics"
+          businessType="Dermatology Clinic"
+        />
 
-                      <div className="space-y-5">
-                        {ctaHighlightFeatures.map((item) => (
-                          <div key={item.title} className="flex items-center gap-4">
-                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white drop-shadow-sm">
-                              {item.icon}
-                            </div>
-                            <div>
-                              <p className="text-base font-bold text-white">{item.title}</p>
-                              <p className="text-sm text-white/85">{item.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="space-y-4">
-                        <div className="flex flex-wrap items-center gap-4">
-                          <div className="flex -space-x-2.5">
-                            {ctaTrustAvatars.map((src) => (
-                              <Image
-                                key={src}
-                                src={src}
-                                alt=""
-                                width={40}
-                                height={40}
-                                className="relative h-10 w-10 rounded-full border-2 border-white object-cover"
-                              />
-                            ))}
-                          </div>
-                          <div className="hidden h-10 w-px bg-white/30 sm:block" aria-hidden />
-                          <div>
-                            <p className="text-sm leading-snug text-white">
-                              Trusted by <span className="font-semibold">2,500+</span> businesses worldwide
-                            </p>
-                            <div className="mt-1 flex gap-0.5" aria-label="5 out of 5 stars">
-                              {Array.from({ length: 5 }).map((_, i) => (
-                                <svg key={i} className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="rounded-2xl bg-slate-100/95 px-4 py-4 sm:px-5">
-                          <div className="grid gap-4 sm:grid-cols-3 sm:gap-3">
-                            {ctaTrustBadges.map((item) => (
-                              <div key={item.title} className="flex items-start gap-2">
-                                {item.icon}
-                                <div className="min-w-0">
-                                  <div className="text-sm font-bold text-indigo-950">{item.title}</div>
-                                  <div className="text-xs text-slate-500">{item.description}</div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* right: Image */}
-                    <div className="relative mx-auto w-full rounded-xl drop-shadow-xl">
-                      <DemoFreeForm businessType="Dermatology"/>               
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </section>
-
-        {/* CTA Banner */}
-        {/* <section className="bg-indigo-50/10 py-14 sm:py-20">
-          <div className="mx-auto container px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col gap-6 rounded-3xl bg-indigo-50 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:p-10">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
-                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-white">
-                  <svg className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8 3v3m8-3v3M4.5 9.5h15M6 6h12a1.5 1.5 0 011.5 1.5v12A1.5 1.5 0 0118 21H6a1.5 1.5 0 01-1.5-1.5v-12A1.5 1.5 0 016 6z"
-                    />
-                    <circle cx="16.5" cy="16.5" r="4" fill="currentColor" stroke="none" />
-                    <path strokeLinecap="round" strokeLinejoin="round" stroke="#7c3aed" strokeWidth={2} d="M14.9 16.5l1.1 1.1 2.1-2.2" />
-                  </svg>
-                </div>
-                <div>
-                  <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">Ready to Streamline Your Dermatology Practice?</h2>
-                  <p>Join thousands of dermatology practices that trust GetSetTime for smarter scheduling.</p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row sm:shrink-0">
-                <Link href="/contact-us" aria-label="Book a Demo - Dermatology Appointment Scheduling Software" className="inline-flex items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm text-white">
-                  Book a Demo
-                </Link>
-                <Link href={REGISTER_URL} target="_blank" aria-label="Start Free Trial - Dermatology Appointment Scheduling Software"
-                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-indigo-200 bg-white px-4 py-2.5 text-sm text-neutral-800">
-                  Start Free Trial
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section> */}
     </>
   );
 }
