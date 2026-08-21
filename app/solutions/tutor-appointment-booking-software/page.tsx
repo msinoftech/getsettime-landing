@@ -1,11 +1,56 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+import Link from "next/link";
+import Script from "next/script";
 import Heading from "@/app/component/Heading";
 import { FaqSection } from "@/app/component/FaqSection";
-import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
+import { APP_NAME, BASE_URL, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import Card from "@/app/component/Card";
 import BookingFlowConsole from "./BookingFlowConsole";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+
+const pageUrl = `${BASE_URL}/solutions/tutor-appointment-booking-software`;
+const pageTitle = `Tutor Appointment Booking Software | ${APP_NAME}`;
+const pageDescription = "Tutoring scheduling software for tutors and educators — online booking 24/7, recurring classes, WhatsApp reminders, and student self-booking. Try free today.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  keywords: [
+    "tutor appointment booking software",
+    "tutoring scheduling software",
+    "online tutoring management software",
+    "tutor booking system",
+    "appointment scheduling for tutors",
+    "class booking software for teachers",
+    "educator scheduling software",
+  ],
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+    type: "website",
+    siteName: APP_NAME,
+    locale: "en",
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+        width: 1200,
+        height: 630,
+        alt: pageTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [`${BASE_URL}${contactInfo.DEFAULT_IMAGE}`],
+  },
+};
 
 const whyChooseUs = [
   {
@@ -147,11 +192,155 @@ const tutorFaqs = [
   },
 ];
 
-export default function TutorAppointmentBookingSoftwarePage() {
-  const faqItems = tutorFaqs.map((faq) => ({ title: faq.question, content: faq.answer }));
+const faqItems = tutorFaqs.map((faq) => ({ title: faq.question, content: faq.answer }));
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      url: BASE_URL,
+      image: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+        width: 1200,
+        height: 630,
+      },
+      description: "GetSetTime is a smart appointment scheduling platform trusted by 5,000+ doctors, salon owners, and wellness professionals. Simple to set up, smart enough to run itself.",
+      slogan: "Precision Scheduling for Modern Care",
+      foundingDate: "2025",
+      numberOfEmployees: {
+        "@type": "QuantitativeValue",
+        value: "10",
+      },
+      areaServed: "Worldwide",
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+      sameAs: [
+        "https://www.facebook.com/getsettime",
+        "https://x.com/getsettime",
+        "https://www.instagram.com/getsettime",
+        "https://www.youtube.com/@GetSetTime",
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}/#webpage`,
+      url: pageUrl,
+      name: pageTitle,
+      description: pageDescription,
+      inLanguage: "en",
+      isPartOf: {
+        "@type": "WebSite",
+        name: APP_NAME,
+        url: BASE_URL,
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+        width: 1200,
+        height: 630,
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${pageUrl}/#softwareapplication`,
+      name: APP_NAME,
+      alternateName: "Tutor Appointment Booking Software",
+      description: pageDescription,
+      url: pageUrl,
+      inLanguage: "en",
+      author: {
+        "@id": `${BASE_URL}/#organization`,
+      },
+      publisher: {
+        "@id": `${BASE_URL}/#organization`,
+      },
+      applicationCategory: "BusinessApplication",
+      applicationSubCategory: "Appointment Scheduling Software",
+      operatingSystem: "All — Web-based, no installation required",
+      availableOnDevice: ["Desktop", "Mobile", "Tablet"],
+      featureList: [
+        "Online class booking for students 24/7",
+        "Student self-booking and rescheduling",
+        "Recurring classes and course series",
+        "Class capacity and waitlist management",
+        "WhatsApp booking confirmations and reminders",
+        "Automated email reminders and follow-ups",
+        "Google Meet session links",
+        "Two-way Google Calendar sync",
+        "Multi-tutor and multi-location support",
+        "Staff and tutor roster management",
+        "Custom branding and booking page",
+        "No-show reduction automation",
+      ],
+      screenshot: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+      installUrl: REGISTER_URL,
+      releaseNotes: `${BASE_URL}/blog`,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Solutions",
+          item: `${BASE_URL}/solutions`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: pageTitle,
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}/#faq`,
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.title,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.content.replace(/<br\s*\/?>/gi, " ").replace(/\s+/g, " ").trim(),
+        },
+      })),
+    },
+  ],
+};
+
+export default function TutorAppointmentBookingSoftwarePage() {
   return (
     <>
+        <Script
+          id="tutor-appointment-booking-software-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
         {/* HERO SECTION */}
         <section className="relative overflow-x-hidden py-10 sm:py-14 lg:py-20">
             <div className="pointer-events-none absolute inset-0 hidden sm:block">
@@ -178,7 +367,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                             <Link
                             href={REGISTER_GOOGLE_URL}
                             target="_blank"
-                            aria-label="Sign up with Google - Tutor Appointment Booking Software"
+                            aria-label="Sign up with Google"
                             className="flex w-full items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white sm:w-auto sm:py-2.5"
                             >
                             <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1" aria-hidden>

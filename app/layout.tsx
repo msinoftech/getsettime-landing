@@ -68,15 +68,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             })(window,document,'script','dataLayer','GTM-WBQPQS8H');
           `}
         </Script>
-        
-        {/* Crisp — GetSetTime support chat (ID from lib/config or NEXT_PUBLIC_CRISP_WEBSITE_ID) */}
-        {/* <Script id="crisp-chat" strategy="afterInteractive">
-          {`
-            window.$crisp=[];
-            window.CRISP_WEBSITE_ID="${CRISP_WEBSITE_ID}";
-            (function(){var d=document,s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
-          `}
-        </Script> */}
 
         <Script src="//code.jivosite.com/widget/43NbnJgLyO" async></Script>
       </head>
