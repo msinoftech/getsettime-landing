@@ -265,9 +265,9 @@ return (
                 {/* Left column - Content */}
                 <div className="space-y-6">
                     <Heading
-                        badge="Expand Your Practise"
-                        title="Let's Manage Your Appointments Booking With the"
-                        highlightText="Best Dentist Scheduling Software"
+                        badge="Expand Your Practice"
+                        title="Manage Dental Appointments with"
+                        highlightText="Smart Dentist Scheduling Software"
                         description="GetSetTime helps dentists automate bookings, reduce no-shows, and free up front-desk time — so your team can focus on patients, not phone calls."
                         headingTag="h1"
                         titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"

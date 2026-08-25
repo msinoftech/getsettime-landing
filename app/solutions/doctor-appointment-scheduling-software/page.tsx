@@ -12,15 +12,15 @@ import SolutionCtaSection from "@/app/component/SolutionCtaSection";
 const pageUrl = `${BASE_URL}/solutions/doctor-appointment-scheduling-software`;
 
 export const metadata: Metadata = {
-  title: `Doctor Appointment Booking App for Clinics | ${APP_NAME}`,
-  description: `GetSetTime is the simplest doctor appointment booking app for clinics. Reduce no-shows, automate reminders, and manage your schedule online. Start free today.`,
+  title: `Appointment Scheduling Software for Doctors | Free Demo`,
+  description: `GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.`,
   keywords: [ "doctor appointment booking app", "clinic appointment booking app", "online appointment booking", "calendar management system", " scheduling tool", "appointment management app"],
   alternates: {
     canonical: `${pageUrl}`,
   },
   openGraph: {
-    title: `Doctor Appointment Booking App for Clinics | ${APP_NAME}`,
-    description: `GetSetTime is the simplest doctor appointment booking app for clinics. Reduce no-shows, automate reminders, and manage your schedule online. Start free today.`,
+    title: `Appointment Scheduling Software for Doctors | Free Demo`,
+    description: `GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.`,
     url: `${pageUrl}`,
     type: "website",
     siteName: `${APP_NAME}`,
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
         url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
         width: 1200,
         height: 630,
-        alt: `Doctor Appointment Booking App for Clinics | ${APP_NAME}`,
+        alt: `Appointment Scheduling Software for Doctors | Free Demo`,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: `Doctor Appointment Booking App for Clinics | ${APP_NAME}`,
-    description: `GetSetTime is the simplest doctor appointment booking app for clinics. Reduce no-shows, automate reminders, and manage your schedule online. Start free today.`,
+    title: `Appointment Scheduling Software for Doctors | Free Demo`,
+    description: `GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.`,
     images: [`${BASE_URL}${contactInfo.DEFAULT_IMAGE}`],
   },
 };
@@ -185,8 +185,8 @@ export default function DoctorAppointmentSchedulingSoftware() {
         "@type": "WebPage",
         "@id": `${pageUrl}/#webpage`,
         "url": `${pageUrl}`,
-        "name": `Doctor Appointment Booking App for Clinics | ${APP_NAME}`,
-        "description": "GetSetTime is the simplest doctor appointment booking app for clinics. Reduce no-shows, automate reminders, and manage your schedule online. Start free today.",
+        "name": `Appointment Scheduling Software for Doctors | Free Demo`,
+        "description": "GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.",
         "inLanguage": "en",
         "isPartOf": {
         "@type": "WebSite",
