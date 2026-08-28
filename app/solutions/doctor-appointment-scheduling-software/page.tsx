@@ -12,14 +12,14 @@ import SolutionCtaSection from "@/app/component/SolutionCtaSection";
 const pageUrl = `${BASE_URL}/solutions/doctor-appointment-scheduling-software`;
 
 export const metadata: Metadata = {
-  title: `Appointment Scheduling Software for Doctors | Free Demo`,
+  title: `Appointment Scheduling Software for Doctors`,
   description: `GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.`,
   keywords: [ "doctor appointment booking app", "clinic appointment booking app", "online appointment booking", "calendar management system", " scheduling tool", "appointment management app"],
   alternates: {
     canonical: `${pageUrl}`,
   },
   openGraph: {
-    title: `Appointment Scheduling Software for Doctors | Free Demo`,
+    title: `Appointment Scheduling Software for Doctors`,
     description: `GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.`,
     url: `${pageUrl}`,
     type: "website",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
         url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
         width: 1200,
         height: 630,
-        alt: `Appointment Scheduling Software for Doctors | Free Demo`,
+        alt: `Appointment Scheduling Software for Doctors`,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: `Appointment Scheduling Software for Doctors | Free Demo`,
+    title: `Appointment Scheduling Software for Doctors`,
     description: `GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.`,
     images: [`${BASE_URL}${contactInfo.DEFAULT_IMAGE}`],
   },
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
 
 const needsChecklist = [
   {
-    title: "Online Appointment Booking",
-    desc: "Patients can view your real-time availability and book their own appointments anytime — from any device, in Hindi or English.",
+    title: "Simple Booking Flow",
+    desc: "Patients find a booking form, select the department, choose the event type, view real-time availability, and book a slot.",
     tag: "Zero phone calls needed",
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>,
   },
@@ -57,26 +57,25 @@ const needsChecklist = [
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>,
   },
   {
-    title: "Smart Calendar Management",
-    desc: "All your appointments appear in a clean daily and weekly view. Reschedule, cancel, or block time off without any confusion.",
+    title: "Self-Organised Calendar",
+    desc: "Always find an updated calendar; it lets you analyze and filter your appointments daily and weekly without any confusion.",
     tag: "No more overbooking",
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M17 14h-6"/><path d="M13 18H7"/><path d="M7 14h.01"/><path d="M17 18h.01"/></svg>,
   },
   {
-    title: "Patient Records & History",
-    desc: "See each patient's past visits at a glance before they walk in. No more asking them to repeat their history from scratch every time.",
+    title: "Availability Control",
+    desc: "Your schedule is in your hands. Set up your working hours, create booking-based event durations, and add break time,",
+    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M16 14v2.2l1.6 1"/><path d="M16 2v4"/><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M3 10h5"/><path d="M8 2v4"/><circle cx="16" cy="16" r="6"/></svg>,
+  },
+  {
+    title: "Patient Records",
+    desc: "See each patient's past visits at a glance, including the visit date, departments, and the concerned doctor.",
     tag: "Better, faster consultations",
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7Z"/><path d="M13 3v5a1 1 0 0 0 1 1h5"/></svg>,
   },
   {
-    title: "Availability Control",
-    desc: "Block out holidays, adjust your working hours, and set a minimum booking lead time. You stay in full control of your schedule.",
-    tag: "Doctor sets the rules",
-    icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M16 14v2.2l1.6 1"/><path d="M16 2v4"/><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"/><path d="M3 10h5"/><path d="M8 2v4"/><circle cx="16" cy="16" r="6"/></svg>,
-  },
-  {
-    title: "Works on Any Device",
-    desc: "Access your appointment schedule from your phone, tablet, or desktop — even your receptionist can manage it from their own device.",
+    title: "Cross-device support",
+    desc: "You can access your workspace from any device - phone, tablet, or desktop. You can even allow your receptionist to access it with a defined access role.",
     tag: "Manage anywhere",
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>,
   },
@@ -84,23 +83,23 @@ const needsChecklist = [
 
 const features = [
   {
-    title: "Phone Calls That Never End",
-    description: "Your receptionist spends hours taking calls, confirming appointments, and rescheduling — time that could be used to care for patients actually in your clinic.",
+    title: "Phone Ringing Continuously",
+    description: "After hours of phone calls, you miss appointments, double-book, and leave patients feeling discontent. You can automate your entire booking process and save hours to use in patient care.",
     icon: <svg fill="#4f39f6" width="40px" height="40px" viewBox="0 0 32 32"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.748 5.773S11.418 5 10.914 5c-.496 0-.754.229-.926.387S6.938 7.91 6.938 7.91s-.837.731-.773 2.106c.054 1.375.323 3.332 1.719 6.058 1.386 2.72 4.855 6.876 7.047 8.337 0 0 2.031 1.558 3.921 2.191.549.173 1.647.398 1.903.398.26 0 .719 0 1.246-.385.536-.389 3.543-2.807 3.543-2.807s.736-.665-.119-1.438c-.859-.773-3.467-2.492-4.025-2.944-.559-.459-1.355-.257-1.699.054-.343.313-.956.828-1.031.893-.112.086-.419.365-.763.226-.438-.173-2.234-1.148-3.899-3.426-1.655-2.276-1.837-3.02-2.084-3.824a.56.56 0 0 1 .225-.657c.248-.172 1.161-.933 1.161-.933s.591-.583.344-1.27-1.906-4.716-1.906-4.716z"></path></g></svg>,
   },
   {
-    title: "Patients Who Don't Show Up",
-    description: "No-shows waste your most valuable resource — time. Without automated reminders, patients forget, leaving you with empty slots you could've filled.",
+    title: "Don't Show Up",
+    description: "No-shows waste your time and resources. You could've filled every empty slot and attended to other patients if you had sent a reminder to confirm the visit.",
     icon: <svg fill="#4f39f6" version="1.1" id="Layer_1" width="40px" height="40px" viewBox="0 0 256 205" enableBackground="new 0 0 256 205" stroke="#4f39f6"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M51.821,30.057c0-15.49,12.392-27.982,27.981-27.982c15.49,0,27.981,12.492,27.981,27.982 c-0.1,15.59-12.592,27.981-27.981,27.981C64.313,58.038,51.821,45.547,51.821,30.057z M206.165,150.068h-50.771v-45.37 c0-22.103-19.315-39.969-41.049-39.969H46.29c-23.861,0-44.301,20.676-44.29,41.049v83.178C1.972,198.175,8.483,202.988,14.963,203 c6.496,0.012,12.963-4.802,12.963-14.043v-81.018h8.642v94.981h84.259v-94.981h8.642l0.088,54.411 c-0.058,9.429,5.771,13.445,11.795,13.644h64.814C223.841,175.994,223.841,150.068,206.165,150.068z M249.287,32.14 c0,18.522-6.339,35.503-16.776,45.58c10.437,10.079,16.776,27.062,16.776,45.581v3.717H254v11.367h-85.337v-11.367h4.714v-3.717 c0-18.519,6.338-35.503,16.776-45.581c-10.438-10.077-16.776-27.061-16.776-45.58v-2.95h-4.714V17.823H254V29.19h-4.713V32.14z M241.747,35.861h-60.831c0.865,16.49,7.42,31.486,17.188,38.894l3.912,2.965l-3.912,2.965c-9.77,7.409-16.323,22.406-17.188,38.895 h60.834c-0.866-16.49-7.421-31.488-17.189-38.895l-3.914-2.965l3.914-2.965C234.328,67.347,240.884,52.351,241.747,35.861z M200.768,70.686l4.012,2.25c0,0,5.644,7.402,5.644,24.666c0,0,0.049,0.097,0.132,0.241c-4.583,0.796-7.85,3.663-7.85,3.663 c-6.868,5.209-12.285,9.728-12.617,16.043h44.651c-0.332-6.316-3.095-7.342-12.618-16.043c-2.699-2.465-5.423-3.529-7.943-3.798 c0.006-0.808,0.193-19.136,3.704-24.15c1.697-1.701,2.968-2.25,2.968-2.25c7.422-5.624,12.401-17.013,13.054-29.534h-45.146 C189.413,54.295,193.349,65.058,200.768,70.686z"></path> </g></svg>,
   },
   {
-    title: "Paper Registers and Chaotic Records",
-    description: "Digging through notebooks to find a patient's last visit, managing double bookings, or figuring out who's next, then calling them— it all adds unnecessary stress to your day.",
+    title: "Hassle of Manual Records",
+    description: "How much can you manage manually: a patient's record, treatment, lab reports, and next visit date? Then remind them by phone about the appointment; it adds unnecessary stress to your day.",
     icon: <svg width="40px" height="40px" viewBox="0 0 24 24" fill="#4f39f6" stroke="#4f39f6"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fillRule="evenodd" clipRule="evenodd" d="M15.6111 1.5837C17.2678 1.34703 18.75 2.63255 18.75 4.30606V5.68256C19.9395 6.31131 20.75 7.56102 20.75 9.00004V19C20.75 21.0711 19.0711 22.75 17 22.75H7C4.92893 22.75 3.25 21.0711 3.25 19V5.00004C3.25 4.99074 3.25017 4.98148 3.2505 4.97227C3.25017 4.95788 3.25 4.94344 3.25 4.92897C3.25 4.02272 3.91638 3.25437 4.81353 3.12621L15.6111 1.5837ZM4.75 6.75004V19C4.75 20.2427 5.75736 21.25 7 21.25H17C18.2426 21.25 19.25 20.2427 19.25 19V9.00004C19.25 7.7574 18.2426 6.75004 17 6.75004H4.75ZM5.07107 5.25004H17.25V4.30606C17.25 3.54537 16.5763 2.96104 15.8232 3.06862L5.02566 4.61113C4.86749 4.63373 4.75 4.76919 4.75 4.92897C4.75 5.10629 4.89375 5.25004 5.07107 5.25004ZM7.25 12C7.25 11.5858 7.58579 11.25 8 11.25H16C16.4142 11.25 16.75 11.5858 16.75 12C16.75 12.4143 16.4142 12.75 16 12.75H8C7.58579 12.75 7.25 12.4143 7.25 12ZM7.25 15.5C7.25 15.0858 7.58579 14.75 8 14.75H13.5C13.9142 14.75 14.25 15.0858 14.25 15.5C14.25 15.9143 13.9142 16.25 13.5 16.25H8C7.58579 16.25 7.25 15.9143 7.25 15.5Z"></path> </g></svg>,
   },
   {
-    title: "Waiting Rooms Turn A Nightmare",
-    description: "When appointments aren't managed digitally, patients stack up for hours. Frustrated waiting rooms hurt patient satisfaction and can damage your clinic's reputation, too.",
+    title: "Long Waiting Queue",
+    description: "With all your effort, you still find your waiting room loaded during peak hours. It hurts patient satisfaction, especially for those who booked a slot via phone and expected a better experience.",
     icon: <svg fill="#4f39f6" height="40px" width="40px" version="1.1" id="Layer_1" viewBox="0 0 128 128"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <circle cx="39.2" cy="17.9" r="12.6"></circle> <path d="M78.6,70.2l-21.2,0l-5.7-28.4c-3.4-14.8-24.2-10.4-22,4.1l6.6,33c1,5,5,9.3,11.3,9.3h27.1c0,0,0,21.2,0,30 c0,9.5,13.3,9.5,13.3,0.2V79.7C88,75.1,84.8,70.2,78.6,70.2z"></path> <path d="M64.7,90.6H46.9c-6.4,0-11.8-3.8-13.4-11l-5.8-28.2c-1.4-6.9-11.1-4.6-9.8,2.1L24,82.9c2.5,11,11.9,18.1,21.4,18.1h19.5 C71.7,101,71.7,90.6,64.7,90.6z"></path> <path d="M91.1,3.9c-11.2,0-20.3,9.1-20.3,20.3c0,11.2,9.1,20.3,20.3,20.3c11.2,0,20.3-9.1,20.3-20.3C111.4,13.1,102.3,3.9,91.1,3.9 z M91.1,40.7c-9.1,0-16.5-7.4-16.5-16.5c0-9.1,7.4-16.5,16.5-16.5c9.1,0,16.5,7.4,16.5,16.5C107.5,33.3,100.1,40.7,91.1,40.7z"></path> <path d="M99.5,20l-8,3.6v-9.4c0-1.5-2.2-1.4-2.2,0l0,11.3c0,0.8,0.9,1.5,1.7,1l9.4-4.5C101.7,21.3,100.9,19.3,99.5,20z"></path> </g> </g></svg>,
   },
 ];
@@ -130,7 +129,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
     },
     {
       title: "How does it prevent double-bookings?",
-      content: "GetSetTime's smart calendar automatically blocks a time slot the moment it's confirmed. This prevents any two patients from booking the same slot simultaneously — completely eliminating double-booking errors that happen with phone and paper systems.",
+      content: "GetSetTime's smart calendar automatically blocks a time slot as soon as it's confirmed. This prevents two patients from booking the same slot simultaneously—completely eliminating double-booking errors that can occur when managing via phone and paper systems.",
     },
     {
       title: "Is my patient data secure with this doctor appointment system?",
@@ -185,7 +184,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
         "@type": "WebPage",
         "@id": `${pageUrl}/#webpage`,
         "url": `${pageUrl}`,
-        "name": `Appointment Scheduling Software for Doctors | Free Demo`,
+        "name": `Appointment Scheduling Software for Doctors`,
         "description": "GetSetTime is an automated scheduling system that lets patients book online, sends automatic reminders, and keeps your day organized — no tech skills needed.",
         "inLanguage": "en",
         "isPartOf": {
@@ -506,7 +505,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
       </div>
     </section>
 
-    {/* Features Section */}
+    {/* The Real Problem Section */}
     <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
       
       <div className="absolute top-10 left-10 w-72 h-72 hidden sm:block bg-indigo-600/20 rounded-full blur-3xl"></div>
@@ -761,10 +760,10 @@ export default function DoctorAppointmentSchedulingSoftware() {
           {/* Left */}
           <div className="space-y-4">
             <Heading 
-              badge="Clinic Reality Check" 
-              title="Why Should Healthcare Service Providers" 
-              highlightText="Switch To A Booking System?"
-              description="A structured booking system helps your clinic deliver faster, more predictable care, especially as patient volumes increase. It efficiently handles the front-desk overload." 
+              badge="Speed Up Your Practice" 
+              title="Grow Faster with" 
+              highlightText="GetSetTime"
+              description="A smooth booking engine eliminates the risk of missed appointments, and reminder automation reduces no-shows. Booking software also helps doctors attract new patients, retain follow-up cases, and run predictable clinic days." 
             />
 
             <div className="space-y-3">
