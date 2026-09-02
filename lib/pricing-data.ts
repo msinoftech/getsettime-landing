@@ -350,6 +350,44 @@ export function formatRegionalPrice(
   return formatPrice(amount, currency);
 }
 
+/** Format a starter–enterprise (or other) price range for the visitor's region. */
+export function formatRegionalPriceRange(
+  lowPlan: "starter" | "professional" | "enterprise",
+  highPlan: "starter" | "professional" | "enterprise",
+  countryOrRegion?: string | null | RegionalPricing
+): string {
+  const region = isRegionalPricing(countryOrRegion)
+    ? countryOrRegion
+    : getRegionalPricing(countryOrRegion);
+
+  const low = region.prices[lowPlan];
+  const high = region.prices[highPlan];
+  const symbol = getCurrencySymbol(region.currency);
+
+  if (/^[A-Za-z]+$/.test(symbol) || symbol.toUpperCase() === region.currency) {
+    return `${symbol} ${low}-${high}`;
+  }
+
+  return `${symbol}${low}-${high}`;
+}
+
+/** Replace regional price placeholders in blog HTML. */
+export function applyRegionalPricesToBlogHtml(
+  html: string,
+  countryOrRegion?: string | null | RegionalPricing
+): string {
+  const region = isRegionalPricing(countryOrRegion)
+    ? countryOrRegion
+    : getRegionalPricing(countryOrRegion);
+
+  const starterEnterprise = formatRegionalPriceRange("starter", "enterprise", region);
+
+  return html.replace(
+    /<span\s+data-regional-price-range="starter-enterprise"><\/span>/g,
+    starterEnterprise
+  );
+}
+
 /** Apply regional prices onto base pricingTiers (Free stays Free). */
 export function applyRegionalPrices(
   tiers: PricingTier[],

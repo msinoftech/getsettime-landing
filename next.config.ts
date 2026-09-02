@@ -42,6 +42,11 @@ const nextConfig: NextConfig = {
         destination: "/blog/basics-of-Scheduling-Software",
         permanent: true,
       },
+      {
+        source: "/blog/much-needed-appointment-booking-system-for-doctors",
+        destination: "/blog/booking-system-works-around-the-clock-for-doctors",
+        permanent: true,
+      },
     ];
   }
 

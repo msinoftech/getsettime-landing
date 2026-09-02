@@ -8,6 +8,7 @@ import { blogPosts, getBlogBySlug, getRelatedPosts, getPrevNextPosts, getPostCat
 import { BlogSidebar } from "@/app/component/BlogSidebar";
 import { FaqSection } from "@/app/component/FaqSection";
 import { PostViews } from "@/app/component/PostViews";
+import { BlogContent } from "@/app/component/BlogContent";
 import Heading from "@/app/component/Heading";
 
 interface BlogDetailPageProps {
@@ -240,7 +241,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             <article className="lg:col-span-8">
               
               <div className="relative">
-                <div className="blog-content space-y-4" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <BlogContent html={post.content} />
               </div>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
