@@ -174,7 +174,7 @@ export default function ContactUs() {
                     title="Book a quick discussion with a product specialist"
                     description="Speak with a product specialist to explore your requirements and next steps."
                     headingTag="h1"
-                    titleClassName="text-3xl md:text-4xl font-black text-neutral-900 capitalize"
+                    titleClassName="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-900 capitalize"
                   />
                   <ContactForm />
                 </div>
@@ -230,17 +230,17 @@ export default function ContactUs() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
+                    titleClassName="text-2xl sm:text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   
                   <div className="mt-8">
-                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Contact Us" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Contact Us" className="rounded-xl bg-white px-4 py-3 text-sm text-indigo-600 transition">Get Started</Link>
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">
                     {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                      <span key={item}>✔ {item}</span>
+                      <span key={item} className="text-white flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {item}</span>
                     ))}
                   </div>
                 </div>

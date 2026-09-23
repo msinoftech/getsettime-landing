@@ -139,38 +139,37 @@ export default function SolutionsPage() {
       {
         "@type": "Organization",
         "@id": `${BASE_URL}/#organization`,
-        name: APP_NAME,
-        url: BASE_URL,
-        image: {
+        "name": APP_NAME,
+        "url": BASE_URL,
+        "image": {
           "@type": "ImageObject",
-          url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
-          width: 1200,
-          height: 630,
+          "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+          "width": 1200,
+          "height": 630,
         },
-        description:
-          "GetSetTime is a smart appointment scheduling platform trusted by 5,000+ doctors, salon owners, and wellness professionals. Simple to set up, smart enough to run itself.",
-        slogan: "Precision Scheduling for Modern Care",
-        foundingDate: "2025",
-        numberOfEmployees: {
+        "description": "GetSetTime is a smart appointment scheduling platform trusted by 5,000+ doctors, salon owners, and wellness professionals. Simple to set up, smart enough to run itself.",
+        "slogan": "Precision Scheduling for Modern Care",
+        "foundingDate": "2025",
+        "numberOfEmployees": {
           "@type": "QuantitativeValue",
-          value: "10",
+          "value": "10",
         },
-        areaServed: "Worldwide",
-        contactPoint: [
+        "areaServed": "Worldwide",
+        "contactPoint": [
           {
             "@type": "ContactPoint",
-            contactType: "customer support",
-            availableLanguage: ["English", "Hindi", "Punjabi"],
-            areaServed: "Worldwide",
+            "contactType": "customer support",
+            "availableLanguage": ["English", "Hindi", "Punjabi"],
+            "areaServed": "Worldwide",
           },
           {
             "@type": "ContactPoint",
-            contactType: "sales",
-            availableLanguage: ["English", "Hindi", "Punjabi"],
-            areaServed: "Worldwide",
+            "contactType": "sales",
+            "availableLanguage": ["English", "Hindi", "Punjabi"],
+            "areaServed": "Worldwide",
           },
         ],
-        sameAs: [
+        "sameAs": [
           "https://www.facebook.com/getsettime",
           "https://x.com/getsettime",
           "https://www.instagram.com/getsettime",
@@ -178,28 +177,45 @@ export default function SolutionsPage() {
         ],
       },
       {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        "url": `${BASE_URL}`,
+        "name": `${APP_NAME}`,
+        "alternateName": `${APP_NAME}`,
+        "publisher": {
+          "@id": `${BASE_URL}/#organization`
+        },
+        "description": "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically.",
+        "inLanguage": "en",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": `${BASE_URL}/search?q={search_term_string}`,
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
         "@type": "WebPage",
         "@id": `${pageUrl}/#webpage`,
-        url: pageUrl,
-        name: `All Business Types | ${APP_NAME}`,
-        description: `${APP_NAME} is the one-stop appointment scheduling solution for service businesses — medical clinics, dentists, physiotherapists, salons, and more. Online booking, WhatsApp reminders, and smart calendars.`,
-        inLanguage: "en",
-        isPartOf: {
+        "url": pageUrl,
+        "name": `All Business Types | ${APP_NAME}`,
+        "description": `${APP_NAME} is the one-stop appointment scheduling solution for service businesses — medical clinics, dentists, physiotherapists, salons, and more. Online booking, WhatsApp reminders, and smart calendars.`,
+        "inLanguage": "en",
+        "isPartOf": {
           "@type": "WebSite",
-          name: APP_NAME,
-          url: BASE_URL,
+          "name": APP_NAME,
+          "url": BASE_URL,
         },
-        primaryImageOfPage: {
+        "primaryImageOfPage": {
           "@type": "ImageObject",
-          url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
-          width: 1200,
-          height: 630,
+          "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+          "width": 1200,
+          "height": 630,
         },
       },
       {
         "@type": "BreadcrumbList",
         "@id": `${pageUrl}/#breadcrumb`,
-        itemListElement: [
+        "itemListElement": [
           { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
           { "@type": "ListItem", position: 2, name: "All Business Types", item: pageUrl },
         ],
@@ -207,25 +223,25 @@ export default function SolutionsPage() {
       {
         "@type": "ItemList",
         "@id": `${pageUrl}/#solutions`,
-        name: `${APP_NAME} Business Types`,
-        numberOfItems: solutionBrowserCategories.length,
-        itemListElement: solutionBrowserCategories.map((category, index) => ({
+        "name": `${APP_NAME} Business Types`,
+        "numberOfItems": solutionBrowserCategories.length,
+        "itemListElement": solutionBrowserCategories.map((category, index) => ({
           "@type": "ListItem",
-          position: index + 1,
-          name: category.label,
-          url: `${pageUrl}#${category.id}`,
+          "position": index + 1,
+          "name": category.label,
+          "url": `${pageUrl}#${category.id}`,
         })),
       },
       {
         "@type": "ItemList",
         "@id": `${pageUrl}/#categories`,
-        name: `${APP_NAME} Industry Categories`,
-        numberOfItems: solutionBrowserCategories.length,
-        itemListElement: solutionBrowserCategories.map((category, index) => ({
+        "name": `${APP_NAME} Industry Categories`,
+        "numberOfItems": solutionBrowserCategories.length,
+        "itemListElement": solutionBrowserCategories.map((category, index) => ({
           "@type": "ListItem",
-          position: index + 1,
-          name: category.label,
-          url: `${pageUrl}#${category.id}`,
+          "position": index + 1,
+          "name": category.label,
+          "url": `${pageUrl}#${category.id}`,
         })),
       },
     ],
@@ -240,8 +256,8 @@ export default function SolutionsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-        <section className="relative overflow-hidden py-10 sm:py-14">
-          <div className="pointer-events-none absolute inset-0 hidden sm:block" aria-hidden>
+        <section className="relative overflow-hidden py-8 sm:py-14">
+          <div className="pointer-events-none absolute inset-0 hidden lg:block" aria-hidden>
             <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-indigo-400/15 blur-3xl" />
             <div className="absolute right-0 top-20 h-80 w-80 rounded-full bg-emerald-300/10 blur-3xl" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.06),transparent_55%)]" />
@@ -256,13 +272,13 @@ export default function SolutionsPage() {
                 headingTag="h1"
                 description={`${APP_NAME} powers online booking, WhatsApp reminders, and smart calendars for clinics, salons, studios, and personal-service pros — pick your industry below to explore.`}
                 wrapperClassName="space-y-4"
-                titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+                titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
               />
             </div>
           </div>
         </section>
 
-        <section className="relative py-14 sm:py-20" aria-label="Browse industry solutions">
+        <section className="relative pb-14 lg:py-20" aria-label="Browse industry solutions">
           <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <SolutionsBrowser />
           </div>
@@ -277,7 +293,7 @@ export default function SolutionsPage() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
+                    titleClassName="text-2xl sm:text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName="text-white"
                   />
 
@@ -338,21 +354,7 @@ export default function SolutionsPage() {
                         ))}
                       </div>
                     </div>
-
-                    <div className="flex flex-wrap gap-3">
-                      <Link
-                        href={REGISTER_URL}
-                        className="inline-flex rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50"
-                      >
-                        Start Free
-                      </Link>
-                      <Link
-                        href="/contact-us"
-                        className="inline-flex rounded-xl border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-                      >
-                        Book Demo
-                      </Link>
-                    </div>
+                    
                   </div>
                 </div>
                 <div className="relative mx-auto w-full rounded-xl drop-shadow-xl">

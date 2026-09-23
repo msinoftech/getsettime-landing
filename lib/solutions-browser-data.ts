@@ -26,7 +26,8 @@ export type SolutionBrowserIconKey =
   | "dentist"
   | "physio"
   | "dermatology"
-  | "tutor";
+  | "tutor"
+  | "immigration";
 
 /**
  * Items shown on the frontend.
@@ -69,20 +70,6 @@ export const solutionBrowserCategories: SolutionBrowserCategory[] = [
         description: "Class booking, tutor availability, and automated reminders for students and parents.",
         href: "#education",
         icon: "education",
-      },
-      {
-        id: "overview-real-estate",
-        title: "Real estate",
-        description: "Site visits, property tours, and agent calendars without phone tag.",
-        href: "#real-estate",
-        icon: "real-estate",
-      },
-      {
-        id: "overview-fitness",
-        title: "Fitness",
-        description: "Trainer availability, class capacity, and recurring session scheduling.",
-        href: "#fitness",
-        icon: "fitness",
       },
     ],
   },
@@ -149,20 +136,6 @@ export const solutionBrowserCategories: SolutionBrowserCategory[] = [
       },
     ],
   },
-  // {
-  //   id: "real-estate",
-  //   label: "Real estate",
-  //   heading: "Real estate",
-  //   items: [
-  //     {
-  //       id: "re-agencies",
-  //       title: "Real estate",
-  //       description: "Book site visits, rental tours, and buyer consultations with agent routing built in.",
-  //       href: "/solutions/real-estate-appointment-booking-software",
-  //       icon: "real-estate",
-  //     },
-  //   ],
-  // },
 ];
 
 export const solutionBrowserDefaultCategoryId = "solutions";

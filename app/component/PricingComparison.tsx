@@ -4,6 +4,7 @@ import { Fragment, useMemo, useState, type ReactNode } from "react";
 import type { ComparisonCell, ComparisonRow, RegionalPricing } from "@/lib/pricing-data";
 import { pricingTiers, applyRegionalPrices, formatPrice } from "@/lib/pricing-data";
 import { useRegionalPricing } from "./useRegionalPricing";
+import ScreenGate from "./ScreenGate";
 
 const PLANS = ["Free", "Starter", "Professional", "Enterprise"] as const;
 const POPULAR_INDEX = 2;
@@ -102,7 +103,7 @@ function CategoryLabel({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-3 bg-gradient-to-r from-slate-50 via-white to-slate-50 px-4 py-3 sm:px-5">
       <span className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-200 to-transparent" />
-      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-indigo-600 sm:text-[11px] sm:tracking-[0.2em]">
+      <span className="text-xs font-bold uppercase tracking-[0.18em] text-indigo-600">
         {label}
       </span>
       <span className="h-px flex-1 bg-gradient-to-r from-transparent via-indigo-200 to-transparent" />
@@ -132,7 +133,7 @@ function planColumnClass(index: number, part: "head" | "body") {
 function ComparisonLegend({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`flex flex-wrap items-center justify-center gap-4 border-t border-slate-100 bg-slate-50/50 px-4 py-3.5 text-[11px] text-neutral-500 sm:justify-start sm:gap-6 sm:px-6 sm:py-4 sm:text-xs ${className}`}
+      className={`flex flex-wrap items-center justify-center gap-2 border-t border-slate-100 bg-slate-50/50 px-4 py-3.5 text-xs text-neutral-500 sm:justify-start sm:gap-6 sm:px-6 sm:py-4 ${className}`}
     >
       <span className="inline-flex items-center gap-2">
         <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
@@ -197,18 +198,14 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
 
   return (
     <div className="relative">
-      <div
-        className="pointer-events-none absolute inset-y-4 left-[38%] right-[22%] hidden rounded-3xl bg-indigo-400/15 blur-3xl xl:block"
-        aria-hidden
-      />
 
       <div className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 drop-shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:rounded-3xl">
+        <ScreenGate maxWidth={1023}>
         {/* ——— Mobile & tablet: plan tabs + feature list ——— */}
-        <div className="lg:hidden">
+        <div className="relative">
           <div className="border-b border-slate-100 bg-gradient-to-r from-slate-50/90 via-white to-slate-50/90 p-3 sm:p-4">
             <p className="mb-3 text-center text-xs font-medium text-neutral-500">Tap a plan to compare features</p>
-            <div
-              className="-mx-1 flex gap-2 overflow-x-auto overscroll-x-contain px-1 pb-1 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            <div className="flex gap-2 py-1 px-1 overflow-x-auto overscroll-x-contain snap-x snap-mandatory [scrollbar-width:none]"
               role="tablist"
               aria-label="Select pricing plan"
             >
@@ -223,7 +220,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActivePlan(i)}
-                    className={`min-w-[calc(25%-0.35rem)] flex-1 snap-center rounded-2xl border px-3 py-3 text-left transition-all sm:min-w-[140px] sm:px-4 ${
+                    className={`flex-1 snap-center rounded-2xl border px-3 py-3 text-left transition-all sm:min-w-[140px] sm:px-4 ${
                       isActive
                         ? isPopular
                           ? "border-indigo-500 bg-gradient-to-b from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-300/40"
@@ -261,7 +258,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
                             isActive && isPopular ? "text-indigo-100" : "text-neutral-500"
                           }`}
                         >
-                          {meta.price === "Free" ? "forever" : `/mo${taxSuffix(region)}`}
+                          {meta.price === "Free" ? "" : `/mo${taxSuffix(region)}`}
                         </span>
                       </>
                     )}
@@ -309,9 +306,11 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
 
           <ComparisonLegend />
         </div>
+        </ScreenGate>
 
+        <ScreenGate minWidth={1024}>
         {/* ——— Desktop: full comparison table ——— */}
-        <div className="hidden lg:block">
+        <div className="relative">
           <div className="border-b border-slate-100 bg-gradient-to-r from-slate-50/90 via-white to-slate-50/90 px-6 py-3">
             <p className="text-xs font-medium text-neutral-500">Side-by-side comparison of all plans</p>
           </div>
@@ -415,6 +414,7 @@ export default function PricingComparison({ rows }: PricingComparisonProps) {
 
           <ComparisonLegend />
         </div>
+        </ScreenGate>
       </div>
     </div>
   );

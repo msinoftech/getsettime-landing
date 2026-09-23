@@ -6,6 +6,7 @@ import Card from "@/app/component/Card";
 import BookingFlowConsole from "./BookingFlowConsole";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+import ScreenGate from "@/app/component/ScreenGate";
 
 const whyChooseUs = [
   {
@@ -172,31 +173,24 @@ export default function TutorAppointmentBookingSoftwarePage() {
                             titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                         />
 
-                        <div className="flex gap-2 flex-row flex-wrap">
-                            <Link
-                            href={REGISTER_GOOGLE_URL}
-                            target="_blank"
-                            aria-label="Sign up with Google"
-                            className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3"
-                            >
-                            <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1" aria-hidden>
-                                <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z" />
-                                <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z" />
-                                <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z" />
-                                <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z" />
+                        <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+                            <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+                            <svg viewBox="0 0 48 48" className="w-5 h-5 sm:w-6 sm:h-6 inline-block rounded-sm bg-white p-1">
+                            <g>
+                                <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                                <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                                <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                                <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                            </g>
                             </svg>
                             Sign up with Google
                             </Link>
-                            <Link
-                            href={REGISTER_URL}
-                            aria-label="Get Started for Free - Tutor Appointment Booking Software"
-                            className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center"
-                            >
+                            <Link href={REGISTER_URL} aria-label="Get Started for Free - Tutor Appointment Booking Software" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm text-white drop-shadow-lg transition">
                             Get Started for Free
                             </Link>
                         </div>
 
-                        
+                        <ScreenGate minWidth={768}>
                         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                           <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                               <div className="flex items-center gap-2">
@@ -243,19 +237,14 @@ export default function TutorAppointmentBookingSoftwarePage() {
                               <div className="text-xs text-neutral-500">Average feedback from students</div>
                           </div>
                         </div>
-
+                        </ScreenGate>
                     </div>
 
                     {/* RIGHT SIDE — modern tutor scheduling dashboard */}
                     <div className="relative min-w-0">
-                        <div className="pointer-events-none absolute -inset-5 rounded-[32px] bg-gradient-to-br from-indigo-300/25 via-sky-200/25 to-violet-200/25 blur-2xl animate-aurora-drift" aria-hidden />
-                        <div className="pointer-events-none absolute -right-8 top-10 h-28 w-28 rounded-full bg-sky-400/25 blur-3xl" aria-hidden />
-                        <div className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-violet-400/20 blur-2xl" aria-hidden />
-
-                        <div className="relative mx-auto w-full animate-fade-in-scale overflow-hidden rounded-[22px] border border-white/60 bg-white/95 shadow-[0_28px_70px_-16px_rgba(59,130,246,0.22)] ring-1 ring-sky-100/80 backdrop-blur-xl lg:max-w-none">
-                            <div className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:linear-gradient(rgba(99,102,241,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.06)_1px,transparent_1px)] [background-size:20px_20px]" aria-hidden />
+                        <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-xl animate-fade-in-scale">
                             
-                            
+                            <ScreenGate minWidth={768}>
                             {/* Window chrome */}
                             <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-3 sm:py-4">
                                 <div className="flex items-center gap-2 sm:gap-3">
@@ -271,8 +260,10 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                     <span className="text-[10px] sm:text-xs font-medium text-neutral-700">LIVE</span>
                                 </div>
                             </div>
+                            </ScreenGate>
 
                             <div className="relative flex min-h-0 sm:min-h-[380px]">
+                                <ScreenGate minWidth={768}>
                                 {/* Icon rail */}
                                 <aside className="w-14 shrink-0 flex-col items-center gap-2.5 border-r border-neutral-100/80 bg-gradient-to-b from-slate-50/90 to-white py-4 flex">
                                     <div className="relative mb-1 flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-indigo-600 to-sky-600 text-[10px] font-bold text-white shadow-md shadow-indigo-500/25">
@@ -297,17 +288,18 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                         </button>
                                     ))}
                                 </aside>
+                                </ScreenGate>
 
                                 <div className="min-w-0 flex-1 space-y-3.5 p-3 sm:p-4">
                                     {/* Header */}
-                                    <div className="flex flex-wrap items-start justify-between gap-3">
+                                    <div className="flex items-start justify-between gap-3">
                                         <div className="min-w-0">
-                                            <div className="text-[11px] font-medium text-neutral-500">Good morning, Sarah</div>
+                                            <div className="text-xs font-medium text-neutral-500">Good morning, Sarah</div>
                                             <div className="truncate text-base font-bold tracking-tight text-neutral-900 sm:text-lg">Your teaching day at a glance</div>
                                         </div>
-                                        <div className="flex shrink-0 items-center gap-2">
-                                            <span className="hidden rounded-xl border border-neutral-200/80 bg-white px-2.5 py-1.5 text-[11px] font-medium text-neutral-600 shadow-sm sm:inline">Thu, Mar 19</span>
-                                            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-sky-600 text-[11px] font-bold text-white shadow-md">
+                                        <div className="flex shrink-0 items-center flex-row flex-wrap justify-end gap-2">
+                                            <span className="hidden rounded-xl border border-neutral-200/80 bg-white px-2.5 py-1.5 text-xs font-semibold text-neutral-600 shadow-sm sm:inline">Thu, Mar 19</span>
+                                            <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-xs font-semibold text-white shadow-md">
                                                 SR
                                                 <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-emerald-400" />
                                             </span>
@@ -315,26 +307,23 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                     </div>
                                     
                                     {/* Mini lesson runway */}
-                                    <div className="overflow-hidden rounded-2xl border border-neutral-100/80 bg-gradient-to-br from-white to-neutral-50/80 p-3 shadow-sm">
+                                    <div className="overflow-hidden relative">
                                         <div className="mb-2 flex items-center justify-between">
                                             <div className="flex items-center gap-2">
-                                                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-50 text-sky-600">
-                                                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                                </span>
                                                 <div>
-                                                    <div className="text-[11px] font-bold text-neutral-900">Today&apos;s lesson runway</div>
-                                                    <div className="text-[10px] text-neutral-500">4 sessions · online & in-person</div>
+                                                    <div className="text-sm font-bold text-neutral-900">Today&apos;s lesson runway</div>
+                                                    <div className="text-xs text-neutral-500">4 sessions · online & in-person</div>
                                                 </div>
                                             </div>
-                                            <span className="rounded-full bg-indigo-600 px-2 py-0.5 text-[9px] font-bold uppercase text-white">Now 09:00</span>
+                                            <span className="rounded-full bg-indigo-600 px-3 py-1 text-xs font-semibold uppercase text-white">Now 09:00</span>
                                         </div>
-                                        <div className="relative h-20 overflow-hidden rounded-xl border border-neutral-200/80 bg-neutral-50/80 sm:h-24">
+                                        <div className="relative overflow-hidden rounded-xl border border-neutral-200/80 h-24">
                                             <div className="absolute inset-0 flex">
                                                 {[0, 1, 2, 3, 4].map((i) => (
                                                     <div key={i} className={`flex-1 border-r border-neutral-200/60 ${i === 4 ? "border-r-0" : ""}`} />
                                                 ))}
                                             </div>
-                                            <div className="absolute inset-x-0 top-0 flex justify-between px-2 pt-1.5 text-[8px] font-semibold tabular-nums text-neutral-400">
+                                            <div className="absolute inset-x-0 top-0 flex justify-between px-2 pt-1.5 text-xs font-semibold tabular-nums text-neutral-400">
                                                 {["09", "11", "13", "15", "17"].map((t) => (
                                                     <span key={t}>{t}:00</span>
                                                 ))}
@@ -343,30 +332,29 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                                 { label: "SAT Math", left: "4%", width: "22%", top: "30%", color: "from-indigo-500 to-violet-600", meta: "Ava · Live", pulse: true },
                                                 { label: "IELTS", left: "30%", width: "20%", top: "30%", color: "from-sky-500 to-cyan-600", meta: "Ethan" },
                                                 { label: "Python", left: "58%", width: "18%", top: "30%", color: "from-emerald-500 to-teal-600", meta: "Trial" },
-                                                { label: "Math", left: "72%", width: "16%", top: "58%", color: "from-amber-500 to-orange-500", meta: "4:30 PM" },
                                             ].map((block) => (
-                                                <div
-                                                    key={block.label}
-                                                    className={`absolute overflow-hidden rounded-lg bg-gradient-to-br ${block.color} px-2 py-1 text-white shadow-md ${block.pulse ? "ring-2 ring-sky-300 ring-offset-1 ring-offset-neutral-50" : ""}`}
+                                                <div key={block.label}
+                                                    className={`absolute overflow-hidden rounded-lg bg-gradient-to-br ${block.color} px-2 py-1 text-white shadow-md ${block.pulse ? "ring-2 ring-indigo-500 ring-offset-1 ring-offset-neutral-50" : ""}`}
                                                     style={{ left: block.left, width: block.width, top: block.top }}
                                                 >
-                                                    <div className="truncate text-[9px] font-bold leading-tight">{block.label}</div>
-                                                    <div className="truncate text-[8px] text-white/90">{block.meta}</div>
+                                                    <div className="truncate text-xs font-bold leading-tight">{block.label}</div>
+                                                    <div className="truncate text-xs text-white/90">{block.meta}</div>
                                                 </div>
                                             ))}
                                             <div className="absolute bottom-0 top-4 w-px bg-gradient-to-b from-transparent via-amber-500 to-transparent" style={{ left: "8%" }} aria-hidden>
-                                                <span className="absolute -left-1 top-1 h-2 w-2 rounded-full bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
+                                                <span className="absolute -left-1 top-1 h-2 w-2 rounded-full bg-amber-500" />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="grid gap-3 sm:grid-cols-2">
+                                        <ScreenGate minWidth={640}>
                                         {/* Schedule column */}
                                         <div className="space-y-3">
-                                            <div className="rounded-2xl border border-neutral-100/80 bg-white p-3 shadow-sm">
-                                                <div className="mb-2.5 flex items-center justify-between">
+                                            <div className="relative">
+                                                <div className="mb-2 flex items-center justify-between">
                                                     <div className="text-sm font-bold text-neutral-900">Schedule</div>
-                                                    <span className="rounded-full bg-indigo-50 px-2 py-0.5 text-[10px] font-semibold text-indigo-700">4 today</span>
+                                                    <span className="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">4 today</span>
                                                 </div>
                                                 <div className="relative pl-1">
                                                     <div className="absolute bottom-1 left-[8px] top-1 w-px bg-gradient-to-b from-indigo-300 via-sky-300 to-transparent" aria-hidden />
@@ -376,11 +364,11 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                                         { time: "15:00", title: "Python · Maya", meta: "Trial", gradient: "from-emerald-500 to-teal-600", active: false },
                                                     ].map((item) => (
                                                         <div key={item.time} className="relative flex gap-2.5 py-1.5">
-                                                            <span className={`relative z-10 mt-3 flex h-2.5 w-2.5 shrink-0 rounded-full ring-4 ring-white ${item.active ? "bg-indigo-600 shadow-[0_0_0_4px_rgba(99,102,241,0.2)]" : "bg-neutral-300"}`} />
-                                                            <div className={`min-w-0 flex-1 overflow-hidden rounded-xl border px-2.5 py-2 ${item.active ? "border-indigo-200 bg-gradient-to-br from-indigo-50/80 to-sky-50/50" : "border-neutral-100 bg-neutral-50/70"}`}>
+                                                            <span className={`relative z-10 mt-3 flex h-2.5 w-2.5 shrink-0 rounded-full ring-4 ring-white ${item.active ? "bg-indigo-600" : "bg-neutral-300"}`} />
+                                                            <div className={`min-w-0 flex-1 overflow-hidden rounded-xl border px-2.5 py-2 ${item.active ? "border-indigo-200 bg-gradient-to-br from-indigo-50/80 to-sky-50/50" : "border-neutral-200 bg-neutral-50"}`}>
                                                                 <div className="flex items-center justify-between gap-2">
-                                                                    <span className={`rounded-md bg-gradient-to-r ${item.gradient} px-1.5 py-0.5 text-[10px] font-bold tabular-nums text-white`}>{item.time}</span>
-                                                                    <span className="truncate text-[10px] text-neutral-400">{item.meta}</span>
+                                                                    <span className={`rounded-md bg-gradient-to-r ${item.gradient} px-2 py-1 text-xs font-semibold tabular-nums text-white`}>{item.time}</span>
+                                                                    <span className="truncate text-xs text-neutral-700">{item.meta}</span>
                                                                 </div>
                                                                 <div className={`mt-1 truncate text-xs ${item.active ? "font-bold text-indigo-700" : "font-medium text-neutral-700"}`}>{item.title}</div>
                                                             </div>
@@ -389,28 +377,27 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                                 </div>
                                             </div>
                                         </div>
+                                        </ScreenGate>
 
                                         {/* Students column */}
                                         <div className="space-y-3">
                                             {/* Next lesson — under schedule column */}
-                                            <div className="relative overflow-hidden rounded-2xl border border-indigo-200/60 bg-gradient-to-br from-indigo-600 via-indigo-600 to-sky-500 p-3 text-white shadow-lg shadow-indigo-500/20">
-                                                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/10 blur-xl" aria-hidden />
+                                            <div className="relative overflow-hidden rounded-2xl border border-indigo-200/60 bg-gradient-to-br from-indigo-600 via-indigo-600 to-sky-500 p-3 text-white shadow-lg">
                                                 <div className="relative space-y-2.5">
-                                                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide">
-                                                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-300" />
+                                                    <div className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">
                                                         Next · 12 min
                                                     </div>
-                                                    <div>
+                                                    <div className="space-y-1">
                                                         <div className="text-sm font-bold leading-snug sm:text-base">SAT Math with Ava Chen</div>
-                                                        <div className="mt-1 text-[10px] leading-relaxed text-indigo-100">09:00 – 09:55 · Google Meet</div>
-                                                        <div className="mt-0.5 text-[10px] text-indigo-200/90">Package lesson 9/12</div>
+                                                        <div className="text-xs leading-relaxed text-indigo-100">09:00 – 09:55 · Google Meet</div>
+                                                        <div className="text-xs text-indigo-200/90">Package lesson 9/12</div>
                                                     </div>
-                                                    <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/20">
+                                                    <div className="h-1 w-full overflow-hidden rounded-full bg-white/20">
                                                         <div className="h-full w-[75%] rounded-full bg-white/90" />
                                                     </div>
-                                                    <div className="grid grid-cols-3 gap-1.5">
+                                                    <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-1">
                                                         {["Materials ready", "Reminder sent", "No conflicts"].map((chip) => (
-                                                            <span key={chip} className="rounded-lg border border-white/15 bg-white/10 px-1.5 py-1 text-center text-[9px] font-medium leading-tight">{chip}</span>
+                                                            <span key={chip} className="rounded-lg border border-white/15 bg-white/10 px-3 py-1 text-center text-xs font-medium leading-tight">{chip}</span>
                                                         ))}
                                                     </div>
                                                     <span className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-xs font-bold text-indigo-700 shadow-sm">
@@ -426,17 +413,19 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                                         <div className="rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50/60 to-white p-2.5 shadow-sm sm:p-3">
                                             <div className="mt-1 text-sm font-bold text-indigo-800">Math · 45 min</div>
-                                            <div className="mt-0.5 text-[11px] text-neutral-500">Thu · 4:30 PM · bookable</div>
+                                            <div className="mt-0.5 text-xs text-neutral-500">Thu · 4:30 PM · bookable</div>
                                         </div>
 
                                         <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50/60 to-white p-2.5 shadow-sm sm:p-3">
                                             <div className="text-sm font-bold text-emerald-700">Lesson confirmed</div>
-                                            <div className="mt-1 text-[11px] leading-snug text-neutral-600">IELTS · Ethan · Meet link sent</div>
+                                            <div className="mt-1 text-xs leading-snug text-neutral-600">IELTS · Ethan · Meet link sent</div>
                                         </div>
+                                        <ScreenGate minWidth={640}>
                                         <div className="relative overflow-hidden rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50/60 to-white p-2.5 shadow-sm sm:p-3">
                                             <div className="text-sm font-bold text-sky-700">Auto reminder</div>
-                                            <div className="relative mt-1 text-[11px] leading-snug text-neutral-600">SMS + email sent 30 min before class</div>
+                                            <div className="relative mt-1 text-xs leading-snug text-neutral-600">SMS + email sent 30 min before class</div>
                                         </div>
+                                        </ScreenGate>
                                     </div>
                                 </div>
                             </div>
@@ -447,7 +436,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
         </section>
 
         {/* WHY CHOOSE US SECTION */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-white to-indigo-50 py-14 sm:py-20">
+        <section className="relative overflow-hidden bg-gradient-to-b from-white to-indigo-50 pb-14 sm:py-20">
             <div className="absolute top-10 left-10 hidden sm:block w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-10 right-10 hidden sm:block w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
 
@@ -531,7 +520,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                         {/* Header */}
                         <div className="flex items-center gap-3 border-b border-slate-100 px-4 py-3.5 sm:px-5">
                             <div className="relative shrink-0">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-indigo-500 text-sm font-bold text-white shadow-md shadow-indigo-500/25">
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-sm font-bold text-white shadow-md shadow-indigo-500/25">
                                     SR
                                 </div>
                                 <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-white bg-emerald-500">
@@ -548,50 +537,43 @@ export default function TutorAppointmentBookingSoftwarePage() {
 
                         <div className="space-y-3 p-3 sm:p-4">
                             {/* 01 — Live calendar & lessons */}
-                            <div className="rounded-xl border border-slate-100 bg-white p-3 drop-shadow-sm">
+                            <div className="rounded-xl md;border border-slate-100 md:bg-white md:p-3 md:drop-shadow-sm">
                                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                                    <div className="flex min-w-0 items-center gap-2">
-                                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-indigo-600 text-[10px] font-bold text-white">01</span>
+                                    <div className="flex items-start gap-2">
+                                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-indigo-600 text-xs font-semibold text-white">01</span>
                                         <div className="min-w-0">
                                             <div className="text-sm font-semibold text-neutral-900">Today&apos;s lessons</div>
                                             <div className="truncate text-xs text-neutral-500">Schedule · Google Meet · conflicts cleared</div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="mt-3 space-y-2">
                                     {[
-                                        { time: "09:00", title: "SAT Math with Ava Chen", meta: "Google Meet ready · 55 min", status: "Next", statusClass: "bg-indigo-50 text-indigo-700" },
-                                        { time: "11:30", title: "IELTS Speaking · Ethan", meta: "Reminder sent · 45 min", status: "Soon", statusClass: "bg-amber-50 text-amber-700" },
-                                        { time: "15:00", title: "Python basics · Maya", meta: "Google Meet · Trial", status: "Booked", statusClass: "bg-emerald-50 text-emerald-700" },
+                                        { time: "09:00", title: "SAT Math with Ava Chen", meta: "Google Meet ready · 55 min", status: "Next", statusClass: "bg-indigo-50 text-indigo-700 border-indigo-200" },
+                                        { time: "11:30", title: "IELTS Speaking · Ethan", meta: "Reminder sent · 45 min", status: "Soon", statusClass: "bg-amber-50 text-amber-700 border-amber-200" },
+                                        { time: "15:00", title: "Python basics · Maya", meta: "Google Meet · Trial", status: "Booked", statusClass: "bg-emerald-50 text-emerald-700 border-emerald-200" },
                                     ].map((item, index) => (
-                                        <div
-                                            key={item.time}
-                                            className={`flex flex-col gap-2 rounded-lg border border-slate-100 bg-slate-50/70 px-2.5 py-2 sm:flex-row sm:items-start sm:gap-3 ${index >= 2 ? "hidden sm:flex" : ""}`}
-                                        >
-                                            <div className="w-full shrink-0 sm:w-11 sm:pt-0.5 sm:text-center">
+                                        <div key={item.time} className={`flex gap-2 flex-col rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 min-[450px]:flex-row sm:items-start sm:gap-3 ${index >= 2 ? "hidden sm:flex" : ""}`}>
+                                            <div className="shrink-0 min-[450px]:w-11 sm:pt-0.5 sm:text-center">
                                                 <div className="text-xs font-bold text-neutral-900">{item.time}</div>
                                             </div>
                                             <div className="min-w-0 flex-1">
-                                                <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-2">
-                                                    <div className="min-w-0 truncate text-sm font-semibold text-neutral-900">{item.title}</div>
-                                                    <span className={`w-fit shrink-0 rounded-md px-1.5 py-0.5 text-xs ${item.statusClass}`}>
-                                                        {item.status}
-                                                    </span>
+                                                <div className="flex flex-wrap gap-1 flex-row sm:items-start justify-between sm:gap-2">
+                                                    <div className="truncate text-sm font-semibold text-neutral-900">{item.title}</div>
+                                                    <span className={`w-fit shrink-0 rounded-full border px-2 py-1 text-xs font-semibold ${item.statusClass}`}>{item.status}</span>
                                                 </div>
-                                                <div className="mt-0.5 truncate text-xs text-neutral-500">{item.meta}</div>
+                                                <div className="truncate text-xs text-neutral-500">{item.meta}</div>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
-
                             </div>
 
                             {/* 02 Students + 03 Payments */}
                             <div className="grid gap-3 sm:grid-cols-5">
-                                <div className="rounded-xl border border-slate-100 bg-white p-3 drop-shadow-sm sm:col-span-3">
-                                    <div className="flex items-center gap-2">
-                                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-sky-600 text-xs font-bold text-white">02</span>
+                                <div className="rounded-xl md:border md:border-slate-100 md:bg-white md:p-3 md:drop-shadow-sm sm:col-span-3">
+                                    <div className="flex items-start gap-2">
+                                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-sky-600 text-xs font-bold text-white">02</span>
                                         <div>
                                             <div className="text-sm font-semibold text-neutral-900">Students &amp; progress</div>
                                             <div className="text-xs text-neutral-500">Packages · attendance · goals</div>
@@ -604,10 +586,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                             { name: "Ethan Park", pkg: "8-lesson IELTS", progress: 50, note: "Attended 4/4" },
                                             { name: "Maya Lopez", pkg: "Trial · Coding", progress: 20, note: "1 of 1 done" },
                                         ].map((student, index) => (
-                                            <div
-                                                key={student.name}
-                                                className={`rounded-lg border border-slate-100 bg-slate-50/70 px-2.5 py-2 ${index >= 2 ? "hidden sm:block" : ""}`}
-                                            >
+                                            <div key={student.name} className={`rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 ${index >= 2 ? "hidden sm:block" : ""}`}>
                                                 <div className="flex items-center justify-between gap-2">
                                                     <div className="min-w-0">
                                                         <div className="truncate text-sm font-semibold text-neutral-900">{student.name}</div>
@@ -623,9 +602,10 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                     </div>
                                 </div>
 
-                                <div className="rounded-xl border border-slate-100 bg-white p-3 drop-shadow-sm sm:col-span-2">
-                                    <div className="flex items-center gap-2">
-                                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-sky-600 text-xs font-bold text-white">03</span>
+                                <ScreenGate minWidth={640}>
+                                <div className="rounded-xl md:border md:border-slate-100 md:bg-white md:p-3 md:drop-shadow-sm sm:col-span-2">
+                                    <div className="flex items-start gap-2">
+                                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-sky-600 text-xs font-bold text-white">03</span>
                                         <div>
                                             <div className="text-sm font-semibold text-neutral-900">Availability</div>
                                             <div className="text-xs text-neutral-500">Shareable booking windows</div>
@@ -652,7 +632,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                             </span>
                                         ))}
                                     </div>
-                                    <div className="mt-3 rounded-lg border border-emerald-100 bg-emerald-50 px-2.5 py-2">
+                                    <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 px-2.5 py-2">
                                         <div className="flex items-center gap-1.5">
                                             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                                             <span className="text-xs font-bold uppercase tracking-wide text-emerald-700">Active link</span>
@@ -660,7 +640,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                         <div className="mt-1 text-xs font-medium text-neutral-700">Shared on website, WhatsApp &amp; email</div>
                                     </div>
                                 </div>
-
+                                </ScreenGate>
                             </div>
                         </div>
                     </div>
@@ -730,6 +710,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                             title={category.title}
                             description={category.description}
                             stat={`${category.students} students`}
+                            statPosition="below"
                             statClassName="text-xs rounded-full border border-neutral-200 bg-neutral-100 drop-shadow-sm px-2 py-1 w-fit"
                             titleClassName="text-base font-semibold text-indigo-600"
                             wrapperClassName="relative"
@@ -757,6 +738,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                       description="GetSetTime is built for tutors who want to convert inquiries into confirmed lessons. Here are answers to the most common questions about our scheduling platform."
                       titleClassName="text-2xl font-bold text-neutral-900 sm:text-3xl md:text-4xl lg:text-[40px] capitalize"
                     />
+                    <ScreenGate minWidth={768}>
                     <div className="grid gap-4 sm:grid-cols-2 mt-6">
                         <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
@@ -766,6 +748,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                         
                         <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
                     </div>
+                    </ScreenGate>
 
                 </div>
                 {/* right: FAQ Section */}

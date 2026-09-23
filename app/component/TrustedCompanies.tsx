@@ -21,17 +21,14 @@ function LogoSet({ setRef }: { setRef?: Ref<HTMLDivElement> }) {
   return (
     <div ref={setRef} className="flex shrink-0 items-center">
       {companies.map((company) => (
-        <div
-          key={company.name}
-          className="flex h-12 w-[7.5rem] shrink-0 items-center justify-center px-6 sm:w-36 sm:px-8 md:w-40 md:px-10"
-        >
+        <div key={company.name} className="flex h-12 shrink-0 items-center justify-center px-6 sm:px-8 md:px-10">
           <div className="relative h-10 w-full sm:h-12">
             <Image
               src={company.logo}
               alt={`${company.name} logo`}
-              fill
-              sizes="160px"
-              className="object-contain grayscale brightness-90 transition hover:grayscale-0 hover:brightness-100"
+              width={50}
+              height={50}
+              className="rounded-lg p-2 object-contain sm:grayscale sm:brightness-90 transition hover:grayscale-0 hover:brightness-100"
             />
           </div>
         </div>
@@ -89,14 +86,14 @@ export default function TrustedCompanies() {
   return (
     <section className="bg-neutral-50 py-14 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-2 text-center">
+        <div className="space-y-2 text-center mb-4">
           <Heading
             title="Easy To Integrate"
             description="Our system supports the world's leading operational tools for centralized and professional practices."
           />
         </div>
 
-        <div className="relative mt-2 overflow-hidden py-6">
+        <div className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-neutral-50 to-transparent sm:w-24" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-neutral-50 to-transparent sm:w-24" />
 

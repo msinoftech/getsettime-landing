@@ -5,9 +5,9 @@ import Logo from "./Logo";
 
 const todaysBookings = [
   { time: "09:30 AM", duration: "60 min", name: "Sarah Johnson", service: "Consultation", status: "Confirmed" },
-  { time: "11:00 AM", duration: "45 min", name: "Michael Chen", service: "Follow-up Session", status: "Confirmed" },
-  { time: "01:30 PM", duration: "60 min", name: "Emily Davis", service: "Therapy Session", status: "Pending" },
-  { time: "03:00 PM", duration: "30 min", name: "David Wilson", service: "Skin Treatment", status: "Confirmed" },
+  { time: "11:00 AM", duration: "45 min", name: "Michael Chen", service: "Follow-up Session", status: "Complete" },
+  { time: "01:30 PM", duration: "60 min", name: "Emily Davis", service: "Therapy Session", status: "Active" },
+  { time: "03:00 PM", duration: "30 min", name: "David Wilson", service: "Skin Treatment", status: "Pending" },
 ];
 
 const upcomingMeetings = [
@@ -61,7 +61,7 @@ const industries = [
 
 export default function HeroBanner() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(120deg,#ffffff_0%,#fbfaff_45%,#f1edfd_100%)] py-14 sm:py-16">
+    <section className="relative overflow-hidden bg-white py-10 sm:py-16">
       
       <div className="absolute inset-0 pointer-events-none hidden sm:block">
         <div className="absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-indigo-300/30 blur-3xl" />
@@ -69,18 +69,18 @@ export default function HeroBanner() {
       </div>
 
       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 xl:grid-cols-2 lg:gap-6">
+        <div className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2 lg:gap-6">
           {/* Left column */}
           <div className="space-y-5">
-            <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize">
-            Appointment Scheduling {" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Software to Book More </span><br/>Appointments. and <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">Reduce No-Shows</span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize">
+            Appointment Scheduling {" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Software to Book More </span>Appointments. and <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">Reduce No-Shows</span>
             </h1>
 
             <p>GetSetTime is a smart, fully automated scheduling software designed for service-based professionals and individuals tired of managing appointments.</p>
 
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
-                    <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
+            <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+                <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+                    <svg viewBox="0 0 48 48" className="w-5 h-5 sm:w-6 sm:h-6 inline-block rounded-sm bg-white p-1">
                     <g>
                         <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
                         <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
@@ -90,9 +90,9 @@ export default function HeroBanner() {
                     </svg>
                     Sign up with Google
                 </Link>
-                <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Start Free - Hero Banner" className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white drop-shadow-lg transition">
-                    Start Free — 250 Bookings Included
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6l6 6-6 6" /></svg>
+                <Link href={REGISTER_GOOGLE_URL} target="_blank" aria-label="Start Free - Hero Banner" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm text-white drop-shadow-lg transition">
+                    Start Free — 250 Bookings<span className="hidden sm:inline"> Included</span>
+                    <svg className="h-4 w-4 hidden sm:block" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-6-6l6 6-6 6" /></svg>
                 </Link>
             </div>
 
@@ -104,7 +104,8 @@ export default function HeroBanner() {
               <span>Cancel anytime</span>
             </p>
 
-            <div className="flex flex-wrap gap-2">
+            {/* Desktop — industry pills */}
+            <div className="hidden flex-wrap gap-2 md:flex">
               {industries.map((item) => (
                 <span key={item.label} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 drop-shadow-sm">
                   {item.icon}
@@ -113,7 +114,7 @@ export default function HeroBanner() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="hidden md:grid grid-cols-1 gap-3 sm:grid-cols-3">
               
                 <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                     <div className="flex items-center gap-2">
@@ -162,9 +163,9 @@ export default function HeroBanner() {
 
           {/* Right column - Dashboard mockup */}
           <div className="relative">
-            <div className="overflow-hidden rounded-2xl bg-white drop-shadow-2xl animate-fade-in-scale">
+            <div className="overflow-hidden rounded-2xl bg-white shadow-2xl animate-fade-in-scale">
                 {/* Window bar */}
-                <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
+                <div className="relative z-10 border-b border-neutral-200 hidden md:flex items-center justify-between px-3 py-4">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div className="relative">
                       <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 animate-pulse"></div>
@@ -180,7 +181,7 @@ export default function HeroBanner() {
                 </div>
 
                 {/* Top header */}
-                <div className="flex flex-wrap items-center justify-between px-3 py-3">
+                <div className="hidden md:flex flex-wrap items-center justify-between px-3 py-3">
                     <div className="flex items-center gap-2.5">
                         <Logo />
                     </div>
@@ -202,7 +203,7 @@ export default function HeroBanner() {
 
                 <div className="flex">
                     {/* Sidebar */}
-                    <div className="hidden w-12 shrink-0 flex-col items-center gap-5 border-r border-neutral-100 py-5 text-neutral-400 sm:flex">
+                    <div className="hidden w-12 shrink-0 flex-col items-center gap-5 border-r border-neutral-100 py-5 text-neutral-400 md:flex">
                         <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
                             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 12l9-9 9 9M5 10v10h14V10" />
@@ -236,7 +237,16 @@ export default function HeroBanner() {
                                 </div>
                                 <div className="rounded-xl border border-neutral-100">
                                     {todaysBookings.map((b, idx) => (
-                                    <div key={b.name} className={`flex items-center gap-3 px-3 py-2.5 ${idx !== todaysBookings.length - 1 ? "border-b border-neutral-100" : ""}`}>
+                                    <div
+                                        key={b.name}
+                                        className={`flex items-center gap-3 px-3 py-2.5 ${idx >= 2 ? "hidden md:flex" : ""} ${
+                                            idx === 1
+                                                ? "md:border-b md:border-neutral-100"
+                                                : idx < todaysBookings.length - 1
+                                                    ? "border-b border-neutral-100"
+                                                    : ""
+                                        }`}
+                                    >
                                         <div className="w-16 shrink-0">
                                             <div className="text-xs font-bold text-neutral-900">{b.time}</div>
                                             <div className="text-xs text-neutral-400">{b.duration}</div>
@@ -245,11 +255,16 @@ export default function HeroBanner() {
                                             <div className="truncate text-sm font-semibold text-neutral-800">{b.name}</div>
                                             <div className="truncate text-xs text-neutral-500">{b.service}</div>
                                         </div>
-                                        <span
-                                        className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${
+                                        <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${
                                             b.status === "Confirmed"
-                                            ? "bg-emerald-50 text-emerald-600"
-                                            : "bg-amber-50 text-amber-600"
+                                            ? "border-emerald-200 bg-emerald-50 text-emerald-600"
+                                            : b.status === "Active"
+                                            ? "border-blue-200 bg-blue-50 text-blue-600"
+                                            : b.status === "Complete"
+                                            ? "border-amber-200 bg-amber-50 text-amber-600"
+                                            : b.status === "Pending"
+                                            ? "border-red-200 bg-red-50 text-red-600"
+                                            : "border-gray-200 bg-gray-50 text-gray-600"
                                         }`}
                                         >
                                         {b.status}
@@ -257,14 +272,13 @@ export default function HeroBanner() {
                                     </div>
                                     ))}
                                 </div>
-                                <div className="mt-2 text-right text-[11px] font-medium text-indigo-600">View all bookings →</div>
+                                <div className="mt-2 hidden md:block text-right text-[11px] font-medium text-indigo-600">View all bookings →</div>
                             </div>
 
                             {/* Upcoming Meetings */}
                             <div>
                                 <div className="mb-2 flex items-center justify-between">
                                     <div className="text-sm font-semibold text-neutral-800">Upcoming Meetings</div>
-                                    {/* <span className="text-xs font-medium text-indigo-600">View all</span> */}
                                 </div>
                                 <div className="space-y-3">
                                     {upcomingMeetings.map((m) => (
@@ -295,7 +309,7 @@ export default function HeroBanner() {
                                                 </svg>
                                                 {m.time}
                                             </span>
-                                            <span className="flex items-center gap-1 text-emerald-600">
+                                            <span className="flex items-center gap-1 border border-emerald-200 bg-emerald-50 text-emerald-600 px-2 py-0.5 text-xs font-medium rounded-full">
                                                 Confirmed
                                             </span>
                                         </div>
@@ -306,7 +320,7 @@ export default function HeroBanner() {
                         </div>
 
                         {/* Bottom row */}
-                        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-[1.2fr_1fr_0.9fr]">
+                        <div className="mt-4 hidden md:grid grid-cols-1 gap-3 sm:grid-cols-[1.2fr_1fr_0.9fr]">
                             {/* Booking Activity */}
                             <div className="rounded-xl border border-neutral-100 p-3">
                                 <div className="mb-2 flex items-center justify-between">
@@ -439,6 +453,19 @@ export default function HeroBanner() {
             </div>
           </div>
         </div>
+
+        {/* Mobile — industry cards */}
+        <div className="md:hidden pt-8">
+              <h2 className="mb-4 text-center text-lg font-bold text-neutral-900">Built for your business</h2>
+              <div className="grid grid-cols-3 min-[550px]:grid-cols-6 gap-2">
+                {industries.map((item) => (
+                  <div key={item.label} className="flex aspect-square flex-col items-center justify-center rounded-xl border border-neutral-100 bg-white px-1 py-3 text-center shadow-xl">
+                    <span className="mb-2 flex items-center justify-center text-indigo-600 [&_svg]:h-8 [&_svg]:w-8 min-[550px]:h-6 min-[550px]:w-6">{item.icon}</span>
+                    <span className="text-md min-[550px]:text-xs font-medium leading-tight text-neutral-800">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
       </div>
     </section>
   );

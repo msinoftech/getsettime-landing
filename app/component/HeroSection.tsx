@@ -37,7 +37,7 @@ export default function HeroSection() {
                 </svg>
                 Sign up with Google
               </Link>
-              <Link href={`${REGISTER_URL}`} aria-label="Contact Us" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
+              <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Hero Section" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
             </div>
 
             {/* Hero stats */}

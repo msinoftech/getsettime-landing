@@ -8,6 +8,7 @@ import { FaqSection } from "@/app/component/FaqSection";
 import Heading from "@/app/component/Heading";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/solutions/doctor-appointment-scheduling-software`;
 
@@ -318,24 +319,25 @@ export default function DoctorAppointmentSchedulingSoftware() {
               highlightText="That Works While You Treat Patients"
               description="Stop managing bookings over phone calls. GetSetTime lets patients book online, sends automatic reminders, and keeps your day organised — no tech skills needed."
               headingTag="h1"
-              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+              titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
             />
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
-                <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
-                  <g>
-                    <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
-                    <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
-                    <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
-                    <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
-                  </g>
-                </svg>
+            <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+              <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+              <svg viewBox="0 0 48 48" className="w-5 h-5 sm:w-6 sm:h-6 inline-block rounded-sm bg-white p-1">
+                    <g>
+                        <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                        <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                        <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                        <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                    </g>
+                    </svg>
                 Sign up with Google
               </Link>
-              <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Doctor Appointment Scheduling Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
+              <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Doctor Appointment Scheduling Software" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm text-white drop-shadow-lg transition">Get Started for Free</Link>
             </div>
 
+            <ScreenGate minWidth={768}>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                   <div className="flex items-center gap-2">
@@ -382,13 +384,14 @@ export default function DoctorAppointmentSchedulingSoftware() {
                   <div className="text-xs text-neutral-500">Average feedback from patients</div>
               </div>
             </div>
+            </ScreenGate>
 
           </div>
+
           {/* Right column - Interactive Demo */}
           <div className="relative">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-100 via-white to-cyan-100 blur-3xl" />           
-
-            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl animate-fade-in-scale">
+            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-xl animate-fade-in-scale">
+              <ScreenGate minWidth={768}>
               {/* Window chrome */}
               <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-4">
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -404,11 +407,12 @@ export default function DoctorAppointmentSchedulingSoftware() {
                   <span className="text-[10px] font-medium text-neutral-700 sm:text-xs">LIVE</span>
                 </div>
               </div>
+              </ScreenGate>
 
-              <div className="bg-gradient-to-br from-white via-indigo-50/30 to-white p-4">
+              <div className="bg-gradient-to-br from-white via-indigo-50/30 to-white p-3">
                 {/* Doctor header */}
                 <div className="mb-5 flex items-center gap-3">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-base font-bold text-white drop-shadow-md drop-shadow-indigo-500/20">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-base font-bold text-white drop-shadow-md drop-shadow-indigo-500/20">
                     MJ
                   </div>
                   <div className="min-w-0 flex-1">
@@ -422,7 +426,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2.5 md:grid-cols-4">
+                <div className="grid grid-cols-4 gap-2.5">
                   {[
                     { time: "09:30 AM", status: "Booked" },
                     { time: "10:00 AM", status: "Booked" },
@@ -455,22 +459,24 @@ export default function DoctorAppointmentSchedulingSoftware() {
                 </div>
 
                 <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm">
-                    <div className="mb-3 flex items-center justify-between">
-                      <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Next patient</div>
-                      <div className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-1 text-[11px] font-semibold text-emerald-700">
+                  
+                  <div className="rounded-xl border border-indigo-400/30 bg-indigo-600 p-4 text-white drop-shadow-sm sm:border-neutral-100 sm:bg-white sm:text-neutral-900">
+                    <div className="mb-3 flex items-center justify-between gap-2">
+                      <div className="text-xs font-semibold uppercase tracking-wide text-indigo-100 sm:text-neutral-500">Next patient</div>
+                      <div className="inline-flex shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
                         Confirmed
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 to-violet-100 text-sm font-bold text-indigo-700">CM</div>
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20 text-sm font-bold text-white sm:bg-gradient-to-br sm:from-indigo-100 sm:to-violet-100 sm:text-indigo-700">CM</div>
                       <div className="min-w-0">
-                        <div className="truncate font-bold text-neutral-900">Christopher Moore</div>
-                        <div className="truncate text-xs text-neutral-500">Today · 10:30 AM · Follow-up visit</div>
+                        <div className="truncate font-bold text-white sm:text-neutral-900">Christopher Moore</div>
+                        <div className="truncate text-xs text-indigo-100 sm:text-neutral-500">Today · 10:30 AM · Follow-up visit</div>
                       </div>
                     </div>
                   </div>
-
+                  
+                  <ScreenGate minWidth={640}>
                   <div className="relative overflow-hidden rounded-xl bg-neutral-900 p-4 text-white drop-shadow-md">
                     <div className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-indigo-500/20" />
                     <div className="relative">
@@ -488,6 +494,8 @@ export default function DoctorAppointmentSchedulingSoftware() {
                       </div>
                     </div>
                   </div>
+                  </ScreenGate>
+
                 </div>
 
                 <div className="mt-5 flex items-center gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3">
@@ -506,13 +514,8 @@ export default function DoctorAppointmentSchedulingSoftware() {
     </section>
 
     {/* The Real Problem Section */}
-    <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
-      
-      <div className="absolute top-10 left-10 w-72 h-72 hidden sm:block bg-indigo-600/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 right-10 w-80 h-80 hidden sm:block bg-emerald-500/20 rounded-full blur-3xl"></div>
-      
+    <section className="relative pb-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">      
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
-        
         <Heading
           badge="The Real Problem"
           title="Running a Clinic Without a Booking System Is Costing You More Than You Think"
@@ -545,7 +548,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
             />
             <div className="space-y-3">
               {DoctorAppointmentBookingAppPoints.map((point, i) => (
-                <div key={i} className="group flex gap-4 p-4 rounded-xl bg-white drop-shadow-sm transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
+                <div key={i} className="group flex gap-2 sm:gap-4 p-4 rounded-xl bg-white drop-shadow-sm transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
                   <div className="flex h-9 w-9 min-w-9 min-h-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white drop-shadow-lg drop-shadow-indigo-500/25"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg></div>
                   <div>
                     <div className="font-medium text-neutral-900">{point.title}</div>
@@ -555,10 +558,11 @@ export default function DoctorAppointmentSchedulingSoftware() {
               ))}
             </div>
           </div>
+
           {/* RIGHT - EXACT REF UI */}
           <div className="relative">           
-          
-            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
+            <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-xl">
+              <ScreenGate minWidth={768}>
               {/* Window chrome */}
               <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-4">
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -574,8 +578,9 @@ export default function DoctorAppointmentSchedulingSoftware() {
                   <span className="text-[10px] font-medium text-neutral-700 sm:text-xs">LIVE</span>
                 </div>
               </div>
+              </ScreenGate>
 
-              <div className="bg-gradient-to-br from-white via-indigo-50/30 to-white p-3 md:p-4">
+              <div className="bg-gradient-to-br from-white via-indigo-50/30 to-white p-3">
                 {/* Doctor header */}
                 <div className="flex items-center gap-4 rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm">
                   <div className="relative shrink-0">
@@ -623,7 +628,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                         <div className="text-xs text-white/80">Routine consultation • Room 2</div>
                       </div>
                     </div>
-
+                    <ScreenGate minWidth={768}>
                     {/* Stat tiles */}
                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-3">
                       <div className="rounded-xl border border-neutral-100 bg-white p-3 drop-shadow-sm">
@@ -645,6 +650,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                         <div className="mt-1.5 text-xl font-bold text-neutral-900">126<span className="text-sm font-medium text-neutral-400"> / wk</span></div>
                       </div>
                     </div>
+                    </ScreenGate>
 
                     {/* Weekly bookings mini chart */}
                     <div className="rounded-xl hidden md:block border border-neutral-100 bg-white p-4 drop-shadow-sm">
@@ -675,7 +681,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                     </div>
                   </div>
 
-                  <div className="rounded-xl space-y-3 bg-white p-4 drop-shadow-md">
+                  <div className="rounded-xl space-y-3 bg-white md:p-4 md:drop-shadow-md">
                     <div className="flex items-center justify-between gap-4">
                       <div>
                         <div className="font-bold text-neutral-900">Availability</div>
@@ -694,7 +700,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                         { label: "04:00 PM", status: "available" },
                         { label: "04:30 PM", status: "available" },
                       ].map((slot) => (
-                        <div key={slot.label} className={`rounded-lg border px-2 py-2 text-center transition-all duration-300 hover:-translate-y-0.5 hover:drop-shadow-md ${
+                        <div key={slot.label} className={`rounded-lg border px-2 py-2 text-xs sm:text-sm text-center transition-all duration-300 hover:-translate-y-0.5 hover:drop-shadow-md ${
                             slot.status === "available"
                               ? "border-emerald-200 bg-emerald-50 text-emerald-700"
                               : slot.status === "booked"
@@ -706,15 +712,29 @@ export default function DoctorAppointmentSchedulingSoftware() {
                         </div>
                       ))}
                     </div>
-                    <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-4">
-                      <div className="flex flex-col items-start gap-2">
-                        <div className="rounded-md bg-emerald-50 px-3 py-1 font-medium text-emerald-700">Active</div>
-                        <div>
-                          <div className="text-neutral-500">Booking link status</div>
-                          <div className="font-bold text-neutral-900">Shared across WhatsApp & website</div>
-                        </div>                        
+
+                    <div className="relative overflow-hidden rounded-xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50/80 via-white to-indigo-50/30 p-4">
+                      <div className="pointer-events-none absolute -right-4 -top-4 h-16 w-16 rounded-full bg-emerald-400/15 blur-2xl" aria-hidden />
+                      <div className="relative flex gap-3 items-start flex-row flex-wrap justify-between">
+                        <div className="flex items-start gap-3">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white drop-shadow-sm">
+                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                          </span>
+                          <div className="min-w-0">
+                            <div className="text-xs font-medium text-neutral-500">Booking link status</div>
+                            <div className="font-bold text-neutral-900">Shared across WhatsApp & website</div>
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          <span className="rounded-full bg-white px-2 py-0.5 text-xs font-medium text-neutral-600 ring-1 ring-neutral-200">WhatsApp</span>
+                          <span className="rounded-full bg-white px-2 py-0.5 text-xs font-medium text-neutral-600 ring-1 ring-neutral-200">Website</span>
+                          <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 border border-emerald-200">Active</span>
+                        </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>              
@@ -725,7 +745,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
     </section>
     
     {/* FEATURES SECTION */}
-    <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-indigo-50 overflow-hidden">
+    <section className="relative pb-14 sm:py-20 sm:bg-gradient-to-br from-slate-50 via-white to-indigo-50 overflow-hidden">
       
       <div className="absolute top-0 left-0 w-72 h-72 hidden sm:block bg-indigo-300/30 blur-3xl rounded-full"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 hidden sm:block bg-purple-300/30 blur-3xl rounded-full"></div>
@@ -739,7 +759,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
           wrapperClassName="text-center max-w-4xl mx-auto mb-8 space-y-3"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {needsChecklist.map((item, i) => (
             <Card key={item.title} title={item.title} description={item.desc} icon={item.icon} iconWrapperClassName = "w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white drop-shadow-md" wrapperClassName = "relative" />
           ))}
@@ -747,9 +767,8 @@ export default function DoctorAppointmentSchedulingSoftware() {
       </div>
     </section>
 
-    {/* CLINIC REALTY CHECK SECTION */}
+    {/* SPEED UP YOUR PRACTICE SECTION */}
     <section className="relative overflow-hidden py-14 sm:py-20 bg-[linear-gradient(180deg,#eef2ff_0%,#e0f2fe_55%,#f8fafc_100%)]">
-      
       <div className="absolute inset-0 hidden sm:block bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.22),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(56,189,248,0.24),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_35%)]" />
       <div className="absolute -left-16 top-20 h-48 w-48 hidden sm:block rounded-full bg-emrald-400/25 blur-3xl" />
       <div className="absolute -right-14 bottom-16 h-56 w-56 hidden sm:block rounded-full bg-indigo-500/25 blur-3xl" />
@@ -776,7 +795,32 @@ export default function DoctorAppointmentSchedulingSoftware() {
                 <CheckListItem key={point} text={point} />
               ))}
             </div>
+
+            <div className="relative">
+              <h3 className="text-lg font-bold text-neutral-900">Built for every type of medical practice</h3>
+              <div className="mt-2 flex flex-wrap gap-3">
+                {[
+                  "Pediatrics",
+                  "Women's Health",
+                  "Primary Care",
+                  "Dermatology",
+                  "ENT Care",
+                  "Orthopedics",
+                  "Mental Wellness",
+                  "Physiotherapy",
+                ].map((tag) => (
+                  <span key={tag} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1 text-xs text-neutral-700 drop-shadow-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-4">
+                <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your clinic setup - Doctor Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-3 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
+              </div>
+            </div>
           </div>
+
           {/* Right */}
           <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
             <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
@@ -797,7 +841,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                       "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
                     ].map((time) => (
                       <button key={time} type="button"
-                        className={`rounded-xl border px-2 py-2 font-medium transition-all duration-200 ${
+                        className={`rounded-xl border px-2 py-2 text-xs xl:text-sm font-medium transition-all duration-200 ${
                           time === "10:00 AM"
                             ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
                             : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
@@ -809,6 +853,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
                   </div>
                 </div>
               </div>
+              <ScreenGate minWidth={640}>
               <div className="relative overflow-hidden rounded-2xl border border-neutral-200">
                 <Image
                   src="/doctor-realty.webp"
@@ -821,8 +866,9 @@ export default function DoctorAppointmentSchedulingSoftware() {
                   Smart slots
                 </div>
               </div>
+              </ScreenGate>
             </div>
-            <div className="mt-4 flex items-center justify-between">
+            <div className="sm:mt-4 flex flex-wrap items-center justify-between">
               <div className="font-semibold text-neutral-900">Clinic Operations Board</div>
               <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">Live Overview</span>
             </div>
@@ -846,34 +892,11 @@ export default function DoctorAppointmentSchedulingSoftware() {
             </div>
           </div>
         </div>
-
-        <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 drop-shadow-xl backdrop-blur">
-          <h3 className="text-2xl font-bold text-center text-neutral-900">Built for every type of medical practice</h3>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            {[
-              "Pediatrics",
-              "Women's Health",
-              "Primary Care",
-              "Dermatology",
-              "ENT Care",
-              "Orthopedics",
-              "Mental Wellness",
-              "Physiotherapy",
-            ].map((tag) => (
-              <span key={tag} className="p-1 flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}</span>
-            ))}
-          </div>
-
-          <div className="mt-5 text-center">
-            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your clinic setup - Doctor Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
-          </div>
-        </div>
       </div>
     </section>
 
     {/* DOCTOR BUSINESS GROWTH SECTION */}
-    <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50/40 overflow-hidden">
-      
+    <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50/40 overflow-hidden"> 
       <div className="absolute -left-10 top-10 h-52 w-52 hidden sm:block rounded-full bg-indigo-200/30 blur-3xl" />
       <div className="absolute -right-10 bottom-10 h-56 w-56 hidden sm:block rounded-full bg-emerald-200/30 blur-3xl" />
       
@@ -892,15 +915,11 @@ export default function DoctorAppointmentSchedulingSoftware() {
               "Improve repeat visits with automated reminders and follow-up nudges",
               "Track clinic growth with clear appointment and utilisation insights",
             ].map((point, index) => (
-              <div key={point} className="flex items-start gap-3 rounded-xl bg-white p-3 drop-shadow-sm transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
-                <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
-                  <span className="font-bold">0{index + 1}</span>
-                </div>
-                <p className="text-neutral-700">{point}</p>
-              </div>
+              <CheckListItem key={point} text={point} />
             ))}
           </div>
         </div>
+        <ScreenGate minWidth={768}>
         {/* right: Image */}
         <div className="relative">
           <div className="rounded-xl border border-white bg-white p-3 drop-shadow-xl">
@@ -917,6 +936,7 @@ export default function DoctorAppointmentSchedulingSoftware() {
             <div className="text-lg font-bold"><span className="text-emerald-600 text-3xl">+38%</span> appointments</div>
           </div>
         </div>
+        </ScreenGate>
       </div>
       
     </section>
@@ -938,7 +958,8 @@ export default function DoctorAppointmentSchedulingSoftware() {
               title="Questions Doctors Ask Before Getting Started"
               description="GetSetTime answers the most common questions doctors have before switching to a smarter appointment scheduling system."
             />
-            <div className="grid gap-4 sm:grid-cols-2 mt-6 hidden sm:grid">
+            <ScreenGate minWidth={768}>
+            <div className="grid gap-4 sm:grid-cols-2 mt-6 grid">
               <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
               <Card title="Build trust" description="Reduce friction with short supportive answers and better clarity." icon={<svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
@@ -947,8 +968,10 @@ export default function DoctorAppointmentSchedulingSoftware() {
               
               <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
             </div>
+            </ScreenGate>
 
           </div>
+
           {/* right: FAQ Section */}
           <div>
             <FaqSection items={faqItems} />

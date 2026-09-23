@@ -24,7 +24,7 @@ export const pricingTiers: PricingTier[] = [
     subtitle: "Try GetSetTime at no cost",
     price: "Free",
     period: "month",
-    description: "Get online booking live with essential features — perfect for testing the platform before you scale.",
+    description: "Perfect for starting and testing the software with essential features - without paying.",
     seatTitle: "1 seat included",
     seatDescription: "First 250 bookings/month included free",
     features: [
@@ -348,44 +348,6 @@ export function formatRegionalPrice(
 ): string {
   const { amount, currency } = getRegionalPlanAmount(plan, countryOrRegion);
   return formatPrice(amount, currency);
-}
-
-/** Format a starter–enterprise (or other) price range for the visitor's region. */
-export function formatRegionalPriceRange(
-  lowPlan: "starter" | "professional" | "enterprise",
-  highPlan: "starter" | "professional" | "enterprise",
-  countryOrRegion?: string | null | RegionalPricing
-): string {
-  const region = isRegionalPricing(countryOrRegion)
-    ? countryOrRegion
-    : getRegionalPricing(countryOrRegion);
-
-  const low = region.prices[lowPlan];
-  const high = region.prices[highPlan];
-  const symbol = getCurrencySymbol(region.currency);
-
-  if (/^[A-Za-z]+$/.test(symbol) || symbol.toUpperCase() === region.currency) {
-    return `${symbol} ${low}-${high}`;
-  }
-
-  return `${symbol}${low}-${high}`;
-}
-
-/** Replace regional price placeholders in blog HTML. */
-export function applyRegionalPricesToBlogHtml(
-  html: string,
-  countryOrRegion?: string | null | RegionalPricing
-): string {
-  const region = isRegionalPricing(countryOrRegion)
-    ? countryOrRegion
-    : getRegionalPricing(countryOrRegion);
-
-  const starterEnterprise = formatRegionalPriceRange("starter", "enterprise", region);
-
-  return html.replace(
-    /<span\s+data-regional-price-range="starter-enterprise"><\/span>/g,
-    starterEnterprise
-  );
 }
 
 /** Apply regional prices onto base pricingTiers (Free stays Free). */

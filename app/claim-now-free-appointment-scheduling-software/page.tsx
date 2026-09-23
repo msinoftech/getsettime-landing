@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-//import { Caramel } from "next/font/google";
 import { APP_NAME, BASE_URL, contactInfo, REGISTER_URL } from "@/lib/config";
 import FreeBookingSetupForm from "../component/FreeBookingSetupForm";
 import FreeBookingPhoneMockup from "../component/FreeBookingPhoneMockup";
 import Heading from "../component/Heading";
 import Card from "../component/Card";
 import { FaqSection } from "../component/FaqSection";
+import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/claim-now-free-appointment-scheduling-software`;
 
@@ -168,7 +168,7 @@ const businesses = [
     bg: "bg-amber-50",
   },
   {
-    title: "And Any Business\nThat Takes Appointments",
+    title: "Any Business\nThat Takes Appointments",
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="w-10 h-10"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>',
     color: "text-indigo-500 ",
     bg: "bg-indigo-50",
@@ -192,35 +192,35 @@ const steps = [
     step: "Step 1",
     title: "Apply for the Challenge",
     description: "Fill out the simple form on this page.",
-    icon: '<svg fill="#4f39f6" class="w-10 h-10" viewBox="0 0 24 24"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,4a1,1,0,0,0-1-1H17V2a1,1,0,0,0-1-1H8A1,1,0,0,0,7,2V3H4A1,1,0,0,0,3,4V22a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1ZM9,3h6V5H9ZM19,21H5V5H7V6A1,1,0,0,0,8,7h8a1,1,0,0,0,1-1V5h2Zm-6-3a1,1,0,0,1-1,1H8a1,1,0,0,1,0-2h4A1,1,0,0,1,13,18Zm4-4a1,1,0,0,1-1,1H8a1,1,0,0,1,0-2h8A1,1,0,0,1,17,14Zm0-4a1,1,0,0,1-1,1H8A1,1,0,0,1,8,9h8A1,1,0,0,1,17,10Z"></path></g></svg>',
+    icon: '<svg fill="#4f39f6" class="w-6 h-6 sm:w-10 sm:h-10" viewBox="0 0 24 24"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M21,4a1,1,0,0,0-1-1H17V2a1,1,0,0,0-1-1H8A1,1,0,0,0,7,2V3H4A1,1,0,0,0,3,4V22a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1ZM9,3h6V5H9ZM19,21H5V5H7V6A1,1,0,0,0,8,7h8a1,1,0,0,0,1-1V5h2Zm-6-3a1,1,0,0,1-1,1H8a1,1,0,0,1,0-2h4A1,1,0,0,1,13,18Zm4-4a1,1,0,0,1-1,1H8a1,1,0,0,1,0-2h8A1,1,0,0,1,17,14Zm0-4a1,1,0,0,1-1,1H8A1,1,0,0,1,8,9h8A1,1,0,0,1,17,10Z"></path></g></svg>',
     color: "text-indigo-600",
   },
   {
     step: "Step 2",
     title: "Share Your Details",
     description:"We'll understand your business and requirements.",
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-10 sm:h-10"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
     color: "text-indigo-600",
   },
   {
     step: "Step 3",
     title: "We Create Your Booking Page",
     description: "Our team sets it up in 24 hours.",
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-10 sm:h-10"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>',
     color: "text-indigo-600",
   },
   {
     step: "Step 4",
     title: "You Test It",
     description: "Try it with your real customers.",
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-10 sm:h-10"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>',
     color: "text-indigo-600",
   },
   {
     step: "Step 5",
     title: "Keep & Grow",
     description: "Keep using it if it helps your business grow.",
-    icon: '<svg class="w-10 h-10" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z" fill="#096"></path> </g></svg>',
+    icon: '<svg class="w-6 h-6 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z" fill="#096"></path> </g></svg>',
     color: "text-emerald-600",
   },
 ];
@@ -484,65 +484,66 @@ export default function FreeBookingPage() {
         />
 
         {/* Hero Section */}
-        <section className="bg-[#f8f9fc] py-14 sm:py-20">
+        <section className="sm:bg-gray-50 py-14 sm:py-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 xl:grid-cols-12 gap-4">
                   {/* Left — Hero content */}
                   <div className="xl:col-span-8 flex flex-col justify-between">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
                         <div className="lg:col-span-7 space-y-5">
-                            <div className="inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 drop-shadow-sm backdrop-blur">
-                              <span className="h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500"></span>
-                              Free Booking Page Challenge
-                            </div>
+                          <Heading
+                              badge="Free Booking Page Challenge"
+                              title="Free Booking Page Setup in 24 Hours"
+                              highlightText="for Service Businesses"
+                              description={
+                                <p>Join the GetSetTime Free Booking Page Challenge. <br/> We are helping 100 service businesses get a professional booking page live in 24 hours.</p>
+                              }
+                              headingTag="h1"
+                              titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+                          />
 
-                            <h1 className="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900">
-                            Free Booking Page <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent ">Setup in 24 Hours</span> for Service Businesses
-                            </h1>
+                          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                              {features.map((f) => (
+                              <li key={f} className="flex items-center gap-1 text-sm text-neutral-700 whitespace-nowrap">
+                                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-600">
+                                  <svg className="h-3 w-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                      <path d="M20 6 9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                                  </svg>
+                                  </span>
+                                  {f}
+                              </li>
+                              ))}
+                          </ul>
 
-                            <p>Join the GetSetTime Free Booking Page Challenge.<br/>
-                            We are helping 100 service businesses get a professional booking page live in 24 hours.</p>
+                          <div className="flex sm:items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3">
+                              <span>
+                                <svg fill="currentColor" viewBox="0 0 24 24" className="w-9 h-9 text-indigo-600"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m5.705 3.71-1.41-1.42C1 5.563 1 7.935 1 11h1l1-.063C3 8.009 3 6.396 5.705 3.71zm13.999-1.42-1.408 1.42C21 6.396 21 8.009 21 11l2-.063c0-3.002 0-5.374-3.296-8.647zM12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.184 4.073 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z"></path></g></svg>
+                              </span>
+                              <p><strong>We are accepting only the first 100 businesses</strong>.<br/> Claim your free setup before slots run out!</p>
+                          </div>
 
-                            <ul className="flex flex-wrap gap-x-6 gap-y-2">
-                                {features.map((f) => (
-                                <li key={f} className="flex items-center gap-1 text-sm text-neutral-700 whitespace-nowrap">
-                                    <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-600">
-                                    <svg className="h-3 w-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                                        <path d="M20 6 9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    </span>
-                                    {f}
-                                </li>
-                                ))}
-                            </ul>
+                          <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+                              <Link href="/contact-us" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+                              Claim My Free Booking Page
+                              </Link>
 
-                            <div className="flex items-center gap-2 rounded-xl border border-[#3D3AF3]/15 bg-[#3D3AF3]/5 px-4 py-3">
-                                <span>
-                                  <svg fill="currentColor" viewBox="0 0 24 24" className="w-9 h-9 text-indigo-600"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m5.705 3.71-1.41-1.42C1 5.563 1 7.935 1 11h1l1-.063C3 8.009 3 6.396 5.705 3.71zm13.999-1.42-1.408 1.42C21 6.396 21 8.009 21 11l2-.063c0-3.002 0-5.374-3.296-8.647zM12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.184 4.073 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z"></path></g></svg>
-                                </span>
-                                <p><strong>We are accepting only the first 100 businesses</strong>.<br/> Claim your free setup before slots run out!</p>
-                            </div>
+                              <Link href="/app-functionality-demo-video" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-gray-800 drop-shadow-lg transition">
+                              <span className="flex h-5 w-5 items-center justify-center rounded-full border border-neutral-200"><svg className="translate-x-px" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                              </span>
+                              Watch 60-sec Demo
+                              </Link>
+                          </div>
 
-                            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                                <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#3D3AF3] px-3 py-3 text-sm font-semibold text-white drop-shadow-md transition hover:bg-[#3532db]">
-                                Claim My Free Booking Page
-                                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                </Link>
-                                <Link href="/app-functionality-demo-video" className="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-200 bg-white px-5 py-3 text-sm font-semibold text-neutral-700 transition hover:border-neutral-300">
-                                <span className="flex h-5 w-5 items-center justify-center rounded-full border border-neutral-200"><svg className="h-3.5 w-3.5 translate-x-px" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
-                                </span>
-                                Watch 60-sec Demo
-                                </Link>
-                            </div>
+                          
+                          <div className="free-booking-feature flex flex-wrap gap-1">
+                              {trustItems.map((t) => (
+                              <span key={t.label} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1.5 text-xs text-neutral-700 drop-shadow-sm">
+                                  <TrustIcon type={t.icon} />
+                                  {t.label}
+                              </span>
+                              ))}
+                          </div>
 
-                            <div className="free-booking-feature flex flex-wrap gap-1">
-                                {trustItems.map((t) => (
-                                <span key={t.label} className="flex items-center gap-1 text-xs text-neutral-500 bg-white rounded-full px-2 py-1">
-                                    <TrustIcon type={t.icon} />
-                                    {t.label}
-                                </span>
-                                ))}
-                            </div>
                         </div>
 
                         {/* Phone mockup */}
@@ -551,6 +552,7 @@ export default function FreeBookingPage() {
                         </div>
                     </div>
 
+                    <ScreenGate minWidth={768}>
                     <div className="flex flex-col gap-2 space-y-4 mt-6">
                       <div className="rounded-2xl bg-white py-6 px-4 sm:px-6">
                           <div className="text-center text-md font-semibold text-neutral-900">Trusted by service businesses worldwide</div>
@@ -563,7 +565,6 @@ export default function FreeBookingPage() {
                           </div>
                       </div>
 
-                      
                       <div className="relative">
                           <div className="grid grid-cols-2 gap-6 rounded-2xl border border-indigo-200 bg-indigo-50 px-4 py-5 lg:grid-cols-4  sm:divide-x sm:divide-indigo-100">
                               {stats.map((s) => (
@@ -577,8 +578,9 @@ export default function FreeBookingPage() {
                               ))}
                           </div>
                       </div>
-                      
                     </div>
+                    </ScreenGate>
+
                   </div>
 
                   {/* Right — Form */}
@@ -590,20 +592,21 @@ export default function FreeBookingPage() {
         </section>
         
         {/* Perfect For Section */}
-        <section className="bg-gradient-to-br from-indigo-50 via-white to-indigo-50 py-14 sm:py-20">
+        <section className="sm:py-20">
           <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 grid-cols-1 xl:grid-cols-2">
               {/* Left */}
-              <div className="rounded-2xl border border-white bg-indigo-50 p-4 sm:p-6 lg:p-8 drop-shadow-lg overflow-hidden">
-                <h2 className="text-3xl text-center mb-8 font-bold text-neutral-900 capitalize">Perfect For</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-3">
+              <div className="rounded-2xl border border-white bg-indigo-50 p-3 sm:p-6 lg:p-8 drop-shadow-lg overflow-hidden">
+                <h2 className="text-2xl sm:text-3xl text-center mb-8 font-bold text-neutral-900 capitalize">Perfect For</h2>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-3">
                   {businesses.map((item, index) => {
                     return (
                       <div key={index} className="group rounded-2xl border border-slate-200 bg-white p-2 text-center transition-all duration-300 hover:-translate-y-2 hover:border-indigo-500 hover:drop-shadow-xl">
                         <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full ${item.bg}`}>
                           <span className={`${item.color}`} dangerouslySetInnerHTML={{ __html: item.icon }} />
                         </div>
-                        <div className="text-sm font-semibold text-slate-700">{item.title}</div>
+                        <div className="text-xs sm:text-sm font-semibold text-slate-700">{item.title}</div>
                       </div>
                     );
                   })}
@@ -611,8 +614,8 @@ export default function FreeBookingPage() {
               </div>
 
               {/* Right */}
-              <div className="rounded-2xl border border-white bg-indigo-50 p-4 sm:p-6 lg:p-8 drop-shadow-lg overflow-hidden">
-                <h2 className="text-3xl text-center mb-8 font-bold text-neutral-900 capitalize">What You Get —<span className="text-indigo-600"> FREE</span></h2>
+              <div className="rounded-2xl border border-white bg-indigo-50 p-3 sm:p-6 lg:p-8 drop-shadow-lg overflow-hidden">
+                <h2 className="text-2xl sm:text-3xl text-center mb-8 font-bold text-neutral-900 capitalize">What You Get —<span className="text-indigo-600"> FREE</span></h2>
                 <div className="flex flex-col justify-between gap-6 lg:flex-row">
                   {/* List */}
                   <div className="flex-1 space-y-4">
@@ -627,6 +630,7 @@ export default function FreeBookingPage() {
                       </div>
                     ))}
                   </div>
+                  <ScreenGate minWidth={768}>
                   {/* Gift */}
                   <div className="max-w-60 lg:max-w-70 sm:ml-auto flex flex-col items-left justify-end relative sm:absolute sm:right-12 sm:bottom-12">
                     <div className="relative">
@@ -641,6 +645,8 @@ export default function FreeBookingPage() {
                       <div className="text-sm text-indigo-600">Limited Offer</div>
                     </div>
                   </div>
+                  </ScreenGate>
+
                 </div>
               </div>
             </div>
@@ -660,11 +666,11 @@ export default function FreeBookingPage() {
             <div className="relative mt-8">
               <div className="absolute left-[10%] right-[10%] top-10 border-t-2 border-dashed border-indigo-300 hidden lg:block"></div>
               
-              <div className="grid gap-6 sm:gap-8 md:grid-cols-3 lg:grid-cols-5 lg:gap-10">
+              <div className="grid gap-3 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                 {steps.map((item, index) => {
                   return (
-                    <div key={index} className="group relative flex flex-col items-center rounded-2xl border border-indigo-100/60 bg-indigo-50/20 p-4 text-center sm:p-5 lg:border-transparent lg:bg-transparent lg:p-0">
-                      <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white drop-shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:drop-shadow-lg sm:h-20 sm:w-20">
+                    <div key={index} className="group relative flex flex-col items-center rounded-2xl border border-indigo-100/60 bg-indigo-50/20 p-3 text-center sm:p-4 lg:border-transparent lg:bg-transparent lg:p-0">
+                      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white drop-shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:drop-shadow-lg sm:h-20 sm:w-20">
                         <span className={item.color} dangerouslySetInnerHTML={{ __html: item.icon }}/>
                       </div>
                       <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-indigo-600 sm:mt-6 sm:text-sm sm:normal-case sm:tracking-normal">{item.step}</span>
@@ -687,6 +693,7 @@ export default function FreeBookingPage() {
               highlightText="Confirmed Bookings"
               wrapperClassName="text-center"
             />
+
             <div className="relative mt-8">
               {/* VS Circle */}
               <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
@@ -740,7 +747,7 @@ export default function FreeBookingPage() {
         </section>
 
         {/* Loved by Business Owners Section */}
-        <section className="bg-white py-20">
+        <section className="bg-white py-14 sm:py-20">
           <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             {/* Heading */}
             <Heading 
@@ -760,7 +767,7 @@ export default function FreeBookingPage() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-neutral-900 text-md font-medium">{item.review}</p>
+                  <p>{item.review}</p>
                   <div className="mt-6 flex items-center gap-3">
                     <Image
                       src={item.image}
@@ -797,15 +804,17 @@ export default function FreeBookingPage() {
                 description="Clear answers on free booking page, how it works, and how to get started."
                 />
                 
-                <div className="grid gap-4 sm:grid-cols-2 mt-6 hidden sm:grid">
-                <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+                <ScreenGate minWidth={768}>
+                <div className="grid gap-4 sm:grid-cols-2 mt-6">
+                  <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
-                <Card title="Build trust" description="Reduce friction with short supportive answers and better clarity." icon={<svg className="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
-                
-                <Card title="Premium feel" description="Matches polished hero and feature sections better than a plain list." icon={<svg className="h-8 w-8 text-fuchsia-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
-                
-                <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+                  <Card title="Build trust" description="Reduce friction with short supportive answers and better clarity." icon={<svg className="h-8 w-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+                  
+                  <Card title="Premium feel" description="Matches polished hero and feature sections better than a plain list." icon={<svg className="h-8 w-8 text-fuchsia-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+                  
+                  <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
                 </div>
+                </ScreenGate>
 
             </div>
             {/* right: FAQ Section */}
@@ -826,7 +835,7 @@ export default function FreeBookingPage() {
                     title="Don't Miss This Opportunity!"
                     description="We are setting up only 100 booking pages for free. Claim yours now and go live in 24 hours!"
                     wrapperClassName="text-white text-center xl:text-left"
-                    titleClassName="text-white text-3xl font-bold md:text-4xl lg:text-[40px] capitalize"
+                    titleClassName="text-white text-2xl sm:text-3xl font-bold md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName="text-white/90"
                   />
                 </div>
@@ -835,7 +844,7 @@ export default function FreeBookingPage() {
                 <div className="flex items-center justify-center xl:justify-between gap-2">
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-3 flex-col sm:flex-row md:flex-row xl:flex-row">
-                      <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-semibold text-indigo-600 drop-shadow-md transition">
+                      <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-semibold text-indigo-600 drop-shadow-md transition">
                         Claim My Free Booking Page
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
                           <path d="M5 12h14" />
@@ -843,7 +852,7 @@ export default function FreeBookingPage() {
                         </svg>
                       </Link>
 
-                      <Link href="/app-functionality-demo-video" className="inline-flex items-center justify-center gap-2 border border-white/30 rounded-lg px-5 py-3 text-sm font-semibold text-white drop-shadow-md transition">
+                      <Link href="/app-functionality-demo-video" className="inline-flex items-center justify-center gap-2 border border-white/30 rounded-lg px-4 py-3 text-sm font-semibold text-white drop-shadow-md transition">
                         Watch Demo
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
                           <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z" />

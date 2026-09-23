@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { BlogCard } from "./BlogCard";
 import type { BlogPost } from "@/lib/blog-data";
 import { blogCategories, getPostCategories } from "@/lib/blog-data";
+import ScreenGate from "./ScreenGate";
 
 interface BlogListProps {
   posts: BlogPost[];
@@ -90,6 +91,7 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
   return (
     <div className="space-y-12">
       
+      <ScreenGate minWidth={768}>
       <div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-between gap-4">
           {/* Category Filter */}
           <div className="flex items-center justify-start w-full">
@@ -148,10 +150,11 @@ export function BlogList({ posts, postsPerPage = 6 }: BlogListProps) {
             </div>
           </div>
       </div>
+      </ScreenGate>
 
       {/* Blog Grid */}
       {filteredPosts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {visiblePosts.map((post, index) => (
             <div key={post.id} style={{ animationDelay: `${(index % postsPerPage) * 100}ms` }}>
               <BlogCard post={post} />

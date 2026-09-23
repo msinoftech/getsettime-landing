@@ -8,7 +8,7 @@ import Card from "@/app/component/Card";
 import Heading from "@/app/component/Heading";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
-
+import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/solutions/physiotherapist-appointment-booking-software`;
 
@@ -294,21 +294,22 @@ const growthRoadmap = [
                 titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
               />
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
-                  <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
+              <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+                <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+                    <svg viewBox="0 0 48 48" className="w-5 h-5 sm:w-6 sm:h-6 inline-block rounded-sm bg-white p-1">
                     <g>
-                      <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
-                      <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
-                      <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
-                      <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                        <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                        <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                        <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                        <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
                     </g>
-                  </svg>
+                    </svg>
                   Sign up with Google
                 </Link>
-                <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Physiotherapist Appointment Booking Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
+                <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Physiotherapist Appointment Booking Software" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm text-white drop-shadow-lg transition">Get Started for Free</Link>
               </div>
-              
+
+              <ScreenGate minWidth={768}>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                     <div className="flex items-center gap-2">
@@ -355,14 +356,17 @@ const growthRoadmap = [
                     <div className="text-xs text-neutral-500">Average feedback from patients</div>
                 </div>
               </div>
+              </ScreenGate>
             </div>
 
             {/* Right column - Interactive Demo */}
             <div className="relative">
                 <div className="grid gap-3 animate-fade-in-scale">
+                  <ScreenGate minWidth={768}>
                   <div className="overflow-hidden rounded-2xl">
                     <Image src="/physiotherapy-appointment.webp" alt="physiotherapy appointment staff working" className="h-50 w-full object-cover" width={500} height={500}/>
                   </div>
+                  </ScreenGate>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-4 drop-shadow-sm space-y-3">
@@ -402,7 +406,7 @@ const growthRoadmap = [
                           <div className="truncate text-sm font-semibold text-neutral-900">Physiotherapist</div>
                           <div className="truncate text-xs text-neutral-500">Trusted &amp; experienced</div>
                         </div>
-                        <span className="inline-flex shrink-0 items-center gap-1 rounded-md bg-amber-50 px-2 py-1 text-xs font-bold text-amber-700">
+                        <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700 border border-amber-200">
                           <svg className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden><path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.69-1.54 1.12l-3.56-2.59a1 1 0 00-1.18 0l-3.56 2.59c-.78.57-1.84-.2-1.54-1.12l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.61c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" /></svg>
                           4.8
                         </span>
@@ -422,7 +426,7 @@ const growthRoadmap = [
                           <div key={item} className="relative flex gap-3 pb-3 last:pb-0">
                             {i < arr.length - 1 && <span className="absolute left-3 top-6 h-full w-px bg-white/15" aria-hidden />}
                             <span className="relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-xs font-bold text-white ring-4 ring-slate-900">{i + 1}</span>
-                            <div className="text-xs text-white/85">{item}</div>
+                            <div className="text-sm text-white/85">{item}</div>
                           </div>
                         ))}
                       </div>
@@ -436,8 +440,7 @@ const growthRoadmap = [
       </section>
       
       {/* HOW IT WORKS SECTION */}
-      <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
-        <div className="absolute top-10 left-10 hidden sm:block w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
+      <section className="relative pb-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
         <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <Heading
               badge="Features"
@@ -454,11 +457,11 @@ const growthRoadmap = [
       </section>
 
       {/* WHY IT FEELS MORE PREMIUM SECTION */}
-      <section className="relative py-20 bg-gradient-to-b from-white via-indigo-50/40 to-white overflow-hidden">
+      <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white via-indigo-50/40 to-white overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 hidden sm:block w-[500px] h-[500px] bg-indigo-200/30 blur-3xl rounded-full"></div>
         
         <div className="mx-auto container px-4 sm:px-6 lg:px-8">
-          <div className="relative grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+          <div className="relative grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
             {/* Left column - Content */}
             <div className="space-y-3">
               <Heading
@@ -477,7 +480,8 @@ const growthRoadmap = [
 
             {/* Right column - Dashboard graphics */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
+              <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-xl">
+                <ScreenGate minWidth={768}>
                 {/* Window chrome */}
                 <div className="relative z-10 flex items-center justify-between border-b border-neutral-200 px-3 py-4">
                   <div className="flex items-center gap-2 sm:gap-3">
@@ -493,6 +497,7 @@ const growthRoadmap = [
                     <span className="text-[10px] font-medium text-neutral-700 sm:text-xs">LIVE</span>
                   </div>
                 </div>
+                </ScreenGate>
 
                 <div className="relative space-y-4 bg-gradient-to-br from-white via-indigo-50/30 to-white p-4">
                   {/* Decorative dotted backdrop */}
@@ -501,11 +506,10 @@ const growthRoadmap = [
                   {/* Header */}
                   <div className="relative flex items-center gap-3">
                     <div className="relative shrink-0">
-                      <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-indigo-500/30 to-violet-500/30 blur" aria-hidden />
-                      <Image src="/physiotherapy-profile.webp" alt="physiotherapy profile" className="relative h-14 w-14 rounded-full border-4 border-white object-cover drop-shadow-md" width={64} height={64} priority />
-                      <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-emerald-500">
-                        <svg className="h-2.5 w-2.5 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                      </span>
+                        <Image src="/physiotherapy-profile.webp" alt="physiotherapy profile" className="relative h-14 w-14 rounded-full border-4 border-white object-cover drop-shadow-md" width={64} height={64} priority />
+                        <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-emerald-500">
+                          <svg className="h-2.5 w-2.5 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        </span>
                     </div>
                     <div className="min-w-0 flex-1">
                       <span className="text-xs font-bold uppercase tracking-wider text-indigo-500">Physiotherapy Dashboard</span>
@@ -518,6 +522,7 @@ const growthRoadmap = [
                     </span>
                   </div>
 
+                  <ScreenGate minWidth={768}>
                   {/* Hero: trend chart + utilisation ring */}
                   <div className="relative grid grid-cols-1 min-[440px]:grid-cols-2 sm:grid-cols-5 gap-4">
                     {/* Booking trend area chart */}
@@ -571,6 +576,7 @@ const growthRoadmap = [
                       </div>
                     </div>
                   </div>
+                  </ScreenGate>
 
                   {/* Next appointment + availability */}
                   <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -590,7 +596,7 @@ const growthRoadmap = [
                       </div>
                     </div>
 
-                    <div className="h-full rounded-xl border border-neutral-100 bg-white p-4 drop-shadow-sm">
+                    <div className="h-full rounded-xl md:border border-neutral-100 md:bg-white md:p-4 md:drop-shadow-sm">
                       <div className="mb-3 flex items-center justify-between">
                         <div className="text-xs font-semibold uppercase tracking-wide text-neutral-500">Availability</div>
                         <div className="flex items-center gap-2 text-xs font-medium text-neutral-500">
@@ -636,13 +642,15 @@ const growthRoadmap = [
       </section>
 
       {/* DAY-TO-DAY USE SECTION */}
-      <section className="relative bg-slate-50 py-16 lg:py-20">
+      <section className="relative bg-slate-50 py-14 lg:py-20">
        <div className="mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <ScreenGate minWidth={768}>
             {/* LEFT COLUMN */}
             <div className="relative rounded-2xl overflow-hidden bg-white p-3 drop-shadow-xl">
               <Image src="/physiotherapy-services.webp" alt="physiotherapy services available" className="h-full w-full object-cover rounded-xl" width={500} height={500} />
             </div>
+            </ScreenGate>
             {/* RIGHT COLUMN */}
             <div className="space-y-3">
               <Heading
@@ -658,7 +666,8 @@ const growthRoadmap = [
                   </span>
                 ))}
               </div>
-              <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2">
+
+              <div className="mt-8 grid gap-4 grid-cols-2 sm:grid-cols-2">
                 {[
                   {
                     label: "Reminders delivered",
@@ -685,9 +694,9 @@ const growthRoadmap = [
                     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
                   },
                 ].map((stat) => (
-                  <div key={stat.label} className={`group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-4 drop-shadow-sm ring-1 ${stat.ring} transition duration-300 hover:-translate-y-1 hover:drop-shadow-xl`}>
+                  <div key={stat.label} className={`group relative overflow-hidden rounded-2xl border border-neutral-100 bg-white p-3 sm:p-4 space-y-2 drop-shadow-sm ring-1 ${stat.ring} transition duration-300 hover:-translate-y-1 hover:drop-shadow-xl`}>
                     <div className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full ${stat.glow} blur-2xl`} aria-hidden />
-                    <div className="relative flex items-center justify-between">
+                    <div className="hidden relative sm:flex items-center justify-between">
                       <span className={`flex h-10 w-10 items-center justify-center rounded-xl text-white drop-shadow-md ${stat.iconBg}`}>
                         <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} /></svg>
                       </span>
@@ -696,15 +705,15 @@ const growthRoadmap = [
                         {stat.delta}
                       </span>
                     </div>
-                    <div className="relative mt-3 flex items-baseline gap-1">
+                    <div className="relative flex items-baseline gap-1">
                       <span className={`text-4xl font-black tabular-nums ${stat.accent}`}>{stat.value}</span>
                       <span className="text-lg font-bold text-neutral-300">%</span>
                     </div>
-                    <div className="relative mt-2 text-sm font-semibold text-neutral-900">{stat.label}</div>
-                    <div className="relative mt-2 h-2 w-full overflow-hidden rounded-full bg-neutral-100">
+                    <div className="relative text-sm font-semibold text-neutral-900">{stat.label}</div>
+                    <div className="relative h-1 w-full overflow-hidden rounded-full bg-neutral-100">
                       <div className={`h-full rounded-full bg-gradient-to-r ${stat.bar}`} style={{ width: `${stat.value}%` }} />
                     </div>
-                    <div className="relative mt-2 text-xs text-neutral-600">{stat.desc}</div>
+                    <div className="relative text-xs text-neutral-600">{stat.desc}</div>
                   </div>
                 ))}
               </div>
@@ -740,9 +749,32 @@ const growthRoadmap = [
                   <CheckListItem key={item} text={item} />
                 ))}
               </div>
+
+              <div className="relative">
+                <h3 className="text-lg font-bold text-neutral-900">Supports Every Type of Physiotherapy Appointment</h3>
+                <div className="mt-2 flex flex-wrap gap-3">
+                  {[
+                    "Initial Consultation",
+                    "Assessment & Evaluation",
+                    "Treatment Session",
+                    "Follow-up Appointment",
+                    "Rehabilitation Program",
+                  ].map((tag) => (
+                    <span key={tag} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1 text-xs text-neutral-700 drop-shadow-sm">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-4">
+                  <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Set Up Your Physiotherapy Booking System - Physiotherapist Appointment Booking Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-3 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
+                </div>
+              </div>
             </div>
+
             {/* Right */}
-            <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
+            <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-xl">
+              <ScreenGate minWidth={768}>
               <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
                 <div className="relative overflow-hidden rounded-2xl hidden sm:block border border-neutral-200 bg-white p-3 drop-shadow-sm">
                   <div className="flex items-center gap-2 text-neutral-700 font-semibold">
@@ -778,7 +810,9 @@ const growthRoadmap = [
                   <div className="absolute left-2 top-2 rounded-md bg-indigo-600/90 px-2 py-1 text-xs uppercase tracking-widest text-white">Smart slots</div>
                 </div>
               </div>
-              <div className="mt-4 flex items-center justify-between">
+              </ScreenGate>
+
+              <div className="md:mt-4 flex flex-wrap items-center justify-between">
                 <div className="font-semibold text-neutral-900">Physiotherapy Operations Board</div>
                 <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">Live Overview</span>
               </div>
@@ -802,29 +836,11 @@ const growthRoadmap = [
               </div>
             </div>
           </div>
-
-          <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 drop-shadow-xl backdrop-blur">
-            <h3 className="text-2xl font-bold text-center text-neutral-900">Supports Every Type of Physiotherapy Appointment</h3>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              {[
-                "Initial Consultation",
-                "Assessment & Evaluation",
-                "Treatment Session",
-                "Follow-up Appointment",
-                "Rehabilitation Program",
-              ].map((tag) => (
-                <span key={tag} className="px-3 py-1.5 flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}</span>
-              ))}
-            </div>
-            <div className="mt-5 text-center">
-              <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Set Up Your Physiotherapy Booking System - Physiotherapist Appointment Booking Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* PHYSIO THERAPY GROWTH ROADMAP SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-violet-100 py-20">
+      <section className="relative overflow-hidden md:bg-gradient-to-br from-indigo-50 via-white to-violet-100 py-14 sm:py-20">
           <div className="pointer-events-none absolute hidden sm:block inset-0">
               <div className="absolute -left-16 top-8 h-72 w-72 rounded-full bg-indigo-400/25 blur-3xl" />
               <div className="absolute right-8 bottom-16 h-44 w-44 rounded-full bg-violet-400/25 blur-3xl" />
@@ -840,7 +856,7 @@ const growthRoadmap = [
                   
                   {growthRoadmap.map((point, i) => (
                     <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 drop-shadow-md transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
-                        <div className="flex items-start gap-2">
+                        <div className="flex flex-col sm:flex-row items-start gap-2">
                             <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
                                 <span className="text-sm font-bold">0{i + 1}</span>
                             </div>
@@ -852,6 +868,7 @@ const growthRoadmap = [
                     </div>
                   ))}
               </div>
+              <ScreenGate minWidth={768}>
               {/* RIGHT FEATURES GRID */}
               <div className="relative">
                   <div className="rounded-xl bg-white p-3 drop-shadow-xl">
@@ -877,6 +894,7 @@ const growthRoadmap = [
                       <div className="text-neutral-600">Synced to Physiotherapy operations board</div>
                   </div>
               </div>
+              </ScreenGate>
           </div>
       </section>
 
@@ -894,7 +912,9 @@ const growthRoadmap = [
                   title="Questions physiotherapists ask before getting started"
                   description="Clear answers for physiotherapists that want to modernize Physiotherapy consultation booking without adding extra admin work."
                 />
-                <div className="hidden sm:grid gap-4 sm:grid-cols-2  mt-6">
+
+                <ScreenGate minWidth={768}>
+                <div className="grid gap-4 sm:grid-cols-2 mt-6">
                     <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
                     <Card title="Build trust" description="Reduce friction with short supportive answers and better clarity." icon={<svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
@@ -903,6 +923,7 @@ const growthRoadmap = [
                     
                     <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
                 </div>
+                </ScreenGate>
             </div>
             {/* right: FAQ Section */}
             <div>

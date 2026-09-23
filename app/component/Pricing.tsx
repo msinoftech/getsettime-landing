@@ -11,8 +11,14 @@ import {
 import { useRegionalPricing } from "./useRegionalPricing";
 import Link from "next/link";
 import type { FC } from "react";
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Heading from "./Heading";
+
+function getSlidesPerView(width: number) {
+  if (width >= 1280) return 4;
+  if (width >= 800) return 2;
+  return 1;
+}
 
 interface PricingHeaderContent {
   badge?: string;
@@ -77,30 +83,30 @@ export const PricingCard: FC<{
   const displayPrice = tier.price === "Free" ? "Free" : isAnnual ? `${annualPrice}` : `${monthlyPrice}`;
 
   return (
-    <div className={`pricing-card bg-white relative h-full rounded-2xl p-4 sm:p-6 transition-transform duration-300 hover:-translate-y-2 hover:drop-shadow-xl space-y-4 ${ tier.popular ? 'border-indigo-300 drop-shadow-xl drop-shadow-indigo-200/70 ring-2 ring-indigo-200' : 'drop-shadow-xl drop-shadow-slate-200/70' }`}>
+    <div className={`pricing-card relative flex h-full flex-col rounded-2xl bg-white px-4 py-6 transition-transform duration-300 hover:-translate-y-2 hover:drop-shadow-xl ${tier.popular ? "border-indigo-300 drop-shadow-xl drop-shadow-indigo-200/70 ring-2 ring-indigo-200" : "drop-shadow-xl drop-shadow-slate-200/70"}`}>
       {tier.popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <div className="bg-indigo-600 text-white text-xs font-semibold px-4 py-2 rounded-xl drop-shadow-lg">Most Popular</div>
+          <div className="rounded-xl bg-indigo-600 px-4 py-2 text-xs font-semibold text-white drop-shadow-lg">Most Popular</div>
         </div>
       )}
 
-      <div className="relative space-y-4">
-        <div className="flex flex-col sm:flex-row justify-between gap-2">
-          <div className="basis-1/2">
-            <div className="font-medium uppercase tracking-widest text-indigo-600">{tier.name}</div>
-            <div>{tier.subtitle}</div>
+      <div className="relative shrink-0 space-y-3">
+        <div className="flex flex-row justify-between gap-2">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-indigo-600">{tier.name}</div>
+            <div className="text-sm">{tier.subtitle}</div>
           </div>
-          <span className="basis-1/2 text-right">
+          <span className="w-[90px] text-right">
             {tier.price === "Free" || !region.taxLabel ? (
               ""
             ) : (
-              <span className="inline-block rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-600">
+              <span className="inline-block rounded-lg border border-indigo-200 bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-600">
                 {region.taxLabel}
               </span>
             )}
           </span>
         </div>
-        
+
         <div className="relative">
           <span className="text-4xl font-bold text-neutral-900">
             {tier.price === "Free"
@@ -108,32 +114,32 @@ export const PricingCard: FC<{
               : formatPrice(Number(displayPrice), region.currency)}
           </span>
           {tier.price !== "Free" && (
-            <span className="text-neutral-600 ml-1">
+            <span className="ml-1 text-neutral-600">
               /{isAnnual ? `${tier.period}` : tier.period}
             </span>
           )}
-          {isAnnual && tier.price !== "Free" && annualDiscount < 1 && (
-            <div className="text-sm text-emerald-600 font-medium mt-1">Save 10% annually</div>
-          )}
+          {/* {isAnnual && tier.price !== "Free" && annualDiscount < 1 && (
+            <div className="mt-1 text-sm font-medium text-emerald-600">Save 10% annually</div>
+          )} */}
         </div>
 
         <div>{tier.description}</div>
 
         {tier.seatTitle && tier.seatDescription && (
-          <div className="rounded-xl bg-indigo-50 p-4 space-y-1">
+          <div className="space-y-1 rounded-xl bg-indigo-50 p-4">
             <div className="text-md font-semibold text-indigo-700">{tier.seatTitle}</div>
             <div className="text-sm text-indigo-600">{tier.seatDescription}</div>
           </div>
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-2">
+      <div className="mt-4 grid flex-1 grid-cols-1 content-start gap-1">
         {tier.features.map((feature, index) => (
-          <div key={index} className="flex justify-start items-center gap-3">
-            <div className="flex-shrink-0 mt-0.5">
+          <div key={index} className="flex items-center justify-start gap-3">
+            <div className="mt-0.5 shrink-0">
               <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-indigo-100 text-indigo-700">
                 <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
-                  <path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.2 7.2a1 1 0 01-1.415 0l-3-3a1 1 0 111.414-1.41l2.293 2.29 6.493-6.49a1 1 0 011.415 0z" clipRule="evenodd"/>
+                  <path fillRule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.2 7.2a1 1 0 01-1.415 0l-3-3a1 1 0 111.414-1.41l2.293 2.29 6.493-6.49a1 1 0 011.415 0z" clipRule="evenodd" />
                 </svg>
               </div>
             </div>
@@ -142,15 +148,24 @@ export const PricingCard: FC<{
         ))}
       </div>
 
-      <Link href={tier.buttonLink} target="_blank" aria-label={`Start with - ${tier.name} plan`} className={`w-full flex items-center justify-center rounded-xl px-4 py-2.5 text-sm transition-all duration-300 ${
-      tier.popular ? 'bg-indigo-600 text-white drop-shadow-lg drop-shadow-indigo-500/25 hover:drop-shadow-xl' : 'border border-slate-200 bg-neutral-900 text-white hover:bg-neutral-800' }`}
-      >{tier.buttonText}</Link>
+      <Link
+        href={tier.buttonLink}
+        target="_blank"
+        aria-label={`Start with - ${tier.name} plan`}
+        className={`mt-6 flex w-full shrink-0 items-center justify-center rounded-xl px-4 py-3 text-sm transition-all duration-300 ${
+          tier.popular
+            ? "bg-indigo-600 text-white drop-shadow-lg drop-shadow-indigo-500/25 hover:drop-shadow-xl"
+            : "border border-slate-200 bg-neutral-900 text-white hover:bg-neutral-800"
+        }`}
+      >
+        {tier.buttonText}
+      </Link>
     </div>
   );
 };
 
 export const BillingToggle: FC<{ isAnnual: boolean; onChange: (annual: boolean) => void }> = ({ isAnnual, onChange }) => (
-  <div className="my-10 flex flex-col items-center gap-4 px-4">
+  <div className="flex flex-col items-center gap-4 px-4 py-3">
     <div className="relative">
       <div className="pointer-events-none absolute -right-2 -top-3 z-20 sm:-right-5 sm:-top-3.5" aria-hidden>
         <div className="flex items-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-500/25 ring-2 ring-white sm:px-3 sm:text-[11px]">
@@ -192,6 +207,145 @@ export const BillingToggle: FC<{ isAnnual: boolean; onChange: (annual: boolean) 
   </div>
 );
 
+const PricingCardsSlider: FC<{
+  tiers: PricingTier[];
+  isAnnual: boolean;
+  region: RegionalPricing;
+}> = ({ tiers, isAnnual, region }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerView, setSlidesPerView] = useState(1);
+  const touchStartX = useRef<number | null>(null);
+
+  useEffect(() => {
+    const updateSlidesPerView = () => setSlidesPerView(getSlidesPerView(window.innerWidth));
+    updateSlidesPerView();
+    window.addEventListener("resize", updateSlidesPerView);
+    return () => window.removeEventListener("resize", updateSlidesPerView);
+  }, []);
+
+  const maxIndex = Math.max(0, tiers.length - slidesPerView);
+  const canSlide = tiers.length > slidesPerView;
+
+  useEffect(() => {
+    setCurrentIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex, slidesPerView]);
+
+  const goTo = useCallback(
+    (index: number) => {
+      setCurrentIndex(Math.max(0, Math.min(index, maxIndex)));
+    },
+    [maxIndex]
+  );
+
+  const goPrev = useCallback(() => goTo(currentIndex - 1), [currentIndex, goTo]);
+  const goNext = useCallback(() => goTo(currentIndex + 1), [currentIndex, goTo]);
+
+  const slideBasis = useMemo(
+    () => `calc((100% - ${(slidesPerView - 1) * 1.5}rem) / ${slidesPerView})`,
+    [slidesPerView]
+  );
+
+  const trackOffset = `calc(-${currentIndex} * ((100% + 1.5rem) / ${slidesPerView}))`;
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null || !canSlide) return;
+    const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX.current;
+    const delta = touchStartX.current - touchEndX;
+    if (Math.abs(delta) > 40) {
+      if (delta > 0) goNext();
+      else goPrev();
+    }
+    touchStartX.current = null;
+  };
+
+  return (
+    <div className="relative">
+      {canSlide && (
+        <>
+          <button
+            type="button"
+            onClick={goPrev}
+            disabled={currentIndex === 0}
+            aria-label="Previous pricing plans"
+            className="absolute -left-2 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-indigo-600 shadow-md transition hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-40 sm:flex lg:-left-4"
+          >
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={goNext}
+            disabled={currentIndex >= maxIndex}
+            aria-label="Next pricing plans"
+            className="absolute -right-2 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white text-indigo-600 shadow-md transition hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-40 sm:flex lg:-right-4"
+          >
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      <div className="overflow-hidden pt-4" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+        <div className="flex items-stretch gap-6 transition-transform duration-300 ease-out" style={{ transform: `translateX(${trackOffset})` }}>
+          {tiers.map((tier) => (
+            <div key={tier.name} className="flex shrink-0 flex-col py-4" style={{ flexBasis: slideBasis }}>
+              <PricingCard tier={tier} isAnnual={isAnnual} region={region} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {canSlide && (
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={goPrev}
+            disabled={currentIndex === 0}
+            aria-label="Previous pricing plans"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-indigo-600 shadow-sm transition hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-40 sm:hidden"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <div className="flex items-center gap-2">
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => goTo(index)}
+                aria-label={`Go to pricing slide ${index + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? "w-6 bg-indigo-600" : "w-2 bg-slate-300 hover:bg-slate-400"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={goNext}
+            disabled={currentIndex >= maxIndex}
+            aria-label="Next pricing plans"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-indigo-600 shadow-sm transition hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-40 sm:hidden"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function Pricing({
   variant = "home",
   headerContent,
@@ -223,9 +377,9 @@ export default function Pricing({
   }, [region]);
 
   return (
-    <section id="pricing" className={`relative overflow-hidden bg-[#f6f7fb] scroll-mt-20 ${isPage ? "py-10 sm:py-14" : "py-20"}`}>
+    <section id="pricing" className={`relative bg-[#f6f7fb] scroll-mt-20 py-14 sm:py-20`}>
       
-      <div className="absolute inset-0 hidden sm:block">
+      <div className="pointer-events-none absolute inset-0 hidden overflow-hidden sm:block" aria-hidden>
         <div className="absolute left-1/2 top-10 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-600/10 blur-3xl" />
         <div className="absolute left-10 top-1/3 h-80 w-80 rounded-full bg-emerald-600/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-indigo-600/10 blur-3xl" />
@@ -244,7 +398,7 @@ export default function Pricing({
                   badge="Important Pricing Benefit"
                   title="Start Free with 250 Bookings/Month"
                   description="Every workspace gets the first 250 appointments free. After that, choose a plan based on the number of seats/service providers you need."
-                  titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                  titleClassName="text-2xl sm:text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
                   descriptionClassName="text-indigo-50"
                 />
                 <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-white">
@@ -262,7 +416,7 @@ export default function Pricing({
                 <div className="rounded-2xl bg-indigo-50 p-4">
                   <div className="text-sm">Start accepting appointments without payment. Upgrade when your workspace needs more seats or more capacity.</div>
                 </div>
-                <Link href={REGISTER_URL} target="_blank" aria-label="Start Free Now" role="button" className="mt-5 flex w-full items-center justify-center rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-indigo-700">
+                <Link href={REGISTER_URL} target="_blank" aria-label="Start Free Now" role="button" className="mt-5 flex w-full items-center justify-center rounded-xl bg-indigo-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-indigo-700">
                   Start Free Now
                 </Link>
               </div>
@@ -282,11 +436,7 @@ export default function Pricing({
 
         <BillingToggle isAnnual={isAnnual} onChange={setIsAnnual} />
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-4">
-          {tiers.map((tier: PricingTier) => (
-            <PricingCard key={tier.name} tier={tier} isAnnual={isAnnual} region={region} />
-          ))}
-        </div>
+        <PricingCardsSlider tiers={tiers} isAnnual={isAnnual} region={region} />
 
         {/* BOTTOM CTA SECTION */}
         <div className="mt-10 rounded-2xl bg-white p-6 drop-shadow-sm">

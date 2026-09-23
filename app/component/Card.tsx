@@ -10,9 +10,10 @@ type CardProps = {
   badgeClassName?: string;
   bullets?: readonly string[];
   bulletsClassName?: string;
-  // Optional highlighted stat rendered above the title (e.g. "250 bookings / mo")
+  // Optional highlighted stat (default: above title)
   stat?: ReactNode;
   statUnit?: ReactNode;
+  statPosition?: "above" | "below";
   statClassName?: string;
   statUnitClassName?: string;
   wrapperClassName?: string;
@@ -41,6 +42,7 @@ export default function Card({
   bulletsClassName = "mt-4 space-y-2 text-sm text-neutral-600",
   stat,
   statUnit,
+  statPosition = "above",
   statClassName = "text-3xl tracking-tight sm:text-4xl text-neutral-900",
   statUnitClassName = "text-sm font-medium text-neutral-600",
   wrapperClassName = "group relative rounded-xl bg-gradient-to-br from-indigo-50 to-indigo-50 px-3 py-3 transition duration-300 hover:-translate-y-1 hover:drop-shadow-xl",
@@ -56,6 +58,14 @@ export default function Card({
   const finalWrapperClassName = `${wrapperClassName} ${className}`.trim();
   const iconContent = iconNode ?? (icon ? <span>{icon}</span> : null);
 
+  const statBlock =
+    stat != null ? (
+      <div className={statClassName}>
+        {stat}
+        {statUnit != null && <span className={statUnitClassName}> {statUnit}</span>}
+      </div>
+    ) : null;
+
   const content = (
     <>
       {overlay}
@@ -68,14 +78,10 @@ export default function Card({
         ) : (
           iconContent && <div className={iconWrapperClassName}>{iconContent}</div>
         )}
-        {stat != null && (
-          <div className={statClassName}>
-            {stat}
-            {statUnit != null && <span className={statUnitClassName}> {statUnit}</span>}
-          </div>
-        )}
+        {statPosition === "above" && statBlock}
         <h3 className={titleClassName}>{title}</h3>
         <p className={descriptionClassName}>{description}</p>
+        {statPosition === "below" && statBlock}
         {bullets && bullets.length > 0 && (
           <div className={bulletsClassName}>
             {bullets.map((item) => (

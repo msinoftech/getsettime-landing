@@ -15,7 +15,7 @@ export const pricingFaqItems: PricingFaqItem[] = [
   },
   {
     title: "What happens when I hit my booking limit?",
-    content: `In the free plan, your first 250 bookings for up to 3 months are included at no extra fee for a single sheet. Either you hit the limit before the month ends, or you complete three months of subscription; then you have to choose a paid plan to keep scheduling appointments. <br/> Paid plans include unlimited bookings from day one.`,
+    content: `In the free plan, your first 250 bookings are included at no fee for a single sheet. Either you hit the limit before the month ends, or you complete three months of subscription; then you have to choose a paid plan to keep scheduling appointments. <br/> Paid plans include unlimited bookings from day one.`,
   },
   {
     title: "Can I try GetSetTime before committing to a paid plan?",

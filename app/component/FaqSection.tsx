@@ -22,7 +22,7 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
   if (safeItems.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2 sm:gap-4">
       {safeItems.map((item, index) => { const isOpen = openIndex === index;
         return (
           <div key={index}
@@ -32,7 +32,7 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
                 : "border-slate-200/80 bg-white/80 drop-shadow-[0_10px_35px_rgba(15,23,42,0.06)] hover:-translate-y-0.5 hover:border-indigo-200 hover:drop-shadow-[0_18px_50px_rgba(99,102,241,0.10)]"
             }`}
           >
-            <button type="button" onClick={() => toggle(index)} className="flex w-full items-center gap-3 p-4 sm:p-5 text-left cursor-pointer" aria-expanded={isOpen} aria-controls={`faq-content-${index}`} id={`faq-trigger-${index}`}>
+            <button type="button" onClick={() => toggle(index)} className="flex w-full items-center gap-3 p-3 sm:p-5 text-left cursor-pointer" aria-expanded={isOpen} aria-controls={`faq-content-${index}`} id={`faq-trigger-${index}`}>
               <div
                 className={`mt-0.5 h-11 w-11 hidden sm:flex shrink-0 items-center justify-center rounded-xl border transition-all ${
                   isOpen
@@ -61,7 +61,7 @@ export const FaqSection = ({ items = [] }: FaqSectionProps) => {
 
             <div id={`faq-content-${index}`} role="region" aria-labelledby={`faq-trigger-${index}`} className="grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" style={{ gridTemplateRows: isOpen ? "1fr" : "0fr", opacity: isOpen ? 1 : 0 }}>
               <div className="min-h-0 overflow-hidden">
-                <div className="px-5 pb-5">
+                <div className="px-3 pb-3 sm:px-5 sm:pb-5">
                   <div>
                   {item.content != null && item.content !== "" && (
                     typeof item.content === "string" ? (

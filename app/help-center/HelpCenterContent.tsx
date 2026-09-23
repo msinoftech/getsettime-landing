@@ -164,18 +164,18 @@ export default function HelpCenterContent() {
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
+                href={`mailto:${contactInfo.email}`}
+                className="inline-flex items-center rounded-xl text-sm font-medium text-white"
+              >
+                Email: {contactInfo.email}
+              </Link>
+              <Link
                 href={LOGIN_URL}
                 target="_blank"
-                className="inline-flex items-center rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-indigo-600 transition hover:bg-indigo-50"
+                className="inline-flex items-center rounded-xl bg-white px-4 py-3 text-sm font-semibold text-indigo-600 transition hover:bg-indigo-50"
               >
                 Go to dashboard
               </Link>
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="inline-flex items-center rounded-xl border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Email {contactInfo.email}
-              </a>
             </div>
           </div>
         </div>

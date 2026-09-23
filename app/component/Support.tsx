@@ -1,11 +1,12 @@
 import Heading from "./Heading";
 import { CheckListItem } from "./CheckList";
+import ScreenGate from "./ScreenGate";
 
 export default function Support() {
    return (
       <section id="support" className="relative py-14 sm:py-20 scroll-mt-20">
        <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
-         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+         <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8">
            {/* Left: Content */}
            <div className="lg:col-span-7 space-y-4">
               <Heading
@@ -21,7 +22,7 @@ export default function Support() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 hidden sm:grid">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 grid">
                 <div className="group rounded-lg p-4 bg-gradient-to-br from-transparent via-indigo-200/20 to-transparent shadow-md hover:drop-shadow-xl transition-all">
                   <div className="flex items-center gap-3">
                       <div className="w-10 h-10" aria-hidden="true">
@@ -49,6 +50,7 @@ export default function Support() {
 
            {/* Right: Chat mock & status */}
            <div className="lg:col-span-5">
+            <ScreenGate minWidth={768}>
              <div className="relative overflow-hidden rounded-xl bg-white/20 drop-shadow-xl">
                <div className="p-4 bg-white drop-shadow-xl space-y-4">
                  <div className="flex flex-wrap items-start justify-between border-b border-neutral-100 pb-4">
@@ -70,6 +72,7 @@ export default function Support() {
                  </div>
                </div>
              </div>
+             </ScreenGate>
            </div>
 
          </div>

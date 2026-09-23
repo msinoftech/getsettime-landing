@@ -9,6 +9,7 @@ import {
   type SolutionBrowserIconKey,
   type SolutionBrowserItem,
 } from "@/lib/solutions-browser-data";
+import ScreenGate from "../component/ScreenGate";
 
 const categoryThemes: Record<string, { wash: string; ink: string; soft: string; ring: string }> = {
   solutions: { wash: "from-indigo-600 via-indigo-500 to-sky-500", ink: "text-indigo-600", soft: "bg-indigo-50", ring: "ring-indigo-200" },
@@ -143,7 +144,7 @@ function IndustryRow({
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <Link href={item.href} className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/90 p-5 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 sm:p-6" aria-label={`Explore ${item.title}`}>
+    <Link href={item.href} className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/90 p-4 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" aria-label={`Explore ${item.title}`}>
       <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-[0.07] ${theme.wash}`} aria-hidden />
       <div className="relative flex flex-1 flex-col">
         <div className="flex items-start justify-between gap-3">
@@ -167,6 +168,7 @@ function IndustryRow({
 
 export default function SolutionsBrowser() {
   const searchId = useId();
+  const categorySelectId = useId();
   const [activeId, setActiveId] = useState(defaultCategoryId);
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
@@ -206,67 +208,100 @@ export default function SolutionsBrowser() {
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -inset-x-6 -top-10 h-64 rounded-[3rem] bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.12),transparent_60%)] blur-2xl sm:-inset-x-10" aria-hidden />
-
-      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+      <div className="relative grid grid-cols-1 lg:grid-cols-12 lg:gap-8">
         <aside aria-label="Industry categories" className="lg:sticky lg:top-20 lg:z-30 w-full lg:col-span-3">
-          <div className="flex flex-col gap-3 mb-4 bg-white rounded-2xl p-4 shadow-sm">
-            <span className="text-xs uppercase tracking-[0.16em] text-neutral-500 text-end" aria-live="polite">{filteredItems.length} solution{filteredItems.length === 1 ? "" : "s"}</span>
-            <div className="relative w-full sm:max-w-md">
-              <label htmlFor={searchId} className="sr-only">Filter industries in this category</label>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 z-1 text-neutral-400"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
-              <input id={searchId} type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search industry..." className="w-full rounded-2xl border border-neutral-200/80 bg-white/90 py-3 pl-10 pr-4 text-sm text-neutral-900 shadow-sm outline-none backdrop-blur transition placeholder:text-neutral-400 focus:border-indigo-300 focus:ring-4 focus:ring-indigo-100" autoComplete="off"/>
+          <ScreenGate minWidth={1024}>
+            <div className="flex flex-col gap-3 mb-4 bg-white rounded-2xl p-4 shadow-sm">
+              <span className="text-xs uppercase tracking-[0.16em] text-neutral-500 text-end" aria-live="polite">{filteredItems.length} solution{filteredItems.length === 1 ? "" : "s"}</span>
+              <div className="relative w-full sm:max-w-md">
+                <label htmlFor={searchId} className="sr-only">Filter industries in this category</label>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 z-1 text-neutral-400"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+                <input id={searchId} type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search industry..." className="w-full rounded-2xl border border-neutral-200/80 bg-white/90 py-3 pl-10 pr-4 text-sm text-neutral-900 shadow-sm outline-none backdrop-blur transition placeholder:text-neutral-400 focus:border-indigo-300 focus:ring-4 focus:ring-indigo-100" autoComplete="off"/>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/70 bg-white/75 p-2 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.45)] backdrop-blur-xl">
+                {/* Desktop — category list */}
+                <ul className="grid lg:grid-cols-1 gap-1.5" role="list">
+                  {browserCategories.map((category, index) => {
+                    const isActive = category.id === activeId;
+                    const t = themeFor(category.id);
+                    return (
+                      <li key={category.id} className="shrink-0 col-span-1">
+                        <button
+                          id={`nav-${category.id}`}
+                          type="button"
+                          onClick={() => selectCategory(category.id)}
+                          aria-current={isActive ? "true" : undefined}
+                          className={`group relative w-full flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+                            isActive
+                              ? "bg-neutral-950 text-white shadow-lg shadow-neutral-900/20"
+                              : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
+                          }`}
+                        >
+                          <span
+                            className={`font-mono text-[10px] font-semibold tracking-wider ${
+                              isActive ? "text-white/55" : "text-neutral-400 group-hover:text-neutral-500"
+                            }`}
+                          >
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span className="whitespace-nowrap text-sm font-semibold">{category.label}</span>
+                          {isActive && (
+                            <span className={`absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-gradient-to-r ${t.wash}`} aria-hidden />
+                          )}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+            </div>
+          </ScreenGate>
+        </aside>
+
+        {/* <ScreenGate maxWidth={1023}>
+          <div className="sticky top-16 z-40 lg:col-span-full">
+            <div className="relative rounded-2xl border border-white/70 bg-white/95 p-2 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.45)] backdrop-blur-xl">
+              <label htmlFor={categorySelectId} className="sr-only">
+                Select industry category
+              </label>
+              <select
+                id={categorySelectId}
+                value={activeId}
+                onChange={(e) => selectCategory(e.target.value)}
+                className="w-full appearance-none rounded-xl border border-neutral-200/80 bg-white py-3 pl-4 pr-10 text-sm font-semibold text-neutral-900 shadow-sm outline-none transition focus:border-indigo-300 focus:ring-4 focus:ring-indigo-100"
+              >
+                {browserCategories.map((category, index) => (
+                  <option key={category.id} value={category.id}>
+                    {String(index + 1).padStart(2, "0")} — {category.label}
+                  </option>
+                ))}
+              </select>
+              <svg
+                className="pointer-events-none absolute right-5 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="m6 9 6 6 6-6" />
+              </svg>
             </div>
           </div>
-
-          <div className="rounded-2xl border border-white/70 bg-white/75 p-2 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.45)] backdrop-blur-xl">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5 h-50 lg:h-auto overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="list">
-              {browserCategories.map((category, index) => {
-                const isActive = category.id === activeId;
-                const t = themeFor(category.id);
-                return (
-                  <li key={category.id} className="shrink-0 col-span-1">
-                    <button
-                      id={`nav-${category.id}`}
-                      type="button"
-                      onClick={() => selectCategory(category.id)}
-                      aria-current={isActive ? "true" : undefined}
-                      className={`group relative w-full flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
-                        isActive
-                          ? "bg-neutral-950 text-white shadow-lg shadow-neutral-900/20"
-                          : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
-                      }`}
-                    >
-                      <span
-                        className={`font-mono text-[10px] font-semibold tracking-wider ${
-                          isActive ? "text-white/55" : "text-neutral-400 group-hover:text-neutral-500"
-                        }`}
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="whitespace-nowrap text-sm font-semibold">{category.label}</span>
-                      {isActive && (
-                        <span className={`absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-gradient-to-r ${t.wash}`} aria-hidden />
-                      )}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </aside>
+        </ScreenGate> */}
 
         {/* Stage left + solutions right */}
         <div key={active.id} aria-labelledby="solutions-category-heading" className="solutions-stage grid gap-5 lg:items-stretch lg:gap-6 lg:col-span-9">
           {/* Solutions list — right */}
-          <div className="overflow-hidden rounded-2xl border border-neutral-200/70 bg-gradient-to-b from-white via-neutral-50/80 to-white p-4 shadow-xl sm:p-6">
+          <div className="overflow-hidden rounded-2xl border border-neutral-200/70 bg-gradient-to-b from-white via-neutral-50/80 to-white shadow-xl p-4">
             {filteredItems.length === 0 ? (
               <p className="rounded-2xl border border-dashed border-neutral-200 bg-white px-5 py-10 text-center text-sm text-neutral-600">
                 No published solutions match.{" "}
                 <button type="button" className="font-semibold text-indigo-600 underline-offset-2 hover:underline" onClick={() => setQuery("")}>Clear filter</button>
               </p>
             ) : (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 min-[500px]:grid-cols-2 sm:gap-5 xl:grid-cols-3">
                 {filteredItems.map((item, index) => (
                   <IndustryRow key={item.id} item={item} index={index} theme={theme} />
                 ))}

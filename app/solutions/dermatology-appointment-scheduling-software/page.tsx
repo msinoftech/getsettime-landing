@@ -8,6 +8,7 @@ import { APP_NAME, BASE_URL, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } fr
 import type { ReactNode } from "react";
 import { FaqSection } from "@/app/component/FaqSection";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/solutions/dermatology-appointment-scheduling-software`;
 const pageTitle = "All-in-one dermatology clinic software for appointment booking";
@@ -369,10 +370,10 @@ export default function DermatologyAppointmentSchedulingSoftware() {
         />
 
         {/* Hero Section */}
-        <section className="relative overflow-x-clip py-14 sm:py-20 lg:min-h-[min(90vh,720px)] lg:py-16">
+        <section className="relative overflow-x-clip py-14 sm:py-20 lg:min-h-[min(90vh,720px)]">
             {/* Left content — stays within container */}
             <div className="relative z-20 mx-auto container px-4 sm:px-6 lg:px-8">
-                <div className="space-y-6 max-w-xl lg:max-w-[calc(50%-3rem)]">
+                <div className="space-y-6 lg:max-w-[calc(50%-3rem)]">
                     <Heading
                         badge="Dermatologist Appointment Scheduling Software"
                         title="Patient Scheduling Software for"
@@ -382,7 +383,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                         titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
 
-                    <div className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-x-6 gap-y-2 md:gap-y-5 min-[520px]:grid-cols-2">
                         {heroFeatures.map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
                             <CheckIcon />
@@ -391,23 +392,24 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                         ))}
                     </div>
 
-                    <div className="flex flex-col gap-4 sm:flex-row">
-                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="flex items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm text-white">
-                            <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
-                            <g>
-                                <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
-                                <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
-                                <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
-                                <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
-                            </g>
-                            </svg>
+                    <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+                        <svg viewBox="0 0 48 48" className="w-5 h-5 sm:w-6 sm:h-6 inline-block rounded-sm bg-white p-1">
+                        <g>
+                            <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                            <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                            <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                            <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                        </g>
+                        </svg>
                             Sign up with Google
                         </Link>
-                        <Link href={`${REGISTER_URL}`} aria-label="Get Started for Free - Dermatology Appointment Scheduling Software" className="flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm text-white">Get Started for Free</Link>
+                        <Link href={`${REGISTER_URL}`} aria-label="Get Started for Free - Dermatology Appointment Scheduling Software" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm text-white drop-shadow-lg transition">Get Started for Free</Link>
                     </div>
                 </div>
             </div>
 
+            <ScreenGate minWidth={768}>
             {/* Right image — flush to viewport right on large screens */}
             <div className="relative z-10 mt-10 w-full lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:w-1/2 lg:px-0">
                 <div className="relative min-h-[360px] p-2 rounded-2xl sm:min-h-[420px] lg:h-full lg:min-h-0">
@@ -486,10 +488,12 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                     </div>
                 </div>
             </div>
+            </ScreenGate>
         </section>
-
+        
+        <ScreenGate minWidth={768}>
         {/* Trusted by Dermatology Practices */}
-        <section className="bg-white pt-6 sm:pt-10 pb-14 sm:pb-20">
+        <section className="bg-white lg:pt-10 pb-14 md:pb-20">
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="rounded-2xl bg-indigo-50 px-4 py-8">
                     <p className="text-center text-sm font-semibold text-neutral-600">Trusted by Dermatology Practices</p>
@@ -505,9 +509,10 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                 </div>
             </div>
         </section>
+        </ScreenGate>
 
         {/* Features Section */}
-        <section className="relative overflow-hidden pb-14 sm:pb-20">
+        <section className="relative overflow-hidden sm:py-20">
           <div className="absolute top-10 left-10 hidden sm:block w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 hidden sm:block w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
 
@@ -533,7 +538,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
         </section>
 
         {/* Easy to Use Section */}
-        <section className="bg-white pb-14 sm:pb-20">
+        <section className="bg-white py-14 sm:py-20">
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Left — doctor dashboard mockup */}
@@ -559,14 +564,14 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                             "Custom rules to send reminders via text, email, and phone",
                             "Add and manage staff, assign roles to maintain privacy",
                             ].map((item, index) => (
-                                <div key={index} className="flex items-center gap-2.5">
+                                <div key={index} className="flex items-start gap-2.5">
                                     <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-600 h-5 w-5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
                                     <span className="text-sm text-slate-700 sm:text-[15px]">{item}</span>
                                 </div>
                             ))}
                         </div>
 
-                        <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your salon booking setup - Salon Appointment Scheduling Software" className="inline-flex items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm text-white">Sign Up for Free</Link>
+                        <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your salon booking setup - Salon Appointment Scheduling Software" className="inline-flex items-center justify-center gap-3 rounded-xl bg-indigo-600 px-4 py-3 text-sm text-white">Sign Up for Free</Link>
                     </div>
                 </div>
             </div>
@@ -579,7 +584,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
               badge="TESTIMONIALS"
               title="Loved by"
               highlightText="Dermatologists"
-              wrapperClassName="mx-auto mb-10 max-w-3xl space-y-4 text-center"              
+              wrapperClassName="mx-auto mb-6 max-w-3xl space-y-4 text-center"              
             />
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
@@ -625,7 +630,8 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                       title="Questions Dermatology Practices Ask Before Getting Started"
                       description="GetSetTime is built for dermatology practices who want to grow their business online. We answer the most common questions dermatology practices have about our platform."
                     />
-                    <div className="hidden sm:grid gap-4 sm:grid-cols-2 mt-6">
+                    <ScreenGate minWidth={768}>
+                    <div className="grid gap-4 sm:grid-cols-2 mt-6">
                         <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
                         <Card title="Build trust" description="Reduce friction with short supportive answers and better clarity." icon={<svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
@@ -634,6 +640,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                         
                         <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
                     </div>
+                    </ScreenGate>
                 </div>
                 {/* right: FAQ Section */}
                 <div>

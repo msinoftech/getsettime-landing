@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { pricingTiers, applyRegionalPrices, formatPrice } from "@/lib/pricing-data";
 import { useRegionalPricing } from "./useRegionalPricing";
+import ScreenGate from "./ScreenGate";
 
 function getDisplayPrice(price: string, tierName: string, isAnnual: boolean): number | "Free" {
   if (price === "Free") return "Free";
@@ -51,7 +52,8 @@ export default function PricingHeroPreview() {
 
   return (
     <div className="relative animate-fade-in-scale">
-      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
+      <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-xl">
+        <ScreenGate minWidth={768}>
         {/* Window chrome */}
         <div className="relative z-10 border-b border-neutral-200 flex items-center justify-between px-3 py-4">
           <div className="flex items-center gap-2 sm:gap-3">
@@ -67,8 +69,8 @@ export default function PricingHeroPreview() {
             <span className="text-[10px] sm:text-xs font-medium text-neutral-700">LIVE</span>
           </div>
         </div>
-
-        <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-2 sm:p-3">
+        </ScreenGate>
+        <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-3">
           <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
 
           {/* Billing header */}
@@ -87,7 +89,8 @@ export default function PricingHeroPreview() {
             </div>
           </div>
 
-          <div className="relative mb-4 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+          <ScreenGate minWidth={768}>
+          <div className="relative mb-4 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
             {tiers.map((tier) => {
               const meta = tierMeta[tier.name];
               const label = tier.name === "Professional" ? "Pro" : tier.name;
@@ -116,8 +119,9 @@ export default function PricingHeroPreview() {
               );
             })}
           </div>
+          </ScreenGate>
 
-          <div className="relative rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
+          <div className="relative">
             <div className="space-y-2">
               {tiers.map((tier) => {
                 const displayPrice = getDisplayPrice(tier.price, tier.name, isAnnual);
@@ -127,35 +131,31 @@ export default function PricingHeroPreview() {
                     key={tier.name}
                     className={`flex flex-wrap items-center gap-2.5 rounded-xl border p-2.5 transition hover:-translate-y-0.5 hover:drop-shadow-md sm:flex-nowrap sm:gap-3 sm:p-3 ${
                       tier.popular
-                        ? "border-violet-200 bg-violet-50/60 ring-1 ring-violet-100"
-                        : tier.name === "Enterprise"
-                          ? "border-emerald-100 bg-emerald-50/60"
-                          : "border-neutral-100 bg-neutral-50"
+                        ? "border-violet-200 bg-violet-50 ring-1 ring-violet-100"
+                        : "border-indigo-200 bg-indigo-50"
                     }`}
                   >
                     <div
-                      className={`flex h-10 w-14 shrink-0 flex-col items-center justify-center rounded-lg text-center drop-shadow-sm ring-1 ring-neutral-100 ${
-                        tier.popular ? "bg-violet-600 text-white" : "bg-white"
+                      className={`flex w-14 py-2 shrink-0 flex-col items-center justify-center rounded-lg text-center drop-shadow-sm ring-1 ring-neutral-100 ${
+                        tier.popular ? "bg-violet-600 text-white" : "bg-indigo-600 text-white"
                       }`}
                     >
-                      <span className={`text-[10px] font-medium uppercase ${tier.popular ? "text-violet-100" : "text-neutral-400"}`}>
+                      <span className={`text-[10px] font-medium uppercase ${tier.popular ? "text-violet-100" : "text-white"}`}>
                         {tier.name === "Professional" ? "Pro" : tier.name.slice(0, 3)}
                       </span>
-                      <span className={`text-sm font-bold ${tier.popular ? "text-white" : "text-neutral-800"}`}>
+                      <span className={`text-sm font-bold ${tier.popular ? "text-white" : "text-white"}`}>
                         {displayPrice === "Free" ? "Free" : formatPrice(displayPrice, region.currency)}
                       </span>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="font-semibold text-neutral-800">{tier.name}</div>
+                      <div className="text-sm font-medium text-neutral-800">{tier.name}</div>
                       <div className="text-sm text-neutral-700">{tier.seatTitle}</div>
                     </div>
                     <span
-                      className={`ml-auto inline-flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold sm:ml-0 sm:text-xs ${
+                      className={`ml-auto inline-flex shrink-0 items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-semibold sm:ml-0 sm:text-xs ${
                         tier.popular
-                          ? "bg-violet-100 text-violet-700"
-                          : tier.name === "Enterprise"
-                            ? "bg-emerald-100 text-emerald-700"
-                            : "bg-neutral-200 text-neutral-700"
+                          ? "border-violet-200 bg-violet-100 text-violet-700"
+                          : "border-indigo-200 bg-indigo-100 text-indigo-700"
                       }`}
                     >
                       {tier.popular && <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />}

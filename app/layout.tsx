@@ -5,7 +5,6 @@ import { BASE_URL, APP_NAME, contactInfo } from "@/lib/config";
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
-// import { CRISP_WEBSITE_ID } from "@/lib/config";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -69,7 +68,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           `}
         </Script>
 
-        <Script src="//code.jivosite.com/widget/43NbnJgLyO" async></Script>
+        {/* <Script src="//code.jivosite.com/widget/43NbnJgLyO" strategy="lazyOnload"></Script> */}
       </head>
 
       <body className={`${roboto.variable}`}>

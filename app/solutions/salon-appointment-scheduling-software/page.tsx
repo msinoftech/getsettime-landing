@@ -8,6 +8,7 @@ import Card from "@/app/component/Card";
 import Heading from "@/app/component/Heading";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/solutions/salon-appointment-scheduling-software`;
 
@@ -303,88 +304,91 @@ return (
                         headingTag="h1"
                         titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
-                            <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
-                            <g>
-                                <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
-                                <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
-                                <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
-                                <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
-                            </g>
-                            </svg>
+
+                    <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+                        <svg viewBox="0 0 48 48" className="w-5 h-5 sm:w-6 sm:h-6 inline-block rounded-sm bg-white p-1">
+                        <g>
+                            <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                            <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                            <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                            <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                        </g>
+                        </svg>
                             Sign up with Google
                         </Link>
-                        <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Salon Appointment Scheduling Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
+                        <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Salon Appointment Scheduling Software" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm text-white drop-shadow-lg transition">Get Started for Free</Link>
                     </div>
-                    
-                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                      <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
-                          <div className="flex items-center gap-2">
-                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
-                                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
-                                  </svg>
-                              </span>
-                              <div>
-                                  <div className="text-lg font-bold text-neutral-900">10,000+</div>
-                                  <div className="text-xs font-semibold text-neutral-800">Appointments</div>
-                              </div>
-                          </div>
-                          <div className="text-xs text-neutral-500">Booked across salons using GetSetTime</div>
-                      </div>
 
-                      <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
-                          <div className="flex items-center gap-2">
-                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
-                                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                  </svg>
-                              </span>
-                              <div>
-                                  <div className="text-lg font-bold text-neutral-900">3 hrs</div>
-                                  <div className="text-xs font-semibold text-neutral-800">Time Saved</div>
-                              </div>
-                          </div>
-                          <div className="text-xs text-neutral-500">Daily admin time back for your team</div>
-                      </div>
+                    <ScreenGate minWidth={768}>
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                            <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                                <div className="flex items-center gap-2">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-600">
+                                        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <div className="text-lg font-bold text-neutral-900">10,000+</div>
+                                        <div className="text-xs font-semibold text-neutral-800">Appointments</div>
+                                    </div>
+                                </div>
+                                <div className="text-xs text-neutral-500">Booked across salons using GetSetTime</div>
+                            </div>
 
-                      <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
-                          <div className="flex items-center gap-2">
-                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
-                                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 9.11c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                  </svg>
-                              </span>
-                              <div>
-                                  <div className="text-lg font-bold text-neutral-900">4.8 ★</div>
-                                  <div className="text-xs font-semibold text-neutral-800">Salon Rating</div>
-                              </div>
-                          </div>
-                          <div className="text-xs text-neutral-500">Average feedback from clients</div>
-                      </div>
-                    </div>
+                            <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                                <div className="flex items-center gap-2">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                                        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <div className="text-lg font-bold text-neutral-900">3 hrs</div>
+                                        <div className="text-xs font-semibold text-neutral-800">Time Saved</div>
+                                    </div>
+                                </div>
+                                <div className="text-xs text-neutral-500">Daily admin time back for your team</div>
+                            </div>
+
+                            <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
+                                <div className="flex items-center gap-2">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
+                                        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118L2.98 9.11c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <div className="text-lg font-bold text-neutral-900">4.8 ★</div>
+                                        <div className="text-xs font-semibold text-neutral-800">Salon Rating</div>
+                                    </div>
+                                </div>
+                                <div className="text-xs text-neutral-500">Average feedback from clients</div>
+                            </div>
+                        </div>
+                    </ScreenGate>
                 </div>
                 
                 {/* Right column - Interactive Demo */}
                 <div className="relative space-y-4 animate-fade-in-scale">
+                    
+                    <ScreenGate minWidth={768}>
                     <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
                         <div className="rounded-2xl overflow-hidden drop-shadow-lg">
                             <Image src="/salon.webp" className="h-64 w-full object-cover" alt="Salon Dashboard" width={400} height={400} />
                         </div>
-                        <div className="rounded-2xl overflow-hidden drop-shadow-lg hidden md:block">
+                        <div className="rounded-2xl overflow-hidden drop-shadow-lg">
                             <Image src="/salon-appointment.webp" className="h-64 w-full object-cover" alt="Salon Team" width={400} height={400} />
                         </div>
                     </div>
+                    </ScreenGate>
 
                     <div className="relative">
-                        <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
+                        <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-xl">
 
                             <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-3 sm:p-4">
-                                {/* Decorative dotted backdrop */}
-                                <div className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:radial-gradient(rgba(99,102,241,0.12)_1px,transparent_1px)] [background-size:16px_16px]" aria-hidden />
-                                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
-
+                                <ScreenGate minWidth={640}>
                                 {/* KPI strip */}
                                 <div className="relative mb-4 grid grid-cols-1 gap-2 min-[420px]:grid-cols-2 sm:grid-cols-3 sm:gap-2.5">
                                     {[
@@ -407,9 +411,10 @@ return (
                                         </div>
                                     ))}
                                 </div>
+                                </ScreenGate>
 
                                 <div className="relative grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
-                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
+                                    <div className="space-y-3 rounded-xl md:border border-neutral-100 md:bg-white md:p-4 md:drop-shadow-sm">
                                         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                             <svg className="h-4 w-4 text-emerald-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             Upcoming
@@ -420,20 +425,20 @@ return (
                                                 ["11:30 AM", "Facial Treatment", "Jessica Brown"],
                                             ].map(([time, service, client]) => (
                                                 <div key={time} className="flex flex-wrap items-center gap-2.5 rounded-xl border border-emerald-100 bg-emerald-50/60 p-2.5 sm:flex-nowrap sm:gap-3">
-                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-[11px] font-bold text-white">
+                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-emerald-600 border border-emerald-200">
                                                         {client.split(" ").map((w) => w[0]).slice(0, 2).join("")}
                                                     </div>
                                                     <div className="min-w-0 flex-1">
                                                         <div className="truncate text-sm font-semibold text-neutral-900">{service}</div>
                                                         <div className="truncate text-xs text-neutral-500">{client}</div>
                                                     </div>
-                                                    <span className="ml-auto shrink-0 rounded-full bg-white px-2 py-1 text-xs font-bold text-emerald-600 ring-1 ring-emerald-100 sm:ml-0">{time}</span>
+                                                    <span className="ml-auto shrink-0 rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-600 border border-emerald-100">{time}</span>
                                                 </div>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
+                                    <div className="space-y-3 rounded-xl md:border border-neutral-100 md:bg-white md:p-4 md:drop-shadow-sm">
                                         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                             <svg className="h-4 w-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                                             Salon Team
@@ -443,8 +448,8 @@ return (
                                                 ["Stella Ross", "Salon Specialist", "Available"],
                                                 ["Oliver Morgan", "Skin & Facial Expert", "Busy"],
                                             ].map(([name, role, status]) => (
-                                                <div key={name} className="flex flex-wrap items-center gap-2.5 rounded-xl border border-neutral-100 bg-neutral-50 p-2.5 sm:flex-nowrap sm:gap-3">
-                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-[11px] font-bold text-indigo-700">
+                                                <div key={name} className="flex flex-wrap items-center gap-2.5 rounded-xl border border-indigo-200 bg-indigo-50 p-2.5 sm:flex-nowrap sm:gap-3">
+                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-indigo-700 border border-indigo-200">
                                                         {name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
                                                     </div>
                                                     <div className="min-w-0 flex-1">
@@ -452,10 +457,10 @@ return (
                                                         <div className="truncate text-xs text-neutral-500">{role}</div>
                                                     </div>
                                                     <span
-                                                        className={`ml-auto inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold sm:ml-0 ${
+                                                        className={`ml-auto inline-flex shrink-0 items-center gap-1 border rounded-full px-3 py-1 text-xs font-semibold sm:ml-0 ${
                                                         status === "Available"
-                                                            ? "bg-emerald-50 text-emerald-600"
-                                                            : "bg-amber-50 text-amber-600"
+                                                            ? "bg-emerald-50 text-emerald-600 border-emerald-200"
+                                                            : "bg-amber-50 text-amber-600 border-amber-200"
                                                         }`}
                                                     >
                                                         {status}
@@ -466,11 +471,11 @@ return (
                                     </div>
                                 </div>
 
-                                <div className="relative mt-4 flex items-start gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-3 sm:items-center sm:px-4">
+                                <div className="relative mt-4 flex items-center gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-3 sm:px-4">
                                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-600 text-white">
                                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                                     </span>
-                                    <div className="text-xs font-medium leading-relaxed text-indigo-700 sm:text-sm">
+                                    <div className="text-sm font-medium leading-relaxed text-indigo-700">
                                         WhatsApp reminders sent to <span className="font-bold">15 clients</span> for tomorrow&apos;s bookings.
                                     </div>
                                 </div>
@@ -483,10 +488,7 @@ return (
     </section>
 
     {/* FEATURES SECTION */}
-    <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
-        <div className="absolute top-10 left-10 hidden sm:block w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 hidden sm:block w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
-    
+    <section className="relative pb-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">       
         <div className="container px-4 sm:px-6 lg:px-8 mx-auto relative z-10">
             <Heading
               badge="Features"
@@ -503,11 +505,12 @@ return (
     </section>
 
     {/* HOW IT WORKS SECTION */}
-    <section className="bg-[#f5f7ff] py-16 relative overflow-hidden">
+    <section className="bg-[#f5f7ff] py-14 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 hidden sm:block">
             <div className="absolute left-10 top-16 h-72 w-72 rounded-full bg-violet-300/20 blur-3xl" />
             <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl" />
         </div>
+
         <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-2">
                 {/* Left column - Content */}
@@ -529,19 +532,19 @@ return (
                     ))}
                     </div>
                 </div>
+
                 {/* Right column - Interactive Demo */}
-                <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-4 drop-shadow-xl">
-                    <div className="rounded-2xl bg-[#f5f6fb] text-neutral-900 p-4">
+                <div className="rounded-2xl bg-white drop-shadow-xl">
+                    <div className="text-neutral-900 p-4">
                         <div className="grid gap-4 sm:grid-cols-2">
-                            <div className="order-2 sm:order-2 rounded-2xl bg-white p-4 drop-shadow-sm">
+                            <div className="order-2 sm:order-2 rounded-2xl space-y-3">
                                 <div className="hidden sm:block">
-                                    <div className="text-xs uppercase text-indigo-600">Salon Dashboard</div>
                                     <div className="text-2xl font-bold text-neutral-900">Glow Studio Salon</div>
                                     <div className="text-xs text-neutral-600">Salon · Open Today</div>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-                                    <div className="rounded-2xl bg-white hidden sm:block p-4 mt-3 drop-shadow-sm">
+                                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 space-y-3">
+                                    <div className="rounded-2xl bg-white hidden sm:block md:p-4 md:drop-shadow-sm">
                                         <div className="font-semibold text-neutral-800">Bookings growing smoothly</div>
                                         <div className="mt-3 flex items-end gap-2">
                                             {["h-8","h-12","h-10","h-16","h-14","h-9","h-11","h-16"].map((bar, idx) => (
@@ -553,14 +556,14 @@ return (
                                         </div>
                                     </div>
 
-                                    <div className="mt-4 rounded-2xl bg-indigo-600 p-4 text-white drop-shadow-lg">
+                                    <div className="rounded-2xl bg-indigo-600 p-4 text-white drop-shadow-lg">
                                         <div className="opacity-90 text-xs">Next appointment</div>
                                         <div className="mt-1 font-semibold text-lg">Nicole Jackson · 11:00 AM</div>
                                         <div className="opacity-90 text-xs">Hair Spa + Styling · Chair 2</div>
                                     </div>
                                 </div>
 
-                                <div className="mt-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-3">
+                                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-3">
                                     <div className="rounded-xl bg-indigo-50 border border-indigo-100 p-3 drop-shadow-md">
                                         <div className="text-indigo-600">Client rating</div>
                                         <div className="text-xl font-bold">4.9/5</div>
@@ -573,7 +576,7 @@ return (
                             </div>
 
                             <div className="order-1 sm:order-1 space-y-3">
-                                <div className="rounded-xl bg-white drop-shadow-sm p-3 space-y-1">
+                                <div className="flex items-center gap-3 rounded-xl bg-white drop-shadow-sm p-3">
                                     <div className="relative">
                                         <Image
                                         src="/salon-profile.webp"
@@ -590,14 +593,14 @@ return (
                                     </div>
                                 </div>
 
-                                <div className="rounded-2xl bg-white p-4 drop-shadow-sm">
+                                <div className="rounded-2xl md:bg-white md:p-4 md:drop-shadow-sm">
                                     <div className="flex items-center justify-between">
                                         <div className="font-semibold text-neutral-900">Availability Calendar</div>
                                         <span className="rounded-md bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-600">Friday</span>
                                     </div>
                                     <div className="text-xs text-neutral-600">Pick a service slot for quick booking.</div>
                                     <div className="mt-3">
-                                        <div className="uppercase text-xs text-neutral-500">Salon services</div>
+                                        <div className="text-sm font-medium">Salon services</div>
                                         <div className="mt-2 flex flex-wrap gap-2">
                                             {["Haircut", "Hair Spa", "Color", "Keratin", "Facial", "Bridal Makeup"].map((service, idx) => (
                                                 <span
@@ -705,85 +708,116 @@ return (
       
       <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 items-start">
-          {/* Left */}
-          <div className="space-y-4">
-            <Heading
-              badge="Salon Reality Check"
-              title="One System For Before, During,"
-              highlightText="And After Every Appointment"
-              description="As client demand increases, manual booking creates delays, front-desk overload, and inconsistent follow-up. A structured digital system helps your salon deliver faster and more predictable service."
-            />
-            <div className="space-y-3">
-              {[
-                "Delayed client responses reduce trust before the visit.",
-                "Uneven service allocation causes long waits and idle hours.",
-                "Manual reminders increase missed services.",
-                "Scattered requests from clients create confusion.",
-              ].map((point) => (
-                <CheckListItem key={point} text={point} />
-              ))}
-            </div>
-          </div>
-          {/* Right */}
-          <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
-            <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
-              <div className="relative overflow-hidden rounded-2xl hidden sm:block border border-neutral-200 bg-white p-3 drop-shadow-sm">
-                <div className="flex items-center gap-2 font-semibold text-neutral-700">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </span>
-                  AVAILABLE TIMES
+            {/* Left */}
+            <div className="space-y-4">
+                <Heading
+                badge="Salon Reality Check"
+                title="One System For Before, During,"
+                highlightText="And After Every Appointment"
+                description="As client demand increases, manual booking creates delays, front-desk overload, and inconsistent follow-up. A structured digital system helps your salon deliver faster and more predictable service."
+                />
+                <div className="space-y-3">
+                {[
+                    "Delayed client responses reduce trust before the visit.",
+                    "Uneven service allocation causes long waits and idle hours.",
+                    "Manual reminders increase missed services.",
+                    "Scattered requests from clients create confusion.",
+                ].map((point) => (
+                    <CheckListItem key={point} text={point} />
+                ))}
                 </div>
-                <div className="mt-3 relative">
-                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-                    {[
-                      "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
-                      "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
-                      "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
-                    ].map((time) => (
-                      <button key={time} type="button"
-                        className={`rounded-xl border px-2 py-2 font-medium transition-all duration-200 ${
-                          time === "10:00 AM"
-                            ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
-                            : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
-                        }`}
-                      >
-                        {time}
-                      </button>
-                    ))}
-                  </div>
+
+                <div className="relative">
+                    <div className="text-lg font-bold text-neutral-900">Built for every type of salon</div>
+                    <div className="mt-2 flex flex-wrap gap-3">
+                        {[
+                        "Haircut",
+                        "Hair Spa",
+                        "Color",
+                        "Keratin",
+                        "Facial",
+                        "Bridal Makeup",
+                        ].map((tag) => (
+                        <span key={tag} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1 text-xs text-neutral-700 drop-shadow-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg>
+                            {tag}
+                        </span>
+                        ))}
+                    </div>
+                    <div className="mt-4">
+                        <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your salon booking setup - Salon Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-3 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
+                    </div>
                 </div>
-              </div>
-              <div className="relative overflow-hidden rounded-2xl border border-neutral-200">
-                <Image src="/salon-realty.webp" alt="Salon appointment schedule interface" width={700} height={700} className="h-full w-full object-cover" />
-                <div className="absolute left-2 top-2 rounded-md bg-indigo-600/90 px-2 py-1 text-xs uppercase tracking-widest text-white">Smart slots</div>
-              </div>
             </div>
-            <div className="mt-4 flex items-center justify-between">
-              <div className="font-semibold text-neutral-900">Salon Operations Board</div>
-              <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">Live Overview</span>
+
+            {/* Right */}
+            <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
+                <ScreenGate minWidth={768}>
+                <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
+                <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white p-3 drop-shadow-sm">
+                    
+                    <div className="flex items-center gap-2 font-semibold text-neutral-700">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                    AVAILABLE TIMES
+                    </div>
+
+                    <div className="mt-3 relative">
+                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+                        {[
+                        "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
+                        "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
+                        "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
+                        ].map((time) => (
+                        <button key={time} type="button"
+                            className={`rounded-xl border px-2 py-2 font-medium transition-all duration-200 ${
+                            time === "10:00 AM"
+                                ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
+                                : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
+                            }`}
+                        >
+                            {time}
+                        </button>
+                        ))}
+                    </div>
+                    </div>
+                </div>
+
+                <div className="relative overflow-hidden rounded-2xl border border-neutral-200">
+                    <Image src="/salon-realty.webp" alt="Salon appointment schedule interface" width={700} height={700} className="h-full w-full object-cover" />
+                    <div className="absolute left-2 top-2 rounded-md bg-indigo-600/90 px-2 py-1 text-xs uppercase tracking-widest text-white">Smart slots</div>
+                </div>
+                </div>
+                </ScreenGate>
+
+
+                <div className="md:mt-4 flex flex-wrap items-center justify-between">
+                <div className="font-semibold text-neutral-900">Salon Operations Board</div>
+                <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">Live Overview</span>
+                </div>
+                
+                <div className="mt-4 grid gap-3 grid-cols-2">
+                <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
+                    <div className="font-semibold text-indigo-500">Haircut</div>
+                    <div className="mt-1 text-indigo-900">12 Slots · 7 Booked</div>
+                </div>
+                <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
+                    <div className="text-indigo-500 font-semibold">Hair Spa</div>
+                    <div className="mt-1 text-indigo-900">8 Slots · 5 Booked</div>
+                </div>
+                <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
+                    <div className="text-indigo-500 font-semibold">Color</div>
+                    <div className="mt-1 text-indigo-900">9 Slots · 6 Booked</div>
+                </div>
+                <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
+                    <div className="text-indigo-500 font-semibold">Keratin</div>
+                    <div className="mt-1 text-indigo-900">11 Slots · 5 Booked</div>
+                </div>
+                </div>
             </div>
-            <div className="mt-4 grid gap-3 grid-cols-2">
-              <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
-                <div className="font-semibold text-indigo-500">Haircut</div>
-                <div className="mt-1 text-indigo-900">12 Slots · 7 Booked</div>
-              </div>
-              <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
-                <div className="text-indigo-500 font-semibold">Hair Spa</div>
-                <div className="mt-1 text-indigo-900">8 Slots · 5 Booked</div>
-              </div>
-              <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
-                <div className="text-indigo-500 font-semibold">Color</div>
-                <div className="mt-1 text-indigo-900">9 Slots · 6 Booked</div>
-              </div>
-              <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-3">
-                <div className="text-indigo-500 font-semibold">Keratin</div>
-                <div className="mt-1 text-indigo-900">11 Slots · 5 Booked</div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-3 mt-8">
@@ -803,30 +837,11 @@ return (
                 </div>
             ))}
         </div>
-
-        <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 drop-shadow-xl backdrop-blur">
-          <h3 className="text-2xl font-bold text-center text-neutral-900">Built for every type of salon</h3>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            {[
-              "Haircut",
-              "Hair Spa",
-              "Color",
-              "Keratin",
-              "Facial",
-              "Bridal Makeup",
-            ].map((tag) => (
-              <span key={tag} className="px-3 py-1.5 flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}</span>
-            ))}
-          </div>
-          <div className="mt-5 text-center">
-            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your salon booking setup - Salon Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
-          </div>
-        </div>
       </div>
     </section>
 
     {/* SALON GROWTH ROADMAP SECTION */}
-    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-violet-100 py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-violet-100 py-14 sm:py-20">
         <div className="pointer-events-none absolute inset-0 hidden sm:block">
             <div className="absolute -left-16 top-8 h-72 w-72 rounded-full bg-indigo-400/25 blur-3xl" />
             <div className="absolute right-8 bottom-16 h-44 w-44 rounded-full bg-violet-400/25 blur-3xl" />
@@ -839,24 +854,27 @@ return (
                   badge="Growth Roadmap"
                   title="A Practical Plan To Grow Your Salon In 30 Days"
                 />
-                {growthRoadmap.map((point, i) => (
-                <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 drop-shadow-md transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
-                    <div className="flex items-start gap-2">
-                        <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
-                            <span className="font-bold">0{i + 1}</span>
-                        </div>
-                        <div className="relative">
-                            <div className="rounded-md bg-indigo-100/70 px-2 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-700 w-fit mb-1">
-                                {point.phase}
+                <div className="space-y-3">
+                    {growthRoadmap.map((point, i) => (
+                    <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 drop-shadow-md transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
+                        <div className="flex flex-col min-[425px]:flex-row items-start gap-2">
+                            <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
+                                <span className="font-bold">0{i + 1}</span>
                             </div>
-                            <div className="font-semibold text-neutral-900">{point.title}</div>
-                            <p>{point.detail}</p>
+                            <div className="relative">
+                                <div className="rounded-md bg-indigo-100/70 px-2 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-700 w-fit mb-1">
+                                    {point.phase}
+                                </div>
+                                <div className="font-semibold text-neutral-900">{point.title}</div>
+                                <p>{point.detail}</p>
+                            </div>
                         </div>
                     </div>
+                    ))}
                 </div>
-                ))}
             </div>
-
+            
+            <ScreenGate minWidth={768}>
             {/* RIGHT FEATURES GRID */}
             <div className="relative">
                 <div className="rounded-xl bg-white p-3 drop-shadow-xl">
@@ -884,6 +902,7 @@ return (
                     <div className="text-neutral-600">Synced to salon operations board</div>
                 </div>
             </div>
+            </ScreenGate>
         </div>
     </section>
 
@@ -904,7 +923,8 @@ return (
                   title="Questions Salon Owners Ask Before Getting Started"
                   description="GetSetTime is built for salon owners who want to grow their business online. We answer the most common questions salon owners have about our platform."
                 />
-                <div className="hidden sm:grid gap-4 sm:grid-cols-2 mt-6">
+                <ScreenGate minWidth={768}>
+                <div className="grid gap-4 sm:grid-cols-2 mt-6">
                     <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
                     <Card title="Build trust" description="Reduce friction with short supportive answers and better clarity." icon={<svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
@@ -913,7 +933,9 @@ return (
                     
                     <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
                 </div>
+                </ScreenGate>
             </div>
+
             {/* right: FAQ Section */}
             <div>
                 <FaqSection items={faqItems} />

@@ -21,9 +21,9 @@ export default function Heading({
   description,
   headingTag = "h2",
   wrapperClassName = "space-y-3",
-  badgeClassName = "inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-indigo-600 drop-shadow-sm backdrop-blur",
-  badgeDotClassName = "h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500",
-  titleClassName = "text-3xl font-bold text-neutral-900 md:text-4xl lg:text-[40px] capitalize",
+  badgeClassName = "inline-flex items-center gap-3 rounded-full border border-indigo-200 bg-white/80 px-3 py-1 text-xs font-medium uppercase tracking-widest text-indigo-600 drop-shadow-sm",
+  badgeDotClassName = "hidden sm:block h-2 w-2 min-w-2 min-h-2 rounded-full bg-indigo-500",
+  titleClassName = "text-2xl sm:text-3xl font-bold text-neutral-900 md:text-4xl lg:text-[40px] capitalize",
   highlightClassName = "bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent",
   descriptionClassName = "",
 }: HeadingProps) {

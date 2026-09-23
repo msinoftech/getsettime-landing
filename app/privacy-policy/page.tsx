@@ -53,13 +53,13 @@ export default function PrivacyPolicy() {
               title="Privacy Policy"
               description="Your privacy matters to us. Learn how we collect, use, and protect your personal information while providing you with the best scheduling experience."
               headingTag="h1"
-              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+              titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
             />
           </div>
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl drop-shadow-sm border border-neutral-100 p-8 sm:p-12">
+          <div className="bg-white rounded-2xl drop-shadow-sm border border-neutral-100 p-4 sm:p-12">
             <div className="prose prose-neutral max-w-none">
               
               {/* Section 1 */}
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">1</span>
                   Introduction
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>At Getsettime, our Privacy Policy defines how we collect, use, share, and protect your personal information.</p>
                   <p>We follow the GDPR (EU) 2016/679 (General Data Protection Regulation), Indian data protection laws, and other international privacy rules.</p>
                   <p>When you create an account, use this platform, or give us your information, you agree to the practices described in our Privacy Policy.</p>
@@ -88,7 +88,7 @@ export default function PrivacyPolicy() {
                   Information We Collect
                 </h2>
                 
-                <div className="space-y-6 pl-11">
+                <div className="space-y-6 sm:pl-11">
                   <div>
                     <h3 className="text-lg font-semibold text-neutral-900 mb-3">2.1. Information You Provide</h3>
                     <p className="text-neutral-600 mb-3 font-medium">When you sign up or interact with Getsettime, we may collect:</p>
@@ -123,7 +123,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">3</span>
                   How We Use Your Information
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p className="font-medium text-neutral-900">We use your information to:</p>
                   <ul className="list-disc list-inside space-y-2 pl-3">
                     <li>Provide and manage booking, scheduling, and payment features.</li>
@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">4</span>
                   Sharing and Disclosure of Data
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p className="font-medium text-neutral-900">We only share your information in limited circumstances:</p>
                   <ul className="list-disc list-inside space-y-2 pl-3">
                     <li><span className="font-medium">Service providers:</span> Trusted third parties such as payment gateways (Stripe, PayPal) or communication tools (Twilio, SendGrid).</li>
@@ -161,7 +161,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">5</span>
                   Cookies and Tracking Technologies
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>Our website and application use cookies to personalise your experience and maintain session security.</p>
                   <p>You can modify your browser settings to manage cookies, but disabling them may limit some platform features.</p>
                 </div>
@@ -173,7 +173,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">6</span>
                   Data Retention
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>We retain personal information only as long as necessary to deliver our services and comply with legal obligations.</p>
                   <p>When an account is terminated or inactive for an extended period, data may be securely deleted or anonymised.</p>
                 </div>
@@ -185,7 +185,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">7</span>
                   Your Rights and Choices
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p className="font-medium text-neutral-900">Under applicable laws, you have the right to:</p>
                   <ul className="list-disc list-inside space-y-2 pl-3">
                     <li>Access and obtain a copy of your personal data.</li>
@@ -205,7 +205,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">8</span>
                   Security
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>We use industry-standard encryption (SSL) and strict access controls to protect personal data.</p>
                   <p>While we strive for top-tier security, no system is entirely infallible. We recommend keeping your password confidential and using secure devices.</p>
                 </div>
@@ -217,7 +217,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">9</span>
                   Third-Party Integrations
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>Getsettime connects with third-party apps such as Google Calendar, Zoom, Stripe, and PayPal to extend functionality.</p>
                   <p>Before enabling these integrations, please review their privacy policies as we do not control third-party data processing practices.</p>
                 </div>
@@ -229,7 +229,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">10</span>
                   Children&apos;s Privacy
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>Getsettime is not intended for individuals under 13 years old.</p>
                   <p>We do not knowingly collect data from children. If you believe a child has provided personal information, contact us.</p>
                 </div>
@@ -241,7 +241,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">11</span>
                   International Data Transfer
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>If you access Getsettime from outside India, your data may be transferred to and processed in other countries where our servers or service providers operate. We ensure these transfers comply with applicable data protection standards.</p>
                 </div>
               </div>
@@ -252,7 +252,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">12</span>
                   Changes to This Policy
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>We may update our Privacy Policy from time to time to reflect changes in law, technology, or our business practices.</p>
                   <p>All updates will be posted on this page with a revised &quot;Last Updated&quot; date. Continued use of the Services after updates means acceptance of the new terms.</p>
                 </div>
@@ -264,7 +264,7 @@ export default function PrivacyPolicy() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 text-sm font-bold">13</span>
                   Contact Us
                 </h2>
-                <div className="pl-11">
+                <div className="sm:pl-11">
                   <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6">
                     <p className="text-neutral-600 mb-4">If you have questions, complaints, or privacy requests, please get in touch with us:</p>
                     <div className="space-y-2">
@@ -302,17 +302,17 @@ export default function PrivacyPolicy() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
+                    titleClassName="text-2xl sm:text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   
                   <div className="mt-8">
-                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Privacy Policy" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Privacy Policy" className="rounded-xl bg-white px-4 py-3 text-sm text-indigo-600 transition">Get Started</Link>
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">
                     {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                      <span key={item}>✔ {item}</span>
+                      <span key={item} className="text-white flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {item}</span>
                     ))}
                   </div>
                 </div>

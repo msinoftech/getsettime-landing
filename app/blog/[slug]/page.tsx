@@ -8,7 +8,6 @@ import { blogPosts, getBlogBySlug, getRelatedPosts, getPrevNextPosts, getPostCat
 import { BlogSidebar } from "@/app/component/BlogSidebar";
 import { FaqSection } from "@/app/component/FaqSection";
 import { PostViews } from "@/app/component/PostViews";
-import { BlogContent } from "@/app/component/BlogContent";
 import Heading from "@/app/component/Heading";
 
 interface BlogDetailPageProps {
@@ -186,20 +185,14 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       <Script id="blog-detail-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData, null,  2) }} />
 
       <section className="relative overflow-hidden pt-10">
-        <div className="absolute inset-0 hidden sm:block pointer-events-none overflow-hidden">
-          <div className="absolute -top-10 left-1/4 w-[28rem] h-[28rem] bg-indigo-400/15 rounded-full blur-3xl" />
-          <div className="absolute top-32 right-0 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.06),transparent_55%)]" />
-        </div>
-
         <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           {/* Title */}
-          <h1 className="mt-6 text-center text-3xl font-bold leading-tight tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">{post.title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold leading-tight tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">{post.title}</h1>
           {/* Author + meta */}
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm">
+          <div className="mt-4 flex flex-wrap items-center border-y border-black/8 py-4 gap-x-5 gap-y-3 text-sm">
             <div className="flex items-center gap-1">
                 <span><svg className="w-4 h-4 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <span className="text-neutral-500">{post.author.name}</span>              
+                <span className="text-neutral-700">{post.author.name}</span>              
             </div>
 
             <div className="flex items-center gap-2 text-neutral-500">
@@ -219,29 +212,23 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             <PostViews slug={post.slug} />
           </div>
         </div>
-
-        {/* Cover image */}
-        <div className="relative z-10 mx-auto mt-6 max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-2xl">
-            <Image src={`/${post.coverImage}`} alt={post.title} width={800} height={400} className="aspect-[2/1] w-full object-cover" priority />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-          </div>
-        </div>
       </section>
 
       {/* Main Content */}
       <section className="relative py-12 lg:py-16">
-        <div className="absolute inset-0 hidden sm:block pointer-events-none">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-indigo-400/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-emerald-300/10 rounded-full blur-3xl" />
-        </div>
-
         <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <article className="lg:col-span-8">
               
-              <div className="relative">
-                <BlogContent html={post.content} />
+              <div className="relative space-y-4">
+                {/* Cover image */}
+                <div className="relative">
+                  <div className="relative overflow-hidden rounded-2xl">
+                    <Image src={`/${post.coverImage}`} alt={post.title} width={800} height={400} className="aspect-[2/1] w-full object-cover" priority />
+                  </div>
+                </div>
+
+                <div className="blog-content space-y-4" dangerouslySetInnerHTML={{ __html: post.content }} />
               </div>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -307,7 +294,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
               
             </article>
             <div className="lg:col-span-4">
-              <div className="lg:sticky lg:top-8">
+              <div className="lg:sticky lg:top-20">
                 <BlogSidebar currentPostSlug={post.slug} relatedPosts={relatedPosts} />
               </div>
             </div>
@@ -336,7 +323,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">
                     {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                      <span key={item}>✔ {item}</span>
+                      <span key={item} className="text-white flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {item}</span>
                     ))}
                   </div>
                 </div>

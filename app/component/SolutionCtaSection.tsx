@@ -37,7 +37,7 @@ export default function SolutionCtaSection({
   formSlot,
 }: SolutionCtaSectionProps) {
   return (
-    <section className={`w-full overflow-x-hidden bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-10 sm:py-14 lg:py-20 ${className}`}>
+    <section className={`w-full overflow-x-hidden bg-gradient-to-br from-indigo-500/10 via-indigo-200/20 to-indigo-500/10 py-14 sm:py-20 ${className}`}>
       <div className="container mx-auto min-w-0 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 p-4 sm:rounded-3xl sm:p-6 md:p-8 lg:p-10">
@@ -117,7 +117,7 @@ export default function SolutionCtaSection({
                 </div>
               </div>
 
-              <div className="relative mx-auto w-full min-w-0 max-w-lg lg:max-w-none">
+              <div className="relative mx-auto w-full">
                 {formSlot ?? (businessType ? <DemoFreeForm businessType={businessType} /> : <DemoFreeForm />)}
               </div>
             </div>

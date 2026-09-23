@@ -41,7 +41,7 @@ export default function TermsOfConditions() {
   return (
     <>
       <section className="relative py-14 sm:py-20">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 hidden sm:block">
           <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400/20 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-300/15 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
         </div>
@@ -52,7 +52,7 @@ export default function TermsOfConditions() {
               title="Terms & Conditions"
               description="Please read these terms carefully before using our service. By accessing or using GetSetTime, you agree to be bound by these terms."
               headingTag="h1"
-              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+              titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
             />
           </div>
 
@@ -67,7 +67,7 @@ export default function TermsOfConditions() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl drop-shadow-sm border border-neutral-100 p-8 sm:p-12">
+          <div className="bg-white rounded-2xl drop-shadow-sm border border-neutral-100 p-4 sm:p-12">
             <div className="prose prose-neutral max-w-none">
               
               {/* Introduction */}
@@ -95,7 +95,7 @@ export default function TermsOfConditions() {
                   </span>
                   Termination
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach the Terms.</p>
                   <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
                 </div>
@@ -111,7 +111,7 @@ export default function TermsOfConditions() {
                   </span>
                   Links To Other Websites
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>Our Service may contain links to third-party websites or services that are not owned or controlled by GetSetTime.</p>
                   <p>GetSetTime has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You further acknowledge and agree that GetSetTime shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods, or services available on or through any such websites or services.</p>
                   <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.</p>
@@ -128,7 +128,7 @@ export default function TermsOfConditions() {
                   </span>
                   Governing Law
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>These Terms shall be governed and construed in accordance with the General Data Protection Regulation (EU) 2016/679 (GDPR), relevant Indian data protection laws, and other international regulations, without regard to any conflict-of-laws principles.</p>
                   <p>Our failure to enforce any right or provision of these Terms will not constitute a waiver of that right or provision. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service and supersede any prior agreements we may have had regarding the Service.</p>
                 </div>
@@ -144,7 +144,7 @@ export default function TermsOfConditions() {
                   </span>
                   Billing
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p className="font-semibold text-neutral-900">Paid Subscription Cancellation Policy</p>
                   <p>Paid subscriptions will automatically renew for the same subscription period unless the account owner cancels them before the end of the current subscription period. You can cancel your paid subscription at any time via the in-app billing modal. Alternatively, you can contact customer support in the app or by email (<a href={`mailto:${email}`} className="text-indigo-600 hover:text-indigo-700 font-medium hover:underline">{email}</a>) with your cancellation request.</p>
                   <p>When a cancellation is issued, the downgrade from premium to free is scheduled for the time of subscription renewal. Until the end of the cycle, all premium features will remain active for the organization.</p>
@@ -161,7 +161,7 @@ export default function TermsOfConditions() {
                   </span>
                   Refund Policy
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg">
                     <p>Organizations are eligible for a full refund for monthly or annual premium paid subscriptions, provided that no bookings have been made since the subscription began and the account owner makes the request within 7 days of the current subscription cycle. For annual payment cycles, a 10% cancellation fee will be assessed, after which the remaining refund will be processed within 1-10 business days.</p>
                   </div>
@@ -178,7 +178,7 @@ export default function TermsOfConditions() {
                   </span>
                   Legacy Plans
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>As pricing models change at GetSetTime, existing customers will retain their existing subscription cost until they request to move to the current plan or until GetSetTime eliminates that plan. If a plan is eliminated, organization owners will receive at least 30 days&apos; advanced notice with details regarding the new pricing structure.</p>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function TermsOfConditions() {
                   </span>
                   Changes
                 </h2>
-                <div className="space-y-4 text-neutral-600 pl-11">
+                <div className="space-y-4 text-neutral-600 sm:pl-11">
                   <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days&apos; notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
                   <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
                 </div>
@@ -209,7 +209,7 @@ export default function TermsOfConditions() {
                   </span>
                   Contact Us
                 </h2>
-                <div className="pl-11">
+                <div className="sm:pl-11">
                   <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6">
                     <p className="text-neutral-600 mb-4">If you have any questions about these Terms, please get in touch with us:</p>
                     <div className="flex items-center gap-2 text-neutral-700">
@@ -238,17 +238,17 @@ export default function TermsOfConditions() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
+                    titleClassName="text-2xl sm:text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                     descriptionClassName = "text-white"
                   />
                   
                   <div className="mt-8">
-                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Terms of Conditions" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Terms of Conditions" className="rounded-xl bg-white px-4 py-3 text-sm text-indigo-600 transition">Get Started</Link>
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">
                     {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                      <span key={item}>✔ {item}</span>
+                      <span key={item} className="text-white flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {item}</span>
                     ))}
                   </div>
                 </div>

@@ -164,7 +164,7 @@ const ContactForm = () => {
       <textarea id="message" name="message" rows={4} required placeholder="How can we help?" value={formData.message} onChange={handleChange} className="block w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-3 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-600"/>
 
       <div className="block sm:flex items-center justify-between items-center justify-between gap-3">
-        <button type="submit" disabled={status === "sending"} className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3" aria-disabled={status === "sending"}>
+        <button type="submit" disabled={status === "sending"} className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3" aria-disabled={status === "sending"}>
           {status === "sending" ? "Sending…" : "Send Message"}
         </button>
       </div>

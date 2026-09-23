@@ -77,225 +77,138 @@ export default function Navbar() {
   }, [isHome, pathname]);
 
   return (
-    <header className="w-full sticky top-0 z-999 bg-white/85 backdrop-blur-xl border-b border-gray-200">
-      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center lg:items-stretch justify-between h-16">
-          <Logo />
-          
-          <nav className="hidden lg:flex items-stretch justify-between gap-8">
-            <Link href="/features" onClick={(e) => handleAnchorClick(e, null)} aria-label="Features - Navbar" aria-current={isActive("/features") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/features") ? "text-indigo-600" : ""}`}>
-              Features
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/features") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
-            </Link>
-            <Link href="/contact-us" onClick={(e) => handleAnchorClick(e, null)} aria-label="Support - Navbar" aria-current={isActive("/contact-us") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/contact-us") ? "text-indigo-600" : ""}`}>
-              Support
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/contact-us") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
-            </Link>
-            <Link href="/pricing" onClick={(e) => handleAnchorClick(e, null)} aria-label="Pricing - Navbar" aria-current={isActive("/pricing") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/pricing") ? "text-indigo-600" : ""}`}>
-              Pricing
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/pricing") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
-            </Link>
-            <div
-              ref={desktopSolutionsRef}
-              className="relative group flex items-center"
-              onMouseEnter={() => setDesktopSolutionsOpen(true)}
-              onMouseLeave={() => setDesktopSolutionsOpen(false)}
-              onBlur={(e) => {
-                if (!desktopSolutionsRef.current?.contains(e.relatedTarget as Node)) {
-                  setDesktopSolutionsOpen(false);
-                }
-              }}
-            >
-              <button
-                type="button"
-                aria-expanded={desktopSolutionsOpen}
-                aria-current={isActive("/solutions") ? "page" : undefined}
-                className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative inline-flex items-center gap-1 cursor-pointer flex items-center h-full ${isActive("/solutions") ? "text-indigo-600" : ""}`}
-                onClick={() => setDesktopSolutionsOpen((v) => !v)}
+    <>
+    <header className="sticky z-999 top-0 border-b border-gray-200 bg-white w-full">
+        <div className="mx-auto container px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center lg:items-stretch justify-between h-16">
+            <Logo />
+            
+            <nav className="hidden md:flex items-stretch justify-between gap-8">
+              <Link href="/features" onClick={(e) => handleAnchorClick(e, null)} aria-label="Features - Navbar" aria-current={isActive("/features") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/features") ? "text-indigo-600" : ""}`}>
+                Features
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/features") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+              </Link>
+              <Link href="/contact-us" onClick={(e) => handleAnchorClick(e, null)} aria-label="Support - Navbar" aria-current={isActive("/contact-us") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/contact-us") ? "text-indigo-600" : ""}`}>
+                Support
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/contact-us") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+              </Link>
+              <Link href="/pricing" onClick={(e) => handleAnchorClick(e, null)} aria-label="Pricing - Navbar" aria-current={isActive("/pricing") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/pricing") ? "text-indigo-600" : ""}`}>
+                Pricing
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/pricing") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+              </Link>
+              <div
+                ref={desktopSolutionsRef}
+                className="relative group flex items-center"
+                onMouseEnter={() => setDesktopSolutionsOpen(true)}
+                onMouseLeave={() => setDesktopSolutionsOpen(false)}
+                onBlur={(e) => {
+                  if (!desktopSolutionsRef.current?.contains(e.relatedTarget as Node)) {
+                    setDesktopSolutionsOpen(false);
+                  }
+                }}
               >
-                Solutions
-                <svg className={`w-4 h-4 transition-transform duration-200 ${desktopSolutionsOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${desktopSolutionsOpen || isActive("/solutions") ? "w-full" : "w-0"}`}></span>
-              </button>
-              <div className="absolute left-1/2 top-full w-[400px] -translate-x-1/2">
-                <div className={`${desktopSolutionsOpen ? "block pointer-events-auto opacity-100 translate-y-0" : "hidden pointer-events-none opacity-0 translate-y-2"} transition-all duration-200 rounded-2xl bg-white/95 backdrop-blur border border-gray-200 drop-shadow-[0_16px_40px_rgba(15,23,42,0.12)] p-3`}>
-                  <div className="mb-3 border-b border-[#e0dbd2] pb-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-400">Solutions</div>
-                      <Link className="text-[12px] font-bold tracking-wider text-zinc-600 hover:text-indigo-600" href="/solutions">VIEW ALL</Link>
-                    </div>
-                    <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Explore industry-specific scheduling pages</div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-1">
-                    <Link href="/solutions/doctor-appointment-scheduling-software" aria-label="Doctor appointment Software - Navbar" aria-current={isActive("/solutions/doctor-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/doctor-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                      <span className="leading-5">Doctor</span>
-                    </Link>
-                    <Link href="/solutions/dentist-appointment-scheduling-software" aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dentist-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/dentist-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                      <span className="leading-5">Dentist</span>
-                    </Link>
-                    <Link href="/solutions/dermatology-appointment-scheduling-software" aria-label="Dermatology appointment Software - Navbar" aria-current={isActive("/solutions/dermatology-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/dermatology-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                      <span className="leading-5">Dermatology</span>
-                    </Link>
-                    <Link href="/solutions/physiotherapist-appointment-booking-software" aria-label="Physiotherapy appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                      <span className="leading-5">Physiotherapy</span>
-                    </Link>
-                    <Link href="/solutions/salon-appointment-scheduling-software" aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                      <span className="leading-5">Salon</span>
-                    </Link>
-                    <Link href="/solutions/tutor-appointment-booking-software" aria-label="Tutor appointment booking software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                      <span className="leading-5">Tutor</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Link href={`${BASE_URL}/blog`} onClick={(e) => handleAnchorClick(e, null)} aria-label="Blog - Navbar" aria-current={isActive("/blog") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/blog") ? "text-indigo-600" : ""}`}>
-              Blog
-              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/blog") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
-            </Link>
-          </nav>
-
-          <div className="hidden lg:flex items-center justify-between gap-4">
-            <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Sign In - Navbar" className="text-sm text-indigo-600 cursor-pointer px-5 py-2.5 rounded-xl bg-indigo-500/10">Sign In</Link>
-            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Sign Up - Navbar" className="rounded-xl bg-indigo-600 text-white text-sm px-5 py-2.5">Start Free</Link>
-          </div>
-
-          <button aria-label="Toggle menu" className="lg:hidden inline-flex items-center justify-center rounded-xl p-2 text-indigo-600 cursor-pointer bg-indigo-500/10 hover:bg-indigo-600 hover:text-white transition-colors" onClick={() => { setOpen((v) => !v); if (open) setMobileSolutionsOpen(false); }} type="button">
-            <div className="relative w-6 h-6">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </div>
-          </button>
-        </div>
-      </div>
-
-      {mounted && open && createPortal(
-        <>
-          {/* Backdrop overlay */}
-          <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[999] lg:hidden animate-fade-in" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}/>
-          
-          {/* Mobile menu */}
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm lg:hidden z-[999] flex flex-col bg-white drop-shadow-2xl border-l border-gray-200/50 animate-slide-in-right">
-            {/* Header with close button */}
-            <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200/50 shrink-0">
-              <div className="flex items-center gap-3" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}>
-                <Logo />
-              </div>
-              <button className="flex items-center justify-center w-10 h-10 rounded-xl text-neutral-600 hover:text-indigo-600 hover:bg-indigo-500/10 transition-all duration-300 group" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Close menu">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="transition-transform duration-300 group-hover:rotate-90">
-                  <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Menu content */}
-            <div className="flex flex-1 flex-col overflow-y-auto">
-              {/* Navigation items */}
-              <nav className="px-6 py-6 space-y-2">
-                <Link href="/features" onClick={(e) => handleAnchorClick(e, null)} aria-label="Features - Navbar" aria-current={isActive("/features") ? "page" : undefined} className={`group flex items-center gap-3 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 relative overflow-hidden ${isActive("/features") ? "text-indigo-600 bg-gradient-to-r from-indigo-50 to-blue-50" : "text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50"}`} style={{ animationDelay: "0ms" }}>
-                  <span className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-blue-500 transform transition-transform duration-300 origin-center ${isActive("/features") ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100"}`}></span>
-                  <span className={`relative z-10 transition-all duration-300 ${isActive("/features") ? "translate-x-2" : "group-hover:translate-x-2"}`}>Features</span>
-                  <svg className="ml-auto w-5 h-5 text-neutral-400 group-hover:text-indigo-600 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link href="/contact-us" onClick={(e) => handleAnchorClick(e, null)} aria-label="Support - Navbar" aria-current={isActive("/contact-us") ? "page" : undefined} className={`group flex items-center gap-3 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 relative overflow-hidden ${isActive("/contact-us") ? "text-indigo-600 bg-gradient-to-r from-indigo-50 to-blue-50" : "text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50"}`} style={{ animationDelay: "50ms" }}>
-                  <span className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-blue-500 transform transition-transform duration-300 origin-center ${isActive("/contact-us") ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100"}`}></span>
-                  <span className={`relative z-10 transition-all duration-300 ${isActive("/contact-us") ? "translate-x-2" : "group-hover:translate-x-2"}`}>Support</span>
-                  <svg className="ml-auto w-5 h-5 text-neutral-400 group-hover:text-indigo-600 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link href="/pricing" onClick={(e) => handleAnchorClick(e, null)} aria-label="Pricing - Navbar" aria-current={isActive("/pricing") ? "page" : undefined} className={`group flex items-center gap-3 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 relative overflow-hidden ${isActive("/pricing") ? "text-indigo-600 bg-gradient-to-r from-indigo-50 to-blue-50" : "text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50"}`} style={{ animationDelay: "100ms" }}>
-                  <span className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-blue-500 transform transition-transform duration-300 origin-center ${isActive("/pricing") ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100"}`}></span>
-                  <span className={`relative z-10 transition-all duration-300 ${isActive("/pricing") ? "translate-x-2" : "group-hover:translate-x-2"}`}>Pricing</span>
-                  <svg className="ml-auto w-5 h-5 text-neutral-400 group-hover:text-indigo-600 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
                 <button
                   type="button"
-                  onClick={() => setMobileSolutionsOpen((v) => !v)}
+                  aria-expanded={desktopSolutionsOpen}
                   aria-current={isActive("/solutions") ? "page" : undefined}
-                  className={`group flex items-center gap-3 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 relative overflow-hidden w-full ${isActive("/solutions") ? "text-indigo-600 bg-gradient-to-r from-indigo-50 to-blue-50" : "text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50"}`}
-                  style={{ animationDelay: "125ms" }}
+                  className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative inline-flex items-center gap-1 cursor-pointer flex items-center h-full ${isActive("/solutions") ? "text-indigo-600" : ""}`}
+                  onClick={() => setDesktopSolutionsOpen((v) => !v)}
                 >
-                  <span className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-blue-500 transform transition-transform duration-300 origin-center ${isActive("/solutions") ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100"}`}></span>
-                  <span className={`relative z-10 transition-all duration-300 ${isActive("/solutions") ? "translate-x-2" : "group-hover:translate-x-2"}`}>Solutions</span>
-                  <svg className={`ml-auto w-5 h-5 text-neutral-400 group-hover:text-indigo-600 transition-all duration-300 ${mobileSolutionsOpen ? "rotate-90" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  Solutions
+                  <svg className={`w-4 h-4 transition-transform duration-200 ${desktopSolutionsOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${desktopSolutionsOpen || isActive("/solutions") ? "w-full" : "w-0"}`}></span>
                 </button>
-                {mobileSolutionsOpen && (
-                  <div className="space-y-1">
-                    <div className="mb-2 pb-2">
-                      <Link className="text-[12px] font-bold tracking-wider text-zinc-600 hover:text-indigo-600" href="/solutions" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}>View all Solutions</Link>
+                <div className="absolute left-1/2 top-full w-[400px] -translate-x-1/2">
+                  <div className={`${desktopSolutionsOpen ? "block pointer-events-auto opacity-100 translate-y-0" : "hidden pointer-events-none opacity-0 translate-y-2"} transition-all duration-200 rounded-2xl bg-white/95 backdrop-blur border border-gray-200 drop-shadow-[0_16px_40px_rgba(15,23,42,0.12)] p-3`}>
+                    <div className="mb-3 border-b border-[#e0dbd2] pb-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-400">Solutions</div>
+                        <Link className="text-[12px] font-bold tracking-wider text-zinc-600 hover:text-indigo-600" href="/solutions">VIEW ALL</Link>
+                      </div>
+                      <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Explore industry-specific scheduling pages</div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
-                      <Link href="/solutions/doctor-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Doctor appointment Software - Navbar" aria-current={isActive("/solutions/doctor-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/doctor-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Doctor</Link>
+                    <div className="grid grid-cols-2 gap-1">
+                      <Link href="/solutions/doctor-appointment-scheduling-software" aria-label="Doctor appointment Software - Navbar" aria-current={isActive("/solutions/doctor-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/doctor-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                        <span className="leading-5">Doctor</span>
+                      </Link>
 
-                      <Link href="/solutions/dentist-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dentist-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/dentist-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Dentist</Link>
+                      <Link href="/solutions/dentist-appointment-scheduling-software" aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dentist-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/dentist-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                        <span className="leading-5">Dentist</span>
+                      </Link>
 
-                      <Link href="/solutions/dermatology-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Dentist appointment Software - Navbar" aria-current={isActive("/solutions/dermatology-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/dermatology-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Dermatology</Link>
+                      <Link href="/solutions/dermatology-appointment-scheduling-software" aria-label="Dermatology appointment Software - Navbar" aria-current={isActive("/solutions/dermatology-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/dermatology-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                        <span className="leading-5">Dermatology</span>
+                      </Link>
 
-                      <Link href="/solutions/physiotherapist-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Physiotherapist appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Physiotherapist</Link>
+                      <Link href="/solutions/physiotherapist-appointment-booking-software" aria-label="Physiotherapy appointment Software - Navbar" aria-current={isActive("/solutions/physiotherapist-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/physiotherapist-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                        <span className="leading-5">Physiotherapy</span>
+                      </Link>
 
-                      <Link href="/solutions/salon-appointment-scheduling-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Salon</Link>
+                      <Link href="/solutions/salon-appointment-scheduling-software" aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/salon-appointment-scheduling-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/salon-appointment-scheduling-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                        <span className="leading-5">Salon</span>
+                      </Link>
 
-                      <Link href="/solutions/tutor-appointment-booking-software" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }} aria-label="Salon appointment Software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`block rounded-lg px-3 py-2 text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-600 font-semibold" : "text-neutral-600 hover:bg-indigo-50 hover:text-indigo-600"}`}>Tutor</Link>
+                      <Link href="/solutions/tutor-appointment-booking-software" aria-label="Tutor appointment booking software - Navbar" aria-current={isActive("/solutions/tutor-appointment-booking-software") ? "page" : undefined} className={`flex items-start gap-3 px-3 py-2.5 rounded-xl text-sm transition-all ${isActive("/solutions/tutor-appointment-booking-software") ? "bg-indigo-50 text-indigo-700 font-semibold" : "text-neutral-700 hover:bg-indigo-50 hover:text-indigo-700"}`}>
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+                        <span className="leading-5">Tutor</span>
+                      </Link>
                     </div>
                   </div>
-                )}
-                <Link href={`${BASE_URL}/blog`} onClick={(e) => handleAnchorClick(e, null)} aria-label="Blog - Navbar" aria-current={isActive("/blog") ? "page" : undefined} className={`group flex items-center gap-3 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 relative overflow-hidden ${isActive("/blog") ? "text-indigo-600 bg-gradient-to-r from-indigo-50 to-blue-50" : "text-neutral-700 hover:text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50"}`} style={{ animationDelay: "150ms" }}>
-                  <span className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-blue-500 transform transition-transform duration-300 origin-center ${isActive("/blog") ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100"}`}></span>
-                  <span className={`relative z-10 transition-all duration-300 ${isActive("/blog") ? "translate-x-2" : "group-hover:translate-x-2"}`}>Blog</span>
-                  <svg className="ml-auto w-5 h-5 text-neutral-400 group-hover:text-indigo-600 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </nav>
-
-              {/* Divider */}
-              <div className="px-6 py-2">
-                <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-              </div>
-
-              {/* Social Links */}
-              <div className="px-6 py-4">
-                <div className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">Follow Us</div>
-                <div className="flex items-center gap-4">
-                {socialLinks.map((item) => (
-                  <a key={item.link} href={item.link} target="_blank" rel="noopener noreferrer" aria-label={item.ariaLabel} className="text-gray-700 hover:text-indigo-800" dangerouslySetInnerHTML={{ __html: item.icon }}/>
-                ))}
                 </div>
               </div>
+              <Link href={`${BASE_URL}/blog`} onClick={(e) => handleAnchorClick(e, null)} aria-label="Blog - Navbar" aria-current={isActive("/blog") ? "page" : undefined} className={`text-sm font-medium hover:text-indigo-600 transition-all duration-200 relative group flex items-center ${isActive("/blog") ? "text-indigo-600" : ""}`}>
+                Blog
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-secondary-500 transition-all duration-300 ${isActive("/blog") ? "w-full" : "w-0 group-hover:w-full"}`}></span>
+              </Link>
+            </nav>
 
-              {/* Divider */}
-              <div className="px-6 py-2">
-                <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
-              </div>
+            <div className="flex md:hidden lg:flex items-center justify-between gap-4">
+              <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Sign In - Navbar" className="hidden sm:block text-sm text-indigo-600 cursor-pointer px-5 py-2.5 rounded-xl bg-indigo-500/10">Sign In</Link>
+              <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Sign Up - Navbar" className="rounded-xl bg-indigo-600 text-white sm:text-sm text-xs px-3 py-2 sm:px-5 sm:py-2.5">Start Free</Link>
+            </div>
 
-              {/* Action buttons */}
-              <div className="px-6 py-6 space-y-3 mt-auto">
-                <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Sign In - Navbar Mobile" className="flex items-center justify-center w-full px-5 py-2.5 rounded-xl text-sm text-indigo-600 bg-indigo-50" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}>Sign In</Link>
-                <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Sign Up - Navbar Mobile" className="flex items-center justify-center w-full px-5 py-2.5 rounded-xl text-sm text-white bg-gradient-to-r from-indigo-600 to-blue-600" onClick={() => { setOpen(false); setMobileSolutionsOpen(false); }}>Sign up</Link>
-              </div>
+          </div>
+        </div>
+    </header>
+
+      {/* Mobile bottom nav — outside header so shadow/fixed pos. doesn't create page scroll */}
+      <div className="fixed block inset-x-0 bottom-0 z-[999] max-w-[100vw] overflow-hidden bg-white px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_-4px_16px_rgba(15,23,42,0.12)] md:hidden">
+        {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-slate-900/[0.06] to-transparent" aria-hidden /> */}
+            {/* Menu content */}
+            <div className="relative">
+              {/* Navigation items */}
+              <nav className="flex justify-between gap-2">
+                <Link href="/" onClick={(e) => handleAnchorClick(e, null)} aria-label="Home - Navbar" aria-current={isActive("/") ? "page" : undefined} className={`group text-center rounded-xl text-xs relative ${isActive("/") ? "text-indigo-600" : "text-neutral-700"}`}>
+                  <span className="mx-auto text-center flex justify-center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+                  <span className="relative z-10">Home</span>
+                </Link>
+                <Link href="/solutions" onClick={(e) => handleAnchorClick(e, null)} aria-label="solutions - Navbar" aria-current={isActive("/solutions") ? "page" : undefined} className={`group text-center rounded-xl text-xs relative ${isActive("/solutions") ? "text-indigo-600" : "text-neutral-700"}`} style={{ animationDelay: "100ms" }}>
+                  <span className="mx-auto text-center flex justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span>
+                  <span className="relative z-10">Solutions</span>
+                </Link>                   
+                <Link href="/pricing" onClick={(e) => handleAnchorClick(e, null)} aria-label="Pricing - Navbar" aria-current={isActive("/pricing") ? "page" : undefined} className={`group text-center rounded-xl text-xs relative ${isActive("/pricing") ? "text-indigo-600" : "text-neutral-700"}`} style={{ animationDelay: "100ms" }}>
+                  <span className="mx-auto text-center flex justify-center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>
+                  <span className="relative z-10">Pricing</span>
+                </Link>   
+                <Link href="/contact-us" onClick={(e) => handleAnchorClick(e, null)} aria-label="Support - Navbar" aria-current={isActive("/contact-us") ? "page" : undefined} className={`group text-center rounded-xl text-xs relative ${isActive("/contact-us") ? "text-indigo-600" : "text-neutral-700 "}`}>
+                  <span className="mx-auto text-center flex justify-center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg></span>
+                  <span className="relative z-10">Support</span>
+                </Link>          
+                <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Sign In - Navbar" className="group text-center rounded-xl text-xs relative">
+                <span className="mx-auto text-center flex justify-center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                <span className="relative z-10">Sign in</span>
+                </Link>
+              </nav>
             </div>
           </div>
-        </>,
-        document.body
-      )}
-    </header>
+    </>
   );
 };

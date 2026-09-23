@@ -210,7 +210,7 @@ export default function BlogPage() {
       <Script id="blog-page-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData, null, 2) }}/>
 
       <section className="relative py-12">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 hidden sm:block">
           <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-400/20 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-300/15 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
         </div>
@@ -223,14 +223,14 @@ export default function BlogPage() {
               highlightText="Smarter Scheduling"
               description="Discover expert tips, industry best practices, and the latest insights to help you streamline your appointment management and grow your business."
               headingTag="h1"
-              titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+              titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
             />
           </div>
         </div>
       </section>
 
       {/* Blog List Section */}
-      <section className="relative py-14 sm:pb-20">
+      <section className="relative pb-14 sm:pb-20">
         <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
           <Suspense fallback={<BlogListSkeleton />}>
             <BlogList posts={blogPosts} postsPerPage={6} />
@@ -249,17 +249,17 @@ export default function BlogPage() {
                     badge="Built for Modern Business"
                     title="Ready for GetSetTime To Manage Your Appointments"
                     description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                    titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
+                    titleClassName="text-2xl sm:text-3xl font-bold text-white md:text-4xl lg:text-[40px]"
                     descriptionClassName = "text-white"
                   />
                   
                   <div className="mt-8">
-                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Blog" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Get Started</Link>
+                    <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Blog" className="rounded-xl bg-white px-4 py-3 text-sm text-indigo-600 transition">Get Started</Link>
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3 text-white">
                     {['Online booking', 'Auto reminders', 'Team calendar'].map((item) => (
-                      <span key={item}>✔ {item}</span>
+                      <span key={item} className="text-white flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {item}</span>
                     ))}
                   </div>
                 </div>

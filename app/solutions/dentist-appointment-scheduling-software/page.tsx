@@ -8,6 +8,7 @@ import Card from "@/app/component/Card";
 import Heading from "@/app/component/Heading";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/solutions/dentist-appointment-scheduling-software`;
 
@@ -265,28 +266,30 @@ return (
                 {/* Left column - Content */}
                 <div className="space-y-6">
                     <Heading
-                        badge="Expand Your Practice"
-                        title="Manage Dental Appointments with"
-                        highlightText="Smart Dentist Scheduling Software"
+                        badge="Expand Your Practise"
+                        title="Let's Manage Your Appointments Booking With the"
+                        highlightText="Best Dentist Scheduling Software"
                         description="GetSetTime helps dentists automate bookings, reduce no-shows, and free up front-desk time — so your team can focus on patients, not phone calls."
                         headingTag="h1"
-                        titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
+                        titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center gap-3">
-                            <svg width="26" height="28" viewBox="0 0 48 48" className="inline-block rounded-sm bg-white p-1">
-                                <g>
-                                    <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
-                                    <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
-                                    <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
-                                    <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
-                                </g>
+
+                    <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
+                        <Link href={`${REGISTER_GOOGLE_URL}`} target="_blank" aria-label="Sign up with Google" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
+                            <svg viewBox="0 0 48 48" className="w-5 h-5 sm:w-6 sm:h-6 inline-block rounded-sm bg-white p-1">
+                            <g>
+                                <path fill="#4285F4" d="M43.6 20.5H42V20.4H24v7.2h11.2C33.9 32.1 29.4 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20c11 0 20-8.9 20-20 0-1.3-.1-2.7-.4-4z"/>
+                                <path fill="#34A853" d="M6.3 14.1l5.9 4.3C14.2 15.1 18.7 12 24 12c2.6 0 5 .9 6.9 2.5l5.8-5.8C33.5 7.1 28.9 5 24 5c-7.1 0-13.1 4.1-16.1 10.1z"/>
+                                <path fill="#FBBC05" d="M24 44c5.3 0 10.1-1.8 13.8-4.9l-6.4-5.2C29.5 35.7 26.9 36.7 24 36.7c-5.4 0-9.9-3.6-11.5-8.5l-6.1 4.7C7 39.1 14.9 44 24 44z"/>
+                                <path fill="#EA4335" d="M43.6 20.5H42V20.4H24v7.2h11.2c-1.1 3.1-3.6 5.7-6.6 7.1l6.4 5.2C39.9 37.1 44 31.9 44 25c0-1.3-.1-2.7-.4-4z"/>
+                            </g>
                             </svg>
                             Sign up with Google
                         </Link>
-                        <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Dentist Appointment Scheduling Software" className="bg-gray-900 text-white text-sm px-4 py-2.5 rounded-xl flex items-center justify-center">Get Started for Free</Link>
+                        <Link href={`${REGISTER_URL}`} aria-label="Contact Us - Dentist Appointment Scheduling Software" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-4 py-3 text-sm text-white drop-shadow-lg transition">Get Started for Free</Link>
                     </div>
                     
+                    <ScreenGate minWidth={768}>
                     <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                       <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
                           <div className="flex items-center gap-2">
@@ -333,30 +336,33 @@ return (
                           <div className="text-xs text-neutral-500">Average feedback from patients</div>
                       </div>
                     </div>
-
+                    </ScreenGate>
                 </div>
 
                 {/* Right column - Interactive Demo */}
                 <div className="relative space-y-4 animate-fade-in-scale">
+                    <ScreenGate minWidth={768}>
                     <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
                         <div className="rounded-2xl overflow-hidden drop-shadow-lg">
                             <Image src="/dentist-appointment.webp" className="h-64 w-full object-cover" alt="Dental Clinic Dashboard" width={500} height={500} />
                         </div>
-                        <div className="rounded-2xl overflow-hidden hidden md:block drop-shadow-lg">
+                        <div className="rounded-2xl overflow-hidden drop-shadow-lg">
                             <Image src="/dentist-booking.webp" className="h-64 w-full object-cover" alt="Dental Clinic Bookings" width={500} height={500} />
                         </div>
                     </div>
+                    </ScreenGate>
 
                     <div className="relative">
-                        <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-2xl">
+                        <div className="relative overflow-hidden rounded-2xl border border-neutral-200/80 bg-white drop-shadow-xl">
 
                             <div className="relative bg-gradient-to-br from-white via-indigo-50/30 to-white p-3 sm:p-4">
                                 {/* Decorative dotted backdrop */}
                                 <div className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:radial-gradient(rgba(99,102,241,0.12)_1px,transparent_1px)] [background-size:16px_16px]" aria-hidden />
                                 <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-400/10 blur-3xl" aria-hidden />
 
+                                <ScreenGate minWidth={640}>
                                 {/* KPI strip */}
-                                <div className="relative mb-4 grid grid-cols-1 gap-2 min-[420px]:grid-cols-2 sm:grid-cols-3 sm:gap-2.5">
+                                <div className="relative mb-4 grid grid-cols-1 gap-2 min-[420px]:grid-cols-3 sm:grid-cols-3 sm:gap-2.5">
                                     {[
                                         { label: "Appointments", value: "24", trend: "+9%", accent: "text-indigo-600", iconBg: "bg-indigo-600", bg: "from-indigo-50 to-white", ring: "ring-indigo-100", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
                                         { label: "Confirmed", value: "21", trend: "+6%", accent: "text-emerald-600", iconBg: "bg-emerald-600", bg: "from-emerald-50 to-white", ring: "ring-emerald-100", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
@@ -372,14 +378,15 @@ return (
                                                     {kpi.trend}
                                                 </span>
                                             </div>
-                                            <div className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">{kpi.label}</div>
+                                            <div className="mt-1.5 text-xs tracking-wide text-neutral-500">{kpi.label}</div>
                                             <div className={`text-lg font-bold tabular-nums sm:text-xl ${kpi.accent}`}>{kpi.value}</div>
                                         </div>
                                     ))}
                                 </div>
+                                </ScreenGate>
 
                                 <div className="relative grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
-                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
+                                    <div className="space-y-3 rounded-xl md:border border-neutral-100 md:bg-white md:p-4 md:drop-shadow-sm">
                                         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                             <svg className="h-4 w-4 text-emerald-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             Upcoming
@@ -397,13 +404,13 @@ return (
                                                     <div className="truncate text-sm font-semibold text-neutral-900">{service}</div>
                                                     <div className="truncate text-xs text-neutral-500">{patient}</div>
                                                 </div>
-                                                <span className="ml-auto shrink-0 rounded-full bg-white px-2 py-1 text-[10px] font-bold text-emerald-600 ring-1 ring-emerald-100 sm:ml-0">{time}</span>
+                                                <span className="ml-auto shrink-0 rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-600 border border-emerald-200">{time}</span>
                                             </div>
                                             ))}
                                         </div>
                                     </div>
 
-                                    <div className="space-y-3 rounded-xl border border-neutral-100 bg-white p-3 sm:p-4 drop-shadow-sm">
+                                    <div className="space-y-3 rounded-xl md:border border-neutral-100 md:bg-white md:p-4 md:drop-shadow-sm">
                                         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
                                             <svg className="h-4 w-4 text-indigo-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                                             Clinic Staff
@@ -422,10 +429,10 @@ return (
                                                         <div className="truncate text-xs text-neutral-500">{role}</div>
                                                     </div>
                                                     <span
-                                                        className={`ml-auto inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold sm:ml-0 ${
+                                                        className={`ml-auto inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold border ${
                                                         status === "Available"
-                                                            ? "bg-emerald-50 text-emerald-600"
-                                                            : "bg-amber-50 text-amber-600"
+                                                            ? "bg-emerald-50 text-emerald-600 border-emerald-200"
+                                                            : "bg-amber-50 text-amber-600 border-amber-200"
                                                         }`}
                                                     >
                                                         {status}
@@ -436,11 +443,11 @@ return (
                                     </div>
                                 </div>
 
-                                <div className="relative mt-4 flex items-start gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-3 sm:items-center sm:px-4">
+                                <div className="relative mt-4 flex items-center gap-3 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-3 sm:items-center sm:px-4">
                                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-600 text-white">
                                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
                                     </span>
-                                    <div className="text-xs font-medium leading-relaxed text-indigo-700 sm:text-sm">
+                                    <div className="font-medium text-indigo-700 text-sm">
                                         WhatsApp reminders sent to <span className="font-bold">12 patients</span> for tomorrow&apos;s visits.
                                     </div>
                                 </div>
@@ -453,10 +460,7 @@ return (
     </section>
 
     {/* FEATURES SECTION */}
-    <section className="relative py-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
-        <div className="absolute top-10 left-10 hidden sm:block w-72 h-72 bg-indigo-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 hidden sm:block w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
-    
+    <section className="relative pb-14 sm:py-20 bg-gradient-to-b from-white to-indigo-50 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Heading
               badge="Features"
@@ -478,6 +482,7 @@ return (
             <div className="absolute left-10 top-16 h-72 w-72 rounded-full bg-violet-300/20 blur-3xl" />
             <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl" />
         </div>
+
         <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-10 lg:grid-cols-2">
                 {/* Left column - Content */}
@@ -501,14 +506,13 @@ return (
                     </div>
                 </div>
                 {/* Right column - Interactive Demo */}
-                <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-4 drop-shadow-xl">
-                    <div className="rounded-2xl bg-[#f5f6fb] text-neutral-900 p-4">
+                <div className="rounded-2xl bg-white drop-shadow-xl">
+                    <div className="rounded-2xl text-neutral-900 p-4">
                         <div className="grid gap-4 sm:grid-cols-2">
-                            <div className="order-2 sm:order-2 rounded-2xl bg-white p-4 drop-shadow-sm">
-                                <div className="text-xl hidden sm:block font-black text-neutral-900">Dental Clinic</div>
+                            <div className="order-2 sm:order-2 rounded-2xl">
 
-                                <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1">
-                                    <div className="rounded-2xl hidden sm:block bg-white p-4 mt-3 drop-shadow-sm">
+                                <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 space-y-3">
+                                    <div className="rounded-2xl hidden sm:block bg-white p-4 drop-shadow-sm">
                                         <div className="font-medium text-neutral-800">Appointments growing smoothly</div>
                                         <div className="mt-3 flex items-end gap-2">
                                             {["h-8","h-12","h-10","h-16","h-14","h-9","h-11","h-16"].map((bar, idx) => (
@@ -517,7 +521,7 @@ return (
                                         </div>
                                     </div>
 
-                                    <div className="mt-4 rounded-2xl bg-indigo-600 p-4 text-white drop-shadow-lg">
+                                    <div className="rounded-2xl bg-indigo-600 p-4 text-white drop-shadow-lg">
                                         <div className="opacity-90">Next appointment</div>
                                         <div className="mt-1 font-semibold">Emma Wilson · 11:00 AM</div>
                                         <div className="opacity-90">Dental Checkup · Room 2</div>
@@ -537,14 +541,14 @@ return (
                             </div>
 
                             <div className="order-1 sm:order-1 space-y-3">
-                                <div className="rounded-xl border border-neutral-100 bg-white drop-shadow-sm p-3 space-y-1">
+                                <div className="flex flex-row sm:flex-col items-center sm:items-start gap-2 rounded-xl border border-neutral-100 bg-white drop-shadow-sm p-3 space-y-1">
                                     <div className="relative">
                                         <Image
                                         src="/dentist-profile.webp"
                                         alt="Dental Clinic Profile"
-                                        className="relative h-16 w-16 rounded-full border-4 border-white object-cover drop-shadow-md"
-                                        width={64}
-                                        height={64}
+                                        className="relative min-h-14 min-w-14 rounded-full border-4 border-white object-cover drop-shadow-md"
+                                        width={50}
+                                        height={50}
                                         priority
                                         />
                                     </div>
@@ -554,9 +558,9 @@ return (
                                     </div>
                                 </div>
 
-                                <div className="rounded-2xl bg-white p-4 drop-shadow-sm">                                    
-                                    <div className="mt-3">
-                                        <div className="uppercase text-sm text-neutral-500">Dental Clinic services</div>
+                                <div className="rounded-2xl bg-white md:p-4 md:drop-shadow-sm space-y-3">                                    
+                                    <div>
+                                        <div className="font-semibold text-neutral-900">Dental Clinic services</div>
                                         <div className="mt-2 flex flex-wrap gap-2">
                                             {["Dental Checkup", "Dental Cleaning", "Dental Filling", "Dental Extraction"].map((service, idx) => (
                                                 <span
@@ -572,10 +576,10 @@ return (
                                             ))}
                                         </div>
                                     </div>
-                                    <div className="mt-3">
-                                        <div className="font-semibold text-neutral-900">Availability</div>
-                                    </div>
-                                    <div className="mt-3 grid grid-cols-3 gap-2 text-sm">
+
+                                    <div className="font-semibold text-neutral-900">Availability</div>
+                                    
+                                    <div className="grid grid-cols-3 gap-2 text-sm">
                                         {[
                                             { time: "09:00", active: false },
                                             { time: "09:30", active: false },
@@ -583,9 +587,7 @@ return (
                                             { time: "10:30", active: false },
                                             { time: "11:00", active: true },
                                             { time: "11:30", active: false },
-                                            { time: "12:00", active: false },
-                                            { time: "04:00", active: false },
-                                            { time: "04:30", active: false },
+                                            
                                         ].map((slot) => (
                                             <div key={slot.time} className={`rounded-xl border px-2 py-2 text-xs text-center font-semibold ${
                                                     slot.active
@@ -666,9 +668,32 @@ return (
                 <CheckListItem key={point} text={point} />
               ))}
             </div>
+
+            <div className="relative">
+                <h3 className="text-lg font-bold text-neutral-900">Supports Every Type of Dental Clinic Appointment</h3>
+                <div className="mt-2 flex flex-wrap gap-3">
+                    {[
+                    "Initial Consultation",
+                    "Assessment & Evaluation",
+                    "Treatment Session",
+                    "Follow-up Appointment",
+                    "Rehabilitation Program",
+                    ].map((tag) => (
+                    <span key={tag} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1 text-xs text-neutral-700 drop-shadow-sm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> 
+                        {tag}
+                    </span>
+                    ))}
+                </div>
+                <div className="mt-4">
+                    <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your dental clinic booking setup - Dentist Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-3 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
+                </div>
+            </div>
+
           </div>
           {/* Right */}
-          <div className="relative rounded-xl border border-white/70 bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
+          <div className="relative rounded-xl bg-white/90 p-4 drop-shadow-2xl backdrop-blur">
+            <ScreenGate minWidth={768}>
             <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
               <div className="relative overflow-hidden rounded-2xl hidden sm:block border border-neutral-200 bg-white p-3 drop-shadow-sm">
                 <div className="flex items-center gap-2 text-neutral-700 font-semibold">
@@ -704,7 +729,9 @@ return (
                 <div className="absolute left-2 top-2 rounded-md bg-indigo-600/90 px-2 py-1 text-xs uppercase tracking-widest text-white">Smart slots</div>
               </div>
             </div>
-            <div className="mt-4 flex items-center justify-between">
+            </ScreenGate>
+
+            <div className="md:mt-4 flex flex-wrap items-center justify-between">
               <div className="font-semibold text-neutral-900">Dental Clinic Operations Board</div>
               <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">Live Overview</span>
             </div>
@@ -728,29 +755,11 @@ return (
             </div>
           </div>
         </div>
-
-        <div className="mt-8 rounded-xl border border-white/70 bg-white/90 p-5 drop-shadow-xl backdrop-blur">
-          <h3 className="text-2xl font-bold text-center text-neutral-900">Supports Every Type of Dental Clinic Appointment</h3>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            {[
-              "Initial Consultation",
-              "Assessment & Evaluation",
-              "Treatment Session",
-              "Follow-up Appointment",
-              "Rehabilitation Program",
-            ].map((tag) => (
-              <span key={tag} className="px-3 py-1.5 flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> {tag}</span>
-            ))}
-          </div>
-          <div className="mt-5 text-center">
-            <Link href={`${REGISTER_URL}`} target="_blank" aria-label="Start your dental clinic booking setup - Dentist Appointment Scheduling Software" className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-5 py-2.5 text-white drop-shadow-md transition hover:bg-indigo-700">Sign Up for Free</Link>
-          </div>
-        </div>
       </div>
     </section>
 
     {/* DENTAL CLINIC GROWTH ROADMAP SECTION */}
-    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-violet-100 py-20">
+    <section className="relative overflow-hidden md:bg-gradient-to-br from-indigo-50 via-white to-violet-100 py-14 sm:py-20">
         
         <div className="pointer-events-none hidden lg:block absolute inset-0">
             <div className="absolute -left-16 top-8 h-72 w-72 rounded-full bg-indigo-400/25 blur-3xl" />
@@ -767,7 +776,7 @@ return (
                 />
                 {growthRoadmap.map((point, i) => (
                     <div key={i} className="relative overflow-hidden rounded-xl bg-white p-4 drop-shadow-md transition-all duration-300 hover:-translate-y-1 hover:drop-shadow-xl">
-                        <div className="flex items-start gap-2">
+                        <div className="flex flex-col sm:flex-row items-start gap-2">
                             <div className="flex h-12 w-12 min-w-12 min-h-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white drop-shadow-lg drop-shadow-indigo-500/25">
                                 <div className="font-bold">0{i + 1}</div>
                             </div>
@@ -779,7 +788,7 @@ return (
                     </div>
                 ))}
             </div>
-
+            <ScreenGate minWidth={768}>
             {/* RIGHT FEATURES GRID */}
             <div className="relative rounded-2xl drop-shadow-xl bg-white p-3">                
                 <Image src="/dentist-grow-2.1.webp" alt="Dental Clinic Growth Roadmap" width={700} height={600} className="w-full h-full rounded-xl object-cover"/>
@@ -805,6 +814,7 @@ return (
                     <div className="text-neutral-600">Synced to Dentist Clinic Operations Board</div>
                 </div>
             </div>
+            </ScreenGate>
         </div>
     </section>
 
@@ -825,8 +835,8 @@ return (
                   title="Questions Dental Clinic Owners Ask Before Getting Started"
                   description="GetSetTime is built for dental clinic owners who want to grow their business online. We answer the most common questions dental clinic owners have about our platform."
                 />
-                
-                <div className="hidden sm:grid gap-4 sm:grid-cols-2  mt-6">
+                <ScreenGate minWidth={768}>
+                <div className="grid gap-4 sm:grid-cols-2  mt-6">
                     <Card title="Smart scheduling" description="Highlight automation, reminders, and live availability." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
                     <Card title="Build trust" description="Reduce friction with short supportive answers and better clarity." icon={<svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
@@ -835,7 +845,9 @@ return (
                     
                     <Card title="Easy growth" description="Scale bookings smoothly with structured workflows and clear next steps." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
                 </div>
+                </ScreenGate>
             </div>
+
             {/* right: FAQ Section */}
             <div>
                 <FaqSection items={faqItems} />

@@ -9,6 +9,7 @@ import Features from "./component/Features";
 import Heading from "./component/Heading";
 import HeroBanner from "./component/HeroBanner";
 import InteractiveCalendar from "./component/InteractiveCalendar";
+import ScreenGate from "./component/ScreenGate";
 import Pricing from "./component/Pricing";
 import Support from "./component/Support";
 import TrustedCompanies from "./component/TrustedCompanies";
@@ -263,7 +264,10 @@ export default function Home() {
 
       <TrustedCompanies />
 
-      <Features />
+      <ScreenGate minWidth={768}>
+        <Features />
+      </ScreenGate>
+      
 
       <section className="relative overflow-hidden bg-[#f5f7ff] py-14 sm:py-20">
         
@@ -299,7 +303,7 @@ export default function Home() {
                 <div className="relative w-full">
                   <div className="absolute left-4 top-6 h-48 w-48 rounded-full bg-indigo-600/30 blur-3xl sm:left-10 sm:top-10 sm:h-64 sm:w-64 lg:h-72 lg:w-72" />
 
-                  <div className="relative rounded-2xl z-2 sm:bg-white/80 sm:p-4 drop-shadow-xl">
+                  <div className="relative rounded-2xl z-2 sm:bg-white/80 sm:p-4 shadow-xl">
                     <div className="overflow-hidden rounded-2xl border border-neutral-200 drop-shadow-inner">
                       <div className="flex items-center justify-between border-b border-neutral-200 bg-white px-4 py-3">
                         <div className="flex items-center gap-4">
@@ -314,46 +318,48 @@ export default function Home() {
                       </div>
 
                       <div className="space-y-4 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.08),_transparent_35%),linear-gradient(180deg,#f7f4ee_0%,#f4efe5_100%)] px-4 py-4 sm:px-6 sm:py-6">
-                        <div className="max-w-[88%] sm:max-w-[76%] rounded-[26px] rounded-tl-md bg-white px-4 py-3 text-sm text-neutral-700 drop-shadow-sm">
+                        <div className="w-fit rounded-2xl rounded-tl-md bg-white px-4 py-3 text-sm text-neutral-700 drop-shadow-sm">
                           <p>Hi Nora 👋</p>
                           <p>Your appointment is confirmed for <strong>Tomorrow at 4:00 PM.</strong></p>
                         </div>
-                        <div className="ml-auto max-w-[50%] rounded-[26px] rounded-tr-md bg-gradient-to-r from-emerald-500 to-green-500 px-4 py-3 text-white drop-shadow-sm">
+                        <div className="ml-auto w-fit rounded-2xl rounded-tr-md bg-gradient-to-r from-emerald-500 to-green-500 px-4 py-3 text-white drop-shadow-sm">
                           <p>Great, thank you.</p>
                         </div>
-                        <div className="max-w-[92%] sm:max-w-[82%] rounded-[26px] rounded-tl-md bg-white px-4 py-3 text-sm leading-8 text-neutral-600 drop-shadow-sm">
-                          <p>Reminder: Your booking starts in <strong>2 hours.</strong></p>
-                          <div className="mt-1 rounded-xl bg-neutral-100 p-2">
+                        <div className="w-fit rounded-2xl rounded-tl-md bg-white px-4 py-3 text-sm text-neutral-600 drop-shadow-sm">
+                          <p>Hi Nora, this is a reminder for your<br/> Consultation with Dr. Sharma <strong>Tomorrow at 4:00 PM</strong> <br/>Reply to confirm or reschedule.</p>
+                          {/* <div className="mt-1 rounded-xl bg-neutral-100 p-2">
                             <p className="text-sm text-neutral-600">Need to reschedule? Tap below</p>
                             <span className="inline-flex items-center rounded-md bg-white px-2 py-1 text-xs font-medium text-indigo-600 drop-shadow-sm">Manage booking</span>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <div className="absolute -left-0 lg:-left-5 -top-5 z-1 hidden lg:block rounded-full bg-gradient-to-br from-emerald-500 to-green-500 drop-shadow-xl p-4 animate-float">
-                    <svg width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="chat-alt-3" className="icon glyph " fill="#fff"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19.91,16.51A8.45,8.45,0,0,0,22,11c0-5-4.49-9-10-9S2,6,2,11s4.49,9,10,9a10.9,10.9,0,0,0,3-.41l4.59,2.3A.91.91,0,0,0,20,22a1,1,0,0,0,.62-.22,1,1,0,0,0,.35-1ZM8,12a1,1,0,1,1,1-1A1,1,0,0,1,8,12Zm4,0a1,1,0,1,1,1-1A1,1,0,0,1,12,12Zm4,0a1,1,0,1,1,1-1A1,1,0,0,1,16,12Z"></path></g></svg>
-                  </div>
-
-                  <div className="absolute right-5 -top-10 z-2 hidden lg:block rounded-xl bg-white px-4 py-4 drop-shadow-sm animate-float ">
-                    <div className="text-sm uppercase">No-show reduction</div>
-                    <div className="text-2xl font-bold text-neutral-900">32%</div>
-                    <p className="font-medium text-indigo-600">Reminder automation</p>
-                  </div>
-
-                  <div className="absolute -bottom-10 right-5 z-2 hidden lg:block rounded-xl bg-white px-4 py-4 drop-shadow-sm animate-float">
-                    <div className="text-sm uppercase">Delivery</div>
-                    <div className="text-2xl font-bold text-neutral-900">Instant</div>
-                    <p className="font-medium text-neutral-600">confirmation after booking</p>
-                  </div>
-
-                  <div className="absolute -left-0 lg:-left-6 bottom-45 z-2 hidden lg:block rounded-xl bg-white px-4 py-4 drop-shadow-sm animate-float">
-                    <div className="text-sm uppercase">Message status</div>
-                    <div className="mt-2 flex items-center gap-2">
-                      <div className="font-medium text-emerald-600">Delivered instantly</div>
+                  
+                  <ScreenGate minWidth={1024}>
+                    <div className="absolute -left-0 lg:-left-5 -top-5 z-1 rounded-full bg-gradient-to-br from-emerald-500 to-green-500 drop-shadow-xl p-4 animate-float">
+                      <svg width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="chat-alt-3" className="icon glyph " fill="#fff"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19.91,16.51A8.45,8.45,0,0,0,22,11c0-5-4.49-9-10-9S2,6,2,11s4.49,9,10,9a10.9,10.9,0,0,0,3-.41l4.59,2.3A.91.91,0,0,0,20,22a1,1,0,0,0,.62-.22,1,1,0,0,0,.35-1ZM8,12a1,1,0,1,1,1-1A1,1,0,0,1,8,12Zm4,0a1,1,0,1,1,1-1A1,1,0,0,1,12,12Zm4,0a1,1,0,1,1,1-1A1,1,0,0,1,16,12Z"></path></g></svg>
                     </div>
-                  </div>
+
+                    <div className="absolute right-5 -top-10 z-2 rounded-xl bg-white px-4 py-4 drop-shadow-sm animate-float ">
+                      <div className="text-sm uppercase">No-show reduction</div>
+                      <div className="text-2xl font-bold text-neutral-900">32%</div>
+                      <p className="font-medium text-indigo-600">Reminder automation</p>
+                    </div>
+
+                    <div className="absolute -bottom-10 right-5 z-2 rounded-xl bg-white px-4 py-4 drop-shadow-sm animate-float">
+                      <div className="text-sm uppercase">Delivery</div>
+                      <div className="text-2xl font-bold text-neutral-900">Instant</div>
+                      <p className="font-medium text-neutral-600">confirmation after booking</p>
+                    </div>
+
+                    <div className="absolute -left-0 lg:-left-6 bottom-45 z-2 rounded-xl bg-white px-4 py-4 drop-shadow-sm animate-float">
+                      <div className="text-sm uppercase">Message status</div>
+                      <div className="mt-2 flex items-center gap-2">
+                        <div className="font-medium text-emerald-600">Delivered instantly</div>
+                      </div>
+                    </div>
+                  </ScreenGate>
 
                 </div>
               </div>
@@ -361,7 +367,9 @@ export default function Home() {
         </div>
       </section>
 
-      <InteractiveCalendar />
+      <ScreenGate minWidth={768}>
+        <InteractiveCalendar />
+      </ScreenGate>
 
       <section className="relative py-14 sm:py-20">
         <div className="absolute w-full inset-0 bg-gradient-to-br from-transparent via-indigo-400/20 to-transparent pointer-events-none"></div>
@@ -402,7 +410,7 @@ export default function Home() {
                           PICK A DAY
                         </div>
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.25 sm:gap-2">
                         {[
                           { day: "Mon", date: "25", active: false },
                           { day: "Tue", date: "26", active: false },
@@ -414,7 +422,7 @@ export default function Home() {
                         ].map((item) => (
                           <span
                             key={`${item.day}-${item.date}`}
-                            className={`rounded-lg border px-1 py-2 text-center text-sm font-medium text-neutral-600 transition-all duration-200 sm:rounded-xl w-1/8 ${
+                            className={`rounded-lg border px-1 py-2 text-center text-xs font-medium text-neutral-600 transition-all duration-200 sm:rounded-xl w-1/8 ${
                               item.active
                                 ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
                                 : "border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
@@ -436,13 +444,11 @@ export default function Home() {
                         AVAILABLE TIMES
                       </div>
 
-                      <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+                      <div className="grid grid-cols-4 gap-2 sm:grid-cols-4 lg:grid-cols-4">
                         {[
                           "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM"
                         ].map((time) => (
-                          <span
-                            key={time}
-                            className={`rounded-xl border px-2 py-2 text-sm text-center font-medium text-neutral-600 transition-all duration-200 ${
+                          <span key={time} className={`rounded-xl border px-2 py-2 text-xs sm:text-sm text-center font-medium text-neutral-600 transition-all duration-200 ${
                               time === "12:00 PM"
                                 ? "border-indigo-500 bg-gradient-to-b from-indigo-500 to-indigo-600 text-white drop-shadow-md drop-shadow-indigo-300/60"
                                 : "border-neutral-200 bg-white text-neutral-700 hover:border-indigo-200 hover:bg-indigo-50"
@@ -456,7 +462,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="animate-float rounded-xl bg-white p-3 drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-xl w-50 hidden lg:block absolute -top-10 right-0 group-hover:-translate-y-1">
+              <ScreenGate minWidth={1024}>
+              <div className="animate-float rounded-xl bg-white p-3 drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-xl w-50 block absolute -top-10 right-0 group-hover:-translate-y-1">
                 <p className="mb-2 font-medium text-neutral-600 text-sm">Today&apos;s Queue</p>
                 <div className="space-y-2">
                   <div className="flex w-full items-center justify-between gap-2">
@@ -482,6 +489,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              </ScreenGate>
+
             </div>
           </div>
         </div>
@@ -507,16 +516,17 @@ export default function Home() {
               title="Feel Free To Ask About GetSetTime"
               description="We will be happy to answer your queries for Getsettime. Here, we have answered some common queries to help you learn about our appointment scheduling software."
             />
-            
-            <div className="grid gap-4 sm:grid-cols-2 mt-6 hidden sm:grid">
-              <Card title="Start Without Paying" description="No credit card required; terms and conditions apply." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+            <ScreenGate minWidth={768}>
+              <div className="grid gap-4 sm:grid-cols-2 mt-6 grid">
+                <Card title="Start Without Paying" description="No credit card required; terms and conditions apply." icon={<svg className="h-8 w-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
 
-              <Card title="Upgrade anytime" description="When you need to, you can upgrade your plan; as your team grows, bookings increase." icon={<svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
-              
-              <Card title="Work On Your Own Rules" description="You're free to set up your availability, create events, and customise reminders and notifications." icon={<svg className="h-8 w-8 text-fuchsia-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
-              
-              <Card title="No More Missed Bookings" description="You are available 24/7 for appointment bookings; your clients can book any time for upcoming visits, no calling needed." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
-            </div>
+                <Card title="Upgrade anytime" description="When you need to, you can upgrade your plan; as your team grows, bookings increase." icon={<svg className="h-7 w-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+                
+                <Card title="Work On Your Own Rules" description="You're free to set up your availability, create events, and customise reminders and notifications." icon={<svg className="h-8 w-8 text-fuchsia-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+                
+                <Card title="No More Missed Bookings" description="You are available 24/7 for appointment bookings; your clients can book any time for upcoming visits, no calling needed." icon={<svg fill="#00a63e" className="h-8 w-8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" stroke="#000000" strokeWidth="8.192"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m266.1,237.1h-82.2c-6.2,0-10.4,5.2-10.4,10.4v243c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 10.4-10.4v-243c0-6.2-5.2-10.4-10.4-10.4zm-10.4,243h-61.4v-222.1h61.4v222.1z"></path> <path d="M103.7,272.6H21.5c-6.2,0-10.4,5.2-10.4,10.4v207.6c0,6.3,5.2,10.4,10.4,10.4h82.2c5.2,0,10.4-4.2,10.4-10.4V283 C114.1,276.7,108.9,272.6,103.7,272.6z M93.3,480.1H31.9V293.4h61.4V480.1z"></path> <path d="m499.2,157.8l-103-142.9c-4.2-5.2-12.5-5.2-16.6,0l-103,142.9c-4.2,5.9-2.6,15.6 8.3,15.6h51v317.1c0,6.3 5.2,10.4 10.4,10.4h82.2c5.2,0 10.4-4.2 11.4-10.4v-317h51c10.2,0 12.4-10.4 8.3-15.7zm-70.8-5.2c-6.2,0-10.4,5.2-10.4,10.4v317.1h-61.4-1v-317.1c0-6.3-5.2-10.4-10.4-10.4h-41.6l83.2-114.7 83.2,114.7h-41.6z"></path> </g> </g> </g></svg>} iconWrapperClassName = "flex h-8 w-8 items-center justify-center" wrapperClassName = "relative" />
+              </div>
+            </ScreenGate>
 
           </div>
           {/* right: FAQ Section */}
@@ -537,12 +547,12 @@ export default function Home() {
                   badge="Built for Modern Business"
                   title="Ready for GetSetTime To Manage Your Appointments"
                   description="Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more."
-                  titleClassName="text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
+                  titleClassName="text-2xl sm:text-3xl font-bold text-white md:text-4xl lg:text-[40px] capitalize"
                   descriptionClassName = "text-white"
                 />
                 
                 <div className="mt-8">
-                  <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Home" className="rounded-xl bg-white px-4 py-2.5 text-sm text-indigo-600 transition">Sign Up for Free</Link>
+                  <Link href={`${LOGIN_URL}`} target="_blank" aria-label="Get Started - Home" className="rounded-xl bg-white px-4 py-3 text-sm text-indigo-600 transition">Sign Up for Free</Link>
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-3 text-white">
