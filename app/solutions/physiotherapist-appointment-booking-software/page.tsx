@@ -282,7 +282,7 @@ const growthRoadmap = [
         </div>
 
         <div className="relative mx-auto container px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-2 items-center gap-6">
             {/* Left column - Content */}
             <div className="space-y-6">
               <Heading

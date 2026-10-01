@@ -161,7 +161,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
             </div>
 
             <div className="relative z-10 container mx-auto min-w-0 px-4 sm:px-6 lg:px-8">
-                <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
+                <div className="grid items-center gap-8 sm:gap-10 xl:grid-cols-2 lg:gap-12">
                     {/* LEFT SIDE */}
                     <div className="relative min-w-0 space-y-5 sm:space-y-6">
                         <Heading
@@ -397,7 +397,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                                                     </div>
                                                     <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-1">
                                                         {["Materials ready", "Reminder sent", "No conflicts"].map((chip) => (
-                                                            <span key={chip} className="rounded-lg border border-white/15 bg-white/10 px-3 py-1 text-center text-xs font-medium leading-tight">{chip}</span>
+                                                            <span key={chip} className="rounded-lg border border-white/15 bg-white/10 px-1 py-1 text-center text-xs leading-tight">{chip}</span>
                                                         ))}
                                                     </div>
                                                     <span className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-xs font-bold text-indigo-700 shadow-sm">

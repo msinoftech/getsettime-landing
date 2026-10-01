@@ -344,7 +344,7 @@ export default function PricingPage() {
             <div className="absolute top-1/3 left-1/2 h-80 w-80 -translate-x-1/3 -translate-y-1/2 rounded-full bg-indigo-600/30 blur-3xl" />
           </div>
 
-          <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-6 lg:grid-cols-2 lg:gap-14">
+          <div className="relative z-10 mx-auto grid container px-4 sm:px-6 lg:px-8 items-center gap-6 xl:grid-cols-2 lg:gap-14">
             {/* Left section */}
             <div className="space-y-6">
               <Heading

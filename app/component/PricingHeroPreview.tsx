@@ -122,7 +122,7 @@ export default function PricingHeroPreview() {
           </ScreenGate>
 
           <div className="relative">
-            <div className="space-y-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:grid-cols-2 xl:grid-cols-1 sm:gap-3">
               {tiers.map((tier) => {
                 const displayPrice = getDisplayPrice(tier.price, tier.name, isAnnual);
 

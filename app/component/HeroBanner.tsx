@@ -69,7 +69,7 @@ export default function HeroBanner() {
       </div>
 
       <div className="relative z-10 mx-auto container px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-4 xl:grid-cols-2 lg:gap-6">
+        <div className="grid grid-cols-1 items-center gap-2 xl:grid-cols-2 lg:gap-4 ">
           {/* Left column */}
           <div className="space-y-5">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize">
@@ -203,33 +203,25 @@ export default function HeroBanner() {
 
                 <div className="flex">
                     {/* Sidebar */}
-                    <div className="hidden w-12 shrink-0 flex-col items-center gap-5 border-r border-neutral-100 py-5 text-neutral-400 md:flex">
+                    <div className="hidden w-10 shrink-0 flex-col items-center gap-5 border-r border-neutral-100 py-5 text-neutral-400 md:flex">
                         <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
-                            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 12l9-9 9 9M5 10v10h14V10" />
-                            </svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
                         </span>
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4 0m4 0a4 4 0 014 4" />
-                        </svg>
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 00-4-5.7V5a2 2 0 10-4 0v.3C7.7 6.2 6 8.4 6 11v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 19v-6H5v6m4 0H5m4 0h6m0 0v-10h4v10m-4 0H9m6 0h4M9 13V9m6 4V5" />
-                        </svg>
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10.3 3.9a1.5 1.5 0 013.4 0l.2 1a1.5 1.5 0 002.2.9l.9-.5a1.5 1.5 0 012 2l-.5.9a1.5 1.5 0 00.9 2.2l1 .2a1.5 1.5 0 010 3.4l-1 .2a1.5 1.5 0 00-.9 2.2l.5.9a1.5 1.5 0 01-2 2l-.9-.5a1.5 1.5 0 00-2.2.9l-.2 1a1.5 1.5 0 01-3.4 0l-.2-1a1.5 1.5 0 00-2.2-.9l-.9.5a1.5 1.5 0 01-2-2l.5-.9a1.5 1.5 0 00-.9-2.2l-1-.2a1.5 1.5 0 010-3.4l1-.2a1.5 1.5 0 00.9-2.2l-.5-.9a1.5 1.5 0 012-2l.9.5a1.5 1.5 0 002.2-.9z" />
-                            <circle cx="12" cy="12" r="2.5" />
-                        </svg>
+
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-calendar preview-icon"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user preview-icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bell preview-icon"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chart-no-axes-combined preview-icon"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg>
+
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-settings preview-icon"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
 
                     <div className="min-w-0 flex-1 p-3">
                         {/* Bookings + meetings */}
-                        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                        <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
                             {/* Today's Bookings */}
                             <div>
                                 <div className="mb-2 flex items-center justify-between">
@@ -239,7 +231,7 @@ export default function HeroBanner() {
                                     {todaysBookings.map((b, idx) => (
                                     <div
                                         key={b.name}
-                                        className={`flex items-center gap-3 px-3 py-2.5 ${idx >= 2 ? "hidden md:flex" : ""} ${
+                                        className={`flex items-center gap-3 p-2 ${idx >= 2 ? "hidden md:flex" : ""} ${
                                             idx === 1
                                                 ? "md:border-b md:border-neutral-100"
                                                 : idx < todaysBookings.length - 1
@@ -282,7 +274,7 @@ export default function HeroBanner() {
                                 </div>
                                 <div className="space-y-3">
                                     {upcomingMeetings.map((m) => (
-                                    <div key={m.name} className="rounded-xl border border-neutral-100 p-3">
+                                    <div key={m.name} className="rounded-xl border border-neutral-100 p-2">
                                         <div className="flex items-center gap-2.5">
                                             <Image
                                                 src={m.avatar}
@@ -309,7 +301,7 @@ export default function HeroBanner() {
                                                 </svg>
                                                 {m.time}
                                             </span>
-                                            <span className="flex items-center gap-1 border border-emerald-200 bg-emerald-50 text-emerald-600 px-2 py-0.5 text-xs font-medium rounded-full">
+                                            <span className="border border-emerald-200 bg-emerald-50 text-emerald-600 px-2 py-0.5 text-xs font-medium rounded-full">
                                                 Confirmed
                                             </span>
                                         </div>

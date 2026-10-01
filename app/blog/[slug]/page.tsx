@@ -33,16 +33,16 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
   }
 
   return {
-    title: `${post.title} | Blog | ${APP_NAME}`,
-    description: post.excerpt,
+    title: `${post.metaTitle} | Blog | ${APP_NAME}`,
+    description: post.metaDescription,
     keywords: post.keywords,
     authors: [{ name: post.author.name }],
     alternates: {
       canonical: `${BASE_URL}/blog/${post.slug}`,
     },
     openGraph: {
-      title: `${post.title} | Blog | ${APP_NAME}`,
-      description: post.excerpt,
+      title: `${post.metaTitle} | Blog | ${APP_NAME}`,
+      description: post.metaDescription,
       url: `${BASE_URL}/blog/${post.slug}`,
       type: "article",
       siteName: `${APP_NAME}`,
@@ -63,8 +63,8 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       card: "summary_large_image",
       site: `${BASE_URL}`,
       creator: `${APP_NAME}`,
-      title: `${post.title} | Blog | ${APP_NAME}`,
-      description: post.excerpt,
+      title: `${post.metaTitle} | Blog | ${APP_NAME}`,
+      description: post.metaDescription,
       images: `${BASE_URL}/${post.coverImage}`,
     },
   };
@@ -95,7 +95,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           "@type": "WebPage",
           "@id": `${BASE_URL}/blog/${post.slug}/#BlogPage`
         },
-        "headline": `${post.title} | Blog | ${APP_NAME}`,
+        "title": `${post.title} | Blog | ${APP_NAME}`,
         "description": `${post.excerpt}`,
         "image": {
           "@type": "ImageObject",
