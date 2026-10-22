@@ -19,7 +19,7 @@ export type SolutionCtaSectionProps = {
   highlightFeatures?: CtaHighlightFeature[];
   trustAvatars?: string[];
   trustBadges?: CtaTrustBadge[];
-  trustedBusinessCount?: string;
+  trustedBusinessContent?: string;
   className?: string;
   formSlot?: ReactNode;
 };
@@ -32,7 +32,7 @@ export default function SolutionCtaSection({
   highlightFeatures = defaultCtaHighlightFeatures,
   trustAvatars = defaultCtaTrustAvatars,
   trustBadges = defaultCtaTrustBadges,
-  trustedBusinessCount = defaultCtaSectionContent.trustedBusinessCount,
+  trustedBusinessContent = defaultCtaSectionContent.trustedBusinessContent,
   className = "",
   formSlot,
 }: SolutionCtaSectionProps) {
@@ -83,7 +83,7 @@ export default function SolutionCtaSection({
                     <div className="hidden h-10 w-px bg-white/30 sm:block" aria-hidden />
                     <div className="min-w-0">
                       <p className="text-sm leading-snug text-white">
-                        Trusted by <span className="font-semibold">{trustedBusinessCount}</span> businesses worldwide
+                        {trustedBusinessContent}
                       </p>
                       <div className="mt-1 flex gap-0.5" aria-label="5 out of 5 stars">
                         {Array.from({ length: 5 }).map((_, i) => (
@@ -101,7 +101,7 @@ export default function SolutionCtaSection({
                     </div>
                   </div>
 
-                  <div className="rounded-2xl bg-slate-100/95 px-3 py-3 sm:px-5 sm:py-4">
+                  <div className="rounded-2xl bg-slate-100/95 px-3 py-3 sm:px-4 sm:py-4">
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-3">
                       {trustBadges.map((item) => (
                         <div key={item.title} className="flex items-start gap-2">

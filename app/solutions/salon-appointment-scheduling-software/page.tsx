@@ -211,7 +211,7 @@ const features = [
     },
     {
     title: "WhatsApp & SMS Reminders",
-    description: "Automated reminders go out as needed, 24 hours or 1 hour before each appointment. If clients reschedule or cancel, your calendar updates instantly. Reduce no-shows by up to 60%",
+    description: "Allows you to set up reminders as required before sending scheduled appointments to remind your clients. If clients reschedule or cancel, your calendar updates instantly. ",
     icon: <svg fill="#4f39f6" version="1.1" id="Capa_1" width="40px" height="40px" viewBox="0 0 59.504 59.504"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M29.752,56.701c-3.608,0-6.652-2.463-7.538-5.797H9.033C4.053,50.904,0,46.852,0,41.871c0-3.575,2.117-6.819,5.394-8.264 C6.988,32.764,14,27.448,14,24.215v-8.072c0-7.355,5.983-13.34,13.339-13.34h4.826c7.354,0,13.339,5.984,13.339,13.34v8.072 c0,3.232,7.013,8.549,8.667,9.42c3.216,1.416,5.333,4.66,5.333,8.236c0,4.979-4.053,9.033-9.033,9.033H37.29 C36.404,54.238,33.359,56.701,29.752,56.701z M27.339,6.803c-5.149,0-9.339,4.189-9.339,9.34v8.072 c0,6.559-10.883,13.004-10.993,13.053C5.181,38.072,4,39.879,4,41.871c0,2.775,2.258,5.033,5.033,5.033h14.921 c1.104,0,2,0.896,2,2c0,2.094,1.704,3.797,3.798,3.797c2.094,0,3.798-1.703,3.798-3.797c0-1.104,0.896-2,2-2h14.921 c2.775,0,5.033-2.258,5.033-5.033c0-1.991-1.182-3.799-3.007-4.604c-0.111-0.048-10.993-6.494-10.993-13.052v-8.072 c0-5.15-4.189-9.34-9.339-9.34L27.339,6.803L27.339,6.803z"></path> </g> <g> <path d="M38.015,18.983c-1.104,0-2-0.896-2-2c0-2.619-2.131-4.75-4.75-4.75c-1.104,0-2-0.896-2-2c0-1.105,0.896-2,2-2 c4.825,0,8.75,3.924,8.75,8.75C40.015,18.087,39.119,18.983,38.015,18.983z"></path> </g> </g> </g> </g></svg>,
     },
     {
@@ -221,7 +221,7 @@ const features = [
     },
     {
     title: "Client History & Visit Tracking",
-    description: "Every client gets a profile — past services, color formulas, preferences, and visit frequency. Your stylists walk in prepared every single time. Deliver personalized service that keeps clients coming back.",
+    description: "Every client gets a profile — including their last visit, services, treatment, preferences, and visit frequency.  It lets you track and prepare in advance to deliver personalized service for every client.",
     icon: <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="3" y="6" width="18" height="13" rx="2" stroke="#4f39f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></rect> <path d="M3 10H20.5" stroke="#4f39f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M7 15H9" stroke="#4f39f6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>,
     },
 ];
@@ -266,7 +266,7 @@ const automationCards = [
     {
     title: "Before Visit",
     subtitle: "Set expectations early",
-    points: ["Auto-confirm instantly", "Send prep instructions", "Collect advance payment"],
+    points: ["Auto-confirm instantly", "Ask for Preferred Product", "Send prep instructions"],
     },
     {
     title: "During Visit",
@@ -283,7 +283,7 @@ const automationCards = [
 return (
     <>
     {/* Add Structured Data for Salon Appointment Booking App Page */}
-    <Script id="salon-appointment-scheduling-software-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData, null, 2),}}/>
+    <Script id="salon-appointment-scheduling-software-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData),}}/>
 
     {/* HERO SECTION */}
     <section className="relative overflow-hidden py-14 sm:py-20">
@@ -660,7 +660,7 @@ return (
                         <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-sky-300/20 blur-3xl" />
                     </div>
                     <Heading
-                      badge="Why Salon Choose us?"
+                      badge="Why Salons Choose GetSetTime"
                       title="Personalized Branding, Smooth Operations, Pleasing Client Experience"
                     />
                     <div className="z-10 relative mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-1">

@@ -186,20 +186,20 @@ const testimonials = [
   {
     quote: "GetSetTime has transformed the way we manage appointments. Our no-show rate has dropped significantly!",
     name: "Dr. Amanda Williams",
-    organization: "Williams Dermatology",
-    image: "/doctor-profile.webp",
+    organization: "Dermatologist",
+    image: "/review-2.jpg",
   },
   {
     quote: "Patients love the easy online booking and reminders. It saves us so much time every day.",
     name: "Dr. Mark Stevens",
-    organization: "Clear Skin Dermatology",
-    image: "/dentist-profile.webp",
+    organization: "Skin Dermatologist",
+    image: "/review-1.jpg",
   },
   {
     quote: "The best scheduling software we've used. Simple, reliable, and excellent customer support.",
     name: "Dr. Priya Patel",
-    organization: "Glow Dermatology",
-    image: "/physiotherapy-profile.webp",
+    organization: "Glow Dermatologist",
+    image: "/review-3.jpg",
   },
 ];
 
@@ -427,7 +427,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
 
                         <div className="mt-3">
                           <div className="mb-2 flex items-center justify-center">
-                              <span className="text-xs font-semibold text-slate-800">May 2024</span>
+                              <span className="text-xs font-semibold text-slate-800">May 2026</span>
                           </div>
 
                           <div className="grid grid-cols-7 gap-y-0.5 text-center text-[10px] text-slate-400">
@@ -481,7 +481,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                             <div className="text-xs text-slate-500">Follow-up Visit</div>
                         </div>
                         </div>
-                        <div className="mt-2 text-xs text-slate-400">May 16, 2024 · 11:30 AM</div>
+                        <div className="mt-2 text-xs text-slate-400">May 16, 2026 · 11:30 AM</div>
                         <div className="mt-2.5">
                         <span className="inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">Confirmed</span>
                         </div>

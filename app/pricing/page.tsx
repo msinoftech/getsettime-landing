@@ -16,7 +16,7 @@ import ScreenGate from "../component/ScreenGate";
 const heroHighlights = [
   { key: "plans", node: <RegionalPrice plan="starter" prefix="Plans from " suffix="/month" /> },
   { key: "bookings", node: "250 bookings/month on Starter" },
-  { key: "seats", node: <RegionalPrice plan="extraSeat" prefix="Extra seats " suffix="/month" /> },
+  { key: "seats", node: <RegionalPrice plan="extraSeat" prefix="Extra seats " suffix="/month + GST" /> },
 ];
 
 const pageUrl = `${BASE_URL}/pricing`;
@@ -72,7 +72,7 @@ const valueProps = [
   },
   {
     stat: <RegionalPrice plan="extraSeat" />,
-    statUnit: "per extra seat",
+    statUnit: "+ GST per extra seat",
     title: "Pay for seats, not surprises",
     description: "Plans bundle provider seats upfront. Add stylists, doctors, or therapists anytime without switching platforms.",
     bullets: ["1 · 2 · 5 seats by tier", "Prorated mid-cycle adds", "GST shown at checkout"],

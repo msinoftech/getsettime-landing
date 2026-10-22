@@ -1,12 +1,52 @@
 ﻿import Link from "next/link";
 import Heading from "@/app/component/Heading";
 import { FaqSection } from "@/app/component/FaqSection";
-import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
+import { BASE_URL, APP_NAME, contactInfo, REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import Card from "@/app/component/Card";
 import BookingFlowConsole from "./BookingFlowConsole";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
 import ScreenGate from "@/app/component/ScreenGate";
+import { Metadata } from "next";
+import Script from "next/script";
+const pageUrl = `${BASE_URL}/solutions/tutor-appointment-booking-software`;
+const schemaPageName = "Smart Tutor Scheduling Software for Your Centre";
+const schemaPageDescription = "Switch your manual operations to unified tutoring center scheduling software to meet modern needs like online booking, reminders, and more.";
+
+function faqAnswerText(html: string) {
+  return html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "").trim();
+}
+
+export const metadata: Metadata = {
+    title: schemaPageName,
+    description: schemaPageDescription,
+    keywords: [],
+    alternates: {
+      canonical: `${pageUrl}`,
+    },
+    openGraph: {
+      title: schemaPageName,
+      description: schemaPageDescription,
+      url: `${pageUrl}`,
+      type: "website",
+      siteName: `${APP_NAME}`,
+      locale: "en",
+      images: [
+        {
+          url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+          width: 1200,
+          height: 630,
+          alt: schemaPageName,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: schemaPageName,
+      description: schemaPageDescription,
+      images: [`${BASE_URL}${contactInfo.DEFAULT_IMAGE}`],
+    },
+};
 
 const whyChooseUs = [
   {
@@ -148,11 +188,153 @@ const tutorFaqs = [
   },
 ];
 
+const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": `${BASE_URL}/#organization`,
+            "name": `${APP_NAME}`,
+            "url": `${BASE_URL}`,
+            "image": {
+              "@type": "ImageObject",
+              "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+              "width": 1200,
+              "height": 630
+            },
+            "description": schemaPageDescription,
+            "slogan": "Precision Scheduling for Modern Care",
+            "foundingDate": "2025",
+            "numberOfEmployees": {
+              "@type": "QuantitativeValue",
+              "value": "10"
+            },
+            "areaServed": "Worldwide",
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "availableLanguage": ["English", "Hindi", "Punjabi"],
+                "areaServed": "Worldwide",
+              },
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "availableLanguage": ["English", "Hindi", "Punjabi"],
+                "areaServed": "Worldwide"
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/getsettime",
+              "https://x.com/getsettime",
+              "https://www.instagram.com/getsettime",
+              "https://www.youtube.com/@GetSetTime"
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "@id": `${pageUrl}/#webpage`,
+            "url": `${pageUrl}`,
+            "name": schemaPageName,
+            "description": schemaPageDescription,
+            "inLanguage": "en",
+            "isPartOf": {
+            "@type": "WebSite",
+            "name": `${APP_NAME}`,
+            "url": `${BASE_URL}`,
+            },
+            "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+            "width": 1200,
+            "height": 630
+            },
+        },
+        {
+            "@type": "SoftwareApplication",
+            "@id": `${pageUrl}/#softwareapplication`,
+            "name": schemaPageName,
+            "alternateName": `${APP_NAME} Tutor Scheduling Software`,
+            "url": `${pageUrl}`,
+            "description": schemaPageDescription,
+            "inLanguage": "en",
+            "author": {
+              "@id": `${BASE_URL}/#organization`
+            },
+            "publisher": {
+              "@id": `${BASE_URL}/#organization`
+            },  
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Tutor Scheduling Software",
+            "operatingSystem": "All — Web-based, no installation required",
+            "availableOnDevice": ["Desktop", "Mobile", "Tablet"],
+            "featureList": [
+              "Online student self-booking 24/7",
+              "Recurring classes and custom course series",
+              "Student self-booking, reschedule, and cancellation rules",
+              "WhatsApp and email confirmations and reminders",
+              "Google Meet one-click join from session reminders",
+              "Multi-tutor and multi-location academy management",
+              "Class capacity limits and waitlists",
+              "Subject and tutor-based availability booking",
+              "Student roster and session organisation",
+              "Payment collection for sessions and packages",
+              "Tutor and staff performance analytics",
+              "Custom branding and shareable booking page",
+              "Two-way Google Calendar sync",
+              "Automated reminders to reduce missed sessions"
+            ],
+            "screenshot": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
+            "installUrl": `${REGISTER_URL}`,
+            "releaseNotes": `${BASE_URL}/blog`,
+        },
+        {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${BASE_URL}`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": `${BASE_URL}/solutions`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": schemaPageName,
+            "item": `${pageUrl}`,
+          },
+        ],
+        },
+        {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}/#faq`,
+        "mainEntity": tutorFaqs.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faqAnswerText(item.answer)
+          }
+        }))
+        }
+    ],
+};
+
 export default function TutorAppointmentBookingSoftwarePage() {
   const faqItems = tutorFaqs.map((faq) => ({ title: faq.question, content: faq.answer }));
 
   return (
     <>
+        {/* Add Structured Data for Tutor Appointment Booking Software Page */}
+        <Script id="tutor-appointment-booking-software-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData),}}/>
+        
         {/* HERO SECTION */}
         <section className="relative overflow-hidden py-14 sm:py-20">
             <div className="absolute inset-0 hidden sm:block">
@@ -165,7 +347,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
                     {/* LEFT SIDE */}
                     <div className="relative min-w-0 space-y-5 sm:space-y-6">
                         <Heading
-                            badge="Trusted by 10,000+ Tutors Worldwide"
+                            badge="Easy to Set Up, Simple To Use"
                             title="Scheduling Software for"
                             highlightText="Tutors & Educators"
                             description="Run your entire teaching schedule from one place. GetSetTime is tutoring scheduling software that automates online booking 24x7, manages your student roster, handles payments, and keeps every session organised — so your classes stay easy to book and easy to attend."

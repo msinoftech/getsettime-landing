@@ -30,7 +30,7 @@ export default function Support() {
                       </div>
                     <div>
                       <div className="text-sm font-semibold text-neutral-900">Chat with support</div>
-                      <div className="text-sm text-neutral-600">Average response under 2 minutes</div>
+                      <div className="text-sm text-neutral-600">We make sure to be available ASAP</div>
                     </div>
                   </div>
                 </div>

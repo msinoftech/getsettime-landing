@@ -57,8 +57,8 @@ const faqItems = [
   },
   {
     title: "Does GetSetTime reduce no-shows and manual scheduling work?",
-    content: `Yes. GetSetTime is built to automate the entire booking process—from appointment booking to client visits. No phone calls for bookings and reminders; no double-booking. 
-    <br/><br/>It allows reminders to be sent via email and WhatsApp sms. For a reason, the client can reschedule or cancel their booking. Then, the empty slot becomes available for booking instantly. That leads to reducing no-shows.`,
+    content: `Yes. GetSetTime automates the entire booking process—from appointment booking to client visits. No phone calls, no chasing clients, no manual confirmations. It allows customers to book their own appointments on your terms. 
+    <br/>It allows reminders to be sent via email, WhatsApp, and SMS. For a reason, the client can reschedule or cancel their booking. Then, the empty slot becomes available for booking instantly. That leads to fewer no-shows.`,
   },
   {
     title: "Does GetSetTime support customisation for different practices?",
@@ -84,10 +84,10 @@ export default function Home() {
   ];
 
   const bookingFeatures = [
-    "Select Department",
-    "Choose a Service Provider",
-    "Choose a Event Type",
-    "Pick a date & time slot",
+    "Click On Booking Link",
+    "Explore and Select Department",
+    "Then Select Service or Specialist",
+    "Choose a Slot with Date and Time",
   ];
 
   const schemaData = {
@@ -96,33 +96,34 @@ export default function Home() {
       {
         "@type": "Organization",
         "@id": `${BASE_URL}/#organization`,
-        "name": `${APP_NAME}`,
+        "name": "GetSetTime",
+        "alternateName": [
+          "Getsettime",
+          "Get Set Time",
+          "Get set time"
+        ],
         "url": `${BASE_URL}`,
-        "image": {
+        "logo": {
           "@type": "ImageObject",
-          "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
-          "width": 1200,
-          "height": 630
+          "@id": `${BASE_URL}/#logo`,
+          "url": `${BASE_URL}${contactInfo.logo}`,
+          "contentUrl": `${BASE_URL}${contactInfo.logo}`
         },
-        "description": "GetSetTime is a smart appointment scheduling platform trusted by 5,000+ doctors, salon owners, and wellness professionals. Simple to set up, smart enough to run itself.",
-        "slogan": "Precision Scheduling for Modern Care",
-        "foundingDate": "2025",
-        "numberOfEmployees": {
-          "@type": "QuantitativeValue",
-          "value": "10"
+        "image": {
+          "@id": `${BASE_URL}/#logo`
         },
+        "description": "GetSetTime offers a scheduling software that meets the routine requirements of professionals and businesses for managing appointment booking.",
+        "slogan": "Your Time Matters",
         "areaServed": "Worldwide",
         "contactPoint": [
           {
             "@type": "ContactPoint",
             "contactType": "customer support",
-            "availableLanguage": ["English", "Hindi", "Punjabi"],
-            "areaServed": "Worldwide",
-          },
-          {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "availableLanguage": ["English", "Hindi", "Punjabi"],
+            "availableLanguage": [
+              "English",
+              "Hindi",
+              "Punjabi"
+            ],
             "areaServed": "Worldwide"
           }
         ],
@@ -137,108 +138,104 @@ export default function Home() {
         "@type": "WebSite",
         "@id": `${BASE_URL}/#website`,
         "url": `${BASE_URL}`,
-        "name": `${APP_NAME}`,
-        "alternateName": `${APP_NAME}`,
+        "name": "Getsettime",
+        "alternateName": [
+          "GetSetTime",
+          "Get Set Time",
+          "Get set time"
+        ],
+        "description": "Getsettime, a cloud-based appointment scheduling software, offers services to professionals and businesses, featuring online booking, calendar synchronization, automated reminders, staff scheduling, and appointment management.",
+        "inLanguage": "en",
         "publisher": {
           "@id": `${BASE_URL}/#organization`
-        },
-        "description": "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically.",
-        "inLanguage": "en",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": `${BASE_URL}/search?q={search_term_string}`,
-          "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "WebPage",
         "@id": `${BASE_URL}/#webpage`,
         "url": `${BASE_URL}`,
-        "name": `Home`,
-        "description": "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically. Try GetSetTime - A Next-Gen Scheduling App and free demo available today.",
+        "name": "Appointment Scheduling Software for Online Booking | Getsettime",
+        "description": "An easy-to-set-up and simple-to-use appointment scheduling software to manage online bookings, staff availability, calendar synchronization, and automated WhatsApp and email reminders for clinics, salons, consultants, and service businesses.",
+        "inLanguage": "en",
         "isPartOf": {
           "@id": `${BASE_URL}/#website`
         },
         "about": {
-          "@id": `${BASE_URL}/#softwareapplication`
+          "@id": `${BASE_URL}/#software`
         },
         "mainEntity": {
-          "@id": `${BASE_URL}/#softwareapplication`
+          "@id": `${BASE_URL}/#software`
         },
         "publisher": {
           "@id": `${BASE_URL}/#organization`
-        },  
-        "inLanguage": "en",
+        },
         "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
-          "width": 1200,
-          "height": 630
+          "@id": `${BASE_URL}/#logo`
         },
         "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": `${BASE_URL}`
-            }
-          ]
-        }  
+          "@id": `${BASE_URL}/#breadcrumb`
+        },
+        "hasPart": {
+          "@id": `${BASE_URL}/#faq`
+        }
       },
       {
-        "@type": "SoftwareApplication",
-        "@id": `${BASE_URL}/#softwareapplication`,
-        "name": `${APP_NAME}`,
-        "alternateName": `${APP_NAME}`,
-        "description": "Smart appointment automation for doctors, clinics, salons, and service professionals. Set up fast, reduce no-shows, and start scheduling automatically.",
+        "@type": "BreadcrumbList",
+        "@id": `${BASE_URL}/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${BASE_URL}`
+          }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": `${BASE_URL}/#software`,
+        "name": "Getsettime",
+        "alternateName": [
+          "GetSetTime",
+          "Get Set Time",
+          "Get set time"
+        ],
         "url": `${BASE_URL}`,
-        "image": {
-          "@type": "ImageObject",
-          "url": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
-          "width": 1200,
-          "height": 630
-        },
+        "description": "GetSetTime is scheduling software that meets the routine requirements of professionals and businesses for managing appointment booking.",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Appointment Scheduling Software",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires a modern web browser with JavaScript enabled.",
+        "availableOnDevice": [
+          "Desktop",
+          "Mobile",
+          "Tablet"
+        ],
+        "isAccessibleForFree": true,
         "inLanguage": "en",
+        "image": {
+          "@id": `${BASE_URL}/#logo`
+        },
         "author": {
           "@id": `${BASE_URL}/#organization`
         },
         "publisher": {
           "@id": `${BASE_URL}/#organization`
-        },  
-        "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "Appointment Scheduling Software",
-        "operatingSystem": "All — Web-based, no installation required",
-        "availableOnDevice": ["Desktop", "Mobile", "Tablet"],
+        },
         "featureList": [
-          "Online appointment booking for clients",
+          "Easy to set up with email or Google sign-up",
+          "Complete access to the dashboard to customise booking link, branding, set availability",
+          "Support Google Calendar with automate Sync and management",
+          "Allow adding staff/service providers with their own calendar",
+          "Make your own booking rules/terms e.g. duration, date, time, payment options, etc.",
+          "Allow self-booking to customers 24/7 from your own booking link",
+          "Confirmations and reminders via email, text, and WhatsApp",
+          "Support appointment rescheduling and cancellation for customers",
           "WhatsApp booking confirmations and reminders",
-          "Automated email reminders and follow-ups",
-          "Two-way Google Calendar sync",
-          "Microsoft Teams and Zoom integration",
-          "Slack and Gmail integration",
-          "Custom branding and booking page",
-          "Staff and multi-resource management",
-          "Buffer time and availability configuration",
-          "Payment processing",
-          "Advanced analytics and reporting",
-          "API access",
-          "Multi-location support",
-          "SSO integration",
-          "No-show reduction automation"
-        ],
-        "screenshot": `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
-        "installUrl": `${REGISTER_URL}`,
-        "releaseNotes": `${BASE_URL}/blog`,
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "bestRating": "5",
-          "worstRating": "1",
-          "ratingCount": "5000",
-          "reviewCount": "5000"
-        }
+          "Booking analytics and reporting: completed, rescheduled, canceled, and no-shows",
+          "Custom booking forms to your needs",
+           "Multi-location support",
+        ]
       },
       {
         "@type": "FAQPage",
@@ -287,7 +284,7 @@ export default function Home() {
                   highlightText="Reminder Via WhatsApp"
                   description={
                     <>
-                      Currently, WhatsApp is one of the most reliable apps on smartphones, used for instant messaging. Getsettime allows you to send a thank-you SMS with every confirmed booking. Later, you can set when to send reminders to clients before the scheduled booking.
+                      Nowadays, WhatsApp is one of the most reliable apps for community communication. Getsettime's built-in feature lets you communicate easily.  Whether you need to send booking confirmations, appointment reminders, or follow-ups.
                     </>
                   }
                 />
@@ -380,7 +377,7 @@ export default function Home() {
               <Heading
                 badge="Public Booking Page"
                 title="Let customers book without calling you"
-                description="Share your public booking link with customers on WhatsApp, website, Instagram, Google Business Profile, or email. Customers choose department, service provider, event type, date, and time."
+                description="Make yourself or your business easy to find so customers can reach you quickly. Then your booking link becomes important; make sure it's available. An easy way is to share it on your social media pages, website, and GBP."
                 headingTag="h3"
               />
 

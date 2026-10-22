@@ -27,7 +27,7 @@ export const pricingFaqItems: PricingFaqItem[] = [
     content: (
       <>
         You&apos;re not locked into a tier by team size. You can add extra seats at any time for{" "}
-        <RegionalPrice plan="extraSeat" suffix="/month" />{" "} each (plus taxes). You don&apos;t need to upgrade your plan.
+        <RegionalPrice plan="extraSeat" suffix="/month + GST" />{" "} each (plus taxes). You don&apos;t need to upgrade your plan.
       </>
     ),
     contentText:

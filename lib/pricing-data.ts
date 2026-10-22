@@ -95,9 +95,8 @@ export const pricingTiers: PricingTier[] = [
       "Advanced user roles",
       "SSO integration",
       "Custom integrations",
-      "Dedicated account manager",
-      "24/7 phone support",
-      "SLA guarantee",
+      "Dedicated Support Team",
+      "Priority Calling Support"
     ],
     buttonText: "Contact Sales",
     buttonLink: `${BASE_URL}/contact-us`,

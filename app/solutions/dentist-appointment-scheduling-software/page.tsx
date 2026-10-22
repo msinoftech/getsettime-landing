@@ -8,6 +8,7 @@ import Card from "@/app/component/Card";
 import Heading from "@/app/component/Heading";
 import { CheckListItem } from "@/app/component/CheckList";
 import SolutionCtaSection from "@/app/component/SolutionCtaSection";
+import { dentistCtaTrustBadges } from "@/lib/cta-section-data";
 import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/solutions/dentist-appointment-scheduling-software`;
@@ -51,8 +52,8 @@ const faqItems = [
         content: `It's software that lets patients schedule, reschedule, or cancel dental appointments online — while keeping your clinic's calendar updated automatically without any manual effort from your staff.`,
     },
     {
-        title: "What is the purpose of a booking system?",
-        content: `To remove the back-and-forth of phone and manual scheduling. Patients book when it's convenient for them. It saves your team up to 90% of the time spent on calls. Allowing them more time for patient care.`,
+        title: "What is the real purpose of a booking system?",
+        content: `It makes booking appointments convenient for patients. It also frees the front desk team and doctor from hours of routine tasks like answering calls, recording appointments, and manually resolving double bookings.`,
     },
     {
         title: "Why should dental clinics have an online booking system?",
@@ -859,6 +860,8 @@ return (
     <SolutionCtaSection
       badge="Built for Dentists"
       businessType="Dental Clinic"
+      trustedBusinessContent="Trusted by dental clinics worldwide"
+      trustBadges={dentistCtaTrustBadges}
     />
     </>
 );

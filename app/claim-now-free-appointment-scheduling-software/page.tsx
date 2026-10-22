@@ -524,7 +524,7 @@ export default function FreeBookingPage() {
 
                           <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
                               <Link href="/contact-us" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
-                              Claim My Free Booking Page
+                              Claim To Get Started Free
                               </Link>
 
                               <Link href="/app-functionality-demo-video" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-gray-800 drop-shadow-lg transition">

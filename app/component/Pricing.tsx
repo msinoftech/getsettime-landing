@@ -448,7 +448,7 @@ export default function Pricing({
             <div className="rounded-xl bg-neutral-900 px-6 py-4 text-white">
               <p className="text-sm text-white">Extra Seat</p>
               <p className="text-2xl font-bold">
-                {formatRegionalPrice("extraSeat", region)} / month
+                {formatRegionalPrice("extraSeat", region)} / month + GST
               </p>
             </div>
           </div>

@@ -96,10 +96,27 @@ export const defaultCtaTrustBadges: CtaTrustBadge[] = [
   },
 ];
 
+export const dentistCtaTrustBadges: CtaTrustBadge[] = [
+  {
+    title: "Secure & Reliable",
+    description: "strict access controls",
+    icon: defaultCtaTrustBadges[0].icon,
+  },
+  {
+    title: "Super Easy Setup",
+    description: "Get started in minutes",
+    icon: defaultCtaTrustBadges[1].icon,
+  },
+  {
+    title: "Dedicated Support",
+    description: "We're here to help",
+    icon: defaultCtaTrustBadges[2].icon,
+  },
+];
+
 export const defaultCtaSectionContent = {
   badge: "Built for Modern Business",
   title: "Ready for GetSetTime To Manage Your Appointments",
-  description:
-    "Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more.",
-  trustedBusinessCount: "2,500+",
+  description: "Switch your manual operations to a unified scheduling platform to meet modern needs like online booking, reminders and more.",
+  trustedBusinessContent: "Trusted by 2,500+ businesses worldwide",
 };

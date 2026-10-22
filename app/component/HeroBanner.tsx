@@ -72,9 +72,9 @@ export default function HeroBanner() {
         <div className="grid grid-cols-1 items-center gap-2 xl:grid-cols-2 lg:gap-4 ">
           {/* Left column */}
           <div className="space-y-5">
+            
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize">
-            Appointment Scheduling {" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Software to Book More </span>Appointments. and <span className="bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-500 bg-clip-text text-transparent">Reduce No-Shows</span>
-            </h1>
+            Online Booking Made {" "} <span className="bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">Simple and Schedule </span>Appointments Effortlessly</h1>
 
             <p>GetSetTime is a smart, fully automated scheduling software designed for service-based professionals and individuals tired of managing appointments.</p>
 
@@ -128,7 +128,7 @@ export default function HeroBanner() {
                             <div className="text-xs font-semibold text-neutral-800">Free Bookings</div>
                         </div>
                     </div>
-                    <div className="text-xs text-neutral-500">Every month, forever</div>
+                    <div className="text-xs text-neutral-500">For first-time users only</div>
                 </div>
 
                 <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
@@ -139,10 +139,10 @@ export default function HeroBanner() {
                             </svg>
                         </span>
                         <div>
-                            <div className="text-sm font-bold text-neutral-900">Multi-Provider Scheduling</div>
+                            <div className="text-sm font-bold text-neutral-900">Solo to Multi-Staff</div>
                         </div>
                     </div>
-                    <div className="text-xs text-neutral-500">Manage your entire team</div>
+                    <div className="text-xs text-neutral-500">Manage team in one place</div>
                 </div>
 
                 <div className="rounded-2xl border border-neutral-100 bg-white p-3 drop-shadow-sm space-y-1">
