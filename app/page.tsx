@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     title: "What is GetSetTime?",
-    content: `Getsettime is appointment scheduling software built for businesses and professionals seeking automation solutions to manage bookings and routine tasks and to optimize resources.
+    content: `GetSetTime is appointment scheduling software built for businesses and professionals seeking automation solutions to manage bookings and routine tasks and to optimize resources.
     <br/><br/> The best part is its centralized dashboard, which lets you handle key tasks in one place: calendar sync, operational tool integrations, booking confirmations, reminder sending, and staff allocations.`,
   },
   {
@@ -96,12 +96,8 @@ export default function Home() {
       {
         "@type": "Organization",
         "@id": `${BASE_URL}/#organization`,
-        "name": "GetSetTime",
-        "alternateName": [
-          "Getsettime",
-          "Get Set Time",
-          "Get set time"
-        ],
+        "name": APP_NAME,
+        "alternateName": APP_NAME,
         "url": `${BASE_URL}`,
         "logo": {
           "@type": "ImageObject",
@@ -138,13 +134,9 @@ export default function Home() {
         "@type": "WebSite",
         "@id": `${BASE_URL}/#website`,
         "url": `${BASE_URL}`,
-        "name": "Getsettime",
-        "alternateName": [
-          "GetSetTime",
-          "Get Set Time",
-          "Get set time"
-        ],
-        "description": "Getsettime, a cloud-based appointment scheduling software, offers services to professionals and businesses, featuring online booking, calendar synchronization, automated reminders, staff scheduling, and appointment management.",
+        "name": APP_NAME,
+        "alternateName": APP_NAME,
+        "description": "GetSetTime, a cloud-based appointment scheduling software, offers services to professionals and businesses, featuring online booking, calendar synchronization, automated reminders, staff scheduling, and appointment management.",
         "inLanguage": "en",
         "publisher": {
           "@id": `${BASE_URL}/#organization`
@@ -154,7 +146,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${BASE_URL}/#webpage`,
         "url": `${BASE_URL}`,
-        "name": "Appointment Scheduling Software for Online Booking | Getsettime",
+        "name": `Appointment Scheduling Software for Online Booking | ${APP_NAME}`,
         "description": "An easy-to-set-up and simple-to-use appointment scheduling software to manage online bookings, staff availability, calendar synchronization, and automated WhatsApp and email reminders for clinics, salons, consultants, and service businesses.",
         "inLanguage": "en",
         "isPartOf": {
@@ -194,14 +186,10 @@ export default function Home() {
       {
         "@type": "WebApplication",
         "@id": `${BASE_URL}/#software`,
-        "name": "Getsettime",
-        "alternateName": [
-          "GetSetTime",
-          "Get Set Time",
-          "Get set time"
-        ],
+        "name": APP_NAME,
+        "alternateName": APP_NAME,
         "url": `${BASE_URL}`,
-        "description": "GetSetTime is scheduling software that meets the routine requirements of professionals and businesses for managing appointment booking.",
+        "description": `${APP_NAME} is scheduling software that meets the routine requirements of professionals and businesses for managing appointment booking.`,
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "Appointment Scheduling Software",
         "operatingSystem": "Web",
@@ -284,7 +272,7 @@ export default function Home() {
                   highlightText="Reminder Via WhatsApp"
                   description={
                     <>
-                      Nowadays, WhatsApp is one of the most reliable apps for community communication. Getsettime's built-in feature lets you communicate easily.  Whether you need to send booking confirmations, appointment reminders, or follow-ups.
+                      Nowadays, WhatsApp is one of the most reliable apps for community communication. GetSetTime's built-in feature lets you communicate easily.  Whether you need to send booking confirmations, appointment reminders, or follow-ups.
                     </>
                   }
                 />
@@ -511,7 +499,7 @@ export default function Home() {
             <Heading
               badge="Frequently Asked Questions"
               title="Feel Free To Ask About GetSetTime"
-              description="We will be happy to answer your queries for Getsettime. Here, we have answered some common queries to help you learn about our appointment scheduling software."
+              description="We will be happy to answer your queries for GetSetTime. Here, we have answered some common queries to help you learn about our appointment scheduling software."
             />
             <ScreenGate minWidth={768}>
               <div className="grid gap-4 sm:grid-cols-2 mt-6 grid">

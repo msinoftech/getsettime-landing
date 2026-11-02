@@ -1,4 +1,4 @@
-# getsettime-landing
+# GetSetTime
 
 Next.js landing page for GetSetTime.
 

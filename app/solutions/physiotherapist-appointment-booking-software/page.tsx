@@ -289,7 +289,7 @@ const growthRoadmap = [
                 badge="Built for Physiotherapists"
                 title="Scheduling Software Made for"
                 highlightText="Physio Clinics"
-                description="Stay on your role, forget the admin workload. Getsettime - your patients book online appointments, receive automatic reminders, and your schedule stays organized."
+                description="Stay on your role, forget the admin workload. GetSetTime - your patients book online appointments, receive automatic reminders, and your schedule stays organized."
                 headingTag="h1"
                 titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
               />
@@ -468,7 +468,7 @@ const growthRoadmap = [
                 badge="Why It Matters for Physiotherapists"
                 title="What Real Benefits Allow Them to"
                 highlightText="Focus on Practices"
-                description="You or your team struggles all day to manage calls, book manually, and handle the queue, resulting in a massive workload during peak hours, poor resource allocation, and wasted time and money. Shifting to dedicated physio online booking software like Getsettime, it does so much more than you expect - from saving time to adjusting for how your clinic runs from the ground up."
+                description="You or your team struggles all day to manage calls, book manually, and handle the queue, resulting in a massive workload during peak hours, poor resource allocation, and wasted time and money. Shifting to dedicated physio online booking software like GetSetTime, it does so much more than you expect - from saving time to adjusting for how your clinic runs from the ground up."
               />
 
               <div className="mt-6 grid gap-4">

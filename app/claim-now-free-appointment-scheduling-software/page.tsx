@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { APP_NAME, BASE_URL, contactInfo, REGISTER_URL } from "@/lib/config";
+import ClaimFreeBookingButton from "../component/ClaimFreeBookingButton";
 import FreeBookingSetupForm from "../component/FreeBookingSetupForm";
 import FreeBookingPhoneMockup from "../component/FreeBookingPhoneMockup";
 import Heading from "../component/Heading";
@@ -496,7 +497,7 @@ export default function FreeBookingPage() {
                               title="Free Booking Page Setup in 24 Hours"
                               highlightText="for Service Businesses"
                               description={
-                                <p>Join the GetSetTime Free Booking Page Challenge. <br/> We are helping 100 service businesses get a professional booking page live in 24 hours.</p>
+                                <>Join the GetSetTime Free Booking Page Challenge. <br/> We are helping 100 service businesses get a professional booking page live in 24 hours.</>
                               }
                               headingTag="h1"
                               titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
@@ -523,9 +524,9 @@ export default function FreeBookingPage() {
                           </div>
 
                           <div className="flex gap-2 max-[425px]:flex-col flex-row flex-wrap">
-                              <Link href="/contact-us" className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3">
-                              Claim To Get Started Free
-                              </Link>
+                              <ClaimFreeBookingButton className="bg-indigo-600 text-white text-sm px-4 py-3 rounded-xl flex items-center justify-center gap-3 disabled:opacity-70">
+                              Claim My Free Booking Page
+                              </ClaimFreeBookingButton>
 
                               <Link href="/app-functionality-demo-video" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm text-gray-800 drop-shadow-lg transition">
                               <span className="flex h-5 w-5 items-center justify-center rounded-full border border-neutral-200"><svg className="translate-x-px" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>

@@ -4,10 +4,10 @@ import { REGISTER_GOOGLE_URL, REGISTER_URL } from "@/lib/config";
 import Logo from "./Logo";
 
 const todaysBookings = [
-  { time: "09:30 AM", duration: "60 min", name: "Sarah Johnson", service: "Consultation", status: "Confirmed" },
-  { time: "11:00 AM", duration: "45 min", name: "Michael Chen", service: "Follow-up Session", status: "Complete" },
-  { time: "01:30 PM", duration: "60 min", name: "Emily Davis", service: "Therapy Session", status: "Active" },
-  { time: "03:00 PM", duration: "30 min", name: "David Wilson", service: "Skin Treatment", status: "Pending" },
+  { time: "09:30 AM", duration: "20 min", name: "Lucas Garcia", service: "Consultation", status: "Confirmed" },
+  { time: "10:30 AM", duration: "30 min", name: "Christopher", service: "Follow-up Session", status: "Complete" },
+  { time: "11:30 AM", duration: "45 min", name: "Jason Howard", service: "Treatment Session", status: "Active" },
+  { time: "03:00 PM", duration: "60 min", name: "David Wilson", service: "Skin Treatment", status: "Pending" },
 ];
 
 const upcomingMeetings = [
@@ -59,7 +59,52 @@ const industries = [
   },
 ];
 
+type CalendarCell = {
+  day: number;
+  inMonth: boolean;
+  isToday: boolean;
+};
+
+function buildHeroCalendarCells(viewDate: Date): CalendarCell[] {
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
+  const today = new Date();
+  const startOffset = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrevMonth = new Date(year, month, 0).getDate();
+  const isViewingCurrentMonth =
+    today.getFullYear() === year && today.getMonth() === month;
+
+  const cells: CalendarCell[] = [];
+
+  for (let i = startOffset - 1; i >= 0; i--) {
+    cells.push({ day: daysInPrevMonth - i, inMonth: false, isToday: false });
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    cells.push({
+      day,
+      inMonth: true,
+      isToday: isViewingCurrentMonth && day === today.getDate(),
+    });
+  }
+
+  let nextDay = 1;
+  while (cells.length % 7 !== 0) {
+    cells.push({ day: nextDay++, inMonth: false, isToday: false });
+  }
+
+  return cells;
+}
+
 export default function HeroBanner() {
+  const calendarDate = new Date();
+  const calendarMonthYear = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    year: "numeric",
+  }).format(calendarDate);
+  const calendarCells = buildHeroCalendarCells(calendarDate);
+
   return (
     <section className="relative overflow-hidden bg-white py-10 sm:py-16">
       
@@ -317,11 +362,8 @@ export default function HeroBanner() {
                             <div className="rounded-xl border border-neutral-100 p-3">
                                 <div className="mb-2 flex items-center justify-between">
                                     <div className="text-sm font-semibold text-neutral-800">Booking Activity</div>
-                                    <span className="inline-flex items-center gap-1 rounded-md border border-neutral-200 px-2 py-0.5 text-[11px] text-neutral-500">
+                                    <span className="rounded-md border border-neutral-200 px-2 py-0.5 text-[11px] text-neutral-500">
                                         This Week
-                                        <svg className="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 9l6 6 6-6" />
-                                        </svg>
                                     </span>
                                 </div>
                                 <div className="flex gap-1.5">
@@ -388,24 +430,27 @@ export default function HeroBanner() {
                             {/* Calendar */}
                             <div className="rounded-xl border border-neutral-100 p-3">
                                 <div className="mb-2 flex items-center justify-between">
-                                    <div className="text-sm font-semibold text-neutral-800">April 2025</div>
+                                    <div className="text-sm font-semibold text-neutral-800">{calendarMonthYear}</div>
                                 </div>
                                 <div className="grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-400">
                                     {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
                                     <span key={i} className="font-medium">{d}</span>
                                     ))}
                                 </div>
-                                <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-xs text-neutral-600">
-                                    {[30, 31].map((d) => (
-                                    <span key={`p${d}`} className="text-neutral-300">{d}</span>
-                                    ))}
-                                    {Array.from({ length: 30 }, (_, i) => i + 1).map((d) => (
-                                    <span key={d} className={ d === 30 ? "mx-auto flex h-4 w-4 items-center justify-center rounded-full text-indigo-600 font-bold" : "" }>
-                                        {d}
+                                <div className="mt-1 grid grid-cols-7 gap-y-1 text-center text-xs">
+                                    {calendarCells.map((cell, index) => (
+                                    <span
+                                        key={`cal-${index}`}
+                                        className={
+                                        cell.isToday
+                                            ? "text-indigo-600 font-bold"
+                                            : cell.inMonth
+                                            ? ""
+                                            : "text-neutral-300"
+                                        }
+                                    >
+                                        {cell.day}
                                     </span>
-                                    ))}
-                                    {[1, 2, 3].map((d) => (
-                                    <span key={`n${d}`} className="text-neutral-300">{d}</span>
                                     ))}
                                 </div>
                             </div>

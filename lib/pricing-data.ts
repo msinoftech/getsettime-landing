@@ -117,7 +117,7 @@ export type ComparisonRow = {
 export const comparisonRows: ComparisonRow[] = [
   { feature: "Monthly price (excl. GST)", free: "Free", starter: "₹999", professional: "₹1,499", enterprise: "₹2,999", highlight: true },
   { feature: "Seats included", free: "1", starter: "1", professional: "2", enterprise: "5" },
-  { feature: "Bookings / month", free: "50 included", starter: "250 included", professional: "Unlimited", enterprise: "Unlimited" },
+  { feature: "Bookings / month", free: "250 included", starter: "250 included", professional: "Unlimited", enterprise: "Unlimited" },
   { feature: "Online booking page", free: true, starter: true, professional: true, enterprise: true },
   { feature: "Google Calendar sync", free: false, starter: "Basic", professional: "Advanced", enterprise: "Advanced" },
   { feature: "WhatsApp reminders", free: false, starter: false, professional: true, enterprise: true },

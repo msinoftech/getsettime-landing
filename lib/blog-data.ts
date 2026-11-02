@@ -223,10 +223,6 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Wrapping Up: You should try!</h2>
       <p>You've got the basics! How an online appointment booking system simplifies a doctor's daily routine and scales up. When patients can book appointments easily, you can focus on care. It's too friendly—on both the doctor's side and the clients'.</p>
-
-      
-      
-
     `,
     coverImage: "online-calendar.webp",
     author: {
@@ -318,7 +314,7 @@ export const blogPosts: BlogPost[] = [
     <h2>Conclusion</h2>
     <p>We cannot end the talk as just a convenience tool for an appointment-scheduling software — it is a practical solution to real operational problems. It reduces no-shows, eliminates double bookings, saves administrative time, and gives clients a smoother experience from the first interaction.</p>
     <p>For service-based professionals — whether you're a therapist, personal trainer, consultant, or salon owner — switching from manual booking to an automated system is one of the most impactful operational decisions you can make.</p>
-    <p>If you haven't made the switch yet, now is a good time to start. Try a platform such as Getsettime that fits your workflow, set up your services and availability, and share your booking link with clients.</p>
+    <p>If you haven't made the switch yet, now is a good time to start. Try a platform such as GetSetTime that fits your workflow, set up your services and availability, and share your booking link with clients.</p>
     `,
     coverImage: "appointment-scheduling-softwaret.webp",
     author: {
@@ -393,7 +389,7 @@ export const blogPosts: BlogPost[] = [
 
     <h3>Affordable Options for Smaller Practices</h3>
     <p>Cost is a real constraint, especially for small and independent clinics. There are many good options for <strong>management software for small clinics</strong>, and the market has grown considerably, with genuinely capable systems at reasonable price points.</p>
-    <p>Some platforms, like <strong>Getsettime</strong>, offer <strong>free clinic management software</strong> tiers with limited features for a limited period — usually enough for a solo practitioner or very small practice to get started. These typically cap the number of users, patients, or monthly appointments, and charge for upgrades.</p>
+    <p>Some platforms, like <strong>GetSetTime</strong>, offer <strong>free clinic management software</strong> tiers with limited features for a limited period — usually enough for a solo practitioner or very small practice to get started. These typically cap the number of users, patients, or monthly appointments, and charge for upgrades.</p>
     <p>The question isn't just "what does it cost?" When you compare it to saving hours of admin work and minimizing appointment-booking loss, its cost feels nothing.</p>
 
     <h3>Multispecialty Support</h3>
@@ -955,7 +951,7 @@ export const blogPosts: BlogPost[] = [
     },
     category: "",
     publishedAt: "2026-10-01",
-    metaTitle: "Creative Ways to Attract Patients to Your Clinic | Getsettime",
+    metaTitle: "Creative Ways to Attract Patients to Your Clinic | GetSetTime",
     metaDescription: "Here are practical and creative ways to increase patient volume while building a stronger local reputation.",
     keywords: "",
     faq: [],

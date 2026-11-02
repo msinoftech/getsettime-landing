@@ -244,7 +244,7 @@ export const helpSections: HelpSection[] = [
       {
         title: "Still need help?",
         description:
-          "Open the chat widget on this page or visit the Contact Us page. Our team responds in under 2 minutes on average.",
+          "Open the chat widget on this page or visit the Contact Us page. Our team responds in 24/7 on average.",
       },
     ],
   },

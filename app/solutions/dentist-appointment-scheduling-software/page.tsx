@@ -492,7 +492,7 @@ return (
                       badge="Does it matter for Dentists?"
                       title="Managing the Dental Clinic Expertly,"
                       highlightText="Focus on Practice"
-                      description="Now, managing phone calls and booking appointments manually is more expensive than using scheduling software for a dental clinic. Software like Getsettime does so much more than you expect - from saving time to how your clinic runs from the ground up in day-to-day."
+                      description="Now, managing phone calls and booking appointments manually is more expensive than using scheduling software for a dental clinic. Software like GetSetTime does so much more than you expect - from saving time to how your clinic runs from the ground up in day-to-day."
                     />
 
                     <div className="mt-6 space-y-3">

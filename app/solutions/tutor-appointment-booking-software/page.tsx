@@ -175,8 +175,8 @@ const tutorFaqs = [
     answer: "Yes. With self-booking enabled, students see your live availability and can book, reschedule, or cancel a class themselves — within the rules you set. This cuts down on back-and-forth messaging while keeping you fully in control of what's allowed and when."
   },
   { 
-    question: "Does Getsettime support recurring classes and course series?",
-    answer: "Yes, like a modern tutoring scheduling system, Getsettime supports. It allows tutors to schedule weekly, bi-weekly, or custom-interval class series, and all future sessions are automatically added to the calendar. <br/> We tailored the scheduling software for ongoing courses and multi-session packages, not just appointments." 
+    question: "Does GetSetTime support recurring classes and course series?",
+    answer: "Yes, like a modern tutoring scheduling system, GetSetTime supports. It allows tutors to schedule weekly, bi-weekly, or custom-interval class series, and all future sessions are automatically added to the calendar. <br/> We tailored the scheduling software for ongoing courses and multi-session packages, not just appointments." 
   },
   { 
     question: "Can a tutor manage class capacity and waitlists?",
@@ -184,7 +184,7 @@ const tutorFaqs = [
   },
   { 
     question: "Can multiple tutors or locations use the same booking software?", 
-    answer: "Yes — Getsettime supports adding multiple tutors or locations to one profile. Once a user sets up their profile, they can add, remove, or assign a new role to their staff. It enables scaling from a solo-tutor setup to a multi-tutor academy without switching tools."
+    answer: "Yes — GetSetTime supports adding multiple tutors or locations to one profile. Once a user sets up their profile, they can add, remove, or assign a new role to their staff. It enables scaling from a solo-tutor setup to a multi-tutor academy without switching tools."
   },
 ];
 
@@ -944,6 +944,7 @@ export default function TutorAppointmentBookingSoftwarePage() {
         <SolutionCtaSection
           badge="Built for Tutors & Educators"
           businessType="Tutor & Educator"
+          trustedBusinessContent="Trusted by tutors and educators worldwide"
       />
     </>
   );

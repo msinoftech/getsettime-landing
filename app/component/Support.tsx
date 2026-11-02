@@ -13,11 +13,11 @@ export default function Support() {
                 badge="Always Here for You"
                 title="Dedicated Support Around"
                 highlightText="The Clock When You Need"
-                description="Our support team is always available to ensure the scheduling system runs smoothly, so no appointments are missed."
+                description="Our support team is 24/7 available to ensure the scheduling system runs smoothly, so no appointments are missed."
               />
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {["Instant response from our support team","Live specialist guidance available", "Priority support for urgent scheduling issues", "Multiple contact channels— Chat, email and phone"].map((item) => (
+                {["24/7 response from our support team","Live specialist guidance available", "Priority support for urgent scheduling issues", "Multiple contact channels— Chat, email and phone"].map((item) => (
                     <CheckListItem key={item} text={item} wrapperClassName = "relative" />
                 ))}
               </div>
@@ -55,7 +55,6 @@ export default function Support() {
                <div className="p-4 bg-white drop-shadow-xl space-y-4">
                  <div className="flex flex-wrap items-start justify-between border-b border-neutral-100 pb-4">
                    <div className="flex items-center gap-2">
-                     <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
                      <span className="text-sm font-medium text-neutral-900">All systems operational</span>
                    </div>
                    <span className="text-xs text-neutral-600">Updated just now</span>

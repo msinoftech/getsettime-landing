@@ -707,7 +707,7 @@ export default function FeaturesPage() {
                   },
                   {
                       label: "Self Booking",
-                      detail: "Around the Clock",
+                      detail: "24/7 / 24-hour",
                       description: "Allow your clients to book anytime",
                       icon: (
                       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
@@ -832,7 +832,7 @@ export default function FeaturesPage() {
                   <Heading
                       badge="By industry"
                       title="Favourable Impact from Day One on Routine Activities You Can Analyze"
-                      description="We aim to exceed your expectations maximize for which you choose Getsettime."
+                      description="We aim to exceed your expectations maximize for which you choose GetSetTime."
                   />
                 </div>
 

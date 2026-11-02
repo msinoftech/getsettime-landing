@@ -51,16 +51,21 @@ const heroFeatures = [
   "Set up in Minutes",
   "Self-Scheduling Appointment",
   "Role-based access",
-  "Get booked around the clock",
+  "Get booked 24/7 / 24-hour",
 ];
 
-const calendarDays = [
-  "", "", "", 1, 2, 3, 4,
-  5, 6, 7, 8, 9, 10, 11,
-  12, 13, 14, 15, 16, 17, 18,
-  19, 20, 21, 22, 23, 24, 25,
-  26, 27, 28, 29, 30, 31, "",
-];
+function buildCalendarDays(date: Date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const leadingBlanks = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const days: Array<number | ""> = Array.from({ length: leadingBlanks }, () => "");
+
+  for (let day = 1; day <= daysInMonth; day += 1) days.push(day);
+  while (days.length % 7 !== 0) days.push("");
+
+  return days;
+}
 
 const timeSlots = ["09:00 AM", "11:30 AM", "02:00 PM"];
 
@@ -214,12 +219,12 @@ const faqItems = [
       content: `Sometimes, a slight increase in appointments can lead to an admin workload. At that time, it can either impact patient experience or lead to missed booking opportunities. An appointment management system for a skin care clinic not only fits for all time but also creates more growth opportunities by allowing customers to book 24/7 online.`,
   },
   {
-      title: "How does Getsettime allow clients to book a skin care doctor online?",
-      content: `Getsettime is an easy-to-use Online booking software for skin care doctors. While creating a workspace, the doctor gets a customizable booking link. This unique link allows their clients to book appointments 24/7: they follow the link, choose the service provider, service type, and available slot. Appointments are booked in minutes.`,
+      title: "How does GetSetTime allow clients to book a skin care doctor online?",
+      content: `GetSetTime is an easy-to-use Online booking software for skin care doctors. While creating a workspace, the doctor gets a customizable booking link. This unique link allows their clients to book appointments 24/7: they follow the link, choose the service provider, service type, and available slot. Appointments are booked in minutes.`,
   },
   {
-      title: "Does Getsettime support Provider-Specific Scheduling Controls?",
-      content: `Yes, Getsettime is a fully optimised appointment management system for dermatology practices. It supports scheduling based on different treatment capabilities, durations, or room requirements. Clients can also book a dermatologist, physician assistant, nurse injector, or cosmetic specialist from the same link.`,
+      title: "Does GetSetTime support Provider-Specific Scheduling Controls?",
+      content: `Yes, GetSetTime is a fully optimised appointment management system for dermatology practices. It supports scheduling based on different treatment capabilities, durations, or room requirements. Clients can also book a dermatologist, physician assistant, nurse injector, or cosmetic specialist from the same link.`,
   },
 ];
 
@@ -360,6 +365,17 @@ const schemaData = {
 };
 
 export default function DermatologyAppointmentSchedulingSoftware() {
+  const today = new Date();
+  const currentDay = today.getDate();
+  const calendarMonthLabel = today.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  const calendarDays = buildCalendarDays(today);
+  const followUpDate = new Date(today);
+  followUpDate.setDate(followUpDate.getDate() + 20);
+  const selectedDateLabel = followUpDate.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",    
+  });
+
   return (
     <>
         <Script
@@ -378,7 +394,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                         badge="Dermatologist Appointment Scheduling Software"
                         title="Patient Scheduling Software for"
                         highlightText="Dermatologists"
-                        description="Getsettime is built for modern skincare clinics to manage every booking seamlessly, from routine skin checks to specialised cosmetic procedures."
+                        description="GetSetTime is built for modern skincare clinics to manage every booking seamlessly, from routine skin checks to specialised cosmetic procedures."
                         headingTag="h1"
                         titleClassName="text-3xl md:text-4xl lg:text-[50px] font-black text-neutral-900 capitalize"
                     />
@@ -427,7 +443,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
 
                         <div className="mt-3">
                           <div className="mb-2 flex items-center justify-center">
-                              <span className="text-xs font-semibold text-slate-800">May 2026</span>
+                              <span className="text-xs font-semibold text-slate-800">{calendarMonthLabel}</span>
                           </div>
 
                           <div className="grid grid-cols-7 gap-y-0.5 text-center text-[10px] text-slate-400">
@@ -438,7 +454,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                               <span
                                   key={`${day}-${i}`}
                                   className={`mx-auto flex h-6 w-6 items-center justify-center rounded-md text-[10px] ${
-                                  day === 16
+                                  day === currentDay
                                       ? "bg-indigo-600 font-semibold text-white"
                                       : day
                                       ? "text-slate-700"
@@ -475,13 +491,13 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                     {/* Confirmation — bottom-right of image */}
                     <div className="hidden lg:block absolute bottom-4 left-[35%] lg:left-[50%] xl:left-[40%] z-20 w-1/2 rounded-2xl bg-white p-3 shadow-[0_20px_55px_rgba(15,23,42,0.2)] sm:-bottom-4 sm:p-3.5 w-[min(88%,15.75rem)]">
                         <div className="flex items-center gap-3">
-                        <Image src="/dermatology-doc.webp" alt="Dr. Sarah Johnson" width={40} height={40} className="h-10 w-10 rounded-full object-cover"/>
+                        <Image src="/dermatologists-patient-1.webp" alt="Dr. Sarah Johnson" width={40} height={40} className="h-10 w-10 rounded-full object-cover"/>
                         <div className="min-w-0">
                             <p className="truncate text-sm font-semibold text-slate-900">Sarah Johnson</p>
                             <div className="text-xs text-slate-500">Follow-up Visit</div>
                         </div>
                         </div>
-                        <div className="mt-2 text-xs text-slate-400">May 16, 2026 · 11:30 AM</div>
+                        <div className="mt-2 text-xs text-slate-400">{selectedDateLabel} · 11:30 AM</div>
                         <div className="mt-2.5">
                         <span className="inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">Confirmed</span>
                         </div>
@@ -578,7 +594,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
         </section>
 
         {/* Testimonials */}
-        <section className="bg-indigo-50/10 pb-14 sm:pb-20">
+        <section className="bg-indigo-100/10 py-14 sm:py-20">
           <div className="mx-auto container px-4 sm:px-6 lg:px-8">
             <Heading
               badge="TESTIMONIALS"
@@ -587,9 +603,9 @@ export default function DermatologyAppointmentSchedulingSoftware() {
               wrapperClassName="mx-auto mb-6 max-w-3xl space-y-4 text-center"              
             />
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {testimonials.map((item) => (
-                <article key={item.name} className="rounded-2xl bg-white p-6 shadow-xl sm:p-8">
+                <article key={item.name} className="rounded-2xl bg-white p-6 shadow-lg sm:p-8">
                     <span className="leading-none" aria-hidden>
                       <svg fill="#e0e7ff" width="50px" height="50px" viewBox="0 0 24 24"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.318.142-.686.238-1.028.466-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.945-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z"></path></g></svg>
                     </span>

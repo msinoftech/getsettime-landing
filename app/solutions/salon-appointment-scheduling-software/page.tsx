@@ -51,11 +51,11 @@ const faqItems = [
         content: `A single platform that allows clients to book appointments online with availability while managing schedules without the owner's interruptions. Send reminders automatically to reduce the no-shows. No Double booking clash.`,
     },
     {
-        title: "Is Getsettime suitable for small salons or solo stylists?",
-        content: `Yes. Getsettime works with the same efficiency for every salon, whether single-chair or multi-stylist. Experience all the features you are looking for - 24*7 booking, personal branding, managing calendar, and reminder automation.`,
+        title: "Is GetSetTime suitable for small salons or solo stylists?",
+        content: `Yes. GetSetTime works with the same efficiency for every salon, whether single-chair or multi-stylist. Experience all the features you are looking for - 24*7 booking, personal branding, managing calendar, and reminder automation.`,
     },
     {
-        title: "Can I manage multiple stylists and schedules with Getsettime?",
+        title: "Can I manage multiple stylists and schedules with GetSetTime?",
         content: `Yes, as you assign work hours, services, breaks, and availability to each stylist, appointment software follows your rules and handles scheduling effortlessly for your salon - no booking conflicts.`,
     },
     {
@@ -361,7 +361,7 @@ return (
                                     </span>
                                     <div>
                                         <div className="text-lg font-bold text-neutral-900">4.8 ★</div>
-                                        <div className="text-xs font-semibold text-neutral-800">Salon Rating</div>
+                                        <div className="text-xs font-semibold text-neutral-800">Customer Rating</div>
                                     </div>
                                 </div>
                                 <div className="text-xs text-neutral-500">Average feedback from clients</div>
@@ -376,10 +376,10 @@ return (
                     <ScreenGate minWidth={768}>
                     <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
                         <div className="rounded-2xl overflow-hidden drop-shadow-lg">
-                            <Image src="/salon.webp" className="h-64 w-full object-cover" alt="Salon Dashboard" width={400} height={400} />
+                            <Image src="/salon-interior.webp" className="h-54 w-full object-cover" alt="Salon Dashboard" width={400} height={400} />
                         </div>
                         <div className="rounded-2xl overflow-hidden drop-shadow-lg">
-                            <Image src="/salon-appointment.webp" className="h-64 w-full object-cover" alt="Salon Team" width={400} height={400} />
+                            <Image src="/salon-bookings.webp" className="h-54 w-full object-cover" alt="Salon Team" width={400} height={400} />
                         </div>
                     </div>
                     </ScreenGate>
@@ -394,20 +394,23 @@ return (
                                     {[
                                         { label: "Bookings", value: "32", trend: "+11%", accent: "text-indigo-600", iconBg: "bg-indigo-600", bg: "from-indigo-50 to-white", ring: "ring-indigo-100", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
                                         { label: "Stylists", value: "6", trend: "+2", accent: "text-emerald-600", iconBg: "bg-emerald-600", bg: "from-emerald-50 to-white", ring: "ring-emerald-100", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
-                                        { label: "Chairs filled", value: "94%", trend: "+6%", accent: "text-violet-600", iconBg: "bg-violet-600", bg: "from-violet-50 to-white", ring: "ring-violet-100", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+                                        { label: "Chairs filled", value: "6", trend: "+2", accent: "text-violet-600", iconBg: "bg-violet-600", bg: "from-violet-50 to-white", ring: "ring-violet-100", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
                                     ].map((kpi) => (
                                         <div key={kpi.label} className={`group rounded-xl border border-neutral-100 bg-gradient-to-br ${kpi.bg} p-2.5 drop-shadow-sm ring-1 ${kpi.ring} transition duration-300 hover:-translate-y-0.5 hover:drop-shadow-md sm:p-3`}>
                                             <div className="flex items-center justify-between">
                                                 <span className={`flex h-8 w-8 items-center justify-center rounded-lg ${kpi.iconBg} text-white drop-shadow-sm sm:h-9 sm:w-9`}>
                                                     <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d={kpi.icon} /></svg>
                                                 </span>
-                                                <span className="inline-flex items-center gap-0.5 text-xs font-bold text-emerald-600">
-                                                    <svg className="h-2 w-2" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
-                                                    {kpi.trend}
-                                                </span>
+                                                <div className="flex flex-col items-center">
+                                                    <span className="inline-flex items-center gap-0.5 text-xs font-bold text-emerald-600">
+                                                        <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
+                                                        {kpi.trend}
+                                                    </span>
+                                                    <span className={`text-base font-bold sm:text-lg ${kpi.accent}`}>{kpi.value}</span>
+                                                </div>
                                             </div>
                                             <div className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">{kpi.label}</div>
-                                            <div className={`text-base font-bold tabular-nums sm:text-lg ${kpi.accent}`}>{kpi.value}</div>
+                                            
                                         </div>
                                     ))}
                                 </div>
@@ -421,18 +424,15 @@ return (
                                         </div>
                                         <div className="space-y-2.5">
                                             {[
-                                                ["10:00 AM", "Haircut + Styling", "Sarah Williams"],
-                                                ["11:30 AM", "Facial Treatment", "Jessica Brown"],
+                                                ["10:15 AM", "Haircut", "Liora Voss"],
+                                                ["01:10 PM", "Facial", "Mira Calder"],
                                             ].map(([time, service, client]) => (
                                                 <div key={time} className="flex flex-wrap items-center gap-2.5 rounded-xl border border-emerald-100 bg-emerald-50/60 p-2.5 sm:flex-nowrap sm:gap-3">
-                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-emerald-600 border border-emerald-200">
-                                                        {client.split(" ").map((w) => w[0]).slice(0, 2).join("")}
-                                                    </div>
                                                     <div className="min-w-0 flex-1">
-                                                        <div className="truncate text-sm font-semibold text-neutral-900">{service}</div>
-                                                        <div className="truncate text-xs text-neutral-500">{client}</div>
+                                                        <div className="truncate text-sm font-semibold text-neutral-900">{client}</div>
+                                                        <div className="truncate text-xs text-neutral-500">{service}</div>
                                                     </div>
-                                                    <span className="ml-auto shrink-0 rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-600 border border-emerald-100">{time}</span>
+                                                    <span className="ml-auto shrink-0 rounded-full bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-600 border border-emerald-200">{time}</span>
                                                 </div>
                                             ))}
                                         </div>
@@ -445,13 +445,10 @@ return (
                                         </div>
                                         <div className="space-y-2.5">
                                             {[
-                                                ["Stella Ross", "Salon Specialist", "Available"],
-                                                ["Oliver Morgan", "Skin & Facial Expert", "Busy"],
+                                                ["Nia Ellison", "Color", "Available"],
+                                                ["Theo Maren", "Bridal Makeup", "Busy"],
                                             ].map(([name, role, status]) => (
                                                 <div key={name} className="flex flex-wrap items-center gap-2.5 rounded-xl border border-indigo-200 bg-indigo-50 p-2.5 sm:flex-nowrap sm:gap-3">
-                                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-indigo-700 border border-indigo-200">
-                                                        {name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
-                                                    </div>
                                                     <div className="min-w-0 flex-1">
                                                         <div className="truncate text-sm font-semibold text-neutral-900">{name}</div>
                                                         <div className="truncate text-xs text-neutral-500">{role}</div>
@@ -579,7 +576,7 @@ return (
                                 <div className="flex items-center gap-3 rounded-xl bg-white drop-shadow-sm p-3">
                                     <div className="relative">
                                         <Image
-                                        src="/salon-profile.webp"
+                                        src="/salon-staff.webp"
                                         alt="salon profile"
                                         className="relative h-16 w-16 rounded-full border-4 border-white object-cover drop-shadow-md"
                                         width={64}

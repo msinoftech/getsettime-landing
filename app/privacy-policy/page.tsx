@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
                   Introduction
                 </h2>
                 <div className="space-y-4 text-neutral-600 sm:pl-11">
-                  <p>At Getsettime, our Privacy Policy defines how we collect, use, share, and protect your personal information.</p>
+                  <p>At GetSetTime, our Privacy Policy defines how we collect, use, share, and protect your personal information.</p>
                   <p>We follow the GDPR (EU) 2016/679 (General Data Protection Regulation), Indian data protection laws, and other international privacy rules.</p>
                   <p>When you create an account, use this platform, or give us your information, you agree to the practices described in our Privacy Policy.</p>
                   <p>We process personal data lawfully, fairly, transparently, and only for legitimate business purposes.</p>
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
                 <div className="space-y-6 sm:pl-11">
                   <div>
                     <h3 className="text-lg font-semibold text-neutral-900 mb-3">2.1. Information You Provide</h3>
-                    <p className="text-neutral-600 mb-3 font-medium">When you sign up or interact with Getsettime, we may collect:</p>
+                    <p className="text-neutral-600 mb-3 font-medium">When you sign up or interact with GetSetTime, we may collect:</p>
                     <ul className="list-disc list-inside text-neutral-600 space-y-2 pl-3">
                       <li>Your Account information, including full name, email, contact number, business name, address, and business or profession type.</li>
                       <li>Booking data including appointment details, service descriptions, availability, event type and staff schedules.</li>
@@ -112,7 +112,7 @@ export default function PrivacyPolicy() {
 
                   <div>
                     <h3 className="text-lg font-semibold text-neutral-900 mb-3">2.3. Information from Third Parties</h3>
-                    <p className="text-neutral-600">We may receive information from other sources, such as Google Calendar, Zoom, or Stripe, which you have integrated with Getsettime. Any data shared through these integration sources remains governed by their respective privacy policies.</p>
+                    <p className="text-neutral-600">We may receive information from other sources, such as Google Calendar, Zoom, or Stripe, which you have integrated with GetSetTime. Any data shared through these integration sources remains governed by their respective privacy policies.</p>
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function PrivacyPolicy() {
                     <li><span className="font-medium">Legal compliance:</span> When required by law or to protect our rights, users, or the public.</li>
                     <li><span className="font-medium">Business transfer:</span> In the event of a merger, sale, or acquisition, your data may be transferred with appropriate safeguards in place.</li>
                   </ul>
-                  <p className="font-semibold text-neutral-900 mt-4">Getsettime does not sell or rent personal data to third parties.</p>
+                  <p className="font-semibold text-neutral-900 mt-4">GetSetTime does not sell or rent personal data to third parties.</p>
                 </div>
               </div>
 
@@ -218,7 +218,7 @@ export default function PrivacyPolicy() {
                   Third-Party Integrations
                 </h2>
                 <div className="space-y-4 text-neutral-600 sm:pl-11">
-                  <p>Getsettime connects with third-party apps such as Google Calendar, Zoom, Stripe, and PayPal to extend functionality.</p>
+                  <p>GetSetTime connects with third-party apps such as Google Calendar, Zoom, Stripe, and PayPal to extend functionality.</p>
                   <p>Before enabling these integrations, please review their privacy policies as we do not control third-party data processing practices.</p>
                 </div>
               </div>
@@ -230,7 +230,7 @@ export default function PrivacyPolicy() {
                   Children&apos;s Privacy
                 </h2>
                 <div className="space-y-4 text-neutral-600 sm:pl-11">
-                  <p>Getsettime is not intended for individuals under 13 years old.</p>
+                  <p>GetSetTime is not intended for individuals under 13 years old.</p>
                   <p>We do not knowingly collect data from children. If you believe a child has provided personal information, contact us.</p>
                 </div>
               </div>
@@ -242,7 +242,7 @@ export default function PrivacyPolicy() {
                   International Data Transfer
                 </h2>
                 <div className="space-y-4 text-neutral-600 sm:pl-11">
-                  <p>If you access Getsettime from outside India, your data may be transferred to and processed in other countries where our servers or service providers operate. We ensure these transfers comply with applicable data protection standards.</p>
+                  <p>If you access GetSetTime from outside India, your data may be transferred to and processed in other countries where our servers or service providers operate. We ensure these transfers comply with applicable data protection standards.</p>
                 </div>
               </div>
 
