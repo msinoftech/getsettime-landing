@@ -588,7 +588,7 @@ const growthRoadmap = [
                           Next appointment
                         </div>
                         <div className="text-base font-bold">Lina Wagner · 11:00 AM</div>
-                        <div className="text-xs text-white/80">Consultation · Room 2</div>
+                        <div className="text-xs text-white/80">Consultation</div>
                         <div className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-xs font-medium">
                           <span className="h-1.5 w-1.5 rounded-full bg-white" />
                           Check-in in 20 mins

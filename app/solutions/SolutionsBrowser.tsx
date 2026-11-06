@@ -144,7 +144,7 @@ function IndustryRow({
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <Link href={item.href} className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/90 p-4 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" aria-label={`Explore ${item.title}`}>
+    <Link href={item.href} className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-white/90 p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" aria-label={`Explore ${item.title}`}>
       <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br opacity-[0.07] ${theme.wash}`} aria-hidden />
       <div className="relative flex flex-1 flex-col">
         <div className="flex items-start justify-between gap-3">
@@ -259,42 +259,10 @@ export default function SolutionsBrowser() {
           </ScreenGate>
         </aside>
 
-        {/* <ScreenGate maxWidth={1023}>
-          <div className="sticky top-16 z-40 lg:col-span-full">
-            <div className="relative rounded-2xl border border-white/70 bg-white/95 p-2 shadow-[0_12px_40px_-24px_rgba(15,23,42,0.45)] backdrop-blur-xl">
-              <label htmlFor={categorySelectId} className="sr-only">
-                Select industry category
-              </label>
-              <select
-                id={categorySelectId}
-                value={activeId}
-                onChange={(e) => selectCategory(e.target.value)}
-                className="w-full appearance-none rounded-xl border border-neutral-200/80 bg-white py-3 pl-4 pr-10 text-sm font-semibold text-neutral-900 shadow-sm outline-none transition focus:border-indigo-300 focus:ring-4 focus:ring-indigo-100"
-              >
-                {browserCategories.map((category, index) => (
-                  <option key={category.id} value={category.id}>
-                    {String(index + 1).padStart(2, "0")} — {category.label}
-                  </option>
-                ))}
-              </select>
-              <svg
-                className="pointer-events-none absolute right-5 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-500"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-                aria-hidden
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="m6 9 6 6 6-6" />
-              </svg>
-            </div>
-          </div>
-        </ScreenGate> */}
-
         {/* Stage left + solutions right */}
         <div key={active.id} aria-labelledby="solutions-category-heading" className="solutions-stage grid gap-5 lg:items-stretch lg:gap-6 lg:col-span-9">
           {/* Solutions list — right */}
-          <div className="overflow-hidden rounded-2xl border border-neutral-200/70 bg-gradient-to-b from-white via-neutral-50/80 to-white shadow-xl p-4">
+          <div className="overflow-hidden rounded-2xl sm:border sm:border-neutral-200/70 sm:bg-gradient-to-b sm:from-white sm:via-neutral-50/80 sm:to-white sm:shadow-xl sm:p-4">
             {filteredItems.length === 0 ? (
               <p className="rounded-2xl border border-dashed border-neutral-200 bg-white px-5 py-10 text-center text-sm text-neutral-600">
                 No published solutions match.{" "}

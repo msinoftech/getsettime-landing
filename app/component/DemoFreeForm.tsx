@@ -166,16 +166,31 @@ function InputIcon({ children, accent = false }: { children: React.ReactNode; ac
   );
 }
 
-function validateStep(step: number, data: FormData): string | null {
-  if (step !== 1) return null;
-  if (!data.fullName.trim()) return "Please enter your full name.";
-  if (!data.businessName.trim()) return "Please enter your business name.";
-  if (!data.email.trim()) return "Please enter your work email.";
+type FieldName = "fullName" | "businessName" | "email" | "phone" | "businessType";
+type FieldErrors = Partial<Record<FieldName, string>>;
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validateStep(step: number, data: FormData): FieldErrors {
+  if (step !== 1) return {};
+
+  const errors: FieldErrors = {};
+  if (!data.fullName.trim()) errors.fullName = "Please enter your full name.";
+  if (!data.businessName.trim()) errors.businessName = "Please enter your business name.";
+  if (!data.email.trim()) errors.email = "Please enter your work email.";
+  else if (!EMAIL_PATTERN.test(data.email.trim())) errors.email = "Please enter a valid work email.";
   if (!data.phone.trim() || !isValidInternationalPhone(data.phone)) {
-    return "Please enter a valid phone number with country code.";
+    errors.phone = "Please enter a valid phone number with country code.";
   }
-  if (!data.businessType) return "Please select your business type.";
-  return null;
+  if (!data.businessType || data.businessType === "Select Business Type") {
+    errors.businessType = "Please select your business type.";
+  }
+  return errors;
+}
+
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+  return <p className="mt-1 text-sm text-red-500">{message}</p>;
 }
 
 export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
@@ -186,12 +201,23 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
   const [formData, setFormData] = useState<FormData>(() => createEmptyFormData(defaultBusinessType));
   const [status, setStatus] = useState<"" | "sending" | "success" | "error">("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
+  const clearFieldError = (name: string) => {
+    setFieldErrors((prev) => {
+      if (!(name in prev)) return prev;
+      const next = { ...prev };
+      delete next[name as FieldName];
+      return next;
+    });
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    clearFieldError(name);
     if (errorMessage) setErrorMessage("");
   };
 
@@ -212,30 +238,34 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
   };
 
   const goNext = () => {
-    const error = validateStep(step, formData);
-    if (error) {
+    const errors = validateStep(step, formData);
+    if (Object.keys(errors).length > 0) {
       setStatus("error");
-      setErrorMessage(error);
+      setFieldErrors(errors);
+      setErrorMessage("");
       return;
     }
     setStatus("");
     setErrorMessage("");
+    setFieldErrors({});
     setStep((s) => Math.min(s + 1, 2));
   };
 
   const goBack = () => {
     setStatus("");
     setErrorMessage("");
+    setFieldErrors({});
     setStep((s) => Math.max(s - 1, 1));
   };
 
   const submitDemoRequest = async () => {
     if (step !== 2 || status === "sending") return;
 
-    const step1Error = validateStep(1, formData);
-    if (step1Error) {
+    const step1Errors = validateStep(1, formData);
+    if (Object.keys(step1Errors).length > 0) {
       setStatus("error");
-      setErrorMessage(step1Error);
+      setFieldErrors(step1Errors);
+      setErrorMessage("");
       setStep(1);
       return;
     }
@@ -284,6 +314,7 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
       if (data.success) {
         setStatus("");
         setErrorMessage("");
+        setFieldErrors({});
         setFormData(createEmptyFormData(defaultBusinessType));
         setStep(3);
       } else {
@@ -301,8 +332,10 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
     if (step === 1) goNext();
   };
 
-  const inputClass = "block w-full rounded-lg border border-neutral-200 bg-white py-2.5 pl-10 pr-3 text-sm text-neutral-800 placeholder:text-neutral-400 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20";
-  const selectClass = "block w-full rounded-lg border border-neutral-200 bg-white py-2.5 pl-10 pr-8 text-sm text-neutral-800 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 appearance-none";
+  const inputClass = (hasError = false) =>
+    `block w-full rounded-lg border ${hasError ? "border-red-400" : "border-neutral-200"} bg-white py-2.5 pl-10 pr-3 text-sm text-neutral-800 placeholder:text-neutral-400 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20`;
+  const selectClass = (hasError = false) =>
+    `block w-full rounded-lg border ${hasError ? "border-red-400" : "border-neutral-200"} bg-white py-2.5 pl-10 pr-8 text-sm text-neutral-800 focus:border-[#3D3AF3] focus:outline-none focus:ring-2 focus:ring-[#3D3AF3]/20 appearance-none`;
 
   return (
     <div id="apply-form" className="mx-auto rounded-2xl border border-neutral-200 bg-white p-5 drop-shadow-lg sm:p-6 ">
@@ -400,9 +433,11 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                     placeholder="Enter your full name"
                     value={formData.fullName}
                     onChange={handleChange}
-                    className={inputClass}
+                    aria-invalid={Boolean(fieldErrors.fullName)}
+                    className={inputClass(Boolean(fieldErrors.fullName))}
                   />
                 </div>
+                <FieldError message={fieldErrors.fullName} />
               </div>
 
               <div>
@@ -420,9 +455,11 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                     placeholder="Enter your business name"
                     value={formData.businessName}
                     onChange={handleChange}
-                    className={inputClass}
+                    aria-invalid={Boolean(fieldErrors.businessName)}
+                    className={inputClass(Boolean(fieldErrors.businessName))}
                   />
                 </div>
+                <FieldError message={fieldErrors.businessName} />
               </div>
 
               <div>
@@ -440,9 +477,11 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                     placeholder="Enter your work email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={inputClass}
+                    aria-invalid={Boolean(fieldErrors.email)}
+                    className={inputClass(Boolean(fieldErrors.email))}
                   />
                 </div>
+                <FieldError message={fieldErrors.email} />
               </div>
 
               <div>
@@ -455,9 +494,12 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                   value={formData.phone}
                   onChange={(phone) => {
                     setFormData((prev) => ({ ...prev, phone }));
+                    clearFieldError("phone");
                     if (errorMessage) setErrorMessage("");
                   }}
+                  hasError={Boolean(fieldErrors.phone)}
                 />
+                <FieldError message={fieldErrors.phone} />
               </div>
             </div>
 
@@ -476,7 +518,8 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                   name="businessType"
                   value={formData.businessType}
                   onChange={handleChange}
-                  className={selectClass}
+                  aria-invalid={Boolean(fieldErrors.businessType)}
+                  className={selectClass(Boolean(fieldErrors.businessType))}
                 >
                   {businessTypes.map((t) => (
                     <option key={t} value={t}>
@@ -490,6 +533,8 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                   </svg>
                 </span>
               </div>
+              <FieldError message={fieldErrors.businessType} />
+              
               {businessType && formData.businessType === defaultBusinessType && (
                 <div className="mt-1.5 flex items-center gap-1 text-xs font-medium text-green-600">
                   <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -537,7 +582,7 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                   name="staffCount"
                   value={formData.staffCount}
                   onChange={handleChange}
-                  className={selectClass}
+                  className={selectClass()}
                   aria-label="Team size"
                 >
                   <option value="">Select team size</option>
@@ -568,7 +613,7 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
                   name="bookingMethod"
                   value={formData.bookingMethod}
                   onChange={handleChange}
-                  className={selectClass}
+                  className={selectClass()}
                   aria-label="Current booking method"
                 >
                   <option value="">Select your current method</option>
@@ -744,9 +789,9 @@ export default function DemoFreeForm({ businessType }: DemoFreeFormProps = {}) {
           </div>
         )}
 
-        {status === "error" && (
+        {errorMessage && (
           <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
-            {errorMessage || "Something went wrong. Please try again."}
+            {errorMessage}
           </div>
         )}
 

@@ -365,9 +365,9 @@ return (
                                 {/* KPI strip */}
                                 <div className="relative mb-4 grid grid-cols-1 gap-2 min-[420px]:grid-cols-3 sm:grid-cols-3 sm:gap-2.5">
                                     {[
-                                        { label: "Appointments", value: "24", trend: "+9%", accent: "text-indigo-600", iconBg: "bg-indigo-600", bg: "from-indigo-50 to-white", ring: "ring-indigo-100", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
-                                        { label: "Confirmed", value: "21", trend: "+6%", accent: "text-emerald-600", iconBg: "bg-emerald-600", bg: "from-emerald-50 to-white", ring: "ring-emerald-100", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
-                                        { label: "Chair use", value: "92%", trend: "+4%", accent: "text-violet-600", iconBg: "bg-violet-600", bg: "from-violet-50 to-white", ring: "ring-violet-100", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+                                        { label: "Appointments", value: "12", trend: "+4%", accent: "text-indigo-600", iconBg: "bg-indigo-600", bg: "from-indigo-50 to-white", ring: "ring-indigo-100", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+                                        { label: "Confirmed", value: "7", trend: "+2%", accent: "text-emerald-600", iconBg: "bg-emerald-600", bg: "from-emerald-50 to-white", ring: "ring-emerald-100", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+                                        { label: "New patients", value: "4", trend: "+3%", accent: "text-violet-600", iconBg: "bg-violet-600", bg: "from-violet-50 to-white", ring: "ring-violet-100", icon: "M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" },
                                     ].map((kpi) => (
                                         <div key={kpi.label} className={`group rounded-xl border border-neutral-100 bg-gradient-to-br ${kpi.bg} p-2.5 drop-shadow-sm ring-1 ${kpi.ring} transition duration-300 hover:-translate-y-0.5 hover:drop-shadow-md sm:p-3`}>
                                             <div className="flex items-center justify-between">
@@ -523,9 +523,10 @@ return (
                                     </div>
 
                                     <div className="rounded-2xl bg-indigo-600 p-4 text-white drop-shadow-lg">
-                                        <div className="opacity-90">Next appointment</div>
+                                        <div className="opacity-90">Upcoming Appointment</div>
                                         <div className="mt-1 font-semibold">Emma Wilson · 11:00 AM</div>
-                                        <div className="opacity-90">Dental Checkup · Room 2</div>
+                                        <div className="opacity-90">Dental Checkup</div>
+                                        <span className="ml-auto inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold border bg-emerald-50 text-emerald-600 border-emerald-200">Confirmed</span>
                                     </div>
                                 </div>
 
@@ -674,11 +675,7 @@ return (
                 <h3 className="text-lg font-bold text-neutral-900">Supports Every Type of Dental Clinic Appointment</h3>
                 <div className="mt-2 flex flex-wrap gap-3">
                     {[
-                    "Initial Consultation",
-                    "Assessment & Evaluation",
-                    "Treatment Session",
-                    "Follow-up Appointment",
-                    "Rehabilitation Program",
+                    "Dental Checkup", "Dental Cleaning", "Dental Filling", "Tooth Extraction", "New Patient Consultation", "Orthodontic Consultation", "Post-Treatment Follow-up",
                     ].map((tag) => (
                     <span key={tag} className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-white/80 px-2 py-1 text-xs text-neutral-700 drop-shadow-sm">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M20 6 9 17l-5-5"/></svg> 

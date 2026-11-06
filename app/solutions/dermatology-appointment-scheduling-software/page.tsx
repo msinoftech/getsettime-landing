@@ -51,7 +51,7 @@ const heroFeatures = [
   "Set up in Minutes",
   "Self-Scheduling Appointment",
   "Role-based access",
-  "Get booked 24/7 / 24-hour",
+  "Get booked 24/7 hours",
 ];
 
 function buildCalendarDays(date: Date) {
@@ -491,7 +491,7 @@ export default function DermatologyAppointmentSchedulingSoftware() {
                     {/* Confirmation — bottom-right of image */}
                     <div className="hidden lg:block absolute bottom-4 left-[35%] lg:left-[50%] xl:left-[40%] z-20 w-1/2 rounded-2xl bg-white p-3 shadow-[0_20px_55px_rgba(15,23,42,0.2)] sm:-bottom-4 sm:p-3.5 w-[min(88%,15.75rem)]">
                         <div className="flex items-center gap-3">
-                        <Image src="/dermatologists-patient-1.webp" alt="Dr. Sarah Johnson" width={40} height={40} className="h-10 w-10 rounded-full object-cover"/>
+                        <Image src="/dermatology-patient-1.png" alt="Dr. Sarah Johnson" width={40} height={40} className="h-10 w-10 rounded-full object-cover"/>
                         <div className="min-w-0">
                             <p className="truncate text-sm font-semibold text-slate-900">Sarah Johnson</p>
                             <div className="text-xs text-slate-500">Follow-up Visit</div>

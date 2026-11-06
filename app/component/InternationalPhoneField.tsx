@@ -39,8 +39,14 @@ type InternationalPhoneFieldProps = {
   required?: boolean;
   className?: string;
   variant?: PhoneFieldVariant;
+  hasError?: boolean;
   "aria-label"?: string;
 };
+
+function shellClasses(variant: PhoneFieldVariant, hasError = false) {
+  const base = shellClass[variant];
+  return hasError ? base.replace(/border-(?:slate|neutral)-[\w/[\].-]+/, "border-red-400") : base;
+}
 
 const shellClass: Record<PhoneFieldVariant, string> = {
   contact: "intl-phone-shell flex w-full items-stretch rounded-xl border border-slate-200/80 bg-white/80 focus-within:ring-2 focus-within:ring-indigo-600",
@@ -69,6 +75,7 @@ function PhoneFieldInner({
   required,
   className = "",
   variant = "contact",
+  hasError = false,
   "aria-label": ariaLabel = "Phone number",
   defaultCountry,
 }: PhoneFieldInnerProps) {
@@ -82,7 +89,7 @@ function PhoneFieldInner({
     });
 
   return (
-    <div className={`${shellClass[variant]} ${className}`.trim()}>
+    <div className={`${shellClasses(variant, hasError)} ${className}`.trim()}>
       <CountrySelector
         selectedCountry={country.iso2}
         onSelect={(c) => {
@@ -113,6 +120,7 @@ function PhoneFieldInner({
         required={required}
         placeholder={placeholder}
         aria-label={ariaLabel}
+        aria-invalid={hasError}
         value={inputValue}
         onChange={handlePhoneValueChange}
         className={inputClass[variant]}
@@ -152,7 +160,7 @@ export default function InternationalPhoneField(props: InternationalPhoneFieldPr
   if (!defaultCountry) {
     return (
       <div
-        className={`${shellClass[props.variant ?? "contact"]} ${props.className ?? ""} px-4 py-3 text-sm text-neutral-500`.trim()}
+        className={`${shellClasses(props.variant ?? "contact", props.hasError)} ${props.className ?? ""} px-4 py-3 text-sm text-neutral-500`.trim()}
         aria-hidden
       >
         Detecting your country…

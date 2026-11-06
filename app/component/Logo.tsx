@@ -4,7 +4,7 @@ import { BASE_URL } from "@/lib/config";
 export default function Logo() {
 
   return (
-    <Link href={BASE_URL} aria-label="GetSetTime - Logo" className="flex items-center gap-3 group">
+    <a href={BASE_URL} aria-label="GetSetTime - Logo" className="flex items-center gap-3 group">
         <div className="logo-container" style={{ overflow: 'visible', padding: '15px', margin: '-15px', display: 'inline-block' }}>
             <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 3448.58 799.54" className="h-10 w-auto" width="200" height="48" preserveAspectRatio="xMidYMid meet" style={{ overflow: 'visible', display: 'block' }}>
             <g aria-hidden={true}>
@@ -27,6 +27,6 @@ export default function Logo() {
             </g>
             </svg>
         </div>
-    </Link>
+    </a>
   );
 };
