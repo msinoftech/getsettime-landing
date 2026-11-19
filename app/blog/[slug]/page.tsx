@@ -224,7 +224,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 {/* Cover image */}
                 <div className="relative">
                   <div className="relative overflow-hidden rounded-2xl">
-                    <Image src={`/${post.coverImage}`} alt={post.title} width={800} height={400} className="aspect-[2/1] w-full object-cover" priority />
+                    <Image src={`/${post.coverImage}`} alt={post.title} width={1000} height={500} className="aspect-[16/9] w-full object-cover" priority />
                   </div>
                 </div>
 

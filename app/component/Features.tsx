@@ -15,18 +15,6 @@ export const TimelineItem: FC<{ step: number; title: string; desc: string }> = (
   </div>
 );
 
-export const TrustBar: FC = () => (
-  <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6">
-    <p>Trusted by teams scheduling over <span className="font-semibold text-indigo-600">2M+</span> appointments</p>
-    <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2">
-      <span className="px-3 py-1 rounded-md bg-white drop-shadow-sm">DKIM/DMARC</span>
-      <span className="px-3 py-1 rounded-md bg-white drop-shadow-sm">PCI-DSS</span>
-      <span className="px-3 py-1 rounded-md bg-white drop-shadow-sm">GDPR</span>
-      <span className="px-3 py-1 rounded-md bg-white drop-shadow-sm">99.9% Uptime</span>
-    </div>
-  </div>
-);
-
 export const Tabs: FC<{ tabs: string[]; active: string; onChange: (v: string) => void }> = ({ tabs, active, onChange }) => (
   <div className="flex items-center justify-center overflow-x-auto py-2 hide-scrollbar">
     <div className="flex items-center justify-center flex-wrap gap-1 bg-white rounded-xl p-2 drop-shadow-sm">
@@ -153,7 +141,6 @@ export default function Features() {
 
                   <Card title="Real Time Reporting" description="Track live booking analytics, appointment trends, and team performance metrics with intelligent dashboards" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} iconWrapperClassName = "w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-600 text-white drop-shadow-md" wrapperClassName = "relative" />
                 </div>
-                <div className="hidden lg:block"><TrustBar /></div>
               </div>
               
             )}
