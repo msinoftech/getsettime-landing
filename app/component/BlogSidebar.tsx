@@ -52,7 +52,7 @@ export function BlogSidebar({ currentPostSlug, relatedPosts = [] }: BlogSidebarP
         <ul className="space-y-2">
           {blogCategories.filter(cat => cat !== "All").map((category) => (
             <li key={category}>
-              <Link href={`${BASE_URL}/blog/?category=${encodeURIComponent(category)}`} aria-label="Category - Blog" className="group flex items-center justify-between px-4 py-2 rounded-xl bg-indigo-50 transition-all duration-200">
+              <Link href={`${BASE_URL}/blog?category=${encodeURIComponent(category)}`} aria-label="Category - Blog" className="group flex items-center justify-between px-4 py-2 rounded-xl bg-indigo-50 transition-all duration-200">
                 <span className="text-sm group-hover:text-indigo-600 transition-colors">{category}</span>
                 <svg className="w-4 h-4 text-neutral-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
