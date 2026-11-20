@@ -800,7 +800,7 @@ export const blogPosts: BlogPost[] = [
     <h3>1. Improve Your Dental Appointment Scheduling</h3>
     <p>A well-managed appointment calendar is the foundation of an efficient dental clinic. Poor scheduling can result in long patient waits, unused chair time, rushed procedures, staff pressure, and scheduling conflicts.</p>
     <p>Instead of allocating the same time to different procedures, set realistic appointment times for root canals, implant consultations, or complex restorative treatments.</p>
-    <p>Buffer time can also help the clinic respond to delays without disrupting the entire day. Using <a href="${BASE_URL}/dental-appointment-scheduling-software">dental appointment scheduling software</a> can make this easier. Features such as online booking, automated reminders, provider calendars, and real-time availability can reduce repetitive front-desk work.</p>
+    <p>Buffer time can also help the clinic respond to delays without disrupting the entire day. Using <a href="${BASE_URL}/solutions/dentist-appointment-scheduling-software">dental appointment scheduling software</a> can make this easier. Features such as online booking, automated reminders, provider calendars, and real-time availability can reduce repetitive front-desk work.</p>
     <p>If you see patterns in cancellations and no-shows, strengthen your reminder and confirmation procedures to reduce these appointments.</p>
 
     <h3>2. Standardize Your Daily Clinic Workflows</h3>
@@ -830,7 +830,7 @@ export const blogPosts: BlogPost[] = [
 
     <h3>6. Use Dental Practice Management Software</h3>
     <p>Technology should reduce administrative work, not just digitize paperwork.</p>
-    <p>Modern <a href="${BASE_URL}/dental-appointment-scheduling-software">dental practice management software</a> can bring routine, repetitive tasks into one system, from simple patient booking to complex financial management.</p>
+    <p>Modern <a href="${BASE_URL}/solutions/dentist-appointment-scheduling-software">dental practice management software</a> can bring routine, repetitive tasks into one system, from simple patient booking to complex financial management.</p>
     <p>Before selecting software, identify the problems you actually need to solve. A small dental office may prioritize scheduling, reminders, and patient records. In contrast, a larger dental hospital may require multiple provider calendars, advanced reporting, role-based permissions, billing integrations, and location management.</p>
     <p>Data security and privacy policies are important in healthcare. If you store or digitize patient information, you must define access controls (who can access records), where backups are stored, who can audit, and how you ensure compliance with healthcare privacy regulations.</p>
     <p>Most importantly, train employees properly. Software provides little benefit when staff members continue maintaining unnecessary manual processes alongside it.</p>
@@ -882,7 +882,7 @@ export const blogPosts: BlogPost[] = [
     <h3>2. Make Your Clinic Website Easy to Use</h3>
     <p>Your website should help patients decide, not create extra work. A visitor should quickly understand your services, location, hours, contact options, and how to schedule an appointment.</p>
     <p>Keep navigation simple and make sure the site works properly on mobile devices. Avoid hiding essential information behind several pages or forcing visitors to call to find out whether you provide a particular service.</p>
-    <p>Useful website content can include provider profiles, treatment information, FAQs, directions, insurance or payment information (where appropriate), and a booking link if you use <a href="${BASE_URL}/appointment-booking-software">appointment-booking software.</a></p>
+    <p>Useful website content can include provider profiles, treatment information, FAQs, directions, insurance or payment information (where appropriate), and a booking link if you use <a href="${BASE_URL}">appointment-booking software.</a></p>
     <p>If you want to <b>attract more patients</b>, make it easy for interested visitors to take the next step.</p>
 
     <h3>3. Offer Convenient Online Appointment Scheduling</h3>

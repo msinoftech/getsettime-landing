@@ -14,14 +14,14 @@ import ScreenGate from "@/app/component/ScreenGate";
 const pageUrl = `${BASE_URL}/solutions/dentist-appointment-scheduling-software`;
 
 export const metadata: Metadata = {
-    title: `Dentist Appointment Booking App | ${APP_NAME} – Smart Appointment Scheduling`,
+    title: `Dental Clinic Appointment Booking Software | ${APP_NAME}`,
     description: `The easiest dentist scheduling software - Book clients online 24/7, send auto WhatsApp reminders & reduce no-shows — no tech skills needed. Try free today.`,
     keywords: [ "dental appointment booking software", "best dental clinic management software", "dentist software", "scheduling software for dentists", "software for dental clinic management", "software for dental clinic", "dental practice management software", "dental appointment app"],
     alternates: {
       canonical: `${pageUrl}`,
     },
     openGraph: {
-      title: `Dentist Appointment Booking App | ${APP_NAME} – Smart Appointment Scheduling`,
+      title: `Dental Clinic Appointment Booking Software | ${APP_NAME}`,
       description: `The easiest dentist scheduling software - Book clients online 24/7, send auto WhatsApp reminders & reduce no-shows — no tech skills needed. Try free today.`,
       url: `${pageUrl}`,
       type: "website",
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
           url: `${BASE_URL}${contactInfo.DEFAULT_IMAGE}`,
           width: 1200,
           height: 630,
-          alt: `Dentist Appointment Booking App | ${APP_NAME} – Smart Appointment Scheduling`,
+          alt: `Dental Clinic Appointment Booking Software | ${APP_NAME}`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `Dentist Appointment Booking App | ${APP_NAME} – Smart Appointment Scheduling`,
+      title: `Dental Clinic Appointment Booking Software | ${APP_NAME}`,
       description: `The easiest dentist scheduling software - Book clients online 24/7, send auto WhatsApp reminders & reduce no-shows — no tech skills needed. Try free today.`,
       images: [`${BASE_URL}${contactInfo.DEFAULT_IMAGE}`],
     },
@@ -120,7 +120,7 @@ const schemaData = {
         "@type": "WebPage",
         "@id": `${pageUrl}/#webpage`,
         "url": `${pageUrl}`,
-        "name": `Dentist Appointment Booking Software | ${APP_NAME} – Smart Appointment Scheduling`,
+        "name": `Dental Clinic Appointment Booking Software | ${APP_NAME}`,
         "description": "The easiest dentist scheduling software - Book clients online 24/7, send auto WhatsApp reminders & reduce no-shows — no tech skills needed. Try free today.",
         "inLanguage": "en",
         "isPartOf": {

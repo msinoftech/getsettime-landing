@@ -42,6 +42,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/solutions/physiotherapist-appointment-booking-software`,
       priority: 0.8,
     },
+    {
+      url: `${BASE_URL}/solutions/dermatology-appointment-scheduling-software`,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/solutions/tutor-appointment-booking-software`,
+      priority: 0.8,
+    },
     // Dynamic blog detail routes
     ...blogPosts.map((post) => ({
       url: `${BASE_URL}/blog/${post.slug}`,

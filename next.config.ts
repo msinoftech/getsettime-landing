@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
 
   // Redirects for old URLs
   async redirects() {
-    return [
+    return [     
       {
         source: "/solutions/doctor-appointment-scheduling-app",
         destination: "/solutions/doctor-appointment-scheduling-software",

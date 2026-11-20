@@ -11,7 +11,7 @@ import SolutionCtaSection from "@/app/component/SolutionCtaSection";
 import ScreenGate from "@/app/component/ScreenGate";
 
 const pageUrl = `${BASE_URL}/solutions/dermatology-appointment-scheduling-software`;
-const pageTitle = "All-in-one dermatology clinic software for appointment booking";
+const pageTitle = "Dermatology Appointment Booking Software | GetSetTime";
 const pageDescription = "All-in-one dermatology clinic scheduling software for online appointment booking based on different treatment procedures, durations, or room requirements.";
 
 export const metadata: Metadata = {

@@ -36,14 +36,14 @@ function BlogListSkeleton() {
 const pageUrl = `${BASE_URL}/blog`;
 
 export const metadata: Metadata = {
-  title: `Blog | ${APP_NAME} - Scheduling Tips, Best Practices & Industry Insights`,
+  title: `Blog | Scheduling Tips, Best Practices & Industry Insights`,
   description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, product updates, and insights to help you manage appointments more efficiently.`,
   keywords: [ "appointment scheduling blog", "scheduling tips", "booking best practices", "calendar management", "business scheduling", "no-show reduction", "team scheduling", "healthcare scheduling"],
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-    title: `Blog | ${APP_NAME} - Scheduling Tips, Best Practices & Industry Insights`,
+    title: `Blog | Scheduling Tips, Best Practices & Industry Insights`,
     description: `Explore the ${APP_NAME} blog for expert scheduling tips, industry best practices, product updates, and insights to help you manage appointments more efficiently.`,
     url: pageUrl,
     type: "website",
